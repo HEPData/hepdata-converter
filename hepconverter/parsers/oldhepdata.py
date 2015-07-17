@@ -1,3 +1,4 @@
+from string import lower
 from hepconverter.parsers import Parser, ParsedData, BadFormat, Table
 import StringIO
 import copy
@@ -53,18 +54,23 @@ class OldHEPData(Parser):
         # for those two states different sets of directives are permitted
         self.mapping = {
             'document': {
-                'author':     self._bind_parse_addtional_data('author'),
                 'reference':  self._parse_reference,
                 'dataset':    self._set_table,
+
+                # additional data which have no one to one mapping to new YAML format
+                'author':     self._bind_parse_addtional_data('author'),
                 'doi':        self._bind_parse_addtional_data('doi'),
                 'status':     self._bind_parse_addtional_data('status'),
                 'experiment': self._bind_parse_addtional_data('experiment'),
                 'detector':   self._bind_parse_addtional_data('detector'),
-                'spiresId':   self._bind_parse_addtional_data('spiresId'),
-                'inspireId':  self._bind_parse_addtional_data('inspireId'),
-                'cdsId':      self._bind_parse_addtional_data('cdsId'),
-                'durhamId':   self._bind_parse_addtional_data('durhamId'),
                 'title':      self._bind_parse_addtional_data('title'),
+
+                # add it to record_ids
+                'spiresId':   self._bind_parse_record_ids('spires'),
+                'inspireId':  self._bind_parse_record_ids('inspire'),
+                'cdsId':      self._bind_parse_record_ids('cds'),
+                'durhamId':   self._bind_parse_record_ids('durham'),
+
                 'comment':    self._parse_document_comment,
                 'E':          self._pass
             },
@@ -340,7 +346,7 @@ class OldHEPData(Parser):
 
             #:TODO: VERY RISKY, check energies and so on
             #this is a hack, I hope there is better way to do this:
-            if name == 'SQRT(S)' and units == 'GEV':
+            if name == 'SQRT(S)' and lower(units) in ('gev', 'tev', 'mev'):
                 if xheader['value'] not in self.current_table.energies:
                     self._parse_energies(xheader['value'])
 
@@ -455,6 +461,21 @@ class OldHEPData(Parser):
 
         # method must be bound, so we use __get__
         return set_table_metadata.__get__(self)
+
+    def _bind_parse_record_ids(self, key):
+        def _parse_record_ids(self, data):
+            if 'record_ids' not in self.data[0]:
+                self.data[0]['record_ids'] = []
+
+            record_id = {key, data}
+
+            if self.data[0]['record_ids'].count(record_id) == 0:
+                self.data[0]['record_ids'].append(record_id)
+            elif self.strict:
+                raise BadFormat("duplicated record: *%s" % key)
+
+        # method must be bound, so we use __get__
+        return _parse_record_ids.__get__(self)
 
     def _bind_parse_addtional_data(self, key, multiline=False):
         """Returns parsing function which will parse data as text, and add it to the table additional data dictionary

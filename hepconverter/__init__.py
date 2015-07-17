@@ -41,6 +41,8 @@ def convert(input, output_dir, options={}):
             with open(os.path.join(output_dir, table.data_file), 'w') as table_file:
                 yaml.dump(table.data, table_file)
 
+
+
     # input format is YAML, and output is something different
     # TODO - NOT IMPLEMENTED YET
     else:
