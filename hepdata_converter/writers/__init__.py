@@ -10,8 +10,8 @@ import abc
 class Writer(object):
     __metaclass__  = abc.ABCMeta
 
-    def __init__(self, *args, **kwargs):
-        pass
+    def __init__(self, single_file_output, *args, **kwargs):
+        self.single_file_output = single_file_output
 
     @abc.abstractmethod
     def write(self, data_in, data_out, *args, **kwargs):

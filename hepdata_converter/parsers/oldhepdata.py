@@ -1,5 +1,5 @@
 from string import lower
-from hepconverter.parsers import Parser, ParsedData, BadFormat, Table
+from hepdata_converter.parsers import Parser, ParsedData, BadFormat, Table
 import StringIO
 import copy
 import re
@@ -29,6 +29,7 @@ class OldHEPData(Parser):
         self.lines = []
         self.set_state('document')
         self.current_file = None
+
 
     def set_state(self, state):
         if state not in OldHEPData.states:

@@ -4,8 +4,8 @@ import time
 import os
 import shutil
 import yaml
-import hepconverter
-from hepconverter.parsers import Parser
+import hepdata_converter
+from hepdata_converter.parsers import Parser
 
 class ConvertTestSuite(unittest.TestCase):
     """Test suite for Parser factory class
@@ -114,10 +114,10 @@ class ConvertTestSuite(unittest.TestCase):
         shutil.rmtree(self.current_tmp)
 
     def test_bad_argumets(self):
-        self.assertRaises(ValueError, hepconverter.convert, None, None)
+        self.assertRaises(ValueError, hepdata_converter.convert, None, None)
 
     def test_submission(self):
-        hepconverter.convert(self.simple_submission, self.current_tmp, options={'input_format': 'oldhepdata'})
+        hepdata_converter.convert(self.simple_submission, self.current_tmp, options={'input_format': 'oldhepdata'})
 
         with open(os.path.join(self.current_tmp, 'submission.yaml')) as submission_file:
             self.assertEqual(list(yaml.load_all(submission_file)), list(yaml.load_all(self.correct_submit_output)))
@@ -126,4 +126,4 @@ class ConvertTestSuite(unittest.TestCase):
         """This feature is not implemented yet, but to get test coverage it is tested,
         when this functionality is implemented this test case should either be modified or deleted
         """
-        self.assertRaises(NotImplementedError, hepconverter.convert, None, None, options={'input_format': 'yaml', 'output_format': 'csv'})
+        self.assertRaises(ValueError, hepdata_converter.convert, None, None, options={'input_format': 'yaml', 'output_format': 'not_implemented'})

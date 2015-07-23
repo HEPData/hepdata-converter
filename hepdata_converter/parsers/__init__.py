@@ -18,26 +18,21 @@ class BadFormat(Exception):
 class Table(object):
     """Simple table storage class used for handling tables without extremely deep dictionaries
     """
-    def __init__(self, index=None, data_file=None, table_name=None):
-        self.reactions = []
-        self.observables = []
-        self.energies = []
+    def __init__(self, index=None, data_file=None, table_name=None, metadata=None, data=[]):
+        self.data = data
+        self.index = index
         self.qualifiers = []
 
-        self.data_file = data_file or 'data%s.yaml' % index
-
-        self.index = index
-        self.data = []
-        self.metadata = {
+        self.metadata = metadata or {
             'name': table_name or 'Table %s' % self.index,
             'location': None,
             'description': None,
             'keywords': [
-                {'name': 'reactions', 'values': self.reactions},
-                {'name': 'observables', 'values': self.observables},
-                {'name': 'energies', 'values': self.energies},
+                {'name': 'reactions', 'values': []},
+                {'name': 'observables', 'values': []},
+                {'name': 'energies', 'values': []},
             ],
-            'data_file': self.data_file,
+            'data_file': data_file or 'data%s.yaml' % index,
             # it seams it's required
             # TODO - is it really required? should sensible defaults be provided?
             'data_license': {
@@ -62,7 +57,51 @@ class Table(object):
                 # }
             ]
         }
+        for keyword in self.metadata['keywords']:
+            if keyword['name'] == 'reactions':
+                self.reactions = keyword['values']
+            elif keyword['name'] == 'observables':
+                self.observables = keyword['values']
+            elif keyword['name'] == 'energies':
+                self.energies = keyword['values']
 
+        self.data_file = self.metadata['data_file']
+
+        if self.data:
+            for dependent_variable in self.data.get('dependent_variables', []):
+                self.qualifiers.append(dependent_variable['qualifiers'])
+
+    @property
+    def name(self):
+        return self.metadata['name']
+
+    @property
+    def additional_resources(self):
+        return self.metadata['additional_resources']
+
+    @property
+    def data_license(self):
+        return self.metadata['data_license']
+
+    @property
+    def keywords(self):
+        return self.metadata['keywords']
+
+    @property
+    def location(self):
+        return self.metadata['location']
+
+    @property
+    def description(self):
+        return self.metadata['description']
+
+    @property
+    def independent_variables(self):
+        return self.data['independent_variables']
+
+    @property
+    def dependent_variables(self):
+        return self.data['dependent_variables']
 
 class ParsedData(object):
     """Simple data storage class which should be returned by Parser.parse method
@@ -71,6 +110,19 @@ class ParsedData(object):
     def __init__(self, data, tables):
         self.data = data
         self.tables = tables
+
+    def get_table(self, **kwargs):
+        assert len(kwargs) == 1
+        key, search_val = kwargs.items()[0]
+        assert key in ('id', 'name')
+
+        if key == 'id':
+            return self.tables[search_val]
+        elif key == 'name':
+            for table in self.tables:
+                if table.name == search_val:
+                    return table
+            raise IndexError("No table with name = %s" % search_val)
 
 
 class Parser(object):
