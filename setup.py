@@ -1,10 +1,10 @@
+# -*- coding: utf-8 -*-
 from distutils.core import setup
 
 setup(
     name='hepdata-converter',
     version='0.1',
-    install_requires=['pyyaml'],
-    tests_requires=[],
+    requires=['pyyaml'],
     packages=['hepdata_converter', 'hepdata_converter.parsers', 'hepdata_converter.writers', 'hepdata_converter.testsuite'],
     url='',
     license='',
