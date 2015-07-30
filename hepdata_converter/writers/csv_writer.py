@@ -5,8 +5,18 @@ from hepdata_converter.writers import Writer
 class CSV(Writer):
     def __init__(self, *args, **kwargs):
         super(CSV, self).__init__(single_file_output=True, *args, **kwargs)
+
+        if 'table' not in kwargs:
+            raise ValueError("table name is required")
+
         self.table_id = kwargs['table']
         self.table = None
+
+    @classmethod
+    def register_cli_options(cls, parser):
+        super(CSV, cls).register_cli_options(parser)
+
+        parser.add_argument("--table", "-t", required=True)
 
     def write(self, data_in, data_out, *args, **kwargs):
         """
@@ -23,6 +33,11 @@ class CSV(Writer):
             self.table = data_in.get_table(id=self.table_id)
         else:
             self.table = data_in.get_table(name=self.table_id)
+
+        file_emulation = False
+        if isinstance(data_out, str) or isinstance(data_out, unicode):
+            data_out = open(data_out, 'w')
+            file_emulation = True
 
         headers = []
         data = []
@@ -135,3 +150,6 @@ class CSV(Writer):
 
         for i in xrange(len(data[0])):
             csv_writer.writerow([data[j][i] for j in xrange(len(data)) ])
+
+        if file_emulation:
+            data_out.close()
