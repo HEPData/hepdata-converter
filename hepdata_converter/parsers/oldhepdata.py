@@ -1,4 +1,5 @@
 from string import lower
+from hepdata_converter.common import OptionInitMixin, Option
 from hepdata_converter.parsers import Parser, ParsedData, BadFormat, Table
 import StringIO
 import copy
@@ -15,9 +16,17 @@ class HEPTable(Table):
         self.yheaders = []
 
 
-class OldHEPData(Parser):
+class OldHEPData(Parser, OptionInitMixin):
     """Parser for Old HEPData format
     """
+
+    options = {
+        'strict': Option('strict', required=True, default=True,
+                         help='if specified any additional keywords in OldHEPData file will raise an error'),
+        'use_additional_data': Option('use_additional_data', required=True, default=False,
+                                      help=('if specified additional data which does not have equivalent in new HEPData format'
+                                            ' will be appended to comment section of the output document'))
+    }
 
     def reset(self):
         """Clean any processing data, and prepare object for reuse
@@ -36,8 +45,11 @@ class OldHEPData(Parser):
             raise ValueError("unknown state")
         self.current_state = state
 
-    def __init__(self, strict=False, use_additional_data=True, **kwargs):
+    def __init__(self, **kwargs):
         """Constructor
+        :param use_additional_data: if set to True additional data which does not have equivalent in new HEPData format
+        will be appended to comment section of the output document
+        :type use_additional_data: bool
 
         :param strict: if set to True, any additional keywords (not specified by documentation)
         will raise BadFormat exception during parsing
@@ -89,8 +101,7 @@ class OldHEPData(Parser):
             }
         }
 
-        self.strict = strict
-        self.use_additional_data = use_additional_data
+        OptionInitMixin.__init__(self, options=kwargs)
 
     def parse(self, data_in):
         # clean any possible data from previous parsing
@@ -135,7 +146,7 @@ class OldHEPData(Parser):
         # retrieve keyword and its value
         reg = re.search("^\*(?P<key>[^:#]*)(:(?P<value>.*))?$", line)
         if reg:
-            key = reg.group('key')
+            key = reg.group('key').strip()
             value = reg.group('value')
 
             if key in self.mapping[self.current_state]:

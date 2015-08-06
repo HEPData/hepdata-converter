@@ -1,22 +1,20 @@
 import csv
+from hepdata_converter.common import OptionInitMixin, Option
 from hepdata_converter.writers import Writer
 
 
-class CSV(Writer):
+class CSV(Writer, OptionInitMixin):
+    options = {
+        'table': Option('table', 't', required=False, variable_mapping='table_id', default=None,
+                        help=('Specifies which table should be exported, if not specified all tables will be exported '
+                              '(in this case output must be a directory, not a file)'))
+    }
+
     def __init__(self, *args, **kwargs):
         super(CSV, self).__init__(single_file_output=True, *args, **kwargs)
+        OptionInitMixin.__init__(self, options=kwargs)
 
-        if 'table' not in kwargs:
-            raise ValueError("table name is required")
-
-        self.table_id = kwargs['table']
         self.table = None
-
-    @classmethod
-    def register_cli_options(cls, parser):
-        super(CSV, cls).register_cli_options(parser)
-
-        parser.add_argument("--table", "-t", required=True)
 
     def write(self, data_in, data_out, *args, **kwargs):
         """

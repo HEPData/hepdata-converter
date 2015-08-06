@@ -33,3 +33,6 @@ class CLIToolsTestSuite(WriterTestSuite):
         hepdata_converter.main(['--input-format', 'yaml', '--output-format', 'csv',
                                 '--table', 'Table 1',
                                 self.current_tmp, os.path.join(self.current_tmp, 'output.csv')])
+
+    def test_help(self):
+        self.assertRaises(SystemExit, hepdata_converter.main, ['--help'])

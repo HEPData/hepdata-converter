@@ -1,9 +1,14 @@
 import yaml
+from hepdata_converter.common import OptionInitMixin
 from hepdata_converter.parsers import Parser, ParsedData, Table
 import os
 
 
-class YAML(Parser):
+class YAML(Parser, OptionInitMixin):
+    options = {
+
+    }
+
     def __init__(self, *args, **kwargs):
         super(YAML, self).__init__(*args, **kwargs)
 

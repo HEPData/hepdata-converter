@@ -48,7 +48,7 @@ def convert(input, output=None, options={}):
 
 
 def main(arguments=sys.argv):
-    parser = argparse.ArgumentParser(prog='hepdata-converter', description="CLI tools for converting between HEP data formats")
+    parser = argparse.ArgumentParser(prog='hepdata-converter', description="CLI tools for converting between HEP data formats", add_help=True)
     parser.add_argument("--input-format", '-i', required=True)
     parser.add_argument("--output-format", '-o', required=True)
     parser.add_argument("input")

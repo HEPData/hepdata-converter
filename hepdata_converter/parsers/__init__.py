@@ -157,11 +157,6 @@ class Parser(object):
                 return cls
         raise ValueError("'parser_name' is invalid")
 
-    @classmethod
-    def register_cli_options(cls, parser):
-        pass
-
-
 # import all packages in the parsers package, so that Parser.get_specific_parser will recognise them
 for loader, name, is_pkg in pkgutil.walk_packages(__path__):
     module = loader.find_module(name).load_module(name)
