@@ -1,5 +1,5 @@
 class Option(object):
-    def __init__(self, name, shortversion=None, default=None, variable_mapping=None, required=True, help='', auto_help=True):
+    def __init__(self, name, shortversion=None, type=str, default=None, variable_mapping=None, required=True, help='', auto_help=True):
         self.name = name
         self.help = help
         self.required = required
@@ -7,11 +7,27 @@ class Option(object):
         self.shortversion = shortversion
         self.variable_mapping = variable_mapping or self.name
         self.default = default
+        self.type = type
+        if self.type is bool:
+            self.action = 'store_const'
+        else:
+            self.action = 'store'
 
     def attach_to_parser(self, parser):
-        parser.add_argument('--'+self.name, '-'+self.shortversion, default=self.default,
-                            const=self.default, nargs='?' if not self.required else 1,
-                            help=self.help, required=True)
+        args = ['--'+self.name]
+        if self.shortversion:
+            args.append('-'+self.shortversion)
+
+        kwargs = {
+            'default': self.default,
+            'help': self.help,
+            'required': self.required,
+            'action': self.action
+        }
+        if self.type == bool:
+            kwargs['const'] = True
+
+        parser.add_argument(*args, **kwargs)
 
 class OptionInitMixin(object):
     """This mixin requires a class to have specified options dictionary as
@@ -27,7 +43,7 @@ class OptionInitMixin(object):
         # add default values
         for key, option in self.__class__.options.items():
             if key not in options:
-                self.options_values[key] = option.default
+                self.options_values[self.__class__.options[key].variable_mapping] = option.default
 
     @classmethod
     def register_cli_options(cls, parser):

@@ -1,4 +1,5 @@
 import csv
+import os
 from hepdata_converter.common import OptionInitMixin, Option
 from hepdata_converter.writers import Writer
 
@@ -7,14 +8,18 @@ class CSV(Writer, OptionInitMixin):
     options = {
         'table': Option('table', 't', required=False, variable_mapping='table_id', default=None,
                         help=('Specifies which table should be exported, if not specified all tables will be exported '
-                              '(in this case output must be a directory, not a file)'))
+                              '(in this case output must be a directory, not a file)')),
+        'pack': Option('pack', type=bool, default=False, required=False,
+                       help=('If specified, dependand variables will be put in one table, instead of creating one '
+                             'table per dependant variable in CSV file'))
+
     }
 
     def __init__(self, *args, **kwargs):
         super(CSV, self).__init__(single_file_output=True, *args, **kwargs)
         OptionInitMixin.__init__(self, options=kwargs)
 
-        self.table = None
+        self.tables = []
 
     def write(self, data_in, data_out, *args, **kwargs):
         """
@@ -27,127 +32,150 @@ class CSV(Writer, OptionInitMixin):
         :param kwargs:
         """
         # get table to work on
-        if isinstance(self.table_id, int):
-            self.table = data_in.get_table(id=self.table_id)
+        if self.table_id:
+            if isinstance(self.table_id, int):
+                self.tables.append(data_in.get_table(id=self.table_id))
+            else:
+                self.tables.append(data_in.get_table(name=self.table_id))
         else:
-            self.table = data_in.get_table(name=self.table_id)
+            self.tables = data_in.tables
 
         file_emulation = False
+        outputs = []
+
         if isinstance(data_out, str) or isinstance(data_out, unicode):
-            data_out = open(data_out, 'w')
             file_emulation = True
+            if len(self.tables) == 1:
+                f = open(data_out, 'w')
+                outputs.append(f)
+            else:
+                for table in self.tables:
+                    outputs.append(open(os.path.join(data_out, table.name+'.csv'), 'w'))
+        # multiple tables - require directory
+        elif len(self.tables) > 1 and not (isinstance(data_out, str) or isinstance(data_out, unicode)):
+            raise ValueError("Multiple tables, output must be a directory")
+        else:
+            outputs.append(data_out)
 
-        headers = []
-        data = []
-        qualifiers_marks = []
+        for i in xrange(len(self.tables)):
+            headers = []
+            data = []
+            qualifiers_marks = []
 
-        for independent_variable in self.table.independent_variables:
-            headers.append(independent_variable['header']['name'] + ' IN %s' % independent_variable['header']['units'])
-            x_data_low = []
-            x_data_high = []
-            for value in independent_variable['values']:
+            table = self.tables[i]
+            data_out = outputs[i]
+            for independent_variable in table.independent_variables:
+                headers.append(independent_variable['header']['name'] + ' IN %s' % independent_variable['header']['units'])
+                x_data_low = []
+                x_data_high = []
+                for value in independent_variable['values']:
 
-                if 'high' in value and 'low' in value:
-                    x_data_low.append(value['low'])
-                    x_data_high.append(value['high'])
-                else:
-                    x_data_low.append(value['value'])
-                    x_data_high.append(value['value'])
-
-            data.append(x_data_low)
-            if x_data_high != x_data_low:
-                data.append(x_data_high)
-                header = headers[-1]
-                headers[-1] = header + ' LOW'
-                headers.append(header + ' HIGH')
-                qualifiers_marks.append(False)
-
-        qualifiers = {}
-
-
-        for dependent_variable in self.table.dependent_variables:
-            units = ''
-            if 'units' in dependent_variable['header']:
-                units = ' IN %s' % dependent_variable['header']['units']
-            headers.append(dependent_variable['header']['name'] + units)
-
-            qualifiers_marks.append(True)
-
-            # peek at first value and create empty lists
-            y_order = []
-            y_data = {'values': []}
-            y_order.append(y_data['values'])
-            for error in dependent_variable['values'][0].get('errors', []):
-                headers.append(error.get('label', 'stat') + ' +')
-                qualifiers_marks.append(False)
-                headers.append(error.get('label', 'stat') + ' -')
-                qualifiers_marks.append(False)
-
-                plus = []
-                y_data[error.get('label', 'stat')+'_plus'] = plus
-                y_order.append(plus)
-                minus = []
-                y_data[error.get('label', 'stat')+'_minus'] = minus
-                y_order.append(minus)
-
-            for value in dependent_variable['values']:
-                y_data['values'].append(value['value'])
-                for i in xrange(len(value.get('errors', []))):
-                    error = value['errors'][i]
-
-                    if 'symerror' in error:
-                        error_plus = error['symerror']
-                        error_minus = error['symerror']
+                    if 'high' in value and 'low' in value:
+                        x_data_low.append(value['low'])
+                        x_data_high.append(value['high'])
                     else:
-                        error_plus = error['asymerror']['plus']
-                        error_minus = error['asymerror']['minus']
+                        x_data_low.append(value['value'])
+                        x_data_high.append(value['value'])
 
-                    y_data[error.get('label', 'stat')+'_plus'].append(error_plus)
-                    y_data[error.get('label', 'stat')+'_minus'].append(error_minus)
+                data.append(x_data_low)
+                if x_data_high != x_data_low:
+                    data.append(x_data_high)
+                    header = headers[-1]
+                    headers[-1] = header + ' LOW'
+                    headers.append(header + ' HIGH')
+                    qualifiers_marks.append(False)
 
-            for entry in y_order:
-                data.append(entry)
+            qualifiers = {}
 
-            for qualifier in dependent_variable.get('qualifiers', []):
-                if qualifier['name'] not in qualifiers:
-                    qualifiers[qualifier['name']] = []
-                qualifiers[qualifier['name']].append(qualifier['value'])
+            for dependent_variable in table.dependent_variables:
+                units = ''
+                if 'units' in dependent_variable['header']:
+                    units = ' IN %s' % dependent_variable['header']['units']
+                headers.append(dependent_variable['header']['name'] + units)
 
-        data_out.write("#: name: %s\n" % self.table.metadata['name'])
-        data_out.write("#: description: %s\n" % self.table.metadata['description'])
-        data_out.write("#: data_file: %s\n" % self.table.metadata['data_file'])
+                qualifiers_marks.append(True)
 
-        #license:
-        if 'data_license' in self.table.metadata and self.table.metadata['data_license']:
-            license_text = self.table.metadata['data_license'].get('name', '') + ' '
-            + self.table.metadata['data_license'].get('url', '') + ' '
-            + self.table.metadata['data_license'].get('url', 'description')
+                # peek at first value and create empty lists
+                y_order = []
+                y_data = {'values': []}
+                y_order.append(y_data['values'])
+                for error in dependent_variable['values'][0].get('errors', []):
+                    headers.append(error.get('label', 'stat') + ' +')
+                    qualifiers_marks.append(False)
+                    headers.append(error.get('label', 'stat') + ' -')
+                    qualifiers_marks.append(False)
 
-            data_out.write("#: data_license: %s\n" % license_text)
+                    plus = []
+                    y_data[error.get('label', 'stat')+'_plus'] = plus
+                    y_order.append(plus)
+                    minus = []
+                    y_data[error.get('label', 'stat')+'_minus'] = minus
+                    y_order.append(minus)
 
-        for keyword in self.table.metadata.get('keywords', []):
-            data_out.write("#: keyword %s: %s\n" % (keyword['name'], ' | '.join([str(val) for val in keyword.get('values', [])])))
+                for value in dependent_variable['values']:
+                    y_data['values'].append(value['value'])
+                    for i in xrange(len(value.get('errors', []))):
+                        error = value['errors'][i]
 
-        csv_writer = csv.writer(data_out, delimiter='\t', lineterminator='\n')
-        for qualifier_key in qualifiers:
-            row = []
-            i = 0
-            for qualifier in qualifiers[qualifier_key]:
+                        if 'symerror' in error:
+                            error_plus = error['symerror']
+                            error_minus = error['symerror']
+                        else:
+                            error_plus = error['asymerror']['plus']
+                            error_minus = error['asymerror']['minus']
 
-                for i in xrange(i, len(qualifiers_marks)):
-                    if qualifiers_marks[i]:
-                        row.append(qualifier)
-                        i += 1
-                        break
-                    else:
-                        row.append(None)
+                        y_data[error.get('label', 'stat')+'_plus'].append(error_plus)
+                        y_data[error.get('label', 'stat')+'_minus'].append(error_minus)
 
-            csv_writer.writerow([qualifier_key] + row)
+                for entry in y_order:
+                    data.append(entry)
 
-        csv_writer.writerow(headers)
+                for qualifier in dependent_variable.get('qualifiers', []):
+                    if qualifier['name'] not in qualifiers:
+                        qualifiers[qualifier['name']] = []
+                    qualifiers[qualifier['name']].append(qualifier['value'])
 
-        for i in xrange(len(data[0])):
-            csv_writer.writerow([data[j][i] for j in xrange(len(data)) ])
+            data_out.write("#: name: %s\n" % table.metadata['name'])
+            data_out.write("#: description: %s\n" % table.metadata['description'])
+            data_out.write("#: data_file: %s\n" % table.metadata['data_file'])
 
-        if file_emulation:
-            data_out.close()
+            #license:
+            if 'data_license' in table.metadata and table.metadata['data_license']:
+                license_text = table.metadata['data_license'].get('name', '') + ' '
+                + table.metadata['data_license'].get('url', '') + ' '
+                + table.metadata['data_license'].get('url', 'description')
+
+                data_out.write("#: data_license: %s\n" % license_text)
+
+            for keyword in table.metadata.get('keywords', []):
+                data_out.write("#: keyword %s: %s\n" % (keyword['name'], ' | '.join([str(val) for val in keyword.get('values', [])])))
+
+            csv_writer = csv.writer(data_out, delimiter='\t', lineterminator='\n')
+            for qualifier_key in qualifiers:
+                row = []
+                i = 0
+                for qualifier in qualifiers[qualifier_key]:
+
+                    for i in xrange(i, len(qualifiers_marks)):
+                        if qualifiers_marks[i]:
+                            row.append(qualifier)
+                            i += 1
+                            break
+                        else:
+                            row.append(None)
+
+                csv_writer.writerow([qualifier_key] + row)
+
+            csv_writer.writerow(headers)
+
+            for i in xrange(len(data[0])):
+                csv_writer.writerow([data[j][i] for j in xrange(len(data)) ])
+
+            if file_emulation:
+                data_out.close()
+
+    def _pack_data(self):
+        pass
+
+    def _write_independend_variable(self):
+        pass

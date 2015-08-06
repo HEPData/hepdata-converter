@@ -59,3 +59,21 @@ class CSVWriterTestCase(WriterTestSuite):
                                                                  'table': 'Table 9'})
 
         self.assertEqual(self.table_2_csv, csv_content)
+
+    def test_multiple_tables(self):
+        convert(self.submission_filepath, self.current_tmp, options={'input_format': 'yaml',
+                                                                     'output_format': 'csv'})
+
+        with open(os.path.join(self.current_tmp, 'Table 1.csv'), 'r') as f:
+            self.assertEqual(self.table_csv, f.read())
+
+        with open(os.path.join(self.current_tmp, 'Table 9.csv'), 'r') as f:
+            self.assertEqual(self.table_2_csv, f.read())
+
+    def test_pack(self):
+        csv_content = convert(self.submission_filepath, options={'input_format': 'yaml',
+                                                         'output_format': 'csv',
+                                                         'table': 'Table 9',
+                                                         'pack': True})
+        pass
+
