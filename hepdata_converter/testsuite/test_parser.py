@@ -8,7 +8,7 @@ class ParserTestSuite(unittest.TestCase):
     """
 
     def test_get_specific_parser_oldhepdata(self):
-        self.assertEqual(Parser.get_specific_parser('oldhepdata').__class__, OldHEPData.__class__)
+        self.assertEqual(Parser.get_concrete_class('oldhepdata').__class__, OldHEPData.__class__)
 
     def test_get_specific_parser_nonexist(self):
-        self.assertRaises(ValueError, Parser.get_specific_parser, 'nonexisting_parser')
+        self.assertRaises(ValueError, Parser.get_concrete_class, 'nonexisting_parser')

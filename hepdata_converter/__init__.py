@@ -29,8 +29,8 @@ def convert(input, output=None, options={}):
     if input_format == output_format:
         return
 
-    parser = Parser.get_specific_parser(input_format)(**options)
-    writer = Writer.get_specific_writer(output_format)(**options)
+    parser = Parser.get_concrete_class(input_format)(**options)
+    writer = Writer.get_concrete_class(output_format)(**options)
 
     if not output and not writer.single_file_output:
         raise ValueError("this output_format requires specifing 'output' argument")
@@ -59,8 +59,8 @@ def main(arguments=sys.argv):
     input_format = program_args['input_format']
     output_format = program_args['output_format']
 
-    Parser.get_specific_parser(input_format).register_cli_options(parser)
-    Writer.get_specific_writer(output_format).register_cli_options(parser)
+    Parser.get_concrete_class(input_format).register_cli_options(parser)
+    Writer.get_concrete_class(output_format).register_cli_options(parser)
 
     # reparse arguments, now with added options from concrete parsers / writers
     program_args = vars(parser.parse_args(arguments))

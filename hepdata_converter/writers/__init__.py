@@ -1,5 +1,6 @@
 import inspect
 import pkgutil
+from hepdata_converter.common import GetConcreteSubclassMixin, OptionInitMixin
 
 __all__ = []
 
@@ -7,7 +8,7 @@ from string import lower
 import abc
 
 
-class Writer(object):
+class Writer(GetConcreteSubclassMixin, OptionInitMixin):
     __metaclass__  = abc.ABCMeta
 
     def __init__(self, single_file_output, *args, **kwargs):
@@ -23,21 +24,6 @@ class Writer(object):
         :param args: additional arguments passed to concrete class
         :param kwargs: additional arguments passed to concrete class
         """
-
-    @classmethod
-    def get_specific_writer(cls, writer_name):
-        """This method provides easier access to all writers inheriting Writer class
-
-        :param writer_name: name of the parser (name of the parser class which should be used)
-        :type writer_name: str
-        :return: Writer subclass specified by parser_name
-        :rtype: Writer subclass
-        :raise ValueError:
-        """
-        for cls in cls.__subclasses__():
-            if lower(cls.__name__) == lower(writer_name):
-                return cls
-        raise ValueError("'writer_name' is invalid")
 
 
 # import all packages in the parsers package, so that Parser.get_specific_parser will recognise them
