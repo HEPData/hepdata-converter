@@ -10,7 +10,7 @@ class CLIToolsTestSuite(WriterTestSuite):
 
     def test_convert_yaml2csv(self):
         hepdata_converter.main(['--input-format', 'yaml', '--output-format', 'csv',
-                                '--table', 'Table 1',
+                                '--table', 'Table 1', '--pack',
                                 self.current_tmp, os.path.join(self.current_tmp, 'output.csv')])
         self.table_csv = (
             '#: name: Table 1\n'
@@ -27,7 +27,7 @@ class CLIToolsTestSuite(WriterTestSuite):
         )
 
         with open(os.path.join(self.current_tmp, 'output.csv')) as f:
-            self.assertEqual(f.read(), self.table_csv)
+            self.assertEqual(self.table_csv, f.read())
 
     def test_convert_yaml2yoda(self):
         hepdata_converter.main(['--input-format', 'yaml', '--output-format', 'csv',
