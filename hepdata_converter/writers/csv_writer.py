@@ -1,11 +1,19 @@
 import csv
+from hepdata_converter.common import OptionInitMixin, Option
 from hepdata_converter.writers import Writer
 
 
-class CSV(Writer):
+class CSV(Writer, OptionInitMixin):
+    options = {
+        'table': Option('table', 't', required=False, variable_mapping='table_id', default=None,
+                        help=('Specifies which table should be exported, if not specified all tables will be exported '
+                              '(in this case output must be a directory, not a file)'))
+    }
+
     def __init__(self, *args, **kwargs):
         super(CSV, self).__init__(single_file_output=True, *args, **kwargs)
-        self.table_id = kwargs['table']
+        OptionInitMixin.__init__(self, options=kwargs)
+
         self.table = None
 
     def write(self, data_in, data_out, *args, **kwargs):
@@ -23,6 +31,11 @@ class CSV(Writer):
             self.table = data_in.get_table(id=self.table_id)
         else:
             self.table = data_in.get_table(name=self.table_id)
+
+        file_emulation = False
+        if isinstance(data_out, str) or isinstance(data_out, unicode):
+            data_out = open(data_out, 'w')
+            file_emulation = True
 
         headers = []
         data = []
@@ -135,3 +148,6 @@ class CSV(Writer):
 
         for i in xrange(len(data[0])):
             csv_writer.writerow([data[j][i] for j in xrange(len(data)) ])
+
+        if file_emulation:
+            data_out.close()

@@ -1,10 +1,17 @@
 # -*- coding: utf-8 -*-
-from distutils.core import setup
+from setuptools import setup
 
 setup(
     name='hepdata-converter',
     version='0.1',
-    requires=['pyyaml'],
+    install_requires=[
+        'pyyaml'
+    ],
+    entry_points={
+        'console_scripts': [
+            'hepdata-converter = hepdata_converter:main',
+        ]
+    },
     packages=['hepdata_converter', 'hepdata_converter.parsers', 'hepdata_converter.writers', 'hepdata_converter.testsuite'],
     url='',
     license='',

@@ -1,9 +1,14 @@
 import yaml
+from hepdata_converter.common import OptionInitMixin
 from hepdata_converter.parsers import Parser, ParsedData, Table
 import os
 
 
-class YAML(Parser):
+class YAML(Parser, OptionInitMixin):
+    options = {
+
+    }
+
     def __init__(self, *args, **kwargs):
         super(YAML, self).__init__(*args, **kwargs)
 
@@ -17,6 +22,14 @@ class YAML(Parser):
         """
         if not os.path.exists(data_in):
             raise ValueError("File does not exist: %s" % data_in)
+
+        if os.path.isdir(data_in):
+            submission_filepath = os.path.join(data_in, 'submission.yaml')
+            if not os.path.exists(submission_filepath):
+                submission_filepath = os.path.join(data_in, 'submission.yml')
+                if not os.path.exists(submission_filepath):
+                    raise ValueError("No submission file in %s" % data_in)
+            data_in = submission_filepath
 
         with open(data_in, 'r') as submission_file:
             submission_data = list(yaml.load_all(submission_file))
