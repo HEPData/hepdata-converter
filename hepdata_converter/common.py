@@ -1,3 +1,7 @@
+from abc import ABCMeta
+from string import lower
+
+
 class Option(object):
     def __init__(self, name, shortversion=None, type=str, default=None, variable_mapping=None, required=True, help='', auto_help=True):
         self.name = name
@@ -28,6 +32,7 @@ class Option(object):
             kwargs['const'] = True
 
         parser.add_argument(*args, **kwargs)
+
 
 
 class OptionInitMixin(object):
@@ -61,3 +66,31 @@ class OptionInitMixin(object):
         _dir = dir(super(OptionInitMixin, self))
         _dir += [option.variable_mapping for key, option in self.__class__.options.items()]
         return _dir
+
+
+class GetConcreteSubclassMixin(object):
+    @classmethod
+    def get_concrete_class(cls, class_name):
+        """This method provides easier access to all writers inheriting Writer class
+
+        :param class_name: name of the parser (name of the parser class which should be used)
+        :type class_name: str
+        :return: Writer subclass specified by parser_name
+        :rtype: Writer subclass
+        :raise ValueError:
+        """
+        def recurrent_class_lookup(cls):
+            for cls in cls.__subclasses__():
+                if lower(cls.__name__) == lower(class_name):
+                    return cls
+                elif len(cls.__subclasses__()) > 0:
+                    r = recurrent_class_lookup(cls)
+                    if r is not None:
+                        return r
+            return None
+
+        cls = recurrent_class_lookup(cls)
+        if cls:
+            return cls
+        else:
+            raise ValueError("'class_name '%s' is invalid" % class_name)

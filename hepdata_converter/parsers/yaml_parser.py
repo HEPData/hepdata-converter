@@ -4,7 +4,7 @@ from hepdata_converter.parsers import Parser, ParsedData, Table
 import os
 
 
-class YAML(Parser, OptionInitMixin):
+class YAML(Parser):
     options = {
 
     }

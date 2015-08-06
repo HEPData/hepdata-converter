@@ -3,7 +3,7 @@ import unittest
 import os
 import tempfile
 import time
-from pip._vendor.distlib._backport import shutil
+import shutil
 from hepdata_converter import convert
 from hepdata_converter.testsuite.test_writer import WriterTestSuite
 

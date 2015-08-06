@@ -16,7 +16,7 @@ class HEPTable(Table):
         self.yheaders = []
 
 
-class OldHEPData(Parser, OptionInitMixin):
+class OldHEPData(Parser):
     """Parser for Old HEPData format
     """
 

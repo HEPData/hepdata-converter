@@ -1,4 +1,5 @@
 import abc
+from hepdata_converter.common import GetConcreteSubclassMixin, OptionInitMixin
 
 __all__ = []
 
@@ -125,7 +126,7 @@ class ParsedData(object):
             raise IndexError("No table with name = %s" % search_val)
 
 
-class Parser(object):
+class Parser(GetConcreteSubclassMixin, OptionInitMixin):
     __metaclass__  = abc.ABCMeta
 
     def __init__(self, *args, **kwargs):
@@ -141,21 +142,6 @@ class Parser(object):
         :return: Parsed data, in the YAML writer friendly format (list, dicts, and simple objects)
         :rtype: ParsedData
         """
-
-    @classmethod
-    def get_specific_parser(cls, parser_name):
-        """This method provides easier access to all parsers inheriting Parser class
-
-        :param parser_name: name of the parser (name of the parser class which should be used)
-        :type parser_name: str
-        :return: Parser subclass specified by parser_name
-        :rtype: Parser subclass
-        :raise ValueError:
-        """
-        for cls in cls.__subclasses__():
-            if lower(cls.__name__) == lower(parser_name):
-                return cls
-        raise ValueError("'parser_name' is invalid")
 
 # import all packages in the parsers package, so that Parser.get_specific_parser will recognise them
 for loader, name, is_pkg in pkgutil.walk_packages(__path__):

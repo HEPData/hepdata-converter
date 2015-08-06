@@ -3,7 +3,7 @@ import unittest
 import StringIO
 import time
 import os
-from pip._vendor.distlib._backport import shutil
+import shutil
 from hepdata_converter.parsers.oldhepdata import OldHEPData
 from testdata import OLD_HEPDATA_LONG
 
