@@ -19,7 +19,7 @@ class CLIToolsTestSuite(WriterTestSuite):
             '#: keyword reactions: P P --> Z0 Z0 X\n'
             '#: keyword observables: SIG\n'
             '#: keyword energies: 7000\n'
-            'RE\tP P --> Z0 < LEPTON+ LEPTON- > Z0 < LEPTON+ LEPTON- > X\n'
+            '#: RE\tP P --> Z0 < LEPTON+ LEPTON- > Z0 < LEPTON+ LEPTON- > X\n'
             'SQRT(S) IN GEV\tSIG(fiducial) IN FB\tstat +\tstat -\tsys +\tsys -\tsys,lumi +\tsys,lumi -\n'
             '7000\t25.4\t3.3\t-3.0\t1\t-1.2\t1\t-1\n'
             '8000\t29.8\t3.8\t-3.5\t1.7\t-1.5\t1.2\t1.2\n'

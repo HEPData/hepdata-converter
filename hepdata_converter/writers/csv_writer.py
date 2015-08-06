@@ -164,7 +164,7 @@ class CSV(Writer, OptionInitMixin):
                         else:
                             row.append(None)
 
-                csv_writer.writerow([qualifier_key] + row)
+                csv_writer.writerow(['#: '+qualifier_key] + row)
 
             csv_writer.writerow(headers)
 

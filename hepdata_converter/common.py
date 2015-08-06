@@ -29,6 +29,7 @@ class Option(object):
 
         parser.add_argument(*args, **kwargs)
 
+
 class OptionInitMixin(object):
     """This mixin requires a class to have specified options dictionary as
     class variable
