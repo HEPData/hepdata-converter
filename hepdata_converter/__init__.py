@@ -1,7 +1,7 @@
 import StringIO
 import argparse
-import os
 import sys
+from hepdata_converter import version
 from hepdata_converter.parsers import Parser
 from hepdata_converter.writers import Writer
 
@@ -46,11 +46,11 @@ def convert(input, output=None, options={}):
     if not output:
         return _output.getvalue()
 
-
 def main(arguments=sys.argv):
     parser = argparse.ArgumentParser(prog='hepdata-converter', description="CLI tools for converting between HEP data formats", add_help=True)
     parser.add_argument("--input-format", '-i', required=True)
     parser.add_argument("--output-format", '-o', required=True)
+    parser.add_argument("--version", '-v', action='store_const', const=True)
     parser.add_argument("input")
     parser.add_argument("output")
 
@@ -68,4 +68,5 @@ def main(arguments=sys.argv):
     try:
         convert(program_args['input'], program_args['output'], program_args)
     except ValueError as e:
-        sys.exit("Options error: %s" % str(e))
+        return sys.exit("Options error: %s" % str(e))
+

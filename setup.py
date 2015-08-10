@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 from setuptools import setup
+import hepdata_converter.version
 
 setup(
     name='hepdata-converter',
-    version='0.1',
+    version=hepdata_converter.version,
     install_requires=[
         'pyyaml'
     ],

@@ -36,3 +36,8 @@ class CLIToolsTestSuite(WriterTestSuite):
 
     def test_help(self):
         self.assertRaises(SystemExit, hepdata_converter.main, ['--help'])
+
+    # def test_version(self):
+    #     r, message = hepdata_converter._main(['--version'])
+    #     self.assertEqual(0, r)
+    #     self.assertEqual(hepdata_converter.version, message)
