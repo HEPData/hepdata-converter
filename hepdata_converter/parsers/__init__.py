@@ -1,4 +1,5 @@
 import abc
+import os
 from hepdata_converter.common import GetConcreteSubclassMixin, OptionInitMixin
 
 __all__ = []
@@ -115,10 +116,15 @@ class ParsedData(object):
     def get_table(self, **kwargs):
         assert len(kwargs) == 1
         key, search_val = kwargs.items()[0]
-        assert key in ('id', 'name')
+        assert key in ('id', 'name', 'file')
 
         if key == 'id':
             return self.tables[search_val]
+        elif key == 'file':
+            for table in self.tables:
+                if table.data_file == os.path.basename(search_val):
+                    return table
+            raise IndexError("No table with filename = %s" % search_val)
         elif key == 'name':
             for table in self.tables:
                 if table.name == search_val:

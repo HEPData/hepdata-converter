@@ -35,11 +35,16 @@ class ArrayWriter(Writer):
         :param kwargs:
         """
         # get table to work on
-        if self.table_id:
+        if self.table_id is not None:
             if isinstance(self.table_id, int):
                 self.tables.append(data_in.get_table(id=self.table_id))
             else:
-                self.tables.append(data_in.get_table(name=self.table_id))
+                try:
+                    tab = data_in.get_table(file=self.table_id)
+                except IndexError:
+                    tab = data_in.get_table(name=self.table_id)
+
+                self.tables.append(tab)
         else:
             self.tables = data_in.tables
 
