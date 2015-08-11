@@ -46,11 +46,19 @@ def convert(input, output=None, options={}):
     if not output:
         return _output.getvalue()
 
-def main(arguments=sys.argv):
+
+def make_exit(message='', code=0):
+    return code, message
+
+
+def _main(arguments=sys.argv):
+    if '--version' in arguments or '-v' in arguments:
+        return make_exit(message="hepdata-converter version: %s" % version.__version__)
+
     parser = argparse.ArgumentParser(prog='hepdata-converter', description="CLI tools for converting between HEP data formats", add_help=True)
     parser.add_argument("--input-format", '-i', required=True)
     parser.add_argument("--output-format", '-o', required=True)
-    parser.add_argument("--version", '-v', action='store_const', const=True)
+    parser.add_argument("--version", '-v', action='store_const', const=True, default=False, help='Show hepdata-converter version')
     parser.add_argument("input")
     parser.add_argument("output")
 
@@ -67,6 +75,15 @@ def main(arguments=sys.argv):
 
     try:
         convert(program_args['input'], program_args['output'], program_args)
+        return make_exit()
     except ValueError as e:
-        return sys.exit("Options error: %s" % str(e))
+        return make_exit(message="Options error: %s" % str(e), code=1)
 
+
+def main(arguments=sys.argv):
+    r, message = _main(arguments)
+    if r == 0:
+        print message
+    else:
+        print >> sys.stderr, message
+    sys.exit(r)

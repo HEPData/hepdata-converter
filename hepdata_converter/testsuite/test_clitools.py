@@ -9,7 +9,7 @@ class CLIToolsTestSuite(WriterTestSuite):
         self.assertRaises(SystemExit, hepdata_converter.main, [])
 
     def test_convert_yaml2csv(self):
-        hepdata_converter.main(['--input-format', 'yaml', '--output-format', 'csv',
+        hepdata_converter._main(['--input-format', 'yaml', '--output-format', 'csv',
                                 '--table', 'Table 1', '--pack',
                                 self.current_tmp, os.path.join(self.current_tmp, 'output.csv')])
         self.table_csv = (
@@ -30,14 +30,14 @@ class CLIToolsTestSuite(WriterTestSuite):
             self.assertEqual(self.table_csv, f.read())
 
     def test_convert_yaml2yoda(self):
-        hepdata_converter.main(['--input-format', 'yaml', '--output-format', 'csv',
+        hepdata_converter._main(['--input-format', 'yaml', '--output-format', 'csv',
                                 '--table', 'Table 1',
                                 self.current_tmp, os.path.join(self.current_tmp, 'output.csv')])
 
     def test_help(self):
         self.assertRaises(SystemExit, hepdata_converter.main, ['--help'])
 
-    # def test_version(self):
-    #     r, message = hepdata_converter._main(['--version'])
-    #     self.assertEqual(0, r)
-    #     self.assertEqual(hepdata_converter.version, message)
+    def test_version(self):
+        r, message = hepdata_converter._main(['--version'])
+        self.assertEqual(r, 0)
+        self.assertTrue(message.endswith(hepdata_converter.version.__version__))
