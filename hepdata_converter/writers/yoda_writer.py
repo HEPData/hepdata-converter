@@ -4,14 +4,15 @@ from hepdata_converter.writers.array_writer import ArrayWriter
 
 
 class YODA(ArrayWriter):
+    help = 'Writes YODA output for table specified by --table parameter, the output should be defined as ' \
+           'filepath to output yoda file'
+
     def __init__(self, *args, **kwargs):
         super(YODA, self).__init__(single_file_output=True, *args, **kwargs)
 
     def _write_table(self, data_out, table):
         headers_original = []
         qualifiers_marks_original = []
-
-
 
         for independent_variable in table.independent_variables:
             data_original = []

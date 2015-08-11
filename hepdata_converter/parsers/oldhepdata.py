@@ -19,6 +19,7 @@ class HEPTable(Table):
 class OldHEPData(Parser):
     """Parser for Old HEPData format
     """
+    help = 'Parses OLDHepData format - example OLD HepData input format: http://hepdata.cedar.ac.uk/resource/sample.input'
 
     options = {
         'strict': Option('strict', required=True, default=True,

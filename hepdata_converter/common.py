@@ -1,5 +1,8 @@
 from abc import ABCMeta
+import abc
+import inspect
 from string import lower
+import textwrap
 
 
 class Option(object):
@@ -34,12 +37,27 @@ class Option(object):
         parser.add_argument(*args, **kwargs)
 
 
-
 class OptionInitMixin(object):
     """This mixin requires a class to have specified options dictionary as
     class variable
 
     """
+    help = ''
+    options = {}
+
+    @classmethod
+    def get_help(cls, margin):
+        def make_margin(lines, margin):
+            return '\n'.join([margin+line for line in lines])
+
+        r = make_margin(textwrap.wrap(cls.__name__.lower() + ': ' + cls.help + '\n', 70-len(margin)), margin) + '\n'
+        r += '\n'
+        r += make_margin(textwrap.wrap("Options:" + '\n', 70-len(2*margin)), 2*margin) + '\n'
+        for key, option in cls.options.items():
+            r += make_margin(textwrap.wrap('--' + key + ': ' + option.help + '\n', 70-len(3 * margin)), 3 * margin) + '\n\n'
+
+        return r
+
     def __init__(self, options):
         self.options_values = {}
         for option in options:
@@ -94,3 +112,16 @@ class GetConcreteSubclassMixin(object):
             return cls
         else:
             raise ValueError("'class_name '%s' is invalid" % class_name)
+
+    @classmethod
+    def get_all_subclasses(cls):
+        def recurrent_class_list(cls):
+            r = []
+            for cls in cls.__subclasses__():
+                if not inspect.isabstract(cls):
+                    r.append(cls)
+                if len(cls.__subclasses__()) > 0:
+                    r += recurrent_class_list(cls)
+            return r
+
+        return recurrent_class_list(cls)

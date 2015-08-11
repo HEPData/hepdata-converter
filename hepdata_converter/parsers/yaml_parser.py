@@ -5,9 +5,8 @@ import os
 
 
 class YAML(Parser):
-    options = {
-
-    }
+    help = 'Parses New HEPData YAML format. Input parameter should be path to the directory where submission.yaml file ' \
+           'is present (or direct filepath to the submission.yaml file)'
 
     def __init__(self, *args, **kwargs):
         super(YAML, self).__init__(*args, **kwargs)

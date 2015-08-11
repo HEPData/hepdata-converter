@@ -4,6 +4,9 @@ import os
 
 
 class YAML(Writer):
+    help = 'Writes YAML output. Output should be defined as filepath to the directory where submission.yaml and associated ' \
+           'table files will be written'
+
     def __init__(self, *args, **kwargs):
         super(YAML, self).__init__(single_file_output=False, *args, **kwargs)
 

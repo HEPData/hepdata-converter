@@ -51,13 +51,37 @@ def make_exit(message='', code=0):
     return code, message
 
 
+def generate_help_epilogue():
+    margin = '   '
+
+    r = 'Parsers:\n'
+    r += '[use them as --input-format parameter]\n'
+    r += '\n'
+
+    for cls in Parser.get_all_subclasses():
+        r += cls.get_help(margin)
+
+    r += '\nWriters:\n'
+    r += '[use them as --output-format parameter]\n'
+    r += '\n'
+
+    for cls in Writer.get_all_subclasses():
+        r += cls.get_help(margin)
+
+    return r
+
+
+
 def _main(arguments=sys.argv):
+    # if version is specified ignore any other arguments
     if '--version' in arguments or '-v' in arguments:
         return make_exit(message="hepdata-converter version: %s" % version.__version__)
 
-    parser = argparse.ArgumentParser(prog='hepdata-converter', description="CLI tools for converting between HEP data formats", add_help=True)
-    parser.add_argument("--input-format", '-i', required=True)
-    parser.add_argument("--output-format", '-o', required=True)
+    parser = argparse.ArgumentParser(prog='hepdata-converter', description="CLI tools for converting between HEP data formats", add_help=True,
+                                      formatter_class=argparse.RawTextHelpFormatter,
+                                     epilog=generate_help_epilogue())
+    parser.add_argument("--input-format", '-i', default='yaml', help='format of the input file/s (default: yaml) [choose one option from Parsers section below]')
+    parser.add_argument("--output-format", '-o', default='yaml', help='format of the output file/s (default: yaml) [choose one option from Writers section below]')
     parser.add_argument("--version", '-v', action='store_const', const=True, default=False, help='Show hepdata-converter version')
     parser.add_argument("input")
     parser.add_argument("output")

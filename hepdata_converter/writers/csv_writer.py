@@ -6,6 +6,9 @@ from hepdata_converter.writers.array_writer import ArrayWriter
 
 
 class CSV(ArrayWriter):
+    help = 'Writes to CSV format, it can write either one table (specified by --table parameter) or all tables from the ' \
+           'input file. In the case of one table output must be filepath to the new csv file, in the case of multiple tables ' \
+           'the output must be specified to be a directory to which all table files should be written'
     ArrayWriter.options['pack'] = Option('pack', type=bool, default=False, required=False,
                        help=('If specified, dependand variables will be put in one table, instead of creating one '
                              'table per dependant variable in CSV file'))
