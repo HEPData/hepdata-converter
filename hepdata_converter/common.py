@@ -114,11 +114,11 @@ class GetConcreteSubclassMixin(object):
             raise ValueError("'class_name '%s' is invalid" % class_name)
 
     @classmethod
-    def get_all_subclasses(cls):
+    def get_all_subclasses(cls, include_abstract=False):
         def recurrent_class_list(cls):
             r = []
             for cls in cls.__subclasses__():
-                if not inspect.isabstract(cls):
+                if include_abstract or not inspect.isabstract(cls):
                     r.append(cls)
                 if len(cls.__subclasses__()) > 0:
                     r += recurrent_class_list(cls)

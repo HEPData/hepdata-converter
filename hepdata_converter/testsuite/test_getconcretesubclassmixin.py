@@ -19,8 +19,11 @@ class ParserTestSuite(unittest.TestCase):
 
         class AAB(AB):
             __metaclass__ = abc.ABCMeta
+
             @abc.abstractmethod
             def abstract(self):
                 pass
 
-        self.assertEqual([AB, AC], A.get_all_subclasses())
+        self.assertEqual(set([AB, AC]), set(A.get_all_subclasses()))
+
+        self.assertEqual(set([AB, AC, AAB]), set(A.get_all_subclasses(include_abstract=True)))
