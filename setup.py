@@ -1,10 +1,19 @@
 # -*- coding: utf-8 -*-
 from setuptools import setup
-import hepdata_converter.version
+import re
+
+def get_version():
+    with open('hepdata_converter/version.py', 'r') as version_f:
+        content = version_f.read()
+
+    r = re.search('^__version__ *= *\'(?P<version>.+)\'', content)
+    if not r:
+        return '0.0.0'
+    return r.group('version')
 
 setup(
     name='hepdata-converter',
-    version=hepdata_converter.version.__version__,
+    version=get_version(),
     install_requires=[
         'pyyaml'
     ],
