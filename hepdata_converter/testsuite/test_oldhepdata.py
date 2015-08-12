@@ -4,7 +4,7 @@ import StringIO
 import time
 import os
 import shutil
-from hepdata_converter.parsers.oldhepdata import OldHEPData
+from hepdata_converter.parsers.oldhepdata_parser import OldHEPData
 from testdata import OLD_HEPDATA_LONG
 
 

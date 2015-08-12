@@ -1,6 +1,6 @@
 import unittest
 from hepdata_converter.parsers import Parser
-from hepdata_converter.parsers.oldhepdata import OldHEPData
+from hepdata_converter.parsers.oldhepdata_parser import OldHEPData
 
 
 class ParserTestSuite(unittest.TestCase):

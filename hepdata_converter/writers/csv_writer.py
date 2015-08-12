@@ -41,10 +41,11 @@ class CSV(ArrayWriter):
 
     @classmethod
     def _write_csv_data(cls, output, qualifiers, qualifiers_marks, headers, data):
-            csv_writer = csv.writer(output, delimiter='\t', lineterminator='\n')
+            delimiter = ';'
+            lineterminator = '\n'
+            cls._write_qualifiers(output, qualifiers, qualifiers_marks, delimiter, lineterminator)
 
-            cls._write_qualifiers(csv_writer, qualifiers, qualifiers_marks)
-
+            csv_writer = csv.writer(output, delimiter=delimiter, lineterminator=lineterminator, quotechar="'", quoting=csv.QUOTE_NONNUMERIC)
             csv_writer.writerow(headers)
 
             for i in xrange(len(data[0])):
@@ -53,7 +54,7 @@ class CSV(ArrayWriter):
             return csv_writer
 
     @classmethod
-    def _write_qualifiers(cls, csv_writer, qualifiers, qualifiers_marks):
+    def _write_qualifiers(cls, writer, qualifiers, qualifiers_marks, field_separator, newline):
         for qualifier_key in qualifiers:
             row = []
             i = 0
@@ -65,7 +66,7 @@ class CSV(ArrayWriter):
                         break
                     else:
                         row.append(None)
-            csv_writer.writerow(['#: '+qualifier_key] + row)
+            writer.write(field_separator.join([val if val is not None else '' for val in ['#: ' + qualifier_key] + row]) + newline)
 
     def _write_packed_data(self, data_out, table):
         """This is kind of legacy function - this functionality may be useful for some people, so even though

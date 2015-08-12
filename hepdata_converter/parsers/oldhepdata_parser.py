@@ -40,7 +40,6 @@ class OldHEPData(Parser):
         self.set_state('document')
         self.current_file = None
 
-
     def set_state(self, state):
         if state not in OldHEPData.states:
             raise ValueError("unknown state")

@@ -19,11 +19,11 @@ class CLIToolsTestSuite(WriterTestSuite):
             '#: keyword reactions: P P --> Z0 Z0 X\n'
             '#: keyword observables: SIG\n'
             '#: keyword energies: 7000\n'
-            '#: RE\tP P --> Z0 < LEPTON+ LEPTON- > Z0 < LEPTON+ LEPTON- > X\n'
-            'SQRT(S) IN GEV\tSIG(fiducial) IN FB\tstat +\tstat -\tsys +\tsys -\tsys,lumi +\tsys,lumi -\n'
-            '7000\t25.4\t3.3\t-3.0\t1\t-1.2\t1\t-1\n'
-            '8000\t29.8\t3.8\t-3.5\t1.7\t-1.5\t1.2\t1.2\n'
-            '9000\t12.7\t3.1\t-2.9\t1.7\t1.7\t0.5\t0.5\n'
+            '#: RE;P P --> Z0 < LEPTON+ LEPTON- > Z0 < LEPTON+ LEPTON- > X\n'
+            '\'SQRT(S) IN GEV\';\'SIG(fiducial) IN FB\';\'stat +\';\'stat -\';\'sys +\';\'sys -\';\'sys,lumi +\';\'sys,lumi -\'\n'
+            '7000;25.4;3.3;-3.0;1;-1.2;1;-1\n'
+            '8000;29.8;3.8;-3.5;1.7;-1.5;1.2;1.2\n'
+            '9000;12.7;3.1;-2.9;1.7;1.7;0.5;0.5\n'
         )
 
         with open(os.path.join(self.current_tmp, 'output.csv')) as f:

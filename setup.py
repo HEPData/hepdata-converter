@@ -2,6 +2,7 @@
 from setuptools import setup
 import re
 
+
 def get_version():
     with open('hepdata_converter/version.py', 'r') as version_f:
         content = version_f.read()
