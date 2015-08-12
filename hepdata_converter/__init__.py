@@ -71,14 +71,13 @@ def generate_help_epilogue():
     return r
 
 
-
 def _main(arguments=sys.argv):
     # if version is specified ignore any other arguments
     if '--version' in arguments or '-v' in arguments:
         return make_exit(message="hepdata-converter version: %s" % version.__version__)
 
     parser = argparse.ArgumentParser(prog='hepdata-converter', description="CLI tools for converting between HEP data formats", add_help=True,
-                                      formatter_class=argparse.RawTextHelpFormatter,
+                                     formatter_class=argparse.RawTextHelpFormatter,
                                      epilog=generate_help_epilogue())
     parser.add_argument("--input-format", '-i', default='yaml', help='format of the input file/s (default: yaml) [choose one option from Parsers section below]')
     parser.add_argument("--output-format", '-o', default='yaml', help='format of the output file/s (default: yaml) [choose one option from Writers section below]')
