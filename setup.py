@@ -16,7 +16,8 @@ setup(
     name='hepdata-converter',
     version=get_version(),
     install_requires=[
-        'pyyaml'
+        'pyyaml',
+        'hepdata_validator'
     ],
     entry_points={
         'console_scripts': [
