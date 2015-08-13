@@ -1,3 +1,5 @@
+[![Build Status](https://api.travis-ci.org/HEPData/hepdata-converter.svg)](https://travis-ci.org/HEPData/hepdata-converter)
+
 # HEP Data Converter
 
 This software library provides support for converting old HEPData format used by: [http://hepdata.cedar.ac.uk]
