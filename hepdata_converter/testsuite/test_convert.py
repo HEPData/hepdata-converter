@@ -1,3 +1,4 @@
+import StringIO
 import tempfile
 import unittest
 import time
@@ -117,7 +118,7 @@ class ConvertTestSuite(unittest.TestCase):
         self.assertRaises(ValueError, hepdata_converter.convert, None, None)
 
     def test_submission(self):
-        hepdata_converter.convert(self.simple_submission, self.current_tmp, options={'input_format': 'oldhepdata'})
+        hepdata_converter.convert(StringIO.StringIO(self.simple_submission), self.current_tmp, options={'input_format': 'oldhepdata'})
 
         with open(os.path.join(self.current_tmp, 'submission.yaml')) as submission_file:
             self.assertEqual(list(yaml.load_all(submission_file)), list(yaml.load_all(self.correct_submit_output)))

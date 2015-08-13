@@ -4,6 +4,7 @@ import StringIO
 import time
 import os
 import shutil
+import hepdata_converter
 from hepdata_converter.parsers.oldhepdata_parser import OldHEPData
 from testdata import OLD_HEPDATA_LONG
 
@@ -57,3 +58,8 @@ class OldHEPDataTestSuite(unittest.TestCase):
                 }
             ]
             }])
+
+    def test_cli(self):
+        hepdata_converter._main(['--input-format', 'oldhepdata', '--output-format', 'yaml',
+                                 os.path.join(os.path.dirname(os.path.abspath(__file__)), 'testdata', 'sample.input'),
+                                 self.tmp_dir_name])

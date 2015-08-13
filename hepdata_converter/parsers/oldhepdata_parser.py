@@ -22,9 +22,9 @@ class OldHEPData(Parser):
     help = 'Parses OLDHepData format - example OLD HepData input format: http://hepdata.cedar.ac.uk/resource/sample.input'
 
     options = {
-        'strict': Option('strict', required=True, default=True,
+        'strict': Option('strict', default=True, type=bool, required=False,
                          help='if specified any additional keywords in OldHEPData file will raise an error'),
-        'use_additional_data': Option('use_additional_data', required=True, default=False,
+        'use_additional_data': Option('use_additional_data', default=False, type=bool, required=False,
                                       help=('if specified additional data which does not have equivalent in new HEPData format'
                                             ' will be appended to comment section of the output document'))
     }
@@ -103,17 +103,7 @@ class OldHEPData(Parser):
 
         OptionInitMixin.__init__(self, options=kwargs)
 
-    def parse(self, data_in):
-        # clean any possible data from previous parsing
-        self.reset()
-
-        # for convenience, if provided data_in is string instead of
-        # filelike object wrap in into StringIO.StringIO
-        if isinstance(data_in, str) or isinstance(data_in, unicode):
-            data_in = StringIO.StringIO(data_in)
-
-        self.current_file = data_in
-
+    def _parse(self):
         # parse the file
         while self._parse_line(self.current_file):
             pass
@@ -126,6 +116,17 @@ class OldHEPData(Parser):
                     self.data[0]['comment'] += "%s: %s" % (key, element)
 
         return ParsedData(self.data, self.tables)
+
+    def parse(self, data_in):
+        # clean any possible data from previous parsing
+        self.reset()
+        # in case of strings we should treat them as filepaths
+        if isinstance(data_in, str) or isinstance(data_in, unicode):
+            with open(data_in, 'r') as self.current_file:
+                return self._parse()
+        else:
+            self.current_file = data_in
+            return self._parse()
 
     def _parse_line(self, file):
         """Parse single line (or more if particular keyword actually demands it)
@@ -230,7 +231,7 @@ class OldHEPData(Parser):
                 xy_mapping.append(current_y_count)
                 current_y_count += 1
 
-        last_index = self.current_file.pos
+        last_index = self.current_file.tell()
         line = self._strip_comments(self.current_file.readline())
 
         while line and not line.startswith('*'):
@@ -291,7 +292,7 @@ class OldHEPData(Parser):
                             element['errors'].append(error)
                         self.current_table.data['dependent_variables'][xy_mapping[i]]['values'].append(element)
 
-            last_index = self.current_file.pos
+            last_index = self.current_file.tell()
             l = self.current_file.readline()
             line = self._strip_comments(l)
 
@@ -430,7 +431,7 @@ class OldHEPData(Parser):
         result = init_data
 
         while True:
-            last_index = self.current_file.pos
+            last_index = self.current_file.tell()
             line_raw = self.current_file.readline()
 
             # don't add newlines from full line comments

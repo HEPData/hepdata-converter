@@ -76,14 +76,17 @@ def _main(arguments=sys.argv):
     if '--version' in arguments or '-v' in arguments:
         return make_exit(message="hepdata-converter version: %s" % version.__version__)
 
-    parser = argparse.ArgumentParser(prog='hepdata-converter', description="CLI tools for converting between HEP data formats", add_help=True,
+    parser = argparse.ArgumentParser(description="CLI tools for converting between HEP data formats", add_help=True,
                                      formatter_class=argparse.RawTextHelpFormatter,
                                      epilog=generate_help_epilogue())
-    parser.add_argument("--input-format", '-i', default='yaml', help='format of the input file/s (default: yaml) [choose one option from Parsers section below]')
-    parser.add_argument("--output-format", '-o', default='yaml', help='format of the output file/s (default: yaml) [choose one option from Writers section below]')
+    parser.add_argument("--input-format", '-i', action='store', default='yaml', help='format of the input file/s (default: yaml) [choose one option from Parsers section below]')
+    parser.add_argument("--output-format", '-o', action='store', default='yaml', help='format of the output file/s (default: yaml) [choose one option from Writers section below]')
     parser.add_argument("--version", '-v', action='store_const', const=True, default=False, help='Show hepdata-converter version')
     parser.add_argument("input")
     parser.add_argument("output")
+
+    if arguments == sys.argv:
+        arguments = sys.argv[1:]
 
     program_args = vars(parser.parse_known_args(arguments)[0])
 
@@ -95,7 +98,6 @@ def _main(arguments=sys.argv):
 
     # reparse arguments, now with added options from concrete parsers / writers
     program_args = vars(parser.parse_args(arguments))
-
     try:
         convert(program_args['input'], program_args['output'], program_args)
         return make_exit()

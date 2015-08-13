@@ -4,6 +4,8 @@ import os
 import tempfile
 import time
 import shutil
+import subprocess
+import hepdata_converter
 from hepdata_converter import convert
 from hepdata_converter.testsuite.test_writer import WriterTestSuite
 
@@ -151,3 +153,10 @@ class CSVWriterTestCase(WriterTestSuite):
                                                          'pack': False})
         self.assertEqual(self.table_2_packed_csv, csv_content)
 
+    def test_cli(self):
+        csv_filepath = os.path.join(self.current_tmp, 'tab.csv')
+        hepdata_converter._main(['--output-format', 'csv', '--table', 'Table 9', self.submission_filepath,
+                                 csv_filepath])
+
+        with open(csv_filepath, 'r') as csv_file:
+            self.assertEqual(self.table_2_packed_csv, csv_file.read())
