@@ -35,3 +35,4 @@ hepconverter.convert(input_file, output_directory, options={'input_format': 'yam
 To extend library with new formats (both input and output) one only needs to subclass specified class (for reading
 ```hepconverter.parsers.Parser, for writing``` ```hepconverter.writers.Writer```, and make sure that files containing these implementations
 are respectively in ```hepconcerter.parsers``` or ```hepconverter.writers``` package)
+
