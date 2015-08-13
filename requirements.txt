@@ -1,2 +1,4 @@
 hepdata_validator
+coverage
+coveralls
 pyyaml
