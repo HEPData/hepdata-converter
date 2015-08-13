@@ -17,4 +17,7 @@ script:
   - "pip list"
   - "python -m unittest discover hepdata_converter/testsuite 'test_*'"
 
+after_success:
+  - coveralls
+
 sudo: false

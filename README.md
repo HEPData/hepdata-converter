@@ -1,4 +1,5 @@
 [![Build Status](https://api.travis-ci.org/HEPData/hepdata-converter.svg)](https://travis-ci.org/HEPData/hepdata-converter)
+[![Coverage Status](https://coveralls.io/repos/HEPData/hepdata-converter/badge.svg?branch=master&service=github)](https://coveralls.io/github/HEPData/hepdata-converter?branch=master)
 
 # HEP Data Converter
 

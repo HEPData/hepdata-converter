@@ -2,3 +2,4 @@ hepdata_validator
 coverage
 coveralls
 pyyaml
+pytest-cov
