@@ -24,7 +24,7 @@ class OldHEPData(Parser):
     options = {
         'strict': Option('strict', default=True, type=bool, required=False,
                          help='if specified any additional keywords in OldHEPData file will raise an error'),
-        'use_additional_data': Option('use_additional_data', default=False, type=bool, required=False,
+        'use_additional_data': Option('use-additional-data', default=False, type=bool, required=False, variable_mapping='use_additional_data',
                                       help=('if specified additional data which does not have equivalent in new HEPData format'
                                             ' will be appended to comment section of the output document'))
     }

@@ -16,7 +16,20 @@ class YAMLWriterTestSuite(WriterTestSuite):
                                              'output_format': 'yaml',
                                              'single_file': True})
 
+        yaml_single_output_path = os.path.join(self.current_tmp, 'output.yaml')
+
+        hepdata_converter._main(['--input-format', 'oldhepdata', '--output-format', 'yaml', '--single-file',
+                                 os.path.join(os.path.dirname(os.path.abspath(__file__)), 'testdata', 'sample.input'),
+                                 yaml_single_output_path])
+
+        self.assertTrue(os.path.exists(yaml_single_output_path))
+
         with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'testdata', 'sample.input_single.yaml')) as f:
-            self.assertEqual(data, f.read())
+            template_data = f.read()
+            self.assertEqual(template_data, data)
+
+            with open(yaml_single_output_path, 'r') as _f:
+                self.assertEqual(template_data, _f.read())
+
 
 

@@ -14,7 +14,6 @@ class YAML(Writer):
 
     def __init__(self, *args, **kwargs):
         super(YAML, self).__init__(single_file_output=True, *args, **kwargs)
-        OptionInitMixin.__init__(self, options=kwargs)
 
     def write(self, data_in, data_out, *args, **kwargs):
         """
@@ -41,7 +40,7 @@ class YAML(Writer):
                         yaml.dump(table.data, table_file)
         else:
             if isinstance(data_out, (str, unicode)):
-                with open(os.path.join(data_out, 'submission.yaml'), 'w') as submission_file:
+                with open(data_out, 'w') as submission_file:
                     yaml.dump_all(data + [table.all_data for table in tables], submission_file)
             else: # expect filelike object
                 yaml.dump_all(data + [table.all_data for table in tables], data_out)

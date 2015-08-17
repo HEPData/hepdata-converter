@@ -16,7 +16,6 @@ class ArrayWriter(Writer):
 
     def __init__(self, *args, **kwargs):
         super(ArrayWriter, self).__init__(single_file_output=True, *args, **kwargs)
-        OptionInitMixin.__init__(self, options=kwargs)
         self.tables = []
         self.extension = None
 
