@@ -3,6 +3,7 @@ import os
 import tempfile
 import shutil
 import time
+from hepdata_converter.writers import Writer
 
 
 class WriterTestSuite(unittest.TestCase):
@@ -185,3 +186,10 @@ class WriterTestSuite(unittest.TestCase):
             table.write(self.table_data)
         with open(os.path.join(self.current_tmp, self.table_filename_2), 'w') as table:
             table.write(self.table_data_2_qual)
+
+    def test_create_dir(self):
+        dir_to_create = os.path.join(self.current_tmp, 'tmp')
+        Writer.create_dir(dir_to_create)
+        self.assertTrue(os.path.exists(dir_to_create))
+        # make sure calling this function with existing directory works without errors as well
+        Writer.create_dir(dir_to_create)

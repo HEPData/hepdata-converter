@@ -1,5 +1,7 @@
 import inspect
+import os
 import pkgutil
+import shutil
 from hepdata_converter.common import GetConcreteSubclassMixin, OptionInitMixin
 
 __all__ = []
@@ -13,6 +15,14 @@ class Writer(GetConcreteSubclassMixin, OptionInitMixin):
 
     def __init__(self, single_file_output, *args, **kwargs):
         self.single_file_output = single_file_output
+
+    @classmethod
+    def create_dir(cls, path):
+        try:
+            os.makedirs(path)
+        except OSError as e:
+            if e.errno != 17:
+                raise
 
     @abc.abstractmethod
     def write(self, data_in, data_out, *args, **kwargs):

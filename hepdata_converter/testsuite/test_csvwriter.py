@@ -48,7 +48,7 @@ class CSVWriterTestCase(WriterTestSuite):
             '475.0;500.0;2.0;0.16;0.17;-0.14;0.93;4.59\n'
         )
 
-        self.table_2_packed_csv = (
+        self.table_2_unpacked_csv = (
             '#: name: Table 9\n'
             '#: description: The observed and expected EmissT distribution in the dielectron SR-Z. The negigible estimated contribution from Z+jets is omitted in these distributions. The last bin contains the overflow.\n'
             '#: data_file: data9.yaml\n'
@@ -151,7 +151,7 @@ class CSVWriterTestCase(WriterTestSuite):
                                                          'output_format': 'csv',
                                                          'table': 'Table 9',
                                                          'pack': False})
-        self.assertEqual(self.table_2_packed_csv, csv_content)
+        self.assertEqual(self.table_2_unpacked_csv, csv_content)
 
     def test_cli(self):
         csv_filepath = os.path.join(self.current_tmp, 'tab.csv')
@@ -159,4 +159,20 @@ class CSVWriterTestCase(WriterTestSuite):
                                  csv_filepath])
 
         with open(csv_filepath, 'r') as csv_file:
-            self.assertEqual(self.table_2_packed_csv, csv_file.read())
+            self.assertEqual(self.table_2_unpacked_csv, csv_file.read())
+
+    def test_no_dir_output(self):
+        csv_filepath = os.path.join(self.current_tmp, 'csv_dir')
+        hepdata_converter._main(['--output-format', 'csv', self.submission_filepath,
+                                 csv_filepath])
+
+        self.assertTrue(os.path.exists(csv_filepath))
+        csv_1 = os.path.join(csv_filepath, 'Table 1.csv')
+        self.assertTrue(os.path.exists(csv_1))
+        with open(csv_1, 'r') as csv_file:
+            self.assertEqual(self.table_csv.strip(), csv_file.read().strip())
+
+        csv_2 = os.path.join(csv_filepath, 'Table 9.csv')
+        self.assertTrue(os.path.exists(csv_2))
+        with open(csv_2, 'r') as csv_file:
+            self.assertEqual(self.table_2_unpacked_csv.strip(), csv_file.read().strip())

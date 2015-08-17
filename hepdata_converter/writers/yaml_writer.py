@@ -1,4 +1,5 @@
 import yaml
+from hepdata_converter.common import Option, OptionInitMixin
 from hepdata_converter.writers import Writer
 import os
 
@@ -7,8 +8,13 @@ class YAML(Writer):
     help = 'Writes YAML output. Output should be defined as filepath to the directory where submission.yaml and associated ' \
            'table files will be written'
 
+    Writer.options['single_file'] = Option('single-file', type=bool, default=False, variable_mapping='single_file',
+                                           required=False, help="If set output will be written to single yaml file, instead "
+                                                                "of multiple files (separating data and metadata of the tables)")
+
     def __init__(self, *args, **kwargs):
-        super(YAML, self).__init__(single_file_output=False, *args, **kwargs)
+        super(YAML, self).__init__(single_file_output=True, *args, **kwargs)
+        OptionInitMixin.__init__(self, options=kwargs)
 
     def write(self, data_in, data_out, *args, **kwargs):
         """
@@ -21,14 +27,21 @@ class YAML(Writer):
         :param kwargs:
         """
 
-
         tables = data_in.tables
         data = data_in.data
 
-        with open(os.path.join(data_out, 'submission.yaml'), 'w') as submission_file:
+        if not isinstance(data_out, (str, unicode)) and not self.single_file:
+            raise ValueError("output is not string, and single_file flag is not specified")
 
-            yaml.dump_all(data + [table.metadata for table in tables], submission_file)
-
-        for table in tables:
-            with open(os.path.join(data_out, table.data_file), 'w') as table_file:
-                yaml.dump(table.data, table_file)
+        if not self.single_file:
+            with open(os.path.join(data_out, 'submission.yaml'), 'w') as submission_file:
+                yaml.dump_all(data + [table.metadata for table in tables], submission_file)
+                for table in tables:
+                    with open(os.path.join(data_out, table.data_file), 'w') as table_file:
+                        yaml.dump(table.data, table_file)
+        else:
+            if isinstance(data_out, (str, unicode)):
+                with open(os.path.join(data_out, 'submission.yaml'), 'w') as submission_file:
+                    yaml.dump_all(data + [table.all_data for table in tables], submission_file)
+            else: # expect filelike object
+                yaml.dump_all(data + [table.all_data for table in tables], data_out)

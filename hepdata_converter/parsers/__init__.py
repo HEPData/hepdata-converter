@@ -1,4 +1,5 @@
 import abc
+import copy
 import os
 from hepdata_converter.common import GetConcreteSubclassMixin, OptionInitMixin
 
@@ -104,6 +105,17 @@ class Table(object):
     @property
     def dependent_variables(self):
         return self.data['dependent_variables']
+
+    @property
+    def all_data(self):
+        _all = copy.copy(self.metadata)
+        if 'data_file' in self.metadata:
+            del _all['data_file']
+
+        _all['independent_variables'] = self.independent_variables
+        _all['dependent_variables'] = self.dependent_variables
+
+        return _all
 
 class ParsedData(object):
     """Simple data storage class which should be returned by Parser.parse method

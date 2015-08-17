@@ -56,9 +56,12 @@ class ArrayWriter(Writer):
             if len(self.tables) == 1:
                 f = open(data_out, 'w')
                 outputs.append(f)
+            # data_out is a directory
             else:
+                # create output dir if it doesn't exist
+                self.create_dir(data_out)
                 for table in self.tables:
-                    outputs.append(open(os.path.join(data_out, table.name+'.'+self.extension), 'w'))
+                    outputs.append(open(os.path.join(data_out, table.name + '.' + self.extension), 'w'))
         # multiple tables - require directory
         elif len(self.tables) > 1 and not (isinstance(data_out, str) or isinstance(data_out, unicode)):
             raise ValueError("Multiple tables, output must be a directory")
