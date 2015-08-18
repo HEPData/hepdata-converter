@@ -1,0 +1,101 @@
+---
+independent_variables:
+  - header: {name: MU, units: GEV}
+    values:
+      - value: 120
+      - value: 150
+      - value: 300
+      - value: 390
+      - value: 150
+      - value: 200
+      - value: 300
+      - value: 400
+      - value: 490
+      - value: 120
+      - value: 200
+      - value: 300
+      - value: 400
+      - value: 500
+      - value: 590
+      - value: 120
+      - value: 150
+      - value: 200
+      - value: 300
+      - value: 400
+      - value: 600
+      - value: 700
+      - value: 790
+      - value: 120
+      - value: 150
+      - value: 300
+      - value: 400
+      - value: 500
+      - value: 600
+      - value: 700
+  - header: {name: M(GLUINO), units: GEV}
+    values:
+      - value: 400
+      - value: 400
+      - value: 400
+      - value: 400
+      - value: 500
+      - value: 500
+      - value: 500
+      - value: 500
+      - value: 500
+      - value: 600
+      - value: 600
+      - value: 600
+      - value: 600
+      - value: 600
+      - value: 600
+      - value: 700
+      - value: 700
+      - value: 700
+      - value: 700
+      - value: 700
+      - value: 700
+      - value: 700
+      - value: 800
+      - value: 800
+      - value: 800
+      - value: 800
+      - value: 800
+      - value: 800
+      - value: 800
+      - value: 800
+dependent_variables:
+  - header: {name: ACCEPTANCE, units: ""}
+    qualifiers:
+      - {name: SQRT(S), value: 8000.0 GeV}
+    values:
+      - value: 0.002229
+      - value: 0.004794
+      - value: 0.008519
+      - value: 0.005903
+      - value: 0.005636
+      - value: 0.01111
+      - value: 0.01587
+      - value: 0.01666
+      - value: 0.01149
+      - value: 0.00119
+      - value: 0.00873
+      - value: 0.0189
+      - value: 0.02529
+      - value: 0.02368
+      - value: 0.01898
+      - value: 0.0005152
+      - value: 0.001734
+      - value: 0.004977
+      - value: 0.0152
+      - value: 0.02617
+      - value: 0.03097
+      - value: 0.02361
+      - value: 0.0002502
+      - value: 0.0007932
+      - value: 0.002115
+      - value: 0.009463
+      - value: 0.02163
+      - value: 0.03019
+      - value: 0.03584
+      - value: 0.03465

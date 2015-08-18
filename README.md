@@ -13,7 +13,7 @@ Old format detailed description: [http://hepdata.cedar.ac.uk/resource/sample.inp
 Library exposes single function which enables conversion from old HEPData format to the yaml based new one.
 
 
-### Conversion TO YAML
+### Conversion FROM Old HEPData TO YAML
 ```
 import hepconverter
 
@@ -21,7 +21,7 @@ hepconverter.convert(input_file, output_directory, options={'input_format': 'old
 
 ```
 
-### Conversion FROM YAML (not implemented yet)
+### Conversion FROM YAML TO CSV
 
 ```
 import hepconverter

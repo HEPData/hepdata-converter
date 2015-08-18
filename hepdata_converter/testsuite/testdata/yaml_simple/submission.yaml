@@ -1,0 +1,11 @@
+---
+---
+name: "Table 1"
+location: Page 17 of preprint
+description: The measured fiducial cross sections. The first systematic uncertainty is the combined systematic uncertainty excluding luminosity, the second is the luminosity
+keywords: # used for searching, possibly multiple values for each keyword
+  - { name: reactions, values: [P P --> Z0 Z0 X]}
+  - { name: observables, values: [SIG]}
+  - { name: energies, values: [7000]} # centre-of-mass energy in GeV
+data_file: data1.yaml
+data_license:

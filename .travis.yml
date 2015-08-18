@@ -4,8 +4,12 @@ python:
 cache:
   - apt
   - pip
+env:
+  - PYTHONPATH=/usr/share/python-support/root/:/usr/lib/x86_64-linux-gnu/
 addons:
 apt:
+  packages:
+    - root-system
 before_install:
   - "travis_retry pip install --upgrade pip"
 

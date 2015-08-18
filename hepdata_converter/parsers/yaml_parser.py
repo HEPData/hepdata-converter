@@ -21,7 +21,7 @@ class YAML(Parser):
         :raise ValueError:
         """
         if not os.path.exists(data_in):
-            raise ValueError("File does not exist: %s" % data_in)
+            raise ValueError("File / Directory does not exist: %s" % data_in)
 
         if os.path.isdir(data_in):
             submission_filepath = os.path.join(data_in, 'submission.yaml')

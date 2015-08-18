@@ -12,7 +12,6 @@ import abc
 
 class Writer(GetConcreteSubclassMixin, OptionInitMixin):
     __metaclass__  = abc.ABCMeta
-    options = {}
 
     def __init__(self, single_file_output, *args, **kwargs):
         OptionInitMixin.__init__(self, options=kwargs)

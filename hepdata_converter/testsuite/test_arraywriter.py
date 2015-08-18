@@ -4,19 +4,21 @@ import tempfile
 import shutil
 import time
 from hepdata_converter import convert
+from hepdata_converter.testsuite import insert_path
 from hepdata_converter.testsuite.test_writer import WriterTestSuite
 
 
 class ArrayWriterTestSuite(WriterTestSuite):
-    def test_select_table(self):
-        csv_content = convert(self.submission_filepath, options={'input_format': 'yaml',
+    @insert_path('yaml_full')
+    def test_select_table(self, submission_filepath):
+        csv_content = convert(submission_filepath, options={'input_format': 'yaml',
                                                                  'output_format': 'csv',
-                                                                 'table': os.path.join(os.path.dirname(self.submission_filepath), 'data1.yaml')})
+                                                                 'table': os.path.join(submission_filepath, 'data1.yaml')})
 
-        csv_content = convert(self.submission_filepath, options={'input_format': 'yaml',
+        csv_content = convert(submission_filepath, options={'input_format': 'yaml',
                                                                  'output_format': 'csv',
                                                                  'table': 'Table 1'})
 
-        csv_content = convert(self.submission_filepath, options={'input_format': 'yaml',
+        csv_content = convert(submission_filepath, options={'input_format': 'yaml',
                                                                  'output_format': 'csv',
                                                                  'table': 0})

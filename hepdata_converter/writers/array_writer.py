@@ -7,12 +7,15 @@ from hepdata_converter.writers import Writer
 
 
 class ArrayWriter(Writer):
-    __metaclass__  = abc.ABCMeta
-    options = {
-        'table': Option('table', 't', required=False, variable_mapping='table_id', default=None,
-                        help=('Specifies which table should be exported, if not specified all tables will be exported '
-                              '(in this case output must be a directory, not a file)')),
-    }
+    __metaclass__ = abc.ABCMeta
+
+    @classmethod
+    def options(cls):
+        return {
+                'table': Option('table', 't', required=False, variable_mapping='table_id', default=None,
+                                help=('Specifies which table should be exported, if not specified all tables will be exported '
+                                      '(in this case output must be a directory, not a file)')),
+        }
 
     def __init__(self, *args, **kwargs):
         super(ArrayWriter, self).__init__(single_file_output=True, *args, **kwargs)

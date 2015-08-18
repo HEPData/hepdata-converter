@@ -43,7 +43,10 @@ class OptionInitMixin(object):
 
     """
     help = ''
-    options = {}
+
+    @classmethod
+    def options(cls):
+        return {}
 
     @classmethod
     def get_help(cls, margin):
@@ -53,7 +56,7 @@ class OptionInitMixin(object):
         r = make_margin(textwrap.wrap(cls.__name__.lower() + ': ' + cls.help + '\n', 70-len(margin)), margin) + '\n'
         r += '\n'
         r += make_margin(textwrap.wrap("Options:" + '\n', 70-len(2*margin)), 2*margin) + '\n'
-        for key, option in cls.options.items():
+        for key, option in cls.options().items():
             r += make_margin(textwrap.wrap('--' + key + ': ' + option.help + '\n', 70-len(3 * margin)), 3 * margin) + '\n\n'
 
         return r
@@ -61,18 +64,18 @@ class OptionInitMixin(object):
     def __init__(self, options):
         self.options_values = {}
         for option in options:
-            if option in self.__class__.options:
-                self.options_values[self.__class__.options[option].variable_mapping] = options[option]
+            if option in self.__class__.options():
+                self.options_values[self.__class__.options()[option].variable_mapping] = options[option]
 
         # add default values
-        for key, option in self.__class__.options.items():
+        for key, option in self.__class__.options().items():
             if key not in options:
-                self.options_values[self.__class__.options[key].variable_mapping] = option.default
+                self.options_values[self.__class__.options()[key].variable_mapping] = option.default
 
     @classmethod
     def register_cli_options(cls, parser):
-        for option in cls.options:
-            cls.options[option].attach_to_parser(parser)
+        for option in cls.options():
+            cls.options()[option].attach_to_parser(parser)
 
     def __getattr__(self, attr_name):
         if attr_name in self.options_values:
@@ -82,7 +85,7 @@ class OptionInitMixin(object):
 
     def __dir__(self):
         _dir = dir(super(OptionInitMixin, self))
-        _dir += [option.variable_mapping for key, option in self.__class__.options.items()]
+        _dir += [option.variable_mapping for key, option in self.__class__.options().items()]
         return _dir
 
 
