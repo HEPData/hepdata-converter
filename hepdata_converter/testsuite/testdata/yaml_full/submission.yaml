@@ -99,8 +99,7 @@ keywords: # used for searching, possibly multiple values for each keyword
   - { name: observables, values: [DSIG/DM]}
   - { name: energies, values: [7000]} # centre-of-mass energy in GeV
 data_file: data8.yaml
-
-
+---
 # This is Table 8.
 name: "Table 9"
 description: The observed and expected EmissT distribution in the dielectron SR-Z. The negigible estimated contribution from Z+jets is omitted in these distributions. The last bin contains the overflow.

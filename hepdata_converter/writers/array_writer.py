@@ -26,16 +26,7 @@ class ArrayWriter(Writer):
     def _write_table(self, data_out, table):
         pass
 
-    def write(self, data_in, data_out, *args, **kwargs):
-        """
-
-        :param data_in:
-        :type data_in: hepconverter.parsers.ParsedData
-        :param data_out: filelike object
-        :type data_out: file
-        :param args:
-        :param kwargs:
-        """
+    def _get_tables(self, data_in):
         # get table to work on
         if self.table_id is not None:
             if isinstance(self.table_id, int):
@@ -50,11 +41,9 @@ class ArrayWriter(Writer):
         else:
             self.tables = data_in.tables
 
-        file_emulation = False
-        outputs = []
-
+    def _prepare_outputs(self, data_out, outputs):
         if isinstance(data_out, str) or isinstance(data_out, unicode):
-            file_emulation = True
+            self.file_emulation = True
             if len(self.tables) == 1:
                 f = open(data_out, 'w')
                 outputs.append(f)
@@ -70,13 +59,30 @@ class ArrayWriter(Writer):
         else:
             outputs.append(data_out)
 
+    def write(self, data_in, data_out, *args, **kwargs):
+        """
+
+        :param data_in:
+        :type data_in: hepconverter.parsers.ParsedData
+        :param data_out: filelike object
+        :type data_out: file
+        :param args:
+        :param kwargs:
+        """
+        self._get_tables(data_in)
+
+        self.file_emulation = False
+        outputs = []
+
+        self._prepare_outputs(data_out, outputs)
+
         for i in xrange(len(self.tables)):
             data_out = outputs[i]
             table = self.tables[i]
 
             self._write_table(data_out, table)
 
-            if file_emulation:
+            if self.file_emulation:
                 data_out.close()
 
     @classmethod

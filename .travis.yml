@@ -5,12 +5,19 @@ cache:
   - apt
   - pip
 env:
-  - PYTHONPATH=/usr/share/python-support/root/:/usr/lib/x86_64-linux-gnu/
-addons:
-apt:
-  packages:
-    - root-system
+  - PYTHONPATH="/usr/share/python-support/root/:/usr/lib/x86_64-linux-gnu/" CC="gcc-4.9" CXX="g++-4.9"
 before_install:
+  - "sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y"
+  - "sudo apt-get update"
+  - "sudo apt-get install g++-4.9 gcc-4.9 git dpkg-dev make g++ gcc binutils libx11-dev libxpm-dev libxft-dev libxext-dev python-dev"
+  - "gcc -v"
+  - "g++ -v"
+  - "wget http://root.cern.ch/download/root_v5.34.32.source.tar.gz && tar -xzf root_v5.34.32.source.tar.gz && cd root && ./configure --enable-python  --prefix=/usr/local && make -j4 && sudo make install"
+  - "cd .."
+  - export ROOTSYS=/usr/local/lib/root
+  - "echo $ROOTSYS"
+  - export LD_LIBRARY_PATH=/usr/local/lib/root:$PYTHONDIR/lib:$LD_LIBRARY_PATH
+  - export PYTHONPATH=/usr/local/lib/root
   - "travis_retry pip install --upgrade pip"
 
 # command to install dependencies
@@ -24,4 +31,4 @@ script:
 after_success:
   - coveralls
 
-sudo: false
+sudo: true
