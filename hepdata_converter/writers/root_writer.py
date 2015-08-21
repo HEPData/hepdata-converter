@@ -17,23 +17,26 @@ class ROOT(ArrayWriter):
         for entry in variable['values']:
             if 'value' in entry:
                 values.append(entry['value'])
+                if 'errors' in entry:
+                    errors_min = 0.0
+                    errors_max = 0.0
+                    for error in entry['errors']:
+                        if 'asymerror' in error:
+                            errors_min += pow(error['asymerror']['minus'], 2)
+                            errors_max += pow(error['asymerror']['plus'], 2)
+                        elif 'symerror' in error:
+                            errors_min += pow(error['symerror'], 2)
+                            errors_max += pow(error['symerror'], 2)
+                    min_errs.append(sqrt(errors_min))
+                    max_errs.append(sqrt(errors_max))
+                else:
+                    min_errs.append(0.0)
+                    max_errs.append(0.0)
             else:
-                values.append((entry['high'] - entry['low']) * 0.5 + entry['low'])
-            if 'errors' in entry:
-                errors_min = 0.0
-                errors_max = 0.0
-                for error in entry['errors']:
-                    if 'asymerror' in error:
-                        errors_min += pow(error['asymerror']['minus'], 2)
-                        errors_max += pow(error['asymerror']['plus'], 2)
-                    elif 'symerror' in error:
-                        errors_min += pow(error['symerror'], 2)
-                        errors_max += pow(error['symerror'], 2)
-                min_errs.append(sqrt(errors_min))
-                max_errs.append(sqrt(errors_max))
-            else:
-                min_errs.append(0.0)
-                max_errs.append(0.0)
+                middle_val = (entry['high'] - entry['low']) * 0.5 + entry['low']
+                values.append(middle_val)
+                min_errs.append(entry['high'] - middle_val)
+                max_errs.append(middle_val - entry['low'])
 
     def _write_table(self, data_out, table):
         data_out.mkdir(table.name)
@@ -58,8 +61,10 @@ class ROOT(ArrayWriter):
                                                       numpy.array(xerr_plus, dtype=float),
                                                       numpy.array(yerr_minus, dtype=float),
                                                       numpy.array(yerr_plus, dtype=float))
-                graph.title = independent_variable['header']['name'] + ' -> ' + dependent_variable['header']['name']
 
+                graph.title = table.name
+                graph.xaxis.title = independent_variable['header']['name']
+                graph.yaxis.title = dependent_variable['header']['name']
                 graph.write()
 
     def _prepare_outputs(self, data_out, outputs):
