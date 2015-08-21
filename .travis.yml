@@ -5,19 +5,29 @@ cache:
   - apt
   - pip
 env:
-  - PYTHONPATH="/usr/share/python-support/root/:/usr/lib/x86_64-linux-gnu/" CC="gcc-4.9" CXX="g++-4.9"
+  - CC="gcc-4.9" CXX="g++-4.9"
 before_install:
+  # repository needed to install g++-4.9 and gcc-4.9
   - "sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y"
+  # repository needed to install libboost1.48-dev
+  - "sudo add-apt-repository ppa:boost-latest/ppa -y"
   - "sudo apt-get update"
-  - "sudo apt-get install g++-4.9 gcc-4.9 git dpkg-dev make g++ gcc binutils libx11-dev libxpm-dev libxft-dev libxext-dev python-dev"
-  - "gcc -v"
-  - "g++ -v"
-  - "wget http://root.cern.ch/download/root_v5.34.32.source.tar.gz && tar -xzf root_v5.34.32.source.tar.gz && cd root && ./configure --enable-python  --prefix=/usr/local && make -j4 && sudo make install"
-  - "cd .."
+  # install all dependencies (YODA + ROOT)
+  - "sudo apt-get install git dpkg-dev make g++-4.9 gcc-4.9 binutils libx11-dev libxpm-dev libxft-dev libxext-dev python-dev libboost1.48-dev"
+  # print compiler versions
+  - "$CC -v"
+  - "$CXX -v"
+  # download and compile yoda with python bindings (no package for ubuntu 12.04 is available)
+  - "wget http://www.hepforge.org/archive/yoda/YODA-1.4.0.tar.gz && tar -xzf YODA-1.4.0.tar.gz && cd YODA-1.4.0 && ./configure && make -j4 && sudo make install && cd .."
+  # download and comile root with python bindings (no package for ubuntu 12.04 is available)
+  - "wget http://root.cern.ch/download/root_v5.34.32.source.tar.gz && tar -xzf root_v5.34.32.source.tar.gz && cd root && ./configure --enable-python  --prefix=/usr/local && make -j4 && sudo make install && cd .."
+  # set variables needed by root
   - export ROOTSYS=/usr/local/lib/root
-  - "echo $ROOTSYS"
-  - export LD_LIBRARY_PATH=/usr/local/lib/root:$PYTHONDIR/lib:$LD_LIBRARY_PATH
+  # export LD_LIBRARY_PATH so pyroot and yoda can be used
+  - export LD_LIBRARY_PATH=/usr/local/lib/root:/usr/local/lib:$PYTHONDIR/lib:$LD_LIBRARY_PATH
+  # add ROOT.py to PYTHONPATH
   - export PYTHONPATH=/usr/local/lib/root
+  # upgrade pip to the newest version
   - "travis_retry pip install --upgrade pip"
 
 # command to install dependencies
@@ -25,6 +35,7 @@ install:
   - "travis_retry pip install -r requirements.txt"
 # command to run tests
 script:
+  # list installed python packages for debug and reference
   - "pip list"
   - "coverage run -m unittest discover hepdata_converter/testsuite 'test_*'"
 
