@@ -13,7 +13,7 @@ class CSV(ArrayWriter):
                                          help=('If specified, dependand variables will be put in one table, instead of creating one '
                                                'table per dependant variable in CSV file'))
 
-    ArrayWriter.options['separator'] = Option('separator', type=str, default=':', required=False,
+    ArrayWriter.options['separator'] = Option('separator', type=str, default=',', required=False,
                                               help='Defines separator for CSV file, the default is colon: ":"')
 
     def __init__(self, *args, **kwargs):
