@@ -1,44 +1,110 @@
 import copy
-import csv
-from hepdata_converter.writers.array_writer import ArrayWriter
+import numpy
+from hepdata_converter.writers.array_writer import ArrayWriter, ObjectWrapper, ObjectFactory
+import yoda
+
+
+class ScatterYodaClass(ObjectWrapper):
+    dim = 0
+    _scatter_classes = [yoda.core.Scatter2D]
+    _point_classes = [yoda.core.Point2D]
+
+    @classmethod
+    def get_scatter_cls(cls):
+        return cls._scatter_classes[cls.dim - 1]
+
+    @classmethod
+    def get_point_cls(cls):
+        return cls._point_classes[cls.dim - 1]
+
+    @classmethod
+    def match(cls, independent_variables_map, dependent_variable):
+        if not ObjectWrapper.match(independent_variables_map, dependent_variable):
+            return False
+        elif len(independent_variables_map) == cls.dim or cls.dim == len(cls._scatter_classes) - 1:
+            return True
+        return False
+
+    def _create_scatter(self, xval):
+        graph = self.get_scatter_cls()()
+
+        for i in xrange(len(self.yval)):
+            args = []
+
+            for dim_i in xrange(self.dim):
+                args.append(self.xval[dim_i][i])
+            args.append(self.yval[i])
+            for dim_i in xrange(self.dim):
+                args.append(self.xerr_plus[dim_i][i])
+            args.append(self.yerr_plus[i])
+
+            graph.addPoint(self.get_point_cls()(*args))
+        return graph
+
+    def create_object(self):
+        self.calculate_total_errors()
+
+        for i in xrange(self.dim):
+            self.independent_variable_map.pop(0)
+
+        graph = self._create_scatter(self.xval)
+
+        return graph
+
+
+class Scatter2DYodaClass(ScatterYodaClass):
+    dim = 1
 
 
 class YODA(ArrayWriter):
     help = 'Writes YODA output for table specified by --table parameter, the output should be defined as ' \
            'filepath to output yoda file'
 
+    class_list = [Scatter2DYodaClass]
+
     def __init__(self, *args, **kwargs):
-        super(YODA, self).__init__(single_file_output=True, *args, **kwargs)
+        super(YODA, self).__init__(*args, **kwargs)
+        self.extension = 'yoda'
+
+    def _prepare_outputs(self, data_out, outputs):
+        if isinstance(data_out, str) or isinstance(data_out, unicode):
+            self.file_emulation = True
+            outputs.append(open(data_out, 'w'))
+        # multiple tables - require directory
+        else:  # assume it's a file like object
+            self.file_emulation = True
+            outputs.append(data_out)
 
     def _write_table(self, data_out, table):
-        headers_original = []
-        qualifiers_marks_original = []
+        # headers_original = []
+        # qualifiers_marks_original = []
+        f = ObjectFactory(self.class_list, table.independent_variables, table.dependent_variables)
+        for graph in f.get_next_object():
+            graph.title = table.name
+            graph.path = ''
+            data_out.write(graph.dump() + '\n')
 
-        for independent_variable in table.independent_variables:
-            data_original = []
+    def write(self, data_in, data_out, *args, **kwargs):
+        """
 
-            self._extract_independent_variables(table, headers_original, data_original, qualifiers_marks_original)
+        :param data_in:
+        :type data_in: hepconverter.parsers.ParsedData
+        :param data_out: filelike object
+        :type data_out: file
+        :param args:
+        :param kwargs:
+        """
+        self._get_tables(data_in)
 
-            for dependent_variable in table.dependent_variables:
-                where = "BELLE"
-                experiment = "2013"
-                inspire_id = "I1245023"
+        self.file_emulation = False
+        outputs = []
+        self._prepare_outputs(data_out, outputs)
+        output = outputs[0]
 
-                id = "%s_%s_%s" % (where, experiment, inspire_id)
+        for i in xrange(len(self.tables)):
+            table = self.tables[i]
 
-                data_out.write("# BEGIN YODA_SCATTER2D /REF/%s/d%2d-x%2d-y%2d" % id)
-                data_out.write("Path=/REF/%s/d01-x01-y01" % id)
-                data_out.write("Type=Scatter2D")
-                data_out.write("# xval   xerr-   xerr+   yval   yerr-   yerr+")
+            self._write_table(output, table)
 
-                headers = list(headers_original)
-                qualifiers = {}
-                qualifiers_marks = copy(qualifiers_marks_original)
-                # make a copy of the original list
-                data = list(data_original)
-
-                self._parse_dependent_variable(dependent_variable, headers, qualifiers, qualifiers_marks, data)
-
-                # arguments = [independent_variable]
-
-                # data_out.write("\t".join(arguments))
+        if self.file_emulation:
+            output.close()

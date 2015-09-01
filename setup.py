@@ -19,7 +19,8 @@ setup(
         'pyyaml',
         'hepdata_validator',
         'rootpy',
-        'numpy'
+        'numpy',
+        'matplotlib',
     ],
     entry_points={
         'console_scripts': [
