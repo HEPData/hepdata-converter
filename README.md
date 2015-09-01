@@ -2,6 +2,12 @@
 
 [![Coverage Status](https://coveralls.io/repos/HEPData/hepdata-converter/badge.svg?branch=master&service=github)](https://coveralls.io/github/HEPData/hepdata-converter?branch=master)
 
+[![PyPi](https://img.shields.io/pypi/dm/hepdata-converter.svg)](https://pypi.python.org/pypi/hepdata-converter/)
+
+[![PyPi](https://img.shields.io/github/license/hepdata/hepdata-converter.svg)](https://github.com/HEPData/hepdata-converter/blob/master/LICENSE.txt)
+
+
+
 # HEP Data Converter
 
 This software library provides support for converting old HEPData format used by: [http://hepdata.cedar.ac.uk]
