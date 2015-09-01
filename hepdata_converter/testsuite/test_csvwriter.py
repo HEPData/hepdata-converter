@@ -123,6 +123,7 @@ class CSVWriterTestCase(WriterTestSuite):
         csv_content = convert(self.submission_filepath, options={'input_format': 'yaml',
                                                                  'output_format': 'csv',
                                                                  'table': 'Table 1',
+                                                                 'separator': ';',
                                                                  'pack': True})
 
         self.assertEqual(self.table_csv, csv_content)
@@ -131,6 +132,7 @@ class CSVWriterTestCase(WriterTestSuite):
         csv_content = convert(self.submission_filepath, options={'input_format': 'yaml',
                                                                  'output_format': 'csv',
                                                                  'table': 'Table 9',
+                                                                 'separator': ';',
                                                                  'pack': True})
 
         self.assertEqual(self.table_2_csv, csv_content)
@@ -138,6 +140,7 @@ class CSVWriterTestCase(WriterTestSuite):
     def test_multiple_tables_pack(self):
         convert(self.submission_filepath, self.current_tmp, options={'input_format': 'yaml',
                                                                      'output_format': 'csv',
+                                                                     'separator': ';',
                                                                      'pack': True})
 
         with open(os.path.join(self.current_tmp, 'Table 1.csv'), 'r') as f:
@@ -150,12 +153,13 @@ class CSVWriterTestCase(WriterTestSuite):
         csv_content = convert(self.submission_filepath, options={'input_format': 'yaml',
                                                          'output_format': 'csv',
                                                          'table': 'Table 9',
+                                                         'separator': ';',
                                                          'pack': False})
         self.assertEqual(self.table_2_unpacked_csv, csv_content)
 
     def test_cli(self):
         csv_filepath = os.path.join(self.current_tmp, 'tab.csv')
-        hepdata_converter._main(['--output-format', 'csv', '--table', 'Table 9', self.submission_filepath,
+        hepdata_converter._main(['--output-format', 'csv', '--table', 'Table 9', '--separator', ';', self.submission_filepath,
                                  csv_filepath])
 
         with open(csv_filepath, 'r') as csv_file:
@@ -163,7 +167,7 @@ class CSVWriterTestCase(WriterTestSuite):
 
     def test_no_dir_output(self):
         csv_filepath = os.path.join(self.current_tmp, 'csv_dir')
-        hepdata_converter._main(['--output-format', 'csv', self.submission_filepath,
+        hepdata_converter._main(['--output-format', 'csv', '--separator', ';', self.submission_filepath,
                                  csv_filepath])
 
         self.assertTrue(os.path.exists(csv_filepath))

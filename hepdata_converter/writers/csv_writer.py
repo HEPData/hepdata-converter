@@ -10,8 +10,11 @@ class CSV(ArrayWriter):
            'input file. In the case of one table output must be filepath to the new csv file, in the case of multiple tables ' \
            'the output must be specified to be a directory to which all table files should be written'
     ArrayWriter.options['pack'] = Option('pack', type=bool, default=False, required=False,
-                       help=('If specified, dependand variables will be put in one table, instead of creating one '
-                             'table per dependant variable in CSV file'))
+                                         help=('If specified, dependand variables will be put in one table, instead of creating one '
+                                               'table per dependant variable in CSV file'))
+
+    ArrayWriter.options['separator'] = Option('separator', type=str, default=':', required=False,
+                                              help='Defines separator for CSV file, the default is colon: ":"')
 
     def __init__(self, *args, **kwargs):
         super(CSV, self).__init__(*args, **kwargs)
@@ -39,13 +42,12 @@ class CSV(ArrayWriter):
         else:
             self._write_unpacked_data(data_out, table)
 
-    @classmethod
-    def _write_csv_data(cls, output, qualifiers, qualifiers_marks, headers, data):
-            delimiter = ';'
-            lineterminator = '\n'
-            cls._write_qualifiers(output, qualifiers, qualifiers_marks, delimiter, lineterminator)
+    def _write_csv_data(self, output, qualifiers, qualifiers_marks, headers, data):
 
-            csv_writer = csv.writer(output, delimiter=delimiter, lineterminator=lineterminator, quotechar="'", quoting=csv.QUOTE_NONNUMERIC)
+            lineterminator = '\n'
+            self._write_qualifiers(output, qualifiers, qualifiers_marks, self.separator, lineterminator)
+
+            csv_writer = csv.writer(output, delimiter=self.separator, lineterminator=lineterminator, quotechar="'", quoting=csv.QUOTE_NONNUMERIC)
             csv_writer.writerow(headers)
 
             for i in xrange(len(data[0])):
