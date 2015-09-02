@@ -72,7 +72,7 @@ class Table(object):
 
         if self.data:
             for dependent_variable in self.data.get('dependent_variables', []):
-                self.qualifiers.append(dependent_variable['qualifiers'])
+                self.qualifiers.append(dependent_variable.get('qualifiers', []))
 
     @property
     def name(self):

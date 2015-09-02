@@ -10,7 +10,14 @@ import abc
 
 class ObjectWrapper(object):
     __metaclass__ = abc.ABCMeta
+    accept_alphanumeric = False
 
+    @classmethod
+    def is_number_var(cls, variable):
+        for element in variable['values']:
+            if 'value' in element and isinstance(element['value'], (str, unicode)):
+                return False
+        return True
     @classmethod
     def sanitize_name(cls, name):
         return name.replace(' ', '_').replace('/', '_')
@@ -47,6 +54,8 @@ class ObjectWrapper(object):
 
     @classmethod
     def match(cls, independent_variables_map, dependent_variable):
+        if not cls.accept_alphanumeric and (len(filter(lambda x: x is False, [cls.is_number_var(var) for var in independent_variables_map])) > 0 or not cls.is_number_var(dependent_variable)):
+            return False
         if len(independent_variables_map) == 0 or len(independent_variables_map[0]) == 0:
             return False
         return True
@@ -199,7 +208,10 @@ class ArrayWriter(Writer):
     @classmethod
     def _extract_independent_variables(cls, table, headers, data, qualifiers_marks):
         for independent_variable in table.independent_variables:
-            headers.append(independent_variable['header']['name'] + ' IN %s' % independent_variable['header']['units'])
+            name = independent_variable['header']['name']
+            if 'units' in independent_variable['header']:
+                name += ' IN %s' % independent_variable['header']['units']
+            headers.append(name)
             x_data_low = []
             x_data_high = []
             for value in independent_variable['values']:
@@ -232,6 +244,7 @@ class ArrayWriter(Writer):
         y_order = []
         y_data = {'values': []}
         y_order.append(y_data['values'])
+        # :TODO: GET ALL ERRORS FROM ALL ENTRIES
         for error in dependent_variable['values'][0].get('errors', []):
             headers.append(error.get('label', 'stat') + ' +')
             qualifiers_marks.append(False)
@@ -247,18 +260,24 @@ class ArrayWriter(Writer):
 
         for value in dependent_variable['values']:
             y_data['values'].append(value['value'])
-            for i in xrange(len(value.get('errors', []))):
-                error = value['errors'][i]
+            # :TODO: HANDLE SITUATION WHERE ENTRY HAS PARITAL ERRORS (NOT ALL OF THEM)
+            if 'errors' not in value:
+                for key, val in y_data.items():
+                    if key != 'values':
+                        val.append(0)
+            else:
+                for i in xrange(len(value.get('errors', []))):
+                    error = value['errors'][i]
 
-                if 'symerror' in error:
-                    error_plus = error['symerror']
-                    error_minus = error['symerror']
-                else:
-                    error_plus = error['asymerror']['plus']
-                    error_minus = error['asymerror']['minus']
+                    if 'symerror' in error:
+                        error_plus = error['symerror']
+                        error_minus = error['symerror']
+                    else:
+                        error_plus = error['asymerror']['plus']
+                        error_minus = error['asymerror']['minus']
 
-                y_data[error.get('label', 'stat')+'_plus'].append(error_plus)
-                y_data[error.get('label', 'stat')+'_minus'].append(error_minus)
+                    y_data[error.get('label', 'stat')+'_plus'].append(error_plus)
+                    y_data[error.get('label', 'stat')+'_minus'].append(error_minus)
 
         for entry in y_order:
             data.append(entry)
