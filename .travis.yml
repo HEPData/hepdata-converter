@@ -24,11 +24,13 @@ before_install:
   # set variables needed by root
   - export ROOTSYS=/usr/local/lib/root
   # export LD_LIBRARY_PATH so pyroot and yoda can be used
-  - export LD_LIBRARY_PATH=/usr/local/lib/root:/usr/local/lib:$PYTHONDIR/lib:$LD_LIBRARY_PATH
+  - export LD_LIBRARY_PATH=/usr/local/lib/root:/usr/local/lib:$PYTHONDIR/lib:$LD_LIBRARY_PATH:/usr/local/lib/python2.7/dist-packages/yoda
   # add ROOT.py to PYTHONPATH
-  - export PYTHONPATH=/usr/local/lib/root
+  - export PYTHONPATH=/usr/local/lib/root:/usr/local/lib/python2.7/dist-packages:`pwd`:$PYTHONPATH
   # upgrade pip to the newest version
   - "travis_retry pip install --upgrade pip"
+  - pwd
+  - echo $PYTHONPATH
 
 # command to install dependencies
 install:

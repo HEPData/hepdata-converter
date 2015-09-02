@@ -1,9 +1,9 @@
 import StringIO
 import argparse
 import sys
-from hepdata_converter import version
-from hepdata_converter.parsers import Parser
-from hepdata_converter.writers import Writer
+import version
+from parsers import Parser
+from writers import Writer
 
 
 def convert(input, output=None, options={}):
