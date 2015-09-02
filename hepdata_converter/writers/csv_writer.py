@@ -9,27 +9,32 @@ class CSV(ArrayWriter):
     help = 'Writes to CSV format, it can write either one table (specified by --table parameter) or all tables from the ' \
            'input file. In the case of one table output must be filepath to the new csv file, in the case of multiple tables ' \
            'the output must be specified to be a directory to which all table files should be written'
-    ArrayWriter.options['pack'] = Option('pack', type=bool, default=False, required=False,
-                                         help=('If specified, dependand variables will be put in one table, instead of creating one '
-                                               'table per dependant variable in CSV file'))
 
-    ArrayWriter.options['separator'] = Option('separator', type=str, default=',', required=False,
-                                              help='Defines separator for CSV file, the default is colon: ":"')
+    @classmethod
+    def options(cls):
+        options = ArrayWriter.options()
+        options['pack'] = Option('pack', type=bool, default=False, required=False,
+                                 help=('If specified, dependand variables will be put in one table, instead of creating one '
+                                       'table per dependant variable in CSV file'))
+        options['separator'] = Option('separator', type=str, default=',', required=False,
+                                      help='Defines separator for CSV file, the default is colon: ":"')
+        
+        return options
 
     def __init__(self, *args, **kwargs):
         super(CSV, self).__init__(*args, **kwargs)
         self.extension = 'csv'
 
     def _write_metadata(self, data_out, table):
-        data_out.write("#: name: %s\n" % table.metadata['name'])
-        data_out.write("#: description: %s\n" % table.metadata['description'])
-        data_out.write("#: data_file: %s\n" % table.metadata['data_file'])
+        data_out.write(unicode("#: name: %s\n" % table.metadata['name']).encode('utf8', 'replace'))
+        data_out.write(unicode("#: description: %s\n" % table.metadata['description']).encode('utf8', 'replace'))
+        data_out.write(unicode("#: data_file: %s\n" % table.metadata['data_file']).encode('utf8', 'replace'))
 
         #license:
         if 'data_license' in table.metadata and table.metadata['data_license']:
-            license_text = table.metadata['data_license'].get('name', '') + ' '
-            + table.metadata['data_license'].get('url', '') + ' '
-            + table.metadata['data_license'].get('url', 'description')
+            license_text = table.metadata['data_license'].get('name', '') + ' ' + \
+            table.metadata['data_license'].get('url', '') + ' ' + \
+            table.metadata['data_license'].get('url', 'description')
 
             data_out.write("#: data_license: %s\n" % license_text)
 
@@ -68,7 +73,8 @@ class CSV(ArrayWriter):
                         break
                     else:
                         row.append(None)
-            writer.write(field_separator.join([val if val is not None else '' for val in ['#: ' + qualifier_key] + row]) + newline)
+            writer.write(unicode(field_separator.join([str(val) if val is not None else '' for val in
+                                                       ['#: ' + qualifier_key] + row]) + newline).replace('utf8', 'replace'))
 
     def _write_packed_data(self, data_out, table):
         """This is kind of legacy function - this functionality may be useful for some people, so even though

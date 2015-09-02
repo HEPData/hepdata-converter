@@ -146,7 +146,6 @@ class ParsedData(object):
 
 class Parser(GetConcreteSubclassMixin, OptionInitMixin):
     __metaclass__  = abc.ABCMeta
-    options = {}
 
     def __init__(self, *args, **kwargs):
         OptionInitMixin.__init__(self, options=kwargs)

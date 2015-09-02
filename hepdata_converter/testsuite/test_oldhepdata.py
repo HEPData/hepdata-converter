@@ -6,7 +6,7 @@ import os
 import shutil
 import hepdata_converter
 from hepdata_converter.parsers.oldhepdata_parser import OldHEPData
-from testdata import OLD_HEPDATA_LONG
+from hepdata_converter.testsuite import insert_data_as_file, insert_path
 
 
 class OldHEPDataTestSuite(unittest.TestCase):
@@ -21,9 +21,10 @@ class OldHEPDataTestSuite(unittest.TestCase):
         self.tmp_dir_name = os.path.join(tempfile.gettempdir(), str(int(time.time())))
         os.mkdir(self.tmp_dir_name)
 
-    def test_parse_submission(self):
+    @insert_data_as_file('oldhepdata/sample.input')
+    def test_parse_submission(self, oldhepdata_file):
         parser = OldHEPData()
-        parsed_data = parser.parse(StringIO.StringIO(OLD_HEPDATA_LONG))
+        parsed_data = parser.parse(oldhepdata_file)
 
         # test parsing of independent_variables
         self.assertEqual(parsed_data.tables[0].data['independent_variables'][0], {'values': ['7000'], 'header': {'name': 'SQRT(S)', 'units': 'GEV'}})
@@ -59,7 +60,7 @@ class OldHEPDataTestSuite(unittest.TestCase):
             ]
             }])
 
-    def test_cli(self):
+    @insert_path('oldhepdata/sample.input')
+    def test_cli(self, oldhepdata_path):
         hepdata_converter._main(['--input-format', 'oldhepdata', '--output-format', 'yaml',
-                                 os.path.join(os.path.dirname(os.path.abspath(__file__)), 'testdata', 'sample.input'),
-                                 self.tmp_dir_name])
+                                 oldhepdata_path, self.tmp_dir_name])

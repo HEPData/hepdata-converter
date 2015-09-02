@@ -8,9 +8,13 @@ class YAML(Writer):
     help = 'Writes YAML output. Output should be defined as filepath to the directory where submission.yaml and associated ' \
            'table files will be written'
 
-    Writer.options['single_file'] = Option('single-file', type=bool, default=False, variable_mapping='single_file',
-                                           required=False, help="If set output will be written to single yaml file, instead "
-                                                                "of multiple files (separating data and metadata of the tables)")
+    @classmethod
+    def options(cls):
+        options = Writer.options()
+        options['single_file'] = Option('single-file', type=bool, default=False, variable_mapping='single_file',
+                                        required=False, help="If set output will be written to single yaml file, instead "
+                                                             "of multiple files (separating data and metadata of the tables)")
+        return options
 
     def __init__(self, *args, **kwargs):
         super(YAML, self).__init__(single_file_output=True, *args, **kwargs)

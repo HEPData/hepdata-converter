@@ -17,7 +17,10 @@ setup(
     version=get_version(),
     install_requires=[
         'pyyaml',
-        'hepdata_validator'
+        'hepdata_validator',
+        'rootpy',
+        'numpy',
+        'matplotlib',
     ],
     entry_points={
         'console_scripts': [

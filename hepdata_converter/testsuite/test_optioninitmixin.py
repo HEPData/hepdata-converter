@@ -5,9 +5,11 @@ from hepdata_converter.common import OptionInitMixin, Option
 class OptionInitMixinTestSuite(unittest.TestCase):
     def test_dir(self):
         class TestClass(OptionInitMixin):
-            options = {
+            @classmethod
+            def options(cls):
+                return {
                 'testoption': Option('testoption')
-            }
+                }
 
             def __init__(self, *args, **kwargs):
                 OptionInitMixin.__init__(self, options=kwargs)

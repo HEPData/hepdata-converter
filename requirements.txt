@@ -3,3 +3,6 @@ coverage
 coveralls
 pyyaml
 pytest-cov
+rootpy
+numpy
+matplotlib

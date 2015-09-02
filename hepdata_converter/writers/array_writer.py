@@ -1,21 +1,135 @@
 import abc
 import copy
 import csv
+from math import sqrt
 import os
 from hepdata_converter.common import OptionInitMixin, Option
 from hepdata_converter.writers import Writer
+import abc
+
+
+class ObjectWrapper(object):
+    __metaclass__ = abc.ABCMeta
+
+    @classmethod
+    def sanitize_name(cls, name):
+        return name.replace(' ', '_').replace('/', '_')
+
+    @classmethod
+    def is_value_var(cls, variable):
+        return cls._is_attr_variable('value', variable)
+
+    @classmethod
+    def is_range_var(cls, variable):
+        return cls._is_attr_variable('high', variable) and cls._is_attr_variable('low', variable)
+
+    @classmethod
+    def has_errors(cls, variable):
+        return cls._is_attr_variable('errors', variable)
+
+    @classmethod
+    def _is_attr_variable(cls, attr_name, variable):
+        for element in variable['values']:
+            if attr_name not in element:
+                return False
+        return True
+
+    def __init__(self, independent_variable_map, dependent_variable):
+        self.xval = []
+        self.yval = []
+        self.xerr_minus = []
+        self.xerr_plus = []
+        self.yerr_minus = []
+        self.yerr_plus = []
+        self.independent_variables = list(independent_variable_map)
+        self.independent_variable_map = independent_variable_map
+        self.dependent_variable = dependent_variable
+
+    @classmethod
+    def match(cls, independent_variables_map, dependent_variable):
+        if len(independent_variables_map) == 0 or len(independent_variables_map[0]) == 0:
+            return False
+        return True
+
+    @classmethod
+    def match_and_create(cls, independent_variables_map, dependent_variable):
+        if cls.match(independent_variables_map, dependent_variable):
+            return cls(independent_variables_map, dependent_variable).create_object()
+        return None
+
+    def calculate_total_errors(self):
+        for independent_variable in self.independent_variable_map:
+            xerr_minus = []
+            self.xerr_minus.append(xerr_minus)
+            xerr_plus = []
+            self.xerr_plus.append(xerr_plus)
+            xval = []
+            self.xval.append(xval)
+            ArrayWriter.calculate_total_errors(independent_variable, xerr_minus, xerr_plus, xval)
+        ArrayWriter.calculate_total_errors(self.dependent_variable, self.yerr_minus, self.yerr_plus, self.yval)
+
+    @abc.abstractmethod
+    def create_object(self):
+        pass
+
+
+class ObjectFactory(object):
+    def __init__(self, class_list, independent_variables, dependent_variables):
+        self.class_list = class_list
+        self.map = {}
+        self.independent_variables = independent_variables
+        self.dependent_variables = dependent_variables
+        for variable_index in xrange(len(dependent_variables)):
+            self.map[variable_index] = list(independent_variables)
+
+    def get_next_object(self):
+        for dependent_variable_index in xrange(len(self.dependent_variables)):
+            for class_wrapper in self.class_list:
+                obj = class_wrapper.match_and_create(self.map[dependent_variable_index], self.dependent_variables[dependent_variable_index])
+                if obj:
+                    yield obj
 
 
 class ArrayWriter(Writer):
-    __metaclass__  = abc.ABCMeta
-    options = {
-        'table': Option('table', 't', required=False, variable_mapping='table_id', default=None,
-                        help=('Specifies which table should be exported, if not specified all tables will be exported '
-                              '(in this case output must be a directory, not a file)')),
-    }
+    __metaclass__ = abc.ABCMeta
+
+    @staticmethod
+    def calculate_total_errors(variable, min_errs, max_errs, values):
+        for entry in variable['values']:
+            if 'value' in entry:
+                values.append(entry['value'])
+                if 'errors' in entry:
+                    errors_min = 0.0
+                    errors_max = 0.0
+                    for error in entry['errors']:
+                        if 'asymerror' in error:
+                            errors_min += pow(error['asymerror']['minus'], 2)
+                            errors_max += pow(error['asymerror']['plus'], 2)
+                        elif 'symerror' in error:
+                            errors_min += pow(error['symerror'], 2)
+                            errors_max += pow(error['symerror'], 2)
+                    min_errs.append(sqrt(errors_min))
+                    max_errs.append(sqrt(errors_max))
+                else:
+                    min_errs.append(0.0)
+                    max_errs.append(0.0)
+            else:
+                middle_val = (entry['high'] - entry['low']) * 0.5 + entry['low']
+                values.append(middle_val)
+                min_errs.append(entry['high'] - middle_val)
+                max_errs.append(middle_val - entry['low'])
+
+    @classmethod
+    def options(cls):
+        return {
+                'table': Option('table', 't', required=False, variable_mapping='table_id', default=None,
+                                help=('Specifies which table should be exported, if not specified all tables will be exported '
+                                      '(in this case output must be a directory, not a file)')),
+        }
 
     def __init__(self, *args, **kwargs):
-        super(ArrayWriter, self).__init__(single_file_output=True, *args, **kwargs)
+        kwargs['single_file_output'] = True
+        super(ArrayWriter, self).__init__(*args, **kwargs)
         self.tables = []
         self.extension = None
 
@@ -23,16 +137,7 @@ class ArrayWriter(Writer):
     def _write_table(self, data_out, table):
         pass
 
-    def write(self, data_in, data_out, *args, **kwargs):
-        """
-
-        :param data_in:
-        :type data_in: hepconverter.parsers.ParsedData
-        :param data_out: filelike object
-        :type data_out: file
-        :param args:
-        :param kwargs:
-        """
+    def _get_tables(self, data_in):
         # get table to work on
         if self.table_id is not None:
             if isinstance(self.table_id, int):
@@ -47,11 +152,9 @@ class ArrayWriter(Writer):
         else:
             self.tables = data_in.tables
 
-        file_emulation = False
-        outputs = []
-
+    def _prepare_outputs(self, data_out, outputs):
         if isinstance(data_out, str) or isinstance(data_out, unicode):
-            file_emulation = True
+            self.file_emulation = True
             if len(self.tables) == 1:
                 f = open(data_out, 'w')
                 outputs.append(f)
@@ -67,13 +170,30 @@ class ArrayWriter(Writer):
         else:
             outputs.append(data_out)
 
+    def write(self, data_in, data_out, *args, **kwargs):
+        """
+
+        :param data_in:
+        :type data_in: hepconverter.parsers.ParsedData
+        :param data_out: filelike object
+        :type data_out: file
+        :param args:
+        :param kwargs:
+        """
+        self._get_tables(data_in)
+
+        self.file_emulation = False
+        outputs = []
+
+        self._prepare_outputs(data_out, outputs)
+
         for i in xrange(len(self.tables)):
             data_out = outputs[i]
             table = self.tables[i]
 
             self._write_table(data_out, table)
 
-            if file_emulation:
+            if self.file_emulation:
                 data_out.close()
 
     @classmethod

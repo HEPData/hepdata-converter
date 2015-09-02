@@ -21,13 +21,16 @@ class OldHEPData(Parser):
     """
     help = 'Parses OLDHepData format - example OLD HepData input format: http://hepdata.cedar.ac.uk/resource/sample.input'
 
-    options = {
-        'strict': Option('strict', default=True, type=bool, required=False,
-                         help='if specified any additional keywords in OldHEPData file will raise an error'),
-        'use_additional_data': Option('use-additional-data', default=False, type=bool, required=False, variable_mapping='use_additional_data',
-                                      help=('if specified additional data which does not have equivalent in new HEPData format'
-                                            ' will be appended to comment section of the output document'))
-    }
+    @classmethod
+    def options(cls):
+        options = Parser.options()
+        options['strict'] = Option('strict', default=True, type=bool, required=False,
+                                   help='if specified any additional keywords in OldHEPData file will raise an error')
+        options['use_additional_data'] = Option('use-additional-data', default=False, type=bool, required=False, variable_mapping='use_additional_data',
+                                                help=('if specified additional data which does not have equivalent in new HEPData format'
+                                                ' will be appended to comment section of the output document'))
+
+        return options
 
     def reset(self):
         """Clean any processing data, and prepare object for reuse
