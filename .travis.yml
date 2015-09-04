@@ -30,7 +30,7 @@ before_install:
   - "$CC -v"
   - "$CXX -v"
   # download and compile yoda with python bindings (no package for ubuntu 12.04 is available)
-  - "wget http://www.hepforge.org/archive/yoda/YODA-1.4.0.tar.gz && tar -xzf YODA-1.4.0.tar.gz && cd YODA-1.4.0 && ./configure && make -j4 && sudo make install && cd .."
+  - "wget http://www.hepforge.org/archive/yoda/YODA-1.5.1.tar.gz && tar -xzf YODA-1.5.1.tar.gz && cd YODA-1.5.1 && ./configure && make -j4 && sudo make install && cd .."
   - "travis_retry pip install --upgrade pip"
 
 # command to install dependencies
