@@ -4,38 +4,17 @@ python:
 
 sudo: required
 
+cache:
+  - docker
+
 services:
   - docker
-cache:
-  - apt
-  - pip
 
-env:
-  - CC=gcc-4.8
-    CXX=g++-4.8
-    ROOTSYS=/usr/local/lib/root
-    LD_LIBRARY_PATH=/usr/lib/python2.7/dist-packages/:/usr/local/lib:/usr/local/lib/python2.7/site-packages/yoda:/usr/share/python-support/root/:$LD_LIBRARY_PATH
-    PYTHONPATH=/usr/lib/python2.7/dist-packages/:/usr/local/lib:/usr/local/lib/python2.7/site-packages:/usr/share/python-support/root/:$PYTHONPATH
-before_install:
-  # update apt
-  - sudo apt-get update
-  # install all dependencies (YODA)
-  - "sudo apt-get install git root-system-bin libroot-bindings-python5.34 dpkg-dev make g++-4.8 gcc-4.8 binutils libpng12-dev python-dev libboost1.54-all-dev"
-  # print compiler versions
-  - "$CC -v"
-  - "$CXX -v"
-  # download and compile yoda with python bindings (no package for ubuntu 12.04 is available)
-  - "wget http://www.hepforge.org/archive/yoda/YODA-1.4.0.tar.gz && tar -xzf YODA-1.4.0.tar.gz && cd YODA-1.4.0 && ./configure && make -j4 && sudo make install && cd .."
-  - "travis_retry pip install --upgrade pip"
-
-# command to install dependencies
+# docker must be in install to override defalut pip install -r requirements.txt
 install:
-  - "travis_retry pip install -r requirements.txt"
-# command to run tests
+  - echo 'running docker'
 script:
-  # list installed python packages for debug and reference
-  - "pip list"
-  - "coverage run -m unittest discover hepdata_converter/testsuite 'test_*'"
+  - "docker run -v `pwd`:/tmp/hepdata-converter hepdata/hepdata-converter /bin/bash -c \"cd  /tmp/hepdata-converter && coverage run -m unittest discover hepdata_converter/testsuite 'test_*'\""
 
 after_success:
   - coveralls
