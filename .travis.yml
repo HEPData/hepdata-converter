@@ -17,15 +17,10 @@ env:
     LD_LIBRARY_PATH=/usr/lib/python2.7/dist-packages/:/usr/local/lib:/usr/local/lib/python2.7/site-packages/yoda:/usr/share/python-support/root/:$LD_LIBRARY_PATH
     PYTHONPATH=/usr/lib/python2.7/dist-packages/:/usr/local/lib:/usr/local/lib/python2.7/site-packages:/usr/share/python-support/root/:$PYTHONPATH
 before_install:
-  # do things required to be inside container
-  - docker pull carlad/sinatra
-  - docker run -d -p 127.0.0.1:80:4567 carlad/sinatra /bin/sh -c "cd /root/sinatra; bundle exec foreman start;"
-  - docker ps -a
-  - docker run carlad/sinatra /bin/sh -c "cd /root/sinatra; bundle exec rake test"
   # update apt
   - sudo apt-get update
   # install all dependencies (YODA)
-  - "sudo apt-get install git root-system-bin libroot-bindings-python5.34 dpkg-dev make g++-4.8 gcc-4.8 binutils libpng12-dev libx11-dev libxpm-dev libxft-dev libxext-dev python-dev libboost1.54-all-dev"
+  - "sudo apt-get install git root-system-bin libroot-bindings-python5.34 dpkg-dev make g++-4.8 gcc-4.8 binutils libpng12-dev python-dev libboost1.54-all-dev"
   # print compiler versions
   - "$CC -v"
   - "$CXX -v"
