@@ -61,10 +61,10 @@ comment: ' CERN-LHC.  Measurements of the cross section for ZZ production using 
 
   '
 record_ids:
-- !!set {' 9863591': null, spires: null}
-- !!set {' 1203852': null, inspire: null}
-- !!set {' 1496097': null, cds: null}
-- !!set {' 6150': null, durham: null}
+- {id: 9863591, type: spires}
+- {id: 1203852, type: inspire}
+- {id: 1496097, type: cds}
+- {id: 6150, type: durham}
 ---
 additional_resources: []
 data_file: data1.yaml

@@ -21,6 +21,17 @@ class BadFormat(Exception):
 class Table(object):
     """Simple table storage class used for handling tables without extremely deep dictionaries
     """
+    def __eq__(self, other):
+        if self.metadata != other.metadata:
+            return False
+        if self.data != other.data:
+            return False
+        if self.all_data != other.all_data:
+            return False
+        if self.index != other.index:
+            return False
+        return True
+
     def __init__(self, index=None, data_file=None, table_name=None, metadata=None, data=[]):
         self.data = data
         self.index = index
@@ -124,6 +135,13 @@ class ParsedData(object):
     def __init__(self, data, tables):
         self.data = data
         self.tables = tables
+
+    def __eq__(self, other):
+        if self.data != other.data:
+            return False
+        if self.tables != other.tables:
+            return False
+        return True
 
     def get_table(self, **kwargs):
         assert len(kwargs) == 1

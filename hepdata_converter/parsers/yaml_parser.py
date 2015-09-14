@@ -12,6 +12,9 @@ class YAML(Parser):
     def __init__(self, *args, **kwargs):
         super(YAML, self).__init__(*args, **kwargs)
 
+    def _pretty_print_errors(self, message_dict):
+        return ' '.join(['%s: %s' % (key, ' | '.join([e.message for e in val])) for key, val in message_dict.items()])
+
     def parse(self, data_in, *args, **kwargs):
         """
 
@@ -35,7 +38,7 @@ class YAML(Parser):
         submission_file_validator = SubmissionFileValidator()
         if not submission_file_validator.validate(data_in):
             raise RuntimeError("Submission file (%s) did not pass validation: %s" %
-                               (data_in, submission_file_validator.get_messages()))
+                               (data_in, self._pretty_print_errors(submission_file_validator.get_messages())))
 
         with open(data_in, 'r') as submission_file:
             submission_data = list(yaml.load_all(submission_file))
@@ -56,7 +59,7 @@ class YAML(Parser):
             # validate table file:
             if not data_file_validator.validate(table_filepath):
                 raise RuntimeError("Data file (%s) did not pass validation: %s" %
-                                   (table_filepath, data_file_validator.get_messages()))
+                                   (table_filepath, self._pretty_print_errors(data_file_validator.get_messages())))
 
             with open(table_filepath, 'r') as table_file:
                 table_data = yaml.load(table_file)

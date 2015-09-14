@@ -246,47 +246,48 @@ class OldHEPData(Parser):
                     single_element = data_entry_elements[i]
 
                     if header[i] == 'x': # independent variables
-                        r = re.search('(?P<low>[0-9]+\.?[0-9]*)( +TO +(?P<height>[0-9]+\.?[0-9]*))?', single_element)
+                        r = re.search('(?P<low>[0-9]+\.?[0-9]*)( +TO +(?P<high>[0-9]+\.?[0-9]*))?', single_element)
                         if r:
-                            if r.group('height') is not None:
-                                single_element = {'low': r.group('low'), 'height': r.group('height')}
+                            if r.group('high') is not None:
+                                single_element = {'low': float(r.group('low')), 'high': float(r.group('high'))}
                             else:
-                                single_element = r.group('low')
+                                single_element = {'value': float(r.group('low'))}
                             self.current_table.data['independent_variables'][xy_mapping[i]]['values'].append(single_element)
 
                     elif header[i] == 'y': # independant variable
                         r = re.search('( *)(?P<value>[0-9]+\.?[0-9]*)( *)\+(?P<err_p>[0-9]+\.?[0-9]*),(?P<err_m>\-[0-9]+\.?[0-9]*)( *)\((?P<err_sys>[^()]*)\)', single_element)
                         element = {'errors': []}
                         if r:
-                            element['value'] = r.group('value')
-                            element['errors'] += [{'label': 'stat', 'asymerror': {'plus': r.group('err_p'), 'minus': r.group('err_m')}}]
+                            element['value'] = float(r.group('value'))
+                            element['errors'] += [{'label': 'stat', 'asymerror': {'plus': float(r.group('err_p')), 'minus': float(r.group('err_m'))}}]
 
                         else:
                             r = re.search('( *)(?P<value>[0-9]+\.?[0-9]*)( *)\+-( *)(?P<error>[0-9]+\.?[0-9]*)( *)\((?P<err_sys>[^()]*)\)', single_element)
                             if r:
-                                element['value'] = r.group('value')
-                                element['errors'] += [{'label': 'stat', 'symerror': r.group('error')}]
+                                element['value'] = float(r.group('value'))
+                                element['errors'] += [{'label': 'stat', 'symerror': float(r.group('error'))}]
 
                         err_sys = r.group('err_sys').split('DSYS=')
 
                         for err in err_sys:
                             if not err:
                                 continue
+                            err = err.strip(',')
                             error = {}
                             label = 'sys'
                             r = re.search('^(?P<error>[0-9]+\.?[0-9]*)(\:(?P<label>.*))?,?$', err)
                             if r:
                                 if r.group('label'):
-                                    label += ','+r.group('label')
-                                error = {'symerror': r.group('error') }
+                                    label += ',' + r.group('label')
+                                error = {'symerror': float(r.group('error')) }
 
                             else:
                                 #TODO - check some assumptions - will '+' always be first? and '-' always second?
                                 r = re.search('\+(?P<err_p>[0-9]+\.?[0-9]*)\,(?P<err_m>\-[0-9]+\.?[0-9]*)(\:(?P<label>.*))?', err)
                                 if r:
                                     if r.group('label'):
-                                        label += ','+r.group('label')
-                                    error = {'asymerror': {'plus': r.group('err_p'), 'minus': r.group('err_m')}}
+                                        label += ',' + r.group('label')
+                                    error = {'asymerror': {'plus': float(r.group('err_p')), 'minus': float(r.group('err_m'))}}
                             if not r:
                                 # error happened
                                 raise ValueError("Error while parsing data")
@@ -483,7 +484,7 @@ class OldHEPData(Parser):
             if 'record_ids' not in self.data[0]:
                 self.data[0]['record_ids'] = []
 
-            record_id = {key, data}
+            record_id = {'type': key, 'id': int(data)}
 
             if self.data[0]['record_ids'].count(record_id) == 0:
                 self.data[0]['record_ids'].append(record_id)

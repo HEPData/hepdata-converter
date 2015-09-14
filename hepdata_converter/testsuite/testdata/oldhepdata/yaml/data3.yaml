@@ -5,29 +5,29 @@ dependent_variables:
   - {name: SQRT(S), units: GEV, value: '7000.0'}
   values:
   - errors:
-    - {label: stat, symerror: '1100.0'}
-    - {label: 'sys,detector,', symerror: '79.0'}
-    - {label: 'sys,background', symerror: '15.0'}
-    value: '7000'
+    - {label: stat, symerror: 1100.0}
+    - {label: 'sys,detector', symerror: 79.0}
+    - {label: 'sys,background', symerror: 15.0}
+    value: 7000.0
   - errors:
-    - {label: stat, symerror: '1600.0'}
-    - {label: 'sys,detector,', symerror: '75.0'}
-    - {label: 'sys,background', symerror: '15.0'}
-    value: '9800'
+    - {label: stat, symerror: 1600.0}
+    - {label: 'sys,detector', symerror: 75.0}
+    - {label: 'sys,background', symerror: 15.0}
+    value: 9800.0
   - errors:
-    - {label: stat, symerror: '490.0'}
-    - {label: 'sys,detector,', symerror: '41.0'}
-    - {label: 'sys,background', symerror: '2.0'}
-    value: '1600'
+    - {label: stat, symerror: 490.0}
+    - {label: 'sys,detector', symerror: 41.0}
+    - {label: 'sys,background', symerror: 2.0}
+    value: 1600.0
   - errors:
-    - {label: stat, symerror: '60.0'}
-    - {label: 'sys,detector,', symerror: '2.0'}
-    - {label: 'sys,background', symerror: '0.0'}
-    value: '80'
+    - {label: stat, symerror: 60.0}
+    - {label: 'sys,detector', symerror: 2.0}
+    - {label: 'sys,background', symerror: 0.0}
+    value: 80.0
 independent_variables:
 - header: {name: Leading dilepton PT, units: GEV}
   values:
-  - {height: '60.0', low: '0.0'}
-  - {height: '100.0', low: '60.0'}
-  - {height: '200.0', low: '100.0'}
-  - {height: '600.0', low: '200.0'}
+  - {high: 60.0, low: 0.0}
+  - {high: 100.0, low: 60.0}
+  - {high: 200.0, low: 100.0}
+  - {high: 600.0, low: 200.0}

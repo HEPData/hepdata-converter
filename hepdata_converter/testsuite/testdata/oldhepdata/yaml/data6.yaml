@@ -5,23 +5,23 @@ dependent_variables:
   - {name: SQRT(S), units: GEV, value: '7000.0'}
   values:
   - errors:
-    - {label: stat, symerror: '158000.0'}
-    - {label: 'sys,detector,', symerror: '4000.0'}
-    - {label: 'sys,background', symerror: '19000.0'}
-    value: '346000'
+    - {label: stat, symerror: 158000.0}
+    - {label: 'sys,detector', symerror: 4000.0}
+    - {label: 'sys,background', symerror: 19000.0}
+    value: 346000.0
   - errors:
-    - {label: stat, symerror: '91000.0'}
-    - {label: 'sys,detector,', symerror: '4000.0'}
-    - {label: 'sys,background', symerror: '71000.0'}
-    value: '569000'
+    - {label: stat, symerror: 91000.0}
+    - {label: 'sys,detector', symerror: 4000.0}
+    - {label: 'sys,background', symerror: 71000.0}
+    value: 569000.0
   - errors:
-    - {label: stat, symerror: '70000.0'}
-    - {label: 'sys,detector,', symerror: '2000.0'}
-    - {label: 'sys,background', symerror: '58000.0'}
-    value: '100000'
+    - {label: stat, symerror: 70000.0}
+    - {label: 'sys,detector', symerror: 2000.0}
+    - {label: 'sys,background', symerror: 58000.0}
+    value: 100000.0
 independent_variables:
 - header: {name: 'Leading dilepton DELTA(PHI(LEPTON+,LEPTON-))'}
   values:
-  - {height: '0.5', low: '0.0'}
-  - {height: '1.7', low: '0.5'}
-  - {height: '3.14159', low: '1.7'}
+  - {high: 0.5, low: 0.0}
+  - {high: 1.7, low: 0.5}
+  - {high: 3.14159, low: 1.7}
