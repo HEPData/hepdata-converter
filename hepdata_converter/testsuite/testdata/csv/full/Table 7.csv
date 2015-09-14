@@ -1,0 +1,15 @@
+#: name: Table 7
+#: description:  Normalized ZZ fiducial cross section (multiplied by 10^6 for readability) in bins of the mass of the ZZ system for the 4l channel.  The first systematic uncertainty is detector systematics, the second is background systematic uncertainties
+#: data_file: data7.yaml
+#: data_license:   
+#: keyword reactions:  P P --> Z0 Z0 X
+#: keyword observables:  DSIG/DM
+#: keyword energies: 7000.0
+#: RE,,P P --> Z0 < LEPTON+ LEPTON- > Z0 < LEPTON+ LEPTON- > X
+#: SQRT(S),,7000.0
+'M(ZZ) IN GEV LOW','M(ZZ) IN GEV HIGH','10**6 * 1/SIG(fiducial) * D(SIG(fiducial))/DM(ZZ)','stat +','stat -','sys,detector +','sys,detector -','sys,background +','sys,background -'
+0.0,240.0,2200.0,300.0,300.0,40.0,40.0,2.0,2.0
+240.0,300.0,4500.0,1000.0,1000.0,100.0,100.0,5.0,5.0
+300.0,400.0,1000.0,400.0,400.0,20.0,20.0,2.0,2.0
+400.0,800.0,280.0,100.0,100.0,10.0,10.0,1.0,1.0
+

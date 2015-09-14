@@ -25,7 +25,7 @@ class CSVWriterTestCase(WriterTestSuite):
                                                                  'table': 'Table 1',
                                                                  'pack': True})
 
-        self.assertEqual(table_1_content, csv_content)
+        self.assertMultiLineAlmostEqual(table_1_content, csv_content)
 
     @insert_data_as_str('csv/table_9.csv')
     def test_2_qualifiers_2_iv_pack(self, table_9_content):
@@ -34,7 +34,7 @@ class CSVWriterTestCase(WriterTestSuite):
                                                                  'table': 'Table 9',
                                                                  'pack': True})
 
-        self.assertEqual(table_9_content, csv_content)
+        self.assertMultiLineAlmostEqual(table_9_content, csv_content)
 
     @insert_data_as_str('csv/table_1.csv')
     @insert_data_as_str('csv/table_9.csv')
@@ -44,10 +44,10 @@ class CSVWriterTestCase(WriterTestSuite):
                                                                      'pack': True})
 
         with open(os.path.join(self.current_tmp, 'Table 1.csv'), 'r') as f:
-            self.assertEqual(table_1_content, f.read())
+            self.assertMultiLineAlmostEqual(table_1_content, f.read())
 
         with open(os.path.join(self.current_tmp, 'Table 9.csv'), 'r') as f:
-            self.assertEqual(table_9_content, f.read())
+            self.assertMultiLineAlmostEqual(table_9_content, f.read())
 
     @insert_data_as_str('csv/table_9_unpacked.csv')
     def test_2_qualifiers_2_iv_unpack(self, table_9_content):
@@ -56,7 +56,7 @@ class CSVWriterTestCase(WriterTestSuite):
                                                          'table': 'Table 9',
                                                          'separator': ';',
                                                          'pack': False})
-        self.assertEqual(table_9_content, csv_content)
+        self.assertMultiLineAlmostEqual(table_9_content, csv_content)
 
     @insert_data_as_str('csv/table_9_unpacked.csv')
     def test_cli(self, table_9_content):
@@ -78,9 +78,18 @@ class CSVWriterTestCase(WriterTestSuite):
         csv_1 = os.path.join(csv_filepath, 'Table 1.csv')
         self.assertTrue(os.path.exists(csv_1))
         with open(csv_1, 'r') as csv_file:
-            self.assertEqual(table_1_content.strip(), csv_file.read().strip())
+            self.assertMultiLineAlmostEqual(table_1_content.strip(), csv_file.read().strip())
 
         csv_2 = os.path.join(csv_filepath, 'Table 9.csv')
         self.assertTrue(os.path.exists(csv_2))
         with open(csv_2, 'r') as csv_file:
-            self.assertEqual(table_9_content.strip(), csv_file.read().strip())
+            self.assertMultiLineAlmostEqual(table_9_content.strip(), csv_file.read().strip())
+
+    @insert_path('oldhepdata/sample.input')
+    @insert_path('csv/full')
+    def test_diroutput(self, oldhepdata_path, csv_path):
+        hepdata_converter._main(['-i', 'oldhepdata',
+                                 '-o', 'csv',
+                                 oldhepdata_path, self.current_tmp])
+
+        self.assertDirsEqual(self.current_tmp, csv_path, file_content_parser=lambda x: x)

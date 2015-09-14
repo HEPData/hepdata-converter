@@ -32,9 +32,9 @@ class CSV(ArrayWriter):
 
         #license:
         if 'data_license' in table.metadata and table.metadata['data_license']:
-            license_text = table.metadata['data_license'].get('name', '') + ' ' + \
-            table.metadata['data_license'].get('url', '') + ' ' + \
-            table.metadata['data_license'].get('url', 'description')
+            license_text = (table.metadata['data_license'].get('name') or '') + ' ' + \
+                           (table.metadata['data_license'].get('url') or '') + ' ' + \
+                           (table.metadata['data_license'].get('description') or '')
 
             data_out.write("#: data_license: %s\n" % license_text)
 

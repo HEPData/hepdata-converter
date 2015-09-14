@@ -1,0 +1,362 @@
+---
+record_ids: # optional
+  - {type: inspire, id: 1203852}
+  - {type: red, id: 6150}
+dateupdated: '30/04/2014 20:20:29'
+modifications: # what, by whom and when encoded or changed
+  - {action: 'Encoded', date: '27 FEB 2014', who: 'Graeme Watt'}
+  - {action: 'Modified', date: '30 APR 2014', who: 'Graeme Watt'}
+comment: | # preserve newlines
+    CERN-LHC.  Measurements of the cross section for ZZ production using the 4l and 2l2nu decay channels in proton-proton collisions at a centre-of-mass energy of 7 TeV with 4.6 fb^-1 of data collected in 2011.  The final states used are 4 electrons, 4 muons, 2 electrons and 2 muons, 2 electrons and missing transverse momentum, and 2 muons and missing transverse momentum (MET).
+    
+    The cross section values reported in the tables should be multiplied by a factor of 1.0141 to take into account the updated value of the integrated luminosity for the ATLAS 2011 data taking period.  The uncertainty on the global normalisation ("Lumi") remains at 1.8%.  See Eur.Phys.J. C73 (2013) 2518 for more details.
+    
+    The 4l channel fiducial region is defined as:
+    - 4e, 4mu or 2e2mu
+    - Ambiguities in pairing are resolved by choosing the combination that results in the smaller value of the sum |mll - mZ| for the two pairs, where mll is the mass of the dilepton system.
+    - ptLepton > 7 GeV (at least one with ptLepton > 20 (25) GeV for muons (electrons))
+    - |etaLepton| < 3.16
+    - At least one lepton pair is required to have invariant mass between 66 and 116 GeV. If the second pair also satisfies this, the event is ZZ, otherwise if the second pair satisfies mll > 20 GeV it is ZZ*.
+    - min(DeltaR(l,l)) > 0.2.
+    
+    The 2l2nu channel fiducial region is defined as:
+    - 2e+MET or 2mu+MET
+    - ptLepton > 20 GeV
+    - |etaLepton| < 2.5
+    - mll must be between 76 and 106 GeV
+    - -MET*cos(phi_METZ)>75 GeV, where phi_METZ is the angle between the Z and the MET
+    - |MET - pTZ| / pTZ < 0.4, where pTZ is the transverse momentum of the dilepton system
+    - No events with a jet for which ptJet > 25 GeV and |etaJet| < 4.5
+    - No events with a third lepton for which ptLepton > 10 GeV
+    - min(DeltaR(l,l)) > 0.3.
+
+additional_resources:
+  - {location: 'http://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/STDM-2012-02/', description: 'experiment TWiki page for analysis'}
+  - {location: 'http://rivet.hepforge.org/analyses#ATLAS_2012_I1203852', description: 'Rivet analysis'}
+
+---
+name: 'Table 1'
+label: 'Data from Page 17 of preprint'
+description: |
+    The measured fiducial cross sections.  The first systematic uncertainty is the combined systematic uncertainty excluding luminosity, the second is the luminosity.
+keywords:
+  - {name: reactions, values: ['P P --> Z0 Z0 X']}
+  - {name: observables, values: ['SIG']}
+  - {name: cmenergies, values: [7000.0]}
+additional_resources:
+independent_variables:
+  - header: {name: 'SQRT(S)', units: 'GEV'}
+    values:
+      - {value: 7000}
+dependent_variables:
+  - header: {name: 'SIG(fiducial)', units: 'FB'}
+    qualifiers:
+      - {name: 'RE', value: 'P P --> Z0 < LEPTON+ LEPTON- > Z0 < LEPTON+ LEPTON- > X'}
+    values:
+      - value: 25.4
+        errors:
+          - {asymerror: {plus: 3.3, minus: -3.0}, label: 'stat'}
+          - {asymerror: {plus: 1.2, minus: -1.0}, label: 'sys'}
+          - {symerror: 1.0, label: 'sys,lumi'}
+  - header: {name: 'SIG(fiducial)', units: 'FB'}
+    qualifiers:
+      - {name: 'RE', value: 'P P --> Z0 < LEPTON+ LEPTON- > Z0* < LEPTON+ LEPTON- > X'}
+    values:
+      - value: 29.8
+        errors:
+          - {asymerror: {plus: 3.8, minus: -3.5}, label: 'stat'}
+          - {asymerror: {plus: 1.7, minus: -1.5}, label: 'sys'}
+          - {symerror: 1.2, label: 'sys,lumi'}
+  - header: {name: 'SIG(fiducial)', units: 'FB'}
+    qualifiers:
+      - {name: 'RE', value: 'P P --> Z0 < LEPTON+ LEPTON- > Z0 < NU NUBAR > X'}
+    values:
+      - value: 12.7
+        errors:
+          - {asymerror: {plus: 3.1, minus: -2.9}, label: 'stat'}
+          - {symerror: 1.7, label: 'sys'}
+          - {symerror: 0.5, label: 'sys,lumi'}
+
+---
+name: 'Table 2'
+label: 'Data from Page 20 of preprint'
+description: |
+    The measured total cross sections.  The first systematic uncertainty is the combined systematic uncertainty excluding luminosity, the second is the luminosity.
+keywords:
+  - {name: reactions, values: ['P P --> Z0 Z0 X']}
+  - {name: observables, values: ['SIG']}
+  - {name: cmenergies, values: [7000.0]}
+additional_resources:
+independent_variables:
+  - header: {name: 'SQRT(S)', units: 'GEV'}
+    values:
+      - {value: 7000}
+dependent_variables:
+  - header: {name: 'SIG(total)', units: 'FB'}
+    qualifiers:
+      - {name: 'RE', value: 'P P --> Z0 Z0 X'}
+    values:
+      - value: 6.7
+        errors:
+          - {symerror: 0.7, label: 'stat'}
+          - {asymerror: {plus: 0.4, minus: -0.3}, label: 'sys'}
+          - {symerror: 0.3, label: 'sys,lumi'}
+
+---
+name: 'Table 3'
+label: 'Data from Figure 8A'
+description: |
+    Normalized ZZ fiducial cross section (multiplied by 10^6 for readability) in bins of the leading reconstructed dilepton pT for the 4 lepton channel.  The first systematic uncertainty is detector systematics, the second is background systematic uncertainties.
+keywords:
+  - {name: reactions, values: ['P P --> Z0 Z0 X']}
+  - {name: observables, values: ['DSIG/DPT']}
+  - {name: cmenergies, values: [7000.0]}
+additional_resources:
+  - {location: '/resource/6150/figFigure8A.png', description: 'Image file'}
+  - {location: '/resource/6150/thumb_figFigure8A.png', description: 'Thumbnail image file'}
+independent_variables:
+  - header: {name: 'Leading dilepton PT', units: 'GEV'}
+    values:
+      - {low: 0, high: 60}
+      - {low: 60, high: 100}
+      - {low: 100, high: 200}
+      - {low: 200, high: 600}
+dependent_variables:
+  - header: {name: '10**6 * 1/SIG(fiducial) * D(SIG(fiducial))/DPT', units: 'GEV**-1'}
+    qualifiers:
+      - {name: 'SQRT(S)', value: '7000.0', units: 'GeV'}
+      - {name: 'RE', value: 'P P --> Z0 < LEPTON+ LEPTON- > Z0 < LEPTON+ LEPTON- > X'}
+    values:
+      - value: 7000.0
+        errors:
+          - {symerror: 1100.0, label: 'stat'}
+          - {symerror: 79.0, label: 'sys,detector'}
+          - {symerror: 15.0, label: 'sys,background'}
+      - value: 9800.0
+        errors:
+          - {symerror: 1600.0, label: 'stat'}
+          - {symerror: 75.0, label: 'sys,detector'}
+          - {symerror: 15.0, label: 'sys,background'}
+      - value: 1600.0
+        errors:
+          - {symerror: 490.0, label: 'stat'}
+          - {symerror: 41.0, label: 'sys,detector'}
+          - {symerror: 2.0, label: 'sys,background'}
+      - value: 80.0
+        errors:
+          - {symerror: 60.0, label: 'stat'}
+          - {symerror: 2.0, label: 'sys,detector'}
+          - {symerror: 0.0, label: 'sys,background'}
+
+---
+name: 'Table 4'
+label: 'Data from Figure 8B'
+description: |
+    Normalized ZZ fiducial cross section (multiplied by 10^6 for readability) in bins of the dilepton pT for the 2l2nu channel.  The first systematic uncertainty is detector systematics, the second is background systematic uncertainties.
+keywords:
+  - {name: reactions, values: ['P P --> Z0 Z0 X']}
+  - {name: observables, values: ['DSIG/DPT']}
+  - {name: cmenergies, values: [7000.0]}
+additional_resources:
+  - {location: '/resource/6150/figFigure8B.png', description: 'Image file'}
+  - {location: '/resource/6150/thumb_figFigure8B.png', description: 'Thumbnail image file'}
+independent_variables:
+  - header: {name: 'Leading dilepton PT', units: 'GEV'}
+    values:
+      - {low: 50, high: 90}
+      - {low: 90, high: 130}
+      - {low: 130, high: 200}
+dependent_variables:
+  - header: {name: '10**6 * 1/SIG(fiducial) * D(SIG(fiducial))/DPT', units: 'GEV**-1'}
+    qualifiers:
+      - {name: 'SQRT(S)', value: '7000.0', units: 'GeV'}
+      - {name: 'RE', value: 'P P --> Z0 < LEPTON+ LEPTON- > Z0 < NU NUBAR > X'}
+    values:
+      - value: 9930.0
+        errors:
+          - {symerror: 3340.0, label: 'stat'}
+          - {symerror: 80.0, label: 'sys,detector'}
+          - {symerror: 740.0, label: 'sys,background'}
+      - value: 8280.0
+        errors:
+          - {symerror: 3210.0, label: 'stat'}
+          - {symerror: 200.0, label: 'sys,detector'}
+          - {symerror: 260.0, label: 'sys,background'}
+      - value: 3900.0
+        errors:
+          - {symerror: 1490.0, label: 'stat'}
+          - {symerror: 120.0, label: 'sys,detector'}
+          - {symerror: 390.0, label: 'sys,background'}
+
+---
+name: 'Table 5'
+label: 'Data from Figure 9A'
+description: |
+    Normalized ZZ fiducial cross section (multiplied by 10^6 for readability) in bins of deltaPhi between the two leptons of the leading dileptons for the 4l channel.  The first systematic uncertainty is detector systematics, the second is background systematic uncertainties.
+    UPDATE (30 APR 2014): extra significant digit added for first bin.
+keywords:
+  - {name: reactions, values: ['P P --> Z0 Z0 X']}
+  - {name: observables, values: ['DSIG/DPHI']}
+  - {name: cmenergies, values: [7000.0]}
+additional_resources:
+  - {location: '/resource/6150/figFigure9A.png', description: 'Image file'}
+  - {location: '/resource/6150/thumb_figFigure9A.png', description: 'Thumbnail image file'}
+independent_variables:
+  - header: {name: 'Leading dilepton DELTA(PHI(LEPTON+,LEPTON-))'}
+    values:
+      - {low: 0.0, high: 0.5}
+      - {low: 0.5, high: 1.0}
+      - {low: 1.0, high: 1.7}
+      - {low: 1.7, high: 3.14159}
+dependent_variables:
+  - header: {name: '10**6 * 1/SIG(fiducial) * D(SIG(fiducial))/DDELTA(PHI(LEPTON+,LEPTON-))'}
+    qualifiers:
+      - {name: 'SQRT(S)', value: '7000.0', units: 'GeV'}
+      - {name: 'RE', value: 'P P --> Z0 < LEPTON+ LEPTON- > Z0 < LEPTON+ LEPTON- > X'}
+    values:
+      - value: 130000.0
+        errors:
+          - {symerror: 69000.0, label: 'stat'}
+          - {symerror: 6600.0, label: 'sys,detector'}
+          - {symerror: 10.0, label: 'sys,background'}
+      - value: 280000.0
+        errors:
+          - {symerror: 100000.0, label: 'stat'}
+          - {symerror: 9000.0, label: 'sys,detector'}
+          - {symerror: 400.0, label: 'sys,background'}
+      - value: 260000.0
+        errors:
+          - {symerror: 80000.0, label: 'stat'}
+          - {symerror: 10000.0, label: 'sys,detector'}
+          - {symerror: 300.0, label: 'sys,background'}
+      - value: 420000.0
+        errors:
+          - {symerror: 50000.0, label: 'stat'}
+          - {symerror: 2000.0, label: 'sys,detector'}
+          - {symerror: 300.0, label: 'sys,background'}
+
+---
+name: 'Table 6'
+label: 'Data from Figure 9B'
+description: |
+    Normalized ZZ fiducial cross section (multiplied by 10^6 for readability) in bins of deltaPhi between the two leptons for the 2l2nu channel.  The first systematic uncertainty is detector systematics, the second is background systematic uncertainties.
+keywords:
+  - {name: reactions, values: ['P P --> Z0 Z0 X']}
+  - {name: observables, values: ['DSIG/DPHI']}
+  - {name: cmenergies, values: [7000.0]}
+additional_resources:
+  - {location: '/resource/6150/figFigure9B.png', description: 'Image file'}
+  - {location: '/resource/6150/thumb_figFigure9B.png', description: 'Thumbnail image file'}
+independent_variables:
+  - header: {name: 'Leading dilepton DELTA(PHI(LEPTON+,LEPTON-))'}
+    values:
+      - {low: 0.0, high: 0.5}
+      - {low: 0.5, high: 1.7}
+      - {low: 1.7, high: 3.14159}
+dependent_variables:
+  - header: {name: '10**6 * 1/SIG(fiducial) * D(SIG(fiducial))/DDELTA(PHI(LEPTON+,LEPTON-))'}
+    qualifiers:
+      - {name: 'SQRT(S)', value: '7000.0', units: 'GeV'}
+      - {name: 'RE', value: 'P P --> Z0 < LEPTON+ LEPTON- > Z0 < NU NUBAR > X'}
+    values:
+      - value: 346000.0
+        errors:
+          - {symerror: 158000.0, label: 'stat'}
+          - {symerror: 4000.0, label: 'sys,detector'}
+          - {symerror: 19000.0, label: 'sys,background'}
+      - value: 569000.0
+        errors:
+          - {symerror: 91000.0, label: 'stat'}
+          - {symerror: 4000.0, label: 'sys,detector'}
+          - {symerror: 71000.0, label: 'sys,background'}
+      - value: 100000.0
+        errors:
+          - {symerror: 70000.0, label: 'stat'}
+          - {symerror: 2000.0, label: 'sys,detector'}
+          - {symerror: 58000.0, label: 'sys,background'}
+
+---
+name: 'Table 7'
+label: 'Data from Figure 10A'
+description: |
+    Normalized ZZ fiducial cross section (multiplied by 10^6 for readability) in bins of the mass of the ZZ system for the 4l channel.  The first systematic uncertainty is detector systematics, the second is background systematic uncertainties.
+keywords:
+  - {name: reactions, values: ['P P --> Z0 Z0 X']}
+  - {name: observables, values: ['DSIG/DM']}
+  - {name: cmenergies, values: [7000.0]}
+additional_resources:
+  - {location: '/resource/6150/figFigure10A.png', description: 'Image file'}
+  - {location: '/resource/6150/thumb_figFigure10A.png', description: 'Thumbnail image file'}
+independent_variables:
+  - header: {name: 'M(ZZ)', units: 'GEV'}
+    values:
+      - {low: 0, high: 240}
+      - {low: 240, high: 300}
+      - {low: 300, high: 400}
+      - {low: 400, high: 800}
+dependent_variables:
+  - header: {name: '10**6 * 1/SIG(fiducial) * D(SIG(fiducial))/DM(ZZ)'}
+    qualifiers:
+      - {name: 'SQRT(S)', value: '7000.0', units: 'GeV'}
+      - {name: 'RE', value: 'P P --> Z0 < LEPTON+ LEPTON- > Z0 < LEPTON+ LEPTON- > X'}
+    values:
+      - value: 2200.0
+        errors:
+          - {symerror: 300.0, label: 'stat'}
+          - {symerror: 40.0, label: 'sys,detector'}
+          - {symerror: 2.0, label: 'sys,background'}
+      - value: 4500.0
+        errors:
+          - {symerror: 1000.0, label: 'stat'}
+          - {symerror: 100.0, label: 'sys,detector'}
+          - {symerror: 5.0, label: 'sys,background'}
+      - value: 1000.0
+        errors:
+          - {symerror: 400.0, label: 'stat'}
+          - {symerror: 20.0, label: 'sys,detector'}
+          - {symerror: 2.0, label: 'sys,background'}
+      - value: 280.0
+        errors:
+          - {symerror: 100.0, label: 'stat'}
+          - {symerror: 10.0, label: 'sys,detector'}
+          - {symerror: 1.0, label: 'sys,background'}
+
+---
+name: 'Table 8'
+label: 'Data from Figure 10B'
+description: |
+    Normalized ZZ fiducial cross section (multiplied by 10^6 for readability) in bins of the transverse mass of the ZZ system for the 2l2nu channel.  The first systematic uncertainty is detector systematics, the second is background systematic uncertainties.
+keywords:
+  - {name: reactions, values: ['P P --> Z0 Z0 X']}
+  - {name: observables, values: ['DSIG/DM']}
+  - {name: cmenergies, values: [7000.0]}
+additional_resources:
+  - {location: '/resource/6150/figFigure10B.png', description: 'Image file'}
+  - {location: '/resource/6150/thumb_figFigure10B.png', description: 'Thumbnail image file'}
+independent_variables:
+  - header: {name: 'MT(ZZ)', units: 'GEV'}
+    values:
+      - {low: 220, high: 250}
+      - {low: 250, high: 300}
+      - {low: 300, high: 400}
+dependent_variables:
+  - header: {name: '10**6 * 1/SIG(fiducial) * D(SIG(fiducial))/DMT(ZZ)'}
+    qualifiers:
+      - {name: 'SQRT(S)', value: '7000.0', units: 'GeV'}
+      - {name: 'RE', value: 'P P --> Z0 < LEPTON+ LEPTON- > Z0 < NU NUBAR > X'}
+    values:
+      - value: 10500.0
+        errors:
+          - {symerror: 4400.0, label: 'stat'}
+          - {symerror: 300.0, label: 'sys,detector'}
+          - {symerror: 1900.0, label: 'sys,background'}
+      - value: 6320.0
+        errors:
+          - {symerror: 2630.0, label: 'stat'}
+          - {symerror: 230.0, label: 'sys,detector'}
+          - {symerror: 280.0, label: 'sys,background'}
+      - value: 3680.0
+        errors:
+          - {symerror: 1210.0, label: 'stat'}
+          - {symerror: 60.0, label: 'sys,detector'}
+          - {symerror: 480.0, label: 'sys,background'}

@@ -1,0 +1,15 @@
+#: name: Table 3
+#: description:  Normalized ZZ fiducial cross section (multiplied by 10^6 for readability) in bins of the leading reconstructed dilepton pT for the 4 lepton channel.  The first systematic uncertainty is detector systematics, the second is background systematic uncertainties
+#: data_file: data3.yaml
+#: data_license:   
+#: keyword reactions:  P P --> Z0 Z0 X
+#: keyword observables:  DSIG/DPT
+#: keyword energies: 7000.0
+#: RE,,P P --> Z0 < LEPTON+ LEPTON- > Z0 < LEPTON+ LEPTON- > X
+#: SQRT(S),,7000.0
+'Leading dilepton PT IN GEV LOW','Leading dilepton PT IN GEV HIGH','10**6 * 1/SIG(fiducial) * D(SIG(fiducial))/DPT IN GEV**-1','stat +','stat -','sys,detector +','sys,detector -','sys,background +','sys,background -'
+0.0,60.0,7000.0,1100.0,1100.0,79.0,79.0,15.0,15.0
+60.0,100.0,9800.0,1600.0,1600.0,75.0,75.0,15.0,15.0
+100.0,200.0,1600.0,490.0,490.0,41.0,41.0,2.0,2.0
+200.0,600.0,80.0,60.0,60.0,2.0,2.0,0.0,0.0
+

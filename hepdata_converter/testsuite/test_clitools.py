@@ -20,7 +20,7 @@ class CLIToolsTestSuite(WriterTestSuite):
         self.assertTrue(os.path.exists(output_path))
 
         with open(output_path) as f:
-            self.assertEqual(table_csv, f.read())
+            self.assertMultiLineAlmostEqual(table_csv, f.read())
 
     def test_convert_yaml2yoda(self):
         hepdata_converter._main(['--input-format', 'yaml', '--output-format', 'csv',
