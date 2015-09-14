@@ -39,7 +39,7 @@ class ConvertTestSuite(unittest.TestCase):
             "comment: ' CERN-LHC.  Measurements of the cross section for ZZ ...'\n"
             "---\n"
             "additional_resources: []\n"
-            "data_file: data0.yaml\n"
+            "data_file: data1.yaml\n"
             "data_license: {description: null, name: null, url: null}\n"
             "description: ' The measured fiducial cross sections.  The first systematic uncertainty\n"
             "  is the combined systematic uncertainty excluding luminosity, the second is the luminosity'\n"
@@ -51,10 +51,10 @@ class ConvertTestSuite(unittest.TestCase):
             "- name: energies\n"
             "  values: []\n"
             "location: ' Page 17 of preprint'\n"
-            "name: Table 0\n"
+            "name: Table 1\n"
             "---\n"
             "additional_resources: []\n"
-            "data_file: data0.yaml\n"
+            "data_file: data1.yaml\n"
             "data_license: {description: null, name: null, url: null}\n"
             "description: ' The measured fiducial cross sections.  The first systematic uncertainty\n"
             "  is the combined systematic uncertainty excluding luminosity, the second is the luminosity'\n"
@@ -66,7 +66,7 @@ class ConvertTestSuite(unittest.TestCase):
             "- name: energies\n"
             "  values: []\n"
             "location: ' Page 17 of preprint'\n"
-            "name: Table 0\n"
+            "name: Table 1\n"
         )
 
         self.correct_table_output = (

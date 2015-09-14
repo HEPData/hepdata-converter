@@ -37,6 +37,7 @@ class YAML(Writer):
             raise ValueError("output is not string, and single_file flag is not specified")
 
         if not self.single_file:
+            self.create_dir(data_out)
             with open(os.path.join(data_out, 'submission.yaml'), 'w') as submission_file:
                 yaml.dump_all(data + [table.metadata for table in tables], submission_file)
                 for table in tables:

@@ -3,6 +3,7 @@ import os
 import tempfile
 import shutil
 import time
+import yaml
 from hepdata_converter.writers import Writer
 
 
@@ -35,3 +36,10 @@ class WriterTestSuite(unittest.TestCase):
         self.assertEqual(len(lines), len(orig_lines))
         for i in xrange(len(lines)):
             self.assertEqual(lines[i].strip(), orig_lines[i].strip())
+    
+    def assertDirsEqual(self, first_dir, second_dir, msg=None):
+        self.assertEqual(list(os.walk(first_dir))[1:], list(os.walk(second_dir))[1:], msg)
+        dirs = list(os.walk(first_dir))
+        for file in dirs[0][2]:
+            with open(os.path.join(first_dir, file)) as f1, open(os.path.join(second_dir, file)) as f2:
+                self.assertEqual(list(yaml.load_all(f1.read())), list(yaml.load_all(f2.read())))

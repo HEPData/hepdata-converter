@@ -31,5 +31,14 @@ class YAMLWriterTestSuite(WriterTestSuite):
         with open(yaml_single_output_path, 'r') as _f:
             self.assertEqual(oldhepdata_yaml_file, _f.read())
 
+    @insert_path('oldhepdata/sample.input')
+    @insert_path('oldhepdata/yaml')
+    def test_create_newdir(self, oldhepdata_path, yaml_path):
+        new_dir = os.path.join(self.current_tmp, 'test', 'dir')
 
+        hepdata_converter.convert(oldhepdata_path, new_dir,
+                                  options={'input_format': 'oldhepdata',
+                                           'output_format': 'yaml'})
 
+        self.assertTrue(os.path.exists(new_dir))
+        self.assertDirsEqual(new_dir, yaml_path)
