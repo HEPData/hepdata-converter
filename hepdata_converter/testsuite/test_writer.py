@@ -20,3 +20,18 @@ class WriterTestSuite(unittest.TestCase):
         self.assertTrue(os.path.exists(dir_to_create))
         # make sure calling this function with existing directory works without errors as well
         Writer.create_dir(dir_to_create)
+
+    def assertMultiLineAlmostEqual(self, first, second, msg=None):
+        if hasattr(first, 'readlines'):
+            lines = first.readlines()
+        elif isinstance(first, (str, unicode)):
+            lines = first.split('\n')
+
+        if hasattr(second, 'readlines'):
+            orig_lines = second.readlines()
+        elif isinstance(second, (str, unicode)):
+            orig_lines = second.split('\n')
+
+        self.assertEqual(len(lines), len(orig_lines))
+        for i in xrange(len(lines)):
+            self.assertEqual(lines[i].strip(), orig_lines[i].strip())

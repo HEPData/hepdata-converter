@@ -6,8 +6,8 @@ import yoda
 
 class ScatterYodaClass(ObjectWrapper):
     dim = 0
-    _scatter_classes = [yoda.core.Scatter2D]
-    _point_classes = [yoda.core.Point2D]
+    _scatter_classes = [yoda.core.Scatter2D, yoda.core.Scatter3D]
+    _point_classes = [yoda.core.Point2D, yoda.core.Point3D]
 
     @classmethod
     def get_scatter_cls(cls):
@@ -56,11 +56,15 @@ class Scatter2DYodaClass(ScatterYodaClass):
     dim = 1
 
 
+class Scatter3DYodaClass(ScatterYodaClass):
+    dim = 2
+
+
 class YODA(ArrayWriter):
     help = 'Writes YODA output for table specified by --table parameter, the output should be defined as ' \
            'filepath to output yoda file'
 
-    class_list = [Scatter2DYodaClass]
+    class_list = [Scatter3DYodaClass, Scatter2DYodaClass]
 
     def __init__(self, *args, **kwargs):
         super(YODA, self).__init__(*args, **kwargs)
@@ -82,7 +86,7 @@ class YODA(ArrayWriter):
         for graph in f.get_next_object():
             graph.title = table.name
             graph.path = ''
-            data_out.write(graph.dump() + '\n')
+            yoda.core.writeYODA(graph, data_out)
 
     def write(self, data_in, data_out, *args, **kwargs):
         """
