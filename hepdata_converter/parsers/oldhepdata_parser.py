@@ -118,7 +118,7 @@ class OldHEPData(Parser):
                 for element in self.additional_data[key]:
                     self.data[0]['comment'] += "%s: %s" % (key, element)
 
-        return ParsedData(self.data, self.tables)
+        return ParsedData(self.data[0], self.tables)
 
     def parse(self, data_in):
         # clean any possible data from previous parsing

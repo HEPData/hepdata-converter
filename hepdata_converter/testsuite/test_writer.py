@@ -37,9 +37,13 @@ class WriterTestSuite(unittest.TestCase):
         for i in xrange(len(lines)):
             self.assertEqual(lines[i].strip(), orig_lines[i].strip())
     
-    def assertDirsEqual(self, first_dir, second_dir, msg=None):
+    def assertDirsEqual(self, first_dir, second_dir, file_content_parser=lambda x: list(yaml.load_all(x)), exclude=[], msg=None):
         self.assertEqual(list(os.walk(first_dir))[1:], list(os.walk(second_dir))[1:], msg)
         dirs = list(os.walk(first_dir))
         for file in dirs[0][2]:
-            with open(os.path.join(first_dir, file)) as f1, open(os.path.join(second_dir, file)) as f2:
-                self.assertEqual(list(yaml.load_all(f1.read())), list(yaml.load_all(f2.read())))
+            if file not in exclude:
+                with open(os.path.join(first_dir, file)) as f1, open(os.path.join(second_dir, file)) as f2:
+                    # separated into 2 variables to ease debugging if the need arises
+                    d1 = file_content_parser(f1.read())
+                    d2 = file_content_parser(f2.read())
+                    self.assertEqual(d1, d2)

@@ -25,10 +25,6 @@ def convert(input, output=None, options={}):
     input_format = options.get('input_format', 'yaml')
     output_format = options.get('output_format', 'yaml')
 
-    # nothing to do
-    if input_format == output_format:
-        return
-
     parser = Parser.get_concrete_class(input_format)(**options)
     writer = Writer.get_concrete_class(output_format)(**options)
 

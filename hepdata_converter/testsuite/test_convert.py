@@ -7,12 +7,16 @@ import shutil
 import yaml
 import hepdata_converter
 from hepdata_converter.parsers import Parser
+from hepdata_converter.testsuite import insert_path
+from hepdata_converter.testsuite.test_writer import WriterTestSuite
 
-class ConvertTestSuite(unittest.TestCase):
+
+class ConvertTestSuite(WriterTestSuite):
     """Test suite for Parser factory class
     """
 
     def setUp(self):
+        super(ConvertTestSuite, self).setUp()
         self.simple_submission = (
             "*reference: ARXIV:1211.6096 : 2012 # arXiv number\n"
             "*reference: CERN-PH-EP-2012-318 : 2012 # preprint number\n"
@@ -37,21 +41,6 @@ class ConvertTestSuite(unittest.TestCase):
             "- {description: '', location: ' CERN-PH-EP-2012-318'}\n"
             "- {description: '', location: ' JHEP 1303,128 (2013)'}\n"
             "comment: ' CERN-LHC.  Measurements of the cross section for ZZ ...'\n"
-            "---\n"
-            "additional_resources: []\n"
-            "data_file: data1.yaml\n"
-            "data_license: {description: null, name: null, url: null}\n"
-            "description: ' The measured fiducial cross sections.  The first systematic uncertainty\n"
-            "  is the combined systematic uncertainty excluding luminosity, the second is the luminosity'\n"
-            "keywords:\n"
-            "- name: reactions\n"
-            "  values: [' P P --> Z0 Z0 X']\n"
-            "- name: observables\n"
-            "  values: [' SIG']\n"
-            "- name: energies\n"
-            "  values: []\n"
-            "location: ' Page 17 of preprint'\n"
-            "name: Table 1\n"
             "---\n"
             "additional_resources: []\n"
             "data_file: data1.yaml\n"
@@ -108,12 +97,6 @@ class ConvertTestSuite(unittest.TestCase):
             "  values: ['7000']\n"
         )
 
-        self.current_tmp = os.path.join(tempfile.gettempdir(), str(int(time.time())))
-        os.mkdir(self.current_tmp)
-
-    def tearDown(self):
-        shutil.rmtree(self.current_tmp)
-
     def test_bad_argumets(self):
         self.assertRaises(ValueError, hepdata_converter.convert, None, None)
 
@@ -128,3 +111,9 @@ class ConvertTestSuite(unittest.TestCase):
         when this functionality is implemented this test case should either be modified or deleted
         """
         self.assertRaises(ValueError, hepdata_converter.convert, None, None, options={'input_format': 'yaml', 'output_format': 'not_implemented'})
+
+    @insert_path('yaml_full')
+    def test_same_type_conversion(self, yaml_path):
+        hepdata_converter.convert(yaml_path, self.current_tmp, options={'input_format': 'yaml', 'output_format': 'yaml'})
+        # exclude data6.yaml and data7.yaml because they are not listed in submission.yaml
+        self.assertDirsEqual(yaml_path, self.current_tmp, exclude=['data6.yaml', 'data7.yaml'])
