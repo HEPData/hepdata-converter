@@ -12,9 +12,11 @@ services:
 
 # docker must be in install to override defalut pip install -r requirements.txt
 install:
-  - echo 'running docker'
+  - sudo pip install --upgrade pip
 script:
-  - "docker run -v `pwd`:/tmp/hepdata-converter hepdata/hepdata-converter /bin/bash -c \"cd  /tmp/hepdata-converter && coverage run -m unittest discover hepdata_converter/testsuite 'test_*'\""
-
+  - export CURRENT_PATH=`pwd`
+  - "docker run -v $CURRENT_PATH:$CURRENT_PATH hepdata/hepdata-converter /bin/bash -c \"cd  $CURRENT_PATH && coverage run -m unittest discover hepdata_converter/testsuite 'test_*'\""
+  # check installation script
+  - "docker run -v $CURRENT_PATH:$CURRENT_PATH hepdata/hepdata-converter /bin/bash -c \"cd  $CURRENT_PATH && python setup.py install && hepdata-converter -v\""
 after_success:
   - coveralls

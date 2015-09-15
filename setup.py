@@ -1,6 +1,15 @@
 # -*- coding: utf-8 -*-
+import os
 from setuptools import setup
 import re
+
+
+def get_all_datafiles(package, path):
+    r = []
+    setup_path = os.path.dirname(__file__)
+    for abs_path, dirs, files in os.walk(os.path.join(setup_path, package, path)):
+        r += [os.path.join(path, f) for f in files]
+    return r
 
 
 def get_version():
@@ -20,7 +29,7 @@ setup(
         'hepdata_validator',
         'rootpy',
         'numpy',
-        'matplotlib',
+        'matplotlib'
     ],
     entry_points={
         'console_scripts': [
@@ -28,9 +37,10 @@ setup(
         ]
     },
 
-    # :TODO: ADD TESTSUITE FILES
-
     packages=['hepdata_converter', 'hepdata_converter.parsers', 'hepdata_converter.writers', 'hepdata_converter.testsuite'],
+    package_data={'hepdata_converter': get_all_datafiles(package='hepdata_converter/testsuite', path='testdata')},
+    include_package_data=True,
+
     url='https://github.com/HEPData/hepdata-converter/',
     license='GPL',
     author='Michał Szostak',
