@@ -41,7 +41,7 @@ class ScatterYodaClass(ObjectWrapper):
             graph.addPoint(self.get_point_cls()(*args))
         return graph
 
-    def create_object(self):
+    def create_objects(self):
         self.calculate_total_errors()
 
         for i in xrange(self.dim):
@@ -49,7 +49,7 @@ class ScatterYodaClass(ObjectWrapper):
 
         graph = self._create_scatter(self.xval)
 
-        return graph
+        return [graph]
 
 
 class Scatter2DYodaClass(ScatterYodaClass):

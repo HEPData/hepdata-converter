@@ -63,8 +63,8 @@ class ObjectWrapper(object):
     @classmethod
     def match_and_create(cls, independent_variables_map, dependent_variable):
         if cls.match(independent_variables_map, dependent_variable):
-            return cls(independent_variables_map, dependent_variable).create_object()
-        return None
+            return cls(independent_variables_map, dependent_variable).create_objects()
+        return []
 
     def calculate_total_errors(self):
         for independent_variable in self.independent_variable_map:
@@ -78,7 +78,7 @@ class ObjectWrapper(object):
         ArrayWriter.calculate_total_errors(self.dependent_variable, self.yerr_minus, self.yerr_plus, self.yval)
 
     @abc.abstractmethod
-    def create_object(self):
+    def create_objects(self):
         pass
 
 
@@ -94,8 +94,8 @@ class ObjectFactory(object):
     def get_next_object(self):
         for dependent_variable_index in xrange(len(self.dependent_variables)):
             for class_wrapper in self.class_list:
-                obj = class_wrapper.match_and_create(self.map[dependent_variable_index], self.dependent_variables[dependent_variable_index])
-                if obj:
+                objects = class_wrapper.match_and_create(self.map[dependent_variable_index], self.dependent_variables[dependent_variable_index])
+                for obj in objects:
                     yield obj
 
 

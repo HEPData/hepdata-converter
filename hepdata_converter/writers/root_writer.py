@@ -32,6 +32,37 @@ class THFRootClass(ObjectWrapper):
             return True
         return False
 
+    def _create_empty_hist(self, name, yval):
+
+        xval = []
+        for i in xrange(self.dim):
+            xval.append([])
+            i_var = self.independent_variables[i]['values']
+            for x in i_var:
+                xval[i].append(x['low'])
+            xval[i].append(i_var[-1]['high'])
+
+        name = "Hist%s_%s_" % (self.dim, name)
+
+        args = []
+        for i in xrange(self.dim):
+            args.append(len(xval[i]) - 1)
+            args.append(numpy.array(xval[i], dtype=float))
+            name += self.sanitize_name(self.independent_variables[0]['header']['name']) + "__"
+        name += self.sanitize_name(self.dependent_variable['header']['name'])
+
+        hist = self._hist_classes[self.dim - 1](self.sanitize_name(name), '', *args)
+
+        for i in xrange(self.dim):
+            getattr(hist, self._hist_axes_names[i] + 'axis').title = self.independent_variables[i]['header']['name']
+
+        if self.dim < len(self._hist_classes):
+            getattr(hist, self._hist_axes_names[self.dim] + 'axis').title = self.sanitize_name(name)
+
+        for i in xrange(len(yval)):
+            hist.fill(*([self.xval[dim_i][i] for dim_i in xrange(self.dim)] + [yval[i]]))
+        return hist
+
     def _create_hist(self, xval):
 
         name = "Hist%s_" % self.dim
@@ -57,14 +88,69 @@ class THFRootClass(ObjectWrapper):
             hist.fill(*([self.xval[dim_i][i] for dim_i in xrange(self.dim)] + [self.yval[i]]))
         return hist
 
-    def create_object(self):
+    def create_objects(self):
         self.calculate_total_errors()
+
+        error_hists = []
+        error_labels = {}
+
+        for value in self.dependent_variable.get('values', []):
+            for error in value.get('errors', []):
+                # :TODO: If error has no label is it stat? Or we have no idea?
+                if 'label' not in error:
+                    error['label'] = 'stat'
+                label = error['label']
+                if 'symerror' in error and label not in error_labels:
+                    error_labels[label] = 'symerror'
+                elif 'asymerror' in error and error_labels.get(label, 'symerror') == 'symerror':
+                    error_labels[label] = 'asymerror'
+
+        yvals = []
+        for error_label in error_labels:
+            if error_labels[error_label] == 'asymerror':
+                yval_plus_label = error_label + '_high'
+                yval_plus = []
+                yval_minus_label = error_label + '_low'
+                yval_minus = []
+
+                for value in self.dependent_variable.get('values', []):
+                    error = filter(lambda x: x.get('label') == error_label, value.get('errors', []))
+                    if len(error) == 0:
+                        yval_plus.append(0.0)
+                        yval_minus.append(0.0)
+                    elif 'symerror' in error[0]:
+                        err_val = float(error[0]['symerror'])
+                        yval_plus.append(err_val)
+                        yval_minus.append(err_val)
+                    elif 'asymerror' in error[0]:
+                        yval_plus.append(float(error[0]['asymerror']['plus']))
+                        yval_minus.append(float(error[0]['asymerror']['minus']))
+                    else:
+                        yval_plus.append(0.0)
+                        yval_minus.append(0.0)
+
+                yvals += [(yval_plus_label, yval_plus), (yval_minus_label, yval_minus)]
+            else:
+                yval = []
+
+                for value in self.dependent_variable.get('values', []):
+                    error = filter(lambda x: x.get('label') == error_label, value.get('errors', []))
+                    if len(error) == 0:
+                        yval.append(0.0)
+                    elif 'symerror' in error[0]:
+                        yval.append(float(error[0]['symerror']))
+                    else:
+                        yval.append(0.0)
+
+                yvals += [(error_label, yval)]
+
+        for name, vals in yvals:
+            error_hists.append(self._create_empty_hist('error_' + name, vals))
 
         for i in xrange(self.dim):
             self.independent_variable_map.pop(0)
 
         xval = []
-
         for i in xrange(self.dim):
             xval.append([])
             i_var = self.independent_variables[i]['values']
@@ -74,7 +160,7 @@ class THFRootClass(ObjectWrapper):
 
         hist = self._create_hist(xval)
 
-        return hist
+        return [hist] + error_hists
 
 
 class TH3FRootClass(THFRootClass):
@@ -99,7 +185,7 @@ class TGraph2DErrorsClass(ObjectWrapper):
             return True
         return False
 
-    def create_object(self):
+    def create_objects(self):
         self.calculate_total_errors()
 
         self.independent_variable_map.pop(0)
@@ -121,11 +207,11 @@ class TGraph2DErrorsClass(ObjectWrapper):
         graph.yaxis.title = self.independent_variables[1]['header']['name']
         graph.zaxis.title = self.dependent_variable['header']['name']
 
-        return graph
+        return [graph]
 
 
 class TGraphAsymmErrorsRootClass(ObjectWrapper):
-    def create_object(self):
+    def create_objects(self):
         self.calculate_total_errors()
 
         self.independent_variable_map.pop(0)
@@ -144,7 +230,7 @@ class TGraphAsymmErrorsRootClass(ObjectWrapper):
         graph.xaxis.title = self.independent_variables[0]['header']['name']
         graph.yaxis.title = self.dependent_variable['header']['name']
 
-        return graph
+        return [graph]
 
 
 class ROOT(ArrayWriter):
