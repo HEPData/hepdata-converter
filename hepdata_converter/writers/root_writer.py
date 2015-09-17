@@ -33,7 +33,7 @@ class THFRootClass(ObjectWrapper):
             return True
         return False
 
-    def _create_empty_hist(self, name, yval):
+    def _create_empty_hist(self, dependant_var_title, index, yval):
 
         xval = []
         for i in xrange(self.dim):
@@ -43,14 +43,12 @@ class THFRootClass(ObjectWrapper):
                 xval[i].append(x['low'])
             xval[i].append(i_var[-1]['high'])
 
-        name = "Hist%s_%s_" % (self.dim, name)
+        name = "Hist%sD_y%s_e%s" % (self.dim, self.dependent_variable_index + 1, index)
 
         args = []
         for i in xrange(self.dim):
             args.append(len(xval[i]) - 1)
             args.append(numpy.array(xval[i], dtype=float))
-            name += self.sanitize_name(self.independent_variables[0]['header']['name']) + "__"
-        name += self.sanitize_name(self.dependent_variable['header']['name'])
 
         hist = self._hist_classes[self.dim - 1](self.sanitize_name(name), '', *args)
 
@@ -58,7 +56,7 @@ class THFRootClass(ObjectWrapper):
             getattr(hist, self._hist_axes_names[i] + 'axis').title = self.independent_variables[i]['header']['name']
 
         if self.dim < len(self._hist_classes):
-            getattr(hist, self._hist_axes_names[self.dim] + 'axis').title = self.sanitize_name(name)
+            getattr(hist, self._hist_axes_names[self.dim] + 'axis').title = self.sanitize_name(dependant_var_title)
 
         for i in xrange(len(yval)):
             hist.fill(*([self.xval[dim_i][i] for dim_i in xrange(self.dim)] + [yval[i]]))
@@ -66,16 +64,12 @@ class THFRootClass(ObjectWrapper):
 
     def _create_hist(self, xval):
 
-        name = "Hist%s_" % self.dim
+        name = "Hist%sD_y%s" % (self.dim, self.dependent_variable_index + 1)
         args = []
 
         for i in xrange(self.dim):
             args.append(len(xval[i]) - 1)
             args.append(numpy.array(xval[i], dtype=float))
-
-            name += self.sanitize_name(self.independent_variables[0]['header']['name']) + "__"
-
-        name += self.sanitize_name(self.dependent_variable['header']['name'])
 
         hist = self._hist_classes[self.dim - 1](name, '', *args)
 
@@ -107,6 +101,7 @@ class THFRootClass(ObjectWrapper):
                     error_labels[label] = 'asymerror'
 
         yvals = []
+        index = 1
         for error_label in error_labels:
             if error_labels[error_label] == 'asymerror':
                 yval_plus_label = error_label + '_high'
@@ -130,7 +125,8 @@ class THFRootClass(ObjectWrapper):
                         yval_plus.append(0.0)
                         yval_minus.append(0.0)
 
-                yvals += [(yval_plus_label, yval_plus), (yval_minus_label, yval_minus)]
+                yvals += [(yval_plus_label, yval_plus, '%s%s' % (index, 'plus')),
+                          (yval_minus_label, yval_minus, '%s%s' % (index, 'minus'))]
             else:
                 yval = []
 
@@ -143,10 +139,11 @@ class THFRootClass(ObjectWrapper):
                     else:
                         yval.append(0.0)
 
-                yvals += [(error_label, yval)]
+                yvals += [(error_label, yval, index)]
+                index += 1
 
-        for name, vals in yvals:
-            error_hists.append(self._create_empty_hist('error_' + name, vals))
+        for name, vals, index in yvals:
+            error_hists.append(self._create_empty_hist(name, index, vals))
 
         # for i in xrange(self.dim):
         #     self.independent_variable_map.pop(0)
@@ -182,7 +179,7 @@ class TGraph2DErrorsClass(ObjectWrapper):
     def match(cls, independent_variables_map, dependent_variable):
         if not super(TGraph2DErrorsClass, cls).match(independent_variables_map, dependent_variable):
             return False
-        if len(independent_variables_map) == 2 and cls.is_value_var(independent_variables_map[0]) and cls.is_value_var(independent_variables_map[1]):
+        if len(independent_variables_map) == 2:
             return True
         return False
 
@@ -200,9 +197,7 @@ class TGraph2DErrorsClass(ObjectWrapper):
                                            numpy.array(self.xerr_plus[1], dtype=float),
                                            numpy.array(self.yerr_plus, dtype=float))
 
-        graph.set_name("Graph2D__%s__%s__%s" % (self.sanitize_name(self.independent_variables[0]['header']['name']),
-                                                self.sanitize_name(self.independent_variables[1]['header']['name']),
-                                                self.sanitize_name(self.dependent_variable['header']['name'])))
+        graph.set_name("Graph2D_y%s" % (self.dependent_variable_index + 1))
 
         graph.xaxis.title = self.independent_variables[0]['header']['name']
         graph.yaxis.title = self.independent_variables[1]['header']['name']
@@ -212,6 +207,14 @@ class TGraph2DErrorsClass(ObjectWrapper):
 
 
 class TGraphAsymmErrorsRootClass(ObjectWrapper):
+    @classmethod
+    def match(cls, independent_variables_map, dependent_variable):
+        if not super(TGraphAsymmErrorsRootClass, cls).match(independent_variables_map, dependent_variable):
+            return False
+        if len(independent_variables_map) == 1:
+            return True
+        return False
+
     def create_objects(self):
         self.calculate_total_errors()
 
@@ -225,8 +228,7 @@ class TGraphAsymmErrorsRootClass(ObjectWrapper):
                                               numpy.array(self.yerr_minus, dtype=float),
                                               numpy.array(self.yerr_plus, dtype=float))
 
-        graph.set_name("Graph1D__%s__%s" % (self.sanitize_name(self.independent_variables[0]['header']['name']),
-                                            self.sanitize_name(self.dependent_variable['header']['name'])))
+        graph.set_name("Graph1D_y%s" % (self.dependent_variable_index + 1))
 
         graph.xaxis.title = self.independent_variables[0]['header']['name']
         graph.yaxis.title = self.dependent_variable['header']['name']

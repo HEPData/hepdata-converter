@@ -16,10 +16,11 @@ class ObjectWrapper(object):
     core_object = True
 
     @classmethod
-    def is_number_var(cls, variable):
-        for element in variable['values']:
-            if 'value' in element and isinstance(element['value'], (str, unicode)):
-                return False
+    def is_number_var(cls, *variables):
+        for variable in variables:
+            for element in variable['values']:
+                if 'value' in element and isinstance(element['value'], (str, unicode)):
+                    return False
         return True
     @classmethod
     def sanitize_name(cls, name):
@@ -44,7 +45,7 @@ class ObjectWrapper(object):
                 return False
         return True
 
-    def __init__(self, independent_variable_map, dependent_variable):
+    def __init__(self, independent_variable_map, dependent_variable, dependent_variable_index):
         self.xval = []
         self.yval = []
         self.xerr_minus = []
@@ -54,6 +55,7 @@ class ObjectWrapper(object):
         self.independent_variables = list(independent_variable_map)
         self.independent_variable_map = independent_variable_map
         self.dependent_variable = dependent_variable
+        self.dependent_variable_index = dependent_variable_index
 
     @classmethod
     def match(cls, independent_variables_map, dependent_variable):
@@ -64,9 +66,9 @@ class ObjectWrapper(object):
         return True
 
     @classmethod
-    def match_and_create(cls, independent_variables_map, dependent_variable):
+    def match_and_create(cls, independent_variables_map, dependent_variable, dependent_variable_index):
         if cls.match(independent_variables_map, dependent_variable):
-            return cls(independent_variables_map, dependent_variable).create_objects()
+            return cls(independent_variables_map, dependent_variable, dependent_variable_index).create_objects()
         return []
 
     def calculate_total_errors(self):
@@ -105,7 +107,7 @@ class ObjectFactory(object):
                 if not class_wrapper.core_object and auxiliary_object_created:
                     continue
 
-                objects = class_wrapper.match_and_create(self.map[dependent_variable_index], self.dependent_variables[dependent_variable_index])
+                objects = class_wrapper.match_and_create(self.map[dependent_variable_index], self.dependent_variables[dependent_variable_index], dependent_variable_index)
                 if objects and not class_wrapper.core_object:
                     auxiliary_object_created = True
 
