@@ -11,6 +11,9 @@ import abc
 class ObjectWrapper(object):
     __metaclass__ = abc.ABCMeta
     accept_alphanumeric = False
+    # :core_object: bool if set to false object of this class will be created as an *extra* additionally to the first
+    # object of class with ```core_object``` set to True
+    core_object = True
 
     @classmethod
     def is_number_var(cls, variable):
@@ -93,8 +96,19 @@ class ObjectFactory(object):
 
     def get_next_object(self):
         for dependent_variable_index in xrange(len(self.dependent_variables)):
+            auxiliary_object_created = False
             for class_wrapper in self.class_list:
+                # if auxiliary object was already created for this variable, don't create more
+                # (eg. after creating TH3 (which does not consume variables) don't create TH2 & TH1,
+                # but go for best fit of "core" objects eg. TGraph
+
+                if not class_wrapper.core_object and auxiliary_object_created:
+                    continue
+
                 objects = class_wrapper.match_and_create(self.map[dependent_variable_index], self.dependent_variables[dependent_variable_index])
+                if objects and not class_wrapper.core_object:
+                    auxiliary_object_created = True
+
                 for obj in objects:
                     yield obj
 

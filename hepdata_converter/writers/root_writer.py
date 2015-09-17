@@ -17,6 +17,7 @@ class THFRootClass(ObjectWrapper):
     _hist_classes = [rootpy.ROOT.TH1F, rootpy.ROOT.TH2F, rootpy.ROOT.TH3F]
     _hist_axes_names = ['x', 'y', 'z']
     dim = 0
+    core_object = False
 
     @classmethod
     def match(cls, independent_variables_map, dependent_variable):
@@ -147,8 +148,8 @@ class THFRootClass(ObjectWrapper):
         for name, vals in yvals:
             error_hists.append(self._create_empty_hist('error_' + name, vals))
 
-        for i in xrange(self.dim):
-            self.independent_variable_map.pop(0)
+        # for i in xrange(self.dim):
+        #     self.independent_variable_map.pop(0)
 
         xval = []
         for i in xrange(self.dim):
@@ -199,9 +200,9 @@ class TGraph2DErrorsClass(ObjectWrapper):
                                            numpy.array(self.xerr_plus[1], dtype=float),
                                            numpy.array(self.yerr_plus, dtype=float))
 
-        graph.title = "Graph2D__%s__%s__%s" % (self.sanitize_name(self.independent_variables[0]['header']['name']),
-                                               self.sanitize_name(self.independent_variables[1]['header']['name']),
-                                               self.sanitize_name(self.dependent_variable['header']['name']))
+        graph.set_name("Graph2D__%s__%s__%s" % (self.sanitize_name(self.independent_variables[0]['header']['name']),
+                                                self.sanitize_name(self.independent_variables[1]['header']['name']),
+                                                self.sanitize_name(self.dependent_variable['header']['name'])))
 
         graph.xaxis.title = self.independent_variables[0]['header']['name']
         graph.yaxis.title = self.independent_variables[1]['header']['name']
@@ -224,8 +225,8 @@ class TGraphAsymmErrorsRootClass(ObjectWrapper):
                                               numpy.array(self.yerr_minus, dtype=float),
                                               numpy.array(self.yerr_plus, dtype=float))
 
-        graph.title = "Graph1D__%s__%s" % (self.sanitize_name(self.independent_variables[0]['header']['name']),
-                                           self.sanitize_name(self.dependent_variable['header']['name']))
+        graph.set_name("Graph1D__%s__%s" % (self.sanitize_name(self.independent_variables[0]['header']['name']),
+                                            self.sanitize_name(self.dependent_variable['header']['name'])))
 
         graph.xaxis.title = self.independent_variables[0]['header']['name']
         graph.yaxis.title = self.dependent_variable['header']['name']
