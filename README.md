@@ -32,7 +32,7 @@ hepconverter.convert(input_file, output_directory, options={'input_format': 'old
 
 ```
 
-#### CLI
+#### CLIw
 ```
 $ hepdata-converter --input-format oldhepdata /path/to/input /path/to/output
 ```
