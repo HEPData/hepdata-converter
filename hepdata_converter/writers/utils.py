@@ -7,11 +7,12 @@ def percentage_processor(value, error):
     :param error: e.g. 20.0%
     :return: the absolute error, e.g. 12 for the above case.
     """
-    if type(error) is 'str':
-        if error.index("%") != -1:
-            error.replace("%", "")
+    if type(error) is str:
+        if "%" in error:
+            error = error.replace("%", "")
             error = float(error)
 
             error_abs = (value/100) * error
             return error_abs
+
     return error
