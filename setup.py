@@ -43,8 +43,8 @@ setup(
 
     url='https://github.com/HEPData/hepdata-converter/',
     license='GPL',
-    author='Michał Szostak',
-    author_email='michal.florian.szostak@cern.ch',
+    author='HEPData Team',
+    author_email='info@hepdata.net',
     description='Library providing means of conversion between oldhepdata format to new one, and new one to csv / yoda / root etc.',
     download_url='https://github.com/HEPData/hepdata-converter/tarball/%s' % get_version(),
 )

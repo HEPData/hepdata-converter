@@ -1,16 +1,12 @@
 # -*- encoding: utf-8 -*-
 import os
-import StringIO
 import rootpy
 import hepdata_converter
-from hepdata_converter.testsuite import insert_data_as_file, insert_path, insert_data_as_str
+from hepdata_converter.testsuite import insert_path
 from hepdata_converter.testsuite.test_writer import WriterTestSuite
 from rootpy.io import root_open
 
 __author__ = 'Michał Szostak'
-import ROOT as _ROOT
-import unittest
-from hepdata_converter.writers.root_writer import ROOT
 
 
 class ROOTWriterTestSuite(WriterTestSuite):

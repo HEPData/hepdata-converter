@@ -1,12 +1,9 @@
 # -*- encoding: utf-8 -*-
-import os
 import hepdata_converter
 from hepdata_converter.testsuite import insert_path, insert_data_as_str
 from hepdata_converter.testsuite.test_writer import WriterTestSuite
 
 __author__ = 'Michał Szostak'
-
-import unittest
 
 
 class YAMLWriterTestSuite(WriterTestSuite):
@@ -18,5 +15,3 @@ class YAMLWriterTestSuite(WriterTestSuite):
                                                              'single_file': True})
 
         self.assertEqual(data, table_5_noqual)
-
-

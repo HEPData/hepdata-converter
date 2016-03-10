@@ -1,0 +1,182 @@
+dependent_variables:
+- header: {name: D(SIG)/DOMEGA, units: MB/SR}
+  qualifiers:
+  - {name: EKIN(P=1), units: MeV, value: '25.8'}
+  - {name: RE, value: PI+ P --> PI+ P}
+  - {name: SQRT(S), units: GeV, value: '1.096'}
+  values:
+  - errors:
+    - {symerror: 0.47}
+    value: 36.63
+  - errors:
+    - {symerror: 0.36}
+    value: 24.91
+  - errors:
+    - {symerror: 0.3}
+    value: 17.7
+  - errors:
+    - {symerror: 0.24}
+    value: 12.82
+  - errors:
+    - {symerror: 0.208}
+    value: 9.643
+  - errors:
+    - {symerror: 0.0135}
+    value: 0.3948
+  - errors:
+    - {symerror: 0.012}
+    value: 0.353
+  - errors:
+    - {symerror: 0.0108}
+    value: 0.3213
+  - errors:
+    - {symerror: 0.01}
+    value: 0.2942
+  - errors:
+    - {symerror: 0.0096}
+    value: 0.2765
+  - errors:
+    - {symerror: 0.01}
+    value: 0.2829
+  - errors:
+    - {symerror: 0.0099}
+    value: 0.2723
+  - errors:
+    - {symerror: 0.0091}
+    value: 0.2368
+  - errors:
+    - {symerror: 0.0096}
+    value: 0.2631
+  - errors:
+    - {symerror: 0.0097}
+    value: 0.2548
+  - errors:
+    - {symerror: 0.0101}
+    value: 0.2793
+  - errors:
+    - {symerror: 0.0094}
+    value: 0.2626
+  - errors:
+    - {symerror: 0.0103}
+    value: 0.2982
+  - errors:
+    - {symerror: 0.01}
+    value: 0.2878
+  - errors:
+    - {symerror: 0.0102}
+    value: 0.3047
+  - errors:
+    - {symerror: 0.0107}
+    value: 0.3245
+  - errors:
+    - {symerror: 0.0104}
+    value: 0.3108
+  - errors:
+    - {symerror: 0.0104}
+    value: 0.3207
+  - errors:
+    - {symerror: 0.0109}
+    value: 0.328
+  - errors:
+    - {symerror: 0.0113}
+    value: 0.3402
+  - errors:
+    - {symerror: 0.0121}
+    value: 0.362
+  - errors:
+    - {symerror: 0.0118}
+    value: 0.3598
+  - errors:
+    - {symerror: 0.0122}
+    value: 0.3795
+  - errors:
+    - {symerror: 0.0131}
+    value: 0.398
+  - errors:
+    - {symerror: 0.013}
+    value: 0.3962
+  - errors:
+    - {symerror: 0.0144}
+    value: 0.4273
+  - errors:
+    - {symerror: 0.015}
+    value: 0.4404
+  - errors:
+    - {symerror: 0.0263}
+    value: 0.7173
+  - errors:
+    - {symerror: 0.0257}
+    value: 0.6864
+  - errors:
+    - {symerror: 0.0253}
+    value: 0.6993
+  - errors:
+    - {symerror: 0.0249}
+    value: 0.6965
+  - errors:
+    - {symerror: 0.0228}
+    value: 0.6625
+  - errors:
+    - {symerror: 0.0239}
+    value: 0.6895
+  - errors:
+    - {symerror: 0.0239}
+    value: 0.6867
+  - errors:
+    - {symerror: 0.0243}
+    value: 0.6946
+  - errors:
+    - {symerror: 0.023}
+    value: 0.6657
+  - errors:
+    - {symerror: 0.022}
+    value: 0.6258
+  - errors:
+    - {symerror: 0.0236}
+    value: 0.6592
+independent_variables:
+- header: {name: THETA, units: DEG}
+  values:
+  - {value: 11.07}
+  - {value: 12.25}
+  - {value: 13.42}
+  - {value: 14.59}
+  - {value: 15.77}
+  - {value: 38.37}
+  - {value: 40.65}
+  - {value: 42.93}
+  - {value: 45.2}
+  - {value: 47.46}
+  - {value: 49.71}
+  - {value: 51.95}
+  - {value: 54.19}
+  - {value: 56.42}
+  - {value: 58.63}
+  - {value: 60.84}
+  - {value: 63.04}
+  - {value: 65.23}
+  - {value: 67.4}
+  - {value: 69.57}
+  - {value: 71.72}
+  - {value: 73.87}
+  - {value: 76.0}
+  - {value: 78.13}
+  - {value: 80.24}
+  - {value: 82.34}
+  - {value: 84.43}
+  - {value: 86.5}
+  - {value: 88.57}
+  - {value: 90.62}
+  - {value: 92.66}
+  - {value: 94.69}
+  - {value: 150.48}
+  - {value: 152.2}
+  - {value: 153.91}
+  - {value: 155.62}
+  - {value: 157.33}
+  - {value: 159.03}
+  - {value: 160.72}
+  - {value: 162.41}
+  - {value: 164.1}
+  - {value: 165.78}
+  - {value: 167.46}

@@ -1,0 +1,203 @@
+dependent_variables:
+- header: {name: Covariance matrix element, units: ab$^2$/GeV$^2$}
+  qualifiers:
+  - {name: RE, value: P P --> TOP TOPBAR X}
+  - {name: SQRT(S), units: GeV, value: '8000.0'}
+  values:
+  - {value: 91000000.0}
+  - {value: 30000000.0}
+  - {value: 18000000.0}
+  - {value: 10000000.0}
+  - {value: 5700000.0}
+  - {value: 2100000.0}
+  - {value: 720000.0}
+  - {value: 95000.0}
+  - {value: 30000000.0}
+  - {value: 14000000.0}
+  - {value: 8600000.0}
+  - {value: 4600000.0}
+  - {value: 2800000.0}
+  - {value: 1000000.0}
+  - {value: 360000.0}
+  - {value: 47000.0}
+  - {value: 18000000.0}
+  - {value: 8600000.0}
+  - {value: 5800000.0}
+  - {value: 3100000.0}
+  - {value: 1800000.0}
+  - {value: 700000.0}
+  - {value: 250000.0}
+  - {value: 33000.0}
+  - {value: 10000000.0}
+  - {value: 4600000.0}
+  - {value: 3100000.0}
+  - {value: 1800000.0}
+  - {value: 1100000.0}
+  - {value: 390000.0}
+  - {value: 140000.0}
+  - {value: 18000.0}
+  - {value: 5700000.0}
+  - {value: 2800000.0}
+  - {value: 1800000.0}
+  - {value: 1100000.0}
+  - {value: 710000.0}
+  - {value: 270000.0}
+  - {value: 89000.0}
+  - {value: 12000.0}
+  - {value: 2100000.0}
+  - {value: 1000000.0}
+  - {value: 700000.0}
+  - {value: 390000.0}
+  - {value: 270000.0}
+  - {value: 110000.0}
+  - {value: 40000.0}
+  - {value: 5300.0}
+  - {value: 720000.0}
+  - {value: 360000.0}
+  - {value: 250000.0}
+  - {value: 140000.0}
+  - {value: 89000.0}
+  - {value: 40000.0}
+  - {value: 16000.0}
+  - {value: 2300.0}
+  - {value: 95000.0}
+  - {value: 47000.0}
+  - {value: 33000.0}
+  - {value: 18000.0}
+  - {value: 12000.0}
+  - {value: 5300.0}
+  - {value: 2300.0}
+  - {value: 350.0}
+independent_variables:
+- header: {name: PT(TOP), units: GEV}
+  values:
+  - {high: 350.0, low: 300.0}
+  - {high: 400.0, low: 350.0}
+  - {high: 450.0, low: 400.0}
+  - {high: 500.0, low: 450.0}
+  - {high: 550.0, low: 500.0}
+  - {high: 650.0, low: 550.0}
+  - {high: 750.0, low: 650.0}
+  - {high: 1200.0, low: 750.0}
+  - {high: 350.0, low: 300.0}
+  - {high: 400.0, low: 350.0}
+  - {high: 450.0, low: 400.0}
+  - {high: 500.0, low: 450.0}
+  - {high: 550.0, low: 500.0}
+  - {high: 650.0, low: 550.0}
+  - {high: 750.0, low: 650.0}
+  - {high: 1200.0, low: 750.0}
+  - {high: 350.0, low: 300.0}
+  - {high: 400.0, low: 350.0}
+  - {high: 450.0, low: 400.0}
+  - {high: 500.0, low: 450.0}
+  - {high: 550.0, low: 500.0}
+  - {high: 650.0, low: 550.0}
+  - {high: 750.0, low: 650.0}
+  - {high: 1200.0, low: 750.0}
+  - {high: 350.0, low: 300.0}
+  - {high: 400.0, low: 350.0}
+  - {high: 450.0, low: 400.0}
+  - {high: 500.0, low: 450.0}
+  - {high: 550.0, low: 500.0}
+  - {high: 650.0, low: 550.0}
+  - {high: 750.0, low: 650.0}
+  - {high: 1200.0, low: 750.0}
+  - {high: 350.0, low: 300.0}
+  - {high: 400.0, low: 350.0}
+  - {high: 450.0, low: 400.0}
+  - {high: 500.0, low: 450.0}
+  - {high: 550.0, low: 500.0}
+  - {high: 650.0, low: 550.0}
+  - {high: 750.0, low: 650.0}
+  - {high: 1200.0, low: 750.0}
+  - {high: 350.0, low: 300.0}
+  - {high: 400.0, low: 350.0}
+  - {high: 450.0, low: 400.0}
+  - {high: 500.0, low: 450.0}
+  - {high: 550.0, low: 500.0}
+  - {high: 650.0, low: 550.0}
+  - {high: 750.0, low: 650.0}
+  - {high: 1200.0, low: 750.0}
+  - {high: 350.0, low: 300.0}
+  - {high: 400.0, low: 350.0}
+  - {high: 450.0, low: 400.0}
+  - {high: 500.0, low: 450.0}
+  - {high: 550.0, low: 500.0}
+  - {high: 650.0, low: 550.0}
+  - {high: 750.0, low: 650.0}
+  - {high: 1200.0, low: 750.0}
+  - {high: 350.0, low: 300.0}
+  - {high: 400.0, low: 350.0}
+  - {high: 450.0, low: 400.0}
+  - {high: 500.0, low: 450.0}
+  - {high: 550.0, low: 500.0}
+  - {high: 650.0, low: 550.0}
+  - {high: 750.0, low: 650.0}
+  - {high: 1200.0, low: 750.0}
+- header: {name: PT(TOP), units: GEV}
+  values:
+  - {high: 350.0, low: 300.0}
+  - {high: 350.0, low: 300.0}
+  - {high: 350.0, low: 300.0}
+  - {high: 350.0, low: 300.0}
+  - {high: 350.0, low: 300.0}
+  - {high: 350.0, low: 300.0}
+  - {high: 350.0, low: 300.0}
+  - {high: 350.0, low: 300.0}
+  - {high: 400.0, low: 350.0}
+  - {high: 400.0, low: 350.0}
+  - {high: 400.0, low: 350.0}
+  - {high: 400.0, low: 350.0}
+  - {high: 400.0, low: 350.0}
+  - {high: 400.0, low: 350.0}
+  - {high: 400.0, low: 350.0}
+  - {high: 400.0, low: 350.0}
+  - {high: 450.0, low: 400.0}
+  - {high: 450.0, low: 400.0}
+  - {high: 450.0, low: 400.0}
+  - {high: 450.0, low: 400.0}
+  - {high: 450.0, low: 400.0}
+  - {high: 450.0, low: 400.0}
+  - {high: 450.0, low: 400.0}
+  - {high: 450.0, low: 400.0}
+  - {high: 500.0, low: 450.0}
+  - {high: 500.0, low: 450.0}
+  - {high: 500.0, low: 450.0}
+  - {high: 500.0, low: 450.0}
+  - {high: 500.0, low: 450.0}
+  - {high: 500.0, low: 450.0}
+  - {high: 500.0, low: 450.0}
+  - {high: 500.0, low: 450.0}
+  - {high: 550.0, low: 500.0}
+  - {high: 550.0, low: 500.0}
+  - {high: 550.0, low: 500.0}
+  - {high: 550.0, low: 500.0}
+  - {high: 550.0, low: 500.0}
+  - {high: 550.0, low: 500.0}
+  - {high: 550.0, low: 500.0}
+  - {high: 550.0, low: 500.0}
+  - {high: 650.0, low: 550.0}
+  - {high: 650.0, low: 550.0}
+  - {high: 650.0, low: 550.0}
+  - {high: 650.0, low: 550.0}
+  - {high: 650.0, low: 550.0}
+  - {high: 650.0, low: 550.0}
+  - {high: 650.0, low: 550.0}
+  - {high: 650.0, low: 550.0}
+  - {high: 750.0, low: 650.0}
+  - {high: 750.0, low: 650.0}
+  - {high: 750.0, low: 650.0}
+  - {high: 750.0, low: 650.0}
+  - {high: 750.0, low: 650.0}
+  - {high: 750.0, low: 650.0}
+  - {high: 750.0, low: 650.0}
+  - {high: 750.0, low: 650.0}
+  - {high: 1200.0, low: 750.0}
+  - {high: 1200.0, low: 750.0}
+  - {high: 1200.0, low: 750.0}
+  - {high: 1200.0, low: 750.0}
+  - {high: 1200.0, low: 750.0}
+  - {high: 1200.0, low: 750.0}
+  - {high: 1200.0, low: 750.0}
+  - {high: 1200.0, low: 750.0}

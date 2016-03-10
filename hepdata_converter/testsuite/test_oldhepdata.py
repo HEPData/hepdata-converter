@@ -1,11 +1,3 @@
-import tempfile
-import unittest
-import StringIO
-import time
-import os
-import shutil
-import yaml
-from hepdata_converter import parsers
 import hepdata_converter
 from hepdata_converter.parsers import yaml_parser
 from hepdata_converter.parsers.oldhepdata_parser import OldHEPData

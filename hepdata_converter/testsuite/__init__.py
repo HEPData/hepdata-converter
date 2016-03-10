@@ -12,10 +12,11 @@ def _parse_path_arguments(sample_file_name):
     sample_file_name = []
     for path_element in _sample_file_name:
         sample_file_name += path_element.split('/')
+
     return sample_file_name
 
 
-def _construct_testdata_path(path_elements):
+def construct_testdata_path(path_elements):
     return os.path.join(os.path.dirname(os.path.abspath(__file__)), 'testdata', *path_elements)
 
 
@@ -26,7 +27,7 @@ class insert_data_as_file(object):
     def __call__(self, function):
         def _inner(*args, **kwargs):
             args = list(args)
-            with open(_construct_testdata_path(self.sample_file_name), 'r') as f:
+            with open(construct_testdata_path(self.sample_file_name), 'r') as f:
                 args.append(f)
                 function(*args, **kwargs)
 
@@ -39,7 +40,7 @@ class insert_data_as_str(object):
 
     def __call__(self, function):
         def _inner(*args, **kwargs):
-            with open(_construct_testdata_path(self.sample_file_name), 'r') as f:
+            with open(construct_testdata_path(self.sample_file_name), 'r') as f:
                 data = f.read()
             args = list(args)
             args.append(data)
@@ -50,20 +51,36 @@ class insert_data_as_str(object):
 
 class insert_path(object):
     def __init__(self, *sample_file_name):
+        print sample_file_name
         self.sample_file_name = _parse_path_arguments(sample_file_name)
 
     def __call__(self, function):
         def _inner(*args, **kwargs):
             args = list(args)
-            args.append(_construct_testdata_path(self.sample_file_name))
+            args.append(construct_testdata_path(self.sample_file_name))
+            function(*args, **kwargs)
+
+        return _inner
+
+class insert_paths(object):
+    def __init__(self, *sample_file_name):
+        self.sample_file_name = sample_file_name
+
+    def __call__(self, function):
+        def _inner(*args, **kwargs):
+            args = list(args)
+            directories = []
+            for path in self.sample_file_name:
+                directories.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'testdata', path))
+            args.append(directories)
             function(*args, **kwargs)
 
         return _inner
 
 
 class TMPDirMixin(object):
-    def tearDown(self):
-        shutil.rmtree(self.current_tmp)
+    # def tearDown(self):
+    #     shutil.rmtree(self.current_tmp)
 
     def setUp(self):
         self.current_tmp = os.path.join(tempfile.gettempdir(), str(int(time.time()))) + str(randint(0, 10000))

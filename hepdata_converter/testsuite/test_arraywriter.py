@@ -1,8 +1,4 @@
-import unittest
 import os
-import tempfile
-import shutil
-import time
 from hepdata_converter import convert
 from hepdata_converter.testsuite import insert_path
 from hepdata_converter.testsuite.test_writer import WriterTestSuite

@@ -1,0 +1,214 @@
+dependent_variables:
+- header: {name: D(SIG)/DOMEGA, units: MB/SR}
+  qualifiers:
+  - {name: EKIN(P=1), units: MeV, value: '43.3'}
+  - {name: RE, value: PI+ P --> PI+ P}
+  - {name: SQRT(S), units: GeV, value: '1.111'}
+  values:
+  - errors:
+    - {symerror: 0.0993}
+    value: 0.9978
+  - errors:
+    - {symerror: 0.0636}
+    value: 0.6727
+  - errors:
+    - {symerror: 0.052}
+    value: 0.5713
+  - errors:
+    - {symerror: 0.0437}
+    value: 0.5179
+  - errors:
+    - {symerror: 0.0356}
+    value: 0.2799
+  - errors:
+    - {symerror: 0.0345}
+    value: 0.3938
+  - errors:
+    - {symerror: 0.0268}
+    value: 0.2597
+  - errors:
+    - {symerror: 0.0298}
+    value: 0.2806
+  - errors:
+    - {symerror: 0.0303}
+    value: 0.2567
+  - errors:
+    - {symerror: 0.029}
+    value: 0.1888
+  - errors:
+    - {symerror: 0.0289}
+    value: 0.2295
+  - errors:
+    - {symerror: 0.0304}
+    value: 0.2142
+  - errors:
+    - {symerror: 0.0127}
+    value: 0.2079
+  - errors:
+    - {symerror: 0.0118}
+    value: 0.2002
+  - errors:
+    - {symerror: 0.0106}
+    value: 0.1785
+  - errors:
+    - {symerror: 0.0126}
+    value: 0.2178
+  - errors:
+    - {symerror: 0.012}
+    value: 0.2143
+  - errors:
+    - {symerror: 0.0128}
+    value: 0.237
+  - errors:
+    - {symerror: 0.0124}
+    value: 0.2279
+  - errors:
+    - {symerror: 0.0134}
+    value: 0.2532
+  - errors:
+    - {symerror: 0.041}
+    value: 1.171
+  - errors:
+    - {symerror: 0.04}
+    value: 1.144
+  - errors:
+    - {symerror: 0.04}
+    value: 1.176
+  - errors:
+    - {symerror: 0.041}
+    value: 1.198
+  - errors:
+    - {symerror: 0.042}
+    value: 1.268
+  - errors:
+    - {symerror: 0.044}
+    value: 1.315
+  - errors:
+    - {symerror: 0.043}
+    value: 1.274
+  - errors:
+    - {symerror: 0.044}
+    value: 1.353
+  - errors:
+    - {symerror: 0.044}
+    value: 1.328
+  - errors:
+    - {symerror: 0.046}
+    value: 1.4
+  - errors:
+    - {symerror: 0.049}
+    value: 1.494
+  - errors:
+    - {symerror: 0.049}
+    value: 1.51
+  - errors:
+    - {symerror: 0.049}
+    value: 1.495
+  - errors:
+    - {symerror: 0.054}
+    value: 1.635
+  - errors:
+    - {symerror: 0.05}
+    value: 1.51
+  - errors:
+    - {symerror: 0.048}
+    value: 1.47
+  - errors:
+    - {symerror: 0.048}
+    value: 1.458
+  - errors:
+    - {symerror: 0.052}
+    value: 1.602
+  - errors:
+    - {symerror: 0.055}
+    value: 1.667
+  - errors:
+    - {symerror: 0.051}
+    value: 1.545
+  - errors:
+    - {symerror: 0.055}
+    value: 1.642
+  - errors:
+    - {symerror: 0.054}
+    value: 1.603
+  - errors:
+    - {symerror: 0.056}
+    value: 1.662
+  - errors:
+    - {symerror: 0.055}
+    value: 1.645
+  - errors:
+    - {symerror: 0.054}
+    value: 1.619
+  - errors:
+    - {symerror: 0.056}
+    value: 1.688
+  - errors:
+    - {symerror: 0.058}
+    value: 1.727
+  - errors:
+    - {symerror: 0.058}
+    value: 1.743
+  - errors:
+    - {symerror: 0.061}
+    value: 1.817
+  - errors:
+    - {symerror: 0.064}
+    value: 1.906
+  - errors:
+    - {symerror: 0.066}
+    value: 1.798
+independent_variables:
+- header: {name: THETA, units: DEG}
+  values:
+  - {value: 19.52}
+  - {value: 20.7}
+  - {value: 21.88}
+  - {value: 23.07}
+  - {value: 24.25}
+  - {value: 25.42}
+  - {value: 26.61}
+  - {value: 27.78}
+  - {value: 28.95}
+  - {value: 30.13}
+  - {value: 31.3}
+  - {value: 32.46}
+  - {value: 38.85}
+  - {value: 41.15}
+  - {value: 43.45}
+  - {value: 45.74}
+  - {value: 48.02}
+  - {value: 50.3}
+  - {value: 52.56}
+  - {value: 54.81}
+  - {value: 116.92}
+  - {value: 118.8}
+  - {value: 120.66}
+  - {value: 122.52}
+  - {value: 124.36}
+  - {value: 126.2}
+  - {value: 128.02}
+  - {value: 129.83}
+  - {value: 131.63}
+  - {value: 133.42}
+  - {value: 135.2}
+  - {value: 136.98}
+  - {value: 138.74}
+  - {value: 140.49}
+  - {value: 142.24}
+  - {value: 143.98}
+  - {value: 145.71}
+  - {value: 147.43}
+  - {value: 149.14}
+  - {value: 150.85}
+  - {value: 152.55}
+  - {value: 154.25}
+  - {value: 155.94}
+  - {value: 157.62}
+  - {value: 159.3}
+  - {value: 160.97}
+  - {value: 162.64}
+  - {value: 164.31}
+  - {value: 165.97}
+  - {value: 167.63}
+  - {value: 169.28}

@@ -1,0 +1,34 @@
+comment: 'KEK-BF.  We report the first measurement of the lepton forward-backward
+  asymmetry ASYM(FB) for the inclusive electroweak penguin process B --> X(STRANGE)
+  LEPTON+ LEPTON- as a function of Q**2 = M(LEPTON+ LEPTON-)**2, where LEPTON is an
+  electron or a muon and X(STRANGE) is a hadronic recoil system with a strange quark.
+  The results are based on a data sample containing 772*10**6 B BBAR pairs recorded
+  at the UPSILON(4S) resonance, sqrt(s) = 10.56 GeV, with the Belle detector at the
+  KEKB e+ e- collider. For Q**2 > 10.2 GeV**2, ASYM(FB) < 0 is excluded at the 2.3
+  SIGMA level, where SIGMA is the standard deviation. For Q**2 < 4.3 GeV**2, the result
+  is within 1.8 SIGMA of the theoretical expectation.
+
+  '
+dateupdated: 11/08/2014 17:26:09
+modifications:
+- {action: Encoded, date: 29 JUL 2014, who: Stephen Webster}
+record_ids:
+- {id: 1283183, type: inspire}
+- {id: 5302, type: red}
+---
+data_file: Table1.yaml
+description: 'The value of ASYM(FB) obtained from the fit in each of the four Q**2
+  bins.
+
+  '
+keywords:
+- name: reactions
+  values: [E+ E- --> B BBAR]
+- name: observables
+  values: [ASYM]
+- name: phrases
+  values: [Exclusive, Asymmetry Measurement, E+ E- Scattering]
+- name: cmenergies
+  values: [10.56]
+location: Data from Table 2 of Preprint
+name: Table 1

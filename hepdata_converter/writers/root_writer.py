@@ -1,11 +1,8 @@
 # -*- coding: utf-8 -*-
 import abc
-from math import sqrt
-import random
-import time
 from hepdata_converter.writers.array_writer import ArrayWriter, ObjectWrapper, ObjectFactory
 import rootpy.io
-import rootpy.ROOT
+from rootpy import ROOT as ROOT_py
 import numpy
 
 __author__ = 'Michał Szostak'
@@ -14,7 +11,7 @@ __author__ = 'Michał Szostak'
 class THFRootClass(ObjectWrapper):
     __metaclass__ = abc.ABCMeta
 
-    _hist_classes = [rootpy.ROOT.TH1F, rootpy.ROOT.TH2F, rootpy.ROOT.TH3F]
+    _hist_classes = [ROOT_py.TH1F, ROOT_py.TH2F, ROOT_py.TH3F]
     _hist_axes_names = ['x', 'y', 'z']
     dim = 0
     core_object = False
@@ -174,7 +171,6 @@ class TH1FRootClass(THFRootClass):
 
 
 class TGraph2DErrorsClass(ObjectWrapper):
-
     @classmethod
     def match(cls, independent_variables_map, dependent_variable):
         if not super(TGraph2DErrorsClass, cls).match(independent_variables_map, dependent_variable):
@@ -189,13 +185,13 @@ class TGraph2DErrorsClass(ObjectWrapper):
         self.independent_variable_map.pop(0)
         self.independent_variable_map.pop(0)
 
-        graph = rootpy.ROOT.TGraph2DErrors(len(self.xval[0]),
-                                           numpy.array(self.xval[0], dtype=float),
-                                           numpy.array(self.xval[1], dtype=float),
-                                           numpy.array(self.yval, dtype=float),
-                                           numpy.array(self.xerr_plus[0], dtype=float),
-                                           numpy.array(self.xerr_plus[1], dtype=float),
-                                           numpy.array(self.yerr_plus, dtype=float))
+        graph = ROOT_py.TGraph2DErrors(len(self.xval[0]),
+                                       numpy.array(self.xval[0], dtype=float),
+                                       numpy.array(self.xval[1], dtype=float),
+                                       numpy.array(self.yval, dtype=float),
+                                       numpy.array(self.xerr_plus[0], dtype=float),
+                                       numpy.array(self.xerr_plus[1], dtype=float),
+                                       numpy.array(self.yerr_plus, dtype=float))
 
         graph.set_name("Graph2D_y%s" % (self.dependent_variable_index + 1))
 
@@ -220,13 +216,13 @@ class TGraphAsymmErrorsRootClass(ObjectWrapper):
 
         self.independent_variable_map.pop(0)
 
-        graph = rootpy.ROOT.TGraphAsymmErrors(len(self.xval[0]),
-                                              numpy.array(self.xval[0], dtype=float),
-                                              numpy.array(self.yval, dtype=float),
-                                              numpy.array(self.xerr_minus[0], dtype=float),
-                                              numpy.array(self.xerr_plus[0], dtype=float),
-                                              numpy.array(self.yerr_minus, dtype=float),
-                                              numpy.array(self.yerr_plus, dtype=float))
+        graph = ROOT_py.TGraphAsymmErrors(len(self.xval[0]),
+                                          numpy.array(self.xval[0], dtype=float),
+                                          numpy.array(self.yval, dtype=float),
+                                          numpy.array(self.xerr_minus[0], dtype=float),
+                                          numpy.array(self.xerr_plus[0], dtype=float),
+                                          numpy.array(self.yerr_minus, dtype=float),
+                                          numpy.array(self.yerr_plus, dtype=float))
 
         graph.set_name("Graph1D_y%s" % (self.dependent_variable_index + 1))
 
@@ -258,9 +254,9 @@ class ROOT(ArrayWriter):
             self.file_emulation = True
             outputs.append(rootpy.io.root_open(data_out, 'w'))
         # multiple tables - require directory
-        elif isinstance(data_out, rootpy.ROOT.TFile):
+        elif isinstance(data_out, ROOT_py.TFile):
             outputs.append(data_out)
-        else: # assume it's a file like object
+        else:  # assume it's a file like object
             self.file_emulation = True
             outputs.append(rootpy.io.TemporaryFile())
 

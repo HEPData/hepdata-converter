@@ -1,0 +1,45 @@
+dependent_variables:
+- header: {name: ASYM(FB)}
+  qualifiers:
+  - {name: Q**2 (B --> X(STRANGE) E+ E-), units: GeV^2, value: 0.2-4.3}
+  - {name: Q**2 (B --> X(STRANGE) MU+ MU-), units: GeV^2, value: 0.2-4.3}
+  - {name: RE, value: E+ E- --> B < LEPTON+ LEPTON- X > BBAR < LEPTON+ LEPTON- X >}
+  values:
+  - errors:
+    - {label: stat, symerror: 0.24}
+    - {label: sys, symerror: 0.02}
+    value: 0.34
+- header: {name: ASYM(FB)}
+  qualifiers:
+  - {name: Q**2 (B --> X(STRANGE) E+ E-), units: GeV^2, value: 4.3-7.3}
+  - {name: Q**2 (B --> X(STRANGE) MU+ MU-), units: GeV^2, value: 4.3-8.1}
+  - {name: RE, value: E+ E- --> B < LEPTON+ LEPTON- X > BBAR < LEPTON+ LEPTON- X >}
+  values:
+  - errors:
+    - {label: stat, symerror: 0.31}
+    - {label: sys, symerror: 0.05}
+    value: 0.04
+- header: {name: ASYM(FB)}
+  qualifiers:
+  - {name: Q**2 (B --> X(STRANGE) E+ E-), units: GeV^2, value: 10.5-11.8}
+  - {name: Q**2 (B --> X(STRANGE) MU+ MU-), units: GeV^2, value: 10.2-12.5}
+  - {name: RE, value: E+ E- --> B < LEPTON+ LEPTON- X > BBAR < LEPTON+ LEPTON- X >}
+  values:
+  - errors:
+    - {label: stat, symerror: 0.21}
+    - {label: sys, symerror: 0.01}
+    value: 0.28
+- header: {name: ASYM(FB)}
+  qualifiers:
+  - {name: Q**2 (B --> X(STRANGE) E+ E-), units: GeV^2, value: 14.3-25.0}
+  - {name: Q**2 (B --> X(STRANGE) MU+ MU-), units: GeV^2, value: 14.3-25.0}
+  - {name: RE, value: E+ E- --> B < LEPTON+ LEPTON- X > BBAR < LEPTON+ LEPTON- X >}
+  values:
+  - errors:
+    - {label: stat, symerror: 0.15}
+    - {label: sys, symerror: 0.01}
+    value: 0.28
+independent_variables:
+- header: {name: SQRT(S), units: GEV}
+  values:
+  - {value: 10.56}

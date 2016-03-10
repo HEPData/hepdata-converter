@@ -1,0 +1,228 @@
+additional_resources:
+- {description: web page with auxiliary material, location: 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/TOPQ-2014-15/'}
+comment: 'CERN-LHC. Measurement of the differential cross-section for pair production
+  of top quarks with high transverse momentum ($p_T$), with respect to the transverse
+  momentum of the top quark, obtained using the lepton+jets channel. The hadronically
+  decaying top quark is reconstructed as an anti-kt jet with radius parameter R=1.0
+  and identified with jet substructure techniques. The measurement is obtained using
+  20.3 fb-1 of proton--proton collisions at a center-of-mass energy of 8 TeV and is
+  corrected at both particle-level, in a fiducial region close to the event selection,
+  and at parton-level, for events with top quarks with $p_T$ > 300 GeV.
+
+
+
+  The fiducial region is defined as (see also Table 1 of the paper):
+
+  - Exactly one lepton (e or mu)
+
+  - p_T(lepton) > 25 GeV and |eta(lepton)| < 2.5
+
+  - p_T(anti-kt R=0.4 jets) > 25 GeV and |eta(anti-kt R=0.4 jets)| < 2.5
+
+  - MET > 20 GeV and MET+MTW > 60 GeV (MTW is the transverse mass between the lepton
+  and the MET)
+
+  - at least one anti-kt R=0.4 jets within Delta-R < 1.5 from the lepton
+
+  - at least one anti-kt R=1.0 jets with p_T > 300 GeV, mass > 100 GeV, sqrt(d_12)
+  > 40 GeV (sqrt(d_12) is the first splitting scale)
+
+  - $\Delta R$(anti-kt R=1.0 jet, anti-kt R=0.4 jet) > 1.5 and $\Delta \phi$(anti-kt
+  R=1.0 jet, lepton) > 2.3
+
+  - At least one of the anti-kt R=0.4 jets is b-tagged among: (a) the leading jet
+  within  $\Delta R$ < 1.5 from the lepton; (b) one jet within $\Delta R$ < 1.0 from
+  anti-kt R=1.0 jet axis.
+
+  '
+dateupdated: 25/02/2016 16:43:52
+modifications:
+- {action: Encoded, date: 22 FEB 2016, who: Matteo Negrini}
+- {action: Edited, date: 25 FEB 2016, who: Graeme Watt}
+record_ids:
+- {id: 1397637, type: inspire}
+- {id: 6488, type: red}
+---
+data_file: Table1.yaml
+description: 'Fiducial particle-level differential cross-section, with statistical
+  and systematic uncertainties, as a function of the top-jet candidate p_T.
+
+  '
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: observables
+  values: [DSIG/DPT]
+- name: phrases
+  values: [Inclusive, Top, Single Differential Cross Section, Transverse Momentum
+      Dependence, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Table 4
+name: Table 1
+---
+data_file: Table2.yaml
+description: 'Parton-level differential cross-section, with statistical and systematic
+  uncertainties, as a function of the hadronically decaying top quark  p_T.
+
+  '
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: observables
+  values: [DSIG/DPT]
+- name: phrases
+  values: [Inclusive, Top, Single Differential Cross Section, Transverse Momentum
+      Dependence, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Table 5
+name: Table 2
+---
+data_file: Table3.yaml
+description: 'The individual systematic uncertainties calculated as a percentage of
+  the particle-level differential cross-section $d\sigma_{tt} / d p_{T,ptcl}$ in each
+  bin. Variations on the two sides ("UP" and "DOWN") are separately quoted with their
+  respective signs. Uncertainties smaller than 0.1% are neglected.
+
+  '
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: observables
+  values: [DSIG/DPT]
+- name: phrases
+  values: [Inclusive, Top, Single Differential Cross Section, Transverse Momentum
+      Dependence, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Table 7
+name: Table 3
+---
+data_file: Table4.yaml
+description: 'The individual systematic uncertainties calculated as a percentage of
+  the parton-level differential cross-section $d\sigma_{tt} / d p_{T,parton}$ in each
+  bin. Variations on the two sides ("UP" and "DOWN") are separately quoted with their
+  respective signs. Uncertainties smaller than 0.1% are neglected.
+
+  '
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: observables
+  values: [DSIG/DPT]
+- name: phrases
+  values: [Inclusive, Top, Single Differential Cross Section, Transverse Momentum
+      Dependence, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Table 8
+name: Table 4
+---
+data_file: Table5.yaml
+description: 'Covariance matrix for the particle-level differential cross-section.
+  The elements of the covariance matrix are in units of ab^2/GeV^2.
+
+  '
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: observables
+  values: [DSIG/DPT]
+- name: phrases
+  values: [Inclusive, Top, Single Differential Cross Section, Transverse Momentum
+      Dependence, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Table 1 Auxiliary
+name: Table 5
+---
+data_file: Table6.yaml
+description: 'Covariance matrix for the parton-level differential cross-section. The
+  elements of the covariance matrix are in units of ab^2/GeV^2.
+
+  '
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: observables
+  values: [DSIG/DPT]
+- name: phrases
+  values: [Inclusive, Top, Single Differential Cross Section, Transverse Momentum
+      Dependence, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Table 4 Auxiliary
+name: Table 6
+---
+data_file: Table7.yaml
+description: 'Correlation matrix between the bins of the particle-level differential
+  cross-section as a function of $p_{T,ptcl}$.
+
+  '
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: observables
+  values: [DSIG/DPT]
+- name: phrases
+  values: [Inclusive, Top, Single Differential Cross Section, Transverse Momentum
+      Dependence, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Table 3
+name: Table 7
+---
+data_file: Table8.yaml
+description: 'Correlation matrix between the bins of the parton-level differential
+  cross-section as a function of $p_{T,parton}$.
+
+  '
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: observables
+  values: [DSIG/DPT]
+- name: phrases
+  values: [Inclusive, Top, Single Differential Cross Section, Transverse Momentum
+      Dependence, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Table 3 Auxiliary
+name: Table 8
+---
+data_file: Table9.yaml
+description: 'Correlation matrix of the data statistical uncertainty of the particle-level
+  differential cross-section.
+
+  '
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: observables
+  values: [DSIG/DPT]
+- name: phrases
+  values: [Inclusive, Top, Single Differential Cross Section, Transverse Momentum
+      Dependence, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Table 2 Auxiliary
+name: Table 9
+---
+data_file: Table10.yaml
+description: 'Correlation matrix of the data statistical uncertainty of the parton-level
+  differential cross-section.
+
+  '
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: observables
+  values: [DSIG/DPT]
+- name: phrases
+  values: [Inclusive, Top, Single Differential Cross Section, Transverse Momentum
+      Dependence, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Table 5 Auxiliary
+name: Table 10

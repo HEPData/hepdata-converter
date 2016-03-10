@@ -1,10 +1,4 @@
-import StringIO
-import unittest
 import os
-import tempfile
-import time
-import shutil
-import subprocess
 import hepdata_converter
 from hepdata_converter import convert
 from hepdata_converter.testsuite import insert_path, insert_data_as_str

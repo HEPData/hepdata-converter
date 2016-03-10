@@ -29,7 +29,7 @@ def convert(input, output=None, options={}):
     writer = Writer.get_concrete_class(output_format)(**options)
 
     if not output and not writer.single_file_output:
-        raise ValueError("this output_format requires specifing 'output' argument")
+        raise ValueError("this output_format requires specifying 'output' argument")
 
     # if no output was specified create proxy output to which writer can insert data
     _output = output

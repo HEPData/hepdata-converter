@@ -1,0 +1,227 @@
+comment: 'TRIUMF. Measurement of the cross sections for elastic PI+- P interactions
+  at incident energies 43.3, 37.1, 32.0, 25.8 and 19.9 MeV. Numerical values supplied
+  by H. Denz. Details of systematic errors taken from thesis.
+
+  '
+dateupdated: 12/12/2005 00:00:00
+modifications:
+- {action: Encoded, date: 12 Dec 2005, who: Mike Whalley}
+record_ids:
+- {id: 699647, type: inspire}
+- {id: 2557, type: red}
+---
+data_file: Table1.yaml
+description: 'Elastic PI- P cross section for incident kinetic energy 43.3 MeV for
+  the rotated target data. Errors shown are statistical only.
+
+  '
+keywords:
+- name: reactions
+  values: [PI- P --> PI- P]
+- name: observables
+  values: [DSIG/DOMEGA]
+- name: phrases
+  values: [Elastic, Single Differential Cross Section, Pion-Proton Elastic Scattering,
+    Pion-Proton Scattering]
+- name: cmenergies
+  values: [1.111]
+location: Data from F 2
+name: Table 1
+---
+data_file: Table2.yaml
+description: 'Elastic PI- P cross section for incident kinetic energy 43.3 MeV. Errors
+  shown are statistical only.
+
+  '
+keywords:
+- name: reactions
+  values: [PI- P --> PI- P]
+- name: observables
+  values: [DSIG/DOMEGA]
+- name: phrases
+  values: [Elastic, Single Differential Cross Section, Pion-Proton Elastic Scattering,
+    Pion-Proton Scattering]
+- name: cmenergies
+  values: [1.111]
+location: Data from F 2
+name: Table 2
+---
+data_file: Table3.yaml
+description: 'Elastic PI- P cross section for incident kinetic energy 37.1 MeV. Errors
+  shown are statistical only.
+
+  '
+keywords:
+- name: reactions
+  values: [PI- P --> PI- P]
+- name: observables
+  values: [DSIG/DOMEGA]
+- name: phrases
+  values: [Elastic, Single Differential Cross Section, Pion-Proton Elastic Scattering,
+    Pion-Proton Scattering]
+- name: cmenergies
+  values: [1.106]
+location: Data from F 2
+name: Table 3
+---
+data_file: Table4.yaml
+description: 'Elastic PI- P cross section for incident kinetic energy 32.0 MeV. Errors
+  shown are statistical only.
+
+  '
+keywords:
+- name: reactions
+  values: [PI- P --> PI- P]
+- name: observables
+  values: [DSIG/DOMEGA]
+- name: phrases
+  values: [Elastic, Single Differential Cross Section, Pion-Proton Elastic Scattering,
+    Pion-Proton Scattering]
+- name: cmenergies
+  values: [1.102]
+location: Data from F 2
+name: Table 4
+---
+data_file: Table5.yaml
+description: 'Elastic PI- P cross section for incident kinetic energy 25.8 MeV. Errors
+  shown are statistical only.
+
+  '
+keywords:
+- name: reactions
+  values: [PI- P --> PI- P]
+- name: observables
+  values: [DSIG/DOMEGA]
+- name: phrases
+  values: [Elastic, Single Differential Cross Section, Pion-Proton Elastic Scattering,
+    Pion-Proton Scattering]
+- name: cmenergies
+  values: [1.096]
+location: Data from F 2
+name: Table 5
+---
+data_file: Table6.yaml
+description: 'Elastic PI- P cross section for incident kinetic energy 19.9 MeV. Errors
+  shown are statistical only.
+
+  '
+keywords:
+- name: reactions
+  values: [PI- P --> PI- P]
+- name: observables
+  values: [DSIG/DOMEGA]
+- name: phrases
+  values: [Elastic, Single Differential Cross Section, Pion-Proton Elastic Scattering,
+    Pion-Proton Scattering]
+- name: cmenergies
+  values: [1.091]
+location: Data from F 2
+name: Table 6
+---
+data_file: Table7.yaml
+description: 'Elastic PI+ P cross section for incident kinetic energy 43.3 MeV for
+  the rotated target data. Errors shown are statistical only.
+
+  '
+keywords:
+- name: reactions
+  values: [PI+ P --> PI+ P]
+- name: observables
+  values: [DSIG/DOMEGA]
+- name: phrases
+  values: [Elastic, Single Differential Cross Section, Pion-Proton Elastic Scattering,
+    Pion-Proton Scattering]
+- name: cmenergies
+  values: [1.111]
+location: Data from F 2
+name: Table 7
+---
+data_file: Table8.yaml
+description: 'Elastic PI+ P cross section for incident kinetic energy 43.3 MeV. Errors
+  shown are statistical only.
+
+  '
+keywords:
+- name: reactions
+  values: [PI+ P --> PI+ P]
+- name: observables
+  values: [DSIG/DOMEGA]
+- name: phrases
+  values: [Elastic, Single Differential Cross Section, Pion-Proton Elastic Scattering,
+    Pion-Proton Scattering]
+- name: cmenergies
+  values: [1.111]
+location: Data from F 2
+name: Table 8
+---
+data_file: Table9.yaml
+description: 'Elastic PI+ P cross section for incident kinetic energy 37.1 MeV. Errors
+  shown are statistical only.
+
+  '
+keywords:
+- name: reactions
+  values: [PI+ P --> PI+ P]
+- name: observables
+  values: [DSIG/DOMEGA]
+- name: phrases
+  values: [Elastic, Single Differential Cross Section, Pion-Proton Elastic Scattering,
+    Pion-Proton Scattering]
+- name: cmenergies
+  values: [1.106]
+location: Data from F 2
+name: Table 9
+---
+data_file: Table10.yaml
+description: 'Elastic PI+ P cross section for incident kinetic energy 32.0 MeV. Errors
+  shown are statistical only.
+
+  '
+keywords:
+- name: reactions
+  values: [PI+ P --> PI+ P]
+- name: observables
+  values: [DSIG/DOMEGA]
+- name: phrases
+  values: [Elastic, Single Differential Cross Section, Pion-Proton Elastic Scattering,
+    Pion-Proton Scattering]
+- name: cmenergies
+  values: [1.102]
+location: Data from F 2
+name: Table 10
+---
+data_file: Table11.yaml
+description: 'Elastic PI+ P cross section for incident kinetic energy 25.8 MeV. Errors
+  shown are statistical only.
+
+  '
+keywords:
+- name: reactions
+  values: [PI+ P --> PI+ P]
+- name: observables
+  values: [DSIG/DOMEGA]
+- name: phrases
+  values: [Elastic, Single Differential Cross Section, Pion-Proton Elastic Scattering,
+    Pion-Proton Scattering]
+- name: cmenergies
+  values: [1.096]
+location: Data from F 2
+name: Table 11
+---
+data_file: Table12.yaml
+description: 'Elastic PI+ P cross section for incident kinetic energy 19.9 MeV. Errors
+  shown are statistical only.
+
+  '
+keywords:
+- name: reactions
+  values: [PI+ P --> PI+ P]
+- name: observables
+  values: [DSIG/DOMEGA]
+- name: phrases
+  values: [Elastic, Single Differential Cross Section, Pion-Proton Elastic Scattering,
+    Pion-Proton Scattering]
+- name: cmenergies
+  values: [1.091]
+location: Data from F 2
+name: Table 12

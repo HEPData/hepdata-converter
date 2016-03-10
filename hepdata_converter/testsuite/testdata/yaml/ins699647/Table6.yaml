@@ -1,0 +1,134 @@
+dependent_variables:
+- header: {name: D(SIG)/DOMEGA, units: MB/SR}
+  qualifiers:
+  - {name: EKIN(P=1), units: MeV, value: '19.9'}
+  - {name: RE, value: PI- P --> PI- P}
+  - {name: SQRT(S), units: GeV, value: '1.091'}
+  values:
+  - errors:
+    - {symerror: 0.54}
+    value: 23.04
+  - errors:
+    - {symerror: 0.45}
+    value: 17.87
+  - errors:
+    - {symerror: 0.38}
+    value: 13.98
+  - errors:
+    - {symerror: 0.33}
+    value: 11.1
+  - errors:
+    - {symerror: 0.306}
+    value: 9.066
+  - errors:
+    - {symerror: 0.238}
+    value: 6.936
+  - errors:
+    - {symerror: 0.0284}
+    value: 0.8288
+  - errors:
+    - {symerror: 0.0255}
+    value: 0.7032
+  - errors:
+    - {symerror: 0.023}
+    value: 0.618
+  - errors:
+    - {symerror: 0.0215}
+    value: 0.5565
+  - errors:
+    - {symerror: 0.0211}
+    value: 0.5478
+  - errors:
+    - {symerror: 0.0191}
+    value: 0.4729
+  - errors:
+    - {symerror: 0.0193}
+    value: 0.4736
+  - errors:
+    - {symerror: 0.0174}
+    value: 0.4051
+  - errors:
+    - {symerror: 0.018}
+    value: 0.4095
+  - errors:
+    - {symerror: 0.0164}
+    value: 0.3544
+  - errors:
+    - {symerror: 0.0149}
+    value: 0.3368
+  - errors:
+    - {symerror: 0.0148}
+    value: 0.3248
+  - errors:
+    - {symerror: 0.0149}
+    value: 0.318
+  - errors:
+    - {symerror: 0.0131}
+    value: 0.2724
+  - errors:
+    - {symerror: 0.0137}
+    value: 0.288
+  - errors:
+    - {symerror: 0.0137}
+    value: 0.2788
+  - errors:
+    - {symerror: 0.0126}
+    value: 0.2455
+  - errors:
+    - {symerror: 0.0132}
+    value: 0.2451
+  - errors:
+    - {symerror: 0.0121}
+    value: 0.2151
+  - errors:
+    - {symerror: 0.0134}
+    value: 0.2295
+  - errors:
+    - {symerror: 0.0123}
+    value: 0.1996
+  - errors:
+    - {symerror: 0.0118}
+    value: 0.2032
+  - errors:
+    - {symerror: 0.0131}
+    value: 0.2042
+  - errors:
+    - {symerror: 0.0135}
+    value: 0.2084
+  - errors:
+    - {symerror: 0.0132}
+    value: 0.1953
+independent_variables:
+- header: {name: THETA, units: DEG}
+  values:
+  - {value: 14.54}
+  - {value: 15.7}
+  - {value: 16.86}
+  - {value: 18.03}
+  - {value: 19.19}
+  - {value: 20.35}
+  - {value: 42.75}
+  - {value: 45.01}
+  - {value: 47.26}
+  - {value: 49.51}
+  - {value: 51.75}
+  - {value: 53.98}
+  - {value: 56.2}
+  - {value: 58.41}
+  - {value: 60.61}
+  - {value: 62.8}
+  - {value: 64.99}
+  - {value: 67.16}
+  - {value: 69.32}
+  - {value: 71.47}
+  - {value: 73.62}
+  - {value: 75.75}
+  - {value: 77.87}
+  - {value: 79.98}
+  - {value: 82.08}
+  - {value: 84.16}
+  - {value: 86.24}
+  - {value: 88.3}
+  - {value: 90.36}
+  - {value: 92.4}
+  - {value: 94.43}

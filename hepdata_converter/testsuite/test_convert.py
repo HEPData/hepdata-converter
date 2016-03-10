@@ -1,12 +1,7 @@
 import StringIO
-import tempfile
-import unittest
-import time
 import os
-import shutil
 import yaml
 import hepdata_converter
-from hepdata_converter.parsers import Parser
 from hepdata_converter.testsuite import insert_path
 from hepdata_converter.testsuite.test_writer import WriterTestSuite
 

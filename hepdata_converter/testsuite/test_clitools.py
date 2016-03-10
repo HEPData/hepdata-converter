@@ -1,6 +1,5 @@
 import os
 import hepdata_converter
-import unittest
 from hepdata_converter.testsuite import insert_data_as_str, insert_path
 from hepdata_converter.testsuite.test_writer import WriterTestSuite
 

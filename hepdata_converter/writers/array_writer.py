@@ -1,12 +1,14 @@
-import abc
-import copy
-import csv
+import logging
 from math import sqrt
 import os
-from hepdata_converter.common import OptionInitMixin, Option
+from hepdata_converter.common import Option
 from hepdata_converter.writers import Writer
 import abc
 
+from hepdata_converter.writers.utils import percentage_processor
+
+logging.basicConfig()
+log = logging.getLogger(__name__)
 
 class ObjectWrapper(object):
     __metaclass__ = abc.ABCMeta
@@ -127,12 +129,21 @@ class ArrayWriter(Writer):
                     errors_min = 0.0
                     errors_max = 0.0
                     for error in entry['errors']:
+                        print error
                         if 'asymerror' in error:
-                            errors_min += pow(error['asymerror']['minus'], 2)
-                            errors_max += pow(error['asymerror']['plus'], 2)
+                            err_minus = percentage_processor(entry['value'], error['asymerror']['minus'])
+                            err_plus = percentage_processor(entry['value'], error['asymerror']['plus'])
+                            errors_min += pow(err_minus, 2)
+                            errors_max += pow(err_plus, 2)
                         elif 'symerror' in error:
-                            errors_min += pow(error['symerror'], 2)
-                            errors_max += pow(error['symerror'], 2)
+                            try:
+                                err = percentage_processor(entry['value'], error['symerror'])
+
+                                errors_min += pow(err, 2)
+                                errors_max += pow(err, 2)
+                            except TypeError:
+                                print log.error('TypeError encountered when parsing {0}'.format(error['symerror']))
+
                     min_errs.append(sqrt(errors_min))
                     max_errs.append(sqrt(errors_max))
                 else:

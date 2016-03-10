@@ -1,0 +1,49 @@
+dependent_variables:
+- header: {name: DSIG/DPT, units: FB/GEV}
+  qualifiers:
+  - {name: RE, value: P P --> TOP TOPBAR X}
+  - {name: SQRT(S), units: GeV, value: '8000.0'}
+  values:
+  - errors:
+    - {label: stat, symerror: 2.7%}
+    - {label: sys, symerror: 15.0%}
+    value: 4.97
+  - errors:
+    - {label: stat, symerror: 3.5%}
+    - {label: sys, symerror: 13.0%}
+    value: 3.09
+  - errors:
+    - {label: stat, symerror: 4.2%}
+    - {label: sys, symerror: 13.0%}
+    value: 1.73
+  - errors:
+    - {label: stat, symerror: 4.4%}
+    - {label: sys, symerror: 14.0%}
+    value: 1.08
+  - errors:
+    - {label: stat, symerror: 6.1%}
+    - {label: sys, symerror: 14.0%}
+    value: 0.56
+  - errors:
+    - {label: stat, symerror: 6.0%}
+    - {label: sys, symerror: 16.0%}
+    value: 0.27
+  - errors:
+    - {label: stat, symerror: 8.1%}
+    - {label: sys, symerror: 20.0%}
+    value: 0.097
+  - errors:
+    - {label: stat, symerror: 15.0%}
+    - {label: sys, symerror: 24.0%}
+    value: 0.012
+independent_variables:
+- header: {name: PT(TOP-JET), units: GEV}
+  values:
+  - {high: 350.0, low: 300.0}
+  - {high: 400.0, low: 350.0}
+  - {high: 450.0, low: 400.0}
+  - {high: 500.0, low: 450.0}
+  - {high: 550.0, low: 500.0}
+  - {high: 650.0, low: 550.0}
+  - {high: 750.0, low: 650.0}
+  - {high: 1200.0, low: 750.0}
