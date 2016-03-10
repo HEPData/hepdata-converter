@@ -1,5 +1,5 @@
-BEGIN YODA_SCATTER2D
-Path=
+BEGIN YODA_SCATTER2D /
+Path=/
 Title=Table 1
 Type=Scatter2D
 # xval	 xerr-	 xerr+	 yval	 yerr-	 yerr+
@@ -8,8 +8,8 @@ Type=Scatter2D
 9.000000e+03	0.000000e+00	0.000000e+00	1.270000e+01	3.570714e+00	3.570714e+00
 END YODA_SCATTER2D
 
-BEGIN YODA_SCATTER3D
-Path=
+BEGIN YODA_SCATTER3D /
+Path=/
 Title=Table 2
 Type=Scatter3D
 # xval	 xerr-	 xerr+	 yval	 yerr-	 yerr+	 zval	 zerr-	 zerr+
@@ -45,8 +45,8 @@ Type=Scatter3D
 7.900000e+02	0.000000e+00	0.000000e+00	8.000000e+02	0.000000e+00	0.000000e+00	2.502000e-04	0.000000e+00	0.000000e+00
 END YODA_SCATTER3D
 
-BEGIN YODA_SCATTER2D
-Path=
+BEGIN YODA_SCATTER2D /
+Path=/
 Title=Table 3
 Type=Scatter2D
 # xval	 xerr-	 xerr+	 yval	 yerr-	 yerr+
@@ -56,8 +56,8 @@ Type=Scatter2D
 4.000000e+02	2.000000e+02	2.000000e+02	8.000000e+01	6.003332e+01	6.003332e+01
 END YODA_SCATTER2D
 
-BEGIN YODA_SCATTER2D
-Path=
+BEGIN YODA_SCATTER2D /
+Path=/
 Title=Table 4
 Type=Scatter2D
 # xval	 xerr-	 xerr+	 yval	 yerr-	 yerr+
@@ -66,8 +66,8 @@ Type=Scatter2D
 1.650000e+02	3.500000e+01	3.500000e+01	3.900000e+03	1.544862e+03	1.544862e+03
 END YODA_SCATTER2D
 
-BEGIN YODA_SCATTER2D
-Path=
+BEGIN YODA_SCATTER2D /
+Path=/
 Title=Table 5
 Type=Scatter2D
 # xval	 xerr-	 xerr+	 yval	 yerr-	 yerr+
@@ -77,8 +77,8 @@ Type=Scatter2D
 2.420795e+00	7.207950e-01	7.207950e-01	4.200000e+05	5.004088e+04	5.004088e+04
 END YODA_SCATTER2D
 
-BEGIN YODA_SCATTER2D
-Path=
+BEGIN YODA_SCATTER2D /
+Path=/
 Title=Table 8
 Type=Scatter2D
 # xval	 xerr-	 xerr+	 yval	 yerr-	 yerr+
@@ -87,8 +87,8 @@ Type=Scatter2D
 3.500000e+02	5.000000e+01	5.000000e+01	3.680000e+03	1.303112e+03	1.303112e+03
 END YODA_SCATTER2D
 
-BEGIN YODA_SCATTER2D
-Path=
+BEGIN YODA_SCATTER2D /
+Path=/
 Title=Table 9
 Type=Scatter2D
 # xval	 xerr-	 xerr+	 yval	 yerr-	 yerr+
@@ -106,8 +106,8 @@ Type=Scatter2D
 4.875000e+02	1.250000e+01	1.250000e+01	2.000000e+00	0.000000e+00	0.000000e+00
 END YODA_SCATTER2D
 
-BEGIN YODA_SCATTER2D
-Path=
+BEGIN YODA_SCATTER2D /
+Path=/
 Title=Table 9
 Type=Scatter2D
 # xval	 xerr-	 xerr+	 yval	 yerr-	 yerr+
@@ -125,8 +125,8 @@ Type=Scatter2D
 4.875000e+02	1.250000e+01	1.250000e+01	1.600000e-01	1.700000e-01	1.700000e-01
 END YODA_SCATTER2D
 
-BEGIN YODA_SCATTER2D
-Path=
+BEGIN YODA_SCATTER2D /
+Path=/
 Title=Table 9
 Type=Scatter2D
 # xval	 xerr-	 xerr+	 yval	 yerr-	 yerr+
@@ -144,8 +144,8 @@ Type=Scatter2D
 4.875000e+02	1.250000e+01	1.250000e+01	9.300000e-01	0.000000e+00	0.000000e+00
 END YODA_SCATTER2D
 
-BEGIN YODA_SCATTER2D
-Path=
+BEGIN YODA_SCATTER2D /
+Path=/
 Title=Table 9
 Type=Scatter2D
 # xval	 xerr-	 xerr+	 yval	 yerr-	 yerr+

@@ -51,7 +51,6 @@ class insert_data_as_str(object):
 
 class insert_path(object):
     def __init__(self, *sample_file_name):
-        print sample_file_name
         self.sample_file_name = _parse_path_arguments(sample_file_name)
 
     def __call__(self, function):
