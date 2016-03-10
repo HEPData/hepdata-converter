@@ -129,7 +129,6 @@ class ArrayWriter(Writer):
                     errors_min = 0.0
                     errors_max = 0.0
                     for error in entry['errors']:
-                        print error
                         if 'asymerror' in error:
                             err_minus = percentage_processor(entry['value'], error['asymerror']['minus'])
                             err_plus = percentage_processor(entry['value'], error['asymerror']['plus'])
@@ -138,7 +137,6 @@ class ArrayWriter(Writer):
                         elif 'symerror' in error:
                             try:
                                 err = percentage_processor(entry['value'], error['symerror'])
-
                                 errors_min += pow(err, 2)
                                 errors_max += pow(err, 2)
                             except TypeError:
