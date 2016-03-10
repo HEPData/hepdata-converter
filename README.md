@@ -8,11 +8,32 @@
 
 
 
-# HEP Data Converter
+# HEPData Converter
 
-This software library provides support for converting old HEPData format used by: [http://hepdata.cedar.ac.uk]
+This software library provides support for converting:
+
+* Old hepdata format -> YAML
+* YAML to
+    * ROOT
+    * YODA
+    * CSV
 
 Old format detailed description: [http://hepdata.cedar.ac.uk/resource/sample.input]
+
+## Installation
+
+To use this package, you need to have YODA and ROOT (and PyROOT) installed. This can be a bit of a pain, but instructions to install are available below.
+
+#### ROOT Installation
+
+We've provided some helpful installation guides for you :)
+
+* [Mac OS](http://spamspameggsandspam.blogspot.ch/2011/08/setting-up-root-and-pyroot-on-new-mac.html)
+* [Linux](https://root.cern.ch/pyroot)
+* [Windows](https://root.cern.ch/pyroot)
+
+#### YODA Installation
+* Mac OS We use brew, you should too :) ```brew tap davidchall/hep``` to tell brew where to get package definitions from for HEP.	Then, ```brew install yoda```.
 
 ## Usage
 
@@ -21,10 +42,10 @@ Library exposes single function which enables conversion from several different 
 *HERE SHOULD GO IMAGE WITH THE 'ARCHITECTURE'*
 
 
-
 ### Conversion between different formats
 
 #### Python code
+
 ```
 import hepconverter
 
@@ -32,7 +53,8 @@ hepconverter.convert(input_file, output_directory, options={'input_format': 'old
 
 ```
 
-#### CLIw
+#### CLI
+
 ```
 $ hepdata-converter --input-format oldhepdata /path/to/input /path/to/output
 ```
@@ -45,14 +67,15 @@ To extend library with new formats (both input and output) one only needs to sub
 ```hepconverter.parsers.Parser```, for writing ```hepconverter.writers.Writer```, and make sure that files containing these implementations
 are respectively in ```hepconcerter.parsers``` or ```hepconverter.writers``` package)
 
-### Creating new Parser
+### Creating a new Parser
 
 In order to create new Parser you need to create class inheriting Parser class and override ```def parse(self, data_in, *args, **kwargs):``` abstract method. If you're trying to extend the library you should put the file containing new Parser in ```hepdata_converter/parsers``` directory, the name of the class is important - the new parser will be available by this name (case insensitive). If your goal is a simple hack then the package containing new parser class can be whererver, but the parser class has to be imported before using hepdata_converter.convert function.
 
 Example is below:
 
-```
-# -*- encoding: utf-8 -*-
+
+```python
+
 from hepdata_converter.common import Option
 from hepdata_converter.parsers import Parser, ParsedData
 
@@ -87,12 +110,14 @@ class FOO(Parser):
         # ... parse data_in into metadata and tables
 
         return ParsedData(metadata, tables)
+        
 
 ```
 
 If this class is put in (eg) ```hepdata_converter/parsers/foo_parser.py``` then it could be accessed in the code as:
 
-```
+
+```python
 import hepdata_converter
 
 hepdata_converter.convert('/path/to/input', '/path/to/output',
@@ -101,8 +126,11 @@ hepdata_converter.convert('/path/to/input', '/path/to/output',
 
 It can also be accessed from CLI:
 
-```
-$ hepdata-converter --input-format foo /path/to/input /path/to/output
+
+```bash
+
+	$ hepdata-converter --input-format foo /path/to/input /path/to/output
+
 ```
 
 **WARNING**: it is developers responsibility to be able to handle
@@ -117,7 +145,7 @@ In order to create new Writer you need to create class inheriting Writer class a
 
 Example is below:
 
-```
+```python
 # -*- encoding: utf-8 -*-
 from hepdata_converter.common import Option
 from hepdata_converter.writers import Writer
@@ -154,7 +182,8 @@ class FOO(Writer):
 
 If this class is put in (eg) ```hepdata_converter/writers/foo_writer.py``` then it could be accessed in the code as:
 
-```
+
+```python
 import hepdata_converter
 
 hepdata_converter.convert('/path/to/input', '/path/to/output',
@@ -163,10 +192,11 @@ hepdata_converter.convert('/path/to/input', '/path/to/output',
 
 It can also be accessed from CLI:
 
-```
+```python
+
 $ hepdata-converter --output-format foo /path/to/input /path/to/output
+
 ```
 
 **WARNING**: it is developers responsibility to be able to handle
-```data_out``` in ```def write(self, data_in, data_out, *args, **kwargs):``` regardless whether it is string (path) or filelike
-object
+```data_out``` in ```def write(self, data_in, data_out, *args, **kwargs):``` regardless whether it is string (path) or filelike object
