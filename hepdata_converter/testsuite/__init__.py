@@ -78,8 +78,8 @@ class insert_paths(object):
 
 
 class TMPDirMixin(object):
-    # def tearDown(self):
-    #     shutil.rmtree(self.current_tmp)
+    def tearDown(self):
+        shutil.rmtree(self.current_tmp)
 
     def setUp(self):
         self.current_tmp = os.path.join(tempfile.gettempdir(), str(int(time.time()))) + str(randint(0, 10000))

@@ -52,7 +52,7 @@ class ROOTWriterTestSuite(WriterTestSuite):
     def test_parse_all(self, test_submissions):
 
         for idx, test_submission in enumerate(test_submissions):
-            output_file_path = os.path.join(self.current_tmp, 'data-{}.yoda'.format(idx))
+            output_file_path = os.path.join(self.current_tmp, 'data-{}.root'.format(idx))
 
             hepdata_converter.convert(test_submission, output_file_path,
                                       options={'output_format': 'root'})
