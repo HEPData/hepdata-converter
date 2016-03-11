@@ -5,8 +5,13 @@ import rootpy.io
 from rootpy import ROOT as ROOT_py
 import numpy
 
+from hepdata_converter.writers.utils import error_value_processor
+
 __author__ = 'Michał Szostak'
 
+import logging
+logging.basicConfig()
+log = logging.getLogger(__name__)
 
 class THFRootClass(ObjectWrapper):
     __metaclass__ = abc.ABCMeta
@@ -112,12 +117,14 @@ class THFRootClass(ObjectWrapper):
                         yval_plus.append(0.0)
                         yval_minus.append(0.0)
                     elif 'symerror' in error[0]:
-                        err_val = float(error[0]['symerror'])
+                        err_val = error_value_processor(value['value'], error[0]['symerror'])
                         yval_plus.append(err_val)
                         yval_minus.append(err_val)
                     elif 'asymerror' in error[0]:
-                        yval_plus.append(float(error[0]['asymerror']['plus']))
-                        yval_minus.append(float(error[0]['asymerror']['minus']))
+                        err_plus = error_value_processor(value['value'], error[0]['asymerror']['plus'])
+                        err_min = error_value_processor(value['value'], error[0]['asymerror']['minus'])
+                        yval_plus.append(err_plus)
+                        yval_minus.append(err_min)
                     else:
                         yval_plus.append(0.0)
                         yval_minus.append(0.0)
@@ -132,7 +139,8 @@ class THFRootClass(ObjectWrapper):
                     if len(error) == 0:
                         yval.append(0.0)
                     elif 'symerror' in error[0]:
-                        yval.append(float(error[0]['symerror']))
+                        err_val = error_value_processor(value['value'], error[0]['symerror'])
+                        yval.append(err_val)
                     else:
                         yval.append(0.0)
 
@@ -153,7 +161,11 @@ class THFRootClass(ObjectWrapper):
                 xval[i].append(x['low'])
             xval[i].append(i_var[-1]['high'])
 
-        hist = self._create_hist(xval)
+        try:
+            hist = self._create_hist(xval)
+        except:
+            log.error("Failed to create histogram")
+            return []
 
         return [hist] + error_hists
 
@@ -252,7 +264,7 @@ class ROOT(ArrayWriter):
     def _prepare_outputs(self, data_out, outputs):
         if isinstance(data_out, str) or isinstance(data_out, unicode):
             self.file_emulation = True
-            outputs.append(rootpy.io.root_open(data_out, 'w'))
+            outputs.append(rootpy.io.root_open(data_out, 'w+'))
         # multiple tables - require directory
         elif isinstance(data_out, ROOT_py.TFile):
             outputs.append(data_out)
@@ -262,7 +274,6 @@ class ROOT(ArrayWriter):
 
     def write(self, data_in, data_out, *args, **kwargs):
         """
-
         :param data_in:
         :type data_in: hepconverter.parsers.ParsedData
         :param data_out: filelike object

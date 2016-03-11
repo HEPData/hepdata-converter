@@ -5,7 +5,7 @@ from hepdata_converter.common import Option
 from hepdata_converter.writers import Writer
 import abc
 
-from hepdata_converter.writers.utils import percentage_processor
+from hepdata_converter.writers.utils import error_value_processor
 
 logging.basicConfig()
 log = logging.getLogger(__name__)
@@ -109,7 +109,8 @@ class ObjectFactory(object):
                 if not class_wrapper.core_object and auxiliary_object_created:
                     continue
 
-                objects = class_wrapper.match_and_create(self.map[dependent_variable_index], self.dependent_variables[dependent_variable_index], dependent_variable_index)
+                objects = class_wrapper.match_and_create(self.map[dependent_variable_index],
+                                                         self.dependent_variables[dependent_variable_index], dependent_variable_index)
                 if objects and not class_wrapper.core_object:
                     auxiliary_object_created = True
 
@@ -130,13 +131,13 @@ class ArrayWriter(Writer):
                     errors_max = 0.0
                     for error in entry['errors']:
                         if 'asymerror' in error:
-                            err_minus = percentage_processor(entry['value'], error['asymerror']['minus'])
-                            err_plus = percentage_processor(entry['value'], error['asymerror']['plus'])
+                            err_minus = error_value_processor(entry['value'], error['asymerror']['minus'])
+                            err_plus = error_value_processor(entry['value'], error['asymerror']['plus'])
                             errors_min += pow(err_minus, 2)
                             errors_max += pow(err_plus, 2)
                         elif 'symerror' in error:
                             try:
-                                err = percentage_processor(entry['value'], error['symerror'])
+                                err = error_value_processor(entry['value'], error['symerror'])
                                 errors_min += pow(err, 2)
                                 errors_max += pow(err, 2)
                             except TypeError:
@@ -270,7 +271,6 @@ class ArrayWriter(Writer):
         y_order = []
         y_data = {'values': []}
         y_order.append(y_data['values'])
-        # :TODO: GET ALL ERRORS FROM ALL ENTRIES
         for error in dependent_variable['values'][0].get('errors', []):
             headers.append(error.get('label', 'stat') + ' +')
             qualifiers_marks.append(False)
@@ -286,7 +286,6 @@ class ArrayWriter(Writer):
 
         for value in dependent_variable['values']:
             y_data['values'].append(value['value'])
-            # :TODO: HANDLE SITUATION WHERE ENTRY HAS PARITAL ERRORS (NOT ALL OF THEM)
             if 'errors' not in value:
                 for key, val in y_data.items():
                     if key != 'values':

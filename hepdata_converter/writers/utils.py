@@ -1,5 +1,5 @@
 
-def percentage_processor(value, error):
+def error_value_processor(value, error):
     """
     If an error is a percentage, we convert to a float, then
     calculate the percentage of the supplied value

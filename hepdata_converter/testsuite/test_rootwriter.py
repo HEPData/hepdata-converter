@@ -2,7 +2,7 @@
 import os
 import rootpy
 import hepdata_converter
-from hepdata_converter.testsuite import insert_path
+from hepdata_converter.testsuite import insert_path, insert_paths
 from hepdata_converter.testsuite.test_writer import WriterTestSuite
 from rootpy.io import root_open
 
@@ -47,3 +47,14 @@ class ROOTWriterTestSuite(WriterTestSuite):
         hepdata_converter.convert(yaml_full_path, output_file_path,
                                   options={'output_format': 'root', 'table': 'data2.yaml'})
         pass
+
+    @insert_paths('yaml/ins1283183', 'yaml/ins1397637', 'yaml/ins699647')
+    def test_parse_all(self, test_submissions):
+
+        for idx, test_submission in enumerate(test_submissions):
+            output_file_path = os.path.join(self.current_tmp, 'data-{}.yoda'.format(idx))
+
+            hepdata_converter.convert(test_submission, output_file_path,
+                                      options={'output_format': 'root'})
+
+            self.assertNotEqual(os.stat(output_file_path).st_size, 0, 'output root file is empty')
