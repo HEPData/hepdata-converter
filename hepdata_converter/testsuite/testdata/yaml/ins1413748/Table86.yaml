@@ -1,0 +1,65 @@
+dependent_variables:
+- header: {name: Fraction of events}
+  qualifiers:
+  - {name: RE, value: P P --> TOP TOPBAR X}
+  - {name: SQRT(S), units: GeV, value: '8000.0'}
+  values:
+  - {value: 0.0338}
+  - {value: 0.0405}
+  - {value: 0.0506}
+  - {value: 0.0497}
+  - {value: 0.0507}
+  - {value: 0.0571}
+  - {value: 0.0398}
+  - {value: 0.0437}
+  - {value: 0.0503}
+  - {value: 0.0522}
+  - {value: 0.0596}
+  - {value: 0.0569}
+  - {value: 0.0642}
+  - {value: 0.0649}
+  - {value: 0.0638}
+  - {value: 0.0684}
+  - {value: 0.0702}
+  - {value: 0.0835}
+independent_variables:
+- header: {name: Bin of $\cos\varphi$}
+  values:
+  - {high: -0.6667, low: -1.0}
+  - {high: -0.3333, low: -0.6667}
+  - {high: 0.0, low: -0.3333}
+  - {high: 0.3333, low: 0.0}
+  - {high: 0.6667, low: 0.3333}
+  - {high: 1.0, low: 0.6667}
+  - {high: -0.6667, low: -1.0}
+  - {high: -0.3333, low: -0.6667}
+  - {high: 0.0, low: -0.3333}
+  - {high: 0.3333, low: 0.0}
+  - {high: 0.6667, low: 0.3333}
+  - {high: 1.0, low: 0.6667}
+  - {high: -0.6667, low: -1.0}
+  - {high: -0.3333, low: -0.6667}
+  - {high: 0.0, low: -0.3333}
+  - {high: 0.3333, low: 0.0}
+  - {high: 0.6667, low: 0.3333}
+  - {high: 1.0, low: 0.6667}
+- header: {name: 'Bin of $|y_\mathrm{t\bar{t}}|$'}
+  values:
+  - {high: 0.34, low: 0.0}
+  - {high: 0.34, low: 0.0}
+  - {high: 0.34, low: 0.0}
+  - {high: 0.34, low: 0.0}
+  - {high: 0.34, low: 0.0}
+  - {high: 0.34, low: 0.0}
+  - {high: 0.75, low: 0.34}
+  - {high: 0.75, low: 0.34}
+  - {high: 0.75, low: 0.34}
+  - {high: 0.75, low: 0.34}
+  - {high: 0.75, low: 0.34}
+  - {high: 0.75, low: 0.34}
+  - {high: 9999.0, low: 0.75}
+  - {high: 9999.0, low: 0.75}
+  - {high: 9999.0, low: 0.75}
+  - {high: 9999.0, low: 0.75}
+  - {high: 9999.0, low: 0.75}
+  - {high: 9999.0, low: 0.75}

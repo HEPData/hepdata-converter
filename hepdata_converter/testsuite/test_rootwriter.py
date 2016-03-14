@@ -10,7 +10,6 @@ __author__ = 'Michał Szostak'
 
 
 class ROOTWriterTestSuite(WriterTestSuite):
-    
     @insert_path('yaml_full')
     @insert_path('root/full.root')
     def test_simple_parse(self, yaml_full_path, full_root_path):
@@ -48,7 +47,7 @@ class ROOTWriterTestSuite(WriterTestSuite):
                                   options={'output_format': 'root', 'table': 'data2.yaml'})
         pass
 
-    @insert_paths('yaml/ins1283183', 'yaml/ins1397637', 'yaml/ins699647')
+    @insert_paths('yaml/ins1283183', 'yaml/ins1397637', 'yaml/ins699647', 'yaml/ins1413748')
     def test_parse_all(self, test_submissions):
 
         for idx, test_submission in enumerate(test_submissions):

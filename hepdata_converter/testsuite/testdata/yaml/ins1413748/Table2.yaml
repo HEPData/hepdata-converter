@@ -1,0 +1,33 @@
+dependent_variables:
+- header: {name: Value}
+  qualifiers:
+  - {name: RE, value: P P --> TOP TOPBAR X}
+  - {name: SQRT(S), units: GeV, value: '8000.0'}
+  values:
+  - {value: 0.2621}
+  - {value: 0.2909}
+  - {value: 0.2845}
+  - {value: 0.2852}
+  - {value: 0.2986}
+  - {value: 0.3094}
+  - {value: 0.3119}
+  - {value: 0.3331}
+  - {value: 0.3423}
+  - {value: 0.354}
+  - {value: 0.3743}
+  - {value: 0.3735}
+independent_variables:
+- header: {name: 'Bin of $\left|\Delta \phi_{\ell^+\ell^-}\right|$ ($\pi$ radians)'}
+  values:
+  - {high: 0.0833, low: 0.0}
+  - {high: 0.1667, low: 0.0833}
+  - {high: 0.25, low: 0.1667}
+  - {high: 0.3333, low: 0.25}
+  - {high: 0.4167, low: 0.3333}
+  - {high: 0.5, low: 0.4167}
+  - {high: 0.5833, low: 0.5}
+  - {high: 0.6667, low: 0.5833}
+  - {high: 0.75, low: 0.6667}
+  - {high: 0.8333, low: 0.75}
+  - {high: 0.9167, low: 0.8333}
+  - {high: 1.0, low: 0.9167}

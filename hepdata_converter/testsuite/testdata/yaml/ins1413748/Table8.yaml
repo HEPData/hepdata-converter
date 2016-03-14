@@ -1,0 +1,21 @@
+dependent_variables:
+- header: {name: Value}
+  qualifiers:
+  - {name: RE, value: P P --> TOP TOPBAR X}
+  - {name: SQRT(S), units: GeV, value: '8000.0'}
+  values:
+  - {value: 0.2236}
+  - {value: 0.6509}
+  - {value: 1.492}
+  - {value: 1.3581}
+  - {value: 0.555}
+  - {value: 0.1824}
+independent_variables:
+- header: {name: 'Bin of $\cos\theta^{\star}_{\ell^+} \cos\theta^{\star}_{\ell^-}$'}
+  values:
+  - {high: -0.4, low: -1.0}
+  - {high: -0.1667, low: -0.4}
+  - {high: 0.0, low: -0.1667}
+  - {high: 0.1667, low: 0.0}
+  - {high: 0.4, low: 0.1667}
+  - {high: 1.0, low: 0.4}

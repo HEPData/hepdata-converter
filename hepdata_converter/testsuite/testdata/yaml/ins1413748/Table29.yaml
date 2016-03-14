@@ -1,0 +1,29 @@
+dependent_variables:
+- header: {name: '$A_{c1c2}$'}
+  qualifiers:
+  - {name: RE, value: P P --> TOP TOPBAR X}
+  - {name: SQRT(S), units: GeV, value: '8000.0'}
+  values:
+  - errors:
+    - {label: stat, symerror: 0.0316}
+    - {label: sys, symerror: 0.0308}
+    value: -0.0531
+  - errors:
+    - {label: stat, symerror: 0.0289}
+    - {label: sys, symerror: 0.0317}
+    value: -0.0905
+  - errors:
+    - {label: stat, symerror: 0.0265}
+    - {label: sys, symerror: 0.0297}
+    value: -0.0557
+  - errors:
+    - {label: stat, symerror: 0.0154}
+    - {label: sys, symerror: 0.0154}
+    value: -0.0654
+independent_variables:
+- header: {name: 'Bin of $M_\mathrm{t\bar{t}}$ (GeV)'}
+  values:
+  - {high: 430.0, low: 0.0}
+  - {high: 530.0, low: 430.0}
+  - {high: 9999.0, low: 530.0}
+  - {high: 9999.0, low: 0.0}

@@ -1,0 +1,65 @@
+dependent_variables:
+- header: {name: Fraction of events}
+  qualifiers:
+  - {name: RE, value: P P --> TOP TOPBAR X}
+  - {name: SQRT(S), units: GeV, value: '8000.0'}
+  values:
+  - {value: 0.0687}
+  - {value: 0.0676}
+  - {value: 0.0688}
+  - {value: 0.0662}
+  - {value: 0.0629}
+  - {value: 0.0693}
+  - {value: 0.0532}
+  - {value: 0.0518}
+  - {value: 0.0539}
+  - {value: 0.055}
+  - {value: 0.0491}
+  - {value: 0.0507}
+  - {value: 0.0509}
+  - {value: 0.045}
+  - {value: 0.0455}
+  - {value: 0.0485}
+  - {value: 0.0511}
+  - {value: 0.0419}
+independent_variables:
+- header: {name: 'Bin of $\cos\theta^{\star}_\ell$'}
+  values:
+  - {high: -0.6667, low: -1.0}
+  - {high: -0.3333, low: -0.6667}
+  - {high: 0.0, low: -0.3333}
+  - {high: 0.3333, low: 0.0}
+  - {high: 0.6667, low: 0.3333}
+  - {high: 1.0, low: 0.6667}
+  - {high: -0.6667, low: -1.0}
+  - {high: -0.3333, low: -0.6667}
+  - {high: 0.0, low: -0.3333}
+  - {high: 0.3333, low: 0.0}
+  - {high: 0.6667, low: 0.3333}
+  - {high: 1.0, low: 0.6667}
+  - {high: -0.6667, low: -1.0}
+  - {high: -0.3333, low: -0.6667}
+  - {high: 0.0, low: -0.3333}
+  - {high: 0.3333, low: 0.0}
+  - {high: 0.6667, low: 0.3333}
+  - {high: 1.0, low: 0.6667}
+- header: {name: 'Bin of $M_\mathrm{t\bar{t}}$ (GeV)'}
+  values:
+  - {high: 430.0, low: 0.0}
+  - {high: 430.0, low: 0.0}
+  - {high: 430.0, low: 0.0}
+  - {high: 430.0, low: 0.0}
+  - {high: 430.0, low: 0.0}
+  - {high: 430.0, low: 0.0}
+  - {high: 530.0, low: 430.0}
+  - {high: 530.0, low: 430.0}
+  - {high: 530.0, low: 430.0}
+  - {high: 530.0, low: 430.0}
+  - {high: 530.0, low: 430.0}
+  - {high: 530.0, low: 430.0}
+  - {high: 9999.0, low: 530.0}
+  - {high: 9999.0, low: 530.0}
+  - {high: 9999.0, low: 530.0}
+  - {high: 9999.0, low: 530.0}
+  - {high: 9999.0, low: 530.0}
+  - {high: 9999.0, low: 530.0}

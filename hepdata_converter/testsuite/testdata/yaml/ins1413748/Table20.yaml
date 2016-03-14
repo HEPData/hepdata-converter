@@ -1,0 +1,119 @@
+dependent_variables:
+- header: {name: Fraction of events}
+  qualifiers:
+  - {name: RE, value: P P --> TOP TOPBAR X}
+  - {name: SQRT(S), units: GeV, value: '8000.0'}
+  values:
+  - {value: 0.0343}
+  - {value: 0.0368}
+  - {value: 0.0355}
+  - {value: 0.0355}
+  - {value: 0.0335}
+  - {value: 0.0343}
+  - {value: 0.032}
+  - {value: 0.0336}
+  - {value: 0.0343}
+  - {value: 0.0313}
+  - {value: 0.0299}
+  - {value: 0.0298}
+  - {value: 0.0205}
+  - {value: 0.0234}
+  - {value: 0.0228}
+  - {value: 0.0219}
+  - {value: 0.0249}
+  - {value: 0.0273}
+  - {value: 0.027}
+  - {value: 0.0289}
+  - {value: 0.0293}
+  - {value: 0.0279}
+  - {value: 0.0299}
+  - {value: 0.0319}
+  - {value: 0.0139}
+  - {value: 0.0161}
+  - {value: 0.0168}
+  - {value: 0.0176}
+  - {value: 0.0183}
+  - {value: 0.0189}
+  - {value: 0.0225}
+  - {value: 0.0242}
+  - {value: 0.0281}
+  - {value: 0.0328}
+  - {value: 0.0374}
+  - {value: 0.0371}
+independent_variables:
+- header: {name: 'Bin of $\left|\Delta \phi_{\ell^+\ell^-}\right|$ ($\pi$ radians)'}
+  values:
+  - {high: 0.0833, low: 0.0}
+  - {high: 0.1667, low: 0.0833}
+  - {high: 0.25, low: 0.1667}
+  - {high: 0.3333, low: 0.25}
+  - {high: 0.4167, low: 0.3333}
+  - {high: 0.5, low: 0.4167}
+  - {high: 0.5833, low: 0.5}
+  - {high: 0.6667, low: 0.5833}
+  - {high: 0.75, low: 0.6667}
+  - {high: 0.8333, low: 0.75}
+  - {high: 0.9167, low: 0.8333}
+  - {high: 1.0, low: 0.9167}
+  - {high: 0.0833, low: 0.0}
+  - {high: 0.1667, low: 0.0833}
+  - {high: 0.25, low: 0.1667}
+  - {high: 0.3333, low: 0.25}
+  - {high: 0.4167, low: 0.3333}
+  - {high: 0.5, low: 0.4167}
+  - {high: 0.5833, low: 0.5}
+  - {high: 0.6667, low: 0.5833}
+  - {high: 0.75, low: 0.6667}
+  - {high: 0.8333, low: 0.75}
+  - {high: 0.9167, low: 0.8333}
+  - {high: 1.0, low: 0.9167}
+  - {high: 0.0833, low: 0.0}
+  - {high: 0.1667, low: 0.0833}
+  - {high: 0.25, low: 0.1667}
+  - {high: 0.3333, low: 0.25}
+  - {high: 0.4167, low: 0.3333}
+  - {high: 0.5, low: 0.4167}
+  - {high: 0.5833, low: 0.5}
+  - {high: 0.6667, low: 0.5833}
+  - {high: 0.75, low: 0.6667}
+  - {high: 0.8333, low: 0.75}
+  - {high: 0.9167, low: 0.8333}
+  - {high: 1.0, low: 0.9167}
+- header: {name: 'Bin of $M_\mathrm{t\bar{t}}$ (GeV)'}
+  values:
+  - {high: 430.0, low: 0.0}
+  - {high: 430.0, low: 0.0}
+  - {high: 430.0, low: 0.0}
+  - {high: 430.0, low: 0.0}
+  - {high: 430.0, low: 0.0}
+  - {high: 430.0, low: 0.0}
+  - {high: 430.0, low: 0.0}
+  - {high: 430.0, low: 0.0}
+  - {high: 430.0, low: 0.0}
+  - {high: 430.0, low: 0.0}
+  - {high: 430.0, low: 0.0}
+  - {high: 430.0, low: 0.0}
+  - {high: 530.0, low: 430.0}
+  - {high: 530.0, low: 430.0}
+  - {high: 530.0, low: 430.0}
+  - {high: 530.0, low: 430.0}
+  - {high: 530.0, low: 430.0}
+  - {high: 530.0, low: 430.0}
+  - {high: 530.0, low: 430.0}
+  - {high: 530.0, low: 430.0}
+  - {high: 530.0, low: 430.0}
+  - {high: 530.0, low: 430.0}
+  - {high: 530.0, low: 430.0}
+  - {high: 530.0, low: 430.0}
+  - {high: 9999.0, low: 530.0}
+  - {high: 9999.0, low: 530.0}
+  - {high: 9999.0, low: 530.0}
+  - {high: 9999.0, low: 530.0}
+  - {high: 9999.0, low: 530.0}
+  - {high: 9999.0, low: 530.0}
+  - {high: 9999.0, low: 530.0}
+  - {high: 9999.0, low: 530.0}
+  - {high: 9999.0, low: 530.0}
+  - {high: 9999.0, low: 530.0}
+  - {high: 9999.0, low: 530.0}
+  - {high: 9999.0, low: 530.0}

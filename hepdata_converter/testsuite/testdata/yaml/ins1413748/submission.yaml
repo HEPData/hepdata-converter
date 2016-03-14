@@ -1,0 +1,1500 @@
+---
+additional_resources:
+- {description: web page with auxiliary material, location: 'http://cms-results.web.cern.ch/cms-results/public-results/publications/TOP-14-023/index.html'}
+comment: |
+  Measurements of the top quark-antiquark ($\mathrm{t\bar{t}}$) spin correlations and the top quark polarization are presented for $\mathrm{t\bar{t}}$ pairs produced in pp collisions at $\sqrt{s}=8\:$TeV. The data correspond to an integrated luminosity of 19.5 inverse-femtobarns collected with the CMS detector at the LHC. The measurements are performed using events with two oppositely charged leptons (electrons or muons) and two or more jets, where at least one of the jets is identified as originating from a bottom quark. The spin correlations and polarization are measured from the angular distributions of the two selected leptons, both inclusively and differentially, with respect to the invariant mass, rapidity, and transverse momentum of the $\mathrm{t\bar{t}}$ system. The measurements are unfolded to the parton level and found to be in agreement with predictions of the standard model. A search for new physics in the form of anomalous top quark chromo moments is performed. No evidence of new physics is observed, and exclusion limits on the real part of the chromo-magnetic dipole moment and the imaginary part of the chromo-electric dipole moment are evaluated.
+
+  For the normalized differential cross sections as a function of the angular variables the distributions are normalized to unit area, i.e. the bin values (and their associated covariances) should be multiplied by the bin widths to give the fraction of events in that bin. For the normalized double-differential cross sections as a function of the angular variables and the $\mathrm{t\bar{t}}$ system variables, the quoted bin values (and their associated covariances) are for the fraction of events in that bin, such that the sum of all bin contents is equal to one.
+
+  Bin values are reported to four decimal places, and covariances to four significant figures. Any missing figures are zeros.
+dateupdated: 12/02/2016 21:10:02
+modifications:
+- {action: Encoded, date: 12 JAN 2016, who: Andreas Meyer}
+record_ids:
+- {id: 1413748, type: inspire}
+- {id: 6501, type: red}
+
+---
+data_file: Table1.yaml
+description: |
+  Inclusive values of the asymmetry variables.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Table 5
+name: Table 1
+
+---
+data_file: Table2.yaml
+description: |
+  Values of the 12 bins of the normalized differential cross section as a function of $\left|\Delta \phi_{\ell^+\ell^-}\right|$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 3
+name: Table 2
+
+---
+data_file: Table3.yaml
+description: |
+  Statistical covariance matrix for the 12 bins of the normalized differential cross section as a function of $\left|\Delta \phi_{\ell^+\ell^-}\right|$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 3
+name: Table 3
+
+---
+data_file: Table4.yaml
+description: |
+  Systematic covariance matrix for the 12 bins of the normalized differential cross section as a function of $\left|\Delta \phi_{\ell^+\ell^-}\right|$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 3
+name: Table 4
+
+---
+data_file: Table5.yaml
+description: |
+  Values of the 6 bins of the normalized differential cross section as a function of $\cos\varphi$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 3
+name: Table 5
+
+---
+data_file: Table6.yaml
+description: |
+  Statistical covariance matrix for the 6 bins of the normalized differential cross section as a function of $\cos\varphi$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 3
+name: Table 6
+
+---
+data_file: Table7.yaml
+description: |
+  Systematic covariance matrix for the 6 bins of the normalized differential cross section as a function of $\cos\varphi$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 3
+name: Table 7
+
+---
+data_file: Table8.yaml
+description: |
+  Values of the 6 bins of the normalized differential cross section as a function of $\cos\theta^{\star}_{\ell^+} \cos\theta^{\star}_{\ell^-}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 3
+name: Table 8
+
+---
+data_file: Table9.yaml
+description: |
+  Statistical covariance matrix for the 6 bins of the normalized differential cross section as a function of $\cos\theta^{\star}_{\ell^+} \cos\theta^{\star}_{\ell^-}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 3
+name: Table 9
+
+---
+data_file: Table10.yaml
+description: |
+  Systematic covariance matrix for the 6 bins of the normalized differential cross section as a function of $\cos\theta^{\star}_{\ell^+} \cos\theta^{\star}_{\ell^-}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 3
+name: Table 10
+
+---
+data_file: Table11.yaml
+description: |
+  Values of the 6 bins of the normalized differential cross section as a function of $\cos\theta^{\star}_\ell$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 3
+name: Table 11
+
+---
+data_file: Table12.yaml
+description: |
+  Statistical covariance matrix for the 6 bins of the normalized differential cross section as a function of $\cos\theta^{\star}_\ell$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 3
+name: Table 12
+
+---
+data_file: Table13.yaml
+description: |
+  Systematic covariance matrix for the 6 bins of the normalized differential cross section as a function of $\cos\theta^{\star}_\ell$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 3
+name: Table 13
+
+---
+data_file: Table14.yaml
+description: |
+  Values of the 6 bins of the normalized differential cross section as a function of $\cos\theta^{\star}_{\ell,\mathrm{CPV}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 3
+name: Table 14
+
+---
+data_file: Table15.yaml
+description: |
+  Statistical covariance matrix for the 6 bins of the normalized differential cross section as a function of $\cos\theta^{\star}_{\ell,\mathrm{CPV}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 3
+name: Table 15
+
+---
+data_file: Table16.yaml
+description: |
+  Systematic covariance matrix for the 6 bins of the normalized differential cross section as a function of $\cos\theta^{\star}_{\ell,\mathrm{CPV}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 3
+name: Table 16
+
+---
+data_file: Table17.yaml
+description: |
+  Values of $A_{\Delta\phi}$ in the 3 bins of $M_\mathrm{t\bar{t}}$, and inclusively (bottom row). The value 9999 is used as a placeholder for infinity.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 17
+
+---
+data_file: Table18.yaml
+description: |
+  Statistical correlation matrix for $A_{\Delta\phi}$ in the 3 bins of $M_\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 18
+
+---
+data_file: Table19.yaml
+description: |
+  Systematic correlation matrix for $A_{\Delta\phi}$ in the 3 bins of $M_\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 19
+
+---
+data_file: Table20.yaml
+description: |
+  Fraction of events in each of the $12\times3$ bins of the normalized differential cross section as a function of $\left|\Delta \phi_{\ell^+\ell^-}\right|$ and $M_\mathrm{t\bar{t}}$. The value 9999 is used as a placeholder for infinity.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 20
+
+---
+data_file: Table21.yaml
+description: |
+  Statistical covariance matrix for the $12\times3$ bins of the normalized differential cross section as a function of $\left|\Delta \phi_{\ell^+\ell^-}\right|$ and $M_\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 21
+
+---
+data_file: Table22.yaml
+description: |
+  Systematic covariance matrix for the $12\times3$ bins of the normalized differential cross section as a function of $\left|\Delta \phi_{\ell^+\ell^-}\right|$ and $M_\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 22
+
+---
+data_file: Table23.yaml
+description: |
+  Values of $A_{\cos\varphi}$ in the 3 bins of $M_\mathrm{t\bar{t}}$, and inclusively (bottom row). The value 9999 is used as a placeholder for infinity.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 23
+
+---
+data_file: Table24.yaml
+description: |
+  Statistical correlation matrix for $A_{\cos\varphi}$ in the 3 bins of $M_\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 24
+
+---
+data_file: Table25.yaml
+description: |
+  Systematic correlation matrix for $A_{\cos\varphi}$ in the 3 bins of $M_\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 25
+
+---
+data_file: Table26.yaml
+description: |
+  Fraction of events in each of the $6\times3$ bins of the normalized differential cross section as a function of $\cos\varphi$ and $M_\mathrm{t\bar{t}}$. The value 9999 is used as a placeholder for infinity.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 26
+
+---
+data_file: Table27.yaml
+description: |
+  Statistical covariance matrix for the $6\times3$ bins of the normalized differential cross section as a function of $\cos\varphi$ and $M_\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 27
+
+---
+data_file: Table28.yaml
+description: |
+  Systematic covariance matrix for the $6\times3$ bins of the normalized differential cross section as a function of $\cos\varphi$ and $M_\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 28
+
+---
+data_file: Table29.yaml
+description: |
+  Values of $A_{c1c2}$ in the 3 bins of $M_\mathrm{t\bar{t}}$, and inclusively (bottom row). The value 9999 is used as a placeholder for infinity.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 29
+
+---
+data_file: Table30.yaml
+description: |
+  Statistical correlation matrix for $A_{c1c2}$ in the 3 bins of $M_\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 30
+
+---
+data_file: Table31.yaml
+description: |
+  Systematic correlation matrix for $A_{c1c2}$ in the 3 bins of $M_\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 31
+
+---
+data_file: Table32.yaml
+description: |
+  Fraction of events in each of the $6\times3$ bins of the normalized differential cross section as a function of $\cos\theta^{\star}_{\ell^+} \cos\theta^{\star}_{\ell^-}$ and $M_\mathrm{t\bar{t}}$. The value 9999 is used as a placeholder for infinity.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 32
+
+---
+data_file: Table33.yaml
+description: |
+  Statistical covariance matrix for the $6\times3$ bins of the normalized differential cross section as a function of $\cos\theta^{\star}_{\ell^+} \cos\theta^{\star}_{\ell^-}$ and $M_\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 33
+
+---
+data_file: Table34.yaml
+description: |
+  Systematic covariance matrix for the $6\times3$ bins of the normalized differential cross section as a function of $\cos\theta^{\star}_{\ell^+} \cos\theta^{\star}_{\ell^-}$ and $M_\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 34
+
+---
+data_file: Table35.yaml
+description: |
+  Values of $A_{P}$ in the 3 bins of $M_\mathrm{t\bar{t}}$, and inclusively (bottom row). The value 9999 is used as a placeholder for infinity.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 35
+
+---
+data_file: Table36.yaml
+description: |
+  Statistical correlation matrix for $A_{P}$ in the 3 bins of $M_\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 36
+
+---
+data_file: Table37.yaml
+description: |
+  Systematic correlation matrix for $A_{P}$ in the 3 bins of $M_\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 37
+
+---
+data_file: Table38.yaml
+description: |
+  Fraction of events in each of the $6\times3$ bins of the normalized differential cross section as a function of $\cos\theta^{\star}_\ell$ and $M_\mathrm{t\bar{t}}$. The value 9999 is used as a placeholder for infinity.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 38
+
+---
+data_file: Table39.yaml
+description: |
+  Statistical covariance matrix for the $6\times3$ bins of the normalized differential cross section as a function of $\cos\theta^{\star}_\ell$ and $M_\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 39
+
+---
+data_file: Table40.yaml
+description: |
+  Systematic covariance matrix for the $6\times3$ bins of the normalized differential cross section as a function of $\cos\theta^{\star}_\ell$ and $M_\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 40
+
+---
+data_file: Table41.yaml
+description: |
+  Values of $A_{P}^{\rm{CPV}}$ in the 3 bins of $M_\mathrm{t\bar{t}}$, and inclusively (bottom row). The value 9999 is used as a placeholder for infinity.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 41
+
+---
+data_file: Table42.yaml
+description: |
+  Statistical correlation matrix for $A_{P}^{\rm{CPV}}$ in the 3 bins of $M_\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 42
+
+---
+data_file: Table43.yaml
+description: |
+  Systematic correlation matrix for $A_{P}^{\rm{CPV}}$ in the 3 bins of $M_\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 43
+
+---
+data_file: Table44.yaml
+description: |
+  Fraction of events in each of the $6\times3$ bins of the normalized differential cross section as a function of $\cos\theta^{\star}_{\ell,\mathrm{CPV}}$ and $M_\mathrm{t\bar{t}}$. The value 9999 is used as a placeholder for infinity.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 44
+
+---
+data_file: Table45.yaml
+description: |
+  Statistical covariance matrix for the $6\times3$ bins of the normalized differential cross section as a function of $\cos\theta^{\star}_{\ell,\mathrm{CPV}}$ and $M_\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 45
+
+---
+data_file: Table46.yaml
+description: |
+  Systematic covariance matrix for the $6\times3$ bins of the normalized differential cross section as a function of $\cos\theta^{\star}_{\ell,\mathrm{CPV}}$ and $M_\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 46
+
+---
+data_file: Table47.yaml
+description: |
+  Values of $A_{\Delta\phi}$ in the 3 bins of $p_\mathrm{T}^\mathrm{t\bar{t}}$, and inclusively (bottom row). The value 9999 is used as a placeholder for infinity.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 47
+
+---
+data_file: Table48.yaml
+description: |
+  Statistical correlation matrix for $A_{\Delta\phi}$ in the 3 bins of $p_\mathrm{T}^\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 48
+
+---
+data_file: Table49.yaml
+description: |
+  Systematic correlation matrix for $A_{\Delta\phi}$ in the 3 bins of $p_\mathrm{T}^\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 49
+
+---
+data_file: Table50.yaml
+description: |
+  Fraction of events in each of the $12\times3$ bins of the normalized differential cross section as a function of $\left|\Delta \phi_{\ell^+\ell^-}\right|$ and $p_\mathrm{T}^\mathrm{t\bar{t}}$. The value 9999 is used as a placeholder for infinity.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 50
+
+---
+data_file: Table51.yaml
+description: |
+  Statistical covariance matrix for the $12\times3$ bins of the normalized differential cross section as a function of $\left|\Delta \phi_{\ell^+\ell^-}\right|$ and $p_\mathrm{T}^\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 51
+
+---
+data_file: Table52.yaml
+description: |
+  Systematic covariance matrix for the $12\times3$ bins of the normalized differential cross section as a function of $\left|\Delta \phi_{\ell^+\ell^-}\right|$ and $p_\mathrm{T}^\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 52
+
+---
+data_file: Table53.yaml
+description: |
+  Values of $A_{\cos\varphi}$ in the 3 bins of $p_\mathrm{T}^\mathrm{t\bar{t}}$, and inclusively (bottom row). The value 9999 is used as a placeholder for infinity.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 53
+
+---
+data_file: Table54.yaml
+description: |
+  Statistical correlation matrix for $A_{\cos\varphi}$ in the 3 bins of $p_\mathrm{T}^\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 54
+
+---
+data_file: Table55.yaml
+description: |
+  Systematic correlation matrix for $A_{\cos\varphi}$ in the 3 bins of $p_\mathrm{T}^\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 55
+
+---
+data_file: Table56.yaml
+description: |
+  Fraction of events in each of the $6\times3$ bins of the normalized differential cross section as a function of $\cos\varphi$ and $p_\mathrm{T}^\mathrm{t\bar{t}}$. The value 9999 is used as a placeholder for infinity.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 56
+
+---
+data_file: Table57.yaml
+description: |
+  Statistical covariance matrix for the $6\times3$ bins of the normalized differential cross section as a function of $\cos\varphi$ and $p_\mathrm{T}^\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 57
+
+---
+data_file: Table58.yaml
+description: |
+  Systematic covariance matrix for the $6\times3$ bins of the normalized differential cross section as a function of $\cos\varphi$ and $p_\mathrm{T}^\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 58
+
+---
+data_file: Table59.yaml
+description: |
+  Values of $A_{c1c2}$ in the 3 bins of $p_\mathrm{T}^\mathrm{t\bar{t}}$, and inclusively (bottom row). The value 9999 is used as a placeholder for infinity.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 59
+
+---
+data_file: Table60.yaml
+description: |
+  Statistical correlation matrix for $A_{c1c2}$ in the 3 bins of $p_\mathrm{T}^\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 60
+
+---
+data_file: Table61.yaml
+description: |
+  Systematic correlation matrix for $A_{c1c2}$ in the 3 bins of $p_\mathrm{T}^\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 61
+
+---
+data_file: Table62.yaml
+description: |
+  Fraction of events in each of the $6\times3$ bins of the normalized differential cross section as a function of $\cos\theta^{\star}_{\ell^+} \cos\theta^{\star}_{\ell^-}$ and $p_\mathrm{T}^\mathrm{t\bar{t}}$. The value 9999 is used as a placeholder for infinity.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 62
+
+---
+data_file: Table63.yaml
+description: |
+  Statistical covariance matrix for the $6\times3$ bins of the normalized differential cross section as a function of $\cos\theta^{\star}_{\ell^+} \cos\theta^{\star}_{\ell^-}$ and $p_\mathrm{T}^\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 63
+
+---
+data_file: Table64.yaml
+description: |
+  Systematic covariance matrix for the $6\times3$ bins of the normalized differential cross section as a function of $\cos\theta^{\star}_{\ell^+} \cos\theta^{\star}_{\ell^-}$ and $p_\mathrm{T}^\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 64
+
+---
+data_file: Table65.yaml
+description: |
+  Values of $A_{P}$ in the 3 bins of $p_\mathrm{T}^\mathrm{t\bar{t}}$, and inclusively (bottom row). The value 9999 is used as a placeholder for infinity.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 65
+
+---
+data_file: Table66.yaml
+description: |
+  Statistical correlation matrix for $A_{P}$ in the 3 bins of $p_\mathrm{T}^\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 66
+
+---
+data_file: Table67.yaml
+description: |
+  Systematic correlation matrix for $A_{P}$ in the 3 bins of $p_\mathrm{T}^\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 67
+
+---
+data_file: Table68.yaml
+description: |
+  Fraction of events in each of the $6\times3$ bins of the normalized differential cross section as a function of $\cos\theta^{\star}_\ell$ and $p_\mathrm{T}^\mathrm{t\bar{t}}$. The value 9999 is used as a placeholder for infinity.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 68
+
+---
+data_file: Table69.yaml
+description: |
+  Statistical covariance matrix for the $6\times3$ bins of the normalized differential cross section as a function of $\cos\theta^{\star}_\ell$ and $p_\mathrm{T}^\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 69
+
+---
+data_file: Table70.yaml
+description: |
+  Systematic covariance matrix for the $6\times3$ bins of the normalized differential cross section as a function of $\cos\theta^{\star}_\ell$ and $p_\mathrm{T}^\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 70
+
+---
+data_file: Table71.yaml
+description: |
+  Values of $A_{P}^{\rm{CPV}}$ in the 3 bins of $p_\mathrm{T}^\mathrm{t\bar{t}}$, and inclusively (bottom row). The value 9999 is used as a placeholder for infinity.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 71
+
+---
+data_file: Table72.yaml
+description: |
+  Statistical correlation matrix for $A_{P}^{\rm{CPV}}$ in the 3 bins of $p_\mathrm{T}^\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 72
+
+---
+data_file: Table73.yaml
+description: |
+  Systematic correlation matrix for $A_{P}^{\rm{CPV}}$ in the 3 bins of $p_\mathrm{T}^\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 73
+
+---
+data_file: Table74.yaml
+description: |
+  Fraction of events in each of the $6\times3$ bins of the normalized differential cross section as a function of $\cos\theta^{\star}_{\ell,\mathrm{CPV}}$ and $p_\mathrm{T}^\mathrm{t\bar{t}}$. The value 9999 is used as a placeholder for infinity.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 74
+
+---
+data_file: Table75.yaml
+description: |
+  Statistical covariance matrix for the $6\times3$ bins of the normalized differential cross section as a function of $\cos\theta^{\star}_{\ell,\mathrm{CPV}}$ and $p_\mathrm{T}^\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 75
+
+---
+data_file: Table76.yaml
+description: |
+  Systematic covariance matrix for the $6\times3$ bins of the normalized differential cross section as a function of $\cos\theta^{\star}_{\ell,\mathrm{CPV}}$ and $p_\mathrm{T}^\mathrm{t\bar{t}}$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 76
+
+---
+data_file: Table77.yaml
+description: |
+  Values of $A_{\Delta\phi}$ in the 3 bins of $|y_\mathrm{t\bar{t}}|$, and inclusively (bottom row). The value 9999 is used as a placeholder for infinity.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 77
+
+---
+data_file: Table78.yaml
+description: |
+  Statistical correlation matrix for $A_{\Delta\phi}$ in the 3 bins of $|y_\mathrm{t\bar{t}}|$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 78
+
+---
+data_file: Table79.yaml
+description: |
+  Systematic correlation matrix for $A_{\Delta\phi}$ in the 3 bins of $|y_\mathrm{t\bar{t}}|$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 79
+
+---
+data_file: Table80.yaml
+description: |
+  Fraction of events in each of the $12\times3$ bins of the normalized differential cross section as a function of $\left|\Delta \phi_{\ell^+\ell^-}\right|$ and $|y_\mathrm{t\bar{t}}|$. The value 9999 is used as a placeholder for infinity.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 80
+
+---
+data_file: Table81.yaml
+description: |
+  Statistical covariance matrix for the $12\times3$ bins of the normalized differential cross section as a function of $\left|\Delta \phi_{\ell^+\ell^-}\right|$ and $|y_\mathrm{t\bar{t}}|$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 81
+
+---
+data_file: Table82.yaml
+description: |
+  Systematic covariance matrix for the $12\times3$ bins of the normalized differential cross section as a function of $\left|\Delta \phi_{\ell^+\ell^-}\right|$ and $|y_\mathrm{t\bar{t}}|$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 82
+
+---
+data_file: Table83.yaml
+description: |
+  Values of $A_{\cos\varphi}$ in the 3 bins of $|y_\mathrm{t\bar{t}}|$, and inclusively (bottom row). The value 9999 is used as a placeholder for infinity.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 83
+
+---
+data_file: Table84.yaml
+description: |
+  Statistical correlation matrix for $A_{\cos\varphi}$ in the 3 bins of $|y_\mathrm{t\bar{t}}|$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 84
+
+---
+data_file: Table85.yaml
+description: |
+  Systematic correlation matrix for $A_{\cos\varphi}$ in the 3 bins of $|y_\mathrm{t\bar{t}}|$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 85
+
+---
+data_file: Table86.yaml
+description: |
+  Fraction of events in each of the $6\times3$ bins of the normalized differential cross section as a function of $\cos\varphi$ and $|y_\mathrm{t\bar{t}}|$. The value 9999 is used as a placeholder for infinity.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 86
+
+---
+data_file: Table87.yaml
+description: |
+  Statistical covariance matrix for the $6\times3$ bins of the normalized differential cross section as a function of $\cos\varphi$ and $|y_\mathrm{t\bar{t}}|$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 87
+
+---
+data_file: Table88.yaml
+description: |
+  Systematic covariance matrix for the $6\times3$ bins of the normalized differential cross section as a function of $\cos\varphi$ and $|y_\mathrm{t\bar{t}}|$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 88
+
+---
+data_file: Table89.yaml
+description: |
+  Values of $A_{c1c2}$ in the 3 bins of $|y_\mathrm{t\bar{t}}|$, and inclusively (bottom row). The value 9999 is used as a placeholder for infinity.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 89
+
+---
+data_file: Table90.yaml
+description: |
+  Statistical correlation matrix for $A_{c1c2}$ in the 3 bins of $|y_\mathrm{t\bar{t}}|$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 90
+
+---
+data_file: Table91.yaml
+description: |
+  Systematic correlation matrix for $A_{c1c2}$ in the 3 bins of $|y_\mathrm{t\bar{t}}|$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 91
+
+---
+data_file: Table92.yaml
+description: |
+  Fraction of events in each of the $6\times3$ bins of the normalized differential cross section as a function of $\cos\theta^{\star}_{\ell^+} \cos\theta^{\star}_{\ell^-}$ and $|y_\mathrm{t\bar{t}}|$. The value 9999 is used as a placeholder for infinity.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 92
+
+---
+data_file: Table93.yaml
+description: |
+  Statistical covariance matrix for the $6\times3$ bins of the normalized differential cross section as a function of $\cos\theta^{\star}_{\ell^+} \cos\theta^{\star}_{\ell^-}$ and $|y_\mathrm{t\bar{t}}|$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 93
+
+---
+data_file: Table94.yaml
+description: |
+  Systematic covariance matrix for the $6\times3$ bins of the normalized differential cross section as a function of $\cos\theta^{\star}_{\ell^+} \cos\theta^{\star}_{\ell^-}$ and $|y_\mathrm{t\bar{t}}|$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 94
+
+---
+data_file: Table95.yaml
+description: |
+  Values of $A_{P}$ in the 3 bins of $|y_\mathrm{t\bar{t}}|$, and inclusively (bottom row). The value 9999 is used as a placeholder for infinity.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 95
+
+---
+data_file: Table96.yaml
+description: |
+  Statistical correlation matrix for $A_{P}$ in the 3 bins of $|y_\mathrm{t\bar{t}}|$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 96
+
+---
+data_file: Table97.yaml
+description: |
+  Systematic correlation matrix for $A_{P}$ in the 3 bins of $|y_\mathrm{t\bar{t}}|$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 97
+
+---
+data_file: Table98.yaml
+description: |
+  Fraction of events in each of the $6\times3$ bins of the normalized differential cross section as a function of $\cos\theta^{\star}_\ell$ and $|y_\mathrm{t\bar{t}}|$. The value 9999 is used as a placeholder for infinity.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 98
+
+---
+data_file: Table99.yaml
+description: |
+  Statistical covariance matrix for the $6\times3$ bins of the normalized differential cross section as a function of $\cos\theta^{\star}_\ell$ and $|y_\mathrm{t\bar{t}}|$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 99
+
+---
+data_file: Table100.yaml
+description: |
+  Systematic covariance matrix for the $6\times3$ bins of the normalized differential cross section as a function of $\cos\theta^{\star}_\ell$ and $|y_\mathrm{t\bar{t}}|$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 100
+
+---
+data_file: Table101.yaml
+description: |
+  Values of $A_{P}^{\rm{CPV}}$ in the 3 bins of $|y_\mathrm{t\bar{t}}|$, and inclusively (bottom row). The value 9999 is used as a placeholder for infinity.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 101
+
+---
+data_file: Table102.yaml
+description: |
+  Statistical correlation matrix for $A_{P}^{\rm{CPV}}$ in the 3 bins of $|y_\mathrm{t\bar{t}}|$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 102
+
+---
+data_file: Table103.yaml
+description: |
+  Systematic correlation matrix for $A_{P}^{\rm{CPV}}$ in the 3 bins of $|y_\mathrm{t\bar{t}}|$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 103
+
+---
+data_file: Table104.yaml
+description: |
+  Fraction of events in each of the $6\times3$ bins of the normalized differential cross section as a function of $\cos\theta^{\star}_{\ell,\mathrm{CPV}}$ and $|y_\mathrm{t\bar{t}}|$. The value 9999 is used as a placeholder for infinity.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 104
+
+---
+data_file: Table105.yaml
+description: |
+  Statistical covariance matrix for the $6\times3$ bins of the normalized differential cross section as a function of $\cos\theta^{\star}_{\ell,\mathrm{CPV}}$ and $|y_\mathrm{t\bar{t}}|$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 105
+
+---
+data_file: Table106.yaml
+description: |
+  Systematic covariance matrix for the $6\times3$ bins of the normalized differential cross section as a function of $\cos\theta^{\star}_{\ell,\mathrm{CPV}}$ and $|y_\mathrm{t\bar{t}}|$.
+keywords:
+- name: reactions
+  values: [P P --> TOP TOPBAR X]
+- name: phrases
+  values: [Inclusive, Top, Proton-Proton Scattering]
+- name: cmenergies
+  values: [8000.0]
+location: Data from Figure 4
+name: Table 106
+

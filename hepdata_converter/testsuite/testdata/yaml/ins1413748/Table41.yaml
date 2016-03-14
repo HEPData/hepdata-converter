@@ -1,0 +1,29 @@
+dependent_variables:
+- header: {name: '$A_{P}^{\rm{CPV}}$'}
+  qualifiers:
+  - {name: RE, value: P P --> TOP TOPBAR X}
+  - {name: SQRT(S), units: GeV, value: '8000.0'}
+  values:
+  - errors:
+    - {label: stat, symerror: 0.016}
+    - {label: sys, symerror: 0.0134}
+    value: -0.0286
+  - errors:
+    - {label: stat, symerror: 0.0167}
+    - {label: sys, symerror: 0.0127}
+    value: 0.0488
+  - errors:
+    - {label: stat, symerror: 0.0116}
+    - {label: sys, symerror: 0.0159}
+    value: -0.0177
+  - errors:
+    - {label: stat, symerror: 0.0066}
+    - {label: sys, symerror: 0.0059}
+    value: -0.0012
+independent_variables:
+- header: {name: 'Bin of $M_\mathrm{t\bar{t}}$ (GeV)'}
+  values:
+  - {high: 430.0, low: 0.0}
+  - {high: 530.0, low: 430.0}
+  - {high: 9999.0, low: 530.0}
+  - {high: 9999.0, low: 0.0}

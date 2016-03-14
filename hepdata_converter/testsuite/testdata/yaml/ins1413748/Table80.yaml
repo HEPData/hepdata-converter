@@ -1,0 +1,119 @@
+dependent_variables:
+- header: {name: Fraction of events}
+  qualifiers:
+  - {name: RE, value: P P --> TOP TOPBAR X}
+  - {name: SQRT(S), units: GeV, value: '8000.0'}
+  values:
+  - {value: 0.0172}
+  - {value: 0.0213}
+  - {value: 0.0215}
+  - {value: 0.0204}
+  - {value: 0.0219}
+  - {value: 0.0247}
+  - {value: 0.0246}
+  - {value: 0.0254}
+  - {value: 0.0261}
+  - {value: 0.0262}
+  - {value: 0.0274}
+  - {value: 0.0264}
+  - {value: 0.0205}
+  - {value: 0.0224}
+  - {value: 0.022}
+  - {value: 0.0246}
+  - {value: 0.0229}
+  - {value: 0.0229}
+  - {value: 0.0237}
+  - {value: 0.0236}
+  - {value: 0.0277}
+  - {value: 0.0284}
+  - {value: 0.03}
+  - {value: 0.0296}
+  - {value: 0.0327}
+  - {value: 0.0328}
+  - {value: 0.0312}
+  - {value: 0.0293}
+  - {value: 0.0316}
+  - {value: 0.0328}
+  - {value: 0.0331}
+  - {value: 0.0382}
+  - {value: 0.037}
+  - {value: 0.0368}
+  - {value: 0.0395}
+  - {value: 0.0436}
+independent_variables:
+- header: {name: 'Bin of $\left|\Delta \phi_{\ell^+\ell^-}\right|$ ($\pi$ radians)'}
+  values:
+  - {high: 0.0833, low: 0.0}
+  - {high: 0.1667, low: 0.0833}
+  - {high: 0.25, low: 0.1667}
+  - {high: 0.3333, low: 0.25}
+  - {high: 0.4167, low: 0.3333}
+  - {high: 0.5, low: 0.4167}
+  - {high: 0.5833, low: 0.5}
+  - {high: 0.6667, low: 0.5833}
+  - {high: 0.75, low: 0.6667}
+  - {high: 0.8333, low: 0.75}
+  - {high: 0.9167, low: 0.8333}
+  - {high: 1.0, low: 0.9167}
+  - {high: 0.0833, low: 0.0}
+  - {high: 0.1667, low: 0.0833}
+  - {high: 0.25, low: 0.1667}
+  - {high: 0.3333, low: 0.25}
+  - {high: 0.4167, low: 0.3333}
+  - {high: 0.5, low: 0.4167}
+  - {high: 0.5833, low: 0.5}
+  - {high: 0.6667, low: 0.5833}
+  - {high: 0.75, low: 0.6667}
+  - {high: 0.8333, low: 0.75}
+  - {high: 0.9167, low: 0.8333}
+  - {high: 1.0, low: 0.9167}
+  - {high: 0.0833, low: 0.0}
+  - {high: 0.1667, low: 0.0833}
+  - {high: 0.25, low: 0.1667}
+  - {high: 0.3333, low: 0.25}
+  - {high: 0.4167, low: 0.3333}
+  - {high: 0.5, low: 0.4167}
+  - {high: 0.5833, low: 0.5}
+  - {high: 0.6667, low: 0.5833}
+  - {high: 0.75, low: 0.6667}
+  - {high: 0.8333, low: 0.75}
+  - {high: 0.9167, low: 0.8333}
+  - {high: 1.0, low: 0.9167}
+- header: {name: 'Bin of $|y_\mathrm{t\bar{t}}|$'}
+  values:
+  - {high: 0.34, low: 0.0}
+  - {high: 0.34, low: 0.0}
+  - {high: 0.34, low: 0.0}
+  - {high: 0.34, low: 0.0}
+  - {high: 0.34, low: 0.0}
+  - {high: 0.34, low: 0.0}
+  - {high: 0.34, low: 0.0}
+  - {high: 0.34, low: 0.0}
+  - {high: 0.34, low: 0.0}
+  - {high: 0.34, low: 0.0}
+  - {high: 0.34, low: 0.0}
+  - {high: 0.34, low: 0.0}
+  - {high: 0.75, low: 0.34}
+  - {high: 0.75, low: 0.34}
+  - {high: 0.75, low: 0.34}
+  - {high: 0.75, low: 0.34}
+  - {high: 0.75, low: 0.34}
+  - {high: 0.75, low: 0.34}
+  - {high: 0.75, low: 0.34}
+  - {high: 0.75, low: 0.34}
+  - {high: 0.75, low: 0.34}
+  - {high: 0.75, low: 0.34}
+  - {high: 0.75, low: 0.34}
+  - {high: 0.75, low: 0.34}
+  - {high: 9999.0, low: 0.75}
+  - {high: 9999.0, low: 0.75}
+  - {high: 9999.0, low: 0.75}
+  - {high: 9999.0, low: 0.75}
+  - {high: 9999.0, low: 0.75}
+  - {high: 9999.0, low: 0.75}
+  - {high: 9999.0, low: 0.75}
+  - {high: 9999.0, low: 0.75}
+  - {high: 9999.0, low: 0.75}
+  - {high: 9999.0, low: 0.75}
+  - {high: 9999.0, low: 0.75}
+  - {high: 9999.0, low: 0.75}

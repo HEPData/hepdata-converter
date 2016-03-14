@@ -1,0 +1,29 @@
+dependent_variables:
+- header: {name: '$A_{\Delta\phi}$'}
+  qualifiers:
+  - {name: RE, value: P P --> TOP TOPBAR X}
+  - {name: SQRT(S), units: GeV, value: '8000.0'}
+  values:
+  - errors:
+    - {label: stat, symerror: 0.0097}
+    - {label: sys, symerror: 0.0159}
+    value: 0.1009
+  - errors:
+    - {label: stat, symerror: 0.0163}
+    - {label: sys, symerror: 0.0169}
+    value: 0.1083
+  - errors:
+    - {label: stat, symerror: 0.018}
+    - {label: sys, symerror: 0.0195}
+    value: 0.0487
+  - errors:
+    - {label: stat, symerror: 0.0057}
+    - {label: sys, symerror: 0.0119}
+    value: 0.0935
+independent_variables:
+- header: {name: 'Bin of $p_\mathrm{T}^\mathrm{t\bar{t}}$ (GeV)'}
+  values:
+  - {high: 41.0, low: 0.0}
+  - {high: 92.0, low: 41.0}
+  - {high: 9999.0, low: 92.0}
+  - {high: 9999.0, low: 0.0}

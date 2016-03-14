@@ -1,0 +1,29 @@
+dependent_variables:
+- header: {name: '$A_{\cos\varphi}$'}
+  qualifiers:
+  - {name: RE, value: P P --> TOP TOPBAR X}
+  - {name: SQRT(S), units: GeV, value: '8000.0'}
+  values:
+  - errors:
+    - {label: stat, symerror: 0.0233}
+    - {label: sys, symerror: 0.0211}
+    value: 0.1152
+  - errors:
+    - {label: stat, symerror: 0.0237}
+    - {label: sys, symerror: 0.0193}
+    value: 0.1155
+  - errors:
+    - {label: stat, symerror: 0.0212}
+    - {label: sys, symerror: 0.0224}
+    value: 0.0703
+  - errors:
+    - {label: stat, symerror: 0.0113}
+    - {label: sys, symerror: 0.0121}
+    value: 0.0967
+independent_variables:
+- header: {name: 'Bin of $|y_\mathrm{t\bar{t}}|$'}
+  values:
+  - {high: 0.34, low: 0.0}
+  - {high: 0.75, low: 0.34}
+  - {high: 9999.0, low: 0.75}
+  - {high: 9999.0, low: 0.0}

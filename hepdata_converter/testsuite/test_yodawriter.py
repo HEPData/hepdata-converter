@@ -19,7 +19,7 @@ class YODAWriterTestSuite(WriterTestSuite):
         with open(output_file_path, 'r') as f:
             self.assertMultiLineAlmostEqual(f, yoda_template)
 
-    @insert_paths('yaml/ins1283183', 'yaml/ins1397637', 'yaml/ins699647')
+    @insert_paths('yaml/ins1283183', 'yaml/ins1397637', 'yaml/ins699647', 'yaml/ins1413748')
     def test_parse_all(self, test_submissions):
 
         for idx, test_submission in enumerate(test_submissions):

@@ -1,0 +1,34 @@
+dependent_variables:
+- header: {name: Data (Unfolded)}
+  qualifiers:
+  - {name: RE, value: P P --> TOP TOPBAR X}
+  - {name: SQRT(S), units: GeV, value: '8000.0'}
+  values:
+  - errors:
+    - {label: stat, symerror: 0.0054}
+    - {label: sys, symerror: 0.0122}
+    value: 0.0939
+  - errors:
+    - {label: stat, symerror: 0.0104}
+    - {label: sys, symerror: 0.0118}
+    value: 0.1023
+  - errors:
+    - {label: stat, symerror: 0.0133}
+    - {label: sys, symerror: 0.0164}
+    value: -0.0694
+  - errors:
+    - {label: stat, symerror: 0.0073}
+    - {label: sys, symerror: 0.0279}
+    value: -0.0111
+  - errors:
+    - {label: stat, symerror: 0.0063}
+    - {label: sys, symerror: 0.0051}
+    value: -0.0002
+independent_variables:
+- header: {name: Asymmetry variable}
+  values:
+  - {value: '$A_{\Delta\phi}$'}
+  - {value: '$A_{\cos\varphi}$'}
+  - {value: '$A_{c1c2}$'}
+  - {value: '$A_{P}$'}
+  - {value: '$A_{P}^{\rm{CPV}}$'}

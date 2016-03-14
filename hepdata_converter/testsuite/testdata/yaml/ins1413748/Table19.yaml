@@ -1,0 +1,38 @@
+dependent_variables:
+- header: {name: ''}
+  qualifiers:
+  - {name: RE, value: P P --> TOP TOPBAR X}
+  - {name: SQRT(S), units: GeV, value: '8000.0'}
+  values:
+  - {value: 1.0}
+  - {value: -0.3629}
+  - {value: -0.556}
+  - {value: -0.3629}
+  - {value: 1.0}
+  - {value: 0.1313}
+  - {value: -0.556}
+  - {value: 0.1313}
+  - {value: 1.0}
+independent_variables:
+- header: {name: 'Bin of $M_\mathrm{t\bar{t}}$'}
+  values:
+  - {value: $1$}
+  - {value: $2$}
+  - {value: $3$}
+  - {value: $1$}
+  - {value: $2$}
+  - {value: $3$}
+  - {value: $1$}
+  - {value: $2$}
+  - {value: $3$}
+- header: {name: 'Bin of $M_\mathrm{t\bar{t}}$'}
+  values:
+  - {value: $1$}
+  - {value: $1$}
+  - {value: $1$}
+  - {value: $2$}
+  - {value: $2$}
+  - {value: $2$}
+  - {value: $3$}
+  - {value: $3$}
+  - {value: $3$}

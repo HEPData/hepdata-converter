@@ -52,6 +52,11 @@ class THFRootClass(ObjectWrapper):
             args.append(len(xval[i]) - 1)
             args.append(numpy.array(xval[i], dtype=float))
 
+        print 'Dimensions = {0}'.format(self.dim)
+        print self._hist_classes[self.dim - 1]
+        print args
+        print ''
+
         hist = self._hist_classes[self.dim - 1](self.sanitize_name(name), '', *args)
 
         for i in xrange(self.dim):
@@ -93,7 +98,6 @@ class THFRootClass(ObjectWrapper):
 
         for value in self.dependent_variable.get('values', []):
             for error in value.get('errors', []):
-                # :TODO: If error has no label is it stat? Or we have no idea?
                 if 'label' not in error:
                     error['label'] = 'stat'
                 label = error['label']
@@ -147,22 +151,19 @@ class THFRootClass(ObjectWrapper):
                 yvals += [(error_label, yval, index)]
                 index += 1
 
-        for name, vals, index in yvals:
-            error_hists.append(self._create_empty_hist(name, index, vals))
-
-        # for i in xrange(self.dim):
-        #     self.independent_variable_map.pop(0)
-
-        xval = []
-        for i in xrange(self.dim):
-            xval.append([])
-            i_var = self.independent_variables[i]['values']
-            for x in i_var:
-                xval[i].append(x['low'])
-            xval[i].append(i_var[-1]['high'])
-
         try:
-            hist = self._create_hist(xval)
+            for name, vals, index in yvals:
+                error_hists.append(self._create_empty_hist(name, index, vals))
+
+            xval = []
+            for i in xrange(self.dim):
+                xval.append([])
+                i_var = self.independent_variables[i]['values']
+                for x in i_var:
+                    xval[i].append(x['low'])
+                xval[i].append(i_var[-1]['high'])
+
+                hist = self._create_hist(xval)
         except:
             log.error("Failed to create histogram")
             return []
