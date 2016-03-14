@@ -52,11 +52,6 @@ class THFRootClass(ObjectWrapper):
             args.append(len(xval[i]) - 1)
             args.append(numpy.array(xval[i], dtype=float))
 
-        print 'Dimensions = {0}'.format(self.dim)
-        print self._hist_classes[self.dim - 1]
-        print args
-        print ''
-
         hist = self._hist_classes[self.dim - 1](self.sanitize_name(name), '', *args)
 
         for i in xrange(self.dim):
