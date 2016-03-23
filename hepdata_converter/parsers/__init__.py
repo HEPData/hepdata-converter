@@ -36,6 +36,7 @@ class Table(object):
         self.data = data
         self.index = index
         self.qualifiers = []
+        self.dserrors = []
 
         self.metadata = metadata or {
             'name': table_name or 'Table %s' % self.index,
@@ -47,7 +48,7 @@ class Table(object):
                 {'name': 'energies', 'values': []},
             ],
             'data_file': data_file or 'data%s.yaml' % index,
-            # it seams it's required
+            # it seems it's required
             # TODO - is it really required? should sensible defaults be provided?
             'data_license': {
                 'name': None,

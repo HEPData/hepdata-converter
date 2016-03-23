@@ -3,6 +3,10 @@ from hepdata_converter.common import Option, OptionInitMixin
 from hepdata_converter.writers import Writer
 import os
 
+def str_presenter(dumper, data):
+    if '\n' in data in data:
+        return dumper.represent_scalar('tag:yaml.org,2002:str', data, style='|')
+    return dumper.represent_scalar('tag:yaml.org,2002:str', data)
 
 class YAML(Writer):
     help = 'Writes YAML output. Output should be defined as filepath to the directory where submission.yaml and associated ' \
@@ -18,6 +22,7 @@ class YAML(Writer):
 
     def __init__(self, *args, **kwargs):
         super(YAML, self).__init__(single_file_output=True, *args, **kwargs)
+        yaml.add_representer(str, str_presenter)
 
     def write(self, data_in, data_out, *args, **kwargs):
         """
@@ -46,6 +51,6 @@ class YAML(Writer):
         else:
             if isinstance(data_out, (str, unicode)):
                 with open(data_out, 'w') as submission_file:
-                    yaml.dump_all([data] + [table.metadata for table in tables] + [table.all_data for table in tables], submission_file)
+                    yaml.dump_all([data] + [table.all_data for table in tables], submission_file)
             else: # expect filelike object
-                yaml.dump_all([data] + [table.metadata for table in tables] + [table.all_data for table in tables], data_out)
+                yaml.dump_all([data] + [table.all_data for table in tables], data_out)

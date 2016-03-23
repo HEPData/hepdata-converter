@@ -12,32 +12,30 @@
 
 This software library provides support for converting:
 
-* Old hepdata format -> YAML
+* Old HepData format ([sample](http://hepdata.cedar.ac.uk/resource/sample.input)) -> YAML
 * YAML to
-    * ROOT
-    * YODA
-    * CSV
-
-Old format detailed description: [http://hepdata.cedar.ac.uk/resource/sample.input]
+    * [ROOT](https://root.cern.ch/)
+    * [YODA](https://yoda.hepforge.org/)
+    * [CSV](https://en.wikipedia.org/wiki/Comma-separated_values)
 
 ## Installation
 
 To use this package, you need to have YODA and ROOT (and PyROOT) installed. This can be a bit of a pain, but instructions to install are available below.
+Install from PyPI with ```pip install hepdata-converter```.
 
 #### ROOT Installation
 
 We've provided some helpful installation guides for you :)
 
-* [Mac OS](http://spamspameggsandspam.blogspot.ch/2011/08/setting-up-root-and-pyroot-on-new-mac.html)
-* [Linux](https://root.cern.ch/pyroot)
-* [Windows](https://root.cern.ch/pyroot)
+* [Mac OS](http://spamspameggsandspam.blogspot.ch/2011/08/setting-up-root-and-pyroot-on-new-mac.html): ```brew install root6```
+* [Linux or Windows](https://root.cern.ch/pyroot)
 
 #### YODA Installation
 * Mac OS We use brew, you should too :) ```brew tap davidchall/hep``` to tell brew where to get package definitions from for HEP.	Then, ```brew install yoda```.
 
 ## Usage
 
-Library exposes single function which enables conversion from several different formats (YODA, YAML, Old HEPData) format to several other (YODA, YAML, ROOT, CSV). Conversion can be conducted between any format supported as input into any format supported as output. This is possible by means of using simple in memory intermediary format:
+Library exposes single function which enables conversion from several different formats (YAML, Old HepData) format to several other (YODA, YAML, ROOT, CSV). Conversion can be conducted between any format supported as input into any format supported as output. This is possible by means of using simple in memory intermediary format:
 
 *HERE SHOULD GO IMAGE WITH THE 'ARCHITECTURE'*
 
@@ -47,9 +45,9 @@ Library exposes single function which enables conversion from several different 
 #### Python code
 
 ```
-import hepconverter
+import hepdata_converter
 
-hepconverter.convert(input_file, output_directory, options={'input_format': 'oldhepdata'})
+hepdata_converter.convert(input_file, output_directory, options={'input_format': 'oldhepdata'})
 
 ```
 
@@ -64,12 +62,12 @@ $ hepdata-converter --input-format oldhepdata /path/to/input /path/to/output
 ## Extending library with new input formats
 
 To extend library with new formats (both input and output) one only needs to subclass specified class (for reading
-```hepconverter.parsers.Parser```, for writing ```hepconverter.writers.Writer```, and make sure that files containing these implementations
-are respectively in ```hepconcerter.parsers``` or ```hepconverter.writers``` package)
+```hepdata_converter.parsers.Parser```, for writing ```hepdata_converter.writers.Writer```), and make sure that files containing these implementations
+are respectively in ```hepdata_converter.parsers``` or ```hepdata_converter.writers``` package.
 
 ### Creating a new Parser
 
-In order to create new Parser you need to create class inheriting Parser class and override ```def parse(self, data_in, *args, **kwargs):``` abstract method. If you're trying to extend the library you should put the file containing new Parser in ```hepdata_converter/parsers``` directory, the name of the class is important - the new parser will be available by this name (case insensitive). If your goal is a simple hack then the package containing new parser class can be whererver, but the parser class has to be imported before using hepdata_converter.convert function.
+In order to create new Parser you need to create class inheriting Parser class and override ```def parse(self, data_in, *args, **kwargs):``` abstract method. If you're trying to extend the library you should put the file containing new Parser in ```hepdata_converter/parsers``` directory, the name of the class is important - the new parser will be available by this name (case insensitive). If your goal is a simple hack then the package containing new parser class can be wherever, but the parser class has to be imported before using ```hepdata_converter.convert``` function.
 
 Example is below:
 
@@ -141,7 +139,7 @@ object
 ### Creating new Writer
 
 Creation of new Writer is similar to creating new Parser (see above), but for the sake of completness the full description is provided below.
-In order to create new Writer you need to create class inheriting Writer class and override ```def write(self, data_in, data_out, *args, **kwargs):``` abstract method. If you're trying to extend the library you should put the file containing new Parser in ```hepdata_converter/writers``` directory, the name of the class is important - the new writer will be available by this name (case insensitive). If your goal is a simple hack then the package containing new writer class can be whererver, but the writer class has to be imported before using hepdata_converter.convert function.
+In order to create new Writer you need to create class inheriting Writer class and override ```def write(self, data_in, data_out, *args, **kwargs):``` abstract method. If you're trying to extend the library you should put the file containing new Parser in ```hepdata_converter/writers``` directory, the name of the class is important - the new writer will be available by this name (case insensitive). If your goal is a simple hack then the package containing new writer class can be whererver, but the writer class has to be imported before using ```hepdata_converter.convert``` function.
 
 Example is below:
 
@@ -192,7 +190,7 @@ hepdata_converter.convert('/path/to/input', '/path/to/output',
 
 It can also be accessed from CLI:
 
-```python
+```bash
 
 $ hepdata-converter --output-format foo /path/to/input /path/to/output
 
