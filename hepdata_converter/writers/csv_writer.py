@@ -14,8 +14,8 @@ class CSV(ArrayWriter):
     def options(cls):
         options = ArrayWriter.options()
         options['pack'] = Option('pack', type=bool, default=False, required=False,
-                                 help=('If specified, dependand variables will be put in one table, instead of creating one '
-                                       'table per dependant variable in CSV file'))
+                                 help=('If specified, dependent variables will be put in one table, instead of creating one '
+                                       'table per dependent variable in CSV file'))
         options['separator'] = Option('separator', type=str, default=',', required=False,
                                       help='Defines separator for CSV file, the default is colon: ":"')
         
@@ -79,7 +79,7 @@ class CSV(ArrayWriter):
     def _write_packed_data(self, data_out, table):
         """This is kind of legacy function - this functionality may be useful for some people, so even though
         now the default of writing CSV is writing unpacked data (divided by independent variable) this method is
-        still available and accesable if ```pack``` flag is specified in Writer's options
+        still available and accessible if ```pack``` flag is specified in Writer's options
 
         :param output: output file like object to which data will be written
         :param table: input table

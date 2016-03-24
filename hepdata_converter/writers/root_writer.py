@@ -28,14 +28,11 @@ class THFRootClass(ObjectWrapper):
         elif len(independent_variables_map) == cls.dim:
             for independent_variable in independent_variables_map:
                 if 'high' not in independent_variable['values'][0]:
-                    break
-            else:
-                return True
-        elif cls.dim == 1 and 'high' in independent_variables_map[0]['values'][0]:
+                    return False
             return True
         return False
 
-    def _create_empty_hist(self, dependant_var_title, index, yval):
+    def _create_empty_hist(self, dependent_var_title, index, yval):
 
         xval = []
         for i in xrange(self.dim):
@@ -47,18 +44,34 @@ class THFRootClass(ObjectWrapper):
 
         name = "Hist%sD_y%s_e%s" % (self.dim, self.dependent_variable_index + 1, index)
 
+        # order bin values of independent variables
+        xval_ordered = []
+        for i in xrange(self.dim):
+            xval_ordered.append([])
+            for j, x in enumerate(xval[i]):
+                if j == 0:
+                    x_highest = x
+                    xval_ordered[i].append(x)
+                else:
+                    if x > x_highest:
+                        x_highest = x
+                        xval_ordered[i].append(x)
+
         args = []
         for i in xrange(self.dim):
-            args.append(len(xval[i]) - 1)
-            args.append(numpy.array(xval[i], dtype=float))
+            args.append(len(xval_ordered[i]) - 1)
+            args.append(numpy.array(xval_ordered[i], dtype=float))
 
         hist = self._hist_classes[self.dim - 1](self.sanitize_name(name), '', *args)
 
         for i in xrange(self.dim):
-            getattr(hist, self._hist_axes_names[i] + 'axis').title = self.independent_variables[i]['header']['name']
+            name = self.independent_variables[i]['header']['name']
+            if 'units' in self.independent_variables[i]['header']:
+                name += ' [%s]' % self.independent_variables[i]['header']['units']
+            getattr(hist, self._hist_axes_names[i] + 'axis').title = name
 
         if self.dim < len(self._hist_classes):
-            getattr(hist, self._hist_axes_names[self.dim] + 'axis').title = self.sanitize_name(dependant_var_title)
+            getattr(hist, self._hist_axes_names[self.dim] + 'axis').title = self.sanitize_name(dependent_var_title)
 
         for i in xrange(len(yval)):
             hist.fill(*([self.xval[dim_i][i] for dim_i in xrange(self.dim)] + [yval[i]]))
@@ -69,17 +82,36 @@ class THFRootClass(ObjectWrapper):
         name = "Hist%sD_y%s" % (self.dim, self.dependent_variable_index + 1)
         args = []
 
+        # order bin values of independent variables
+        xval_ordered = []
         for i in xrange(self.dim):
-            args.append(len(xval[i]) - 1)
-            args.append(numpy.array(xval[i], dtype=float))
+            xval_ordered.append([])
+            for j, x in enumerate(xval[i]):
+                if j == 0:
+                    x_highest = x
+                    xval_ordered[i].append(x)
+                else:
+                    if x > x_highest:
+                        x_highest = x
+                        xval_ordered[i].append(x)
+
+        for i in xrange(self.dim):
+            args.append(len(xval_ordered[i]) - 1)
+            args.append(numpy.array(xval_ordered[i], dtype=float))
 
         hist = self._hist_classes[self.dim - 1](name, '', *args)
 
         for i in xrange(self.dim):
-            getattr(hist, self._hist_axes_names[i] + 'axis').title = self.independent_variables[i]['header']['name']
+            name = self.independent_variables[i]['header']['name']
+            if 'units' in self.independent_variables[i]['header']:
+                name += ' [%s]' % self.independent_variables[i]['header']['units']
+            getattr(hist, self._hist_axes_names[i] + 'axis').title = name
 
         if self.dim < len(self._hist_classes):
-            getattr(hist, self._hist_axes_names[self.dim] + 'axis').title = self.dependent_variable['header']['name']
+            name = self.dependent_variable['header']['name']
+            if 'units' in self.dependent_variable['header']:
+                name += ' [%s]' % self.dependent_variable['header']['units']
+            getattr(hist, self._hist_axes_names[self.dim] + 'axis').title = name
 
         for i in xrange(len(self.xval[0])):
             hist.fill(*([self.xval[dim_i][i] for dim_i in xrange(self.dim)] + [self.yval[i]]))
@@ -90,24 +122,47 @@ class THFRootClass(ObjectWrapper):
 
         error_hists = []
         error_labels = {}
+        error_indices = {}
 
         for value in self.dependent_variable.get('values', []):
+
+            # process the labels to ensure uniqueness
+            observed_error_labels = {}
             for error in value.get('errors', []):
+                label = error.get('label', '')
+
+                if label not in observed_error_labels:
+                    observed_error_labels[label] = 0
+                observed_error_labels[label] += 1
+
+                if observed_error_labels[label] > 1:
+                    error['label'] = label + '_' + str(observed_error_labels[label])
+
+                # append "_1" to first error label that has a duplicate
+                if observed_error_labels[label] == 2:
+                    for error1 in value.get('errors', []):
+                        error1_label = error1.get('label', 'error')
+                        if error1_label == label:
+                            error1['label'] = label + "_1"
+                            break
+
+            for index, error in enumerate(value.get('errors', []), 1):
                 if 'label' not in error:
-                    error['label'] = 'stat'
+                    error['label'] = 'error'
                 label = error['label']
                 if 'symerror' in error and label not in error_labels:
                     error_labels[label] = 'symerror'
                 elif 'asymerror' in error and error_labels.get(label, 'symerror') == 'symerror':
                     error_labels[label] = 'asymerror'
+                error_indices[index] = label
 
         yvals = []
-        index = 1
-        for error_label in error_labels:
+        for index in xrange(1, len(error_labels) + 1):
+            error_label = error_indices[index]
             if error_labels[error_label] == 'asymerror':
-                yval_plus_label = error_label + '_high'
+                yval_plus_label = error_label + '_plus'
                 yval_plus = []
-                yval_minus_label = error_label + '_low'
+                yval_minus_label = error_label + '_minus'
                 yval_minus = []
 
                 for value in self.dependent_variable.get('values', []):
@@ -118,7 +173,7 @@ class THFRootClass(ObjectWrapper):
                     elif 'symerror' in error[0]:
                         err_val = error_value_processor(value['value'], error[0]['symerror'])
                         yval_plus.append(err_val)
-                        yval_minus.append(err_val)
+                        yval_minus.append(-err_val)
                     elif 'asymerror' in error[0]:
                         err_plus = error_value_processor(value['value'], error[0]['asymerror']['plus'])
                         err_min = error_value_processor(value['value'], error[0]['asymerror']['minus'])
@@ -144,24 +199,26 @@ class THFRootClass(ObjectWrapper):
                         yval.append(0.0)
 
                 yvals += [(error_label, yval, index)]
-                index += 1
+
+        for name, vals, index in yvals:
+            try:
+                error_hists.append(self._create_empty_hist(name, index, vals))
+            except:
+                log.error("Failed to create empty histogram")
+
+        xval = []
+        for i in xrange(self.dim):
+            xval.append([])
+            i_var = self.independent_variables[i]['values']
+            for x in i_var:
+                xval[i].append(x['low'])
+            xval[i].append(i_var[-1]['high'])
 
         try:
-            for name, vals, index in yvals:
-                error_hists.append(self._create_empty_hist(name, index, vals))
-
-            xval = []
-            for i in xrange(self.dim):
-                xval.append([])
-                i_var = self.independent_variables[i]['values']
-                for x in i_var:
-                    xval[i].append(x['low'])
-                xval[i].append(i_var[-1]['high'])
-
-                hist = self._create_hist(xval)
+            hist = self._create_hist(xval)
         except:
             log.error("Failed to create histogram")
-            return []
+            return [] + error_hists
 
         return [hist] + error_hists
 
@@ -203,9 +260,19 @@ class TGraph2DErrorsClass(ObjectWrapper):
 
         graph.set_name("Graph2D_y%s" % (self.dependent_variable_index + 1))
 
-        graph.xaxis.title = self.independent_variables[0]['header']['name']
-        graph.yaxis.title = self.independent_variables[1]['header']['name']
-        graph.zaxis.title = self.dependent_variable['header']['name']
+        xname = self.independent_variables[0]['header']['name']
+        if 'units' in self.independent_variables[0]['header']:
+            xname += ' [%s]' % self.independent_variables[0]['header']['units']
+        yname = self.independent_variables[1]['header']['name']
+        if 'units' in self.independent_variables[1]['header']:
+            yname += ' [%s]' % self.independent_variables[1]['header']['units']
+        zname = self.dependent_variable['header']['name']
+        if 'units' in self.dependent_variable['header']:
+            zname += ' [%s]' % self.dependent_variable['header']['units']
+
+        graph.xaxis.title = xname
+        graph.yaxis.title = yname
+        graph.zaxis.title = zname
 
         return [graph]
 
@@ -234,8 +301,14 @@ class TGraphAsymmErrorsRootClass(ObjectWrapper):
 
         graph.set_name("Graph1D_y%s" % (self.dependent_variable_index + 1))
 
-        graph.xaxis.title = self.independent_variables[0]['header']['name']
-        graph.yaxis.title = self.dependent_variable['header']['name']
+        xname = self.independent_variables[0]['header']['name']
+        if 'units' in self.independent_variables[0]['header']:
+            xname += ' [%s]' % self.independent_variables[0]['header']['units']
+        yname = self.dependent_variable['header']['name']
+        if 'units' in self.dependent_variable['header']:
+            yname += ' [%s]' % self.dependent_variable['header']['units']
+        graph.xaxis.title = xname
+        graph.yaxis.title = yname
 
         return [graph]
 

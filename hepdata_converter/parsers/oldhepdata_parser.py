@@ -19,7 +19,7 @@ class HEPTable(Table):
 class OldHEPData(Parser):
     """Parser for Old HEPData format
     """
-    help = 'Parses OLDHepData format - example OLD HepData input format: http://hepdata.cedar.ac.uk/resource/sample.input'
+    help = 'Parses OLD HepData format - example OLD HepData input format: http://hepdata.cedar.ac.uk/resource/sample.input'
 
     @classmethod
     def options(cls):
@@ -60,7 +60,7 @@ class OldHEPData(Parser):
         """
 
 
-        # mapping of OLDHEP format's keywords to proper parsing functions
+        # mapping of OLD HepData format's keywords to proper parsing functions
         # all possible keywords are specified here, the ones which aren't used
         # by new data format are either mapped to _pass method which does nothing,
         # or bound to _add_to_comment which adds the specified data to comment section of the
@@ -74,12 +74,12 @@ class OldHEPData(Parser):
                 'dataset':    self._set_table,
 
                 # additional data which have no one to one mapping to new YAML format
-                'author':     self._bind_parse_addtional_data('author'),
-                'doi':        self._bind_parse_addtional_data('doi'),
-                'status':     self._bind_parse_addtional_data('status'),
-                'experiment': self._bind_parse_addtional_data('experiment'),
-                'detector':   self._bind_parse_addtional_data('detector'),
-                'title':      self._bind_parse_addtional_data('title'),
+                'author':     self._bind_parse_additional_data('author'),
+                'doi':        self._bind_parse_additional_data('doi'),
+                'status':     self._bind_parse_additional_data('status'),
+                'experiment': self._bind_parse_additional_data('experiment'),
+                'detector':   self._bind_parse_additional_data('detector'),
+                'title':      self._bind_parse_additional_data('title'),
 
                 # add it to record_ids
                 'spiresId':   self._bind_parse_record_ids('spires'),
@@ -94,6 +94,7 @@ class OldHEPData(Parser):
                 'dataend':    self._set_document,
                 'location':   self._bind_set_table_metadata('location'),
                 'dscomment':  self._bind_set_table_metadata('description', True),
+                'dserror':    self._parse_dserror,
                 'reackey':    self._parse_reackey,
                 'qual':       self._parse_qual,
                 'data':       self._parse_table_data,
@@ -112,7 +113,7 @@ class OldHEPData(Parser):
             pass
 
         if self.use_additional_data:
-            if len(self.additional_data) > 0:
+            if self.additional_data:
                 self.data[0]['comment'] += 'ADDITIONAL DATA IMPORTED FROM OLD HEPDATA FORMAT: \n'
             for key in self.additional_data:
                 for element in self.additional_data[key]:
@@ -124,7 +125,7 @@ class OldHEPData(Parser):
         # clean any possible data from previous parsing
         self.reset()
         # in case of strings we should treat them as filepaths
-        if isinstance(data_in, str) or isinstance(data_in, unicode):
+        if isinstance(data_in, (str, unicode)):
             with open(data_in, 'r') as self.current_file:
                 return self._parse()
         else:
@@ -144,11 +145,11 @@ class OldHEPData(Parser):
             return False
 
         # line was empty or it was a comment, continue
-        if line == '\n':
+        if line.strip() == '':
             return True
 
         # retrieve keyword and its value
-        reg = re.search("^\*(?P<key>[^:#]*)(:(?P<value>.*))?$", line)
+        reg = re.search("^\*(?P<key>[^:#]*)(:\s*(?P<value>.*)\s*)?$", line)
         if reg:
             key = reg.group('key').strip()
             value = reg.group('value')
@@ -171,10 +172,12 @@ class OldHEPData(Parser):
         if 'additional_resources' not in self.data[0]:
             self.data[0]['additional_resources'] = []
 
-        self.data[0]['additional_resources'].append({
-            'location': data.split(' : ')[0],
-            'description': ''
-        })
+        location = data.split(' : ')[0].strip()
+        if location.startswith('http'):
+            self.data[0]['additional_resources'].append({
+                'location': location,
+                'description': 'web page with auxiliary material'
+            })
 
     def _set_table(self, data):
         """Set current parsing state to 'table',
@@ -207,18 +210,18 @@ class OldHEPData(Parser):
 
         self.current_table.data_header = header
 
-        for i in range(len(header)):
-            header[i] = header[i].strip()
+        for i, h in enumerate(header):
+            header[i] = h.strip()
 
         x_count = header.count('x')
         y_count = header.count('y')
 
         # use deepcopy to avoid references in yaml... may not be required, and will very probably be refactored
-        # TODO - is this aproperiate behavior, or are references in YAML files acceptable, they are certainly less human readable
+        # TODO - is this appropriate behavior, or are references in YAML files acceptable, they are certainly less human readable
         self.current_table.data = {'independent_variables': [{'header': self.current_table.xheaders[i] if i < len(self.current_table.xheaders) else copy.deepcopy(self.current_table.xheaders[-1]),
                                                               'values': []} for i in range(x_count)],
                                       'dependent_variables': [{'header': self.current_table.yheaders[i] if i < len(self.current_table.yheaders) else copy.deepcopy(self.current_table.yheaders[-1]),
-                                                               'qualifiers': [self.current_table.qualifiers[j][i] for j in range(len(self.current_table.qualifiers)) ],
+                                                               'qualifiers': [self.current_table.qualifiers[j][i] if i < len(self.current_table.qualifiers[j]) else copy.deepcopy(self.current_table.qualifiers[j][-1]) for j in range(len(self.current_table.qualifiers)) ],
                                                                'values': []} for i in range(y_count)]}
 
         xy_mapping = []
@@ -226,11 +229,11 @@ class OldHEPData(Parser):
         current_x_count = 0
         current_y_count = 0
 
-        for i in range(len(header)):
-            if header[i] == 'x':
+        for h in header:
+            if h == 'x':
                 xy_mapping.append(current_x_count)
                 current_x_count += 1
-            if header[i] == 'y':
+            if h == 'y':
                 xy_mapping.append(current_y_count)
                 current_y_count += 1
 
@@ -242,52 +245,102 @@ class OldHEPData(Parser):
 
             if len(data_entry_elements) == len(header):
             # this is kind of a big stretch... I assume that x is always first
-                for i in range(len(header)):
-                    single_element = data_entry_elements[i]
+                for i, h in enumerate(header):
+                    single_element = data_entry_elements[i].strip()
 
-                    if header[i] == 'x': # independent variables
-                        r = re.search('(?P<low>[0-9]+\.?[0-9]*)( +TO +(?P<high>[0-9]+\.?[0-9]*))?', single_element)
-                        if r:
-                            if r.group('high') is not None:
-                                single_element = {'low': float(r.group('low')), 'high': float(r.group('high'))}
+                    # number patterns copied from old subs.pl parsing script
+                    pmnum1 = '[-+]?[\d]+\.?[\d]*'
+                    pmnum2 = '[-+]?\.[\d]+'
+                    pmnum3 = '[-+]?[\d]+\.?[\d]*\s*[eE]+\s*[+-]?\s*[\d]+'
+                    pmnum = '(' + pmnum1 + '|' + pmnum2 + '|' + pmnum3 + ')'
+
+                    # implement same regular expression matching as in old subs.pl parsing script
+
+                    if h == 'x': # independent variables
+
+                        r = re.search('^(?P<value>' + pmnum + ')$', single_element)
+                        if r: # "value"
+                            single_element = {'value': float(r.group('value'))}
+                        else:
+                            r = re.search('^(?P<value>' + pmnum + ')\s*\(\s*BIN\s*=\s*(?P<low>' + pmnum + \
+                                          ')\s+TO\s+(?P<high>' + pmnum + ')\s*\)$', single_element)
+                            if r: # "value (BIN=low TO high)"
+                                single_element = {'value': float(r.group('value')),
+                                                  'low': float(r.group('low')), 'high': float(r.group('high'))}
                             else:
-                                single_element = {'value': float(r.group('low'))}
-                            self.current_table.data['independent_variables'][xy_mapping[i]]['values'].append(single_element)
+                                r = re.search('^(?P<low>' + pmnum + ')\s+TO\s+(?P<high>' + pmnum + ')$',
+                                              single_element)
+                                if r: # "low TO high"
+                                    single_element = {'low': float(r.group('low')), 'high': float(r.group('high'))}
+                                else: # everything else: don't try to convert to float
+                                    single_element = {'value': single_element}
 
-                    elif header[i] == 'y': # independant variable
-                        r = re.search('( *)(?P<value>[0-9]+\.?[0-9]*)( *)\+(?P<err_p>[0-9]+\.?[0-9]*),(?P<err_m>\-[0-9]+\.?[0-9]*)( *)\((?P<err_sys>[^()]*)\)', single_element)
+                        # TO DO: subs.pl also parses other formats such as "low high", "value low high" (sorted),
+                        # "value +- err", and "value -err_m, +err_p".  Do we need to support these formats here?
+                        # Probably not: unsupported formats will just be written as a text string.
+
+                        self.current_table.data['independent_variables'][xy_mapping[i]]['values'].append(single_element)
+
+                    elif h == 'y': # dependent variable
+
+                        pmnum_pct = pmnum + '(\s*PCT)?' # errors can possibly be given as percentages
+
+                        r = re.search('^(?P<value>' + pmnum + ')\s*(?P<err_p>' + pmnum_pct + ')\s*,\s*(?P<err_m>' +
+                                      pmnum_pct + ')\s*(?P<err_sys>\(\s*DSYS=[^()]+\s*\))?$', single_element)
                         element = {'errors': []}
-                        if r:
+                        if r: # asymmetric first error
                             element['value'] = float(r.group('value'))
-                            element['errors'] += [{'label': 'stat', 'asymerror': {'plus': float(r.group('err_p')), 'minus': float(r.group('err_m'))}}]
+                            err_p = r.group('err_p').strip()
+                            err_p = str(float(err_p[:-3])) + '%' if err_p[-3:] == 'PCT' else float(err_p)
+                            err_m = r.group('err_m').strip()
+                            err_m = str(float(err_m[:-3])) + '%' if err_m[-3:] == 'PCT' else float(err_m)
+                            if str(err_p)[-1] != '%' and str(err_m)[-1] == '%':
+                                err_p = str(err_p) + '%'
+                            element['errors'] += [{'label': 'stat', 'asymerror': {'plus': err_p, 'minus': err_m}}]
 
                         else:
-                            r = re.search('( *)(?P<value>[0-9]+\.?[0-9]*)( *)\+-( *)(?P<error>[0-9]+\.?[0-9]*)( *)\((?P<err_sys>[^()]*)\)', single_element)
-                            if r:
+                            r = re.search('^(?P<value>' + pmnum + ')\s*(\+-\s*(?P<error>' +
+                                          pmnum_pct + '))?\s*(?P<err_sys>\(\s*DSYS=[^()]+\s*\))?$', single_element)
+                            if r: # symmetric first error
                                 element['value'] = float(r.group('value'))
-                                element['errors'] += [{'label': 'stat', 'symerror': float(r.group('error'))}]
+                                if r.group('error'):
+                                    error = r.group('error').strip()
+                                    error = str(float(error[:-3])) + '%' if error[-3:] == 'PCT' else float(error)
+                                    element['errors'] += [{'label': 'stat', 'symerror': error}]
+                            else: # everything else: don't try to convert to float
+                                element['value'] = single_element
 
-                        err_sys = r.group('err_sys').split('DSYS=')
+                        err_sys = []
+                        if r and r.group('err_sys'):
+                            err_sys = r.group('err_sys').strip(' \t()').split('DSYS=')
 
-                        for err in err_sys:
+                        for err in err_sys + self.current_table.dserrors:
+                            err = err.strip(' \t,')
                             if not err:
                                 continue
-                            err = err.strip(',')
                             error = {}
                             label = 'sys'
-                            r = re.search('^(?P<error>[0-9]+\.?[0-9]*)(\:(?P<label>.*))?,?$', err)
-                            if r:
+                            r = re.search('^(\+-)?\s*(?P<error>' + pmnum_pct + ')\s*(\:\s*(?P<label>.+))?$', err)
+                            if r: # symmetric systematic error
                                 if r.group('label'):
                                     label += ',' + r.group('label')
-                                error = {'symerror': float(r.group('error')) }
+                                error = r.group('error').strip()
+                                error = str(float(error[:-3])) + '%' if error[-3:] == 'PCT' else float(error)
+                                error = {'symerror': error}
 
                             else:
-                                #TODO - check some assumptions - will '+' always be first? and '-' always second?
-                                r = re.search('\+(?P<err_p>[0-9]+\.?[0-9]*)\,(?P<err_m>\-[0-9]+\.?[0-9]*)(\:(?P<label>.*))?', err)
-                                if r:
+                                r = re.search('^(?P<err_p>' + pmnum_pct + ')\s*,\s*(?P<err_m>' +
+                                              pmnum_pct + ')\s*(\:\s*(?P<label>.+))?$', err)
+                                if r: # asymmetric systematic error
                                     if r.group('label'):
                                         label += ',' + r.group('label')
-                                    error = {'asymerror': {'plus': float(r.group('err_p')), 'minus': float(r.group('err_m'))}}
+                                    err_p = r.group('err_p').strip()
+                                    err_p = str(float(err_p[:-3])) + '%' if err_p[-3:] == 'PCT' else float(err_p)
+                                    err_m = r.group('err_m').strip()
+                                    err_m = str(float(err_m[:-3])) + '%' if err_m[-3:] == 'PCT' else float(err_m)
+                                    if str(err_p)[-1] != '%' and str(err_m)[-1] == '%':
+                                        err_p = str(err_p) + '%'
+                                    error = {'asymerror': {'plus': err_p, 'minus': err_m}}
                             if not r:
                                 # error happened
                                 raise ValueError("Error while parsing data")
@@ -296,11 +349,25 @@ class OldHEPData(Parser):
                             element['errors'].append(error)
                         self.current_table.data['dependent_variables'][xy_mapping[i]]['values'].append(element)
 
+            elif data_entry_elements:
+                raise BadFormat("%s data entry elements but %s expected" % (len(data_entry_elements), len(header)))
+
             last_index = self.current_file.tell()
             l = self.current_file.readline()
             line = self._strip_comments(l)
 
         self.current_file.seek(last_index)
+
+    def _parse_dserror(self, data):
+        """Parse dserror attribute of the old HEPData format
+
+        example:
+        *dserror: 7.5 PCT : overall normalization uncertainty
+
+        :param data: data to be parsed
+        :type data: str
+        """
+        self.current_table.dserrors.append(data.strip())
 
     def _parse_reackey(self, data):
         """Parse reackey attribute of the old HEPData format
@@ -311,7 +378,7 @@ class OldHEPData(Parser):
         :param data: data to be parsed
         :type data: str
         """
-        self.current_table.reactions.append(data)
+        self.current_table.reactions.append(data.strip())
 
     def _parse_obskey(self, data):
         """Parse obskey attribute of the old HEPData format
@@ -322,17 +389,17 @@ class OldHEPData(Parser):
         :param data: data to be parsed
         :type data: str
         """
-        self.current_table.observables.append(data)
+        self.current_table.observables.append(data.strip())
 
     def _parse_energies(self, data):
         """Add energy given in data to tables energies
-        this method is here for compleatness sake, it's used in only one other place so
+        this method is here for completeness sake, it's used in only one other place so
         can be safely extracted
 
         :param data: data to be appended to table's energies
         :type data: str
         """
-        self.current_table.energies.append(data)
+        self.current_table.energies.append(data.strip())
 
     def _parse_qual(self, data):
         """Parse qual attribute of the old HEPData format
@@ -434,6 +501,7 @@ class OldHEPData(Parser):
         """
         result = init_data
 
+        first = True
         while True:
             last_index = self.current_file.tell()
             line_raw = self.current_file.readline()
@@ -443,7 +511,7 @@ class OldHEPData(Parser):
                 continue
 
             # now strip comments
-            # TODO - is it aproperiate behavior?
+            # TODO - is it appropriate behavior?
             data = self._strip_comments(line_raw)
             # EOF, stop here
             if not data:
@@ -454,7 +522,16 @@ class OldHEPData(Parser):
                 self.current_file.seek(last_index)
                 break
 
+            if first:
+                result += '\n'
+                first = False
+
             result += data
+
+        result = result.strip()
+        if not result.endswith('.'):
+            result += '.'
+
         return result
 
     def _parse_document_comment(self, data):
@@ -474,7 +551,9 @@ class OldHEPData(Parser):
         def set_table_metadata(self, data):
             if multiline:
                 data = self._read_multiline(data)
-            self.current_table.metadata[key] = data
+            if key == 'location':
+                data = 'Data from ' + data
+            self.current_table.metadata[key] = data.strip()
 
         # method must be bound, so we use __get__
         return set_table_metadata.__get__(self)
@@ -494,7 +573,7 @@ class OldHEPData(Parser):
         # method must be bound, so we use __get__
         return _parse_record_ids.__get__(self)
 
-    def _bind_parse_addtional_data(self, key, multiline=False):
+    def _bind_parse_additional_data(self, key, multiline=False):
         """Returns parsing function which will parse data as text, and add it to the table additional data dictionary
         with the provided key
 

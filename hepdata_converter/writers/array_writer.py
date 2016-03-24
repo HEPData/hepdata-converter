@@ -133,8 +133,8 @@ class ArrayWriter(Writer):
                         if 'asymerror' in error:
                             err_minus = error_value_processor(entry['value'], error['asymerror']['minus'])
                             err_plus = error_value_processor(entry['value'], error['asymerror']['plus'])
-                            errors_min += pow(err_minus, 2)
-                            errors_max += pow(err_plus, 2)
+                            errors_min += pow(min(err_plus, err_minus, 0.0), 2)
+                            errors_max += pow(max(err_plus, err_minus, 0.0), 2)
                         elif 'symerror' in error:
                             try:
                                 err = error_value_processor(entry['value'], error['symerror'])
@@ -199,7 +199,7 @@ class ArrayWriter(Writer):
                 # create output dir if it doesn't exist
                 self.create_dir(data_out)
                 for table in self.tables:
-                    outputs.append(open(os.path.join(data_out, table.name + '.' + self.extension), 'w'))
+                    outputs.append(open(os.path.join(data_out, table.name.replace(' ','') + '.' + self.extension), 'w'))
         # multiple tables - require directory
         elif len(self.tables) > 1 and not (isinstance(data_out, str) or isinstance(data_out, unicode)):
             raise ValueError("Multiple tables, output must be a directory")
@@ -237,7 +237,7 @@ class ArrayWriter(Writer):
         for independent_variable in table.independent_variables:
             name = independent_variable['header']['name']
             if 'units' in independent_variable['header']:
-                name += ' IN %s' % independent_variable['header']['units']
+                name += ' [%s]' % independent_variable['header']['units']
             headers.append(name)
             x_data_low = []
             x_data_high = []
@@ -262,7 +262,7 @@ class ArrayWriter(Writer):
     def _parse_dependent_variable(cls, dependent_variable, headers, qualifiers, qualifiers_marks, data):
         units = ''
         if 'units' in dependent_variable['header']:
-            units = ' IN %s' % dependent_variable['header']['units']
+            units = ' [%s]' % dependent_variable['header']['units']
         headers.append(dependent_variable['header']['name'] + units)
 
         qualifiers_marks.append(True)
@@ -271,18 +271,43 @@ class ArrayWriter(Writer):
         y_order = []
         y_data = {'values': []}
         y_order.append(y_data['values'])
-        for error in dependent_variable['values'][0].get('errors', []):
-            headers.append(error.get('label', 'stat') + ' +')
-            qualifiers_marks.append(False)
-            headers.append(error.get('label', 'stat') + ' -')
-            qualifiers_marks.append(False)
 
-            plus = []
-            y_data[error.get('label', 'stat')+'_plus'] = plus
-            y_order.append(plus)
-            minus = []
-            y_data[error.get('label', 'stat')+'_minus'] = minus
-            y_order.append(minus)
+        for value in dependent_variable['values']:
+
+            # process the labels to ensure uniqueness
+            observed_error_labels = {}
+            for error in value.get('errors', []):
+                label = error.get('label', 'error')
+
+                if label not in observed_error_labels:
+                    observed_error_labels[label] = 0
+                observed_error_labels[label] += 1
+
+                if observed_error_labels[label] > 1:
+                    error['label'] = label + '_' + str(observed_error_labels[label])
+
+                # append "_1" to first error label that has a duplicate
+                if observed_error_labels[label] == 2:
+                    for error1 in value.get('errors', []):
+                        error1_label = error1.get('label', 'error')
+                        if error1_label == label:
+                            error1['label'] = label + "_1"
+                            break
+
+            # fill error template for all values
+            for error in value.get('errors', []):
+                label = error.get('label', 'error')
+                if label + '_plus' not in y_data:
+                    headers.append(label + ' +')
+                    qualifiers_marks.append(False)
+                    headers.append(label + ' -')
+                    qualifiers_marks.append(False)
+                    plus = []
+                    y_data[label + '_plus'] = plus
+                    y_order.append(plus)
+                    minus = []
+                    y_data[label + '_minus'] = minus
+                    y_order.append(minus)
 
         for value in dependent_variable['values']:
             y_data['values'].append(value['value'])
@@ -291,23 +316,37 @@ class ArrayWriter(Writer):
                     if key != 'values':
                         val.append(0)
             else:
-                for i in xrange(len(value.get('errors', []))):
-                    error = value['errors'][i]
+                for key, val in y_data.items():
+                    has_error = False
+                    for i in xrange(len(value.get('errors', []))):
+                        error = value['errors'][i]
+                        label = error.get('label', 'error')
 
-                    if 'symerror' in error:
-                        error_plus = error['symerror']
-                        error_minus = error['symerror']
-                    else:
-                        error_plus = error['asymerror']['plus']
-                        error_minus = error['asymerror']['minus']
+                        if 'symerror' in error:
+                            error_plus = error['symerror']
+                            error_minus = '-' + error_plus if str(error_plus)[-1] == '%' else -error_plus
+                        else:
+                            error_plus = error['asymerror']['plus']
+                            error_minus = error['asymerror']['minus']
 
-                    y_data[error.get('label', 'stat')+'_plus'].append(error_plus)
-                    y_data[error.get('label', 'stat')+'_minus'].append(error_minus)
+                        if key == label + '_plus':
+                            val.append(error_plus)
+                            has_error = True
+                        elif key == label + '_minus':
+                            val.append(error_minus)
+                            has_error = True
+
+                    if key != 'values' and not has_error:
+                        val.append(0)
 
         for entry in y_order:
             data.append(entry)
 
         for qualifier in dependent_variable.get('qualifiers', []):
-            if qualifier['name'] not in qualifiers:
-                qualifiers[qualifier['name']] = []
-            qualifiers[qualifier['name']].append(qualifier['value'])
+            units = ''
+            if 'units' in qualifier:
+                units = ' [%s]' % qualifier['units']
+            name = qualifier['name'] + units
+            if name not in qualifiers:
+                qualifiers[name] = []
+            qualifiers[name].append(qualifier['value'])

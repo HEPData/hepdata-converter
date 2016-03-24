@@ -37,10 +37,10 @@ class CSVWriterTestCase(WriterTestSuite):
                                                                      'output_format': 'csv',
                                                                      'pack': True})
 
-        with open(os.path.join(self.current_tmp, 'Table 1.csv'), 'r') as f:
+        with open(os.path.join(self.current_tmp, 'Table1.csv'), 'r') as f:
             self.assertMultiLineAlmostEqual(table_1_content, f.read())
 
-        with open(os.path.join(self.current_tmp, 'Table 9.csv'), 'r') as f:
+        with open(os.path.join(self.current_tmp, 'Table9.csv'), 'r') as f:
             self.assertMultiLineAlmostEqual(table_9_content, f.read())
 
     @insert_data_as_str('csv/table_9_unpacked.csv')
@@ -69,12 +69,12 @@ class CSVWriterTestCase(WriterTestSuite):
                                  csv_filepath])
 
         self.assertTrue(os.path.exists(csv_filepath))
-        csv_1 = os.path.join(csv_filepath, 'Table 1.csv')
+        csv_1 = os.path.join(csv_filepath, 'Table1.csv')
         self.assertTrue(os.path.exists(csv_1))
         with open(csv_1, 'r') as csv_file:
             self.assertMultiLineAlmostEqual(table_1_content.strip(), csv_file.read().strip())
 
-        csv_2 = os.path.join(csv_filepath, 'Table 9.csv')
+        csv_2 = os.path.join(csv_filepath, 'Table9.csv')
         self.assertTrue(os.path.exists(csv_2))
         with open(csv_2, 'r') as csv_file:
             self.assertMultiLineAlmostEqual(table_9_content.strip(), csv_file.read().strip())

@@ -1,0 +1,19 @@
+#: name: Table 1
+#: description: The measured fiducial cross sections.  The first systematic uncertainty is the combined systematic uncertainty excluding luminosity, the second is the luminosity.
+#: data_file: data1.yaml
+#: data_license:   
+#: keyword reactions: P P --> Z0 Z0 X
+#: keyword observables: SIG
+#: keyword energies: 
+#: RE,P P --> Z0 < LEPTON+ LEPTON- > Z0 < LEPTON+ LEPTON- > X
+'SQRT(S) [GEV]','SIG(fiducial) [FB]','stat +','stat -','sys +','sys -','sys,lumi +','sys,lumi -'
+7000.0,25.4,3.3,-3.0,1.2,-1.0,1.0,-1.0
+
+#: RE,P P --> Z0 < LEPTON+ LEPTON- > Z0* < LEPTON+ LEPTON- > X
+'SQRT(S) [GEV]','SIG(fiducial) [FB]','stat +','stat -','sys +','sys -','sys,lumi +','sys,lumi -'
+7000.0,29.8,3.8,-3.5,1.7,-1.5,1.2,-1.2
+
+#: RE,P P --> Z0 < LEPTON+ LEPTON- > Z0 < NU NUBAR > X
+'SQRT(S) [GEV]','SIG(fiducial) [FB]','stat +','stat -','sys +','sys -','sys,lumi +','sys,lumi -'
+7000.0,12.7,3.1,-2.9,1.7,-1.7,0.5,-0.5
+
