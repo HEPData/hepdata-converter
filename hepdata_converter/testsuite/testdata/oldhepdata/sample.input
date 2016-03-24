@@ -95,7 +95,10 @@ The 2l2nu channel fiducial region is defined as:
 # Inspire ID or arXiv number for the paper in the text box adjacent to
 # the "Get started" button.
 
-# Remainder of file provides information on each table.
+# Remainder of file provides information on each table.  All records should
+# have at least one table, even for single-number measurements where all
+# relevant information is given in the abstract.
+
 # Note that much of the HepData notation is historical and originates from
 # 1970s guidelines for use with the Berkeley Database Management System (BDMS):
 #   http://hepdata.cedar.ac.uk/resource/EncodingManual.pdf

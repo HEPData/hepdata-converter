@@ -28,10 +28,7 @@ class THFRootClass(ObjectWrapper):
         elif len(independent_variables_map) == cls.dim:
             for independent_variable in independent_variables_map:
                 if 'high' not in independent_variable['values'][0]:
-                    break
-            else:
-                return True
-        elif cls.dim == 1 and 'high' in independent_variables_map[0]['values'][0]:
+                    return False
             return True
         return False
 
@@ -47,10 +44,23 @@ class THFRootClass(ObjectWrapper):
 
         name = "Hist%sD_y%s_e%s" % (self.dim, self.dependent_variable_index + 1, index)
 
+        # order bin values of independent variables
+        xval_ordered = []
+        for i in xrange(self.dim):
+            xval_ordered.append([])
+            for j, x in enumerate(xval[i]):
+                if j == 0:
+                    x_highest = x
+                    xval_ordered[i].append(x)
+                else:
+                    if x > x_highest:
+                        x_highest = x
+                        xval_ordered[i].append(x)
+
         args = []
         for i in xrange(self.dim):
-            args.append(len(xval[i]) - 1)
-            args.append(numpy.array(xval[i], dtype=float))
+            args.append(len(xval_ordered[i]) - 1)
+            args.append(numpy.array(xval_ordered[i], dtype=float))
 
         hist = self._hist_classes[self.dim - 1](self.sanitize_name(name), '', *args)
 
@@ -72,9 +82,22 @@ class THFRootClass(ObjectWrapper):
         name = "Hist%sD_y%s" % (self.dim, self.dependent_variable_index + 1)
         args = []
 
+        # order bin values of independent variables
+        xval_ordered = []
         for i in xrange(self.dim):
-            args.append(len(xval[i]) - 1)
-            args.append(numpy.array(xval[i], dtype=float))
+            xval_ordered.append([])
+            for j, x in enumerate(xval[i]):
+                if j == 0:
+                    x_highest = x
+                    xval_ordered[i].append(x)
+                else:
+                    if x > x_highest:
+                        x_highest = x
+                        xval_ordered[i].append(x)
+
+        for i in xrange(self.dim):
+            args.append(len(xval_ordered[i]) - 1)
+            args.append(numpy.array(xval_ordered[i], dtype=float))
 
         hist = self._hist_classes[self.dim - 1](name, '', *args)
 
@@ -177,22 +200,25 @@ class THFRootClass(ObjectWrapper):
 
                 yvals += [(error_label, yval, index)]
 
-        try:
-            for name, vals, index in yvals:
+        for name, vals, index in yvals:
+            try:
                 error_hists.append(self._create_empty_hist(name, index, vals))
+            except:
+                log.error("Failed to create empty histogram")
 
-            xval = []
-            for i in xrange(self.dim):
-                xval.append([])
-                i_var = self.independent_variables[i]['values']
-                for x in i_var:
-                    xval[i].append(x['low'])
-                xval[i].append(i_var[-1]['high'])
+        xval = []
+        for i in xrange(self.dim):
+            xval.append([])
+            i_var = self.independent_variables[i]['values']
+            for x in i_var:
+                xval[i].append(x['low'])
+            xval[i].append(i_var[-1]['high'])
 
-                hist = self._create_hist(xval)
+        try:
+            hist = self._create_hist(xval)
         except:
             log.error("Failed to create histogram")
-            return []
+            return [] + error_hists
 
         return [hist] + error_hists
 

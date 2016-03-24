@@ -113,7 +113,7 @@ class OldHEPData(Parser):
             pass
 
         if self.use_additional_data:
-            if len(self.additional_data) > 0:
+            if self.additional_data:
                 self.data[0]['comment'] += 'ADDITIONAL DATA IMPORTED FROM OLD HEPDATA FORMAT: \n'
             for key in self.additional_data:
                 for element in self.additional_data[key]:
@@ -125,7 +125,7 @@ class OldHEPData(Parser):
         # clean any possible data from previous parsing
         self.reset()
         # in case of strings we should treat them as filepaths
-        if isinstance(data_in, str) or isinstance(data_in, unicode):
+        if isinstance(data_in, (str, unicode)):
             with open(data_in, 'r') as self.current_file:
                 return self._parse()
         else:
@@ -210,8 +210,8 @@ class OldHEPData(Parser):
 
         self.current_table.data_header = header
 
-        for i in range(len(header)):
-            header[i] = header[i].strip()
+        for i, h in enumerate(header):
+            header[i] = h.strip()
 
         x_count = header.count('x')
         y_count = header.count('y')
@@ -229,11 +229,11 @@ class OldHEPData(Parser):
         current_x_count = 0
         current_y_count = 0
 
-        for i in range(len(header)):
-            if header[i] == 'x':
+        for h in header:
+            if h == 'x':
                 xy_mapping.append(current_x_count)
                 current_x_count += 1
-            if header[i] == 'y':
+            if h == 'y':
                 xy_mapping.append(current_y_count)
                 current_y_count += 1
 
@@ -245,7 +245,7 @@ class OldHEPData(Parser):
 
             if len(data_entry_elements) == len(header):
             # this is kind of a big stretch... I assume that x is always first
-                for i in range(len(header)):
+                for i, h in enumerate(header):
                     single_element = data_entry_elements[i].strip()
 
                     # number patterns copied from old subs.pl parsing script
@@ -256,7 +256,7 @@ class OldHEPData(Parser):
 
                     # implement same regular expression matching as in old subs.pl parsing script
 
-                    if header[i] == 'x': # independent variables
+                    if h == 'x': # independent variables
 
                         r = re.search('^(?P<value>' + pmnum + ')$', single_element)
                         if r: # "value"
@@ -275,13 +275,13 @@ class OldHEPData(Parser):
                                 else: # everything else: don't try to convert to float
                                     single_element = {'value': single_element}
 
-                        # TO DO: subs,pl also parses other formats such as "low high", "value low high" (sorted),
+                        # TO DO: subs.pl also parses other formats such as "low high", "value low high" (sorted),
                         # "value +- err", and "value -err_m, +err_p".  Do we need to support these formats here?
                         # Probably not: unsupported formats will just be written as a text string.
 
                         self.current_table.data['independent_variables'][xy_mapping[i]]['values'].append(single_element)
 
-                    elif header[i] == 'y': # dependent variable
+                    elif h == 'y': # dependent variable
 
                         pmnum_pct = pmnum + '(\s*PCT)?' # errors can possibly be given as percentages
 
@@ -349,7 +349,7 @@ class OldHEPData(Parser):
                             element['errors'].append(error)
                         self.current_table.data['dependent_variables'][xy_mapping[i]]['values'].append(element)
 
-            elif len(data_entry_elements):
+            elif data_entry_elements:
                 raise BadFormat("%s data entry elements but %s expected" % (len(data_entry_elements), len(header)))
 
             last_index = self.current_file.tell()

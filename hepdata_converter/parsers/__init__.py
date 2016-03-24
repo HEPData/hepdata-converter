@@ -32,8 +32,8 @@ class Table(object):
             return False
         return True
 
-    def __init__(self, index=None, data_file=None, table_name=None, metadata=None, data=[]):
-        self.data = data
+    def __init__(self, index=None, data_file=None, table_name=None, metadata=None, data=None):
+        self.data = data or []
         self.index = index
         self.qualifiers = []
         self.dserrors = []

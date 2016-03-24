@@ -31,7 +31,7 @@ We've provided some helpful installation guides for you :)
 * [Linux or Windows](https://root.cern.ch/pyroot)
 
 #### YODA Installation
-* Mac OS We use brew, you should too :) ```brew tap davidchall/hep``` to tell brew where to get package definitions from for HEP.	Then, ```brew install yoda```.
+* Mac OS. We use brew, you should too :) ```brew tap davidchall/hep``` to tell brew where to get package definitions from for HEP.	Then, ```brew install yoda```.
 
 ## Usage
 

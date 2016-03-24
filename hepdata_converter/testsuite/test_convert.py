@@ -31,25 +31,22 @@ class ConvertTestSuite(WriterTestSuite):
         )
 
         self.correct_submit_output = (
-            "additional_resources:\n"
-            "- {description: '', location: ' ARXIV:1211.6096'}\n"
-            "- {description: '', location: ' CERN-PH-EP-2012-318'}\n"
-            "- {description: '', location: ' JHEP 1303,128 (2013)'}\n"
-            "comment: ' CERN-LHC.  Measurements of the cross section for ZZ ...'\n"
+            "additional_resources: []\n"
+            "comment: 'CERN-LHC.  Measurements of the cross section for ZZ ...'\n"
             "---\n"
             "additional_resources: []\n"
             "data_file: data1.yaml\n"
             "data_license: {description: null, name: null, url: null}\n"
-            "description: ' The measured fiducial cross sections.  The first systematic uncertainty\n"
-            "  is the combined systematic uncertainty excluding luminosity, the second is the luminosity'\n"
+            "description: 'The measured fiducial cross sections.  The first systematic uncertainty\n"
+            "  is the combined systematic uncertainty excluding luminosity, the second is the luminosity.'\n"
             "keywords:\n"
             "- name: reactions\n"
-            "  values: [' P P --> Z0 Z0 X']\n"
+            "  values: ['P P --> Z0 Z0 X']\n"
             "- name: observables\n"
-            "  values: [' SIG']\n"
+            "  values: ['SIG']\n"
             "- name: energies\n"
             "  values: []\n"
-            "location: ' Page 17 of preprint'\n"
+            "location: 'Data from Page 17 of preprint'\n"
             "name: Table 1\n"
         )
 

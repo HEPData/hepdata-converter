@@ -1,204 +1,33 @@
 additional_resources:
-- {description: '', location: ' ARXIV:1211.6096'}
-- {description: '', location: ' CERN-PH-EP-2012-318'}
-- {description: '', location: ' JHEP 1303,128 (2013)'}
-- {description: '', location: ' http://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/STDM-2012-02/'}
-comment: ' CERN-LHC.  Measurements of the cross section for ZZ production using the
-  4l and 2l2nu decay channels in proton-proton collisions at a centre-of-mass energy
-  of 7 TeV with 4.6 fb^-1 of data collected in 2011.  The final states used are 4
-  electrons, 4 muons, 2 electrons and 2 muons, 2 electrons and missing transverse
-  momentum, and 2 muons and missing transverse momentum (MET).
+- {description: web page with auxiliary material, location: 'http://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/STDM-2012-02/'}
+comment: |-
+  CERN-LHC.  Measurements of the cross section for ZZ production using the 4l and 2l2nu decay channels in proton-proton collisions at a centre-of-mass energy of 7 TeV with 4.6 fb^-1 of data collected in 2011.  The final states used are 4 electrons, 4 muons, 2 electrons and 2 muons, 2 electrons and missing transverse momentum, and 2 muons and missing transverse momentum (MET).
 
-  The cross section values reported in the tables should be multiplied by a factor
-  of 1.0141 to take into account the updated value of the integrated luminosity for
-  the ATLAS 2011 data taking period.  The uncertainty on the global normalisation
-  ("Lumi") remains at 1.8%.  See Eur.Phys.J. C73 (2013) 2518 for more details.
-
+  The cross section values reported in the tables should be multiplied by a factor of 1.0141 to take into account the updated value of the integrated luminosity for the ATLAS 2011 data taking period.  The uncertainty on the global normalisation ("Lumi") remains at 1.8%.  See Eur.Phys.J. C73 (2013) 2518 for more details.
 
   The 4l channel fiducial region is defined as:
-
   - 4e, 4mu or 2e2mu
-
-  - Ambiguities in pairing are resolved by choosing the combination that results in
-  the smaller value of the sum |mll - mZ| for the two pairs, where mll is the mass
-  of the dilepton system.
-
+  - Ambiguities in pairing are resolved by choosing the combination that results in the smaller value of the sum |mll - mZ| for the two pairs, where mll is the mass of the dilepton system.
   - ptLepton > 7 GeV (at least one with ptLepton > 20 (25) GeV for muons (electrons))
-
   - |etaLepton| < 3.16
-
-  - At least one lepton pair is required to have invariant mass between 66 and 116
-  GeV. If the second pair also satisfies this, the event is ZZ, otherwise if the second
-  pair satisfies mll > 20 GeV it is ZZ*.
-
+  - At least one lepton pair is required to have invariant mass between 66 and 116 GeV. If the second pair also satisfies this, the event is ZZ, otherwise if the second pair satisfies mll > 20 GeV it is ZZ*.
   - min(DeltaR(l,l)) > 0.2.
 
-
   The 2l2nu channel fiducial region is defined as:
-
   - 2e+MET or 2mu+MET
-
   - ptLepton > 20 GeV
-
   - |etaLepton| < 2.5
-
   - mll must be between 76 and 106 GeV
-
   - -MET*cos(phi_METZ)>75 GeV, where phi_METZ is the angle between the Z and the MET
-
-  - |MET - pTZ| / pTZ < 0.4, where pTZ is the transverse momentum of the dilepton
-  system
-
+  - |MET - pTZ| / pTZ < 0.4, where pTZ is the transverse momentum of the dilepton system
   - No events with a jet for which ptJet > 25 GeV and |etaJet| < 4.5
-
   - No events with a third lepton for which ptLepton > 10 GeV
-
-  - min(DeltaR(l,l)) > 0.3
-
-
-
-
-
-  '
+  - min(DeltaR(l,l)) > 0.3.
 record_ids:
 - {id: 9863591, type: spires}
 - {id: 1203852, type: inspire}
 - {id: 1496097, type: cds}
 - {id: 6150, type: durham}
----
-additional_resources: []
-data_file: data1.yaml
-data_license: {description: null, name: null, url: null}
-description: ' The measured fiducial cross sections.  The first systematic uncertainty
-  is the combined systematic uncertainty excluding luminosity, the second is the luminosity
-
-  '
-keywords:
-- name: reactions
-  values: [' P P --> Z0 Z0 X']
-- name: observables
-  values: [' SIG']
-- name: energies
-  values: []
-location: ' Page 17 of preprint'
-name: Table 1
----
-additional_resources: []
-data_file: data2.yaml
-data_license: {description: null, name: null, url: null}
-description: ' The measured total cross sections.  The first systematic uncertainty
-  is the combined systematic uncertainty excluding luminosity, the second is the luminosity'
-keywords:
-- name: reactions
-  values: [' P P --> Z0 Z0 X']
-- name: observables
-  values: [' SIG']
-- name: energies
-  values: []
-location: ' Page 20 of preprint'
-name: Table 2
----
-additional_resources: []
-data_file: data3.yaml
-data_license: {description: null, name: null, url: null}
-description: ' Normalized ZZ fiducial cross section (multiplied by 10^6 for readability)
-  in bins of the leading reconstructed dilepton pT for the 4 lepton channel.  The
-  first systematic uncertainty is detector systematics, the second is background systematic
-  uncertainties'
-keywords:
-- name: reactions
-  values: [' P P --> Z0 Z0 X']
-- name: observables
-  values: [' DSIG/DPT']
-- name: energies
-  values: ['7000.0']
-location: ' Figure 8A'
-name: Table 3
----
-additional_resources: []
-data_file: data4.yaml
-data_license: {description: null, name: null, url: null}
-description: ' Normalized ZZ fiducial cross section (multiplied by 10^6 for readability)
-  in bins of the dilepton pT for the 2l2nu channel.  The first systematic uncertainty
-  is detector systematics, the second is background systematic uncertainties'
-keywords:
-- name: reactions
-  values: [' P P --> Z0 Z0 X']
-- name: observables
-  values: [' DSIG/DPT']
-- name: energies
-  values: ['7000.0']
-location: ' Figure 8B'
-name: Table 4
----
-additional_resources: []
-data_file: data5.yaml
-data_license: {description: null, name: null, url: null}
-description: ' Normalized ZZ fiducial cross section (multiplied by 10^6 for readability)
-  in bins of deltaPhi between the two leptons of the leading dileptons for the 4l
-  channel.  The first systematic uncertainty is detector systematics, the second is
-  background systematic uncertainties.UPDATE (30 APR 2014): extra significant digit
-  added for first bin
-
-  '
-keywords:
-- name: reactions
-  values: [' P P --> Z0 Z0 X']
-- name: observables
-  values: [' DSIG/DPHI']
-- name: energies
-  values: ['7000.0']
-location: ' Figure 9A'
-name: Table 5
----
-additional_resources: []
-data_file: data6.yaml
-data_license: {description: null, name: null, url: null}
-description: ' Normalized ZZ fiducial cross section (multiplied by 10^6 for readability)
-  in bins of deltaPhi between the two leptons for the 2l2nu channel.  The first systematic
-  uncertainty is detector systematics, the second is background systematic uncertainties'
-keywords:
-- name: reactions
-  values: [' P P --> Z0 Z0 X']
-- name: observables
-  values: [' DSIG/DPHI']
-- name: energies
-  values: ['7000.0']
-location: ' Figure 9B'
-name: Table 6
----
-additional_resources: []
-data_file: data7.yaml
-data_license: {description: null, name: null, url: null}
-description: ' Normalized ZZ fiducial cross section (multiplied by 10^6 for readability)
-  in bins of the mass of the ZZ system for the 4l channel.  The first systematic uncertainty
-  is detector systematics, the second is background systematic uncertainties'
-keywords:
-- name: reactions
-  values: [' P P --> Z0 Z0 X']
-- name: observables
-  values: [' DSIG/DM']
-- name: energies
-  values: ['7000.0']
-location: ' Figure 10A'
-name: Table 7
----
-additional_resources: []
-data_file: data8.yaml
-data_license: {description: null, name: null, url: null}
-description: ' Normalized ZZ fiducial cross section (multiplied by 10^6 for readability)
-  in bins of the transverse mass of the ZZ system for the 2l2nu channel.  The first
-  systematic uncertainty is detector systematics, the second is background systematic
-  uncertainties'
-keywords:
-- name: reactions
-  values: [' P P --> Z0 Z0 X']
-- name: observables
-  values: [' DSIG/DM']
-- name: energies
-  values: ['7000.0']
-location: ' Figure 10B'
-name: Table 8
 ---
 additional_resources: []
 data_license: {description: null, name: null, url: null}
@@ -235,22 +64,20 @@ dependent_variables:
     - {label: sys, symerror: 1.7}
     - {label: 'sys,lumi', symerror: 0.5}
     value: 12.7
-description: ' The measured fiducial cross sections.  The first systematic uncertainty
-  is the combined systematic uncertainty excluding luminosity, the second is the luminosity
-
-  '
+description: The measured fiducial cross sections.  The first systematic uncertainty
+  is the combined systematic uncertainty excluding luminosity, the second is the luminosity.
 independent_variables:
 - header: {name: SQRT(S), units: GEV}
   values:
   - {value: 7000.0}
 keywords:
 - name: reactions
-  values: [' P P --> Z0 Z0 X']
+  values: [P P --> Z0 Z0 X]
 - name: observables
-  values: [' SIG']
+  values: [SIG]
 - name: energies
   values: []
-location: ' Page 17 of preprint'
+location: Data from Page 17 of preprint
 name: Table 1
 ---
 additional_resources: []
@@ -266,20 +93,20 @@ dependent_variables:
       label: sys
     - {label: 'sys,lumi', symerror: 0.3}
     value: 6.7
-description: ' The measured total cross sections.  The first systematic uncertainty
-  is the combined systematic uncertainty excluding luminosity, the second is the luminosity'
+description: The measured total cross sections.  The first systematic uncertainty
+  is the combined systematic uncertainty excluding luminosity, the second is the luminosity.
 independent_variables:
 - header: {name: SQRT(S), units: GEV}
   values:
   - {value: 7000.0}
 keywords:
 - name: reactions
-  values: [' P P --> Z0 Z0 X']
+  values: [P P --> Z0 Z0 X]
 - name: observables
-  values: [' SIG']
+  values: [SIG]
 - name: energies
   values: []
-location: ' Page 20 of preprint'
+location: Data from Page 20 of preprint
 name: Table 2
 ---
 additional_resources: []
@@ -310,10 +137,10 @@ dependent_variables:
     - {label: 'sys,detector', symerror: 2.0}
     - {label: 'sys,background', symerror: 0.0}
     value: 80.0
-description: ' Normalized ZZ fiducial cross section (multiplied by 10^6 for readability)
+description: Normalized ZZ fiducial cross section (multiplied by 10^6 for readability)
   in bins of the leading reconstructed dilepton pT for the 4 lepton channel.  The
   first systematic uncertainty is detector systematics, the second is background systematic
-  uncertainties'
+  uncertainties.
 independent_variables:
 - header: {name: Leading dilepton PT, units: GEV}
   values:
@@ -323,12 +150,12 @@ independent_variables:
   - {high: 600.0, low: 200.0}
 keywords:
 - name: reactions
-  values: [' P P --> Z0 Z0 X']
+  values: [P P --> Z0 Z0 X]
 - name: observables
-  values: [' DSIG/DPT']
+  values: [DSIG/DPT]
 - name: energies
   values: ['7000.0']
-location: ' Figure 8A'
+location: Data from Figure 8A
 name: Table 3
 ---
 additional_resources: []
@@ -354,9 +181,9 @@ dependent_variables:
     - {label: 'sys,detector', symerror: 120.0}
     - {label: 'sys,background', symerror: 390.0}
     value: 3900.0
-description: ' Normalized ZZ fiducial cross section (multiplied by 10^6 for readability)
+description: Normalized ZZ fiducial cross section (multiplied by 10^6 for readability)
   in bins of the dilepton pT for the 2l2nu channel.  The first systematic uncertainty
-  is detector systematics, the second is background systematic uncertainties'
+  is detector systematics, the second is background systematic uncertainties.
 independent_variables:
 - header: {name: Leading dilepton PT, units: GEV}
   values:
@@ -365,12 +192,12 @@ independent_variables:
   - {high: 200.0, low: 130.0}
 keywords:
 - name: reactions
-  values: [' P P --> Z0 Z0 X']
+  values: [P P --> Z0 Z0 X]
 - name: observables
-  values: [' DSIG/DPT']
+  values: [DSIG/DPT]
 - name: energies
   values: ['7000.0']
-location: ' Figure 8B'
+location: Data from Figure 8B
 name: Table 4
 ---
 additional_resources: []
@@ -401,13 +228,9 @@ dependent_variables:
     - {label: 'sys,detector', symerror: 2000.0}
     - {label: 'sys,background', symerror: 300.0}
     value: 420000.0
-description: ' Normalized ZZ fiducial cross section (multiplied by 10^6 for readability)
-  in bins of deltaPhi between the two leptons of the leading dileptons for the 4l
-  channel.  The first systematic uncertainty is detector systematics, the second is
-  background systematic uncertainties.UPDATE (30 APR 2014): extra significant digit
-  added for first bin
-
-  '
+description: |-
+  Normalized ZZ fiducial cross section (multiplied by 10^6 for readability) in bins of deltaPhi between the two leptons of the leading dileptons for the 4l channel.  The first systematic uncertainty is detector systematics, the second is background systematic uncertainties.
+  UPDATE (30 APR 2014): extra significant digit added for first bin.
 independent_variables:
 - header: {name: 'Leading dilepton DELTA(PHI(LEPTON+,LEPTON-))'}
   values:
@@ -417,12 +240,12 @@ independent_variables:
   - {high: 3.14159, low: 1.7}
 keywords:
 - name: reactions
-  values: [' P P --> Z0 Z0 X']
+  values: [P P --> Z0 Z0 X]
 - name: observables
-  values: [' DSIG/DPHI']
+  values: [DSIG/DPHI]
 - name: energies
   values: ['7000.0']
-location: ' Figure 9A'
+location: Data from Figure 9A
 name: Table 5
 ---
 additional_resources: []
@@ -448,9 +271,9 @@ dependent_variables:
     - {label: 'sys,detector', symerror: 2000.0}
     - {label: 'sys,background', symerror: 58000.0}
     value: 100000.0
-description: ' Normalized ZZ fiducial cross section (multiplied by 10^6 for readability)
+description: Normalized ZZ fiducial cross section (multiplied by 10^6 for readability)
   in bins of deltaPhi between the two leptons for the 2l2nu channel.  The first systematic
-  uncertainty is detector systematics, the second is background systematic uncertainties'
+  uncertainty is detector systematics, the second is background systematic uncertainties.
 independent_variables:
 - header: {name: 'Leading dilepton DELTA(PHI(LEPTON+,LEPTON-))'}
   values:
@@ -459,12 +282,12 @@ independent_variables:
   - {high: 3.14159, low: 1.7}
 keywords:
 - name: reactions
-  values: [' P P --> Z0 Z0 X']
+  values: [P P --> Z0 Z0 X]
 - name: observables
-  values: [' DSIG/DPHI']
+  values: [DSIG/DPHI]
 - name: energies
   values: ['7000.0']
-location: ' Figure 9B'
+location: Data from Figure 9B
 name: Table 6
 ---
 additional_resources: []
@@ -495,9 +318,9 @@ dependent_variables:
     - {label: 'sys,detector', symerror: 10.0}
     - {label: 'sys,background', symerror: 1.0}
     value: 280.0
-description: ' Normalized ZZ fiducial cross section (multiplied by 10^6 for readability)
+description: Normalized ZZ fiducial cross section (multiplied by 10^6 for readability)
   in bins of the mass of the ZZ system for the 4l channel.  The first systematic uncertainty
-  is detector systematics, the second is background systematic uncertainties'
+  is detector systematics, the second is background systematic uncertainties.
 independent_variables:
 - header: {name: M(ZZ), units: GEV}
   values:
@@ -507,12 +330,12 @@ independent_variables:
   - {high: 800.0, low: 400.0}
 keywords:
 - name: reactions
-  values: [' P P --> Z0 Z0 X']
+  values: [P P --> Z0 Z0 X]
 - name: observables
-  values: [' DSIG/DM']
+  values: [DSIG/DM]
 - name: energies
   values: ['7000.0']
-location: ' Figure 10A'
+location: Data from Figure 10A
 name: Table 7
 ---
 additional_resources: []
@@ -538,10 +361,10 @@ dependent_variables:
     - {label: 'sys,detector', symerror: 60.0}
     - {label: 'sys,background', symerror: 480.0}
     value: 3680.0
-description: ' Normalized ZZ fiducial cross section (multiplied by 10^6 for readability)
+description: Normalized ZZ fiducial cross section (multiplied by 10^6 for readability)
   in bins of the transverse mass of the ZZ system for the 2l2nu channel.  The first
   systematic uncertainty is detector systematics, the second is background systematic
-  uncertainties'
+  uncertainties.
 independent_variables:
 - header: {name: MT(ZZ), units: GEV}
   values:
@@ -550,10 +373,10 @@ independent_variables:
   - {high: 400.0, low: 300.0}
 keywords:
 - name: reactions
-  values: [' P P --> Z0 Z0 X']
+  values: [P P --> Z0 Z0 X]
 - name: observables
-  values: [' DSIG/DM']
+  values: [DSIG/DM]
 - name: energies
   values: ['7000.0']
-location: ' Figure 10B'
+location: Data from Figure 10B
 name: Table 8
