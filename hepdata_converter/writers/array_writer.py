@@ -191,7 +191,7 @@ class ArrayWriter(Writer):
     def _prepare_outputs(self, data_out, outputs):
         if isinstance(data_out, str) or isinstance(data_out, unicode):
             self.file_emulation = True
-            if len(self.tables) == 1:
+            if self.table_id is not None:
                 f = open(data_out, 'w')
                 outputs.append(f)
             # data_out is a directory
