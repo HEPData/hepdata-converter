@@ -5,11 +5,11 @@
 #: keyword reactions: P P --> Z0 Z0 X
 #: keyword observables: DSIG/DPT
 #: keyword energies: 7000.0
-#: RE,,P P --> Z0 < LEPTON+ LEPTON- > Z0 < LEPTON+ LEPTON- > X
-#: SQRT(S) [GEV],,7000.0
-'Leading dilepton PT [GEV] LOW','Leading dilepton PT [GEV] HIGH','10**6 * 1/SIG(fiducial) * D(SIG(fiducial))/DPT [GEV**-1]','stat +','stat -','sys,detector +','sys,detector -','sys,background +','sys,background -'
-0.0,60.0,7000.0,1100.0,-1100.0,79.0,-79.0,15.0,-15.0
-60.0,100.0,9800.0,1600.0,-1600.0,75.0,-75.0,15.0,-15.0
-100.0,200.0,1600.0,490.0,-490.0,41.0,-41.0,2.0,-2.0
-200.0,600.0,80.0,60.0,-60.0,2.0,-2.0,0.0,-0.0
+#: RE,,,P P --> Z0 < LEPTON+ LEPTON- > Z0 < LEPTON+ LEPTON- > X
+#: SQRT(S) [GEV],,,7000.0
+'Leading dilepton PT [GEV]','Leading dilepton PT [GEV] LOW','Leading dilepton PT [GEV] HIGH','10**6 * 1/SIG(fiducial) * D(SIG(fiducial))/DPT [GEV**-1]','stat +','stat -','sys,detector +','sys,detector -','sys,background +','sys,background -'
+30.0,0.0,60.0,7000.0,1100.0,-1100.0,79.0,-79.0,15.0,-15.0
+80.0,60.0,100.0,9800.0,1600.0,-1600.0,75.0,-75.0,15.0,-15.0
+150.0,100.0,200.0,1600.0,490.0,-490.0,41.0,-41.0,2.0,-2.0
+400.0,200.0,600.0,80.0,60.0,-60.0,2.0,-2.0,0.0,-0.0
 
