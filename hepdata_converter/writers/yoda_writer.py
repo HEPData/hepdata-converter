@@ -21,7 +21,7 @@ class ScatterYodaClass(ObjectWrapper):
     def match(cls, independent_variables_map, dependent_variable):
         if not ObjectWrapper.match(independent_variables_map, dependent_variable):
             return False
-        elif len(independent_variables_map) == cls.dim or cls.dim == len(cls._scatter_classes) - 1:
+        elif len(independent_variables_map) == cls.dim:
             return True
         return False
 
@@ -35,8 +35,8 @@ class ScatterYodaClass(ObjectWrapper):
                 args.append(self.xval[dim_i][i])
             args.append(self.yval[i])
             for dim_i in xrange(self.dim):
-                args.append(self.xerr_plus[dim_i][i])
-            args.append(self.yerr_plus[i])
+                args.append([self.xerr_minus[dim_i][i], self.xerr_plus[dim_i][i]])
+            args.append([self.yerr_minus[i], self.yerr_plus[i]])
 
             graph.addPoint(self.get_point_cls()(*args))
         return graph

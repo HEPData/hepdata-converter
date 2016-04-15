@@ -145,14 +145,17 @@ class ArrayWriter(Writer):
 
                     min_errs.append(sqrt(errors_min))
                     max_errs.append(sqrt(errors_max))
+                elif 'low' in entry and 'high' in entry:
+                    min_errs.append(entry['value'] - entry['low'])
+                    max_errs.append(entry['high'] - entry['value'])
                 else:
                     min_errs.append(0.0)
                     max_errs.append(0.0)
             else:
                 middle_val = (entry['high'] - entry['low']) * 0.5 + entry['low']
                 values.append(middle_val)
-                min_errs.append(entry['high'] - middle_val)
-                max_errs.append(middle_val - entry['low'])
+                min_errs.append(middle_val - entry['low'])
+                max_errs.append(entry['high'] - middle_val)
 
     @classmethod
     def options(cls):
@@ -239,6 +242,7 @@ class ArrayWriter(Writer):
             if 'units' in independent_variable['header']:
                 name += ' [%s]' % independent_variable['header']['units']
             headers.append(name)
+            x_data = []
             x_data_low = []
             x_data_high = []
             for value in independent_variable['values']:
@@ -246,15 +250,22 @@ class ArrayWriter(Writer):
                 if 'high' in value and 'low' in value:
                     x_data_low.append(value['low'])
                     x_data_high.append(value['high'])
+                    if 'value' in value:
+                        x_data.append(value['value'])
+                    else:
+                        x_data.append(0.5*(value['low'] + value['high']))
                 else:
                     x_data_low.append(value['value'])
                     x_data_high.append(value['value'])
+                    x_data.append(value['value'])
 
-            data.append(x_data_low)
+            data.append(x_data)
             if x_data_high != x_data_low:
+                data.append(x_data_low)
                 data.append(x_data_high)
                 header = headers[-1]
-                headers[-1] = header + ' LOW'
+                headers.append(header + ' LOW')
+                qualifiers_marks.append(False)
                 headers.append(header + ' HIGH')
                 qualifiers_marks.append(False)
 
