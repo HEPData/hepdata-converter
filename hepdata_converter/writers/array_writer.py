@@ -192,7 +192,7 @@ class ArrayWriter(Writer):
             self.tables = data_in.tables
 
     def _prepare_outputs(self, data_out, outputs):
-        if isinstance(data_out, str) or isinstance(data_out, unicode):
+        if isinstance(data_out, (str, unicode)):
             self.file_emulation = True
             if self.table_id is not None:
                 f = open(data_out, 'w')
@@ -204,7 +204,7 @@ class ArrayWriter(Writer):
                 for table in self.tables:
                     outputs.append(open(os.path.join(data_out, table.name.replace(' ','') + '.' + self.extension), 'w'))
         # multiple tables - require directory
-        elif len(self.tables) > 1 and not (isinstance(data_out, str) or isinstance(data_out, unicode)):
+        elif len(self.tables) > 1 and not isinstance(data_out, (str, unicode)):
             raise ValueError("Multiple tables, output must be a directory")
         else:
             outputs.append(data_out)

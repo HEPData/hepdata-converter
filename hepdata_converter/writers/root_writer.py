@@ -335,7 +335,7 @@ class ROOT(ArrayWriter):
             graph.write()
 
     def _prepare_outputs(self, data_out, outputs):
-        if isinstance(data_out, str) or isinstance(data_out, unicode):
+        if isinstance(data_out, (str, unicode)):
             self.file_emulation = True
             outputs.append(rootpy.io.root_open(data_out, 'w+'))
         # multiple tables - require directory

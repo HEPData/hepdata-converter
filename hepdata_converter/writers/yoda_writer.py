@@ -25,7 +25,7 @@ class ScatterYodaClass(ObjectWrapper):
             return True
         return False
 
-    def _create_scatter(self, xval):
+    def _create_scatter(self):
         graph = self.get_scatter_cls()()
 
         for i in xrange(len(self.yval)):
@@ -47,7 +47,7 @@ class ScatterYodaClass(ObjectWrapper):
         for i in xrange(self.dim):
             self.independent_variable_map.pop(0)
 
-        graph = self._create_scatter(self.xval)
+        graph = self._create_scatter()
 
         return [graph]
 
@@ -71,7 +71,7 @@ class YODA(ArrayWriter):
         self.extension = 'yoda'
 
     def _prepare_outputs(self, data_out, outputs):
-        if isinstance(data_out, str) or isinstance(data_out, unicode):
+        if isinstance(data_out, (str, unicode)):
             self.file_emulation = True
             outputs.append(open(data_out, 'w'))
         # multiple tables - require directory
