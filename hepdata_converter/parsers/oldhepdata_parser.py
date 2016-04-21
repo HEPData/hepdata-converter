@@ -529,7 +529,7 @@ class OldHEPData(Parser):
             result += data
 
         result = result.strip()
-        if not result.endswith('.'):
+        if result and not result.endswith('.'):
             result += '.'
 
         return result
@@ -551,7 +551,7 @@ class OldHEPData(Parser):
         def set_table_metadata(self, data):
             if multiline:
                 data = self._read_multiline(data)
-            if key == 'location':
+            if key == 'location' and data:
                 data = 'Data from ' + data
             self.current_table.metadata[key] = data.strip()
 

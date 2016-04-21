@@ -27,7 +27,7 @@ class THFRootClass(ObjectWrapper):
             return False
         elif len(independent_variables_map) == cls.dim:
             for independent_variable in independent_variables_map:
-                if 'high' not in independent_variable['values'][0]:
+                if 'low' not in independent_variable['values'][0] or 'high' not in independent_variable['values'][0]:
                     return False
             return True
         return False
@@ -250,6 +250,10 @@ class TGraph2DErrorsClass(ObjectWrapper):
         self.independent_variable_map.pop(0)
         self.independent_variable_map.pop(0)
 
+        if self.xerr_plus[0] != self.xerr_minus[0] or self.xerr_plus[1] != self.xerr_minus[1] \
+                or self.yerr_plus != self.yerr_minus:
+            return []
+
         graph = ROOT_py.TGraph2DErrors(len(self.xval[0]),
                                        numpy.array(self.xval[0], dtype=float),
                                        numpy.array(self.xval[1], dtype=float),
@@ -331,7 +335,7 @@ class ROOT(ArrayWriter):
             graph.write()
 
     def _prepare_outputs(self, data_out, outputs):
-        if isinstance(data_out, str) or isinstance(data_out, unicode):
+        if isinstance(data_out, (str, unicode)):
             self.file_emulation = True
             outputs.append(rootpy.io.root_open(data_out, 'w+'))
         # multiple tables - require directory

@@ -145,14 +145,17 @@ class ArrayWriter(Writer):
 
                     min_errs.append(sqrt(errors_min))
                     max_errs.append(sqrt(errors_max))
+                elif 'low' in entry and 'high' in entry:
+                    min_errs.append(entry['value'] - entry['low'])
+                    max_errs.append(entry['high'] - entry['value'])
                 else:
                     min_errs.append(0.0)
                     max_errs.append(0.0)
             else:
                 middle_val = (entry['high'] - entry['low']) * 0.5 + entry['low']
                 values.append(middle_val)
-                min_errs.append(entry['high'] - middle_val)
-                max_errs.append(middle_val - entry['low'])
+                min_errs.append(middle_val - entry['low'])
+                max_errs.append(entry['high'] - middle_val)
 
     @classmethod
     def options(cls):
@@ -189,9 +192,9 @@ class ArrayWriter(Writer):
             self.tables = data_in.tables
 
     def _prepare_outputs(self, data_out, outputs):
-        if isinstance(data_out, str) or isinstance(data_out, unicode):
+        if isinstance(data_out, (str, unicode)):
             self.file_emulation = True
-            if len(self.tables) == 1:
+            if self.table_id is not None:
                 f = open(data_out, 'w')
                 outputs.append(f)
             # data_out is a directory
@@ -201,7 +204,7 @@ class ArrayWriter(Writer):
                 for table in self.tables:
                     outputs.append(open(os.path.join(data_out, table.name.replace(' ','') + '.' + self.extension), 'w'))
         # multiple tables - require directory
-        elif len(self.tables) > 1 and not (isinstance(data_out, str) or isinstance(data_out, unicode)):
+        elif len(self.tables) > 1 and not isinstance(data_out, (str, unicode)):
             raise ValueError("Multiple tables, output must be a directory")
         else:
             outputs.append(data_out)
@@ -239,6 +242,7 @@ class ArrayWriter(Writer):
             if 'units' in independent_variable['header']:
                 name += ' [%s]' % independent_variable['header']['units']
             headers.append(name)
+            x_data = []
             x_data_low = []
             x_data_high = []
             for value in independent_variable['values']:
@@ -246,15 +250,22 @@ class ArrayWriter(Writer):
                 if 'high' in value and 'low' in value:
                     x_data_low.append(value['low'])
                     x_data_high.append(value['high'])
+                    if 'value' in value:
+                        x_data.append(value['value'])
+                    else:
+                        x_data.append(0.5*(value['low'] + value['high']))
                 else:
                     x_data_low.append(value['value'])
                     x_data_high.append(value['value'])
+                    x_data.append(value['value'])
 
-            data.append(x_data_low)
+            data.append(x_data)
             if x_data_high != x_data_low:
+                data.append(x_data_low)
                 data.append(x_data_high)
                 header = headers[-1]
-                headers[-1] = header + ' LOW'
+                headers.append(header + ' LOW')
+                qualifiers_marks.append(False)
                 headers.append(header + ' HIGH')
                 qualifiers_marks.append(False)
 

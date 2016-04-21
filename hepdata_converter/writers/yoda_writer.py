@@ -21,11 +21,11 @@ class ScatterYodaClass(ObjectWrapper):
     def match(cls, independent_variables_map, dependent_variable):
         if not ObjectWrapper.match(independent_variables_map, dependent_variable):
             return False
-        elif len(independent_variables_map) == cls.dim or cls.dim == len(cls._scatter_classes) - 1:
+        elif len(independent_variables_map) == cls.dim:
             return True
         return False
 
-    def _create_scatter(self, xval):
+    def _create_scatter(self):
         graph = self.get_scatter_cls()()
 
         for i in xrange(len(self.yval)):
@@ -35,8 +35,8 @@ class ScatterYodaClass(ObjectWrapper):
                 args.append(self.xval[dim_i][i])
             args.append(self.yval[i])
             for dim_i in xrange(self.dim):
-                args.append(self.xerr_plus[dim_i][i])
-            args.append(self.yerr_plus[i])
+                args.append([self.xerr_minus[dim_i][i], self.xerr_plus[dim_i][i]])
+            args.append([self.yerr_minus[i], self.yerr_plus[i]])
 
             graph.addPoint(self.get_point_cls()(*args))
         return graph
@@ -47,7 +47,7 @@ class ScatterYodaClass(ObjectWrapper):
         for i in xrange(self.dim):
             self.independent_variable_map.pop(0)
 
-        graph = self._create_scatter(self.xval)
+        graph = self._create_scatter()
 
         return [graph]
 
@@ -71,7 +71,7 @@ class YODA(ArrayWriter):
         self.extension = 'yoda'
 
     def _prepare_outputs(self, data_out, outputs):
-        if isinstance(data_out, str) or isinstance(data_out, unicode):
+        if isinstance(data_out, (str, unicode)):
             self.file_emulation = True
             outputs.append(open(data_out, 'w'))
         # multiple tables - require directory
