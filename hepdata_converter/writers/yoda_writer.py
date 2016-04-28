@@ -84,7 +84,7 @@ class YODA(ArrayWriter):
         # qualifiers_marks_original = []
         f = ObjectFactory(self.class_list, table.independent_variables, table.dependent_variables)
         for graph in f.get_next_object():
-            graph.title = table.name
+            graph.title = table.name.replace(' ','')
             graph.path = ''
             yoda.core.writeYODA(graph, data_out)
 
