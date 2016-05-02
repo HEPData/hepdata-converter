@@ -7,32 +7,34 @@ import ROOT
 
 __author__ = 'Michał Szostak'
 
-class ROOTWriterTestSuite(WriterTestSuite):
-    def walk(tdirectory,
-             path=None,
-             depth=0):
-        dirnames, objectnames = [], []
-        for key in list(tdirectory.GetListOfKeys()):
-            name = key.GetName()
-            classname = key.GetClassName()
-            is_directory = classname.startswith('TDirectory')
-            if is_directory:
-                dirnames.append(name)
-            else:
-                objectnames.append(name)
-        if path:
-            dirpath = os.path.join(path, tdirectory.GetName())
-        elif not isinstance(tdirectory, ROOT.TFile):
-            dirpath = tdirectory.GetName()
+def walk(tdirectory,
+         path=None,
+         depth=0):
+    dirnames, objectnames = [], []
+    for key in list(tdirectory.GetListOfKeys()):
+        name = key.GetName()
+        classname = key.GetClassName()
+        is_directory = classname.startswith('TDirectory')
+        if is_directory:
+            dirnames.append(name)
         else:
-            dirpath = ''
-        yield dirpath, dirnames, objectnames
-        for dirname in dirnames:
-            rdir = tdirectory.GetDirectory(dirname)
-            for x in walk(rdir,
-                          depth=depth + 1,
-                          path=dirpath):
-                yield x
+            objectnames.append(name)
+    if path:
+        dirpath = os.path.join(path, tdirectory.GetName())
+    elif not isinstance(tdirectory, ROOT.TFile):
+        dirpath = tdirectory.GetName()
+    else:
+        dirpath = ''
+    yield dirpath, dirnames, objectnames
+    for dirname in dirnames:
+        rdir = tdirectory.GetDirectory(dirname)
+        for x in walk(rdir,
+                      depth=depth + 1,
+                      path=dirpath):
+            yield x
+
+class ROOTWriterTestSuite(WriterTestSuite):
+
 
     @insert_path('yaml_full')
     @insert_path('root/full.root')
@@ -43,8 +45,11 @@ class ROOTWriterTestSuite(WriterTestSuite):
 
         self.assertNotEqual(os.stat(output_file_path).st_size, 0, 'output root file is empty')
 
-        with ROOT.TFile.Open(output_file_path) as f, ROOT.TFile.Open(full_root_path) as f_orig:
-            self.assertEqual(list(ROOTWriterTestSuite.walk(f)), list(ROOTWriterTestSuite.walk(f_orig)))
+        f = ROOT.TFile.Open(output_file_path)
+        f_orig = ROOT.TFile.Open(full_root_path)
+        self.assertEqual(list(walk(f)), list(walk(f_orig)))
+        f.Close()
+        f_orig.Close()
 
         with open(output_file_path, 'w') as output:
             hepdata_converter.convert(yaml_full_path, output,
@@ -52,16 +57,19 @@ class ROOTWriterTestSuite(WriterTestSuite):
 
         self.assertNotEqual(os.stat(output_file_path).st_size, 0, 'output root file is empty')
 
-        with ROOT.TFile.Open(output_file_path) as f, ROOT.TFile.Open(full_root_path) as f_orig:
-            self.assertEqual(list(ROOTWriterTestSuite.walk(f)), list(ROOTWriterTestSuite.walk(f_orig)))
-            for path, dirs, objects in list(ROOTWriterTestSuite.walk(f))[1:]:
-                for obj in objects:
-                    o = f.Get('%s/%s' % (path, obj))
-                    o_orig = f_orig.Get('%s/%s' % (path, obj))
-                    self.assertEqual(o.__class__, o_orig.__class__)
-                    if o.__class__.__name__.startswith('TGraph'):
-                        self.assertEqual(list(o.GetX()), list(o_orig.GetX()))
-                        self.assertEqual(list(o.GetY()), list(o_orig.GetY()))
+        f = ROOT.TFile.Open(output_file_path)
+        f_orig = ROOT.TFile.Open(full_root_path)
+        self.assertEqual(list(walk(f)), list(walk(f_orig)))
+        for path, dirs, objects in list(walk(f))[1:]:
+            for obj in objects:
+                o = f.Get('%s/%s' % (path, obj))
+                o_orig = f_orig.Get('%s/%s' % (path, obj))
+                self.assertEqual(o.__class__, o_orig.__class__)
+                if o.__class__.__name__.startswith('TGraph'):
+                    self.assertEqual(list(o.GetX()), list(o_orig.GetX()))
+                    self.assertEqual(list(o.GetY()), list(o_orig.GetY()))
+        f.Close()
+        f_orig.Close()
 
     @insert_path('yaml_full')
     @insert_path('root/full.root')
@@ -76,7 +84,6 @@ class ROOTWriterTestSuite(WriterTestSuite):
 
         for idx, test_submission in enumerate(test_submissions):
             output_file_path = os.path.join(self.current_tmp, 'data-{}.root'.format(idx))
-
             hepdata_converter.convert(test_submission, output_file_path,
                                       options={'output_format': 'root'})
 
