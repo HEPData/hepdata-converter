@@ -1,5 +1,4 @@
 import copy
-import numpy
 from hepdata_converter.writers.array_writer import ArrayWriter, ObjectWrapper, ObjectFactory
 import yoda
 

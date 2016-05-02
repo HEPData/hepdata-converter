@@ -28,7 +28,6 @@ setup(
         'pyyaml',
         'hepdata_validator',
         'rootpy',
-        'numpy',
         'matplotlib'
     ],
     entry_points={
