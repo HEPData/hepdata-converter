@@ -60,7 +60,7 @@ class THFRootClass(ObjectWrapper):
         args = []
         for i in xrange(self.dim):
             args.append(len(xval_ordered[i]) - 1)
-            args.append(array.array('f', xval_ordered[i]))
+            args.append(array.array('d', xval_ordered[i]))
 
         hist = self._hist_classes[self.dim - 1](self.sanitize_name(name), '', *args)
 
@@ -97,7 +97,7 @@ class THFRootClass(ObjectWrapper):
 
         for i in xrange(self.dim):
             args.append(len(xval_ordered[i]) - 1)
-            args.append(array.array('f', xval_ordered[i]))
+            args.append(array.array('d', xval_ordered[i]))
 
         hist = self._hist_classes[self.dim - 1](name, '', *args)
 
@@ -255,12 +255,12 @@ class TGraph2DErrorsClass(ObjectWrapper):
             return []
 
         graph = ROOT_py.TGraph2DErrors(len(self.xval[0]),
-                                       array.array('f', self.xval[0]),
-                                       array.array('f', self.xval[1]),
-                                       array.array('f', self.yval),
-                                       array.array('f', self.xerr_plus[0]),
-                                       array.array('f', self.xerr_plus[1]),
-                                       array.array('f', self.yerr_plus))
+                                       array.array('d', self.xval[0]),
+                                       array.array('d', self.xval[1]),
+                                       array.array('d', self.yval),
+                                       array.array('d', self.xerr_plus[0]),
+                                       array.array('d', self.xerr_plus[1]),
+                                       array.array('d', self.yerr_plus))
 
         graph.set_name("Graph2D_y%s" % (self.dependent_variable_index + 1))
 
@@ -296,12 +296,12 @@ class TGraphAsymmErrorsRootClass(ObjectWrapper):
         self.independent_variable_map.pop(0)
 
         graph = ROOT_py.TGraphAsymmErrors(len(self.xval[0]),
-                                          array.array('f', self.xval[0]),
-                                          array.array('f', self.yval),
-                                          array.array('f', self.xerr_minus[0]),
-                                          array.array('f', self.xerr_plus[0]),
-                                          array.array('f', self.yerr_minus),
-                                          array.array('f', self.yerr_plus))
+                                          array.array('d', self.xval[0]),
+                                          array.array('d', self.yval),
+                                          array.array('d', self.xerr_minus[0]),
+                                          array.array('d', self.xerr_plus[0]),
+                                          array.array('d', self.yerr_minus),
+                                          array.array('d', self.yerr_plus))
 
         graph.set_name("Graph1D_y%s" % (self.dependent_variable_index + 1))
 
