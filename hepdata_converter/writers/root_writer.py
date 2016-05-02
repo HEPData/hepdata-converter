@@ -3,7 +3,7 @@ import abc
 from hepdata_converter.writers.array_writer import ArrayWriter, ObjectWrapper, ObjectFactory
 import rootpy.io
 from rootpy import ROOT as ROOT_py
-import numpy
+import array
 
 from hepdata_converter.writers.utils import error_value_processor
 
@@ -60,7 +60,7 @@ class THFRootClass(ObjectWrapper):
         args = []
         for i in xrange(self.dim):
             args.append(len(xval_ordered[i]) - 1)
-            args.append(numpy.array(xval_ordered[i], dtype=float))
+            args.append(array.array('d', xval_ordered[i]))
 
         hist = self._hist_classes[self.dim - 1](self.sanitize_name(name), '', *args)
 
@@ -97,7 +97,7 @@ class THFRootClass(ObjectWrapper):
 
         for i in xrange(self.dim):
             args.append(len(xval_ordered[i]) - 1)
-            args.append(numpy.array(xval_ordered[i], dtype=float))
+            args.append(array.array('d', xval_ordered[i]))
 
         hist = self._hist_classes[self.dim - 1](name, '', *args)
 
@@ -255,12 +255,12 @@ class TGraph2DErrorsClass(ObjectWrapper):
             return []
 
         graph = ROOT_py.TGraph2DErrors(len(self.xval[0]),
-                                       numpy.array(self.xval[0], dtype=float),
-                                       numpy.array(self.xval[1], dtype=float),
-                                       numpy.array(self.yval, dtype=float),
-                                       numpy.array(self.xerr_plus[0], dtype=float),
-                                       numpy.array(self.xerr_plus[1], dtype=float),
-                                       numpy.array(self.yerr_plus, dtype=float))
+                                       array.array('d', self.xval[0]),
+                                       array.array('d', self.xval[1]),
+                                       array.array('d', self.yval),
+                                       array.array('d', self.xerr_plus[0]),
+                                       array.array('d', self.xerr_plus[1]),
+                                       array.array('d', self.yerr_plus))
 
         graph.set_name("Graph2D_y%s" % (self.dependent_variable_index + 1))
 
@@ -296,12 +296,12 @@ class TGraphAsymmErrorsRootClass(ObjectWrapper):
         self.independent_variable_map.pop(0)
 
         graph = ROOT_py.TGraphAsymmErrors(len(self.xval[0]),
-                                          numpy.array(self.xval[0], dtype=float),
-                                          numpy.array(self.yval, dtype=float),
-                                          numpy.array(self.xerr_minus[0], dtype=float),
-                                          numpy.array(self.xerr_plus[0], dtype=float),
-                                          numpy.array(self.yerr_minus, dtype=float),
-                                          numpy.array(self.yerr_plus, dtype=float))
+                                          array.array('d', self.xval[0]),
+                                          array.array('d', self.yval),
+                                          array.array('d', self.xerr_minus[0]),
+                                          array.array('d', self.xerr_plus[0]),
+                                          array.array('d', self.yerr_minus),
+                                          array.array('d', self.yerr_plus))
 
         graph.set_name("Graph1D_y%s" % (self.dependent_variable_index + 1))
 
