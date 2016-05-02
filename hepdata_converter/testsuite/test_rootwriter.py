@@ -10,6 +10,8 @@ __author__ = 'Michał Szostak'
 def walk(tdirectory,
          path=None,
          depth=0):
+    '''Walk the directory structure recursively and return its content.
+    '''
     dirnames, objectnames = [], []
     for key in list(tdirectory.GetListOfKeys()):
         name = key.GetName()
