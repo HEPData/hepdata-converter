@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 import abc
 from hepdata_converter.writers.array_writer import ArrayWriter, ObjectWrapper, ObjectFactory
-import rootpy.io
-from rootpy import ROOT as ROOT_py
+import ROOT as ROOTModule
 import array
-
+import tempfile
+import os
 from hepdata_converter.writers.utils import error_value_processor
 
 __author__ = 'Michał Szostak'
@@ -16,8 +16,9 @@ log = logging.getLogger(__name__)
 class THFRootClass(ObjectWrapper):
     __metaclass__ = abc.ABCMeta
 
-    _hist_classes = [ROOT_py.TH1F, ROOT_py.TH2F, ROOT_py.TH3F]
+    _hist_classes = [ROOTModule.TH1F, ROOTModule.TH2F, ROOTModule.TH3F]
     _hist_axes_names = ['x', 'y', 'z']
+    _hist_axes_getters = ['GetXaxis','GetYaxis','GetZaxis']
     dim = 0
     core_object = False
 
@@ -57,24 +58,39 @@ class THFRootClass(ObjectWrapper):
                         x_highest = x
                         xval_ordered[i].append(x)
 
-        args = []
-        for i in xrange(self.dim):
-            args.append(len(xval_ordered[i]) - 1)
-            args.append(array.array('d', xval_ordered[i]))
+        if 1 == self.dim:
+            nbinsx = len(xval_ordered[0]) - 1
+            binsx = array.array('d', xval_ordered[0])
+            hist = self._hist_classes[self.dim - 1](self.sanitize_name(name), '', nbinsx, binsx)
 
-        hist = self._hist_classes[self.dim - 1](self.sanitize_name(name), '', *args)
+        if 2 == self.dim:
+            nbinsx = len(xval_ordered[0]) - 1
+            binsx = array.array('d', xval_ordered[0])
+            nbinsy = len(xval_ordered[1]) - 1
+            binsy = array.array('d', xval_ordered[1])
+            hist = self._hist_classes[self.dim - 1](self.sanitize_name(name), '', nbinsx, binsx, nbinsy, binsy)
+
+        if 3 == self.dim:
+            nbinsx = len(xval_ordered[0]) - 1
+            binsx = array.array('d', xval_ordered[0])
+            nbinsy = len(xval_ordered[1]) - 1
+            binsy = array.array('d', xval_ordered[1])
+            nbinsz = len(xval_ordered[2]) - 1
+            binsz = array.array('d', xval_ordered[2])
+            hist = self._hist_classes[self.dim - 1](self.sanitize_name(name), '', nbinsx, binsx, nbinsy, binsy, nbinsz, binsz)
 
         for i in xrange(self.dim):
             name = self.independent_variables[i]['header']['name']
             if 'units' in self.independent_variables[i]['header']:
                 name += ' [%s]' % self.independent_variables[i]['header']['units']
-            getattr(hist, self._hist_axes_names[i] + 'axis').title = name
+            getattr(hist, self._hist_axes_getters[self.dim])().SetTitle(name)
 
         if self.dim < len(self._hist_classes):
-            getattr(hist, self._hist_axes_names[self.dim] + 'axis').title = self.sanitize_name(dependent_var_title)
+            getattr(hist, self._hist_axes_getters[self.dim])().SetTitle(self.sanitize_name(dependent_var_title))
 
         for i in xrange(len(yval)):
-            hist.fill(*([self.xval[dim_i][i] for dim_i in xrange(self.dim)] + [yval[i]]))
+            hist.Fill(*([self.xval[dim_i][i] for dim_i in xrange(self.dim)] + [yval[i]]))
+
         return hist
 
     def _create_hist(self, xval):
@@ -95,26 +111,41 @@ class THFRootClass(ObjectWrapper):
                         x_highest = x
                         xval_ordered[i].append(x)
 
-        for i in xrange(self.dim):
-            args.append(len(xval_ordered[i]) - 1)
-            args.append(array.array('d', xval_ordered[i]))
+        if 1 == self.dim:
+            nbinsx = len(xval_ordered[0]) - 1
+            binsx = array.array('d', xval_ordered[0])
+            hist = self._hist_classes[self.dim - 1](self.sanitize_name(name), '', nbinsx, binsx)
 
-        hist = self._hist_classes[self.dim - 1](name, '', *args)
+        if 2 == self.dim:
+            nbinsx = len(xval_ordered[0]) - 1
+            binsx = array.array('d', xval_ordered[0])
+            nbinsy = len(xval_ordered[1]) - 1
+            binsy = array.array('d', xval_ordered[1])
+            hist = self._hist_classes[self.dim - 1](self.sanitize_name(name), '', nbinsx, binsx, nbinsy, binsy)
+
+        if 3 == self.dim:
+            nbinsx = len(xval_ordered[0]) - 1
+            binsx = array.array('d', xval_ordered[0])
+            nbinsy = len(xval_ordered[1]) - 1
+            binsy = array.array('d', xval_ordered[1])
+            nbinsz = len(xval_ordered[2]) - 1
+            binsz = array.array('d', xval_ordered[2])
+            hist = self._hist_classes[self.dim - 1](self.sanitize_name(name), '', nbinsx, binsx, nbinsy, binsy, nbinsz, binsz)
 
         for i in xrange(self.dim):
             name = self.independent_variables[i]['header']['name']
             if 'units' in self.independent_variables[i]['header']:
                 name += ' [%s]' % self.independent_variables[i]['header']['units']
-            getattr(hist, self._hist_axes_names[i] + 'axis').title = name
+            getattr(hist, self._hist_axes_getters[self.dim])().SetTitle(name)
 
         if self.dim < len(self._hist_classes):
             name = self.dependent_variable['header']['name']
             if 'units' in self.dependent_variable['header']:
                 name += ' [%s]' % self.dependent_variable['header']['units']
-            getattr(hist, self._hist_axes_names[self.dim] + 'axis').title = name
+            getattr(hist, self._hist_axes_getters[self.dim])().SetTitle(name)
 
         for i in xrange(len(self.xval[0])):
-            hist.fill(*([self.xval[dim_i][i] for dim_i in xrange(self.dim)] + [self.yval[i]]))
+            hist.Fill(*([self.xval[dim_i][i] for dim_i in xrange(self.dim)] + [self.yval[i]]))
         return hist
 
     def create_objects(self):
@@ -254,7 +285,7 @@ class TGraph2DErrorsClass(ObjectWrapper):
                 or self.yerr_plus != self.yerr_minus:
             return []
 
-        graph = ROOT_py.TGraph2DErrors(len(self.xval[0]),
+        graph = ROOTModule.TGraph2DErrors(len(self.xval[0]),
                                        array.array('d', self.xval[0]),
                                        array.array('d', self.xval[1]),
                                        array.array('d', self.yval),
@@ -262,7 +293,7 @@ class TGraph2DErrorsClass(ObjectWrapper):
                                        array.array('d', self.xerr_plus[1]),
                                        array.array('d', self.yerr_plus))
 
-        graph.set_name("Graph2D_y%s" % (self.dependent_variable_index + 1))
+        graph.SetName("Graph2D_y%s" % (self.dependent_variable_index + 1))
 
         xname = self.independent_variables[0]['header']['name']
         if 'units' in self.independent_variables[0]['header']:
@@ -274,9 +305,9 @@ class TGraph2DErrorsClass(ObjectWrapper):
         if 'units' in self.dependent_variable['header']:
             zname += ' [%s]' % self.dependent_variable['header']['units']
 
-        graph.xaxis.title = xname
-        graph.yaxis.title = yname
-        graph.zaxis.title = zname
+        graph.GetXaxis().SetTitle(xname)
+        graph.GetYaxis().SetTitle(yname)
+        graph.GetZaxis().SetTitle(zname)
 
         return [graph]
 
@@ -295,7 +326,7 @@ class TGraphAsymmErrorsRootClass(ObjectWrapper):
 
         self.independent_variable_map.pop(0)
 
-        graph = ROOT_py.TGraphAsymmErrors(len(self.xval[0]),
+        graph = ROOTModule.TGraphAsymmErrors(len(self.xval[0]),
                                           array.array('d', self.xval[0]),
                                           array.array('d', self.yval),
                                           array.array('d', self.xerr_minus[0]),
@@ -303,7 +334,7 @@ class TGraphAsymmErrorsRootClass(ObjectWrapper):
                                           array.array('d', self.yerr_minus),
                                           array.array('d', self.yerr_plus))
 
-        graph.set_name("Graph1D_y%s" % (self.dependent_variable_index + 1))
+        graph.SetName("Graph1D_y%s" % (self.dependent_variable_index + 1))
 
         xname = self.independent_variables[0]['header']['name']
         if 'units' in self.independent_variables[0]['header']:
@@ -311,8 +342,8 @@ class TGraphAsymmErrorsRootClass(ObjectWrapper):
         yname = self.dependent_variable['header']['name']
         if 'units' in self.dependent_variable['header']:
             yname += ' [%s]' % self.dependent_variable['header']['units']
-        graph.xaxis.title = xname
-        graph.yaxis.title = yname
+        graph.GetXaxis().SetTitle(xname)
+        graph.GetYaxis().SetTitle(yname)
 
         return [graph]
 
@@ -332,18 +363,19 @@ class ROOT(ArrayWriter):
         f = ObjectFactory(self.class_list, table.independent_variables, table.dependent_variables)
         for graph in f.get_next_object():
             graph.title = table.name
-            graph.write()
+            graph.Write()
 
     def _prepare_outputs(self, data_out, outputs):
         if isinstance(data_out, (str, unicode)):
             self.file_emulation = True
-            outputs.append(rootpy.io.root_open(data_out, 'w+'))
+            outputs.append(ROOTModule.TFile.Open(data_out, 'UPDATE'))
         # multiple tables - require directory
-        elif isinstance(data_out, ROOT_py.TFile):
+        elif isinstance(data_out, ROOTModule.TFile):
             outputs.append(data_out)
         else:  # assume it's a file like object
             self.file_emulation = True
-            outputs.append(rootpy.io.TemporaryFile())
+            filename = os.path.join(tempfile.mkdtemp(),'tmp.root')
+            outputs.append(ROOTModule.TFile.Open(filename,'RECREATE'))
 
     def write(self, data_in, data_out, *args, **kwargs):
         """
@@ -360,18 +392,19 @@ class ROOT(ArrayWriter):
         outputs = []
         self._prepare_outputs(data_out, outputs)
         output = outputs[0]
-
         for i in xrange(len(self.tables)):
             table = self.tables[i]
 
             self._write_table(output, table)
 
         if data_out != output and hasattr(data_out, 'write'):
-            output.flush()
-            output.re_open('read')
-            buff = bytearray(output.get_size())
-            output.read_buffer(buff, output.get_size())
+            output.Flush()
+            output.ReOpen('read')
+            file_size = output.GetSize()
+            buff = bytearray(file_size)
+            output.ReadBuffer(buff, file_size)
             data_out.write(buff)
 
         if self.file_emulation:
-            output.close()
+            filename = output.GetName()
+            output.Close()

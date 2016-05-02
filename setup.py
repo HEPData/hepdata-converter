@@ -27,7 +27,6 @@ setup(
     install_requires=[
         'pyyaml',
         'hepdata_validator',
-        'rootpy',
         'matplotlib'
     ],
     entry_points={
