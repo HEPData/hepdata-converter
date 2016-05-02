@@ -66,8 +66,10 @@ class ROOTWriterTestSuite(WriterTestSuite):
                 o_orig = f_orig.Get('%s/%s' % (path, obj))
                 self.assertEqual(o.__class__, o_orig.__class__)
                 if o.__class__.__name__.startswith('TGraph'):
-                    self.assertEqual(list(o.GetX()), list(o_orig.GetX()))
-                    self.assertEqual(list(o.GetY()), list(o_orig.GetY()))
+                    self.assertEqual(o.GetN(), o_orig.GetN())
+                    for i in xrange(o.GetN()):
+                        self.assertEqual(o.GetX()[i],o_orig.GetX()[i])
+                        self.assertEqual(o.GetY()[i],o_orig.GetY()[i])
         f.Close()
         f_orig.Close()
 
