@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 import abc
 from hepdata_converter.writers.array_writer import ArrayWriter, ObjectWrapper, ObjectFactory
-import rootpy.io
-from rootpy import ROOT as ROOT_py
+import ROOT
 import array
-
+import tempfile
+import os
 from hepdata_converter.writers.utils import error_value_processor
 
 __author__ = 'Michał Szostak'
@@ -16,7 +16,7 @@ log = logging.getLogger(__name__)
 class THFRootClass(ObjectWrapper):
     __metaclass__ = abc.ABCMeta
 
-    _hist_classes = [ROOT_py.TH1F, ROOT_py.TH2F, ROOT_py.TH3F]
+    _hist_classes = [ROOT.TH1F, ROOT.TH2F, ROOT.TH3F]
     _hist_axes_names = ['x', 'y', 'z']
     dim = 0
     core_object = False
@@ -254,7 +254,7 @@ class TGraph2DErrorsClass(ObjectWrapper):
                 or self.yerr_plus != self.yerr_minus:
             return []
 
-        graph = ROOT_py.TGraph2DErrors(len(self.xval[0]),
+        graph = ROOT.TGraph2DErrors(len(self.xval[0]),
                                        array.array('d', self.xval[0]),
                                        array.array('d', self.xval[1]),
                                        array.array('d', self.yval),
@@ -295,7 +295,7 @@ class TGraphAsymmErrorsRootClass(ObjectWrapper):
 
         self.independent_variable_map.pop(0)
 
-        graph = ROOT_py.TGraphAsymmErrors(len(self.xval[0]),
+        graph = ROOT.TGraphAsymmErrors(len(self.xval[0]),
                                           array.array('d', self.xval[0]),
                                           array.array('d', self.yval),
                                           array.array('d', self.xerr_minus[0]),
@@ -337,13 +337,14 @@ class ROOT(ArrayWriter):
     def _prepare_outputs(self, data_out, outputs):
         if isinstance(data_out, (str, unicode)):
             self.file_emulation = True
-            outputs.append(rootpy.io.root_open(data_out, 'w+'))
+            outputs.append(ROOT.TFile.Open(data_out, 'UPDATE'))
         # multiple tables - require directory
-        elif isinstance(data_out, ROOT_py.TFile):
+        elif isinstance(data_out, ROOT.TFile):
             outputs.append(data_out)
         else:  # assume it's a file like object
             self.file_emulation = True
-            outputs.append(rootpy.io.TemporaryFile())
+            filename = os.path.join(tempfile.mkdtemp(),'tmp.root')
+            outputs.append(ROOT.TFile.Open(filename,'RECREATE'))
 
     def write(self, data_in, data_out, *args, **kwargs):
         """
@@ -374,4 +375,6 @@ class ROOT(ArrayWriter):
             data_out.write(buff)
 
         if self.file_emulation:
-            output.close()
+            filename = output.GetName()
+            output.Close()
+            os.remove(filename)
