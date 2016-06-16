@@ -2,12 +2,15 @@ import yaml
 from hepdata_validator.submission_file_validator import SubmissionFileValidator
 from hepdata_validator.data_file_validator import DataFileValidator
 from hepdata_converter.parsers import Parser, ParsedData, Table
+from multiprocessing import Pool
 import os
 
 
 class YAML(Parser):
     help = 'Parses New HEPData YAML format. Input parameter should be path to the directory where submission.yaml file ' \
            'is present (or direct filepath to the submission.yaml file)'
+
+    pool = Pool()
 
     def __init__(self, *args, **kwargs):
         super(YAML, self).__init__(*args, **kwargs)
@@ -41,7 +44,11 @@ class YAML(Parser):
                                (data_in, self._pretty_print_errors(submission_file_validator.get_messages())))
 
         with open(data_in, 'r') as submission_file:
-            submission_data = list(yaml.load_all(submission_file))
+            try:
+                # We try to load using the CLoader for speed improvements.
+                submission_data = list(yaml.load_all(submission_file, Loader=yaml.CLoader))
+            except: #pragma: no cover
+                submission_data = list(yaml.load_all(submission_file)) #pragma: no cover
 
         if len(submission_data) == 0:
             raise RuntimeError("Submission file (%s) is empty" % data_in)
@@ -62,7 +69,11 @@ class YAML(Parser):
                                    (table_filepath, self._pretty_print_errors(data_file_validator.get_messages())))
 
             with open(table_filepath, 'r') as table_file:
-                table_data = yaml.load(table_file)
+                try:
+                # We try to load using the CLoader for speed improvements.
+                    table_data = yaml.load(table_file, Loader=yaml.CLoader)
+                except: #pragma: no cover
+                    table_data = yaml.load(table_file)
 
             table = Table(index=i, metadata=submission_data[i], data=table_data)
             tables.append(table)
