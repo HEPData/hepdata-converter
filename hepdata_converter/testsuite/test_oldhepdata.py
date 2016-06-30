@@ -28,3 +28,16 @@ class OldHEPDataTestSuite(WriterTestSuite):
                                  oldhepdata_path, self.current_tmp])
 
         self.assertDirsEqual(oldhepdata_yaml_path, self.current_tmp)
+
+
+    @insert_data_as_file('oldhepdata/1396331.oldhepdata')
+    @insert_path('oldhepdata/1396331-yaml')
+    def test_parse_large_old_submission(self, oldhepdata_file, yaml_path):
+        print('Testing on oldhepdata/1396331.oldhepdata')
+        oldhepdata_p = OldHEPData()
+        oldhepdata_parsed_data = oldhepdata_p.parse(oldhepdata_file)
+
+        yaml_p = yaml_parser.YAML()
+        yaml_parsed_data = yaml_p.parse(yaml_path)
+
+        self.assertEqual(yaml_parsed_data, oldhepdata_parsed_data)

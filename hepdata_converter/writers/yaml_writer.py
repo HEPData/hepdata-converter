@@ -44,13 +44,26 @@ class YAML(Writer):
         if not self.single_file:
             self.create_dir(data_out)
             with open(os.path.join(data_out, 'submission.yaml'), 'w') as submission_file:
-                yaml.dump_all([data] + [table.metadata for table in tables], submission_file)
+                try:
+                    yaml.dump_all([data] + [table.metadata for table in tables], submission_file, dumper=yaml.CDumper)
+                except:
+                    yaml.dump_all([data] + [table.metadata for table in tables], submission_file)
+
                 for table in tables:
                     with open(os.path.join(data_out, table.data_file), 'w') as table_file:
-                        yaml.dump(table.data, table_file)
+                        try:
+                            yaml.dump(table.data, table_file, dumper=yaml.CDumper)
+                        except:
+                            yaml.dump(table.data, table_file)
         else:
             if isinstance(data_out, (str, unicode)):
                 with open(data_out, 'w') as submission_file:
-                    yaml.dump_all([data] + [table.all_data for table in tables], submission_file)
+                    try:
+                        yaml.dump_all([data] + [table.all_data for table in tables], submission_file, dumper=yaml.CDumper)
+                    except:
+                        yaml.dump_all([data] + [table.metadata for table in tables], submission_file)
             else: # expect filelike object
-                yaml.dump_all([data] + [table.all_data for table in tables], data_out)
+                try:
+                    yaml.dump_all([data] + [table.all_data for table in tables], data_out, dumper=yaml.CDumper)
+                except:
+                    yaml.dump_all([data] + [table.all_data for table in tables], data_out)

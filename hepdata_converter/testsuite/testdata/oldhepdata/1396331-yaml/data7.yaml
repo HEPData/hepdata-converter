@@ -1,0 +1,225 @@
+dependent_variables:
+- header: {name: D2SIG/DPT/DYRAP RATIO}
+  qualifiers:
+  - {name: RE, value: P P --> D/S+ <PHI <K- K+> PI+> X}
+  - {name: YRAP, value: 2.0 TO 2.5}
+  values:
+  - errors: []
+    value: '-'
+  - errors:
+    - asymerror: {minus: -0.46, plus: 0.9}
+      label: stat
+    - asymerror: {minus: -0.61, plus: 1.16}
+      label: sys
+    value: 1.71
+  - errors:
+    - asymerror: {minus: -1.32, plus: 2.52}
+      label: stat
+    - asymerror: {minus: -1.04, plus: 2.93}
+      label: sys
+    value: 5.58
+  - errors:
+    - asymerror: {minus: -1.17, plus: 2.07}
+      label: stat
+    - asymerror: {minus: -0.86, plus: 2.14}
+      label: sys
+    value: 5.51
+  - errors:
+    - asymerror: {minus: -1.05, plus: 1.86}
+      label: stat
+    - asymerror: {minus: -0.72, plus: 1.67}
+      label: sys
+    value: 4.81
+  - errors:
+    - asymerror: {minus: -1.45, plus: 3.14}
+      label: stat
+    - asymerror: {minus: -0.87, plus: 2.42}
+      label: sys
+    value: 5.34
+  - errors:
+    - asymerror: {minus: -1.04, plus: 2.05}
+      label: stat
+    - asymerror: {minus: -0.7, plus: 1.86}
+      label: sys
+    value: 4.06
+  - errors:
+    - asymerror: {minus: -0.78, plus: 1.6}
+      label: stat
+    - asymerror: {minus: -0.54, plus: 1.45}
+      label: sys
+    value: 3.01
+- header: {name: D2SIG/DPT/DYRAP RATIO}
+  qualifiers:
+  - {name: RE, value: P P --> D/S+ <PHI <K- K+> PI+> X}
+  - {name: YRAP, value: 2.5 TO 3.0}
+  values:
+  - errors: []
+    value: '-'
+  - errors:
+    - asymerror: {minus: -0.23, plus: 0.31}
+      label: stat
+    - asymerror: {minus: -0.38, plus: 0.65}
+      label: sys
+    value: 1.72
+  - errors:
+    - asymerror: {minus: -0.44, plus: 0.58}
+      label: stat
+    - asymerror: {minus: -0.55, plus: 0.89}
+      label: sys
+    value: 3.6
+  - errors:
+    - asymerror: {minus: -0.34, plus: 0.44}
+      label: stat
+    - asymerror: {minus: -0.41, plus: 0.7}
+      label: sys
+    value: 2.9
+  - errors:
+    - asymerror: {minus: -0.53, plus: 0.76}
+      label: stat
+    - asymerror: {minus: -0.48, plus: 0.98}
+      label: sys
+    value: 3.67
+  - errors:
+    - asymerror: {minus: -0.67, plus: 1.03}
+      label: stat
+    - asymerror: {minus: -0.52, plus: 1.13}
+      label: sys
+    value: 3.75
+  - errors:
+    - asymerror: {minus: -1.03, plus: 1.96}
+      label: stat
+    - asymerror: {minus: -0.56, plus: 1.49}
+      label: sys
+    value: 4.31
+  - errors: []
+    value: '-'
+- header: {name: D2SIG/DPT/DYRAP RATIO}
+  qualifiers:
+  - {name: RE, value: P P --> D/S+ <PHI <K- K+> PI+> X}
+  - {name: YRAP, value: 3.0 TO 3.5}
+  values:
+  - errors: []
+    value: '-'
+  - errors:
+    - asymerror: {minus: -0.5, plus: 0.68}
+      label: stat
+    - asymerror: {minus: -0.66, plus: 1.22}
+      label: sys
+    value: 3.26
+  - errors:
+    - asymerror: {minus: -0.26, plus: 0.33}
+      label: stat
+    - asymerror: {minus: -0.39, plus: 0.6}
+      label: sys
+    value: 2.57
+  - errors:
+    - asymerror: {minus: -0.36, plus: 0.47}
+      label: stat
+    - asymerror: {minus: -0.43, plus: 0.76}
+      label: sys
+    value: 2.8
+  - errors:
+    - asymerror: {minus: -0.65, plus: 0.96}
+      label: stat
+    - asymerror: {minus: -0.5, plus: 1.05}
+      label: sys
+    value: 3.96
+  - errors:
+    - asymerror: {minus: -0.74, plus: 1.2}
+      label: stat
+    - asymerror: {minus: -0.49, plus: 1.1}
+      label: sys
+    value: 3.84
+  - errors:
+    - asymerror: {minus: -0.57, plus: 1.04}
+      label: stat
+    - asymerror: {minus: -0.35, plus: 0.82}
+      label: sys
+    value: 2.53
+  - errors:
+    - asymerror: {minus: -1.12, plus: 2.73}
+      label: stat
+    - asymerror: {minus: -0.55, plus: 1.35}
+      label: sys
+    value: 3.71
+- header: {name: D2SIG/DPT/DYRAP RATIO}
+  qualifiers:
+  - {name: RE, value: P P --> D/S+ <PHI <K- K+> PI+> X}
+  - {name: YRAP, value: 3.5 TO 4.0}
+  values:
+  - errors: []
+    value: '-'
+  - errors:
+    - asymerror: {minus: -0.87, plus: 1.52}
+      label: stat
+    - asymerror: {minus: -0.86, plus: 1.91}
+      label: sys
+    value: 3.86
+  - errors:
+    - asymerror: {minus: -0.46, plus: 0.66}
+      label: stat
+    - asymerror: {minus: -0.47, plus: 0.85}
+      label: sys
+    value: 3.03
+  - errors:
+    - asymerror: {minus: -0.42, plus: 0.6}
+      label: stat
+    - asymerror: {minus: -0.42, plus: 0.82}
+      label: sys
+    value: 2.79
+  - errors:
+    - asymerror: {minus: -0.6, plus: 0.99}
+      label: stat
+    - asymerror: {minus: -0.43, plus: 0.87}
+      label: sys
+    value: 3.09
+  - errors:
+    - asymerror: {minus: -0.96, plus: 1.81}
+      label: stat
+    - asymerror: {minus: -0.64, plus: 1.58}
+      label: sys
+    value: 4.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+- header: {name: D2SIG/DPT/DYRAP RATIO}
+  qualifiers:
+  - {name: RE, value: P P --> D/S+ <PHI <K- K+> PI+> X}
+  - {name: YRAP, value: 4.0 TO 4.5}
+  values:
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors:
+    - asymerror: {minus: -0.67, plus: 1.44}
+      label: stat
+    - asymerror: {minus: -0.42, plus: 1.25}
+      label: sys
+    value: 2.41
+  - errors:
+    - asymerror: {minus: -1.1, plus: 2.63}
+      label: stat
+    - asymerror: {minus: -0.64, plus: 1.76}
+      label: sys
+    value: 3.6
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+independent_variables:
+- header: {name: PT, units: GEV}
+  values:
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}

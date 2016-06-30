@@ -1,0 +1,476 @@
+additional_resources:
+- {description: web page with auxiliary material, location: 'http://lhcbproject.web.cern.ch/lhcbproject/Publications/LHCbProjectPublic/LHCb-PAPER-2015-041.html'}
+comment: "Production cross-sections of prompt charm mesons are measured with the first\
+  \ data from $pp$ collisions at the LHC at a centre-of-mass energy of 13 TeV. The\
+  \ data sample corresponds to an integrated luminosity of $4.98 \\pm 0.19$ pb$^{-1}$\
+  \ collected by the LHCb experiment. The production cross-sections of $D^{0}$, $D^{+}$,\
+  \ $D_{s}^{+}$, and $D^{*+}$ mesons are measured in bins of charm meson transverse\
+  \ momentum, $p_{\\mathrm{T}}$, and rapidity, $y$, and cover the range $0 < p_{\\\
+  mathrm{T}} < 15$ GeV/$c$ and $2.0 < y < 4.5$. The inclusive cross-sections for the\
+  \ four mesons, including charge conjugation, within the range of $1 < p_{\\mathrm{T}}\
+  \ < 8$ GeV/$c$ are found to be\r\n\\begin{equation*} \r\n\\sigma(pp \\to D^{0} X)\
+  \ = 2460 \\pm \\phantom{1}3 \\pm 130\\,\\mu\\mathrm{b}\r\n\\end{equation*}\r\n\\\
+  begin{equation*} \r\n\\sigma(pp \\to D^{+} X) = 1000 \\pm \\phantom{1}3 \\pm 110\\\
+  ,\\mu\\mathrm{b}\r\n\\end{equation*}\r\n\\begin{equation*} \r\n\\sigma(pp \\to D_{s}^{+}\
+  \ X) = 460 \\pm 13 \\pm 100\\,\\mu\\mathrm{b}\r\n\\end{equation*}\r\n\\begin{equation*}\
+  \ \r\n\\sigma(pp \\to D^{*+} X) = 880 \\pm \\phantom{1}5 \\pm 140\\,\\mu\\mathrm{b}\r\
+  \n\\end{equation*}\r\nwhere the uncertainties are due to statistical and systematic\
+  \ uncertainties, respectively."
+record_ids:
+- {id: 1396331, type: inspire}
+- {id: 2057627, type: cds}
+- {id: 6576, type: durham}
+---
+additional_resources: []
+data_file: data1.yaml
+data_license: {description: null, name: null, url: null}
+description: Differential production cross-sections in for prompt $D^{0} + \bar{D}^{0}$
+  mesons in bins of $(p_{\mathrm{T}}, y)$. The first uncertainty is statistical, and
+  the second is the total systematic.
+keywords:
+- name: reactions
+  values: [P P --> (D0 + DBAR0) X]
+- name: observables
+  values: [D2SIG/DPT/DYRAP]
+- name: energies
+  values: ['13000.0']
+location: Data from Figure 5; Table 5
+name: Table 1
+---
+additional_resources: []
+data_file: data2.yaml
+data_license: {description: null, name: null, url: null}
+description: Differential production cross-sections in for prompt $D^{+} + D^{-}$
+  mesons in bins of $(p_{\mathrm{T}}, y)$. The first uncertainty is statistical, and
+  the second is the total systematic.
+keywords:
+- name: reactions
+  values: [P P --> (D+ + D-) X]
+- name: observables
+  values: [D2SIG/DPT/DYRAP]
+- name: energies
+  values: ['13000.0']
+location: Data from Figure 5; Table 6
+name: Table 2
+---
+additional_resources: []
+data_file: data3.yaml
+data_license: {description: null, name: null, url: null}
+description: Differential production cross-sections in for prompt $D_{s}^{+} + D_{s}^{-}$
+  mesons in bins of $(p_{\mathrm{T}}, y)$. The first uncertainty is statistical, and
+  the second is the total systematic.
+keywords:
+- name: reactions
+  values: [P P --> (D/S+ + D/S-) X]
+- name: observables
+  values: [D2SIG/DPT/DYRAP]
+- name: energies
+  values: ['13000.0']
+location: Data from Figure 6; Table 7
+name: Table 3
+---
+additional_resources: []
+data_file: data4.yaml
+data_license: {description: null, name: null, url: null}
+description: Differential production cross-sections in for prompt $D^{*+} + D^{*-}$
+  mesons in bins of $(p_{\mathrm{T}}, y)$. The first uncertainty is statistical, and
+  the second is the total systematic.
+keywords:
+- name: reactions
+  values: [P P --> (D*+ + D*-) X]
+- name: observables
+  values: [D2SIG/DPT/DYRAP]
+- name: energies
+  values: ['13000.0']
+location: Data from Figure 6; Table 8
+name: Table 4
+---
+additional_resources: []
+data_file: data5.yaml
+data_license: {description: null, name: null, url: null}
+description: The ratios of differential production cross-sections, $R_{13/7}$, for
+  prompt $D^{0} + \bar{D}^{0}$ mesons in bins of $(p_{\mathrm{T}}, y)$. The first
+  uncertainty is statistical, and the second is the total systematic.
+keywords:
+- name: reactions
+  values: [P P --> (D0 + DBAR0) X]
+- name: observables
+  values: [RATIO]
+- name: energies
+  values: []
+location: Data from Figure 7; Table 9
+name: Table 5
+---
+additional_resources: []
+data_file: data6.yaml
+data_license: {description: null, name: null, url: null}
+description: The ratios of differential production cross-sections, $R_{13/7}$, for
+  prompt $D^{+} + D^{-}$ mesons in bins of $(p_{\mathrm{T}}, y)$. The first uncertainty
+  is statistical, and the second is the total systematic.
+keywords:
+- name: reactions
+  values: [P P --> (D+ + D-) X]
+- name: observables
+  values: [RATIO]
+- name: energies
+  values: []
+location: Data from Figure 7; Table 10
+name: Table 6
+---
+additional_resources: []
+data_file: data7.yaml
+data_license: {description: null, name: null, url: null}
+description: The ratios of differential production cross-sections, $R_{13/7}$, for
+  prompt $D_{s}^{+} + D_{s}^{+}$ mesons in bins of $(p_{\mathrm{T}}, y)$. The first
+  uncertainty is statistical, and the second is the total systematic.
+keywords:
+- name: reactions
+  values: [P P --> (D/S+ + D/S-) X]
+- name: observables
+  values: [RATIO]
+- name: energies
+  values: []
+location: Data from Figure 7; Table 11
+name: Table 7
+---
+additional_resources: []
+data_file: data8.yaml
+data_license: {description: null, name: null, url: null}
+description: The ratios of differential production cross-sections, $R_{13/7}$, for
+  prompt $D^{*+} + D^{*-}$ mesons in bins of $(p_{\mathrm{T}}, y)$. The first uncertainty
+  is statistical, and the second is the total systematic.
+keywords:
+- name: reactions
+  values: [P P --> (D*+ + D*-) X]
+- name: observables
+  values: [RATIO]
+- name: energies
+  values: []
+location: Data from Figure 7; Table 12
+name: Table 8
+---
+additional_resources: []
+data_file: data9.yaml
+data_license: {description: null, name: null, url: null}
+description: The ratios of differential production cross-section-times-branching fraction
+  measurements for prompt $D^{+}$ and $D^{0}$ mesons in bins of $(p_{\mathrm{T}},
+  y)$. The first uncertainty is statistical, and the second is the total systematic.
+  All values are given in percent.
+keywords:
+- name: reactions
+  values: []
+- name: observables
+  values: [RATIO]
+- name: energies
+  values: []
+location: Data from Figure 8; Table 13
+name: Table 9
+---
+additional_resources: []
+data_file: data10.yaml
+data_license: {description: null, name: null, url: null}
+description: The ratios of differential production cross-section-times-branching fraction
+  measurements for prompt $D_{s}^{+}$ and $D^{0}$ mesons in bins of $(p_{\mathrm{T}},
+  y)$. The first uncertainty is statistical, and the second is the total systematic.
+  All values are given in percent.
+keywords:
+- name: reactions
+  values: []
+- name: observables
+  values: [RATIO]
+- name: energies
+  values: []
+location: Data from Figure 8; Table 14
+name: Table 10
+---
+additional_resources: []
+data_file: data11.yaml
+data_license: {description: null, name: null, url: null}
+description: The ratios of differential production cross-section-times-branching fraction
+  measurements for prompt $D^{*+}$ and $D^{0}$ mesons in bins of $(p_{\mathrm{T}},
+  y)$. The first uncertainty is statistical, and the second is the total systematic.
+  All values are given in percent.
+keywords:
+- name: reactions
+  values: []
+- name: observables
+  values: [RATIO]
+- name: energies
+  values: []
+location: Data from Figure 8; Table 15
+name: Table 11
+---
+additional_resources: []
+data_file: data12.yaml
+data_license: {description: null, name: null, url: null}
+description: The ratios of differential production cross-section-times-branching fraction
+  measurements for prompt $D_{s}^{+}$ and $D^{+}$ mesons in bins of $(p_{\mathrm{T}},
+  y)$. The first uncertainty is statistical, and the second is the total systematic.
+  All values are given in percent.
+keywords:
+- name: reactions
+  values: []
+- name: observables
+  values: [RATIO]
+- name: energies
+  values: []
+location: Data from Figure 10; Table 16
+name: Table 12
+---
+additional_resources: []
+data_file: data13.yaml
+data_license: {description: null, name: null, url: null}
+description: The ratios of differential production cross-section-times-branching fraction
+  measurements for prompt $D^{*+}$ and $D^{+}$ mesons in bins of $(p_{\mathrm{T}},
+  y)$. The first uncertainty is statistical, and the second is the total systematic.
+  All values are given in percent.
+keywords:
+- name: reactions
+  values: []
+- name: observables
+  values: [RATIO]
+- name: energies
+  values: []
+location: Data from Figure 10; Table 17
+name: Table 13
+---
+additional_resources: []
+data_file: data14.yaml
+data_license: {description: null, name: null, url: null}
+description: The ratios of differential production cross-section-times-branching fraction
+  measurements for prompt $D_{s}^{+}$ and $D^{*+}$ mesons in bins of $(p_{\mathrm{T}},
+  y)$. The first uncertainty is statistical, and the second is the total systematic.
+  All values are given in percent.
+keywords:
+- name: reactions
+  values: []
+- name: observables
+  values: [RATIO]
+- name: energies
+  values: []
+location: Data from Figure 10; Table 18
+name: Table 14
+---
+additional_resources: []
+data_file: data15.yaml
+data_license: {description: null, name: null, url: null}
+description: Differential production cross-sections in for prompt $D^{0} + \bar{D}^{0}$
+  mesons in bins of $(p_{\mathrm{T}}, y)$. Correlation table. Values are rounded to
+  the level of $\pm 5\%$.
+keywords:
+- name: reactions
+  values: [P P --> (D0 + DBAR0) X]
+- name: observables
+  values: [D2SIG/DPT/DYRAP]
+- name: energies
+  values: ['13000.0']
+location: Data from Figure 5; Table 5; Correlation table
+name: Table 15
+---
+additional_resources: []
+data_file: data16.yaml
+data_license: {description: null, name: null, url: null}
+description: Differential production cross-sections in for prompt $D^{+} + D^{-}$
+  mesons in bins of $(p_{\mathrm{T}}, y)$. Correlation table. Values are rounded to
+  the level of $\pm 5\%$.
+keywords:
+- name: reactions
+  values: [P P --> (D+ + D-) X]
+- name: observables
+  values: [D2SIG/DPT/DYRAP]
+- name: energies
+  values: ['13000.0']
+location: Data from Figure 5; Table 6; Correlation table
+name: Table 16
+---
+additional_resources: []
+data_file: data17.yaml
+data_license: {description: null, name: null, url: null}
+description: Differential production cross-sections in for prompt $D_{s}^{+} + D_{s}^{-}$
+  mesons in bins of $(p_{\mathrm{T}}, y)$. Correlation table. Values are rounded to
+  the level of $\pm 5\%$.
+keywords:
+- name: reactions
+  values: [P P --> (D/S+ + D/S-) X]
+- name: observables
+  values: [D2SIG/DPT/DYRAP]
+- name: energies
+  values: ['13000.0']
+location: Data from Figure 6; Table 7; Correlation table
+name: Table 17
+---
+additional_resources: []
+data_file: data18.yaml
+data_license: {description: null, name: null, url: null}
+description: Differential production cross-sections in for prompt $D^{*+} + D^{*-}$
+  mesons in bins of $(p_{\mathrm{T}}, y)$. Correlation table. Values are rounded to
+  the level of $\pm 5\%$.
+keywords:
+- name: reactions
+  values: [P P --> (D*+ + D*-) X]
+- name: observables
+  values: [D2SIG/DPT/DYRAP]
+- name: energies
+  values: ['13000.0']
+location: Data from Figure 6; Table 8; Correlation table
+name: Table 18
+---
+additional_resources: []
+data_file: data19.yaml
+data_license: {description: null, name: null, url: null}
+description: The ratios of differential production cross-sections, $R_{13/7}$, for
+  prompt $D^{0} + D^{0}$ mesons in bins of $(p_{\mathrm{T}}, y)$. Correlation table.
+  Values are rounded to the level of $\pm 5\%$.
+keywords:
+- name: reactions
+  values: [P P --> (D0 + DBAR0) X]
+- name: observables
+  values: [RATIO]
+- name: energies
+  values: []
+location: Data from Figure 7; Table 9; Correlation table
+name: Table 19
+---
+additional_resources: []
+data_file: data20.yaml
+data_license: {description: null, name: null, url: null}
+description: The ratios of differential production cross-sections, $R_{13/7}$, for
+  prompt $D^{+} + D^{-}$ mesons in bins of $(p_{\mathrm{T}}, y)$. Correlation table.
+  Values are rounded to the level of $\pm 5\%$.
+keywords:
+- name: reactions
+  values: [P P --> (D+ + D-) X]
+- name: observables
+  values: [RATIO]
+- name: energies
+  values: []
+location: Data from Figure 7; Table 10; Correlation table
+name: Table 20
+---
+additional_resources: []
+data_file: data21.yaml
+data_license: {description: null, name: null, url: null}
+description: The ratios of differential production cross-sections, $R_{13/7}$, for
+  prompt $D_{s}^{+} + D_{s}^{+}$ mesons in bins of $(p_{\mathrm{T}}, y)$. Correlation
+  table. Values are rounded to the level of $\pm 5\%$.
+keywords:
+- name: reactions
+  values: [P P --> (D/S+ + D/S-) X]
+- name: observables
+  values: [RATIO]
+- name: energies
+  values: []
+location: Data from Figure 7; Table 11; Correlation table
+name: Table 21
+---
+additional_resources: []
+data_file: data22.yaml
+data_license: {description: null, name: null, url: null}
+description: The ratios of differential production cross-sections, $R_{13/7}$, for
+  prompt $D^{*+} + D^{*-}$ mesons in bins of $(p_{\mathrm{T}}, y)$. Correlation table.
+  Values are rounded to the level of $\pm 5\%$.
+keywords:
+- name: reactions
+  values: [P P --> (D*+ + D*-) X]
+- name: observables
+  values: [RATIO]
+- name: energies
+  values: []
+location: Data from Figure 7; Table 12; Correlation table
+name: Table 22
+---
+additional_resources: []
+data_file: data23.yaml
+data_license: {description: null, name: null, url: null}
+description: The ratios of differential production cross-section-times-branching fraction
+  measurements for prompt $D^{+}$ and $D^{0}$ mesons in bins of $(p_{\mathrm{T}},
+  y)$. Correlation table. Values are rounded to the level of $\pm 5\%$.
+keywords:
+- name: reactions
+  values: []
+- name: observables
+  values: [RATIO]
+- name: energies
+  values: []
+location: Data from Figure 8; Table 13; Correlation table
+name: Table 23
+---
+additional_resources: []
+data_file: data24.yaml
+data_license: {description: null, name: null, url: null}
+description: The ratios of differential production cross-section-times-branching fraction
+  measurements for prompt $D_{s}^{+}$ and $D^{0}$ mesons in bins of $(p_{\mathrm{T}},
+  y)$. Correlation table. Values are rounded to the level of $\pm 5\%$.
+keywords:
+- name: reactions
+  values: []
+- name: observables
+  values: [RATIO]
+- name: energies
+  values: []
+location: Data from Figure 8; Table 14; Correlation table
+name: Table 24
+---
+additional_resources: []
+data_file: data25.yaml
+data_license: {description: null, name: null, url: null}
+description: The ratios of differential production cross-section-times-branching fraction
+  measurements for prompt $D^{*+}$ and $D^{0}$ mesons in bins of $(p_{\mathrm{T}},
+  y)$. Correlation table. Values are rounded to the level of $\pm 5\%$.
+keywords:
+- name: reactions
+  values: []
+- name: observables
+  values: [RATIO]
+- name: energies
+  values: []
+location: Data from Figure 8; Table 15; Correlation table
+name: Table 25
+---
+additional_resources: []
+data_file: data26.yaml
+data_license: {description: null, name: null, url: null}
+description: The ratios of differential production cross-section-times-branching fraction
+  measurements for prompt $D_{s}^{+}$ and $D^{+}$ mesons in bins of $(p_{\mathrm{T}},
+  y)$. Correlation table. Values are rounded to the level of $\pm 5\%$.
+keywords:
+- name: reactions
+  values: []
+- name: observables
+  values: [RATIO]
+- name: energies
+  values: []
+location: Data from Figure 10; Table 16; Correlation table
+name: Table 26
+---
+additional_resources: []
+data_file: data27.yaml
+data_license: {description: null, name: null, url: null}
+description: The ratios of differential production cross-section-times-branching fraction
+  measurements for prompt $D^{*+}$ and $D^{+}$ mesons in bins of $(p_{\mathrm{T}},
+  y)$. Correlation table. Values are rounded to the level of $\pm 5\%$.
+keywords:
+- name: reactions
+  values: []
+- name: observables
+  values: [RATIO]
+- name: energies
+  values: []
+location: Data from Figure 10; Table 17; Correlation table
+name: Table 27
+---
+additional_resources: []
+data_file: data28.yaml
+data_license: {description: null, name: null, url: null}
+description: The ratios of differential production cross-section-times-branching fraction
+  measurements for prompt $D_{s}^{+}$ and $D^{*+}$ mesons in bins of $(p_{\mathrm{T}},
+  y)$. Correlation table. Values are rounded to the level of $\pm 5\%$.
+keywords:
+- name: reactions
+  values: []
+- name: observables
+  values: [RATIO]
+- name: energies
+  values: []
+location: Data from Figure 10; Table 18; Correlation table
+name: Table 28

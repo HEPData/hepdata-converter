@@ -1,0 +1,4934 @@
+dependent_variables:
+- header: {name: Correlation coefficient}
+  qualifiers:
+  - {name: RE, value: P P --> D*+ <D0 <K- PI+> PI+> X}
+  values:
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 1.0
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.1
+  - errors: []
+    value: 0.2
+  - errors: []
+    value: 0.2
+  - errors: []
+    value: 0.2
+  - errors: []
+    value: 0.2
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.1
+  - errors: []
+    value: 0.1
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.1
+  - errors: []
+    value: 0.1
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.1
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.1
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.1
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 1.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.2
+  - errors: []
+    value: 0.25
+  - errors: []
+    value: 0.2
+  - errors: []
+    value: 0.2
+  - errors: []
+    value: 0.2
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.1
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.2
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.1
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.2
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 1.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 1.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.1
+  - errors: []
+    value: 0.1
+  - errors: []
+    value: 0.1
+  - errors: []
+    value: 0.1
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 1.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 1.0
+  - errors: []
+    value: 0.3
+  - errors: []
+    value: 0.2
+  - errors: []
+    value: 0.2
+  - errors: []
+    value: 0.2
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.5
+  - errors: []
+    value: 0.5
+  - errors: []
+    value: 0.5
+  - errors: []
+    value: 0.45
+  - errors: []
+    value: 0.4
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.5
+  - errors: []
+    value: 0.5
+  - errors: []
+    value: 0.5
+  - errors: []
+    value: 0.45
+  - errors: []
+    value: 0.25
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.4
+  - errors: []
+    value: 0.45
+  - errors: []
+    value: 0.2
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 1.0
+  - errors: []
+    value: 0.3
+  - errors: []
+    value: 0.3
+  - errors: []
+    value: 0.25
+  - errors: []
+    value: 0.2
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.3
+  - errors: []
+    value: 0.35
+  - errors: []
+    value: 0.35
+  - errors: []
+    value: 0.35
+  - errors: []
+    value: 0.3
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.3
+  - errors: []
+    value: 0.3
+  - errors: []
+    value: 0.35
+  - errors: []
+    value: 0.35
+  - errors: []
+    value: 0.25
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.25
+  - errors: []
+    value: 0.3
+  - errors: []
+    value: 0.2
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 1.0
+  - errors: []
+    value: 0.3
+  - errors: []
+    value: 0.3
+  - errors: []
+    value: 0.2
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.2
+  - errors: []
+    value: 0.2
+  - errors: []
+    value: 0.25
+  - errors: []
+    value: 0.25
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.2
+  - errors: []
+    value: 0.2
+  - errors: []
+    value: 0.2
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.2
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 1.0
+  - errors: []
+    value: 0.3
+  - errors: []
+    value: 0.2
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.1
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.2
+  - errors: []
+    value: 0.2
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.1
+  - errors: []
+    value: 0.1
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.1
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 1.0
+  - errors: []
+    value: 0.2
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.2
+  - errors: []
+    value: 0.25
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.2
+  - errors: []
+    value: 0.2
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.2
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 1.0
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.1
+  - errors: []
+    value: 0.1
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.2
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.1
+  - errors: []
+    value: 0.1
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.1
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 1.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 1.0
+  - errors: []
+    value: 0.7
+  - errors: []
+    value: 0.65
+  - errors: []
+    value: 0.55
+  - errors: []
+    value: 0.45
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.7
+  - errors: []
+    value: 0.7
+  - errors: []
+    value: 0.65
+  - errors: []
+    value: 0.6
+  - errors: []
+    value: 0.3
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.6
+  - errors: []
+    value: 0.55
+  - errors: []
+    value: 0.25
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 1.0
+  - errors: []
+    value: 0.65
+  - errors: []
+    value: 0.55
+  - errors: []
+    value: 0.5
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.7
+  - errors: []
+    value: 0.7
+  - errors: []
+    value: 0.65
+  - errors: []
+    value: 0.6
+  - errors: []
+    value: 0.3
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.6
+  - errors: []
+    value: 0.55
+  - errors: []
+    value: 0.25
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 1.0
+  - errors: []
+    value: 0.55
+  - errors: []
+    value: 0.45
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.65
+  - errors: []
+    value: 0.65
+  - errors: []
+    value: 0.65
+  - errors: []
+    value: 0.55
+  - errors: []
+    value: 0.3
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.55
+  - errors: []
+    value: 0.55
+  - errors: []
+    value: 0.25
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 1.0
+  - errors: []
+    value: 0.45
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.55
+  - errors: []
+    value: 0.55
+  - errors: []
+    value: 0.55
+  - errors: []
+    value: 0.5
+  - errors: []
+    value: 0.3
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.5
+  - errors: []
+    value: 0.45
+  - errors: []
+    value: 0.25
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 1.0
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.45
+  - errors: []
+    value: 0.5
+  - errors: []
+    value: 0.5
+  - errors: []
+    value: 0.45
+  - errors: []
+    value: 0.25
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.4
+  - errors: []
+    value: 0.4
+  - errors: []
+    value: 0.25
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 1.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 1.0
+  - errors: []
+    value: 0.7
+  - errors: []
+    value: 0.65
+  - errors: []
+    value: 0.6
+  - errors: []
+    value: 0.3
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.6
+  - errors: []
+    value: 0.55
+  - errors: []
+    value: 0.25
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 1.0
+  - errors: []
+    value: 0.65
+  - errors: []
+    value: 0.6
+  - errors: []
+    value: 0.3
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.6
+  - errors: []
+    value: 0.55
+  - errors: []
+    value: 0.25
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 1.0
+  - errors: []
+    value: 0.6
+  - errors: []
+    value: 0.35
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.55
+  - errors: []
+    value: 0.55
+  - errors: []
+    value: 0.25
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 1.0
+  - errors: []
+    value: 0.3
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.5
+  - errors: []
+    value: 0.5
+  - errors: []
+    value: 0.25
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 1.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.3
+  - errors: []
+    value: 0.3
+  - errors: []
+    value: 0.15
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 1.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 1.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 1.0
+  - errors: []
+    value: 0.45
+  - errors: []
+    value: 0.2
+  - errors: []
+    value: 0.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 1.0
+  - errors: []
+    value: 0.25
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 1.0
+  - errors: []
+    value: 0.05
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: 1.0
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+independent_variables:
+- header: {name: YRAP}
+  values:
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+- header: {name: p_T, units: GEV}
+  values:
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+- header: {name: YRAP}
+  values:
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 2.5, low: 2.0}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 3.5, low: 3.0}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.0, low: 3.5}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+  - {high: 4.5, low: 4.0}
+- header: {name: p_T, units: GEV}
+  values:
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 1.0, low: 0.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 2.0, low: 1.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 3.0, low: 2.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 4.0, low: 3.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 8.0, low: 7.0}

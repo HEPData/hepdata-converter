@@ -1,0 +1,501 @@
+dependent_variables:
+- header: {name: D2SIG/DPT/DYRAP, units: UB/(GEV/c)}
+  qualifiers:
+  - {name: RE, value: P P --> D/S+ <PHI <K- K+> PI+> X}
+  - {name: SQRT(S), units: GEV, value: '13000.0'}
+  - {name: YRAP, value: 2.0 TO 2.5}
+  values:
+  - errors:
+    - asymerror: {minus: -21.0, plus: 21.0}
+      label: stat
+    - asymerror: {minus: -49.0, plus: 44.0}
+      label: sys
+    value: 86.0
+  - errors:
+    - asymerror: {minus: -4.0, plus: 4.0}
+      label: stat
+    - asymerror: {minus: -14.0, plus: 17.0}
+      label: sys
+    value: 68.0
+  - errors:
+    - asymerror: {minus: -3.0, plus: 3.0}
+      label: stat
+    - asymerror: {minus: -13.0, plus: 17.0}
+      label: sys
+    value: 81.0
+  - errors:
+    - asymerror: {minus: -2.0, plus: 2.0}
+      label: stat
+    - asymerror: {minus: -9.0, plus: 10.0}
+      label: sys
+    value: 61.0
+  - errors:
+    - asymerror: {minus: -1.1, plus: 1.1}
+      label: stat
+    - asymerror: {minus: -5.1, plus: 6.0}
+      label: sys
+    value: 42.4
+  - errors:
+    - asymerror: {minus: -0.9, plus: 0.9}
+      label: stat
+    - asymerror: {minus: -3.7, plus: 4.4}
+      label: sys
+    value: 34.4
+  - errors:
+    - asymerror: {minus: -0.3, plus: 0.3}
+      label: stat
+    - asymerror: {minus: -1.7, plus: 1.9}
+      label: sys
+    value: 17.8
+  - errors:
+    - asymerror: {minus: -0.2, plus: 0.2}
+      label: stat
+    - asymerror: {minus: -0.9, plus: 1.1}
+      label: sys
+    value: 9.9
+  - errors:
+    - asymerror: {minus: -0.15, plus: 0.15}
+      label: stat
+    - asymerror: {minus: -0.55, plus: 0.64}
+      label: sys
+    value: 5.61
+  - errors:
+    - asymerror: {minus: -0.12, plus: 0.12}
+      label: stat
+    - asymerror: {minus: -0.4, plus: 0.45}
+      label: sys
+    value: 3.64
+  - errors:
+    - asymerror: {minus: -0.08, plus: 0.08}
+      label: stat
+    - asymerror: {minus: -0.25, plus: 0.28}
+      label: sys
+    value: 2.11
+  - errors:
+    - asymerror: {minus: -0.06, plus: 0.06}
+      label: stat
+    - asymerror: {minus: -0.14, plus: 0.16}
+      label: sys
+    value: 1.18
+  - errors:
+    - asymerror: {minus: -0.052, plus: 0.052}
+      label: stat
+    - asymerror: {minus: -0.067, plus: 0.094}
+      label: sys
+    value: 0.897
+  - errors:
+    - asymerror: {minus: -0.04, plus: 0.04}
+      label: stat
+    - asymerror: {minus: -0.035, plus: 0.063}
+      label: sys
+    value: 0.535
+  - errors:
+    - asymerror: {minus: -0.035, plus: 0.035}
+      label: stat
+    - asymerror: {minus: -0.02, plus: 0.062}
+      label: sys
+    value: 0.423
+  - errors:
+    - asymerror: {minus: -0.025, plus: 0.025}
+      label: stat
+    - asymerror: {minus: -0.006, plus: 0.036}
+      label: sys
+    value: 0.225
+  - errors: []
+    value: '-'
+- header: {name: D2SIG/DPT/DYRAP, units: UB/(GEV/c)}
+  qualifiers:
+  - {name: RE, value: P P --> D/S+ <PHI <K- K+> PI+> X}
+  - {name: SQRT(S), units: GEV, value: '13000.0'}
+  - {name: YRAP, value: 2.5 TO 3.0}
+  values:
+  - errors:
+    - asymerror: {minus: -5.0, plus: 5.0}
+      label: stat
+    - asymerror: {minus: -18.0, plus: 22.0}
+      label: sys
+    value: 68.0
+  - errors:
+    - asymerror: {minus: -2.0, plus: 2.0}
+      label: stat
+    - asymerror: {minus: -13.0, plus: 16.0}
+      label: sys
+    value: 74.0
+  - errors:
+    - asymerror: {minus: -1.0, plus: 1.0}
+      label: stat
+    - asymerror: {minus: -9.0, plus: 11.0}
+      label: sys
+    value: 68.0
+  - errors:
+    - asymerror: {minus: -0.8, plus: 0.8}
+      label: stat
+    - asymerror: {minus: -5.7, plus: 6.3}
+      label: sys
+    value: 52.4
+  - errors:
+    - asymerror: {minus: -0.6, plus: 0.6}
+      label: stat
+    - asymerror: {minus: -3.7, plus: 4.3}
+      label: sys
+    value: 38.7
+  - errors:
+    - asymerror: {minus: -0.4, plus: 0.4}
+      label: stat
+    - asymerror: {minus: -2.2, plus: 2.8}
+      label: sys
+    value: 26.0
+  - errors:
+    - asymerror: {minus: -0.2, plus: 0.2}
+      label: stat
+    - asymerror: {minus: -1.3, plus: 1.7}
+      label: sys
+    value: 16.1
+  - errors:
+    - asymerror: {minus: -0.13, plus: 0.13}
+      label: stat
+    - asymerror: {minus: -0.65, plus: 0.89}
+      label: sys
+    value: 8.32
+  - errors:
+    - asymerror: {minus: -0.09, plus: 0.09}
+      label: stat
+    - asymerror: {minus: -0.36, plus: 0.48}
+      label: sys
+    value: 4.4
+  - errors:
+    - asymerror: {minus: -0.07, plus: 0.07}
+      label: stat
+    - asymerror: {minus: -0.22, plus: 0.28}
+      label: sys
+    value: 2.54
+  - errors:
+    - asymerror: {minus: -0.04, plus: 0.04}
+      label: stat
+    - asymerror: {minus: -0.12, plus: 0.16}
+      label: sys
+    value: 1.37
+  - errors:
+    - asymerror: {minus: -0.03, plus: 0.03}
+      label: stat
+    - asymerror: {minus: -0.059, plus: 0.091}
+      label: sys
+    value: 0.72
+  - errors:
+    - asymerror: {minus: -0.029, plus: 0.029}
+      label: stat
+    - asymerror: {minus: -0.035, plus: 0.063}
+      label: sys
+    value: 0.571
+  - errors:
+    - asymerror: {minus: -0.023, plus: 0.023}
+      label: stat
+    - asymerror: {minus: -0.018, plus: 0.043}
+      label: sys
+    value: 0.36
+  - errors:
+    - asymerror: {minus: -0.018, plus: 0.018}
+      label: stat
+    - asymerror: {minus: -0.01, plus: 0.028}
+      label: sys
+    value: 0.216
+  - errors:
+    - asymerror: {minus: -0.017, plus: 0.017}
+      label: stat
+    - asymerror: {minus: -0.008, plus: 0.027}
+      label: sys
+    value: 0.198
+  - errors: []
+    value: '-'
+- header: {name: D2SIG/DPT/DYRAP, units: UB/(GEV/c)}
+  qualifiers:
+  - {name: RE, value: P P --> D/S+ <PHI <K- K+> PI+> X}
+  - {name: SQRT(S), units: GEV, value: '13000.0'}
+  - {name: YRAP, value: 3.0 TO 3.5}
+  values:
+  - errors:
+    - asymerror: {minus: -4.0, plus: 4.0}
+      label: stat
+    - asymerror: {minus: -16.0, plus: 19.0}
+      label: sys
+    value: 73.0
+  - errors:
+    - asymerror: {minus: -2.0, plus: 2.0}
+      label: stat
+    - asymerror: {minus: -13.0, plus: 14.0}
+      label: sys
+    value: 79.0
+  - errors:
+    - asymerror: {minus: -1.0, plus: 1.0}
+      label: stat
+    - asymerror: {minus: -7.3, plus: 8.1}
+      label: sys
+    value: 57.2
+  - errors:
+    - asymerror: {minus: -0.7, plus: 0.7}
+      label: stat
+    - asymerror: {minus: -5.3, plus: 5.6}
+      label: sys
+    value: 47.7
+  - errors:
+    - asymerror: {minus: -0.5, plus: 0.5}
+      label: stat
+    - asymerror: {minus: -3.1, plus: 3.5}
+      label: sys
+    value: 31.9
+  - errors:
+    - asymerror: {minus: -0.3, plus: 0.3}
+      label: stat
+    - asymerror: {minus: -1.8, plus: 2.4}
+      label: sys
+    value: 21.3
+  - errors:
+    - asymerror: {minus: -0.2, plus: 0.2}
+      label: stat
+    - asymerror: {minus: -0.9, plus: 1.2}
+      label: sys
+    value: 11.7
+  - errors:
+    - asymerror: {minus: -0.11, plus: 0.11}
+      label: stat
+    - asymerror: {minus: -0.55, plus: 0.67}
+      label: sys
+    value: 6.76
+  - errors:
+    - asymerror: {minus: -0.07, plus: 0.07}
+      label: stat
+    - asymerror: {minus: -0.27, plus: 0.32}
+      label: sys
+    value: 3.13
+  - errors:
+    - asymerror: {minus: -0.05, plus: 0.05}
+      label: stat
+    - asymerror: {minus: -0.16, plus: 0.18}
+      label: sys
+    value: 1.73
+  - errors:
+    - asymerror: {minus: -0.04, plus: 0.04}
+      label: stat
+    - asymerror: {minus: -0.1, plus: 0.12}
+      label: sys
+    value: 1.05
+  - errors:
+    - asymerror: {minus: -0.034, plus: 0.034}
+      label: stat
+    - asymerror: {minus: -0.065, plus: 0.093}
+      label: sys
+    value: 0.739
+  - errors:
+    - asymerror: {minus: -0.026, plus: 0.026}
+      label: stat
+    - asymerror: {minus: -0.026, plus: 0.053}
+      label: sys
+    value: 0.407
+  - errors:
+    - asymerror: {minus: -0.022, plus: 0.022}
+      label: stat
+    - asymerror: {minus: -0.014, plus: 0.034}
+      label: sys
+    value: 0.285
+  - errors:
+    - asymerror: {minus: -0.019, plus: 0.019}
+      label: stat
+    - asymerror: {minus: -0.007, plus: 0.029}
+      label: sys
+    value: 0.203
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+- header: {name: D2SIG/DPT/DYRAP, units: UB/(GEV/c)}
+  qualifiers:
+  - {name: RE, value: P P --> D/S+ <PHI <K- K+> PI+> X}
+  - {name: SQRT(S), units: GEV, value: '13000.0'}
+  - {name: YRAP, value: 3.5 TO 4.0}
+  values:
+  - errors:
+    - asymerror: {minus: -8.0, plus: 8.0}
+      label: stat
+    - asymerror: {minus: -20.0, plus: 22.0}
+      label: sys
+    value: 84.0
+  - errors:
+    - asymerror: {minus: -3.0, plus: 3.0}
+      label: stat
+    - asymerror: {minus: -10.0, plus: 10.0}
+      label: sys
+    value: 74.0
+  - errors:
+    - asymerror: {minus: -1.2, plus: 1.2}
+      label: stat
+    - asymerror: {minus: -5.5, plus: 5.4}
+      label: sys
+    value: 49.9
+  - errors:
+    - asymerror: {minus: -0.7, plus: 0.7}
+      label: stat
+    - asymerror: {minus: -3.3, plus: 4.0}
+      label: sys
+    value: 36.1
+  - errors:
+    - asymerror: {minus: -0.5, plus: 0.5}
+      label: stat
+    - asymerror: {minus: -2.0, plus: 2.5}
+      label: sys
+    value: 23.6
+  - errors:
+    - asymerror: {minus: -0.4, plus: 0.4}
+      label: stat
+    - asymerror: {minus: -1.7, plus: 1.9}
+      label: sys
+    value: 18.6
+  - errors:
+    - asymerror: {minus: -0.17, plus: 0.17}
+      label: stat
+    - asymerror: {minus: -0.89, plus: 0.94}
+      label: sys
+    value: 9.98
+  - errors:
+    - asymerror: {minus: -0.12, plus: 0.12}
+      label: stat
+    - asymerror: {minus: -0.5, plus: 0.58}
+      label: sys
+    value: 5.33
+  - errors:
+    - asymerror: {minus: -0.08, plus: 0.08}
+      label: stat
+    - asymerror: {minus: -0.27, plus: 0.31}
+      label: sys
+    value: 2.66
+  - errors:
+    - asymerror: {minus: -0.07, plus: 0.07}
+      label: stat
+    - asymerror: {minus: -0.16, plus: 0.19}
+      label: sys
+    value: 1.54
+  - errors:
+    - asymerror: {minus: -0.05, plus: 0.05}
+      label: stat
+    - asymerror: {minus: -0.09, plus: 0.11}
+      label: sys
+    value: 0.8
+  - errors:
+    - asymerror: {minus: -0.036, plus: 0.036}
+      label: stat
+    - asymerror: {minus: -0.038, plus: 0.052}
+      label: sys
+    value: 0.383
+  - errors:
+    - asymerror: {minus: -0.034, plus: 0.034}
+      label: stat
+    - asymerror: {minus: -0.006, plus: 0.028}
+      label: sys
+    value: 0.197
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+- header: {name: D2SIG/DPT/DYRAP, units: UB/(GEV/c)}
+  qualifiers:
+  - {name: RE, value: P P --> D/S+ <PHI <K- K+> PI+> X}
+  - {name: SQRT(S), units: GEV, value: '13000.0'}
+  - {name: YRAP, value: 4.0 TO 4.5}
+  values:
+  - errors:
+    - asymerror: {minus: -48.0, plus: 48.0}
+      label: stat
+    - asymerror: {minus: -97.0, plus: 47.0}
+      label: sys
+    value: 148.0
+  - errors:
+    - asymerror: {minus: -4.5, plus: 4.5}
+      label: stat
+    - asymerror: {minus: -8.2, plus: 9.6}
+      label: sys
+    value: 43.5
+  - errors:
+    - asymerror: {minus: -2.2, plus: 2.2}
+      label: stat
+    - asymerror: {minus: -4.6, plus: 5.6}
+      label: sys
+    value: 34.3
+  - errors:
+    - asymerror: {minus: -1.1, plus: 1.1}
+      label: stat
+    - asymerror: {minus: -2.5, plus: 3.0}
+      label: sys
+    value: 22.9
+  - errors:
+    - asymerror: {minus: -0.9, plus: 0.9}
+      label: stat
+    - asymerror: {minus: -2.1, plus: 2.3}
+      label: sys
+    value: 18.4
+  - errors:
+    - asymerror: {minus: -0.6, plus: 0.6}
+      label: stat
+    - asymerror: {minus: -1.4, plus: 1.4}
+      label: sys
+    value: 11.8
+  - errors:
+    - asymerror: {minus: -0.29, plus: 0.29}
+      label: stat
+    - asymerror: {minus: -0.67, plus: 0.71}
+      label: sys
+    value: 6.8
+  - errors:
+    - asymerror: {minus: -0.25, plus: 0.25}
+      label: stat
+    - asymerror: {minus: -0.49, plus: 0.55}
+      label: sys
+    value: 3.89
+  - errors:
+    - asymerror: {minus: -0.21, plus: 0.21}
+      label: stat
+    - asymerror: {minus: -0.29, plus: 0.3}
+      label: sys
+    value: 1.78
+  - errors:
+    - asymerror: {minus: -0.13, plus: 0.13}
+      label: stat
+    - asymerror: {minus: -0.11, plus: 0.12}
+      label: sys
+    value: 0.51
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+  - errors: []
+    value: '-'
+independent_variables:
+- header: {name: PT, units: GEV}
+  values:
+  - {high: 1.5, low: 1.0}
+  - {high: 2.0, low: 1.5}
+  - {high: 2.5, low: 2.0}
+  - {high: 3.0, low: 2.5}
+  - {high: 3.5, low: 3.0}
+  - {high: 4.0, low: 3.5}
+  - {high: 5.0, low: 4.0}
+  - {high: 6.0, low: 5.0}
+  - {high: 7.0, low: 6.0}
+  - {high: 8.0, low: 7.0}
+  - {high: 9.0, low: 8.0}
+  - {high: 10.0, low: 9.0}
+  - {high: 11.0, low: 10.0}
+  - {high: 12.0, low: 11.0}
+  - {high: 13.0, low: 12.0}
+  - {high: 14.0, low: 13.0}
+  - {high: 15.0, low: 14.0}
