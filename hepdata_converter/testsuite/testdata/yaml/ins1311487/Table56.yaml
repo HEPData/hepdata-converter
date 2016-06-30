@@ -1,0 +1,151 @@
+dependent_variables:
+- header: {name: 'v2{8}'}
+  qualifiers:
+  - {name: CENTRALITY, units: pct, value: 5.0-10.0}
+  - {name: ETARAP, value: -2.5-2.5}
+  - {name: RE, value: PB PB --> CHARGED X}
+  - {name: SQRT(S)/NUCLEON, units: GeV, value: '2760.0'}
+  values:
+  - errors:
+    - {label: stat, symerror: 0.00012}
+    - {label: sys, symerror: 0.00166}
+    value: 0.025981
+  - errors:
+    - {label: stat, symerror: 0.000108}
+    - {label: sys, symerror: 0.0018}
+    value: 0.030512
+  - errors:
+    - {label: stat, symerror: 0.000141}
+    - {label: sys, symerror: 0.00192}
+    value: 0.035375
+  - errors:
+    - {label: stat, symerror: 0.00013}
+    - {label: sys, symerror: 0.00197}
+    value: 0.039813
+  - errors:
+    - {label: stat, symerror: 0.000154}
+    - {label: sys, symerror: 0.002}
+    value: 0.044326
+  - errors:
+    - {label: stat, symerror: 0.000179}
+    - {label: sys, symerror: 0.00198}
+    value: 0.048329
+  - errors:
+    - {label: stat, symerror: 0.000149}
+    - {label: sys, symerror: 0.00196}
+    value: 0.052537
+  - errors:
+    - {label: stat, symerror: 0.000204}
+    - {label: sys, symerror: 0.00167}
+    value: 0.055882
+  - errors:
+    - {label: stat, symerror: 0.000183}
+    - {label: sys, symerror: 0.00177}
+    value: 0.059126
+  - errors:
+    - {label: stat, symerror: 0.000223}
+    - {label: sys, symerror: 0.00187}
+    value: 0.06238
+  - errors:
+    - {label: stat, symerror: 0.000297}
+    - {label: sys, symerror: 0.00197}
+    value: 0.065736
+  - errors:
+    - {label: stat, symerror: 0.000184}
+    - {label: sys, symerror: 0.00209}
+    value: 0.069855
+  - errors:
+    - {label: stat, symerror: 0.000211}
+    - {label: sys, symerror: 0.00228}
+    value: 0.076362
+  - errors:
+    - {label: stat, symerror: 0.000228}
+    - {label: sys, symerror: 0.00251}
+    value: 0.083992
+  - errors:
+    - {label: stat, symerror: 0.000419}
+    - {label: sys, symerror: 0.00268}
+    value: 0.089603
+  - errors:
+    - {label: stat, symerror: 0.00069}
+    - {label: sys, symerror: 0.00278}
+    value: 0.093011
+  - errors:
+    - {label: stat, symerror: 0.000835}
+    - {label: sys, symerror: 0.00289}
+    value: 0.096631
+  - errors:
+    - {label: stat, symerror: 0.00118}
+    - {label: sys, symerror: 0.00287}
+    value: 0.096029
+  - errors:
+    - {label: stat, symerror: 0.00163}
+    - {label: sys, symerror: 0.00276}
+    value: 0.092241
+  - errors:
+    - {label: stat, symerror: 0.00255}
+    - {label: sys, symerror: 0.0026}
+    value: 0.086893
+  - errors:
+    - {label: stat, symerror: 0.00186}
+    - {label: sys, symerror: 0.00223}
+    value: 0.074539
+  - errors:
+    - {label: stat, symerror: 0.00322}
+    - {label: sys, symerror: 0.00152}
+    value: 0.050808
+  - errors:
+    - {label: stat, symerror: 0.00648}
+    - {label: sys, symerror: 0.00141}
+    value: 0.047324
+  - errors:
+    - {label: stat, symerror: 0.0109}
+    - {label: sys, symerror: 0.000962}
+    value: 0.032192
+  - errors:
+    - {label: stat, symerror: 0.0124}
+    - {label: sys, symerror: 0.000236}
+    value: 0.0079099
+  - errors:
+    - {label: stat, symerror: 0.0164}
+    - {label: sys, symerror: 0.000408}
+    value: 0.013644
+  - errors:
+    - {label: stat, symerror: 0.0329}
+    - {label: sys, symerror: 0.00278}
+    value: 0.092818
+  - errors:
+    - {label: stat, symerror: 0.0373}
+    - {label: sys, symerror: 0.00091}
+    value: 0.030434
+independent_variables:
+- header: {name: PT, units: GEV}
+  values:
+  - {high: 0.6, low: 0.5, value: 0.553}
+  - {high: 0.7, low: 0.6, value: 0.649}
+  - {high: 0.8, low: 0.7, value: 0.749}
+  - {high: 0.9, low: 0.8, value: 0.849}
+  - {high: 1.0, low: 0.9, value: 0.948}
+  - {high: 1.1, low: 1.0, value: 1.048}
+  - {high: 1.2, low: 1.1, value: 1.148}
+  - {high: 1.3, low: 1.2, value: 1.248}
+  - {high: 1.4, low: 1.3, value: 1.348}
+  - {high: 1.5, low: 1.4, value: 1.448}
+  - {high: 1.6, low: 1.5, value: 1.548}
+  - {high: 1.8, low: 1.6, value: 1.693}
+  - {high: 2.1, low: 1.8, value: 1.935}
+  - {high: 2.4, low: 2.1, value: 2.235}
+  - {high: 2.7, low: 2.4, value: 2.535}
+  - {high: 3.0, low: 2.7, value: 2.836}
+  - {high: 3.5, low: 3.0, value: 3.212}
+  - {high: 4.0, low: 3.5, value: 3.715}
+  - {high: 4.5, low: 4.0, value: 4.218}
+  - {high: 5.0, low: 4.5, value: 4.722}
+  - {high: 6.0, low: 5.0, value: 5.41}
+  - {high: 8.0, low: 6.0, value: 6.753}
+  - {high: 10.0, low: 8.0, value: 8.821}
+  - {high: 12.0, low: 10.0, value: 10.856}
+  - {high: 14.0, low: 12.0, value: 12.885}
+  - {high: 16.0, low: 14.0, value: 14.903}
+  - {high: 18.0, low: 16.0, value: 16.897}
+  - {high: 20.0, low: 18.0, value: 18.933}

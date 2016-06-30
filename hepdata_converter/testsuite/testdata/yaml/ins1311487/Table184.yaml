@@ -1,0 +1,76 @@
+dependent_variables:
+- header: {name: F(v3)}
+  qualifiers:
+  - {name: ETARAP, value: -2.5-2.5}
+  - {name: PT, units: GEV, value: 0.5-20}
+  - {name: RE, value: PB PB --> CHARGED X}
+  - {name: SQRT(S)/NUCLEON, units: GeV, value: '2760.0'}
+  values:
+  - errors:
+    - {label: stat, symerror: 0.313}
+    - {label: sys, symerror: 0.0397}
+    value: 0.66289
+  - errors:
+    - {label: stat, symerror: 0.0734}
+    - {label: sys, symerror: 0.0412}
+    value: 0.6891
+  - errors:
+    - {label: stat, symerror: 0.0555}
+    - {label: sys, symerror: 0.0419}
+    value: 0.70159
+  - errors:
+    - {label: stat, symerror: 0.0416}
+    - {label: sys, symerror: 0.0419}
+    value: 0.70318
+  - errors:
+    - {label: stat, symerror: 0.0439}
+    - {label: sys, symerror: 0.045}
+    value: 0.75541
+  - errors:
+    - {label: stat, symerror: 0.0384}
+    - {label: sys, symerror: 0.0444}
+    value: 0.74577
+  - errors:
+    - {label: stat, symerror: 0.0325}
+    - {label: sys, symerror: 0.0448}
+    value: 0.75438
+  - errors:
+    - {label: stat, symerror: 0.0349}
+    - {label: sys, symerror: 0.0463}
+    value: 0.78016
+  - errors:
+    - {label: stat, symerror: 0.0412}
+    - {label: sys, symerror: 0.0463}
+    value: 0.78014
+  - errors:
+    - {label: stat, symerror: 0.0416}
+    - {label: sys, symerror: 0.0454}
+    value: 0.76588
+  - errors:
+    - {label: stat, symerror: 0.0738}
+    - {label: sys, symerror: 0.045}
+    value: 0.75918
+  - errors:
+    - {label: stat, symerror: 0.123}
+    - {label: sys, symerror: 0.046}
+    value: 0.77693
+  - errors:
+    - {label: stat, symerror: 0.168}
+    - {label: sys, symerror: 0.0495}
+    value: 0.83617
+independent_variables:
+- header: {name: MEAN(Npart)}
+  values:
+  - {value: 46.1}
+  - {value: 59.9}
+  - {value: 76.1}
+  - {value: 95.0}
+  - {value: 117.0}
+  - {value: 142.0}
+  - {value: 170.0}
+  - {value: 203.0}
+  - {value: 239.5}
+  - {value: 281.9}
+  - {value: 330.3}
+  - {value: 372.533}
+  - {value: 396.0}

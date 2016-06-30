@@ -1,0 +1,81 @@
+dependent_variables:
+- header: {name: 'v3{2}'}
+  qualifiers:
+  - {name: ETARAP, value: -2.5-2.5}
+  - {name: PT, units: GEV, value: 0.5-20}
+  - {name: RE, value: PB PB --> CHARGED X}
+  - {name: SQRT(S)/NUCLEON, units: GeV, value: '2760.0'}
+  values:
+  - errors:
+    - {label: stat, symerror: 5.74e-05}
+    - {label: sys, symerror: 0.000968}
+    value: 0.043986
+  - errors:
+    - {label: stat, symerror: 6.96e-05}
+    - {label: sys, symerror: 0.00132}
+    value: 0.044005
+  - errors:
+    - {label: stat, symerror: 5.22e-05}
+    - {label: sys, symerror: 0.00127}
+    value: 0.044822
+  - errors:
+    - {label: stat, symerror: 3.75e-05}
+    - {label: sys, symerror: 0.000584}
+    value: 0.04509
+  - errors:
+    - {label: stat, symerror: 3.77e-05}
+    - {label: sys, symerror: 0.000616}
+    value: 0.04496
+  - errors:
+    - {label: stat, symerror: 3.19e-05}
+    - {label: sys, symerror: 0.000627}
+    value: 0.044173
+  - errors:
+    - {label: stat, symerror: 2.63e-05}
+    - {label: sys, symerror: 0.00067}
+    value: 0.043061
+  - errors:
+    - {label: stat, symerror: 2.43e-05}
+    - {label: sys, symerror: 0.000936}
+    value: 0.041466
+  - errors:
+    - {label: stat, symerror: 2.28e-05}
+    - {label: sys, symerror: 0.000814}
+    value: 0.039567
+  - errors:
+    - {label: stat, symerror: 2.51e-05}
+    - {label: sys, symerror: 0.0013}
+    value: 0.037426
+  - errors:
+    - {label: stat, symerror: 2.16e-05}
+    - {label: sys, symerror: 0.00115}
+    value: 0.034888
+  - errors:
+    - {label: stat, symerror: 2.01e-05}
+    - {label: sys, symerror: 0.00117}
+    value: 0.031774
+  - errors:
+    - {label: stat, symerror: 2.0e-05}
+    - {label: sys, symerror: 0.00109}
+    value: 0.028554
+  - errors:
+    - {label: stat, symerror: 2.21e-05}
+    - {label: sys, symerror: 0.0012}
+    value: 0.025637
+independent_variables:
+- header: {name: MEAN(Npart)}
+  values:
+  - {value: 22.6}
+  - {value: 46.1}
+  - {value: 59.9}
+  - {value: 76.1}
+  - {value: 95.0}
+  - {value: 117.0}
+  - {value: 142.0}
+  - {value: 170.0}
+  - {value: 203.0}
+  - {value: 239.5}
+  - {value: 281.9}
+  - {value: 330.3}
+  - {value: 372.533}
+  - {value: 396.0}

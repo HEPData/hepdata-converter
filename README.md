@@ -200,3 +200,12 @@ $ hepdata-converter --output-format foo /path/to/input /path/to/output
 
 **WARNING**: it is developers responsibility to be able to handle
 ```data_out``` in ```def write(self, data_in, data_out, *args, **kwargs):``` regardless whether it is string (path) or filelike object
+
+
+### Running Tests
+
+Simply run
+
+```
+coverage run -m unittest discover hepdata_converter/testsuite 'test_*'
+```

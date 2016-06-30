@@ -1,0 +1,76 @@
+dependent_variables:
+- header: {name: 'v2{6}/v2{4}'}
+  qualifiers:
+  - {name: ETARAP, value: -2.5-2.5}
+  - {name: PT, units: GEV, value: 0.5-20}
+  - {name: RE, value: PB PB --> CHARGED X}
+  - {name: SQRT(S)/NUCLEON, units: GeV, value: '2760.0'}
+  values:
+  - errors:
+    - {label: stat, symerror: 0.0262}
+    - {label: sys, symerror: 0.113}
+    value: 0.99391
+  - errors:
+    - {label: stat, symerror: 0.000866}
+    - {label: sys, symerror: 0.0126}
+    value: 0.97918
+  - errors:
+    - {label: stat, symerror: 0.000573}
+    - {label: sys, symerror: 0.00706}
+    value: 0.98259
+  - errors:
+    - {label: stat, symerror: 0.000416}
+    - {label: sys, symerror: 0.00699}
+    value: 0.98755
+  - errors:
+    - {label: stat, symerror: 0.000196}
+    - {label: sys, symerror: 0.00581}
+    value: 0.9909
+  - errors:
+    - {label: stat, symerror: 0.000181}
+    - {label: sys, symerror: 0.00437}
+    value: 0.99359
+  - errors:
+    - {label: stat, symerror: 0.000151}
+    - {label: sys, symerror: 0.00551}
+    value: 0.9945
+  - errors:
+    - {label: stat, symerror: 0.000137}
+    - {label: sys, symerror: 0.00364}
+    value: 0.99601
+  - errors:
+    - {label: stat, symerror: 0.00013}
+    - {label: sys, symerror: 0.00616}
+    value: 0.99636
+  - errors:
+    - {label: stat, symerror: 0.000147}
+    - {label: sys, symerror: 0.00627}
+    value: 0.99602
+  - errors:
+    - {label: stat, symerror: 0.000181}
+    - {label: sys, symerror: 0.00293}
+    value: 0.99559
+  - errors:
+    - {label: stat, symerror: 0.000698}
+    - {label: sys, symerror: 0.00473}
+    value: 0.99242
+  - errors:
+    - {label: stat, symerror: 0.0138}
+    - {label: sys, symerror: 0.105}
+    value: 0.98003
+independent_variables:
+- header: {name: MEAN(Npart)}
+  values:
+  - {value: 22.6}
+  - {value: 46.1}
+  - {value: 59.9}
+  - {value: 76.1}
+  - {value: 95.0}
+  - {value: 117.0}
+  - {value: 142.0}
+  - {value: 170.0}
+  - {value: 203.0}
+  - {value: 239.5}
+  - {value: 281.9}
+  - {value: 330.3}
+  - {value: 372.533}

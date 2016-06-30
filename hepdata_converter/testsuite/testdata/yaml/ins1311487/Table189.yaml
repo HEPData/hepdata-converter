@@ -1,0 +1,76 @@
+dependent_variables:
+- header: {name: 'v2{8}'}
+  qualifiers:
+  - {name: ETARAP, value: -1.0-1.0}
+  - {name: PT, units: GEV, value: 0.5-20}
+  - {name: RE, value: PB PB --> CHARGED X}
+  - {name: SQRT(S)/NUCLEON, units: GeV, value: '2760.0'}
+  values:
+  - errors:
+    - {label: stat, symerror: 0.00661}
+    - {label: sys, symerror: 0.00535}
+    value: 0.096003
+  - errors:
+    - {label: stat, symerror: 0.000256}
+    - {label: sys, symerror: 0.0033}
+    value: 0.10556
+  - errors:
+    - {label: stat, symerror: 0.000175}
+    - {label: sys, symerror: 0.00281}
+    value: 0.10994
+  - errors:
+    - {label: stat, symerror: 0.000132}
+    - {label: sys, symerror: 0.00245}
+    value: 0.11269
+  - errors:
+    - {label: stat, symerror: 9.16e-05}
+    - {label: sys, symerror: 0.00288}
+    value: 0.11382
+  - errors:
+    - {label: stat, symerror: 7.47e-05}
+    - {label: sys, symerror: 0.00179}
+    value: 0.11248
+  - errors:
+    - {label: stat, symerror: 6.23e-05}
+    - {label: sys, symerror: 0.00217}
+    value: 0.10867
+  - errors:
+    - {label: stat, symerror: 5.85e-05}
+    - {label: sys, symerror: 0.00181}
+    value: 0.10241
+  - errors:
+    - {label: stat, symerror: 4.83e-05}
+    - {label: sys, symerror: 0.00194}
+    value: 0.09354
+  - errors:
+    - {label: stat, symerror: 5.47e-05}
+    - {label: sys, symerror: 0.00216}
+    value: 0.081493
+  - errors:
+    - {label: stat, symerror: 5.31e-05}
+    - {label: sys, symerror: 0.00136}
+    value: 0.066217
+  - errors:
+    - {label: stat, symerror: 5.88e-05}
+    - {label: sys, symerror: 0.00126}
+    value: 0.046062
+  - errors:
+    - {label: stat, symerror: 0.00391}
+    - {label: sys, symerror: 0.00126}
+    value: 0.025677
+independent_variables:
+- header: {name: MEAN(Npart)}
+  values:
+  - {value: 22.6}
+  - {value: 46.1}
+  - {value: 59.9}
+  - {value: 76.1}
+  - {value: 95.0}
+  - {value: 117.0}
+  - {value: 142.0}
+  - {value: 170.0}
+  - {value: 203.0}
+  - {value: 239.5}
+  - {value: 281.9}
+  - {value: 330.3}
+  - {value: 372.533}

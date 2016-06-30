@@ -1,0 +1,76 @@
+dependent_variables:
+- header: {name: 'v2{8}/v2{4}'}
+  qualifiers:
+  - {name: ETA, value: -1.0- 1.0}
+  - {name: PT, value: 0.5-20 GeV}
+  - {name: RE, value: PB PB --> CHARGED X}
+  - {name: SQRT(S)/NUCLEON, units: GeV, value: '2760.0'}
+  values:
+  - errors:
+    - {label: stat, symerror: 0.0048}
+    - {label: sys, symerror: 0.0809}
+    value: 0.95731
+  - errors:
+    - {label: stat, symerror: 0.00175}
+    - {label: sys, symerror: 0.0312}
+    value: 0.97388
+  - errors:
+    - {label: stat, symerror: 0.00101}
+    - {label: sys, symerror: 0.0248}
+    value: 0.97843
+  - errors:
+    - {label: stat, symerror: 0.000625}
+    - {label: sys, symerror: 0.0322}
+    value: 0.98314
+  - errors:
+    - {label: stat, symerror: 0.000376}
+    - {label: sys, symerror: 0.033}
+    value: 0.98672
+  - errors:
+    - {label: stat, symerror: 0.000245}
+    - {label: sys, symerror: 0.0267}
+    value: 0.99065
+  - errors:
+    - {label: stat, symerror: 0.000217}
+    - {label: sys, symerror: 0.0299}
+    value: 0.99183
+  - errors:
+    - {label: stat, symerror: 0.00023}
+    - {label: sys, symerror: 0.0275}
+    value: 0.99336
+  - errors:
+    - {label: stat, symerror: 0.000167}
+    - {label: sys, symerror: 0.0199}
+    value: 0.99435
+  - errors:
+    - {label: stat, symerror: 0.000174}
+    - {label: sys, symerror: 0.0412}
+    value: 0.99142
+  - errors:
+    - {label: stat, symerror: 0.000379}
+    - {label: sys, symerror: 0.0246}
+    value: 0.9925
+  - errors:
+    - {label: stat, symerror: 0.000967}
+    - {label: sys, symerror: 0.0288}
+    value: 0.987
+  - errors:
+    - {label: stat, symerror: 0.0216}
+    - {label: sys, symerror: 0.0664}
+    value: 1.0124
+independent_variables:
+- header: {name: NPART}
+  values:
+  - {value: 22.6}
+  - {value: 46.1}
+  - {value: 59.9}
+  - {value: 76.1}
+  - {value: 95.0}
+  - {value: 117.0}
+  - {value: 142.0}
+  - {value: 170.0}
+  - {value: 203.0}
+  - {value: 239.5}
+  - {value: 281.9}
+  - {value: 330.3}
+  - {value: 372.533}

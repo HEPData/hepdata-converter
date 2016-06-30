@@ -1,0 +1,76 @@
+dependent_variables:
+- header: {name: 'v4{EP}'}
+  qualifiers:
+  - {name: ETARAP, value: -2.5-2.5}
+  - {name: PT, units: GEV, value: 0.5-20}
+  - {name: RE, value: PB PB --> CHARGED X}
+  - {name: SQRT(S)/NUCLEON, units: GeV, value: '2760.0'}
+  values:
+  - errors:
+    - {label: stat, symerror: 0.00571}
+    - {label: sys, symerror: 0.00604}
+    value: 0.019284
+  - errors:
+    - {label: stat, symerror: 0.0039}
+    - {label: sys, symerror: 0.00505}
+    value: 0.022405
+  - errors:
+    - {label: stat, symerror: 0.00224}
+    - {label: sys, symerror: 0.000552}
+    value: 0.023448
+  - errors:
+    - {label: stat, symerror: 0.00154}
+    - {label: sys, symerror: 0.00179}
+    value: 0.022548
+  - errors:
+    - {label: stat, symerror: 0.00119}
+    - {label: sys, symerror: 0.00249}
+    value: 0.022469
+  - errors:
+    - {label: stat, symerror: 0.000944}
+    - {label: sys, symerror: 0.00108}
+    value: 0.02163
+  - errors:
+    - {label: stat, symerror: 0.000783}
+    - {label: sys, symerror: 0.000599}
+    value: 0.020885
+  - errors:
+    - {label: stat, symerror: 0.000662}
+    - {label: sys, symerror: 0.000289}
+    value: 0.019436
+  - errors:
+    - {label: stat, symerror: 0.000575}
+    - {label: sys, symerror: 0.000318}
+    value: 0.018644
+  - errors:
+    - {label: stat, symerror: 0.000506}
+    - {label: sys, symerror: 0.000661}
+    value: 0.017453
+  - errors:
+    - {label: stat, symerror: 0.000446}
+    - {label: sys, symerror: 0.000488}
+    value: 0.016054
+  - errors:
+    - {label: stat, symerror: 0.000534}
+    - {label: sys, symerror: 0.000524}
+    value: 0.014394
+  - errors:
+    - {label: stat, symerror: 0.000636}
+    - {label: sys, symerror: 0.0003}
+    value: 0.013066
+independent_variables:
+- header: {name: MEAN(Npart)}
+  values:
+  - {value: 46.1}
+  - {value: 59.9}
+  - {value: 76.1}
+  - {value: 95.0}
+  - {value: 117.0}
+  - {value: 142.0}
+  - {value: 170.0}
+  - {value: 203.0}
+  - {value: 239.5}
+  - {value: 281.9}
+  - {value: 330.3}
+  - {value: 372.533}
+  - {value: 396.0}

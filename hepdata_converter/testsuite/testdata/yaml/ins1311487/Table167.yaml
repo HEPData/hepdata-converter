@@ -1,0 +1,76 @@
+dependent_variables:
+- header: {name: 'v3{4}'}
+  qualifiers:
+  - {name: ETARAP, value: -2.5-2.5}
+  - {name: PT, units: GEV, value: 0.5-20}
+  - {name: RE, value: PB PB --> CHARGED X}
+  - {name: SQRT(S)/NUCLEON, units: GeV, value: '2760.0'}
+  values:
+  - errors:
+    - {label: stat, symerror: 0.0118}
+    - {label: sys, symerror: 0.000773}
+    value: 0.023143
+  - errors:
+    - {label: stat, symerror: 0.00293}
+    - {label: sys, symerror: 0.000784}
+    value: 0.023487
+  - errors:
+    - {label: stat, symerror: 0.00239}
+    - {label: sys, symerror: 0.000804}
+    value: 0.024088
+  - errors:
+    - {label: stat, symerror: 0.00182}
+    - {label: sys, symerror: 0.000814}
+    value: 0.02436
+  - errors:
+    - {label: stat, symerror: 0.00213}
+    - {label: sys, symerror: 0.00073}
+    value: 0.021872
+  - errors:
+    - {label: stat, symerror: 0.0018}
+    - {label: sys, symerror: 0.000735}
+    value: 0.022021
+  - errors:
+    - {label: stat, symerror: 0.0015}
+    - {label: sys, symerror: 0.000701}
+    value: 0.02099
+  - errors:
+    - {label: stat, symerror: 0.00162}
+    - {label: sys, symerror: 0.000631}
+    value: 0.018902
+  - errors:
+    - {label: stat, symerror: 0.00182}
+    - {label: sys, symerror: 0.000599}
+    value: 0.017932
+  - errors:
+    - {label: stat, symerror: 0.00168}
+    - {label: sys, symerror: 0.000579}
+    value: 0.01733
+  - errors:
+    - {label: stat, symerror: 0.00268}
+    - {label: sys, symerror: 0.000535}
+    value: 0.01601
+  - errors:
+    - {label: stat, symerror: 0.00412}
+    - {label: sys, symerror: 0.000459}
+    value: 0.013733
+  - errors:
+    - {label: stat, symerror: 0.00572}
+    - {label: sys, symerror: 0.000347}
+    value: 0.010387
+independent_variables:
+- header: {name: MEAN(Npart)}
+  values:
+  - {value: 46.1}
+  - {value: 59.9}
+  - {value: 76.1}
+  - {value: 95.0}
+  - {value: 117.0}
+  - {value: 142.0}
+  - {value: 170.0}
+  - {value: 203.0}
+  - {value: 239.5}
+  - {value: 281.9}
+  - {value: 330.3}
+  - {value: 372.533}
+  - {value: 396.0}

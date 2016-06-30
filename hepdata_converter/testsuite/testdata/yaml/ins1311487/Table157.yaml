@@ -1,0 +1,61 @@
+dependent_variables:
+- header: {name: 'v4{4}'}
+  qualifiers:
+  - {name: CENTRALITY, units: pct, value: 0.0-25.0}
+  - {name: PT, units: GEV, value: 0.5-20}
+  - {name: RE, value: PB PB --> CHARGED X}
+  - {name: SQRT(S)/NUCLEON, units: GeV, value: '2760.0'}
+  values:
+  - errors:
+    - {label: stat, symerror: 0.00238}
+    - {label: sys, symerror: 0.00113}
+    value: 0.0084841
+  - errors:
+    - {label: stat, symerror: 0.00223}
+    - {label: sys, symerror: 0.000948}
+    value: 0.0071057
+  - errors:
+    - {label: stat, symerror: 0.00194}
+    - {label: sys, symerror: 0.00137}
+    value: 0.010285
+  - errors:
+    - {label: stat, symerror: 0.0019}
+    - {label: sys, symerror: 0.00114}
+    value: 0.0085394
+  - errors:
+    - {label: stat, symerror: 0.00186}
+    - {label: sys, symerror: 0.00132}
+    value: 0.0099157
+  - errors:
+    - {label: stat, symerror: 0.0018}
+    - {label: sys, symerror: 0.00103}
+    value: 0.0077359
+  - errors:
+    - {label: stat, symerror: 0.00176}
+    - {label: sys, symerror: 0.00107}
+    value: 0.0080552
+  - errors:
+    - {label: stat, symerror: 0.00198}
+    - {label: sys, symerror: 0.00104}
+    value: 0.0078251
+  - errors:
+    - {label: stat, symerror: 0.00195}
+    - {label: sys, symerror: 0.00113}
+    value: 0.0084709
+  - errors:
+    - {label: stat, symerror: 0.00212}
+    - {label: sys, symerror: 0.00139}
+    value: 0.010453
+independent_variables:
+- header: {name: ETARAP}
+  values:
+  - {high: -2.0, low: -2.5}
+  - {high: -1.5, low: -2.0}
+  - {high: -1.0, low: -1.5}
+  - {high: -0.5, low: -1.0}
+  - {high: 0.0, low: -0.5}
+  - {high: 0.5, low: 0.0}
+  - {high: 1.0, low: 0.5}
+  - {high: 1.5, low: 1.0}
+  - {high: 2.0, low: 1.5}
+  - {high: 2.5, low: 2.0}

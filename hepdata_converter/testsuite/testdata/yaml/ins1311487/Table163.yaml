@@ -1,0 +1,76 @@
+dependent_variables:
+- header: {name: 'v2{8}/v2{4}'}
+  qualifiers:
+  - {name: ETARAP, value: -2.5-2.5}
+  - {name: PT, units: GEV, value: 0.5-20}
+  - {name: RE, value: PB PB --> CHARGED X}
+  - {name: SQRT(S)/NUCLEON, units: GeV, value: '2760.0'}
+  values:
+  - errors:
+    - {label: stat, symerror: 0.0103}
+    - {label: sys, symerror: 0.0549}
+    value: 0.94991
+  - errors:
+    - {label: stat, symerror: 0.00106}
+    - {label: sys, symerror: 0.0216}
+    value: 0.97382
+  - errors:
+    - {label: stat, symerror: 0.000609}
+    - {label: sys, symerror: 0.023}
+    value: 0.97875
+  - errors:
+    - {label: stat, symerror: 0.000422}
+    - {label: sys, symerror: 0.0256}
+    value: 0.98429
+  - errors:
+    - {label: stat, symerror: 0.000202}
+    - {label: sys, symerror: 0.026}
+    value: 0.98796
+  - errors:
+    - {label: stat, symerror: 0.000182}
+    - {label: sys, symerror: 0.0248}
+    value: 0.99096
+  - errors:
+    - {label: stat, symerror: 0.000152}
+    - {label: sys, symerror: 0.0228}
+    value: 0.99222
+  - errors:
+    - {label: stat, symerror: 0.000141}
+    - {label: sys, symerror: 0.0249}
+    value: 0.99354
+  - errors:
+    - {label: stat, symerror: 0.000137}
+    - {label: sys, symerror: 0.0195}
+    value: 0.99451
+  - errors:
+    - {label: stat, symerror: 0.000142}
+    - {label: sys, symerror: 0.0387}
+    value: 0.99202
+  - errors:
+    - {label: stat, symerror: 0.000189}
+    - {label: sys, symerror: 0.0203}
+    value: 0.99349
+  - errors:
+    - {label: stat, symerror: 0.000666}
+    - {label: sys, symerror: 0.0271}
+    value: 0.98923
+  - errors:
+    - {label: stat, symerror: 0.0118}
+    - {label: sys, symerror: 0.0836}
+    value: 0.97844
+independent_variables:
+- header: {name: MEAN(Npart)}
+  values:
+  - {value: 22.6}
+  - {value: 46.1}
+  - {value: 59.9}
+  - {value: 76.1}
+  - {value: 95.0}
+  - {value: 117.0}
+  - {value: 142.0}
+  - {value: 170.0}
+  - {value: 203.0}
+  - {value: 239.5}
+  - {value: 281.9}
+  - {value: 330.3}
+  - {value: 372.533}

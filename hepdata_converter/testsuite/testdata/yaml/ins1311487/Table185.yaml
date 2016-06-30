@@ -1,0 +1,41 @@
+dependent_variables:
+- header: {name: F(v4)}
+  qualifiers:
+  - {name: ETARAP, value: -2.5-2.5}
+  - {name: PT, units: GEV, value: 0.5-20}
+  - {name: RE, value: PB PB --> CHARGED X}
+  - {name: SQRT(S)/NUCLEON, units: GeV, value: '2760.0'}
+  values:
+  - errors:
+    - {label: stat, symerror: 0.238}
+    - {label: sys, symerror: 0.0961}
+    value: 0.80499
+  - errors:
+    - {label: stat, symerror: 0.127}
+    - {label: sys, symerror: 0.0978}
+    value: 0.81639
+  - errors:
+    - {label: stat, symerror: 0.111}
+    - {label: sys, symerror: 0.0917}
+    value: 0.7634
+  - errors:
+    - {label: stat, symerror: 0.0915}
+    - {label: sys, symerror: 0.0872}
+    value: 0.72328
+  - errors:
+    - {label: stat, symerror: 0.097}
+    - {label: sys, symerror: 0.0835}
+    value: 0.69081
+  - errors:
+    - {label: stat, symerror: 0.4}
+    - {label: sys, symerror: 0.0825}
+    value: 0.68068
+independent_variables:
+- header: {name: MEAN(Npart)}
+  values:
+  - {value: 203.0}
+  - {value: 239.5}
+  - {value: 281.9}
+  - {value: 330.3}
+  - {value: 372.533}
+  - {value: 396.0}

@@ -1,0 +1,3532 @@
+---
+additional_resources:
+- {description: web page with auxiliary material, location: 'https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/HION-2012-04/'}
+comment: |
+  CERN-LHC. The measurements are performed for charged particles with transverse momenta 0.5<pT<20 GeV and in the pseudorapidity range |eta|<2.5. The anisotropy is characterized by the Fourier coefficients, vn, of the charged-particle azimuthal angle distribution for n = 2-4. The Fourier coefficients are evaluated using multi-particle cumulants calculated with the generating function method. Results on the transverse momentum, pseudorapidity and centrality dependence of the vn coefficients are presented. The elliptic flow, v2, is obtained from the two-, four-, six- and eight-particle cumulants while higher-order coefficients, v3 and v4, are determined with two- and four-particle cumulants. A comparison to vn measurements obtained using different analysis methods and previously reported by the LHC experiments is also shown. Results of measurements of flow fluctuations evaluated with multi-particle cumulants are shown as a function of transverse momentum and the collision centrality.
+dateupdated: 12/02/2016 18:45:16
+modifications:
+- {action: Encoded, date: 27 OCT 2014, who: Adam Trzupek (ATLAS)}
+record_ids:
+- {id: 1311487, type: inspire}
+- {id: 6284, type: red}
+
+---
+data_file: Table1.yaml
+description: |
+  The second flow harmonic measured with the two-particle cumulants as a function of transverse momentum in centrality bin 0-2%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 1
+
+---
+data_file: Table2.yaml
+description: |
+  The second flow harmonic measured with the two-particle cumulants as a function of transverse momentum in centrality bin 2-5%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 2
+
+---
+data_file: Table3.yaml
+description: |
+  The second flow harmonic measured with the two-particle cumulants as a function of transverse momentum in centrality bin 5-10%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 3
+
+---
+data_file: Table4.yaml
+description: |
+  The second flow harmonic measured with the two-particle cumulants as a function of transverse momentum in centrality bin 10-15%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 4
+
+---
+data_file: Table5.yaml
+description: |
+  The second flow harmonic measured with the two-particle cumulants as a function of transverse momentum in centrality bin 15-20%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 5
+
+---
+data_file: Table6.yaml
+description: |
+  The second flow harmonic measured with the two-particle cumulants as a function of transverse momentum in centrality bin 20-25%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 6
+
+---
+data_file: Table7.yaml
+description: |
+  The second flow harmonic measured with the two-particle cumulants as a function of transverse momentum in centrality bin 25-30%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 7
+
+---
+data_file: Table8.yaml
+description: |
+  The second flow harmonic measured with the two-particle cumulants as a function of transverse momentum in centrality bin 30-35%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 8
+
+---
+data_file: Table9.yaml
+description: |
+  The second flow harmonic measured with the two-particle cumulants as a function of transverse momentum in centrality bin 35-40%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 9
+
+---
+data_file: Table10.yaml
+description: |
+  The second flow harmonic measured with the two-particle cumulants as a function of transverse momentum in centrality bin 40-45%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 10
+
+---
+data_file: Table11.yaml
+description: |
+  The second flow harmonic measured with the two-particle cumulants as a function of transverse momentum in centrality bin 45-50%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 11
+
+---
+data_file: Table12.yaml
+description: |
+  The second flow harmonic measured with the two-particle cumulants as a function of transverse momentum in centrality bin 50-55%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 12
+
+---
+data_file: Table13.yaml
+description: |
+  The second flow harmonic measured with the two-particle cumulants as a function of transverse momentum in centrality bin 55-60%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 13
+
+---
+data_file: Table14.yaml
+description: |
+  The second flow harmonic measured with the two-particle cumulants as a function of transverse momentum in centrality bin 60-80%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 14
+
+---
+data_file: Table15.yaml
+description: |
+  The second flow harmonic measured with the Event Plane method as a function of transverse momentum in centrality bin 0-2%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 15
+
+---
+data_file: Table16.yaml
+description: |
+  The second flow harmonic measured with the Event Plane method as a function of transverse momentum in centrality bin 2-5%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 16
+
+---
+data_file: Table17.yaml
+description: |
+  The second flow harmonic measured with the Event Plane method as a function of transverse momentum in centrality bin 5-10%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 17
+
+---
+data_file: Table18.yaml
+description: |
+  The second flow harmonic measured with the Event Plane method as a function of transverse momentum in centrality bin 10-15%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 18
+
+---
+data_file: Table19.yaml
+description: |
+  The second flow harmonic measured with the Event Plane method as a function of transverse momentum in centrality bin 15-20%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 19
+
+---
+data_file: Table20.yaml
+description: |
+  The second flow harmonic measured with the Event Plane method as a function of transverse momentum in centrality bin 20-25%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 20
+
+---
+data_file: Table21.yaml
+description: |
+  The second flow harmonic measured with the Event Plane method as a function of transverse momentum in centrality bin 25-30%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 21
+
+---
+data_file: Table22.yaml
+description: |
+  The second flow harmonic measured with the Event Plane method as a function of transverse momentum in centrality bin 30-35%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 22
+
+---
+data_file: Table23.yaml
+description: |
+  The second flow harmonic measured with the Event Plane method as a function of transverse momentum in centrality bin 35-40%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 23
+
+---
+data_file: Table24.yaml
+description: |
+  The second flow harmonic measured with the Event Plane method as a function of transverse momentum in centrality bin 40-45%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 24
+
+---
+data_file: Table25.yaml
+description: |
+  The second flow harmonic measured with the Event Plane method as a function of transverse momentum in centrality bin 45-50%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 25
+
+---
+data_file: Table26.yaml
+description: |
+  The second flow harmonic measured with the Event Plane method as a function of transverse momentum in centrality bin 50-55%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 26
+
+---
+data_file: Table27.yaml
+description: |
+  The second flow harmonic measured with the Event Plane method as a function of transverse momentum in centrality bin 55-60%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 27
+
+---
+data_file: Table28.yaml
+description: |
+  The second flow harmonic measured with the Event Plane method as a function of transverse momentum in centrality bin 60-80%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 28
+
+---
+data_file: Table29.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of transverse momentum in centrality bin 2-5%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 29
+
+---
+data_file: Table30.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of transverse momentum in centrality bin 5-10%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 30
+
+---
+data_file: Table31.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of transverse momentum in centrality bin 10-15%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 31
+
+---
+data_file: Table32.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of transverse momentum in centrality bin 15-20%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 32
+
+---
+data_file: Table33.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of transverse momentum in centrality bin 20-25%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 33
+
+---
+data_file: Table34.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of transverse momentum in centrality bin 25-30%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 34
+
+---
+data_file: Table35.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of transverse momentum in centrality bin 30-35%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 35
+
+---
+data_file: Table36.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of transverse momentum in centrality bin 35-40%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 36
+
+---
+data_file: Table37.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of transverse momentum in centrality bin 40-45%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 37
+
+---
+data_file: Table38.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of transverse momentum in centrality bin 45-50%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 38
+
+---
+data_file: Table39.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of transverse momentum in centrality bin 50-55%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 39
+
+---
+data_file: Table40.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of transverse momentum in centrality bin 55-60%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 40
+
+---
+data_file: Table41.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of transverse momentum in centrality bin 60-80%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 41
+
+---
+data_file: Table42.yaml
+description: |
+  The second flow harmonic measured with the six-particle cumulats as a function of transverse momentum in centrality bin 2-5%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 42
+
+---
+data_file: Table43.yaml
+description: |
+  The second flow harmonic measured with the six-particle cumulats as a function of transverse momentum in centrality bin 5-10%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 43
+
+---
+data_file: Table44.yaml
+description: |
+  The second flow harmonic measured with the six-particle cumulats as a function of transverse momentum in centrality bin 10-15%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 44
+
+---
+data_file: Table45.yaml
+description: |
+  The second flow harmonic measured with the six-particle cumulats as a function of transverse momentum in centrality bin 15-20%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 45
+
+---
+data_file: Table46.yaml
+description: |
+  The second flow harmonic measured with the six-particle cumulats as a function of transverse momentum in centrality bin 20-25%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 46
+
+---
+data_file: Table47.yaml
+description: |
+  The second flow harmonic measured with the six-particle cumulats as a function of transverse momentum in centrality bin 25-30%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 47
+
+---
+data_file: Table48.yaml
+description: |
+  The second flow harmonic measured with the six-particle cumulats as a function of transverse momentum in centrality bin 30-35%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 48
+
+---
+data_file: Table49.yaml
+description: |
+  The second flow harmonic measured with the six-particle cumulats as a function of transverse momentum in centrality bin 35-40%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 49
+
+---
+data_file: Table50.yaml
+description: |
+  The second flow harmonic measured with the six-particle cumulats as a function of transverse momentum in centrality bin 40-45%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 50
+
+---
+data_file: Table51.yaml
+description: |
+  The second flow harmonic measured with the six-particle cumulats as a function of transverse momentum in centrality bin 45-50%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 51
+
+---
+data_file: Table52.yaml
+description: |
+  The second flow harmonic measured with the six-particle cumulats as a function of transverse momentum in centrality bin 50-55%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 52
+
+---
+data_file: Table53.yaml
+description: |
+  The second flow harmonic measured with the six-particle cumulats as a function of transverse momentum in centrality bin 55-60%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 53
+
+---
+data_file: Table54.yaml
+description: |
+  The second flow harmonic measured with the six-particle cumulats as a function of transverse momentum in centrality bin 60-80%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 54
+
+---
+data_file: Table55.yaml
+description: |
+  The second flow harmonic measured with the eight-particle cumulats as a function of transverse momentum in centrality bin 2-5%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 55
+
+---
+data_file: Table56.yaml
+description: |
+  The second flow harmonic measured with the eight-particle cumulats as a function of transverse momentum in centrality bin 5-10%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 56
+
+---
+data_file: Table57.yaml
+description: |
+  The second flow harmonic measured with the eight-particle cumulats as a function of transverse momentum in centrality bin 10-15%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 57
+
+---
+data_file: Table58.yaml
+description: |
+  The second flow harmonic measured with the eight-particle cumulats as a function of transverse momentum in centrality bin 15-20%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 58
+
+---
+data_file: Table59.yaml
+description: |
+  The second flow harmonic measured with the eight-particle cumulats as a function of transverse momentum in centrality bin 20-25%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 59
+
+---
+data_file: Table60.yaml
+description: |
+  The second flow harmonic measured with the eight-particle cumulats as a function of transverse momentum in centrality bin 25-30%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 60
+
+---
+data_file: Table61.yaml
+description: |
+  The second flow harmonic measured with the eight-particle cumulats as a function of transverse momentum in centrality bin 30-35%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 61
+
+---
+data_file: Table62.yaml
+description: |
+  The second flow harmonic measured with the eight-particle cumulats as a function of transverse momentum in centrality bin 35-40%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 62
+
+---
+data_file: Table63.yaml
+description: |
+  The second flow harmonic measured with the eight-particle cumulats as a function of transverse momentum in centrality bin 40-45%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 63
+
+---
+data_file: Table64.yaml
+description: |
+  The second flow harmonic measured with the eight-particle cumulats as a function of transverse momentum in centrality bin 45-50%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 64
+
+---
+data_file: Table65.yaml
+description: |
+  The second flow harmonic measured with the eight-particle cumulats as a function of transverse momentum in centrality bin 50-55%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 65
+
+---
+data_file: Table66.yaml
+description: |
+  The second flow harmonic measured with the eight-particle cumulats as a function of transverse momentum in centrality bin 55-60%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 66
+
+---
+data_file: Table67.yaml
+description: |
+  The second flow harmonic measured with the eight-particle cumulats as a function of transverse momentum in centrality bin 60-80%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 3
+name: Table 67
+
+---
+data_file: Table68.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of transverse momentum in centrality bin 5-10%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 4a
+name: Table 68
+
+---
+data_file: Table69.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of transverse momentum in centrality bin 15-20%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 4a
+name: Table 69
+
+---
+data_file: Table70.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of transverse momentum in centrality bin 25-30%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 4a
+name: Table 70
+
+---
+data_file: Table71.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of transverse momentum in centrality bin 35-40%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 4a
+name: Table 71
+
+---
+data_file: Table72.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of transverse momentum in centrality bin 40-50%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 4a
+name: Table 72
+
+---
+data_file: Table73.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of transverse momentum in centrality bin 10-20%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 4b
+name: Table 73
+
+---
+data_file: Table74.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of transverse momentum in centrality bin 20-30%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 4b
+name: Table 74
+
+---
+data_file: Table75.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of transverse momentum in centrality bin 30-40%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 4b
+name: Table 75
+
+---
+data_file: Table76.yaml
+description: |
+  The triangular flow harmonic measured with the two-particle cumulats as a function of transverse momentum in centrality bin 0-25%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [V3]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 5a
+name: Table 76
+
+---
+data_file: Table77.yaml
+description: |
+  The triangular flow harmonic measured with the Event Plane method as a function of transverse momentum in centrality bin 0-25%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [V3]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 5a
+name: Table 77
+
+---
+data_file: Table78.yaml
+description: |
+  The triangular flow harmonic measured with the four-particle cumulats as a function of transverse momentum in centrality bin 0-25%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [V3]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 5a
+name: Table 78
+
+---
+data_file: Table79.yaml
+description: |
+  The triangular flow harmonic measured with the two-particle cumulats as a function of transverse momentum in centrality bin 25-60%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [V3]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 5a
+name: Table 79
+
+---
+data_file: Table80.yaml
+description: |
+  The triangular flow harmonic measured with the Event Plane method as a function of transverse momentum in centrality bin 25-60%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [V3]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 5a
+name: Table 80
+
+---
+data_file: Table81.yaml
+description: |
+  The triangular flow harmonic measured with the four-particle cumulats as a function of transverse momentum in centrality bin 25-60%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [V3]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 5a
+name: Table 81
+
+---
+data_file: Table82.yaml
+description: |
+  The quadrangular flow harmonic measured with the two-particle cumulats as a function of transverse momentum in centrality bin 0-25%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [V4]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 5b
+name: Table 82
+
+---
+data_file: Table83.yaml
+description: |
+  The quadrangular flow harmonic measured with the Event Plane method as a function of transverse momentum in centrality bin 0-25%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [V4]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 5b
+name: Table 83
+
+---
+data_file: Table84.yaml
+description: |
+  The quadrangular flow harmonic measured with the four-particle cumulats as a function of transverse momentum in centrality bin 0-25%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [V4]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 5b
+name: Table 84
+
+---
+data_file: Table85.yaml
+description: |
+  The second flow harmonic measured with the two-particle cumulants as a function of pseudorapidity in centrality bin 0-2%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 85
+
+---
+data_file: Table86.yaml
+description: |
+  The second flow harmonic measured with the two-particle cumulants as a function of pseudorapidity in centrality bin 2-5%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 86
+
+---
+data_file: Table87.yaml
+description: |
+  The second flow harmonic measured with the two-particle cumulants as a function of pseudorapidity in centrality bin 5-10%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 87
+
+---
+data_file: Table88.yaml
+description: |
+  The second flow harmonic measured with the two-particle cumulants as a function of pseudorapidity in centrality bin 10-15%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 88
+
+---
+data_file: Table89.yaml
+description: |
+  The second flow harmonic measured with the two-particle cumulants as a function of pseudorapidity in centrality bin 15-20%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 89
+
+---
+data_file: Table90.yaml
+description: |
+  The second flow harmonic measured with the two-particle cumulants as a function of pseudorapidity in centrality bin 20-25%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 90
+
+---
+data_file: Table91.yaml
+description: |
+  The second flow harmonic measured with the two-particle cumulants as a function of pseudorapidity in centrality bin 25-30%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 91
+
+---
+data_file: Table92.yaml
+description: |
+  The second flow harmonic measured with the two-particle cumulants as a function of pseudorapidity in centrality bin 30-35%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 92
+
+---
+data_file: Table93.yaml
+description: |
+  The second flow harmonic measured with the two-particle cumulants as a function of pseudorapidity in centrality bin 35-40%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 93
+
+---
+data_file: Table94.yaml
+description: |
+  The second flow harmonic measured with the two-particle cumulants as a function of pseudorapidity in centrality bin 40-45%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 94
+
+---
+data_file: Table95.yaml
+description: |
+  The second flow harmonic measured with the two-particle cumulants as a function of pseudorapidity in centrality bin 45-50%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 95
+
+---
+data_file: Table96.yaml
+description: |
+  The second flow harmonic measured with the two-particle cumulants as a function of pseudorapidity in centrality bin 50-55%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 96
+
+---
+data_file: Table97.yaml
+description: |
+  The second flow harmonic measured with the two-particle cumulants as a function of pseudorapidity in centrality bin 55-60%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 97
+
+---
+data_file: Table98.yaml
+description: |
+  The second flow harmonic measured with the two-particle cumulants as a function of pseudorapidity in centrality bin 60-80%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 98
+
+---
+data_file: Table99.yaml
+description: |
+  The second flow harmonic measured with the Event Plane method as a function of pseudorapidity in centrality bin 0-2%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 99
+
+---
+data_file: Table100.yaml
+description: |
+  The second flow harmonic measured with the Event Plane method as a function of pseudorapidity in centrality bin 2-5%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 100
+
+---
+data_file: Table101.yaml
+description: |
+  The second flow harmonic measured with the Event Plane method as a function of pseudorapidity in centrality bin 5-10%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 101
+
+---
+data_file: Table102.yaml
+description: |
+  The second flow harmonic measured with the Event Plane method as a function of pseudorapidity in centrality bin 10-15%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 102
+
+---
+data_file: Table103.yaml
+description: |
+  The second flow harmonic measured with the Event Plane method as a function of pseudorapidity in centrality bin 15-20%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 103
+
+---
+data_file: Table104.yaml
+description: |
+  The second flow harmonic measured with the Event Plane method as a function of pseudorapidity in centrality bin 20-25%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 104
+
+---
+data_file: Table105.yaml
+description: |
+  The second flow harmonic measured with the Event Plane method as a function of pseudorapidity in centrality bin 25-30%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 105
+
+---
+data_file: Table106.yaml
+description: |
+  The second flow harmonic measured with the Event Plane method as a function of pseudorapidity in centrality bin 30-35%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 106
+
+---
+data_file: Table107.yaml
+description: |
+  The second flow harmonic measured with the Event Plane method as a function of pseudorapidity in centrality bin 35-40%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 107
+
+---
+data_file: Table108.yaml
+description: |
+  The second flow harmonic measured with the Event Plane method as a function of pseudorapidity in centrality bin 40-45%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 108
+
+---
+data_file: Table109.yaml
+description: |
+  The second flow harmonic measured with the Event Plane method as a function of pseudorapidity in centrality bin 45-50%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 109
+
+---
+data_file: Table110.yaml
+description: |
+  The second flow harmonic measured with the Event Plane method as a function of pseudorapidity in centrality bin 50-55%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 110
+
+---
+data_file: Table111.yaml
+description: |
+  The second flow harmonic measured with the Event Plane method as a function of pseudorapidity in centrality bin 55-60%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 111
+
+---
+data_file: Table112.yaml
+description: |
+  The second flow harmonic measured with the Event Plane method as a function of pseudorapidity in centrality bin 60-80%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 112
+
+---
+data_file: Table113.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of pseudorapidity in centrality bin 2-5%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 113
+
+---
+data_file: Table114.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of pseudorapidity in centrality bin 5-10%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 114
+
+---
+data_file: Table115.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of pseudorapidity in centrality bin 10-15%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 115
+
+---
+data_file: Table116.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of pseudorapidity in centrality bin 15-20%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 116
+
+---
+data_file: Table117.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of pseudorapidity in centrality bin 20-25%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 117
+
+---
+data_file: Table118.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of pseudorapidity in centrality bin 25-30%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 118
+
+---
+data_file: Table119.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of pseudorapidity in centrality bin 30-35%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 119
+
+---
+data_file: Table120.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of pseudorapidity in centrality bin 35-40%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 120
+
+---
+data_file: Table121.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of pseudorapidity in centrality bin 40-45%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 121
+
+---
+data_file: Table122.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of pseudorapidity in centrality bin 45-50%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 122
+
+---
+data_file: Table123.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of pseudorapidity in centrality bin 50-55%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 123
+
+---
+data_file: Table124.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of pseudorapidity in centrality bin 55-60%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 124
+
+---
+data_file: Table125.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of pseudorapidity in centrality bin 60-80%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 125
+
+---
+data_file: Table126.yaml
+description: |
+  The second flow harmonic measured with the six-particle cumulats as a function of pseudorapidity in centrality bin 2-5%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 126
+
+---
+data_file: Table127.yaml
+description: |
+  The second flow harmonic measured with the six-particle cumulats as a function of pseudorapidity in centrality bin 5-10%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 127
+
+---
+data_file: Table128.yaml
+description: |
+  The second flow harmonic measured with the six-particle cumulats as a function of pseudorapidity in centrality bin 10-15%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 128
+
+---
+data_file: Table129.yaml
+description: |
+  The second flow harmonic measured with the six-particle cumulats as a function of pseudorapidity in centrality bin 15-20%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 129
+
+---
+data_file: Table130.yaml
+description: |
+  The second flow harmonic measured with the six-particle cumulats as a function of pseudorapidity in centrality bin 20-25%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 130
+
+---
+data_file: Table131.yaml
+description: |
+  The second flow harmonic measured with the six-particle cumulats as a function of pseudorapidity in centrality bin 25-30%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 131
+
+---
+data_file: Table132.yaml
+description: |
+  The second flow harmonic measured with the six-particle cumulats as a function of pseudorapidity in centrality bin 30-35%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 132
+
+---
+data_file: Table133.yaml
+description: |
+  The second flow harmonic measured with the six-particle cumulats as a function of pseudorapidity in centrality bin 35-40%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 133
+
+---
+data_file: Table134.yaml
+description: |
+  The second flow harmonic measured with the six-particle cumulats as a function of pseudorapidity in centrality bin 40-45%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 134
+
+---
+data_file: Table135.yaml
+description: |
+  The second flow harmonic measured with the six-particle cumulats as a function of pseudorapidity in centrality bin 45-50%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 135
+
+---
+data_file: Table136.yaml
+description: |
+  The second flow harmonic measured with the six-particle cumulats as a function of pseudorapidity in centrality bin 50-55%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 136
+
+---
+data_file: Table137.yaml
+description: |
+  The second flow harmonic measured with the six-particle cumulats as a function of pseudorapidity in centrality bin 55-60%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 137
+
+---
+data_file: Table138.yaml
+description: |
+  The second flow harmonic measured with the six-particle cumulats as a function of pseudorapidity in centrality bin 60-80%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 138
+
+---
+data_file: Table139.yaml
+description: |
+  The second flow harmonic measured with the eight-particle cumulats as a function of pseudorapidity in centrality bin 2-5%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 139
+
+---
+data_file: Table140.yaml
+description: |
+  The second flow harmonic measured with the eight-particle cumulats as a function of pseudorapidity in centrality bin 5-10%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 140
+
+---
+data_file: Table141.yaml
+description: |
+  The second flow harmonic measured with the eight-particle cumulats as a function of pseudorapidity in centrality bin 10-15%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 141
+
+---
+data_file: Table142.yaml
+description: |
+  The second flow harmonic measured with the eight-particle cumulats as a function of pseudorapidity in centrality bin 15-20%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 142
+
+---
+data_file: Table143.yaml
+description: |
+  The second flow harmonic measured with the eight-particle cumulats as a function of pseudorapidity in centrality bin 20-25%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 143
+
+---
+data_file: Table144.yaml
+description: |
+  The second flow harmonic measured with the eight-particle cumulats as a function of pseudorapidity in centrality bin 25-30%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 144
+
+---
+data_file: Table145.yaml
+description: |
+  The second flow harmonic measured with the eight-particle cumulats as a function of pseudorapidity in centrality bin 30-35%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 145
+
+---
+data_file: Table146.yaml
+description: |
+  The second flow harmonic measured with the eight-particle cumulats as a function of pseudorapidity in centrality bin 35-40%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 146
+
+---
+data_file: Table147.yaml
+description: |
+  The second flow harmonic measured with the eight-particle cumulats as a function of pseudorapidity in centrality bin 40-45%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 147
+
+---
+data_file: Table148.yaml
+description: |
+  The second flow harmonic measured with the eight-particle cumulats as a function of pseudorapidity in centrality bin 45-50%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 148
+
+---
+data_file: Table149.yaml
+description: |
+  The second flow harmonic measured with the eight-particle cumulats as a function of pseudorapidity in centrality bin 50-55%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 149
+
+---
+data_file: Table150.yaml
+description: |
+  The second flow harmonic measured with the eight-particle cumulats as a function of pseudorapidity in centrality bin 55-60%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 150
+
+---
+data_file: Table151.yaml
+description: |
+  The second flow harmonic measured with the eight-particle cumulats as a function of pseudorapidity in centrality bin 60-80%.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 6
+name: Table 151
+
+---
+data_file: Table152.yaml
+description: |
+  The triangular flow harmonic measured with the two-particle cumulats as a function of pseudorapidity in centrality bin 0-60%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [V3]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 7a
+name: Table 152
+
+---
+data_file: Table153.yaml
+description: |
+  The triangular flow harmonic measured with the Event Plane method as a function of pseudorapidity in centrality bin 0-60%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [V3]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 7a
+name: Table 153
+
+---
+data_file: Table154.yaml
+description: |
+  The triangular flow harmonic measured with the four-particle cumulats as a function of pseudorapidity in centrality bin 0-60%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [V3]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 7a
+name: Table 154
+
+---
+data_file: Table155.yaml
+description: |
+  The quadrangular flow harmonic measured with the two-particle cumulats as a function of pseudorapidity in centrality bin 0-25%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [V4]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 7b
+name: Table 155
+
+---
+data_file: Table156.yaml
+description: |
+  The quadrangular flow harmonic measured with the Event Plane method as a function of pseudorapidity in centrality bin 0-25%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [V4]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 7b
+name: Table 156
+
+---
+data_file: Table157.yaml
+description: |
+  The quadrangular flow harmonic measured with the four-particle cumulats as a function of pseudorapidity in centrality bin 0-25%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [V4]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 7b
+name: Table 157
+
+---
+data_file: Table158.yaml
+description: |
+  The second flow harmonic measured with the two-particle cumulats as a function of <Npart>.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 8a
+name: Table 158
+
+---
+data_file: Table159.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of <Npart>.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 8b
+name: Table 159
+
+---
+data_file: Table160.yaml
+description: |
+  The second flow harmonic measured with the six-particle cumulats as a function of <Npart>.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 8c
+name: Table 160
+
+---
+data_file: Table161.yaml
+description: |
+  The second flow harmonic measured with the eight-particle cumulats as a function of <Npart>.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 8d
+name: Table 161
+
+---
+data_file: Table162.yaml
+description: |
+  The ratio of second flow harmonics measured with the six- and four-particle cumulants as a function of <Npart>.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 9a
+name: Table 162
+
+---
+data_file: Table163.yaml
+description: |
+  The ratio of second flow harmonics measured with the eight- and four-particle cumulants as a function of <Npart>.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 9a
+name: Table 163
+
+---
+data_file: Table164.yaml
+description: |
+  The second flow harmonic measured with the Event Plane method as a function of <Npart>.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 10a
+name: Table 164
+
+---
+data_file: Table165.yaml
+description: |
+  The triangular flow harmonic measured with the Event Plane method as a function of <Npart>.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V3]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 10b
+name: Table 165
+
+---
+data_file: Table166.yaml
+description: |
+  The triangular flow harmonic measured with the two-particle cumulants as a function of <Npart>.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V3]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 10b
+name: Table 166
+
+---
+data_file: Table167.yaml
+description: |
+  The triangular flow harmonic measured with the two-particle cumulants as a function of <Npart>.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V3]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 10b
+name: Table 167
+
+---
+data_file: Table168.yaml
+description: |
+  The quadrangular flow harmonic measured with the Event Plane method as a function of <Npart>.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V4]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 10c
+name: Table 168
+
+---
+data_file: Table169.yaml
+description: |
+  The quadrangular flow harmonic measured with the two-particle cumulants as a function of <Npart>.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V4]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 10c
+name: Table 169
+
+---
+data_file: Table170.yaml
+description: |
+  The quadrangular flow harmonic measured with the two-particle cumulants as a function of <Npart>.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V4]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 10c
+name: Table 170
+
+---
+data_file: Table171.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), as a function of transverse momentum in centrality bin 2-5%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 12
+name: Table 171
+
+---
+data_file: Table172.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), as a function of transverse momentum in centrality bin 5-10%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 12
+name: Table 172
+
+---
+data_file: Table173.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), as a function of transverse momentum in centrality bin 10-15%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 12
+name: Table 173
+
+---
+data_file: Table174.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), as a function of transverse momentum in centrality bin 15-20%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 12
+name: Table 174
+
+---
+data_file: Table175.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), as a function of transverse momentum in centrality bin 20-25%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 12
+name: Table 175
+
+---
+data_file: Table176.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), as a function of transverse momentum in centrality bin 25-30%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 12
+name: Table 176
+
+---
+data_file: Table177.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), as a function of transverse momentum in centrality bin 30-35%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 12
+name: Table 177
+
+---
+data_file: Table178.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), as a function of transverse momentum in centrality bin 35-40%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 12
+name: Table 178
+
+---
+data_file: Table179.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), as a function of transverse momentum in centrality bin 40-45%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 12
+name: Table 179
+
+---
+data_file: Table180.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), as a function of transverse momentum in centrality bin 45-50%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 12
+name: Table 180
+
+---
+data_file: Table181.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), as a function of transverse momentum in centrality bin 50-55%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 12
+name: Table 181
+
+---
+data_file: Table182.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), as a function of transverse momentum in centrality bin 55-60%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 12
+name: Table 182
+
+---
+data_file: Table183.yaml
+description: |
+  The second flow harmonic fluctuations, F(v2), as a function of <Npart>.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 13
+name: Table 183
+
+---
+data_file: Table184.yaml
+description: |
+  The triangular flow harmonic fluctuations, F(v3), as a function of <Npart>.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [F(V3)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 14a
+name: Table 184
+
+---
+data_file: Table185.yaml
+description: |
+  The triangular flow harmonic fluctuations, F(v4), as a function of <Npart>.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [F(V4)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Figure 14b
+name: Table 185
+
+---
+data_file: Table186.yaml
+description: |
+  The second flow harmonic measured with the two-particle cumulats as a function of <Npart>.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 7b
+name: Table 186
+
+---
+data_file: Table187.yaml
+description: |
+  The second flow harmonic measured with the four-particle cumulats as a function of <Npart>.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 7b
+name: Table 187
+
+---
+data_file: Table188.yaml
+description: |
+  The second flow harmonic measured with the six-particle cumulats as a function of <Npart>.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 7b
+name: Table 188
+
+---
+data_file: Table189.yaml
+description: |
+  The second flow harmonic measured with the eight-particle cumulats as a function of <Npart>.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 7b
+name: Table 189
+
+---
+data_file: Table190.yaml
+description: |
+  The ratio of second flow harmonics measured with the six- and four-particle cumulants as a function of <Npart>.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 7b
+name: Table 190
+
+---
+data_file: Table191.yaml
+description: |
+  The ratio of second flow harmonics measured with the eight- and four-particle cumulants as a function of <Npart>.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V2]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 7b
+name: Table 191
+
+---
+data_file: Table192.yaml
+description: |
+  The triangular flow harmonic measured with the two-particle cumulants as a function of <Npart>.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V3]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 8
+name: Table 192
+
+---
+data_file: Table193.yaml
+description: |
+  The quadrangular flow harmonic measured with the Event Plane method as a function of <Npart>.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [V4]
+- name: phrases
+  values: [Inclusive, Angular Correlation]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 8
+name: Table 193
+
+---
+data_file: Table194.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), calculated from v2{EP} and v2{4}, as a function of transverse momentum in centrality bin 2-5%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 9
+name: Table 194
+
+---
+data_file: Table195.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), calculated from v2{EP} and v2{4}, as a function of transverse momentum in centrality bin 5-10%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 9
+name: Table 195
+
+---
+data_file: Table196.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), calculated from v2{EP} and v2{4}, as a function of transverse momentum in centrality bin 10-15%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 9
+name: Table 196
+
+---
+data_file: Table197.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), calculated from v2{EP} and v2{4}, as a function of transverse momentum in centrality bin 15-20%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 9
+name: Table 197
+
+---
+data_file: Table198.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), calculated from v2{EP} and v2{4}, as a function of transverse momentum in centrality bin 20-25%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 9
+name: Table 198
+
+---
+data_file: Table199.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), calculated from v2{EP} and v2{4}, as a function of transverse momentum in centrality bin 25-30%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 9
+name: Table 199
+
+---
+data_file: Table200.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), calculated from v2{EP} and v2{4}, as a function of transverse momentum in centrality bin 30-35%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 9
+name: Table 200
+
+---
+data_file: Table201.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), calculated from v2{EP} and v2{4}, as a function of transverse momentum in centrality bin 35-40%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 9
+name: Table 201
+
+---
+data_file: Table202.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), calculated from v2{EP} and v2{4}, as a function of transverse momentum in centrality bin 40-45%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 9
+name: Table 202
+
+---
+data_file: Table203.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), calculated from v2{EP} and v2{4}, as a function of transverse momentum in centrality bin 45-50%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 9
+name: Table 203
+
+---
+data_file: Table204.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), calculated from v2{EP} and v2{4}, as a function of transverse momentum in centrality bin 50-55%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 9
+name: Table 204
+
+---
+data_file: Table205.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), calculated from v2{EP} and v2{4}, as a function of transverse momentum in centrality bin 55-60%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 9
+name: Table 205
+
+---
+data_file: Table206.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), calculated from v2{2} and v2{4}, as a function of transverse momentum in centrality bin 2-5%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 10
+name: Table 206
+
+---
+data_file: Table207.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), calculated from v2{2} and v2{4}, as a function of transverse momentum in centrality bin 5-10%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 10
+name: Table 207
+
+---
+data_file: Table208.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), calculated from v2{2} and v2{4}, as a function of transverse momentum in centrality bin 10-15%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 10
+name: Table 208
+
+---
+data_file: Table209.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), calculated from v2{2} and v2{4}, as a function of transverse momentum in centrality bin 15-20%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 10
+name: Table 209
+
+---
+data_file: Table210.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), calculated from v2{2} and v2{4}, as a function of transverse momentum in centrality bin 20-25%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 10
+name: Table 210
+
+---
+data_file: Table211.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), calculated from v2{2} and v2{4}, as a function of transverse momentum in centrality bin 25-30%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 10
+name: Table 211
+
+---
+data_file: Table212.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), calculated from v2{2} and v2{4}, as a function of transverse momentum in centrality bin 30-35%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 10
+name: Table 212
+
+---
+data_file: Table213.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), calculated from v2{2} and v2{4}, as a function of transverse momentum in centrality bin 35-40%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 10
+name: Table 213
+
+---
+data_file: Table214.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), calculated from v2{2} and v2{4}, as a function of transverse momentum in centrality bin 40-45%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 10
+name: Table 214
+
+---
+data_file: Table215.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), calculated from v2{2} and v2{4}, as a function of transverse momentum in centrality bin 45-50%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 10
+name: Table 215
+
+---
+data_file: Table216.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), calculated from v2{2} and v2{4}, as a function of transverse momentum in centrality bin 50-55%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 10
+name: Table 216
+
+---
+data_file: Table217.yaml
+description: |
+  The second flow harmonic fluctiuations, F(v2), calculated from v2{2} and v2{4}, as a function of transverse momentum in centrality bin 55-60%.
+keywords:
+- name: reactions
+  values: [Pb Pb --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 10
+name: Table 217
+
+---
+data_file: Table218.yaml
+description: |
+  The second flow harmonic fluctuations, F(v2), as a function of <Npart>.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [F(V2)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 12a
+name: Table 218
+
+---
+data_file: Table219.yaml
+description: |
+  The triangular flow harmonic fluctuations, F(v3), as a function of <Npart>.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [F(V3)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 12b
+name: Table 219
+
+---
+data_file: Table220.yaml
+description: |
+  The triangular flow harmonic fluctuations, F(v4), as a function of <Npart>.
+keywords:
+- name: reactions
+  values: [PB PB --> CHARGED X]
+- name: observables
+  values: [F(V4)]
+- name: phrases
+  values: [Inclusive]
+- name: cmenergies
+  values: [2760.0]
+location: Data from Auxiliary Figure 12c
+name: Table 220
+

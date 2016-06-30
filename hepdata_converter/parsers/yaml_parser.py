@@ -46,7 +46,7 @@ class YAML(Parser):
         with open(data_in, 'r') as submission_file:
             try:
                 # We try to load using the CLoader for speed improvements.
-                submission_data = list(yaml.load_all(submission_file, Loader=yaml.CLoader))
+                submission_data = list(yaml.load_all(submission_file, Loader=yaml.CSafeLoader))
             except: #pragma: no cover
                 submission_data = list(yaml.load_all(submission_file)) #pragma: no cover
 
@@ -71,7 +71,7 @@ class YAML(Parser):
             with open(table_filepath, 'r') as table_file:
                 try:
                 # We try to load using the CLoader for speed improvements.
-                    table_data = yaml.load(table_file, Loader=yaml.CLoader)
+                    table_data = yaml.load(table_file, Loader=yaml.CSafeLoader)
                 except: #pragma: no cover
                     table_data = yaml.load(table_file)
 
