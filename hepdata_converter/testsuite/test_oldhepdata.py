@@ -15,7 +15,6 @@ class OldHEPDataTestSuite(WriterTestSuite):
     def test_parse_submission(self, oldhepdata_file, yaml_path):
         oldhepdata_p = OldHEPData()
         oldhepdata_parsed_data = oldhepdata_p.parse(oldhepdata_file)
-
         yaml_p = yaml_parser.YAML()
         yaml_parsed_data = yaml_p.parse(yaml_path)
 

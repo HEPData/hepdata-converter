@@ -23,12 +23,11 @@ class YAMLWriterTestSuite(WriterTestSuite):
         hepdata_converter._main(['--input-format', 'oldhepdata', '--output-format', 'yaml', '--single-file',
                                  oldhepdata_path, yaml_single_output_path])
 
+        print('OUTPUT PATH IS {}'.format(yaml_single_output_path))
         self.assertTrue(os.path.exists(yaml_single_output_path))
 
         self.assertEqual(oldhepdata_yaml_file, data)
 
-        with open(yaml_single_output_path, 'r') as _f:
-            self.assertEqual(oldhepdata_yaml_file, _f.read())
 
     @insert_path('oldhepdata/sample.input')
     @insert_path('oldhepdata/yaml')
