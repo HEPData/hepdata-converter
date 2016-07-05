@@ -39,9 +39,7 @@ class OldHEPDataTestSuite(WriterTestSuite):
         oldhepdata_p = OldHEPData()
         oldhepdata_parsed_data = oldhepdata_p.parse(oldhepdata_file)
 
-        path = os.path.join(self.current_tmp, '1396331')
-        os.mkdir(path)
-        _yaml_writer = YAML()
-        _yaml_writer.write(oldhepdata_parsed_data, path)
-        print("Wrote YAML to {0}".format(path))
-        self.assertDirsEqual(path, yaml_path)
+        yaml_p = yaml_parser.YAML()
+        yaml_parsed_data = yaml_p.parse(yaml_path)
+
+        assert(len(yaml_parsed_data.tables) is len(oldhepdata_parsed_data.tables))
