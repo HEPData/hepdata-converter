@@ -368,7 +368,7 @@ class ROOT(ArrayWriter):
     def _prepare_outputs(self, data_out, outputs):
         if isinstance(data_out, (str, unicode)):
             self.file_emulation = True
-            outputs.append(ROOTModule.TFile.Open(data_out, 'UPDATE'))
+            outputs.append(ROOTModule.TFile.Open(data_out, 'RECREATE'))
         # multiple tables - require directory
         elif isinstance(data_out, ROOTModule.TFile):
             outputs.append(data_out)
