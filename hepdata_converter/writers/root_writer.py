@@ -28,6 +28,8 @@ class THFRootClass(ObjectWrapper):
             return False
         elif len(independent_variables_map) == cls.dim:
             for independent_variable in independent_variables_map:
+                if not independent_variable['values']:
+                    return False
                 if 'low' not in independent_variable['values'][0] or 'high' not in independent_variable['values'][0]:
                     return False
             return True
@@ -272,6 +274,9 @@ class TGraph2DErrorsClass(ObjectWrapper):
         if not super(TGraph2DErrorsClass, cls).match(independent_variables_map, dependent_variable):
             return False
         if len(independent_variables_map) == 2:
+            for independent_variable in independent_variables_map:
+                if not independent_variable['values']:
+                    return False
             return True
         return False
 
@@ -318,6 +323,9 @@ class TGraphAsymmErrorsRootClass(ObjectWrapper):
         if not super(TGraphAsymmErrorsRootClass, cls).match(independent_variables_map, dependent_variable):
             return False
         if len(independent_variables_map) == 1:
+            for independent_variable in independent_variables_map:
+                if not independent_variable['values']:
+                    return False
             return True
         return False
 

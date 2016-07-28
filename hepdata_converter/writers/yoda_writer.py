@@ -21,6 +21,9 @@ class ScatterYodaClass(ObjectWrapper):
         if not ObjectWrapper.match(independent_variables_map, dependent_variable):
             return False
         elif len(independent_variables_map) == cls.dim:
+            for independent_variable in independent_variables_map:
+                if not independent_variable['values']:
+                    return False
             return True
         return False
 
