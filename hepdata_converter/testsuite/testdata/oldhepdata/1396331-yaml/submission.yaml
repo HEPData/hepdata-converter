@@ -32,6 +32,8 @@ keywords:
   values: [P P --> (D0 + DBAR0) X]
 - name: observables
   values: [D2SIG/DPT/DYRAP]
+- name: phrases
+  values: []
 - name: energies
   values: ['13000.0']
 location: Data from Figure 5; Table 5
@@ -48,6 +50,8 @@ keywords:
   values: [P P --> (D+ + D-) X]
 - name: observables
   values: [D2SIG/DPT/DYRAP]
+- name: phrases
+  values: []
 - name: energies
   values: ['13000.0']
 location: Data from Figure 5; Table 6
@@ -64,6 +68,8 @@ keywords:
   values: [P P --> (D/S+ + D/S-) X]
 - name: observables
   values: [D2SIG/DPT/DYRAP]
+- name: phrases
+  values: []
 - name: energies
   values: ['13000.0']
 location: Data from Figure 6; Table 7
@@ -80,6 +86,8 @@ keywords:
   values: [P P --> (D*+ + D*-) X]
 - name: observables
   values: [D2SIG/DPT/DYRAP]
+- name: phrases
+  values: []
 - name: energies
   values: ['13000.0']
 location: Data from Figure 6; Table 8
@@ -96,6 +104,8 @@ keywords:
   values: [P P --> (D0 + DBAR0) X]
 - name: observables
   values: [RATIO]
+- name: phrases
+  values: []
 - name: energies
   values: []
 location: Data from Figure 7; Table 9
@@ -112,6 +122,8 @@ keywords:
   values: [P P --> (D+ + D-) X]
 - name: observables
   values: [RATIO]
+- name: phrases
+  values: []
 - name: energies
   values: []
 location: Data from Figure 7; Table 10
@@ -128,6 +140,8 @@ keywords:
   values: [P P --> (D/S+ + D/S-) X]
 - name: observables
   values: [RATIO]
+- name: phrases
+  values: []
 - name: energies
   values: []
 location: Data from Figure 7; Table 11
@@ -144,6 +158,8 @@ keywords:
   values: [P P --> (D*+ + D*-) X]
 - name: observables
   values: [RATIO]
+- name: phrases
+  values: []
 - name: energies
   values: []
 location: Data from Figure 7; Table 12
@@ -161,6 +177,8 @@ keywords:
   values: []
 - name: observables
   values: [RATIO]
+- name: phrases
+  values: []
 - name: energies
   values: []
 location: Data from Figure 8; Table 13
@@ -178,6 +196,8 @@ keywords:
   values: []
 - name: observables
   values: [RATIO]
+- name: phrases
+  values: []
 - name: energies
   values: []
 location: Data from Figure 8; Table 14
@@ -195,6 +215,8 @@ keywords:
   values: []
 - name: observables
   values: [RATIO]
+- name: phrases
+  values: []
 - name: energies
   values: []
 location: Data from Figure 8; Table 15
@@ -212,6 +234,8 @@ keywords:
   values: []
 - name: observables
   values: [RATIO]
+- name: phrases
+  values: []
 - name: energies
   values: []
 location: Data from Figure 10; Table 16
@@ -229,6 +253,8 @@ keywords:
   values: []
 - name: observables
   values: [RATIO]
+- name: phrases
+  values: []
 - name: energies
   values: []
 location: Data from Figure 10; Table 17
@@ -246,6 +272,8 @@ keywords:
   values: []
 - name: observables
   values: [RATIO]
+- name: phrases
+  values: []
 - name: energies
   values: []
 location: Data from Figure 10; Table 18
@@ -262,6 +290,8 @@ keywords:
   values: [P P --> (D0 + DBAR0) X]
 - name: observables
   values: [D2SIG/DPT/DYRAP]
+- name: phrases
+  values: []
 - name: energies
   values: ['13000.0']
 location: Data from Figure 5; Table 5; Correlation table
@@ -278,6 +308,8 @@ keywords:
   values: [P P --> (D+ + D-) X]
 - name: observables
   values: [D2SIG/DPT/DYRAP]
+- name: phrases
+  values: []
 - name: energies
   values: ['13000.0']
 location: Data from Figure 5; Table 6; Correlation table
@@ -294,6 +326,8 @@ keywords:
   values: [P P --> (D/S+ + D/S-) X]
 - name: observables
   values: [D2SIG/DPT/DYRAP]
+- name: phrases
+  values: []
 - name: energies
   values: ['13000.0']
 location: Data from Figure 6; Table 7; Correlation table
@@ -310,6 +344,8 @@ keywords:
   values: [P P --> (D*+ + D*-) X]
 - name: observables
   values: [D2SIG/DPT/DYRAP]
+- name: phrases
+  values: []
 - name: energies
   values: ['13000.0']
 location: Data from Figure 6; Table 8; Correlation table
@@ -326,6 +362,8 @@ keywords:
   values: [P P --> (D0 + DBAR0) X]
 - name: observables
   values: [RATIO]
+- name: phrases
+  values: []
 - name: energies
   values: []
 location: Data from Figure 7; Table 9; Correlation table
@@ -342,6 +380,8 @@ keywords:
   values: [P P --> (D+ + D-) X]
 - name: observables
   values: [RATIO]
+- name: phrases
+  values: []
 - name: energies
   values: []
 location: Data from Figure 7; Table 10; Correlation table
@@ -358,6 +398,8 @@ keywords:
   values: [P P --> (D/S+ + D/S-) X]
 - name: observables
   values: [RATIO]
+- name: phrases
+  values: []
 - name: energies
   values: []
 location: Data from Figure 7; Table 11; Correlation table
@@ -374,6 +416,8 @@ keywords:
   values: [P P --> (D*+ + D*-) X]
 - name: observables
   values: [RATIO]
+- name: phrases
+  values: []
 - name: energies
   values: []
 location: Data from Figure 7; Table 12; Correlation table
@@ -390,6 +434,8 @@ keywords:
   values: []
 - name: observables
   values: [RATIO]
+- name: phrases
+  values: []
 - name: energies
   values: []
 location: Data from Figure 8; Table 13; Correlation table
@@ -406,6 +452,8 @@ keywords:
   values: []
 - name: observables
   values: [RATIO]
+- name: phrases
+  values: []
 - name: energies
   values: []
 location: Data from Figure 8; Table 14; Correlation table
@@ -422,6 +470,8 @@ keywords:
   values: []
 - name: observables
   values: [RATIO]
+- name: phrases
+  values: []
 - name: energies
   values: []
 location: Data from Figure 8; Table 15; Correlation table
@@ -438,6 +488,8 @@ keywords:
   values: []
 - name: observables
   values: [RATIO]
+- name: phrases
+  values: []
 - name: energies
   values: []
 location: Data from Figure 10; Table 16; Correlation table
@@ -454,6 +506,8 @@ keywords:
   values: []
 - name: observables
   values: [RATIO]
+- name: phrases
+  values: []
 - name: energies
   values: []
 location: Data from Figure 10; Table 17; Correlation table
@@ -470,6 +524,8 @@ keywords:
   values: []
 - name: observables
   values: [RATIO]
+- name: phrases
+  values: []
 - name: energies
   values: []
 location: Data from Figure 10; Table 18; Correlation table

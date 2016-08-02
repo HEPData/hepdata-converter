@@ -75,6 +75,8 @@ keywords:
   values: [P P --> Z0 Z0 X]
 - name: observables
   values: [SIG]
+- name: phrases
+  values: []
 - name: energies
   values: []
 location: Data from Page 17 of preprint
@@ -104,6 +106,8 @@ keywords:
   values: [P P --> Z0 Z0 X]
 - name: observables
   values: [SIG]
+- name: phrases
+  values: []
 - name: energies
   values: []
 location: Data from Page 20 of preprint
@@ -153,6 +157,8 @@ keywords:
   values: [P P --> Z0 Z0 X]
 - name: observables
   values: [DSIG/DPT]
+- name: phrases
+  values: []
 - name: energies
   values: ['7000.0']
 location: Data from Figure 8A
@@ -195,6 +201,8 @@ keywords:
   values: [P P --> Z0 Z0 X]
 - name: observables
   values: [DSIG/DPT]
+- name: phrases
+  values: []
 - name: energies
   values: ['7000.0']
 location: Data from Figure 8B
@@ -243,6 +251,8 @@ keywords:
   values: [P P --> Z0 Z0 X]
 - name: observables
   values: [DSIG/DPHI]
+- name: phrases
+  values: []
 - name: energies
   values: ['7000.0']
 location: Data from Figure 9A
@@ -285,6 +295,8 @@ keywords:
   values: [P P --> Z0 Z0 X]
 - name: observables
   values: [DSIG/DPHI]
+- name: phrases
+  values: []
 - name: energies
   values: ['7000.0']
 location: Data from Figure 9B
@@ -333,6 +345,8 @@ keywords:
   values: [P P --> Z0 Z0 X]
 - name: observables
   values: [DSIG/DM]
+- name: phrases
+  values: []
 - name: energies
   values: ['7000.0']
 location: Data from Figure 10A
@@ -376,6 +390,8 @@ keywords:
   values: [P P --> Z0 Z0 X]
 - name: observables
   values: [DSIG/DM]
+- name: phrases
+  values: []
 - name: energies
   values: ['7000.0']
 location: Data from Figure 10B

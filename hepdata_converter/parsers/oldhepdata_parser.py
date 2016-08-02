@@ -101,6 +101,7 @@ class OldHEPData(Parser):
                 'xheader':    self._parse_xheaders,
                 'yheader':    self._parse_yheaders,
                 'obskey':     self._parse_obskey,
+                'phrase':     self._parse_phrase,
                 'E':          self._pass
             }
         }
@@ -390,6 +391,17 @@ class OldHEPData(Parser):
         :type data: str
         """
         self.current_table.observables.append(data.strip())
+
+    def _parse_phrase(self, data):
+        """Parse phrase attribute of the old HEPData format
+
+        example:
+        *phrase: Z pair Production
+
+        :param data: data to be parsed
+        :type data: str
+        """
+        self.current_table.phrases.append(data.strip())
 
     def _parse_energies(self, data):
         """Add energy given in data to tables energies

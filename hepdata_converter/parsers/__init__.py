@@ -45,6 +45,7 @@ class Table(object):
             'keywords': [
                 {'name': 'reactions', 'values': []},
                 {'name': 'observables', 'values': []},
+                {'name': 'phrases', 'values': []},
                 {'name': 'energies', 'values': []},
             ],
             'data_file': data_file or 'data%s.yaml' % index,
@@ -77,6 +78,8 @@ class Table(object):
                 self.reactions = keyword['values']
             elif keyword['name'] == 'observables':
                 self.observables = keyword['values']
+            elif keyword['name'] == 'phrases':
+                self.phrases = keyword['values']
             elif keyword['name'] == 'energies':
                 self.energies = keyword['values']
 

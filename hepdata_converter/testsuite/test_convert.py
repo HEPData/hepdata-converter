@@ -44,6 +44,8 @@ class ConvertTestSuite(WriterTestSuite):
             "  values: ['P P --> Z0 Z0 X']\n"
             "- name: observables\n"
             "  values: ['SIG']\n"
+            "- name: phrases\n"
+            "  values: []\n"
             "- name: energies\n"
             "  values: []\n"
             "location: 'Data from Page 17 of preprint'\n"

@@ -112,8 +112,10 @@ The 2l2nu channel fiducial region is defined as:
 *location: Page 17 of preprint
 
 # Comments on this particular table.  This is generally close to the caption of
-# the associated figure/table in the paper.  A full stop is automatically
-# inserted at the end of the dscomment, so it should be omitted here.
+# the associated figure/table in the paper, but it should not refer to missing
+# information such as theoretical predictions (unless they are also given as
+# numbers in the table).  A full stop is automatically inserted at the end of
+# the dscomment, so it should be omitted here.
 *dscomment: The measured fiducial cross sections.  The first systematic uncertainty is the combined systematic uncertainty excluding luminosity, the second is the luminosity
 
 # The main process under study, used by the online search facility.
@@ -122,6 +124,10 @@ The 2l2nu channel fiducial region is defined as:
 # Do not attempt to give multiple processes on the same line.
 # Omit the decay products or give them on a separate line.
 *reackey: P P --> Z0 Z0 X
+# The reaction should always have an initial state and a final state
+# separated by "-->".  The right-hand side should usually have an "X" to
+# indicate an inclusive reaction (as opposed to exclusive where all
+# final-state particles are known, e.g. elastic proton scattering).
 
 # The particular type of measurement or observable, used by the online search.
 # Use "SIG" for a cross section, "DSIG/DPT" for a differential cross section,
@@ -144,11 +150,21 @@ The 2l2nu channel fiducial region is defined as:
 # Headers for the y columns separated by ":" (here, header spans three columns).
 *yheader: SIG(fiducial) IN FB
 
+# The *xheader and *yheader should always be present and should describe the
+# quantities in the table.  Generally these will correspond to the labels of
+# the x and y axis of the corresponding plot in the paper.  Qualifiers (*qual)
+# are optional and can distinguish results given in different columns.  Always
+# try to give the units of any variable that appears in the qualifiers or
+# headers in the form "name IN units".  Each table should usually contain a
+# qualifier giving the centre-of-mass energy (unless it appears as the x
+# variable), e.g. "*qual: SQRT(S)/NUCLEON IN GEV : 7.7".
+
 # Specify number of columns separated by ":" (here, 1 "x" and 3 "y" columns).
 *data: x : y : y : y 
 
 # Now give the numerical values for the data, separating columns by a
-# semicolon (";").  Non-existent entries can be indicated by dashes "-".
+# semicolon (";") and also terminating each line by a semicolon (";").
+# Non-existent entries can be indicated by dashes "-".
 # Numerical values should be given with an appropriate and not excessive number
 # of significant figures (in general, a maximum of 4), avoiding giving more
 # decimal places for the errors than the central values.
@@ -156,6 +172,7 @@ The 2l2nu channel fiducial region is defined as:
 # (possibly multiple) systematic uncertainties in brackets as shown below.
 # A label can be given to distinguish multiple systematic uncertainties, as
 # shown below for the "lumi" case, by a colon after the number, then the label.
+# For asymmetric errors, always give the "plus" error before the "minus" error.
 
  7000; 25.4 +3.3,-3.0 (DSYS=+1.2,-1.0,DSYS=1.0:lumi); 29.8 +3.8,-3.5 (DSYS=+1.7,-1.5,DSYS=1.2:lumi); 12.7 +3.1,-2.9 (DSYS=1.7,DSYS=0.5:lumi);
 
