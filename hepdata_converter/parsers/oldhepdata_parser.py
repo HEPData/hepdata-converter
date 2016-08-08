@@ -42,6 +42,7 @@ class OldHEPData(Parser):
         self.lines = []
         self.set_state('document')
         self.current_file = None
+        self.set_of_energies = set()
 
     def set_state(self, state):
         if state not in OldHEPData.states:
@@ -282,6 +283,16 @@ class OldHEPData(Parser):
 
                         self.current_table.data['independent_variables'][xy_mapping[i]]['values'].append(single_element)
 
+                        # extract energy if SQRT(S) is one of the 'x' variables
+                        xheader = self.current_table.data['independent_variables'][xy_mapping[i]]['header']
+                        if xheader['name'].startswith('SQRT(S)') and lower(xheader['units']) in ('gev'):
+                            for energy in single_element.values():
+                                try:
+                                    energy = float(energy)
+                                    self.set_of_energies.add(energy)
+                                except:
+                                    pass
+
                     elif h == 'y': # dependent variable
 
                         pmnum_pct = pmnum + '(\s*PCT)?' # errors can possibly be given as percentages
@@ -359,6 +370,16 @@ class OldHEPData(Parser):
 
         self.current_file.seek(last_index)
 
+        # extract minimum and maximum from set of energies
+        if self.set_of_energies:
+            energy_min = min(self.set_of_energies)
+            energy_max = max(self.set_of_energies)
+            if energy_max > energy_min:
+                energy = str(energy_min) + '-' + str(energy_max)
+            else:
+                energy = energy_min
+            self._parse_energies(energy)
+
     def _parse_dserror(self, data):
         """Parse dserror attribute of the old HEPData format
 
@@ -411,7 +432,7 @@ class OldHEPData(Parser):
         :param data: data to be appended to table's energies
         :type data: str
         """
-        self.current_table.energies.append(data.strip())
+        self.current_table.energies.append(data)
 
     def _parse_qual(self, data):
         """Parse qual attribute of the old HEPData format
@@ -440,11 +461,15 @@ class OldHEPData(Parser):
             xheader['value'] = header.strip()
             list.append(xheader)
 
-            #:TODO: VERY RISKY, check energies and so on
-            #this is a hack, I hope there is better way to do this:
-            if name == 'SQRT(S)' and lower(units) in ('gev', 'tev', 'mev'):
-                if xheader['value'] not in self.current_table.energies:
-                    self._parse_energies(xheader['value'])
+            # extract energy if SQRT(S) is one of the qualifiers
+            if name.startswith('SQRT(S)') and lower(units) in ('gev'):
+                energies = xheader['value'].split(' TO ')
+                for energy in energies:
+                    try:
+                        energy = float(energy)
+                        self.set_of_energies.add(energy)
+                    except:
+                        pass
 
         self.current_table.qualifiers.append(list)
 

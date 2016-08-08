@@ -61,7 +61,7 @@ class YAML(Writer):
                     try:
                         yaml.dump_all([data] + [table.all_data for table in tables], submission_file, dumper=yaml.CDumper)
                     except:
-                        yaml.dump_all([data] + [table.metadata for table in tables], submission_file)
+                        yaml.dump_all([data] + [table.all_data for table in tables], submission_file)
             else: # expect filelike object
                 try:
                     yaml.dump_all([data] + [table.all_data for table in tables], data_out, dumper=yaml.CDumper)

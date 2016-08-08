@@ -47,7 +47,7 @@ class ConvertTestSuite(WriterTestSuite):
             "- name: phrases\n"
             "  values: []\n"
             "- name: energies\n"
-            "  values: []\n"
+            "  values: [7000.0]\n"
             "location: 'Data from Page 17 of preprint'\n"
             "name: Table 1\n"
         )
