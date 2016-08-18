@@ -283,9 +283,6 @@ class TGraph2DErrorsClass(ObjectWrapper):
     def create_objects(self):
         self.calculate_total_errors()
 
-        self.independent_variable_map.pop(0)
-        self.independent_variable_map.pop(0)
-
         if self.xerr_plus[0] != self.xerr_minus[0] or self.xerr_plus[1] != self.xerr_minus[1] \
                 or self.yerr_plus != self.yerr_minus:
             return []
@@ -332,7 +329,7 @@ class TGraphAsymmErrorsRootClass(ObjectWrapper):
     def create_objects(self):
         self.calculate_total_errors()
 
-        self.independent_variable_map.pop(0)
+#        self.independent_variable_map.pop(0)
 
         graph = ROOTModule.TGraphAsymmErrors(len(self.xval[0]),
                                           array.array('d', self.xval[0]),

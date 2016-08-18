@@ -4,17 +4,17 @@ import yoda
 
 
 class ScatterYodaClass(ObjectWrapper):
-    dim = 0
-    _scatter_classes = [yoda.core.Scatter2D, yoda.core.Scatter3D]
-    _point_classes = [yoda.core.Point2D, yoda.core.Point3D]
+    dim = -1
+    _scatter_classes = [yoda.core.Scatter1D, yoda.core.Scatter2D, yoda.core.Scatter3D]
+    _point_classes = [yoda.core.Point1D, yoda.core.Point2D, yoda.core.Point3D]
 
     @classmethod
     def get_scatter_cls(cls):
-        return cls._scatter_classes[cls.dim - 1]
+        return cls._scatter_classes[cls.dim]
 
     @classmethod
     def get_point_cls(cls):
-        return cls._point_classes[cls.dim - 1]
+        return cls._point_classes[cls.dim]
 
     @classmethod
     def match(cls, independent_variables_map, dependent_variable):
@@ -46,12 +46,13 @@ class ScatterYodaClass(ObjectWrapper):
     def create_objects(self):
         self.calculate_total_errors()
 
-        for i in xrange(self.dim):
-            self.independent_variable_map.pop(0)
-
         graph = self._create_scatter()
 
         return [graph]
+
+
+class Scatter1DYodaClass(ScatterYodaClass):
+    dim = 0
 
 
 class Scatter2DYodaClass(ScatterYodaClass):
@@ -66,7 +67,7 @@ class YODA(ArrayWriter):
     help = 'Writes YODA output for table specified by --table parameter, the output should be defined as ' \
            'filepath to output yoda file'
 
-    class_list = [Scatter3DYodaClass, Scatter2DYodaClass]
+    class_list = [Scatter3DYodaClass, Scatter2DYodaClass, Scatter1DYodaClass]
 
     def __init__(self, *args, **kwargs):
         super(YODA, self).__init__(*args, **kwargs)
@@ -86,7 +87,7 @@ class YODA(ArrayWriter):
         # qualifiers_marks_original = []
         f = ObjectFactory(self.class_list, table.independent_variables, table.dependent_variables)
         for graph in f.get_next_object():
-            graph.title = table.name.replace(' ','')
+            graph.title = table.name
             graph.path = ''
             yoda.core.writeYODA(graph, data_out)
 

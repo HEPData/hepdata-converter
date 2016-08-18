@@ -63,8 +63,6 @@ class ObjectWrapper(object):
     def match(cls, independent_variables_map, dependent_variable):
         if not cls.accept_alphanumeric and (len(filter(lambda x: x is False, [cls.is_number_var(var) for var in independent_variables_map])) > 0 or not cls.is_number_var(dependent_variable)):
             return False
-        if len(independent_variables_map) == 0 or len(independent_variables_map[0]) == 0:
-            return False
         return True
 
     @classmethod
