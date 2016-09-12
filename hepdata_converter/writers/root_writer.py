@@ -18,7 +18,7 @@ class THFRootClass(ObjectWrapper):
 
     _hist_classes = [ROOTModule.TH1F, ROOTModule.TH2F, ROOTModule.TH3F]
     _hist_axes_names = ['x', 'y', 'z']
-    _hist_axes_getters = ['GetXaxis','GetYaxis','GetZaxis']
+    _hist_axes_getters = ['GetXaxis', 'GetYaxis', 'GetZaxis']
     dim = 0
     core_object = False
 
@@ -85,7 +85,10 @@ class THFRootClass(ObjectWrapper):
             name = self.independent_variables[i]['header']['name']
             if 'units' in self.independent_variables[i]['header']:
                 name += ' [%s]' % self.independent_variables[i]['header']['units']
-            getattr(hist, self._hist_axes_getters[self.dim])().SetTitle(name)
+            getattr(hist, self._hist_axes_getters[i])().SetTitle(name)
+            if 'labels' in self.independent_variables[i]:
+                for ibin, label in enumerate(self.independent_variables[i]['labels']):
+                    getattr(hist, self._hist_axes_getters[i])().SetBinLabel(ibin + 1, label)
 
         if self.dim < len(self._hist_classes):
             getattr(hist, self._hist_axes_getters[self.dim])().SetTitle(self.sanitize_name(dependent_var_title))
@@ -138,7 +141,10 @@ class THFRootClass(ObjectWrapper):
             name = self.independent_variables[i]['header']['name']
             if 'units' in self.independent_variables[i]['header']:
                 name += ' [%s]' % self.independent_variables[i]['header']['units']
-            getattr(hist, self._hist_axes_getters[self.dim])().SetTitle(name)
+            getattr(hist, self._hist_axes_getters[i])().SetTitle(name)
+            if 'labels' in self.independent_variables[i]: # set alphanumeric bin labels
+                for ibin, label in enumerate(self.independent_variables[i]['labels']):
+                    getattr(hist, self._hist_axes_getters[i])().SetBinLabel(ibin + 1, label)
 
         if self.dim < len(self._hist_classes):
             name = self.dependent_variable['header']['name']
@@ -157,7 +163,11 @@ class THFRootClass(ObjectWrapper):
         error_labels = {}
         error_indices = {}
 
-        for value in self.dependent_variable.get('values', []):
+        is_number_list = self.is_number_var(self.dependent_variable)
+
+        for i, value in enumerate(self.dependent_variable.get('values', [])):
+
+            if not is_number_list[i]: continue # skip non-numeric y values
 
             # process the labels to ensure uniqueness
             observed_error_labels = {}
@@ -198,7 +208,8 @@ class THFRootClass(ObjectWrapper):
                 yval_minus_label = error_label + '_minus'
                 yval_minus = []
 
-                for value in self.dependent_variable.get('values', []):
+                for i, value in enumerate(self.dependent_variable.get('values', [])):
+                    if not is_number_list[i]: continue # skip non-numeric y values
                     error = filter(lambda x: x.get('label') == error_label, value.get('errors', []))
                     if len(error) == 0:
                         yval_plus.append(0.0)
@@ -221,7 +232,8 @@ class THFRootClass(ObjectWrapper):
             else:
                 yval = []
 
-                for value in self.dependent_variable.get('values', []):
+                for i, value in enumerate(self.dependent_variable.get('values', [])):
+                    if not is_number_list[i]: continue # skip non-numeric y values
                     error = filter(lambda x: x.get('label') == error_label, value.get('errors', []))
                     if len(error) == 0:
                         yval.append(0.0)
@@ -287,13 +299,16 @@ class TGraph2DErrorsClass(ObjectWrapper):
                 or self.yerr_plus != self.yerr_minus:
             return []
 
-        graph = ROOTModule.TGraph2DErrors(len(self.xval[0]),
-                                       array.array('d', self.xval[0]),
-                                       array.array('d', self.xval[1]),
-                                       array.array('d', self.yval),
-                                       array.array('d', self.xerr_plus[0]),
-                                       array.array('d', self.xerr_plus[1]),
-                                       array.array('d', self.yerr_plus))
+        if len(self.xval[0]):
+            graph = ROOTModule.TGraph2DErrors(len(self.xval[0]),
+                                           array.array('d', self.xval[0]),
+                                           array.array('d', self.xval[1]),
+                                           array.array('d', self.yval),
+                                           array.array('d', self.xerr_plus[0]),
+                                           array.array('d', self.xerr_plus[1]),
+                                           array.array('d', self.yerr_plus))
+        else:
+            graph = ROOTModule.TGraph2DErrors(0)
 
         graph.SetName("Graph2D_y%s" % (self.dependent_variable_index + 1))
 
@@ -329,15 +344,16 @@ class TGraphAsymmErrorsRootClass(ObjectWrapper):
     def create_objects(self):
         self.calculate_total_errors()
 
-#        self.independent_variable_map.pop(0)
-
-        graph = ROOTModule.TGraphAsymmErrors(len(self.xval[0]),
-                                          array.array('d', self.xval[0]),
-                                          array.array('d', self.yval),
-                                          array.array('d', self.xerr_minus[0]),
-                                          array.array('d', self.xerr_plus[0]),
-                                          array.array('d', self.yerr_minus),
-                                          array.array('d', self.yerr_plus))
+        if len(self.xval[0]):
+            graph = ROOTModule.TGraphAsymmErrors(len(self.xval[0]),
+                                              array.array('d', self.xval[0]),
+                                              array.array('d', self.yval),
+                                              array.array('d', self.xerr_minus[0]),
+                                              array.array('d', self.xerr_plus[0]),
+                                              array.array('d', self.yerr_minus),
+                                              array.array('d', self.yerr_plus))
+        else:
+            graph = ROOTModule.TGraphAsymmErrors(0)
 
         graph.SetName("Graph1D_y%s" % (self.dependent_variable_index + 1))
 
@@ -365,9 +381,31 @@ class ROOT(ArrayWriter):
         data_out.mkdir(table.name)
         data_out.cd(table.name)
 
+        # if no independent variables, use bins of unit width and centred on integers (1, 2, 3, etc.)
+        if not table.independent_variables and table.dependent_variables:
+            if table.dependent_variables[0]['values']:
+                table.independent_variables.append({'header': {'name': 'Bin number'}, 'values': []})
+                for i, value in enumerate(table.dependent_variables[0]['values']):
+                    table.independent_variables[0]['values'].append({'low': i+0.5, 'high': i+1.5})
+
+        # if any non-numeric independent variable values, use bins of unit width and centred on integers (1, 2, 3, etc.)
+        # store original variables as alphanumeric labels to be passed to ROOT histograms
+        for ii, independent_variable in enumerate(table.independent_variables):
+            if False in ObjectWrapper.is_number_var(independent_variable):
+                independent_variable_bins = \
+                    {'header': {'name': independent_variable['header']['name'] + ' bin'},
+                     'values': [], 'labels': []}
+                for i, value in enumerate(independent_variable['values']):
+                    independent_variable_bins['values'].append({'low': i + 0.5, 'high': i + 1.5})
+                    if 'value' in value:
+                        independent_variable_bins['labels'].append(str(value['value']))
+                    else:
+                        independent_variable_bins['labels'].append(str(value['low']) + '-' + str(value['high']))
+                table.independent_variables[ii] = independent_variable_bins
+
         f = ObjectFactory(self.class_list, table.independent_variables, table.dependent_variables)
         for graph in f.get_next_object():
-            graph.title = table.name
+            graph.SetTitle(table.name)
             graph.Write()
 
     def _prepare_outputs(self, data_out, outputs):

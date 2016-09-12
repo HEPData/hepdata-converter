@@ -358,7 +358,8 @@ class OldHEPData(Parser):
                                 raise ValueError("Error while parsing data")
 
                             error['label'] = label
-                            element['errors'].append(error)
+                            if element['value'] != single_element:
+                                element['errors'].append(error)
                         self.current_table.data['dependent_variables'][xy_mapping[i]]['values'].append(element)
 
             elif data_entry_elements:

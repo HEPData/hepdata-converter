@@ -12,18 +12,22 @@ log = logging.getLogger(__name__)
 
 class ObjectWrapper(object):
     __metaclass__ = abc.ABCMeta
-    accept_alphanumeric = False
+    accept_alphanumeric = True
     # :core_object: bool if set to false object of this class will be created as an *extra* additionally to the first
     # object of class with ```core_object``` set to True
     core_object = True
 
     @classmethod
     def is_number_var(cls, *variables):
+        is_number_list = []
         for variable in variables:
             for element in variable['values']:
                 if 'value' in element and isinstance(element['value'], (str, unicode)):
-                    return False
-        return True
+                    is_number_list.append(False)
+                else:
+                    is_number_list.append(True)
+        return is_number_list
+
     @classmethod
     def sanitize_name(cls, name):
         return name.replace(' ', '_').replace('/', '_')
@@ -61,8 +65,13 @@ class ObjectWrapper(object):
 
     @classmethod
     def match(cls, independent_variables_map, dependent_variable):
-        if not cls.accept_alphanumeric and (len(filter(lambda x: x is False, [cls.is_number_var(var) for var in independent_variables_map])) > 0 or not cls.is_number_var(dependent_variable)):
-            return False
+        if not cls.accept_alphanumeric:
+            # don't match if any independent or dependent variable values are non-numeric
+            for var in independent_variables_map:
+                if False in cls.is_number_var(dependent_variable):
+                    return False
+            if False in cls.is_number_var(dependent_variable):
+                return False
         return True
 
     @classmethod
@@ -72,6 +81,7 @@ class ObjectWrapper(object):
         return []
 
     def calculate_total_errors(self):
+        is_number_list = self.is_number_var(self.dependent_variable)
         for independent_variable in self.independent_variable_map:
             xerr_minus = []
             self.xerr_minus.append(xerr_minus)
@@ -79,8 +89,10 @@ class ObjectWrapper(object):
             self.xerr_plus.append(xerr_plus)
             xval = []
             self.xval.append(xval)
-            ArrayWriter.calculate_total_errors(independent_variable, xerr_minus, xerr_plus, xval)
-        ArrayWriter.calculate_total_errors(self.dependent_variable, self.yerr_minus, self.yerr_plus, self.yval)
+            ArrayWriter.calculate_total_errors(independent_variable, is_number_list,
+                                               xerr_minus, xerr_plus, xval)
+        ArrayWriter.calculate_total_errors(self.dependent_variable, is_number_list,
+                                           self.yerr_minus, self.yerr_plus, self.yval)
 
     @abc.abstractmethod
     def create_objects(self):
@@ -120,8 +132,9 @@ class ArrayWriter(Writer):
     __metaclass__ = abc.ABCMeta
 
     @staticmethod
-    def calculate_total_errors(variable, min_errs, max_errs, values):
-        for entry in variable['values']:
+    def calculate_total_errors(variable, is_number_list, min_errs, max_errs, values):
+        for i, entry in enumerate(variable['values']):
+            if not is_number_list[i]: continue # skip non-numeric y values
             if 'value' in entry:
                 values.append(entry['value'])
                 if 'errors' in entry:

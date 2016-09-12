@@ -41,6 +41,7 @@ class ScatterYodaClass(ObjectWrapper):
             args.append([self.yerr_minus[i], self.yerr_plus[i]])
 
             graph.addPoint(self.get_point_cls()(*args))
+
         return graph
 
     def create_objects(self):
@@ -83,8 +84,11 @@ class YODA(ArrayWriter):
             outputs.append(data_out)
 
     def _write_table(self, data_out, table):
-        # headers_original = []
-        # qualifiers_marks_original = []
+        # if any non-numeric independent variables, use bins of unit width and centred on integers (1, 2, 3, etc.)
+        for ii, independent_variable in enumerate(table.independent_variables):
+            if False in ObjectWrapper.is_number_var(independent_variable):
+                for i, value in enumerate(independent_variable['values']):
+                    table.independent_variables[ii]['values'][i] = {'low': i + 0.5, 'high': i + 1.5}
         f = ObjectFactory(self.class_list, table.independent_variables, table.dependent_variables)
         for graph in f.get_next_object():
             graph.title = table.name
