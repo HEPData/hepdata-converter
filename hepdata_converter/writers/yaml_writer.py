@@ -38,6 +38,11 @@ class YAML(Writer):
         tables = data_in.tables
         data = data_in.data
 
+        if self.hepdata_doi:
+            data['hepdata_doi'] = self.hepdata_doi
+            for table in tables:
+                table.metadata['table_doi'] = self.hepdata_doi + '/t' + str(table.index)
+
         if not isinstance(data_out, (str, unicode)) and not self.single_file:
             raise ValueError("output is not string, and single_file flag is not specified")
 

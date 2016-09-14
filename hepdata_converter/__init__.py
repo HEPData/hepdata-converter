@@ -78,6 +78,7 @@ def _main(arguments=sys.argv):
     parser.add_argument("--input-format", '-i', action='store', default='yaml', help='format of the input file/s (default: yaml) [choose one option from Parsers section below]')
     parser.add_argument("--output-format", '-o', action='store', default='yaml', help='format of the output file/s (default: yaml) [choose one option from Writers section below]')
     parser.add_argument("--version", '-v', action='store_const', const=True, default=False, help='Show hepdata-converter version')
+    parser.add_argument("--hepdata-doi", '-d', action='store', default='', help='Pass HEPData DOI, e.g. "10.17182/hepdata.74247.v1"')
     parser.add_argument("input")
     parser.add_argument("output")
 

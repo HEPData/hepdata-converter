@@ -403,9 +403,13 @@ class ROOT(ArrayWriter):
                         independent_variable_bins['labels'].append(str(value['low']) + '-' + str(value['high']))
                 table.independent_variables[ii] = independent_variable_bins
 
+        if self.hepdata_doi:
+            table_doi = 'doi:' + self.hepdata_doi + '/t' + str(table.index)
+        else:
+            table_doi = table.name
         f = ObjectFactory(self.class_list, table.independent_variables, table.dependent_variables)
         for graph in f.get_next_object():
-            graph.SetTitle(table.name)
+            graph.SetTitle(table_doi)
             graph.Write()
 
     def _prepare_outputs(self, data_out, outputs):

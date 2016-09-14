@@ -17,7 +17,7 @@ class CSV(ArrayWriter):
                                  help=('If specified, dependent variables will be put in one table, instead of creating one '
                                        'table per dependent variable in CSV file'))
         options['separator'] = Option('separator', type=str, default=',', required=False,
-                                      help='Defines separator for CSV file, the default is colon: ":"')
+                                      help='Defines separator for CSV file, the default is comma: ","')
         
         return options
 
@@ -26,6 +26,9 @@ class CSV(ArrayWriter):
         self.extension = 'csv'
 
     def _write_metadata(self, data_out, table):
+        if self.hepdata_doi:
+            table_doi = self.hepdata_doi + '/t' + str(table.index)
+            data_out.write(unicode("#: table_doi: %s\n" % table_doi).encode('utf8', 'replace'))
         data_out.write(unicode("#: name: %s\n" % table.metadata['name']).encode('utf8', 'replace'))
         data_out.write(unicode("#: description: %s\n" % table.metadata['description']).encode('utf8', 'replace'))
         data_out.write(unicode("#: data_file: %s\n" % table.metadata['data_file']).encode('utf8', 'replace'))

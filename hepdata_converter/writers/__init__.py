@@ -16,6 +16,7 @@ class Writer(GetConcreteSubclassMixin, OptionInitMixin):
     def __init__(self, single_file_output, *args, **kwargs):
         OptionInitMixin.__init__(self, options=kwargs)
         self.single_file_output = single_file_output
+        self.hepdata_doi = kwargs['hepdata_doi'] if 'hepdata_doi' in kwargs else ''
 
     @classmethod
     def create_dir(cls, path):
@@ -27,7 +28,7 @@ class Writer(GetConcreteSubclassMixin, OptionInitMixin):
 
     @abc.abstractmethod
     def write(self, data_in, data_out, *args, **kwargs):
-        """Writes data provided by data_in argument to data_out, data_out is implementation dependant, and can be
+        """Writes data provided by data_in argument to data_out, data_out is implementation dependent, and can be
         directory, filelike object, etc
 
         :param data_in: input data (type is implementation specified)

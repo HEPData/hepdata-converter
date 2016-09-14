@@ -1,4 +1,5 @@
 import copy
+from hepdata_converter.common import Option
 from hepdata_converter.writers.array_writer import ArrayWriter, ObjectWrapper, ObjectFactory
 import yoda
 
@@ -70,6 +71,14 @@ class YODA(ArrayWriter):
 
     class_list = [Scatter3DYodaClass, Scatter2DYodaClass, Scatter1DYodaClass]
 
+    @classmethod
+    def options(cls):
+        options = ArrayWriter.options()
+        options['rivet_analysis_name'] = Option('rivet-analysis-name', 'r', type=str, default='RIVET_ANALYSIS_NAME',
+                                                required=False, variable_mapping='rivet_analysis_name',
+                                                help='Rivet analysis name, e.g. "ATLAS_2016_I1424838"')
+        return options
+
     def __init__(self, *args, **kwargs):
         super(YODA, self).__init__(*args, **kwargs)
         self.extension = 'yoda'
@@ -89,10 +98,17 @@ class YODA(ArrayWriter):
             if False in ObjectWrapper.is_number_var(independent_variable):
                 for i, value in enumerate(independent_variable['values']):
                     table.independent_variables[ii]['values'][i] = {'low': i + 0.5, 'high': i + 1.5}
+        table_num = str(table.index)
+        if self.hepdata_doi:
+            table_doi = 'doi:' + self.hepdata_doi + '/t' + table_num
+        else:
+            table_doi = table.name
         f = ObjectFactory(self.class_list, table.independent_variables, table.dependent_variables)
-        for graph in f.get_next_object():
-            graph.title = table.name
-            graph.path = ''
+        for idep, graph in enumerate(f.get_next_object()):
+            graph.title = table_doi
+            graph.path = '/REF/' + self.rivet_analysis_name + '/' \
+                         + 'd' + table_num.zfill(2) + '-x01-y' + str(idep + 1).zfill(2)
+            graph.setAnnotation('IsRef', '1')
             yoda.core.writeYODA(graph, data_out)
 
     def write(self, data_in, data_out, *args, **kwargs):
