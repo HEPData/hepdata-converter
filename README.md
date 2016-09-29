@@ -207,5 +207,5 @@ $ hepdata-converter --output-format foo /path/to/input /path/to/output
 Simply run
 
 ```
-coverage run -m unittest discover hepdata_converter/testsuite 'test_*'
+python -m unittest discover hepdata_converter/testsuite 'test_*'
 ```
