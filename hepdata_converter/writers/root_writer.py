@@ -16,11 +16,13 @@ log = logging.getLogger(__name__)
 class THFRootClass(ObjectWrapper):
     __metaclass__ = abc.ABCMeta
 
-    _hist_classes = [ROOTModule.TH1F, ROOTModule.TH2F, ROOTModule.TH3F]
     _hist_axes_names = ['x', 'y', 'z']
     _hist_axes_getters = ['GetXaxis', 'GetYaxis', 'GetZaxis']
     dim = 0
     core_object = False
+
+    def get_hist_classes(self):
+        return [ROOTModule.TH1F, ROOTModule.TH2F, ROOTModule.TH3F]
 
     @classmethod
     def match(cls, independent_variables_map, dependent_variable):
@@ -63,14 +65,14 @@ class THFRootClass(ObjectWrapper):
         if 1 == self.dim:
             nbinsx = len(xval_ordered[0]) - 1
             binsx = array.array('d', xval_ordered[0])
-            hist = self._hist_classes[self.dim - 1](self.sanitize_name(name), '', nbinsx, binsx)
+            hist = self.get_hist_classes()[self.dim - 1](self.sanitize_name(name), '', nbinsx, binsx)
 
         if 2 == self.dim:
             nbinsx = len(xval_ordered[0]) - 1
             binsx = array.array('d', xval_ordered[0])
             nbinsy = len(xval_ordered[1]) - 1
             binsy = array.array('d', xval_ordered[1])
-            hist = self._hist_classes[self.dim - 1](self.sanitize_name(name), '', nbinsx, binsx, nbinsy, binsy)
+            hist = self.get_hist_classes()[self.dim - 1](self.sanitize_name(name), '', nbinsx, binsx, nbinsy, binsy)
 
         if 3 == self.dim:
             nbinsx = len(xval_ordered[0]) - 1
@@ -79,7 +81,7 @@ class THFRootClass(ObjectWrapper):
             binsy = array.array('d', xval_ordered[1])
             nbinsz = len(xval_ordered[2]) - 1
             binsz = array.array('d', xval_ordered[2])
-            hist = self._hist_classes[self.dim - 1](self.sanitize_name(name), '', nbinsx, binsx, nbinsy, binsy, nbinsz, binsz)
+            hist = self.get_hist_classes()[self.dim - 1](self.sanitize_name(name), '', nbinsx, binsx, nbinsy, binsy, nbinsz, binsz)
 
         for i in xrange(self.dim):
             name = self.independent_variables[i]['header']['name']
@@ -90,7 +92,7 @@ class THFRootClass(ObjectWrapper):
                 for ibin, label in enumerate(self.independent_variables[i]['labels']):
                     getattr(hist, self._hist_axes_getters[i])().SetBinLabel(ibin + 1, label)
 
-        if self.dim < len(self._hist_classes):
+        if self.dim < len(self.get_hist_classes()):
             getattr(hist, self._hist_axes_getters[self.dim])().SetTitle(self.sanitize_name(dependent_var_title))
 
         for i in xrange(len(yval)):
@@ -119,14 +121,14 @@ class THFRootClass(ObjectWrapper):
         if 1 == self.dim:
             nbinsx = len(xval_ordered[0]) - 1
             binsx = array.array('d', xval_ordered[0])
-            hist = self._hist_classes[self.dim - 1](self.sanitize_name(name), '', nbinsx, binsx)
+            hist = self.get_hist_classes()[self.dim - 1](self.sanitize_name(name), '', nbinsx, binsx)
 
         if 2 == self.dim:
             nbinsx = len(xval_ordered[0]) - 1
             binsx = array.array('d', xval_ordered[0])
             nbinsy = len(xval_ordered[1]) - 1
             binsy = array.array('d', xval_ordered[1])
-            hist = self._hist_classes[self.dim - 1](self.sanitize_name(name), '', nbinsx, binsx, nbinsy, binsy)
+            hist = self.get_hist_classes()[self.dim - 1](self.sanitize_name(name), '', nbinsx, binsx, nbinsy, binsy)
 
         if 3 == self.dim:
             nbinsx = len(xval_ordered[0]) - 1
@@ -135,7 +137,7 @@ class THFRootClass(ObjectWrapper):
             binsy = array.array('d', xval_ordered[1])
             nbinsz = len(xval_ordered[2]) - 1
             binsz = array.array('d', xval_ordered[2])
-            hist = self._hist_classes[self.dim - 1](self.sanitize_name(name), '', nbinsx, binsx, nbinsy, binsy, nbinsz, binsz)
+            hist = self.get_hist_classes()[self.dim - 1](self.sanitize_name(name), '', nbinsx, binsx, nbinsy, binsy, nbinsz, binsz)
 
         for i in xrange(self.dim):
             name = self.independent_variables[i]['header']['name']
@@ -146,7 +148,7 @@ class THFRootClass(ObjectWrapper):
                 for ibin, label in enumerate(self.independent_variables[i]['labels']):
                     getattr(hist, self._hist_axes_getters[i])().SetBinLabel(ibin + 1, label)
 
-        if self.dim < len(self._hist_classes):
+        if self.dim < len(self.get_hist_classes()):
             name = self.dependent_variable['header']['name']
             if 'units' in self.dependent_variable['header']:
                 name += ' [%s]' % self.dependent_variable['header']['units']
