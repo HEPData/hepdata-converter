@@ -18,8 +18,8 @@ HEPData Converter
 
 This software library provides support for converting:
 
-* Old HepData format (_Sample:http://hepdata.cedar.ac.uk/resource/sample.input) -> YAML
-* YAML to
+* Old HepData format (`Sample <http://hepdata.cedar.ac.uk/resource/sample.input>`_ -> YAML
+* YAML tov
     * `ROOT <https://root.cern.ch/>`_
     * `YODA <https://yoda.hepforge.org/>`_
     * `CSV <https://en.wikipedia.org/wiki/Comma-separated_values>`_
