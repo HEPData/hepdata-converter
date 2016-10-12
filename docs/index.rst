@@ -21,7 +21,7 @@
     waive the privileges and immunities granted to it by virtue of its status
     as an Intergovernmental Organization or submit itself to any jurisdiction.
 
-.. include:: ../INFO.rst
+.. include:: info.rst
 
 User's Guide
 ------------
@@ -63,3 +63,12 @@ interested.
    license
    authors
 
+
+Running Tests
+-------------
+
+Simply run
+
+.. code:: bash
+
+    python -m unittest discover hepdata_converter/testsuite 'test_*'

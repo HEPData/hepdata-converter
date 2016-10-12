@@ -21,6 +21,10 @@ def get_version():
         return '0.0.0'
     return r.group('version')
 
+
+extras_require = {'docs': ['Sphinx>=1.4.2'],
+                  'all': []}
+
 setup(
     name='hepdata-converter',
     version=get_version(),
@@ -34,7 +38,7 @@ setup(
             'hepdata-converter = hepdata_converter:main',
         ]
     },
-
+    extras_require=extras_require,
     packages=['hepdata_converter', 'hepdata_converter.parsers', 'hepdata_converter.writers', 'hepdata_converter.testsuite'],
     package_data={'hepdata_converter': get_all_datafiles(package='hepdata_converter/testsuite', path='testdata')},
     include_package_data=True,
