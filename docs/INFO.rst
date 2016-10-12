@@ -8,13 +8,19 @@
 .. image:: https://img.shields.io/github/license/HEPData/hepdata-converter.svg
     :target: https://github.com/HEPData/hepdata-converter/blob/master/LICENSE
 
+.. image:: https://img.shields.io/github/release/hepdata/hepdata-converter.svg?maxAge=2592000
+    :target: https://github.com/HEPData/hepdata-converter/releases
+
+.. image:: https://img.shields.io/github/issues/hepdata/hepdata-converter.svg?maxAge=2592000
+    :target: https://github.com/HEPData/hepdata-converter/issues
+
 .. image:: https://readthedocs.org/projects/hepdata-converter/badge/?version=latest
     :target: http://hepdata-converter.readthedocs.io/
 
 
 This software library provides support for converting:
 
-* Old HepData format (_Sample:http://hepdata.cedar.ac.uk/resource/sample.input) -> YAML
+* Old HepData format (`Sample <http://hepdata.cedar.ac.uk/resource/sample.input>`_ -> YAML
 * YAML to
     * `ROOT <https://root.cern.ch/>`_
     * `YODA <https://yoda.hepforge.org/>`_
