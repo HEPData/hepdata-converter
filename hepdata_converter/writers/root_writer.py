@@ -310,7 +310,7 @@ class TGraph2DErrorsClass(ObjectWrapper):
                                            array.array('d', self.xerr_plus[1]),
                                            array.array('d', self.yerr_plus))
         else:
-            graph = ROOTModule.TGraph2DErrors(0)
+            return []
 
         graph.SetName("Graph2D_y%s" % (self.dependent_variable_index + 1))
 
@@ -355,7 +355,7 @@ class TGraphAsymmErrorsRootClass(ObjectWrapper):
                                               array.array('d', self.yerr_minus),
                                               array.array('d', self.yerr_plus))
         else:
-            graph = ROOTModule.TGraphAsymmErrors(0)
+            return []
 
         graph.SetName("Graph1D_y%s" % (self.dependent_variable_index + 1))
 
