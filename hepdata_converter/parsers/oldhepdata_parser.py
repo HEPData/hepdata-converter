@@ -363,7 +363,8 @@ class OldHEPData(Parser):
                         self.current_table.data['dependent_variables'][xy_mapping[i]]['values'].append(element)
 
             elif data_entry_elements:
-                raise BadFormat("%s data entry elements but %s expected" % (len(data_entry_elements), len(header)))
+                raise BadFormat("%s data entry elements but %s expected: %s" %
+                                (len(data_entry_elements), len(header), line))
 
             last_index = self.current_file.tell()
             l = self.current_file.readline()
