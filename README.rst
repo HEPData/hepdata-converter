@@ -25,7 +25,7 @@ HEPData Converter
 
 This software library provides support for converting:
 
-* Old HepData format (`Sample <http://hepdata.cedar.ac.uk/resource/sample.input>`_ -> YAML
+* Old HepData format (`Sample <http://hepdata.cedar.ac.uk/resource/sample.input>`_) to YAML
 * YAML to:
     * `ROOT <https://root.cern.ch/>`_
     * `YODA <https://yoda.hepforge.org/>`_
@@ -38,7 +38,7 @@ Installation
 
 To use this package, you need to have YODA and ROOT (and PyROOT) installed.
 Instructions to install are available below.
-Install from PyPI with ```pip install hepdata-converter```.
+Install from PyPI with ``pip install hepdata-converter``.
 
 ROOT Installation
 -----------------
@@ -47,12 +47,12 @@ We've provided some helpful installation guides for you :)
 
 * `Download binaries (all platforms) <https://root.cern.ch/downloading-root>`_
 * `Build from sources <https://root.cern.ch/installing-root-source>`_
-* `Mac OS (Homebrew) Installation <http://spamspameggsandspam.blogspot.ch/2011/08/setting-up-root-and-pyroot-on-new-mac.html>`_:  ```brew install root6```
+* `Mac OS (Homebrew) Installation <http://spamspameggsandspam.blogspot.ch/2011/08/setting-up-root-and-pyroot-on-new-mac.html>`_:  ``brew install root6``
 
 YODA Installation
 -----------------
 
-Mac OS. We use brew, you should too :) ```brew tap davidchall/hep``` to tell brew where to get package definitions from for HEP.	Then, ```brew install yoda```.
+Mac OS. We use brew, you should too :) ``brew tap davidchall/hep`` to tell brew where to get package definitions from for HEP.	Then, ``brew install yoda``.
 
 
 -------------

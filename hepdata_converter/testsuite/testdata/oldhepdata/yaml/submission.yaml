@@ -41,7 +41,7 @@ keywords:
   values: [SIG]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [7000.0]
 location: Data from Page 17 of preprint
 name: Table 1
@@ -58,7 +58,7 @@ keywords:
   values: [SIG]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [7000.0]
 location: Data from Page 20 of preprint
 name: Table 2
@@ -77,7 +77,7 @@ keywords:
   values: [DSIG/DPT]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [7000.0]
 location: Data from Figure 8A
 name: Table 3
@@ -95,7 +95,7 @@ keywords:
   values: [DSIG/DPT]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [7000.0]
 location: Data from Figure 8B
 name: Table 4
@@ -113,7 +113,7 @@ keywords:
   values: [DSIG/DPHI]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [7000.0]
 location: Data from Figure 9A
 name: Table 5
@@ -131,7 +131,7 @@ keywords:
   values: [DSIG/DPHI]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [7000.0]
 location: Data from Figure 9B
 name: Table 6
@@ -149,7 +149,7 @@ keywords:
   values: [DSIG/DM]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [7000.0]
 location: Data from Figure 10A
 name: Table 7
@@ -168,7 +168,7 @@ keywords:
   values: [DSIG/DM]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [7000.0]
 location: Data from Figure 10B
 name: Table 8

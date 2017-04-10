@@ -46,7 +46,7 @@ class Table(object):
                 {'name': 'reactions', 'values': []},
                 {'name': 'observables', 'values': []},
                 {'name': 'phrases', 'values': []},
-                {'name': 'energies', 'values': []},
+                {'name': 'cmenergies', 'values': []},
             ],
             'data_file': data_file or 'data%s.yaml' % index,
             # it seems it's required
@@ -80,7 +80,7 @@ class Table(object):
                 self.observables = keyword['values']
             elif keyword['name'] == 'phrases':
                 self.phrases = keyword['values']
-            elif keyword['name'] == 'energies':
+            elif keyword['name'] == 'cmenergies':
                 self.energies = keyword['values']
 
         self.data_file = self.metadata['data_file']

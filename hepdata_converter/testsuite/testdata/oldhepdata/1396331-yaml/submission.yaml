@@ -33,7 +33,7 @@ keywords:
   values: [D2SIG/DPT/DYRAP]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [13000.0]
 location: Data from Figure 5; Table 5
 name: Table 1
@@ -51,7 +51,7 @@ keywords:
   values: [D2SIG/DPT/DYRAP]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [13000.0]
 location: Data from Figure 5; Table 6
 name: Table 2
@@ -69,7 +69,7 @@ keywords:
   values: [D2SIG/DPT/DYRAP]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [13000.0]
 location: Data from Figure 6; Table 7
 name: Table 3
@@ -87,7 +87,7 @@ keywords:
   values: [D2SIG/DPT/DYRAP]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [13000.0]
 location: Data from Figure 6; Table 8
 name: Table 4
@@ -105,7 +105,7 @@ keywords:
   values: [RATIO]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [13000.0]
 location: Data from Figure 7; Table 9
 name: Table 5
@@ -123,7 +123,7 @@ keywords:
   values: [RATIO]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [13000.0]
 location: Data from Figure 7; Table 10
 name: Table 6
@@ -141,7 +141,7 @@ keywords:
   values: [RATIO]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [13000.0]
 location: Data from Figure 7; Table 11
 name: Table 7
@@ -159,7 +159,7 @@ keywords:
   values: [RATIO]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [13000.0]
 location: Data from Figure 7; Table 12
 name: Table 8
@@ -178,7 +178,7 @@ keywords:
   values: [RATIO]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [13000.0]
 location: Data from Figure 8; Table 13
 name: Table 9
@@ -197,7 +197,7 @@ keywords:
   values: [RATIO]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [13000.0]
 location: Data from Figure 8; Table 14
 name: Table 10
@@ -216,7 +216,7 @@ keywords:
   values: [RATIO]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [13000.0]
 location: Data from Figure 8; Table 15
 name: Table 11
@@ -235,7 +235,7 @@ keywords:
   values: [RATIO]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [13000.0]
 location: Data from Figure 10; Table 16
 name: Table 12
@@ -254,7 +254,7 @@ keywords:
   values: [RATIO]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [13000.0]
 location: Data from Figure 10; Table 17
 name: Table 13
@@ -273,7 +273,7 @@ keywords:
   values: [RATIO]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [13000.0]
 location: Data from Figure 10; Table 18
 name: Table 14
@@ -291,7 +291,7 @@ keywords:
   values: [D2SIG/DPT/DYRAP]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [13000.0]
 location: Data from Figure 5; Table 5; Correlation table
 name: Table 15
@@ -309,7 +309,7 @@ keywords:
   values: [D2SIG/DPT/DYRAP]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [13000.0]
 location: Data from Figure 5; Table 6; Correlation table
 name: Table 16
@@ -327,7 +327,7 @@ keywords:
   values: [D2SIG/DPT/DYRAP]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [13000.0]
 location: Data from Figure 6; Table 7; Correlation table
 name: Table 17
@@ -345,7 +345,7 @@ keywords:
   values: [D2SIG/DPT/DYRAP]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [13000.0]
 location: Data from Figure 6; Table 8; Correlation table
 name: Table 18
@@ -363,7 +363,7 @@ keywords:
   values: [RATIO]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [13000.0]
 location: Data from Figure 7; Table 9; Correlation table
 name: Table 19
@@ -381,7 +381,7 @@ keywords:
   values: [RATIO]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [13000.0]
 location: Data from Figure 7; Table 10; Correlation table
 name: Table 20
@@ -399,7 +399,7 @@ keywords:
   values: [RATIO]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [13000.0]
 location: Data from Figure 7; Table 11; Correlation table
 name: Table 21
@@ -417,7 +417,7 @@ keywords:
   values: [RATIO]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [13000.0]
 location: Data from Figure 7; Table 12; Correlation table
 name: Table 22
@@ -435,7 +435,7 @@ keywords:
   values: [RATIO]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [13000.0]
 location: Data from Figure 8; Table 13; Correlation table
 name: Table 23
@@ -453,7 +453,7 @@ keywords:
   values: [RATIO]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [13000.0]
 location: Data from Figure 8; Table 14; Correlation table
 name: Table 24
@@ -471,7 +471,7 @@ keywords:
   values: [RATIO]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [13000.0]
 location: Data from Figure 8; Table 15; Correlation table
 name: Table 25
@@ -489,7 +489,7 @@ keywords:
   values: [RATIO]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [13000.0]
 location: Data from Figure 10; Table 16; Correlation table
 name: Table 26
@@ -507,7 +507,7 @@ keywords:
   values: [RATIO]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [13000.0]
 location: Data from Figure 10; Table 17; Correlation table
 name: Table 27
@@ -525,7 +525,7 @@ keywords:
   values: [RATIO]
 - name: phrases
   values: []
-- name: energies
+- name: cmenergies
   values: [13000.0]
 location: Data from Figure 10; Table 18; Correlation table
 name: Table 28

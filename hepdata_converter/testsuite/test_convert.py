@@ -46,7 +46,7 @@ class ConvertTestSuite(WriterTestSuite):
             "  values: ['SIG']\n"
             "- name: phrases\n"
             "  values: []\n"
-            "- name: energies\n"
+            "- name: cmenergies\n"
             "  values: [7000.0]\n"
             "location: 'Data from Page 17 of preprint'\n"
             "name: Table 1\n"

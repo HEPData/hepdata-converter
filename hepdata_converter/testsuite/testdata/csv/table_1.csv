@@ -4,7 +4,7 @@
 #: data_license: GPL 2 url for license 
 #: keyword reactions: P P --> Z0 Z0 X
 #: keyword observables: SIG
-#: keyword energies: 7000
+#: keyword cmenergies: 7000
 #: RE,P P --> Z0 < LEPTON+ LEPTON- > Z0 < LEPTON+ LEPTON- > X
 'SQRT(S) [GEV]','SIG(fiducial) [FB]','stat +','stat -','sys +','sys -','sys,lumi +','sys,lumi -'
 7000,25.4,3.3,-3.0,1,-1.2,1,-1

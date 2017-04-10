@@ -308,7 +308,10 @@ class OldHEPData(Parser):
                             err_m = str(float(err_m[:-3])) + '%' if err_m[-3:] == 'PCT' else float(err_m)
                             if str(err_p)[-1] != '%' and str(err_m)[-1] == '%':
                                 err_p = str(err_p) + '%'
-                            element['errors'] += [{'label': 'stat', 'asymerror': {'plus': err_p, 'minus': err_m}}]
+                            if r.group('err_sys'):
+                                element['errors'] += [{'label': 'stat', 'asymerror': {'plus': err_p, 'minus': err_m}}]
+                            else:
+                                element['errors'] += [{'asymerror': {'plus': err_p, 'minus': err_m}}]
 
                         else:
                             r = re.search('^(?P<value>' + pmnum + ')\s*(\+-\s*(?P<error>' +
@@ -318,7 +321,10 @@ class OldHEPData(Parser):
                                 if r.group('error'):
                                     error = r.group('error').strip()
                                     error = str(float(error[:-3])) + '%' if error[-3:] == 'PCT' else float(error)
-                                    element['errors'] += [{'label': 'stat', 'symerror': error}]
+                                    if r.group('err_sys'):
+                                        element['errors'] += [{'label': 'stat', 'symerror': error}]
+                                    else:
+                                        element['errors'] += [{'symerror': error}]
                             else: # everything else: don't try to convert to float
                                 element['value'] = single_element
 

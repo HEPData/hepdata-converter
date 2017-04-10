@@ -5,7 +5,7 @@
 #: keyword reactions: P P --> Z0 Z0 X
 #: keyword observables: DSIG/DM
 #: keyword phrases: 
-#: keyword energies: 7000.0
+#: keyword cmenergies: 7000.0
 #: RE,,,P P --> Z0 < LEPTON+ LEPTON- > Z0 < NU NUBAR > X
 #: SQRT(S) [GEV],,,7000.0
 'MT(ZZ) [GEV]','MT(ZZ) [GEV] LOW','MT(ZZ) [GEV] HIGH','10**6 * 1/SIG(fiducial) * D(SIG(fiducial))/DMT(ZZ)','stat +','stat -','sys,detector +','sys,detector -','sys,background +','sys,background -'

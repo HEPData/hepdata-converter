@@ -5,7 +5,7 @@
 #: keyword reactions: P P --> Z0 Z0 X
 #: keyword observables: SIG
 #: keyword phrases: 
-#: keyword energies: 7000.0
+#: keyword cmenergies: 7000.0
 #: RE,P P --> Z0 < LEPTON+ LEPTON- > Z0 < LEPTON+ LEPTON- > X
 'SQRT(S) [GEV]','SIG(fiducial) [FB]','stat +','stat -','sys +','sys -','sys,lumi +','sys,lumi -'
 7000.0,25.4,3.3,-3.0,1.2,-1.0,1.0,-1.0

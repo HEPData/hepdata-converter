@@ -38,7 +38,7 @@ description: The measured fiducial cross sections. The first systematic uncertai
 keywords: # used for searching, possibly multiple values for each keyword
   - { name: reactions, values: [P P --> Z0 Z0 X]}
   - { name: observables, values: [SIG]}
-  - { name: energies, values: [7000]} # centre-of-mass energy in GeV
+  - { name: cmenergies, values: [7000]} # centre-of-mass energy in GeV
 data_file: data1.yaml
 data_license:
   name: 'GPL 2'
@@ -65,7 +65,7 @@ description: Normalized ZZ fiducial cross section (multiplied by 10^6 for readab
 keywords: # used for searching, possibly multiple values for each keyword
   - { name: reactions, values: [P P --> Z0 Z0 X]}
   - { name: observables, values: [DSIG/DPT]}
-  - { name: energies, values: [7000]} # centre-of-mass energy in GeV
+  - { name: cmenergies, values: [7000]} # centre-of-mass energy in GeV
 data_file: data3.yaml
 ---
 # This is Table 4.
@@ -75,7 +75,7 @@ description: Normalized ZZ fiducial cross section (multiplied by 10^6 for readab
 keywords: # used for searching, possibly multiple values for each keyword
   - { name: reactions, values: [P P --> Z0 Z0 X]}
   - { name: observables, values: [DSIG/DPT]}
-  - { name: energies, values: [7000]} # centre-of-mass energy in GeV
+  - { name: cmenergies, values: [7000]} # centre-of-mass energy in GeV
 data_file: data4.yaml
 ---
 # This is Table 5.
@@ -87,7 +87,7 @@ description: | # preserve newlines
 keywords: # used for searching, possibly multiple values for each keyword
   - { name: reactions, values: [P P --> Z0 Z0 X]}
   - { name: observables, values: [DSIG/DPHI]}
-  - { name: energies, values: [7000]} # centre-of-mass energy in GeV
+  - { name: cmenergies, values: [7000]} # centre-of-mass energy in GeV
 data_file: data5.yaml
 ---
 # This is Table 8.
@@ -97,13 +97,13 @@ description: Normalized ZZ fiducial cross section (multiplied by 10^6 for readab
 keywords: # used for searching, possibly multiple values for each keyword
   - { name: reactions, values: [P P --> Z0 Z0 X]}
   - { name: observables, values: [DSIG/DM]}
-  - { name: energies, values: [7000]} # centre-of-mass energy in GeV
+  - { name: cmenergies, values: [7000]} # centre-of-mass energy in GeV
 data_file: data8.yaml
 ---
 # This is Table 8.
 name: "Table 9"
 description: The observed and expected EmissT distribution in the dielectron SR-Z. The negigible estimated contribution from Z+jets is omitted in these distributions. The last bin contains the overflow.
 keywords: # used for searching, possibly multiple values for each keyword
-  - { name: energies, values: [8000]} # centre-of-mass energy in GeV
+  - { name: cmenergies, values: [8000]} # centre-of-mass energy in GeV
 data_file: data9.yaml
 # End of YAML file.

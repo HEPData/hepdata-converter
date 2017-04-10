@@ -3,7 +3,7 @@
 #: data_file: data5.yaml
 #: keyword reactions: P P --> Z0 Z0 X
 #: keyword observables: SIG
-#: keyword energies: 7000
+#: keyword cmenergies: 7000
 '','SRttee','stat +','stat -','sys +','sys -'
 'ttbarW/Z',0.58,0.06,-0.06,0.25,-0.25
 'ttbarH',0.05,0.02,-0.02,0.01,-0.01

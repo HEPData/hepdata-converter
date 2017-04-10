@@ -1,7 +1,7 @@
 #: name: Table 9
 #: description: The observed and expected EmissT distribution in the dielectron SR-Z. The negigible estimated contribution from Z+jets is omitted in these distributions. The last bin contains the overflow.
 #: data_file: data9.yaml
-#: keyword energies: 8000
+#: keyword cmenergies: 8000
 #: EVENTS [GEV],,,25,25,,,25,25
 #: SQRT(S) [GeV],,,8000.0,8000.0,,,8000.0,8000.0
 'ETMISS [GEV]','ETMISS [GEV] LOW','ETMISS [GEV] HIGH','Data','Expected Background','error +','error -','GGM 700 200 1.5','GGM 900 600 1.5'
