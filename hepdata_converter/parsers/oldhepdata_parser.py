@@ -388,8 +388,9 @@ class OldHEPData(Parser):
                 energy = energy_min
             self._parse_energies(energy)
 
-        if any(word in self.current_table.description.lower() for word in ['covariance', 'correlation', 'matrix']):
-            reformatted = self._reformat_matrix()
+        if self.current_table.description:
+            if any(word in self.current_table.description.lower() for word in ['covariance', 'correlation', 'matrix']):
+                reformatted = self._reformat_matrix()
 
     def _reformat_matrix(self):
         """Transform a square matrix into a format with two independent variables and one dependent variable.
@@ -656,7 +657,7 @@ class OldHEPData(Parser):
             if 'record_ids' not in self.data[0]:
                 self.data[0]['record_ids'] = []
 
-            record_id = {'type': key, 'id': int(data)}
+            record_id = {'type': key, 'id': int(data) if data else 0}
 
             if self.data[0]['record_ids'].count(record_id) == 0:
                 self.data[0]['record_ids'].append(record_id)

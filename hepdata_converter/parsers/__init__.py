@@ -40,8 +40,8 @@ class Table(object):
 
         self.metadata = metadata or {
             'name': table_name or 'Table %s' % self.index,
-            'location': None,
-            'description': None,
+            'location': '',
+            'description': '',
             'keywords': [
                 {'name': 'reactions', 'values': []},
                 {'name': 'observables', 'values': []},
