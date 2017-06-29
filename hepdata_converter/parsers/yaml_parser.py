@@ -1,4 +1,9 @@
 import yaml
+# We try to load using the CSafeLoader for speed improvements.
+try:
+    from yaml import CSafeLoader as Loader
+except ImportError: #pragma: no cover
+    from yaml import SafeLoader as Loader #pragma: no cover
 from hepdata_validator.submission_file_validator import SubmissionFileValidator
 from hepdata_validator.data_file_validator import DataFileValidator
 from hepdata_converter.parsers import Parser, ParsedData, Table
@@ -40,12 +45,7 @@ class YAML(Parser):
 
         # first validate submission file:
         with open(data_in, 'r') as submission_file:
-            try:
-                submission_data = list(
-                    yaml.load_all(submission_file, Loader=yaml.CSafeLoader))
-            except:  # pragma: no cover
-                submission_data = list(
-                    yaml.load_all(submission_file))  # pragma: no cover
+            submission_data = list(yaml.load_all(submission_file, Loader=Loader))
 
             if len(submission_data) == 0:
                 raise RuntimeError("Submission file (%s) is empty" % data_in)
@@ -71,11 +71,7 @@ class YAML(Parser):
                     raise ValueError(
                         "table file: %s does not exist" % table.data_file)
 
-                try:
-                    # We try to load using the CLoader for speed improvements.
-                    table_data = yaml.load(table_file, Loader=yaml.CSafeLoader)
-                except:  # pragma: no cover
-                    table_data = yaml.load(table_file)  # pragma: no cover
+                table_data = yaml.load(table_file, Loader=Loader)
 
                 if not data_file_validator.validate(data=table_data,
                                                     file_path=table_filepath):

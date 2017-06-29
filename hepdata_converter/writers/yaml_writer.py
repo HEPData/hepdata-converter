@@ -1,10 +1,15 @@
 import yaml
+# We try to dump using the CSafeDumper for speed improvements.
+try:
+    from yaml import CSafeDumper as Dumper
+except ImportError: #pragma: no cover
+    from yaml import SafeDumper as Dumper #pragma: no cover
 from hepdata_converter.common import Option, OptionInitMixin
 from hepdata_converter.writers import Writer
 import os
 
 def str_presenter(dumper, data):
-    if '\n' in data in data:
+    if '\n' in data:
         return dumper.represent_scalar('tag:yaml.org,2002:str', data, style='|')
     return dumper.represent_scalar('tag:yaml.org,2002:str', data)
 
@@ -22,7 +27,7 @@ class YAML(Writer):
 
     def __init__(self, *args, **kwargs):
         super(YAML, self).__init__(single_file_output=True, *args, **kwargs)
-        yaml.add_representer(str, str_presenter)
+        Dumper.add_representer(str, str_presenter)
 
     def write(self, data_in, data_out, *args, **kwargs):
         """
@@ -49,26 +54,14 @@ class YAML(Writer):
         if not self.single_file:
             self.create_dir(data_out)
             with open(os.path.join(data_out, 'submission.yaml'), 'w') as submission_file:
-                try:
-                    yaml.dump_all([data] + [table.metadata for table in tables], submission_file, dumper=yaml.CDumper)
-                except:
-                    yaml.dump_all([data] + [table.metadata for table in tables], submission_file)
+                yaml.dump_all([data] + [table.metadata for table in tables], submission_file, Dumper=Dumper)
 
                 for table in tables:
                     with open(os.path.join(data_out, table.data_file), 'w') as table_file:
-                        try:
-                            yaml.dump(table.data, table_file, dumper=yaml.CDumper)
-                        except:
-                            yaml.dump(table.data, table_file)
+                        yaml.dump(table.data, table_file, Dumper=Dumper)
         else:
             if isinstance(data_out, (str, unicode)):
                 with open(data_out, 'w') as submission_file:
-                    try:
-                        yaml.dump_all([data] + [table.all_data for table in tables], submission_file, dumper=yaml.CDumper)
-                    except:
-                        yaml.dump_all([data] + [table.all_data for table in tables], submission_file)
+                    yaml.dump_all([data] + [table.all_data for table in tables], submission_file, Dumper=Dumper)
             else: # expect filelike object
-                try:
-                    yaml.dump_all([data] + [table.all_data for table in tables], data_out, dumper=yaml.CDumper)
-                except:
-                    yaml.dump_all([data] + [table.all_data for table in tables], data_out)
+                yaml.dump_all([data] + [table.all_data for table in tables], data_out, Dumper=Dumper)
