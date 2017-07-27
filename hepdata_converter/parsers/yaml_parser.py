@@ -63,7 +63,9 @@ class YAML(Parser):
         # validator for table data
         data_file_validator = DataFileValidator()
 
-        for i in range(1, len(submission_data)):
+        for i in range(0, len(submission_data)):
+            if not submission_data[i] or 'data_file' not in submission_data[i]:
+                continue
             table_filepath = os.path.join(os.path.dirname(data_in),
                                           submission_data[i]['data_file'])
             with open(table_filepath, 'r') as table_file:
