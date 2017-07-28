@@ -58,13 +58,17 @@ class YAML(Parser):
                     (data_in, self._pretty_print_errors(
                         submission_file_validator.get_messages())))
 
+        metadata = {}
         tables = []
 
         # validator for table data
         data_file_validator = DataFileValidator()
 
         for i in range(0, len(submission_data)):
-            if not submission_data[i] or 'data_file' not in submission_data[i]:
+            if not submission_data[i]: # empty YAML document
+                continue
+            if 'data_file' not in submission_data[i]:
+                metadata = submission_data[i] # information about whole submission
                 continue
             table_filepath = os.path.join(os.path.dirname(data_in),
                                           submission_data[i]['data_file'])
@@ -86,4 +90,4 @@ class YAML(Parser):
                               data=table_data)
                 tables.append(table)
 
-        return ParsedData(submission_data[0], tables)
+        return ParsedData(metadata, tables)
