@@ -397,7 +397,7 @@ class OldHEPData(Parser):
         """
         nxax = len(self.current_table.data['independent_variables'])
         nyax = len(self.current_table.data['dependent_variables'])
-        npts = len(self.current_table.data['independent_variables'][0]['values'])
+        npts = len(self.current_table.data['dependent_variables'][0]['values'])
 
         # check if 1 x-axis, and npts (>=2) equals number of y-axes
         if nxax != 1 or nyax != npts or npts < 2:
