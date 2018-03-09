@@ -1,12 +1,10 @@
 import inspect
 import os
 import pkgutil
-import shutil
 from hepdata_converter.common import GetConcreteSubclassMixin, OptionInitMixin
 
 __all__ = []
 
-from string import lower
 import abc
 
 

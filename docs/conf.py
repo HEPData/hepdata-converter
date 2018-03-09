@@ -131,16 +131,15 @@ todo_include_todos = False
 html_theme = 'alabaster'
 
 html_theme_options = {
-    'description': 'HEPData web application.',
-    'github_user': 'hepdata',
+    'description': 'HEPData Converter',
+    'github_user': 'HEPData',
     'github_repo': 'hepdata-converter',
     'github_button': True,
     'github_banner': True,
     'show_powered_by': False,
     'extra_nav_links': {
-        'GitHub': 'http://github.com/HEPData/hepdata-converter',
-        'HEPData@GitHub': 'http://github.com/HEPData/hepdata',
-        'HEPData.net': 'http://hepdata.net'
+        'HEPData@GitHub': 'http://github.com/HEPData',
+        'hepdata.net': 'https://hepdata.net'
     }
 }
 

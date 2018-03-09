@@ -1,7 +1,6 @@
 from string import lower
 from hepdata_converter.common import OptionInitMixin, Option
 from hepdata_converter.parsers import Parser, ParsedData, BadFormat, Table
-import StringIO
 import copy
 import re
 
@@ -509,6 +508,9 @@ class OldHEPData(Parser):
         if len(name) > 1:
             units = name[1].strip()
         name = name[0].strip()
+
+        if len(headers) < 2:
+            raise BadFormat("*qual line must contain a name and values: %s" % data)
 
         for header in headers[1:]:
             xheader = {'name': name}

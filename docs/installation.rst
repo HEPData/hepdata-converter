@@ -26,21 +26,25 @@
 Installation
 ============
 
-To use this package, you need to have YODA and ROOT (and PyROOT) installed.
-Instructions to install are available below.
-Install from PyPI with ```pip install hepdata-converter```.
+To use this package, you first need to install `YODA <https://yoda.hepforge.org>`_ and `ROOT <https://root.cern.ch>`_ (including `PyROOT <https://root.cern.ch/pyroot>`_).
+Check that you can ``import yoda`` and ``import ROOT`` from Python.  You might want to install into a dedicated virtual environment:
 
+.. code-block:: console
 
-ROOT Installation
------------------
+   $ mkvirtualenv hepdata-converter
+   (hepdata-converter)$ pip install hepdata-converter
 
-We've provided some helpful installation guides for you :)
+This will install the latest released version from `PyPI <https://pypi.python.org/pypi/hepdata-converter>`_.  Developers might want to instead install the project directly from GitHub in editable mode:
 
-* `Download binaries (all platforms) <https://root.cern.ch/downloading-root>`_
-* `Build from sources <https://root.cern.ch/installing-root-source>`_
-* `Mac OS (Homebrew) Installation <http://spamspameggsandspam.blogspot.ch/2011/08/setting-up-root-and-pyroot-on-new-mac.html>`_:  ```brew install root6```
+.. code-block:: console
 
-YODA Installation
------------------
+   $ workon hepdata-converter
+   (hepdata-converter)$ git clone https://github.com/HEPData/hepdata-converter
+   (hepdata-converter)$ cd hepdata_converter
+   (hepdata-converter)$ pip install -e .
 
-Mac OS. We use brew, you should too :) ```brew tap davidchall/hep``` to tell brew where to get package definitions from for HEP.	Then, ```brew install yoda```.
+Developers can then run the tests with the following command:
+
+.. code:: bash
+
+    python -m unittest discover hepdata_converter/testsuite 'test_*'

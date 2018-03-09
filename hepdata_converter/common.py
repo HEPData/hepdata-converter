@@ -1,5 +1,3 @@
-from abc import ABCMeta
-import abc
 import inspect
 from string import lower
 import textwrap

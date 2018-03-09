@@ -18,7 +18,7 @@ script:
   - docker run -v $CURRENT_PATH:$CURRENT_PATH hepdata/hepdata-converter /bin/bash -c "cd  $CURRENT_PATH && coverage run -m unittest discover hepdata_converter/testsuite 'test_*'"
   - docker run -v $CURRENT_PATH:$CURRENT_PATH hepdata/hepdata-converter /bin/bash -c "cd  $CURRENT_PATH && python setup.py install && hepdata-converter -v"
 after_success:
-- coveralls
+  - coveralls
 
 deploy:
   provider: pypi

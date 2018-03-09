@@ -164,6 +164,7 @@ class THFRootClass(ObjectWrapper):
         error_hists = []
         error_labels = {}
         error_indices = {}
+        index = 0
 
         is_number_list = self.is_number_var(self.dependent_variable)
 
@@ -191,15 +192,17 @@ class THFRootClass(ObjectWrapper):
                             error1['label'] = label + "_1"
                             break
 
-            for index, error in enumerate(value.get('errors', []), 1):
+            for error in value.get('errors', []):
                 if 'label' not in error:
                     error['label'] = 'error'
                 label = error['label']
+                if label not in error_labels:
+                    index += 1
+                    error_indices[index] = label
                 if 'symerror' in error and label not in error_labels:
                     error_labels[label] = 'symerror'
                 elif 'asymerror' in error and error_labels.get(label, 'symerror') == 'symerror':
                     error_labels[label] = 'asymerror'
-                error_indices[index] = label
 
         yvals = []
         for index in xrange(1, len(error_labels) + 1):

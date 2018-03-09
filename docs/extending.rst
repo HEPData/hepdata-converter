@@ -1,17 +1,23 @@
--------------------------------
-Extending the HEPData Converter
--------------------------------
+---------------------
+Extending the library
+---------------------
 
-To extend library with new formats (both input and output) one only needs to subclass specified class (for reading
-```hepdata_converter.parsers.Parser```, for writing ```hepdata_converter.writers.Writer```), and make sure that files containing these implementations
-are respectively in ```hepdata_converter.parsers``` or ```hepdata_converter.writers``` package.
+To extend the library with new formats (either input or output) a developer only needs to subclass the
+specified class (for reading, ``hepdata_converter.parsers.Parser``, for writing,
+``hepdata_converter.writers.Writer``), and make sure that files containing these implementations
+are respectively in ``hepdata_converter.parsers`` or ``hepdata_converter.writers``.
 
 Creating a new Parser
 ---------------------
 
-In order to create new Parser you need to create class inheriting Parser class and override ```def parse(self, data_in, *args, **kwargs):``` abstract method. If you're trying to extend the library you should put the file containing new Parser in ```hepdata_converter/parsers``` directory, the name of the class is important - the new parser will be available by this name (case insensitive). If your goal is a simple hack then the package containing new parser class can be wherever, but the parser class has to be imported before using ```hepdata_converter.convert``` function.
+In order to create a new Parser you need to create a class inheriting the ``Parser`` class and
+override the ``def parse(self, data_in, *args, **kwargs):`` abstract method.  If you're trying to
+extend the library you should put the file containing the new Parser in the ``hepdata_converter/parsers``
+directory.  The name of the class is important: the new parser will be available by this (case-insensitive)
+name.  If your goal is a simple hack, then the package containing the new parser class can be wherever,
+but the parser class has to be imported before using the ``hepdata_converter.convert`` function.
 
-Example is below:
+An example is given below:
 
 
 .. code:: python
@@ -52,7 +58,8 @@ Example is below:
             return ParsedData(metadata, tables)
 
 
-If this class is put in (eg) ```hepdata_converter/parsers/foo_parser.py``` then it could be accessed in the code as:
+If this class is put in (e.g.) ``hepdata_converter/parsers/foo_parser.py`` then it could be accessed from
+Python code as:
 
 
 .. code:: python
@@ -63,7 +70,7 @@ If this class is put in (eg) ```hepdata_converter/parsers/foo_parser.py``` then 
                               options={'input_format': 'foo'})
 
 
-It can also be accessed from CLI:
+It could also be accessed from the CLI:
 
 
 .. code:: bash
@@ -72,18 +79,24 @@ It can also be accessed from CLI:
 
 
 
-**WARNING**: it is developers responsibility to be able to handle
-```data_in``` in ```def parse(self, data_in, *args, **kwargs):``` regardless whether it is string (path) or filelike
-object
+**WARNING**: it is the developer's responsibility to be able to handle ``data_in`` in
+``def parse(self, data_in, *args, **kwargs):`` regardless whether it is a string (path) or a
+file-like object.
 
 
 Creating a new Writer
 ---------------------
 
-Creation of new Writer is similar to creating new Parser (see above), but for the sake of completness the full description is provided below.
-In order to create new Writer you need to create class inheriting Writer class and override ```def write(self, data_in, data_out, *args, **kwargs):``` abstract method. If you're trying to extend the library you should put the file containing new Parser in ```hepdata_converter/writers``` directory, the name of the class is important - the new writer will be available by this name (case insensitive). If your goal is a simple hack then the package containing new writer class can be whererver, but the writer class has to be imported before using ```hepdata_converter.convert``` function.
+Creation of a new Writer is similar to creating a new Parser (see above), but for the sake of completeness
+the full description is provided below.  In order to create a new Writer you need to create a class
+inheriting the ``Writer`` class and override the ``def write(self, data_in, data_out, *args, **kwargs):``
+abstract method.  If you're trying to extend the library you should put the file containing the new Parser
+in the ``hepdata_converter/writers`` directory.  The name of the class is important: the new writer will
+be available by this (case-insensitive) name.  If your goal is a simple hack, then the package containing
+the new writer class can be wherever, but the writer class has to be imported before using the
+``hepdata_converter.convert`` function.
 
-Example is below:
+An example is given below:
 
 .. code:: python
 
@@ -119,7 +132,8 @@ Example is below:
             pass
 
 
-If this class is put in (eg) ```hepdata_converter/writers/foo_writer.py``` then it could be accessed in the code as:
+If this class is put in (e.g.) ``hepdata_converter/writers/foo_writer.py`` then it could be accessed from
+Python code as:
 
 
 .. code:: python
@@ -130,12 +144,13 @@ If this class is put in (eg) ```hepdata_converter/writers/foo_writer.py``` then 
                               options={'output_format': 'foo'})
 
 
-It can also be accessed from CLI:
+It could also be accessed from the CLI:
 
 .. code:: bash
 
     hepdata-converter --output-format foo /path/to/input /path/to/output
 
 
-**WARNING**: it is developers responsibility to be able to handle
-```data_out``` in ```def write(self, data_in, data_out, *args, **kwargs):``` regardless whether it is string (path) or filelike object
+**WARNING**: it is the developer's responsibility to be able to handle ``data_out`` in
+``def write(self, data_in, data_out, *args, **kwargs):`` regardless whether it is a string (path) or a
+file-like object.

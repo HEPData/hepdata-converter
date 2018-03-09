@@ -25,23 +25,19 @@
 Usage
 =====
 
-Library exposes single function which enables conversion from several different formats (YAML, Old HepData) format to several other (YODA, YAML, ROOT, CSV). Conversion can be conducted between any format supported as input into any format supported as output. This is possible by means of using simple in memory intermediary format:
+The library exposes a single function ``convert`` which enables conversion from different input formats
+(``oldhepdata``, ``yaml``) to different output formats (``csv``, ``root``, ``yaml``, ``yoda``), by using a simple in-memory
+intermediary format.
 
-*HERE SHOULD GO IMAGE WITH THE 'ARCHITECTURE'*
 
-
-------------------------------------
-Conversion between different formats
-------------------------------------
-
-Python code
------------
+Python
+------
 
 .. code:: python
 
     import hepdata_converter
 
-    hepdata_converter.convert(input_file, output_directory, options={'input_format': 'oldhepdata'})
+    hepdata_converter.convert(input, output, options={'input_format': 'oldhepdata', 'output_format': 'yaml'})
 
 
 CLI
@@ -49,5 +45,8 @@ CLI
 
 .. code:: bash
 
-    hepdata-converter --input-format oldhepdata /path/to/input /path/to/output
+    hepdata-converter --input-format oldhepdata input output
 
+The default input and output formats are ``yaml`` if not specified explicitly.
+
+See a help message with more detailed options using ``hepdata-converter -h``.

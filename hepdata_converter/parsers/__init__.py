@@ -5,7 +5,6 @@ from hepdata_converter.common import GetConcreteSubclassMixin, OptionInitMixin
 
 __all__ = []
 
-from string import lower
 import pkgutil
 import inspect
 

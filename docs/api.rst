@@ -22,9 +22,7 @@
     as an Intergovernmental Organization or submit itself to any jurisdiction.
 
 
-API Docs
-========
+API
+===
 
-HEPData Converter
------------------
-
+.. autofunction:: hepdata_converter.convert

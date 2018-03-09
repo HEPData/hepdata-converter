@@ -21,12 +21,14 @@
     waive the privileges and immunities granted to it by virtue of its status
     as an Intergovernmental Organization or submit itself to any jurisdiction.
 
-.. include:: info.rst
+
+.. include:: ../README.rst
+
 
 User's Guide
 ------------
 
-This part of the documentation will show you how to get started in using
+This part of the documentation will show you how to get started in using the
 HEPData Converter.
 
 .. toctree::
@@ -34,7 +36,6 @@ HEPData Converter.
 
    installation
    usage
-
 
 
 API Reference
@@ -49,26 +50,14 @@ this part of the documentation is for you.
    api
    extending
 
+
 Additional Notes
 ----------------
 
-Notes on how to contribute, legal information and changes are here for the
-interested.
+This package was started in 2015 by Michał Szostak (`@michal-szostak <https://github.com/michal-szostak>`_)
+as a `CERN summer student project <https://cds.cern.ch/record/2055193>`_.
 
 .. toctree::
    :maxdepth: 1
 
-   contributing
-   changes
    license
-   authors
-
-
-Running Tests
--------------
-
-Simply run
-
-.. code:: bash
-
-    python -m unittest discover hepdata_converter/testsuite 'test_*'

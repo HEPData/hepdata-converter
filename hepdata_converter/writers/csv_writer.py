@@ -1,7 +1,6 @@
 import copy
 import csv
-import os
-from hepdata_converter.common import OptionInitMixin, Option
+from hepdata_converter.common import Option
 from hepdata_converter.writers.array_writer import ArrayWriter
 
 
