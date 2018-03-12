@@ -22,7 +22,7 @@ def get_version():
     return r.group('version')
 
 
-extras_require = {'docs': ['Sphinx>=1.4.2'],
+extras_require = {'docs': ['Sphinx>=1.4.2', 'mock'],
                   'all': []}
 
 setup(
@@ -31,8 +31,7 @@ setup(
     install_requires=[
         'pyyaml',
         'hepdata_validator',
-        'matplotlib',
-        'mock'
+        'matplotlib'
     ],
     entry_points={
         'console_scripts': [

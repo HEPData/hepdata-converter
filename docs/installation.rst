@@ -54,7 +54,7 @@ Developers might want to instead install the project directly from
 
     $ workon hepdata-converter
     (hepdata-converter)$ git clone https://github.com/HEPData/hepdata-converter
-    (hepdata-converter)$ cd hepdata_converter
+    (hepdata-converter)$ cd hepdata-converter
     (hepdata-converter)$ pip install -e .
 
 Developers can then run the tests with the following command:
