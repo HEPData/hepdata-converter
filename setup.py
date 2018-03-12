@@ -31,7 +31,8 @@ setup(
     install_requires=[
         'pyyaml',
         'hepdata_validator',
-        'matplotlib'
+        'matplotlib',
+        'mock'
     ],
     entry_points={
         'console_scripts': [

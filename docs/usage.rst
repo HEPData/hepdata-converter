@@ -37,7 +37,7 @@ Python
 
     import hepdata_converter
 
-    hepdata_converter.convert(input, output, options={'input_format': 'oldhepdata', 'output_format': 'yaml'})
+    hepdata_converter.convert('sample.oldhepdata', 'Sample', options={'input_format': 'oldhepdata', 'output_format': 'yaml'})
 
 
 CLI
@@ -45,7 +45,7 @@ CLI
 
 .. code:: bash
 
-    hepdata-converter --input-format oldhepdata input output
+    hepdata-converter -i oldhepdata -o yaml sample.oldhepdata Sample
 
 The default input and output formats are ``yaml`` if not specified explicitly.
 

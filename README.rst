@@ -3,19 +3,19 @@ HEPData Converter
 =================
 
 
-.. image:: https://img.shields.io/travis/HEPData/hepdata-converter.svg
+.. image:: https://img.shields.io/travis/HEPData/hepdata-converter.png
     :target: https://travis-ci.org/HEPData/hepdata-converter
 
-.. image:: https://coveralls.io/repos/github/HEPData/hepdata-converter/badge.svg?branch=master
+.. image:: https://coveralls.io/repos/github/HEPData/hepdata-converter/badge.png?branch=master
     :target: https://coveralls.io/github/HEPData/hepdata-converter?branch=master
 
-.. image:: https://img.shields.io/github/license/HEPData/hepdata-converter.svg
+.. image:: https://img.shields.io/github/license/HEPData/hepdata-converter.png
     :target: https://github.com/HEPData/hepdata-converter/blob/master/LICENSE.txt
 
-.. image:: https://img.shields.io/github/release/hepdata/hepdata-converter.svg?maxAge=2592000
+.. image:: https://img.shields.io/github/release/hepdata/hepdata-converter.png?maxAge=2592000
     :target: https://github.com/HEPData/hepdata-converter/releases
 
-.. image:: https://img.shields.io/github/issues/hepdata/hepdata-converter.svg?maxAge=2592000
+.. image:: https://img.shields.io/github/issues/hepdata/hepdata-converter.png?maxAge=2592000
     :target: https://github.com/HEPData/hepdata-converter/issues
 
 .. image:: https://readthedocs.org/projects/hepdata-converter/badge/?version=latest
