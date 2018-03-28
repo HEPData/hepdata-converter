@@ -22,7 +22,9 @@
     as an Intergovernmental Organization or submit itself to any jurisdiction.
 
 
-.. include:: ../README.rst
+.. only:: html
+
+   .. include:: ../README.rst
 
 
 User's Guide

@@ -383,8 +383,8 @@ class ROOT(ArrayWriter):
         self.extension = 'root'
 
     def _write_table(self, data_out, table):
-        data_out.mkdir(table.name)
-        data_out.cd(table.name)
+        data_out.mkdir(table.name.replace('/','-'))
+        data_out.cd(table.name.replace('/','-'))
 
         # if no independent variables, use bins of unit width and centred on integers (1, 2, 3, etc.)
         if not table.independent_variables and table.dependent_variables:

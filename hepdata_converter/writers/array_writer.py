@@ -213,7 +213,7 @@ class ArrayWriter(Writer):
                 # create output dir if it doesn't exist
                 self.create_dir(data_out)
                 for table in self.tables:
-                    outputs.append(open(os.path.join(data_out, table.name.replace(' ','') + '.' + self.extension), 'w'))
+                    outputs.append(open(os.path.join(data_out, table.name.replace(' ','').replace('/','-') + '.' + self.extension), 'w'))
         # multiple tables - require directory
         elif len(self.tables) > 1 and not isinstance(data_out, (str, unicode)):
             raise ValueError("Multiple tables, output must be a directory")
