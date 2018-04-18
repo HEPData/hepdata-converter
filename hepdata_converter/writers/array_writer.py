@@ -252,7 +252,7 @@ class ArrayWriter(Writer):
             name = independent_variable['header']['name']
             if 'units' in independent_variable['header']:
                 name += ' [%s]' % independent_variable['header']['units']
-            headers.append(name)
+            headers.append(unicode(name).encode('utf8', 'replace'))
             x_data = []
             x_data_low = []
             x_data_high = []
@@ -285,7 +285,7 @@ class ArrayWriter(Writer):
         units = ''
         if 'units' in dependent_variable['header']:
             units = ' [%s]' % dependent_variable['header']['units']
-        headers.append(dependent_variable['header']['name'] + units)
+        headers.append(unicode(dependent_variable['header']['name'] + units).encode('utf8', 'replace'))
 
         qualifiers_marks.append(True)
 

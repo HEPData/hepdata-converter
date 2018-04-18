@@ -87,6 +87,7 @@ class THFRootClass(ObjectWrapper):
             name = self.independent_variables[i]['header']['name']
             if 'units' in self.independent_variables[i]['header']:
                 name += ' [%s]' % self.independent_variables[i]['header']['units']
+            name = unicode(name).encode('ascii', 'replace')
             getattr(hist, self._hist_axes_getters[i])().SetTitle(name)
             if 'labels' in self.independent_variables[i]:
                 for ibin, label in enumerate(self.independent_variables[i]['labels']):
@@ -143,6 +144,7 @@ class THFRootClass(ObjectWrapper):
             name = self.independent_variables[i]['header']['name']
             if 'units' in self.independent_variables[i]['header']:
                 name += ' [%s]' % self.independent_variables[i]['header']['units']
+            name = unicode(name).encode('ascii', 'replace')
             getattr(hist, self._hist_axes_getters[i])().SetTitle(name)
             if 'labels' in self.independent_variables[i]: # set alphanumeric bin labels
                 for ibin, label in enumerate(self.independent_variables[i]['labels']):
@@ -152,6 +154,7 @@ class THFRootClass(ObjectWrapper):
             name = self.dependent_variable['header']['name']
             if 'units' in self.dependent_variable['header']:
                 name += ' [%s]' % self.dependent_variable['header']['units']
+            name = unicode(name).encode('ascii', 'replace')
             getattr(hist, self._hist_axes_getters[self.dim])().SetTitle(name)
 
         for i in xrange(len(self.xval[0])):
@@ -320,12 +323,15 @@ class TGraph2DErrorsClass(ObjectWrapper):
         xname = self.independent_variables[0]['header']['name']
         if 'units' in self.independent_variables[0]['header']:
             xname += ' [%s]' % self.independent_variables[0]['header']['units']
+        xname = unicode(xname).encode('ascii', 'replace')
         yname = self.independent_variables[1]['header']['name']
         if 'units' in self.independent_variables[1]['header']:
             yname += ' [%s]' % self.independent_variables[1]['header']['units']
+        yname = unicode(yname).encode('ascii', 'replace')
         zname = self.dependent_variable['header']['name']
         if 'units' in self.dependent_variable['header']:
             zname += ' [%s]' % self.dependent_variable['header']['units']
+        zname = unicode(zname).encode('ascii', 'replace')
 
         graph.GetXaxis().SetTitle(xname)
         graph.GetYaxis().SetTitle(yname)
@@ -365,9 +371,11 @@ class TGraphAsymmErrorsRootClass(ObjectWrapper):
         xname = self.independent_variables[0]['header']['name']
         if 'units' in self.independent_variables[0]['header']:
             xname += ' [%s]' % self.independent_variables[0]['header']['units']
+        xname = unicode(xname).encode('ascii', 'replace')
         yname = self.dependent_variable['header']['name']
         if 'units' in self.dependent_variable['header']:
             yname += ' [%s]' % self.dependent_variable['header']['units']
+        yname = unicode(yname).encode('ascii', 'replace')
         graph.GetXaxis().SetTitle(xname)
         graph.GetYaxis().SetTitle(yname)
 
