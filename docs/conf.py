@@ -151,7 +151,7 @@ html_theme_options = {
     'github_banner': True,
     'show_powered_by': False,
     'extra_nav_links': {
-        'HEPData@GitHub': 'http://github.com/HEPData',
+        'HEPData@GitHub': 'https://github.com/HEPData',
         'hepdata.net': 'https://hepdata.net'
     }
 }
@@ -324,7 +324,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   (master_doc, 'HEPData Converter', u'HEPData Converter Documentation',
-   author, 'HEPData Converter', 'Submission schemas and validation for HEPData.',
+   author, 'HEPData Converter', 'Converter software for HEPData.',
    'Miscellaneous'),
 ]
 

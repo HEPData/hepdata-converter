@@ -217,6 +217,12 @@ class OldHEPData(Parser):
         x_count = header.count('x')
         y_count = header.count('y')
 
+        if not self.current_table.xheaders:
+            raise BadFormat("*xheader line needs to appear before *data: %s" % data)
+
+        if not self.current_table.yheaders:
+            raise BadFormat("*yheader line needs to appear before *data: %s" % data)
+
         # use deepcopy to avoid references in yaml... may not be required, and will very probably be refactored
         # TODO - is this appropriate behavior, or are references in YAML files acceptable, they are certainly less human readable
         self.current_table.data = {'independent_variables': [{'header': self.current_table.xheaders[i] if i < len(self.current_table.xheaders) else copy.deepcopy(self.current_table.xheaders[-1]),
@@ -296,7 +302,7 @@ class OldHEPData(Parser):
 
                         pmnum_pct = pmnum + '(\s*PCT)?' # errors can possibly be given as percentages
 
-                        r = re.search('^(?P<value>' + pmnum + ')\s*(?P<err_p>' + pmnum_pct + ')\s*,\s*(?P<err_m>' +
+                        r = re.search('^(?P<value>' + pmnum + ')\s+(?P<err_p>' + pmnum_pct + ')\s*,\s*(?P<err_m>' +
                                       pmnum_pct + ')\s*(?P<err_sys>\(\s*DSYS=[^()]+\s*\))?$', single_element)
                         element = {'errors': []}
                         if r: # asymmetric first error
@@ -360,7 +366,7 @@ class OldHEPData(Parser):
                                     error = {'asymerror': {'plus': err_p, 'minus': err_m}}
                             if not r:
                                 # error happened
-                                raise ValueError("Error while parsing data")
+                                raise ValueError("Error while parsing data line: %s" % line)
 
                             error['label'] = label
                             if element['value'] != single_element:
@@ -403,14 +409,14 @@ class OldHEPData(Parser):
             return False
 
         # add second independent variable with each value duplicated npts times
-        xheader = self.current_table.data['independent_variables'][0]['header']
+        xheader = copy.deepcopy(self.current_table.data['independent_variables'][0]['header'])
         self.current_table.data['independent_variables'].append({'header': xheader, 'values': []})
         for value in self.current_table.data['independent_variables'][0]['values']:
-            self.current_table.data['independent_variables'][1]['values'].extend(npts * [value])
+            self.current_table.data['independent_variables'][1]['values'].extend([copy.deepcopy(value) for npt in range(npts)])
 
         # duplicate values of first independent variable npts times
         self.current_table.data['independent_variables'][0]['values'] \
-            = npts * self.current_table.data['independent_variables'][0]['values']
+            = [copy.deepcopy(value) for npt in range(npts) for value in self.current_table.data['independent_variables'][0]['values']]
 
         # suppress header if different for second y-axis
         if self.current_table.data['dependent_variables'][0]['header'] != \

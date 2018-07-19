@@ -8,7 +8,21 @@ from hepdata_validator.submission_file_validator import SubmissionFileValidator
 from hepdata_validator.data_file_validator import DataFileValidator
 from hepdata_converter.parsers import Parser, ParsedData, Table
 from multiprocessing import Pool
-import os
+import os, re
+
+# Allow for a bug in PyYAML where numbers like 1e+04 are parsed as strings not as floats.
+# See https://stackoverflow.com/a/30462009
+# Try replacing PyYAML by ruamel.yaml in future?
+Loader.add_implicit_resolver(
+    u'tag:yaml.org,2002:float',
+    re.compile(u'''^(?:
+     [-+]?(?:[0-9][0-9_]*)\\.[0-9_]*(?:[eE][-+]?[0-9]+)?
+    |[-+]?(?:[0-9][0-9_]*)(?:[eE][-+]?[0-9]+)
+    |\\.[0-9_]+(?:[eE][-+][0-9]+)?
+    |[-+]?[0-9][0-9_]*(?::[0-5]?[0-9])+\\.[0-9_]*
+    |[-+]?\\.(?:inf|Inf|INF)
+    |\\.(?:nan|NaN|NAN))$''', re.X),
+    list(u'-+0123456789.'))
 
 class YAML(Parser):
     help = 'Parses New HEPData YAML format. Input parameter should be path to ' \
@@ -64,6 +78,7 @@ class YAML(Parser):
         # validator for table data
         data_file_validator = DataFileValidator()
 
+        index = 0
         for i in range(0, len(submission_data)):
             if not submission_data[i]: # empty YAML document
                 continue
@@ -86,7 +101,8 @@ class YAML(Parser):
                         (table_filepath, self._pretty_print_errors(
                             data_file_validator.get_messages())))
 
-                table = Table(index=i, metadata=submission_data[i],
+                index = index + 1
+                table = Table(index=index, metadata=submission_data[i],
                               data=table_data)
                 tables.append(table)
 

@@ -346,7 +346,7 @@ class ArrayWriter(Writer):
 
                         if 'symerror' in error:
                             error_plus = error['symerror']
-                            error_minus = '-' + error_plus if str(error_plus)[-1] == '%' else -error_plus
+                            error_minus = '-' + error_plus if isinstance(error_plus, (str, unicode)) else -error_plus
                         else:
                             error_plus = error['asymerror']['plus']
                             error_minus = error['asymerror']['minus']

@@ -303,8 +303,11 @@ class TGraph2DErrorsClass(ObjectWrapper):
     def create_objects(self):
         self.calculate_total_errors()
 
-        if self.xerr_plus[0] != self.xerr_minus[0] or self.xerr_plus[1] != self.xerr_minus[1] \
-                or self.yerr_plus != self.yerr_minus:
+        # check that errors are symmetric (within a tolerance to allow for numerical rounding)
+        tol = 1e-15
+        if any([a - b > tol for a, b in zip(self.xerr_plus[0], self.xerr_minus[0])]) or \
+           any([a - b > tol for a, b in zip(self.xerr_plus[1], self.xerr_minus[1])]) or \
+           any([a - b > tol for a, b in zip(self.yerr_plus, self.yerr_minus)]):
             return []
 
         if len(self.xval[0]):

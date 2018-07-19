@@ -11,7 +11,7 @@ services:
 
 install:
   - sudo pip install --upgrade pip
-  - sudo pip install coverage==3.7
+  - sudo pip install coverage
   - sudo pip install coveralls
 
 script:
