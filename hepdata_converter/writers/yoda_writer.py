@@ -41,7 +41,7 @@ class ScatterYodaClass(ObjectWrapper):
              
             graph.addPoint(self.get_point_cls()(*args))
         error_breakdown = yaml.dump(self.err_breakdown, default_flow_style=True, default_style='',width=1e6)
-        graph.setAnnotation("Error_Breakdown",error_breakdown)
+        graph.setAnnotation("ErrorBreakdown",error_breakdown)
         return graph
 
     def create_objects(self):
