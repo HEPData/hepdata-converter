@@ -4,7 +4,6 @@ import os
 from hepdata_converter.common import Option
 from hepdata_converter.writers import Writer
 import abc
-
 from hepdata_converter.writers.utils import error_value_processor
 
 logging.basicConfig()
@@ -58,6 +57,7 @@ class ObjectWrapper(object):
         self.xerr_plus = []
         self.yerr_minus = []
         self.yerr_plus = []
+        self.err_breakdown = {}
         self.independent_variables = list(independent_variable_map)
         self.independent_variable_map = independent_variable_map
         self.dependent_variable = dependent_variable
@@ -93,6 +93,11 @@ class ObjectWrapper(object):
                                                xerr_minus, xerr_plus, xval)
         ArrayWriter.calculate_total_errors(self.dependent_variable, is_number_list,
                                            self.yerr_minus, self.yerr_plus, self.yval)
+    
+    def make_error_breakdown(self):
+        is_number_list = self.is_number_var(self.dependent_variable)
+        ArrayWriter.make_error_breakdown(self.dependent_variable, is_number_list,
+                                           self.err_breakdown)
 
     @abc.abstractmethod
     def create_objects(self):
@@ -167,6 +172,36 @@ class ArrayWriter(Writer):
                 values.append(middle_val)
                 min_errs.append(middle_val - entry['low'])
                 max_errs.append(entry['high'] - middle_val)
+    @staticmethod
+    def make_error_breakdown(variable, is_number_list, err_breakdown):
+        for i, entry in enumerate(variable['values']):
+            if not is_number_list[i]: continue # skip non-numeric y values
+            if 'value' in entry:
+                if 'errors' in entry:
+                    errors_min = 0.0
+                    errors_max = 0.0
+                    err_breakdown[i]={}
+                    for error in entry['errors']:
+                        label="error"
+                        if 'label' in error.keys(): label=error['label']
+                        err_breakdown[i][label]={}
+                        if 'asymerror' in error:
+                            err_minus = error_value_processor(entry['value'], error['asymerror']['minus'])
+                            err_plus = error_value_processor(entry['value'], error['asymerror']['plus'])
+                            errors_min += pow(min(err_plus, err_minus, 0.0), 2)
+                            errors_max += pow(max(err_plus, err_minus, 0.0), 2)
+                            err_breakdown[i][label]['up']=err_plus #want to maintain directionality of errors
+                            err_breakdown[i][label]['dn']=err_minus #want to maintain directionality of errors
+                        elif 'symerror' in error:
+                            try:
+                                err = error_value_processor(entry['value'], error['symerror'])
+                                errors_min += pow(err, 2)
+                                errors_max += pow(err, 2)
+                                err_breakdown[i][label]['up']=err
+                                err_breakdown[i][label]['dn']=-1*err
+                            except TypeError:
+                                print log.error('TypeError encountered when parsing {0}'.format(error['symerror']))
+
 
     @classmethod
     def options(cls):
