@@ -92,12 +92,8 @@ class ObjectWrapper(object):
             ArrayWriter.calculate_total_errors(independent_variable, is_number_list,
                                                xerr_minus, xerr_plus, xval)
         ArrayWriter.calculate_total_errors(self.dependent_variable, is_number_list,
-                                           self.yerr_minus, self.yerr_plus, self.yval)
-    
-    def make_error_breakdown(self):
-        is_number_list = self.is_number_var(self.dependent_variable)
-        ArrayWriter.make_error_breakdown(self.dependent_variable, is_number_list,
-                                           self.err_breakdown)
+                                           self.yerr_minus, self.yerr_plus, self.yval, self.err_breakdown)
+
 
     @abc.abstractmethod
     def create_objects(self):
@@ -137,7 +133,30 @@ class ArrayWriter(Writer):
     __metaclass__ = abc.ABCMeta
 
     @staticmethod
-    def calculate_total_errors(variable, is_number_list, min_errs, max_errs, values):
+    def process_error_labels(value):
+        """ Process the error labels of a dependent variable 'value' to ensure uniqueness. """
+
+        observed_error_labels = {}
+        for error in value.get('errors', []):
+            label = error.get('label', 'error')
+
+            if label not in observed_error_labels:
+                observed_error_labels[label] = 0
+            observed_error_labels[label] += 1
+
+            if observed_error_labels[label] > 1:
+                error['label'] = label + '_' + str(observed_error_labels[label])
+
+            # append "_1" to first error label that has a duplicate
+            if observed_error_labels[label] == 2:
+                for error1 in value.get('errors', []):
+                    error1_label = error1.get('label', 'error')
+                    if error1_label == label:
+                        error1['label'] = label + "_1"
+                        break
+
+    @staticmethod
+    def calculate_total_errors(variable, is_number_list, min_errs, max_errs, values, err_breakdown={}):
         for i, entry in enumerate(variable['values']):
             if not is_number_list[i]: continue # skip non-numeric y values
             if 'value' in entry:
@@ -145,17 +164,26 @@ class ArrayWriter(Writer):
                 if 'errors' in entry:
                     errors_min = 0.0
                     errors_max = 0.0
+                    err_breakdown[i] = {}
+                    # process the error labels to ensure uniqueness
+                    ArrayWriter.process_error_labels(entry)
                     for error in entry['errors']:
+                        label = error.get('label', 'error')
+                        err_breakdown[i][label] = {}
                         if 'asymerror' in error:
                             err_minus = error_value_processor(entry['value'], error['asymerror']['minus'])
                             err_plus = error_value_processor(entry['value'], error['asymerror']['plus'])
                             errors_min += pow(min(err_plus, err_minus, 0.0), 2)
                             errors_max += pow(max(err_plus, err_minus, 0.0), 2)
+                            err_breakdown[i][label]['up'] = err_plus # want to maintain directionality of errors
+                            err_breakdown[i][label]['dn'] = err_minus # want to maintain directionality of errors
                         elif 'symerror' in error:
                             try:
                                 err = error_value_processor(entry['value'], error['symerror'])
                                 errors_min += pow(err, 2)
                                 errors_max += pow(err, 2)
+                                err_breakdown[i][label]['up'] = err
+                                err_breakdown[i][label]['dn'] = -err
                             except TypeError:
                                 print log.error('TypeError encountered when parsing {0}'.format(error['symerror']))
 
@@ -172,35 +200,6 @@ class ArrayWriter(Writer):
                 values.append(middle_val)
                 min_errs.append(middle_val - entry['low'])
                 max_errs.append(entry['high'] - middle_val)
-    @staticmethod
-    def make_error_breakdown(variable, is_number_list, err_breakdown):
-        for i, entry in enumerate(variable['values']):
-            if not is_number_list[i]: continue # skip non-numeric y values
-            if 'value' in entry:
-                if 'errors' in entry:
-                    errors_min = 0.0
-                    errors_max = 0.0
-                    err_breakdown[i]={}
-                    for error in entry['errors']:
-                        label="error"
-                        if 'label' in error.keys(): label=error['label']
-                        err_breakdown[i][label]={}
-                        if 'asymerror' in error:
-                            err_minus = error_value_processor(entry['value'], error['asymerror']['minus'])
-                            err_plus = error_value_processor(entry['value'], error['asymerror']['plus'])
-                            errors_min += pow(min(err_plus, err_minus, 0.0), 2)
-                            errors_max += pow(max(err_plus, err_minus, 0.0), 2)
-                            err_breakdown[i][label]['up']=err_plus #want to maintain directionality of errors
-                            err_breakdown[i][label]['dn']=err_minus #want to maintain directionality of errors
-                        elif 'symerror' in error:
-                            try:
-                                err = error_value_processor(entry['value'], error['symerror'])
-                                errors_min += pow(err, 2)
-                                errors_max += pow(err, 2)
-                                err_breakdown[i][label]['up']=err
-                                err_breakdown[i][label]['dn']=-1*err
-                            except TypeError:
-                                print log.error('TypeError encountered when parsing {0}'.format(error['symerror']))
 
 
     @classmethod
@@ -331,25 +330,8 @@ class ArrayWriter(Writer):
 
         for value in dependent_variable['values']:
 
-            # process the labels to ensure uniqueness
-            observed_error_labels = {}
-            for error in value.get('errors', []):
-                label = error.get('label', 'error')
-
-                if label not in observed_error_labels:
-                    observed_error_labels[label] = 0
-                observed_error_labels[label] += 1
-
-                if observed_error_labels[label] > 1:
-                    error['label'] = label + '_' + str(observed_error_labels[label])
-
-                # append "_1" to first error label that has a duplicate
-                if observed_error_labels[label] == 2:
-                    for error1 in value.get('errors', []):
-                        error1_label = error1.get('label', 'error')
-                        if error1_label == label:
-                            error1['label'] = label + "_1"
-                            break
+            # process the error labels to ensure uniqueness
+            cls.process_error_labels(value)
 
             # fill error template for all values
             for error in value.get('errors', []):
