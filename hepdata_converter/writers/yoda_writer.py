@@ -1,6 +1,6 @@
 from hepdata_converter.common import Option
 from hepdata_converter.writers.array_writer import ArrayWriter, ObjectWrapper, ObjectFactory
-import yoda
+import yoda, yaml
 
 
 class ScatterYodaClass(ObjectWrapper):
@@ -32,17 +32,18 @@ class ScatterYodaClass(ObjectWrapper):
 
         for i in xrange(len(self.yval)):
             args = []
-
             for dim_i in xrange(self.dim):
                 args.append(self.xval[dim_i][i])
             args.append(self.yval[i])
             for dim_i in xrange(self.dim):
                 args.append([self.xerr_minus[dim_i][i], self.xerr_plus[dim_i][i]])
             args.append([self.yerr_minus[i], self.yerr_plus[i]])
-
+            
             graph.addPoint(self.get_point_cls()(*args))
-
+        error_breakdown = yaml.safe_dump(self.err_breakdown, default_flow_style=True, default_style='', width=1e6)
+        graph.setAnnotation("ErrorBreakdown", error_breakdown)
         return graph
+
 
     def create_objects(self):
         self.calculate_total_errors()
