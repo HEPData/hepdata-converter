@@ -22,7 +22,11 @@ class ObjectWrapper(object):
         for variable in variables:
             for element in variable['values']:
                 if 'value' in element and isinstance(element['value'], (str, unicode)):
-                    is_number_list.append(False)
+                    try:
+                        element['value'] = float(element['value'])
+                        is_number_list.append(True)
+                    except ValueError:
+                        is_number_list.append(False)
                 else:
                     is_number_list.append(True)
         return is_number_list
@@ -171,12 +175,16 @@ class ArrayWriter(Writer):
                         label = error.get('label', 'error')
                         err_breakdown[i][label] = {}
                         if 'asymerror' in error:
-                            err_minus = error_value_processor(entry['value'], error['asymerror']['minus'])
-                            err_plus = error_value_processor(entry['value'], error['asymerror']['plus'])
-                            errors_min += pow(min(err_plus, err_minus, 0.0), 2)
-                            errors_max += pow(max(err_plus, err_minus, 0.0), 2)
-                            err_breakdown[i][label]['up'] = err_plus # want to maintain directionality of errors
-                            err_breakdown[i][label]['dn'] = err_minus # want to maintain directionality of errors
+                            try:
+                                err_minus = error_value_processor(entry['value'], error['asymerror']['minus'])
+                                err_plus = error_value_processor(entry['value'], error['asymerror']['plus'])
+                                errors_min += pow(min(err_plus, err_minus, 0.0), 2)
+                                errors_max += pow(max(err_plus, err_minus, 0.0), 2)
+                                err_breakdown[i][label]['up'] = err_plus # want to maintain directionality of errors
+                                err_breakdown[i][label]['dn'] = err_minus # want to maintain directionality of errors
+                            except TypeError:
+                                log.error('TypeError encountered when parsing {0} and {1}'.format(
+                                    error['asymerror']['minus'], error['asymerror']['plus']))
                         elif 'symerror' in error:
                             try:
                                 err = error_value_processor(entry['value'], error['symerror'])
@@ -185,7 +193,7 @@ class ArrayWriter(Writer):
                                 err_breakdown[i][label]['up'] = err
                                 err_breakdown[i][label]['dn'] = -err
                             except TypeError:
-                                print log.error('TypeError encountered when parsing {0}'.format(error['symerror']))
+                                log.error('TypeError encountered when parsing {0}'.format(error['symerror']))
 
                     min_errs.append(sqrt(errors_min))
                     max_errs.append(sqrt(errors_max))

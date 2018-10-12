@@ -32,8 +32,9 @@ class THFRootClass(ObjectWrapper):
             for independent_variable in independent_variables_map:
                 if not independent_variable['values']:
                     return False
-                if 'low' not in independent_variable['values'][0] or 'high' not in independent_variable['values'][0]:
-                    return False
+                for value in independent_variable['values']:
+                    if 'low' not in value or 'high' not in value:
+                        return False
             return True
         return False
 
@@ -44,8 +45,10 @@ class THFRootClass(ObjectWrapper):
             xval.append([])
             i_var = self.independent_variables[i]['values']
             for x in i_var:
-                xval[i].append(x['low'])
-            xval[i].append(i_var[-1]['high'])
+                if x['low'] not in xval[i]:
+                    xval[i].append(x['low'])
+                if x['high'] not in xval[i]:
+                    xval[i].append(x['high'])
 
         name = "Hist%sD_y%s_e%s" % (self.dim, self.dependent_variable_index + 1, index)
 
@@ -53,14 +56,7 @@ class THFRootClass(ObjectWrapper):
         xval_ordered = []
         for i in xrange(self.dim):
             xval_ordered.append([])
-            for j, x in enumerate(xval[i]):
-                if j == 0:
-                    x_highest = x
-                    xval_ordered[i].append(x)
-                else:
-                    if x > x_highest:
-                        x_highest = x
-                        xval_ordered[i].append(x)
+            xval_ordered[i] = sorted(xval[i])
 
         if 1 == self.dim:
             nbinsx = len(xval_ordered[0]) - 1
@@ -110,14 +106,7 @@ class THFRootClass(ObjectWrapper):
         xval_ordered = []
         for i in xrange(self.dim):
             xval_ordered.append([])
-            for j, x in enumerate(xval[i]):
-                if j == 0:
-                    x_highest = x
-                    xval_ordered[i].append(x)
-                else:
-                    if x > x_highest:
-                        x_highest = x
-                        xval_ordered[i].append(x)
+            xval_ordered[i] = sorted(xval[i])
 
         if 1 == self.dim:
             nbinsx = len(xval_ordered[0]) - 1
@@ -247,8 +236,10 @@ class THFRootClass(ObjectWrapper):
             xval.append([])
             i_var = self.independent_variables[i]['values']
             for x in i_var:
-                xval[i].append(x['low'])
-            xval[i].append(i_var[-1]['high'])
+                if x['low'] not in xval[i]:
+                    xval[i].append(x['low'])
+                if x['high'] not in xval[i]:
+                    xval[i].append(x['high'])
 
         try:
             hist = self._create_hist(xval)

@@ -9,11 +9,14 @@ def error_value_processor(value, error):
     :return: the absolute error, e.g. 12 for the above case.
     """
     if type(error) is str:
-        if "%" in error:
-            error = error.replace("%", "")
-            error = float(error)
-
-            error_abs = (value/100) * error
-            return error_abs
+        try:
+            if "%" in error:
+                error_float = float(error.replace("%", ""))
+                error_abs = (value/100) * error_float
+                return error_abs
+            else:
+                error = float(error)
+        except:
+            pass
 
     return error

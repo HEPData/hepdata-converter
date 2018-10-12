@@ -74,16 +74,25 @@ containing the dependencies such as YODA and ROOT, but not the ``hepdata-convert
 .. code-block:: console
 
     $ docker pull hepdata/hepdata-converter
-    $ docker run -it --rm -v $PWD:$PWD -w $PWD hepdata/hepdata-converter /bin/bash
+    $ docker run --rm -it hepdata/hepdata-converter /bin/bash
 
 The ``hepdata-converter`` package can be installed inside the Docker container:
 
-.. code:: bash
+.. code-block:: console
 
-    pip install hepdata-converter
-    hepdata-converter -h
-    python -c 'import hepdata_converter'
+    root@617be04cbab5:/# pip install --ignore-installed hepdata-converter
+    root@617be04cbab5:/# hepdata-converter -h
+    root@617be04cbab5:/# python -c 'import hepdata_converter'
 
-The Python module or CLI can then be used as described in :doc:`Usage <usage>` to convert files
-given in the directory given by ``$PWD`` where the Docker container was run.  Note that the Docker
-container will be automatically removed when it exits.
+Note that the Docker container will be automatically removed when it exits (if running with the ``--rm`` option).  The
+Python module or CLI can then be used as described in :doc:`Usage <usage>`.  Input and output files can be moved
+between the local filesystem and the running Docker container using the ``docker cp`` command, for example,
+
+.. code-block:: console
+
+    $ docker cp sample.oldhepdata 617be04cbab5:/
+    root@617be04cbab5:/# hepdata-converter -i oldhepdata sample.oldhepdata SampleYAML
+    $ docker cp 617be04cbab5:/SampleYAML .
+
+where the prompt ``$`` indicates a terminal corresponding to the local filesystem and the prompt
+``root@617be04cbab5:/#`` indicates another terminal corresponding to the running Docker container.
