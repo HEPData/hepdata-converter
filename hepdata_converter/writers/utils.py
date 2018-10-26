@@ -14,6 +14,8 @@ def error_value_processor(value, error):
                 error_float = float(error.replace("%", ""))
                 error_abs = (value/100) * error_float
                 return error_abs
+            elif error == "":
+                error = 0.0
             else:
                 error = float(error)
         except:

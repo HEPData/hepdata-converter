@@ -5,20 +5,20 @@ dependent_variables:
   - {name: SQRT(S), units: GEV, value: '7000.0'}
   values:
   - errors:
-    - {label: stat, symerror: 4400.0}
-    - {label: 'sys,detector', symerror: 300.0}
-    - {label: 'sys,background', symerror: 1900.0}
-    value: 10500.0
+    - {label: stat, symerror: '4400.0'}
+    - {label: 'sys,detector', symerror: '300.0'}
+    - {label: 'sys,background', symerror: '1900.0'}
+    value: '10500'
   - errors:
-    - {label: stat, symerror: 2630.0}
-    - {label: 'sys,detector', symerror: 230.0}
-    - {label: 'sys,background', symerror: 280.0}
-    value: 6320.0
+    - {label: stat, symerror: '2630.0'}
+    - {label: 'sys,detector', symerror: '230.0'}
+    - {label: 'sys,background', symerror: '280.0'}
+    value: '6320'
   - errors:
-    - {label: stat, symerror: 1210.0}
-    - {label: 'sys,detector', symerror: 60.0}
-    - {label: 'sys,background', symerror: 480.0}
-    value: 3680.0
+    - {label: stat, symerror: '1210.0'}
+    - {label: 'sys,detector', symerror: '60.0'}
+    - {label: 'sys,background', symerror: '480.0'}
+    value: '3680'
 independent_variables:
 - header: {name: MT(ZZ), units: GEV}
   values:

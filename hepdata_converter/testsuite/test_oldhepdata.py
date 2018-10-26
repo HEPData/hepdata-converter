@@ -1,11 +1,8 @@
-import os
-
 import hepdata_converter
 from hepdata_converter.parsers import yaml_parser
 from hepdata_converter.parsers.oldhepdata_parser import OldHEPData
 from hepdata_converter.testsuite import insert_data_as_file, insert_path
 from hepdata_converter.testsuite.test_writer import WriterTestSuite
-from hepdata_converter.writers.yaml_writer import YAML
 
 
 class OldHEPDataTestSuite(WriterTestSuite):

@@ -5,20 +5,20 @@ dependent_variables:
   - {name: SQRT(S), units: GEV, value: '7000.0'}
   values:
   - errors:
-    - {label: stat, symerror: 3340.0}
-    - {label: 'sys,detector', symerror: 80.0}
-    - {label: 'sys,background', symerror: 740.0}
-    value: 9930.0
+    - {label: stat, symerror: '3340.0'}
+    - {label: 'sys,detector', symerror: '80.0'}
+    - {label: 'sys,background', symerror: '740.0'}
+    value: '9930'
   - errors:
-    - {label: stat, symerror: 3210.0}
-    - {label: 'sys,detector', symerror: 200.0}
-    - {label: 'sys,background', symerror: 260.0}
-    value: 8280.0
+    - {label: stat, symerror: '3210.0'}
+    - {label: 'sys,detector', symerror: '200.0'}
+    - {label: 'sys,background', symerror: '260.0'}
+    value: '8280'
   - errors:
-    - {label: stat, symerror: 1490.0}
-    - {label: 'sys,detector', symerror: 120.0}
-    - {label: 'sys,background', symerror: 390.0}
-    value: 3900.0
+    - {label: stat, symerror: '1490.0'}
+    - {label: 'sys,detector', symerror: '120.0'}
+    - {label: 'sys,background', symerror: '390.0'}
+    value: '3900'
 independent_variables:
 - header: {name: Leading dilepton PT, units: GEV}
   values:

@@ -8,5 +8,5 @@
 #: keyword cmenergies: 7000.0
 #: RE,P P --> Z0 Z0 X
 'SQRT(S) [GEV]','SIG(total) [FB]','stat +','stat -','sys +','sys -','sys,lumi +','sys,lumi -'
-7000.0,6.7,0.7,-0.7,0.4,-0.3,0.3,-0.3
+7000.0,'6.7','0.7','-0.7','0.4','-0.3','0.3','-0.3'
 

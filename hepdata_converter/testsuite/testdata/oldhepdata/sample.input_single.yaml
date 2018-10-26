@@ -37,33 +37,33 @@ dependent_variables:
   - {name: RE, value: P P --> Z0 < LEPTON+ LEPTON- > Z0 < LEPTON+ LEPTON- > X}
   values:
   - errors:
-    - asymerror: {minus: -3.0, plus: 3.3}
+    - asymerror: {minus: '-3.0', plus: '3.3'}
       label: stat
-    - asymerror: {minus: -1.0, plus: 1.2}
+    - asymerror: {minus: '-1.0', plus: '1.2'}
       label: sys
-    - {label: 'sys,lumi', symerror: 1.0}
-    value: 25.4
+    - {label: 'sys,lumi', symerror: '1.0'}
+    value: '25.4'
 - header: {name: SIG(fiducial), units: FB}
   qualifiers:
   - {name: RE, value: P P --> Z0 < LEPTON+ LEPTON- > Z0* < LEPTON+ LEPTON- > X}
   values:
   - errors:
-    - asymerror: {minus: -3.5, plus: 3.8}
+    - asymerror: {minus: '-3.5', plus: '3.8'}
       label: stat
-    - asymerror: {minus: -1.5, plus: 1.7}
+    - asymerror: {minus: '-1.5', plus: '1.7'}
       label: sys
-    - {label: 'sys,lumi', symerror: 1.2}
-    value: 29.8
+    - {label: 'sys,lumi', symerror: '1.2'}
+    value: '29.8'
 - header: {name: SIG(fiducial), units: FB}
   qualifiers:
   - {name: RE, value: P P --> Z0 < LEPTON+ LEPTON- > Z0 < NU NUBAR > X}
   values:
   - errors:
-    - asymerror: {minus: -2.9, plus: 3.1}
+    - asymerror: {minus: '-2.9', plus: '3.1'}
       label: stat
-    - {label: sys, symerror: 1.7}
-    - {label: 'sys,lumi', symerror: 0.5}
-    value: 12.7
+    - {label: sys, symerror: '1.7'}
+    - {label: 'sys,lumi', symerror: '0.5'}
+    value: '12.7'
 description: The measured fiducial cross sections.  The first systematic uncertainty
   is the combined systematic uncertainty excluding luminosity, the second is the luminosity.
 independent_variables:
@@ -90,11 +90,11 @@ dependent_variables:
   - {name: RE, value: P P --> Z0 Z0 X}
   values:
   - errors:
-    - {label: stat, symerror: 0.7}
-    - asymerror: {minus: -0.3, plus: 0.4}
+    - {label: stat, symerror: '0.7'}
+    - asymerror: {minus: '-0.3', plus: '0.4'}
       label: sys
-    - {label: 'sys,lumi', symerror: 0.3}
-    value: 6.7
+    - {label: 'sys,lumi', symerror: '0.3'}
+    value: '6.7'
 description: The measured total cross sections.  The first systematic uncertainty
   is the combined systematic uncertainty excluding luminosity, the second is the luminosity.
 independent_variables:
@@ -122,25 +122,25 @@ dependent_variables:
   - {name: SQRT(S), units: GEV, value: '7000.0'}
   values:
   - errors:
-    - {label: stat, symerror: 1100.0}
-    - {label: 'sys,detector', symerror: 79.0}
-    - {label: 'sys,background', symerror: 15.0}
-    value: 7000.0
+    - {label: stat, symerror: '1100.0'}
+    - {label: 'sys,detector', symerror: '79.0'}
+    - {label: 'sys,background', symerror: '15.0'}
+    value: '7000'
   - errors:
-    - {label: stat, symerror: 1600.0}
-    - {label: 'sys,detector', symerror: 75.0}
-    - {label: 'sys,background', symerror: 15.0}
-    value: 9800.0
+    - {label: stat, symerror: '1600.0'}
+    - {label: 'sys,detector', symerror: '75.0'}
+    - {label: 'sys,background', symerror: '15.0'}
+    value: '9800'
   - errors:
-    - {label: stat, symerror: 490.0}
-    - {label: 'sys,detector', symerror: 41.0}
-    - {label: 'sys,background', symerror: 2.0}
-    value: 1600.0
+    - {label: stat, symerror: '490.0'}
+    - {label: 'sys,detector', symerror: '41.0'}
+    - {label: 'sys,background', symerror: '2.0'}
+    value: '1600'
   - errors:
-    - {label: stat, symerror: 60.0}
-    - {label: 'sys,detector', symerror: 2.0}
-    - {label: 'sys,background', symerror: 0.0}
-    value: 80.0
+    - {label: stat, symerror: '60.0'}
+    - {label: 'sys,detector', symerror: '2.0'}
+    - {label: 'sys,background', symerror: '0.0'}
+    value: '80'
 description: Normalized ZZ fiducial cross section (multiplied by 10^6 for readability)
   in bins of the leading reconstructed dilepton pT for the 4 lepton channel.  The
   first systematic uncertainty is detector systematics, the second is background systematic
@@ -173,20 +173,20 @@ dependent_variables:
   - {name: SQRT(S), units: GEV, value: '7000.0'}
   values:
   - errors:
-    - {label: stat, symerror: 3340.0}
-    - {label: 'sys,detector', symerror: 80.0}
-    - {label: 'sys,background', symerror: 740.0}
-    value: 9930.0
+    - {label: stat, symerror: '3340.0'}
+    - {label: 'sys,detector', symerror: '80.0'}
+    - {label: 'sys,background', symerror: '740.0'}
+    value: '9930'
   - errors:
-    - {label: stat, symerror: 3210.0}
-    - {label: 'sys,detector', symerror: 200.0}
-    - {label: 'sys,background', symerror: 260.0}
-    value: 8280.0
+    - {label: stat, symerror: '3210.0'}
+    - {label: 'sys,detector', symerror: '200.0'}
+    - {label: 'sys,background', symerror: '260.0'}
+    value: '8280'
   - errors:
-    - {label: stat, symerror: 1490.0}
-    - {label: 'sys,detector', symerror: 120.0}
-    - {label: 'sys,background', symerror: 390.0}
-    value: 3900.0
+    - {label: stat, symerror: '1490.0'}
+    - {label: 'sys,detector', symerror: '120.0'}
+    - {label: 'sys,background', symerror: '390.0'}
+    value: '3900'
 description: Normalized ZZ fiducial cross section (multiplied by 10^6 for readability)
   in bins of the dilepton pT for the 2l2nu channel.  The first systematic uncertainty
   is detector systematics, the second is background systematic uncertainties.
@@ -217,25 +217,25 @@ dependent_variables:
   - {name: SQRT(S), units: GEV, value: '7000.0'}
   values:
   - errors:
-    - {label: stat, symerror: 69000.0}
-    - {label: 'sys,detector', symerror: 6600.0}
-    - {label: 'sys,background', symerror: 10.0}
-    value: 130000.0
+    - {label: stat, symerror: '69000.0'}
+    - {label: 'sys,detector', symerror: '6600.0'}
+    - {label: 'sys,background', symerror: '10.0'}
+    value: '130000'
   - errors:
-    - {label: stat, symerror: 100000.0}
-    - {label: 'sys,detector', symerror: 9000.0}
-    - {label: 'sys,background', symerror: 400.0}
-    value: 280000.0
+    - {label: stat, symerror: '100000.0'}
+    - {label: 'sys,detector', symerror: '9000.0'}
+    - {label: 'sys,background', symerror: '400.0'}
+    value: '280000'
   - errors:
-    - {label: stat, symerror: 80000.0}
-    - {label: 'sys,detector', symerror: 10000.0}
-    - {label: 'sys,background', symerror: 300.0}
-    value: 260000.0
+    - {label: stat, symerror: '80000.0'}
+    - {label: 'sys,detector', symerror: '10000.0'}
+    - {label: 'sys,background', symerror: '300.0'}
+    value: '260000'
   - errors:
-    - {label: stat, symerror: 50000.0}
-    - {label: 'sys,detector', symerror: 2000.0}
-    - {label: 'sys,background', symerror: 300.0}
-    value: 420000.0
+    - {label: stat, symerror: '50000.0'}
+    - {label: 'sys,detector', symerror: '2000.0'}
+    - {label: 'sys,background', symerror: '300.0'}
+    value: '420000'
 description: |-
   Normalized ZZ fiducial cross section (multiplied by 10^6 for readability) in bins of deltaPhi between the two leptons of the leading dileptons for the 4l channel.  The first systematic uncertainty is detector systematics, the second is background systematic uncertainties.
   UPDATE (30 APR 2014): extra significant digit added for first bin.
@@ -267,20 +267,20 @@ dependent_variables:
   - {name: SQRT(S), units: GEV, value: '7000.0'}
   values:
   - errors:
-    - {label: stat, symerror: 158000.0}
-    - {label: 'sys,detector', symerror: 4000.0}
-    - {label: 'sys,background', symerror: 19000.0}
-    value: 346000.0
+    - {label: stat, symerror: '158000.0'}
+    - {label: 'sys,detector', symerror: '4000.0'}
+    - {label: 'sys,background', symerror: '19000.0'}
+    value: '346000'
   - errors:
-    - {label: stat, symerror: 91000.0}
-    - {label: 'sys,detector', symerror: 4000.0}
-    - {label: 'sys,background', symerror: 71000.0}
-    value: 569000.0
+    - {label: stat, symerror: '91000.0'}
+    - {label: 'sys,detector', symerror: '4000.0'}
+    - {label: 'sys,background', symerror: '71000.0'}
+    value: '569000'
   - errors:
-    - {label: stat, symerror: 70000.0}
-    - {label: 'sys,detector', symerror: 2000.0}
-    - {label: 'sys,background', symerror: 58000.0}
-    value: 100000.0
+    - {label: stat, symerror: '70000.0'}
+    - {label: 'sys,detector', symerror: '2000.0'}
+    - {label: 'sys,background', symerror: '58000.0'}
+    value: '100000'
 description: Normalized ZZ fiducial cross section (multiplied by 10^6 for readability)
   in bins of deltaPhi between the two leptons for the 2l2nu channel.  The first systematic
   uncertainty is detector systematics, the second is background systematic uncertainties.
@@ -311,25 +311,25 @@ dependent_variables:
   - {name: SQRT(S), units: GEV, value: '7000.0'}
   values:
   - errors:
-    - {label: stat, symerror: 300.0}
-    - {label: 'sys,detector', symerror: 40.0}
-    - {label: 'sys,background', symerror: 2.0}
-    value: 2200.0
+    - {label: stat, symerror: '300.0'}
+    - {label: 'sys,detector', symerror: '40.0'}
+    - {label: 'sys,background', symerror: '2.0'}
+    value: '2200'
   - errors:
-    - {label: stat, symerror: 1000.0}
-    - {label: 'sys,detector', symerror: 100.0}
-    - {label: 'sys,background', symerror: 5.0}
-    value: 4500.0
+    - {label: stat, symerror: '1000.0'}
+    - {label: 'sys,detector', symerror: '100.0'}
+    - {label: 'sys,background', symerror: '5.0'}
+    value: '4500'
   - errors:
-    - {label: stat, symerror: 400.0}
-    - {label: 'sys,detector', symerror: 20.0}
-    - {label: 'sys,background', symerror: 2.0}
-    value: 1000.0
+    - {label: stat, symerror: '400.0'}
+    - {label: 'sys,detector', symerror: '20.0'}
+    - {label: 'sys,background', symerror: '2.0'}
+    value: '1000'
   - errors:
-    - {label: stat, symerror: 100.0}
-    - {label: 'sys,detector', symerror: 10.0}
-    - {label: 'sys,background', symerror: 1.0}
-    value: 280.0
+    - {label: stat, symerror: '100.0'}
+    - {label: 'sys,detector', symerror: '10.0'}
+    - {label: 'sys,background', symerror: '1.0'}
+    value: '280'
 description: Normalized ZZ fiducial cross section (multiplied by 10^6 for readability)
   in bins of the mass of the ZZ system for the 4l channel.  The first systematic uncertainty
   is detector systematics, the second is background systematic uncertainties.
@@ -361,20 +361,20 @@ dependent_variables:
   - {name: SQRT(S), units: GEV, value: '7000.0'}
   values:
   - errors:
-    - {label: stat, symerror: 4400.0}
-    - {label: 'sys,detector', symerror: 300.0}
-    - {label: 'sys,background', symerror: 1900.0}
-    value: 10500.0
+    - {label: stat, symerror: '4400.0'}
+    - {label: 'sys,detector', symerror: '300.0'}
+    - {label: 'sys,background', symerror: '1900.0'}
+    value: '10500'
   - errors:
-    - {label: stat, symerror: 2630.0}
-    - {label: 'sys,detector', symerror: 230.0}
-    - {label: 'sys,background', symerror: 280.0}
-    value: 6320.0
+    - {label: stat, symerror: '2630.0'}
+    - {label: 'sys,detector', symerror: '230.0'}
+    - {label: 'sys,background', symerror: '280.0'}
+    value: '6320'
   - errors:
-    - {label: stat, symerror: 1210.0}
-    - {label: 'sys,detector', symerror: 60.0}
-    - {label: 'sys,background', symerror: 480.0}
-    value: 3680.0
+    - {label: stat, symerror: '1210.0'}
+    - {label: 'sys,detector', symerror: '60.0'}
+    - {label: 'sys,background', symerror: '480.0'}
+    value: '3680'
 description: Normalized ZZ fiducial cross section (multiplied by 10^6 for readability)
   in bins of the transverse mass of the ZZ system for the 2l2nu channel.  The first
   systematic uncertainty is detector systematics, the second is background systematic

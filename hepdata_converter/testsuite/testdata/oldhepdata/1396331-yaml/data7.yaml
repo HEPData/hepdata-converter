@@ -7,47 +7,47 @@ dependent_variables:
   - errors: []
     value: '-'
   - errors:
-    - asymerror: {minus: -0.46, plus: 0.9}
+    - asymerror: {minus: '-0.46', plus: '0.90'}
       label: stat
-    - asymerror: {minus: -0.61, plus: 1.16}
+    - asymerror: {minus: '-0.61', plus: '1.16'}
       label: sys
-    value: 1.71
+    value: '1.71'
   - errors:
-    - asymerror: {minus: -1.32, plus: 2.52}
+    - asymerror: {minus: '-1.32', plus: '2.52'}
       label: stat
-    - asymerror: {minus: -1.04, plus: 2.93}
+    - asymerror: {minus: '-1.04', plus: '2.93'}
       label: sys
-    value: 5.58
+    value: '5.58'
   - errors:
-    - asymerror: {minus: -1.17, plus: 2.07}
+    - asymerror: {minus: '-1.17', plus: '2.07'}
       label: stat
-    - asymerror: {minus: -0.86, plus: 2.14}
+    - asymerror: {minus: '-0.86', plus: '2.14'}
       label: sys
-    value: 5.51
+    value: '5.51'
   - errors:
-    - asymerror: {minus: -1.05, plus: 1.86}
+    - asymerror: {minus: '-1.05', plus: '1.86'}
       label: stat
-    - asymerror: {minus: -0.72, plus: 1.67}
+    - asymerror: {minus: '-0.72', plus: '1.67'}
       label: sys
-    value: 4.81
+    value: '4.81'
   - errors:
-    - asymerror: {minus: -1.45, plus: 3.14}
+    - asymerror: {minus: '-1.45', plus: '3.14'}
       label: stat
-    - asymerror: {minus: -0.87, plus: 2.42}
+    - asymerror: {minus: '-0.87', plus: '2.42'}
       label: sys
-    value: 5.34
+    value: '5.34'
   - errors:
-    - asymerror: {minus: -1.04, plus: 2.05}
+    - asymerror: {minus: '-1.04', plus: '2.05'}
       label: stat
-    - asymerror: {minus: -0.7, plus: 1.86}
+    - asymerror: {minus: '-0.70', plus: '1.86'}
       label: sys
-    value: 4.06
+    value: '4.06'
   - errors:
-    - asymerror: {minus: -0.78, plus: 1.6}
+    - asymerror: {minus: '-0.78', plus: '1.60'}
       label: stat
-    - asymerror: {minus: -0.54, plus: 1.45}
+    - asymerror: {minus: '-0.54', plus: '1.45'}
       label: sys
-    value: 3.01
+    value: '3.01'
 - header: {name: D2SIG/DPT/DYRAP RATIO}
   qualifiers:
   - {name: RE, value: P P --> D/S+ <PHI <K- K+> PI+> X}
@@ -56,41 +56,41 @@ dependent_variables:
   - errors: []
     value: '-'
   - errors:
-    - asymerror: {minus: -0.23, plus: 0.31}
+    - asymerror: {minus: '-0.23', plus: '0.31'}
       label: stat
-    - asymerror: {minus: -0.38, plus: 0.65}
+    - asymerror: {minus: '-0.38', plus: '0.65'}
       label: sys
-    value: 1.72
+    value: '1.72'
   - errors:
-    - asymerror: {minus: -0.44, plus: 0.58}
+    - asymerror: {minus: '-0.44', plus: '0.58'}
       label: stat
-    - asymerror: {minus: -0.55, plus: 0.89}
+    - asymerror: {minus: '-0.55', plus: '0.89'}
       label: sys
-    value: 3.6
+    value: '3.60'
   - errors:
-    - asymerror: {minus: -0.34, plus: 0.44}
+    - asymerror: {minus: '-0.34', plus: '0.44'}
       label: stat
-    - asymerror: {minus: -0.41, plus: 0.7}
+    - asymerror: {minus: '-0.41', plus: '0.70'}
       label: sys
-    value: 2.9
+    value: '2.90'
   - errors:
-    - asymerror: {minus: -0.53, plus: 0.76}
+    - asymerror: {minus: '-0.53', plus: '0.76'}
       label: stat
-    - asymerror: {minus: -0.48, plus: 0.98}
+    - asymerror: {minus: '-0.48', plus: '0.98'}
       label: sys
-    value: 3.67
+    value: '3.67'
   - errors:
-    - asymerror: {minus: -0.67, plus: 1.03}
+    - asymerror: {minus: '-0.67', plus: '1.03'}
       label: stat
-    - asymerror: {minus: -0.52, plus: 1.13}
+    - asymerror: {minus: '-0.52', plus: '1.13'}
       label: sys
-    value: 3.75
+    value: '3.75'
   - errors:
-    - asymerror: {minus: -1.03, plus: 1.96}
+    - asymerror: {minus: '-1.03', plus: '1.96'}
       label: stat
-    - asymerror: {minus: -0.56, plus: 1.49}
+    - asymerror: {minus: '-0.56', plus: '1.49'}
       label: sys
-    value: 4.31
+    value: '4.31'
   - errors: []
     value: '-'
 - header: {name: D2SIG/DPT/DYRAP RATIO}
@@ -101,47 +101,47 @@ dependent_variables:
   - errors: []
     value: '-'
   - errors:
-    - asymerror: {minus: -0.5, plus: 0.68}
+    - asymerror: {minus: '-0.50', plus: '0.68'}
       label: stat
-    - asymerror: {minus: -0.66, plus: 1.22}
+    - asymerror: {minus: '-0.66', plus: '1.22'}
       label: sys
-    value: 3.26
+    value: '3.26'
   - errors:
-    - asymerror: {minus: -0.26, plus: 0.33}
+    - asymerror: {minus: '-0.26', plus: '0.33'}
       label: stat
-    - asymerror: {minus: -0.39, plus: 0.6}
+    - asymerror: {minus: '-0.39', plus: '0.60'}
       label: sys
-    value: 2.57
+    value: '2.57'
   - errors:
-    - asymerror: {minus: -0.36, plus: 0.47}
+    - asymerror: {minus: '-0.36', plus: '0.47'}
       label: stat
-    - asymerror: {minus: -0.43, plus: 0.76}
+    - asymerror: {minus: '-0.43', plus: '0.76'}
       label: sys
-    value: 2.8
+    value: '2.80'
   - errors:
-    - asymerror: {minus: -0.65, plus: 0.96}
+    - asymerror: {minus: '-0.65', plus: '0.96'}
       label: stat
-    - asymerror: {minus: -0.5, plus: 1.05}
+    - asymerror: {minus: '-0.50', plus: '1.05'}
       label: sys
-    value: 3.96
+    value: '3.96'
   - errors:
-    - asymerror: {minus: -0.74, plus: 1.2}
+    - asymerror: {minus: '-0.74', plus: '1.20'}
       label: stat
-    - asymerror: {minus: -0.49, plus: 1.1}
+    - asymerror: {minus: '-0.49', plus: '1.10'}
       label: sys
-    value: 3.84
+    value: '3.84'
   - errors:
-    - asymerror: {minus: -0.57, plus: 1.04}
+    - asymerror: {minus: '-0.57', plus: '1.04'}
       label: stat
-    - asymerror: {minus: -0.35, plus: 0.82}
+    - asymerror: {minus: '-0.35', plus: '0.82'}
       label: sys
-    value: 2.53
+    value: '2.53'
   - errors:
-    - asymerror: {minus: -1.12, plus: 2.73}
+    - asymerror: {minus: '-1.12', plus: '2.73'}
       label: stat
-    - asymerror: {minus: -0.55, plus: 1.35}
+    - asymerror: {minus: '-0.55', plus: '1.35'}
       label: sys
-    value: 3.71
+    value: '3.71'
 - header: {name: D2SIG/DPT/DYRAP RATIO}
   qualifiers:
   - {name: RE, value: P P --> D/S+ <PHI <K- K+> PI+> X}
@@ -150,35 +150,35 @@ dependent_variables:
   - errors: []
     value: '-'
   - errors:
-    - asymerror: {minus: -0.87, plus: 1.52}
+    - asymerror: {minus: '-0.87', plus: '1.52'}
       label: stat
-    - asymerror: {minus: -0.86, plus: 1.91}
+    - asymerror: {minus: '-0.86', plus: '1.91'}
       label: sys
-    value: 3.86
+    value: '3.86'
   - errors:
-    - asymerror: {minus: -0.46, plus: 0.66}
+    - asymerror: {minus: '-0.46', plus: '0.66'}
       label: stat
-    - asymerror: {minus: -0.47, plus: 0.85}
+    - asymerror: {minus: '-0.47', plus: '0.85'}
       label: sys
-    value: 3.03
+    value: '3.03'
   - errors:
-    - asymerror: {minus: -0.42, plus: 0.6}
+    - asymerror: {minus: '-0.42', plus: '0.60'}
       label: stat
-    - asymerror: {minus: -0.42, plus: 0.82}
+    - asymerror: {minus: '-0.42', plus: '0.82'}
       label: sys
-    value: 2.79
+    value: '2.79'
   - errors:
-    - asymerror: {minus: -0.6, plus: 0.99}
+    - asymerror: {minus: '-0.60', plus: '0.99'}
       label: stat
-    - asymerror: {minus: -0.43, plus: 0.87}
+    - asymerror: {minus: '-0.43', plus: '0.87'}
       label: sys
-    value: 3.09
+    value: '3.09'
   - errors:
-    - asymerror: {minus: -0.96, plus: 1.81}
+    - asymerror: {minus: '-0.96', plus: '1.81'}
       label: stat
-    - asymerror: {minus: -0.64, plus: 1.58}
+    - asymerror: {minus: '-0.64', plus: '1.58'}
       label: sys
-    value: 4.0
+    value: '4.00'
   - errors: []
     value: '-'
   - errors: []
@@ -193,17 +193,17 @@ dependent_variables:
   - errors: []
     value: '-'
   - errors:
-    - asymerror: {minus: -0.67, plus: 1.44}
+    - asymerror: {minus: '-0.67', plus: '1.44'}
       label: stat
-    - asymerror: {minus: -0.42, plus: 1.25}
+    - asymerror: {minus: '-0.42', plus: '1.25'}
       label: sys
-    value: 2.41
+    value: '2.41'
   - errors:
-    - asymerror: {minus: -1.1, plus: 2.63}
+    - asymerror: {minus: '-1.10', plus: '2.63'}
       label: stat
-    - asymerror: {minus: -0.64, plus: 1.76}
+    - asymerror: {minus: '-0.64', plus: '1.76'}
       label: sys
-    value: 3.6
+    value: '3.60'
   - errors: []
     value: '-'
   - errors: []

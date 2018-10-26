@@ -306,13 +306,13 @@ class OldHEPData(Parser):
                                       pmnum_pct + ')\s*(?P<err_sys>\(\s*DSYS=[^()]+\s*\))?$', single_element)
                         element = {'errors': []}
                         if r: # asymmetric first error
-                            element['value'] = float(r.group('value'))
-                            err_p = r.group('err_p').strip()
-                            err_p = str(float(err_p[:-3])) + '%' if err_p[-3:] == 'PCT' else float(err_p)
-                            err_m = r.group('err_m').strip()
-                            err_m = str(float(err_m[:-3])) + '%' if err_m[-3:] == 'PCT' else float(err_m)
-                            if str(err_p)[-1] != '%' and str(err_m)[-1] == '%':
-                                err_p = str(err_p) + '%'
+                            element['value'] = r.group('value').strip()
+                            err_p = r.group('err_p').strip().lstrip('+')
+                            err_p = err_p[:-3].strip() + '%' if err_p[-3:] == 'PCT' else err_p
+                            err_m = r.group('err_m').strip().lstrip('+')
+                            err_m = err_m[:-3].strip() + '%' if err_m[-3:] == 'PCT' else err_m
+                            if err_p[-1] != '%' and err_m[-1] == '%':
+                                err_p = err_p + '%'
                             if r.group('err_sys'):
                                 element['errors'] += [{'label': 'stat', 'asymerror': {'plus': err_p, 'minus': err_m}}]
                             else:
@@ -322,15 +322,15 @@ class OldHEPData(Parser):
                             r = re.search('^(?P<value>' + pmnum + ')\s*(\+-\s*(?P<error>' +
                                           pmnum_pct + '))?\s*(?P<err_sys>\(\s*DSYS=[^()]+\s*\))?$', single_element)
                             if r: # symmetric first error
-                                element['value'] = float(r.group('value'))
+                                element['value'] = r.group('value').strip()
                                 if r.group('error'):
-                                    error = r.group('error').strip()
-                                    error = str(float(error[:-3])) + '%' if error[-3:] == 'PCT' else float(error)
+                                    error = r.group('error').strip().lstrip('+')
+                                    error = error[:-3].strip() + '%' if error[-3:] == 'PCT' else error
                                     if r.group('err_sys'):
                                         element['errors'] += [{'label': 'stat', 'symerror': error}]
                                     else:
                                         element['errors'] += [{'symerror': error}]
-                            else: # everything else: don't try to convert to float
+                            else: # everything else
                                 element['value'] = single_element
 
                         err_sys = []
@@ -347,8 +347,8 @@ class OldHEPData(Parser):
                             if r: # symmetric systematic error
                                 if r.group('label'):
                                     label += ',' + r.group('label')
-                                error = r.group('error').strip()
-                                error = str(float(error[:-3])) + '%' if error[-3:] == 'PCT' else float(error)
+                                error = r.group('error').strip().lstrip('+')
+                                error = error[:-3].strip() + '%' if error[-3:] == 'PCT' else error
                                 error = {'symerror': error}
 
                             else:
@@ -357,12 +357,12 @@ class OldHEPData(Parser):
                                 if r: # asymmetric systematic error
                                     if r.group('label'):
                                         label += ',' + r.group('label')
-                                    err_p = r.group('err_p').strip()
-                                    err_p = str(float(err_p[:-3])) + '%' if err_p[-3:] == 'PCT' else float(err_p)
-                                    err_m = r.group('err_m').strip()
-                                    err_m = str(float(err_m[:-3])) + '%' if err_m[-3:] == 'PCT' else float(err_m)
-                                    if str(err_p)[-1] != '%' and str(err_m)[-1] == '%':
-                                        err_p = str(err_p) + '%'
+                                    err_p = r.group('err_p').strip().lstrip('+')
+                                    err_p = err_p[:-3].strip() + '%' if err_p[-3:] == 'PCT' else err_p
+                                    err_m = r.group('err_m').strip().lstrip('+')
+                                    err_m = err_m[:-3].strip() + '%' if err_m[-3:] == 'PCT' else err_m
+                                    if err_p[-1] != '%' and err_m[-1] == '%':
+                                        err_p = err_p + '%'
                                     error = {'asymerror': {'plus': err_p, 'minus': err_m}}
                             if not r:
                                 # error happened

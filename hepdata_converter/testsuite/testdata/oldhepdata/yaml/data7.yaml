@@ -5,25 +5,25 @@ dependent_variables:
   - {name: SQRT(S), units: GEV, value: '7000.0'}
   values:
   - errors:
-    - {label: stat, symerror: 300.0}
-    - {label: 'sys,detector', symerror: 40.0}
-    - {label: 'sys,background', symerror: 2.0}
-    value: 2200.0
+    - {label: stat, symerror: '300.0'}
+    - {label: 'sys,detector', symerror: '40.0'}
+    - {label: 'sys,background', symerror: '2.0'}
+    value: '2200'
   - errors:
-    - {label: stat, symerror: 1000.0}
-    - {label: 'sys,detector', symerror: 100.0}
-    - {label: 'sys,background', symerror: 5.0}
-    value: 4500.0
+    - {label: stat, symerror: '1000.0'}
+    - {label: 'sys,detector', symerror: '100.0'}
+    - {label: 'sys,background', symerror: '5.0'}
+    value: '4500'
   - errors:
-    - {label: stat, symerror: 400.0}
-    - {label: 'sys,detector', symerror: 20.0}
-    - {label: 'sys,background', symerror: 2.0}
-    value: 1000.0
+    - {label: stat, symerror: '400.0'}
+    - {label: 'sys,detector', symerror: '20.0'}
+    - {label: 'sys,background', symerror: '2.0'}
+    value: '1000'
   - errors:
-    - {label: stat, symerror: 100.0}
-    - {label: 'sys,detector', symerror: 10.0}
-    - {label: 'sys,background', symerror: 1.0}
-    value: 280.0
+    - {label: stat, symerror: '100.0'}
+    - {label: 'sys,detector', symerror: '10.0'}
+    - {label: 'sys,background', symerror: '1.0'}
+    value: '280'
 independent_variables:
 - header: {name: M(ZZ), units: GEV}
   values:

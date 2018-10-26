@@ -238,73 +238,73 @@ dependent_variables:
   - errors: []
     value: '-'
   - errors: []
-    value: 1.0
+    value: '1.00'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.1
+    value: '0.10'
   - errors: []
-    value: 0.2
+    value: '0.20'
   - errors: []
-    value: 0.2
+    value: '0.20'
   - errors: []
-    value: 0.2
+    value: '0.20'
   - errors: []
-    value: 0.2
+    value: '0.20'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.1
+    value: '0.10'
   - errors: []
-    value: 0.1
+    value: '0.10'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.1
+    value: '0.10'
   - errors: []
-    value: 0.1
+    value: '0.10'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.1
+    value: '0.10'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.1
+    value: '0.10'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.1
+    value: '0.10'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
@@ -312,71 +312,71 @@ dependent_variables:
   - errors: []
     value: '-'
   - errors: []
-    value: 1.0
+    value: '1.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.2
+    value: '0.20'
   - errors: []
-    value: 0.25
+    value: '0.25'
   - errors: []
-    value: 0.2
+    value: '0.20'
   - errors: []
-    value: 0.2
+    value: '0.20'
   - errors: []
-    value: 0.2
+    value: '0.20'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.1
+    value: '0.10'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.2
+    value: '0.20'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.1
+    value: '0.10'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.2
+    value: '0.20'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
@@ -384,69 +384,69 @@ dependent_variables:
   - errors: []
     value: '-'
   - errors: []
-    value: 1.0
+    value: '1.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
@@ -454,67 +454,67 @@ dependent_variables:
   - errors: []
     value: '-'
   - errors: []
-    value: 1.0
+    value: '1.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.1
+    value: '0.10'
   - errors: []
-    value: 0.1
+    value: '0.10'
   - errors: []
-    value: 0.1
+    value: '0.10'
   - errors: []
-    value: 0.1
+    value: '0.10'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
@@ -522,65 +522,65 @@ dependent_variables:
   - errors: []
     value: '-'
   - errors: []
-    value: 1.0
+    value: '1.00'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
@@ -652,61 +652,61 @@ dependent_variables:
   - errors: []
     value: '-'
   - errors: []
-    value: 1.0
+    value: '1.00'
   - errors: []
-    value: 0.3
+    value: '0.30'
   - errors: []
-    value: 0.2
+    value: '0.20'
   - errors: []
-    value: 0.2
+    value: '0.20'
   - errors: []
-    value: 0.2
+    value: '0.20'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.5
+    value: '0.50'
   - errors: []
-    value: 0.5
+    value: '0.50'
   - errors: []
-    value: 0.5
+    value: '0.50'
   - errors: []
-    value: 0.45
+    value: '0.45'
   - errors: []
-    value: 0.4
+    value: '0.40'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
     value: '-'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.5
+    value: '0.50'
   - errors: []
-    value: 0.5
+    value: '0.50'
   - errors: []
-    value: 0.5
+    value: '0.50'
   - errors: []
-    value: 0.45
+    value: '0.45'
   - errors: []
-    value: 0.25
+    value: '0.25'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.4
+    value: '0.40'
   - errors: []
-    value: 0.45
+    value: '0.45'
   - errors: []
-    value: 0.2
+    value: '0.20'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
@@ -714,59 +714,59 @@ dependent_variables:
   - errors: []
     value: '-'
   - errors: []
-    value: 1.0
+    value: '1.00'
   - errors: []
-    value: 0.3
+    value: '0.30'
   - errors: []
-    value: 0.3
+    value: '0.30'
   - errors: []
-    value: 0.25
+    value: '0.25'
   - errors: []
-    value: 0.2
+    value: '0.20'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.3
+    value: '0.30'
   - errors: []
-    value: 0.35
+    value: '0.35'
   - errors: []
-    value: 0.35
+    value: '0.35'
   - errors: []
-    value: 0.35
+    value: '0.35'
   - errors: []
-    value: 0.3
+    value: '0.30'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.3
+    value: '0.30'
   - errors: []
-    value: 0.3
+    value: '0.30'
   - errors: []
-    value: 0.35
+    value: '0.35'
   - errors: []
-    value: 0.35
+    value: '0.35'
   - errors: []
-    value: 0.25
+    value: '0.25'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.25
+    value: '0.25'
   - errors: []
-    value: 0.3
+    value: '0.30'
   - errors: []
-    value: 0.2
+    value: '0.20'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
     value: '-'
   - errors: []
@@ -774,57 +774,57 @@ dependent_variables:
   - errors: []
     value: '-'
   - errors: []
-    value: 1.0
+    value: '1.00'
   - errors: []
-    value: 0.3
+    value: '0.30'
   - errors: []
-    value: 0.3
+    value: '0.30'
   - errors: []
-    value: 0.2
+    value: '0.20'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.2
+    value: '0.20'
   - errors: []
-    value: 0.2
+    value: '0.20'
   - errors: []
-    value: 0.25
+    value: '0.25'
   - errors: []
-    value: 0.25
+    value: '0.25'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.2
+    value: '0.20'
   - errors: []
-    value: 0.2
+    value: '0.20'
   - errors: []
-    value: 0.2
+    value: '0.20'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.2
+    value: '0.20'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
@@ -832,55 +832,55 @@ dependent_variables:
   - errors: []
     value: '-'
   - errors: []
-    value: 1.0
+    value: '1.00'
   - errors: []
-    value: 0.3
+    value: '0.30'
   - errors: []
-    value: 0.2
+    value: '0.20'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.1
+    value: '0.10'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.2
+    value: '0.20'
   - errors: []
-    value: 0.2
+    value: '0.20'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.1
+    value: '0.10'
   - errors: []
-    value: 0.1
+    value: '0.10'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.1
+    value: '0.10'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
@@ -888,53 +888,53 @@ dependent_variables:
   - errors: []
     value: '-'
   - errors: []
-    value: 1.0
+    value: '1.00'
   - errors: []
-    value: 0.2
+    value: '0.20'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.2
+    value: '0.20'
   - errors: []
-    value: 0.25
+    value: '0.25'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.2
+    value: '0.20'
   - errors: []
-    value: 0.2
+    value: '0.20'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.2
+    value: '0.20'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
@@ -942,51 +942,51 @@ dependent_variables:
   - errors: []
     value: '-'
   - errors: []
-    value: 1.0
+    value: '1.00'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.1
+    value: '0.10'
   - errors: []
-    value: 0.1
+    value: '0.10'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.2
+    value: '0.20'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.1
+    value: '0.10'
   - errors: []
-    value: 0.1
+    value: '0.10'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.1
+    value: '0.10'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
     value: '-'
   - errors: []
@@ -994,49 +994,49 @@ dependent_variables:
   - errors: []
     value: '-'
   - errors: []
-    value: 1.0
+    value: '1.00'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
@@ -1092,45 +1092,45 @@ dependent_variables:
   - errors: []
     value: '-'
   - errors: []
-    value: 1.0
+    value: '1.00'
   - errors: []
-    value: 0.7
+    value: '0.70'
   - errors: []
-    value: 0.65
+    value: '0.65'
   - errors: []
-    value: 0.55
+    value: '0.55'
   - errors: []
-    value: 0.45
+    value: '0.45'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
     value: '-'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.7
+    value: '0.70'
   - errors: []
-    value: 0.7
+    value: '0.70'
   - errors: []
-    value: 0.65
+    value: '0.65'
   - errors: []
-    value: 0.6
+    value: '0.60'
   - errors: []
-    value: 0.3
+    value: '0.30'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.6
+    value: '0.60'
   - errors: []
-    value: 0.55
+    value: '0.55'
   - errors: []
-    value: 0.25
+    value: '0.25'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
@@ -1138,43 +1138,43 @@ dependent_variables:
   - errors: []
     value: '-'
   - errors: []
-    value: 1.0
+    value: '1.00'
   - errors: []
-    value: 0.65
+    value: '0.65'
   - errors: []
-    value: 0.55
+    value: '0.55'
   - errors: []
-    value: 0.5
+    value: '0.50'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
     value: '-'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.7
+    value: '0.70'
   - errors: []
-    value: 0.7
+    value: '0.70'
   - errors: []
-    value: 0.65
+    value: '0.65'
   - errors: []
-    value: 0.6
+    value: '0.60'
   - errors: []
-    value: 0.3
+    value: '0.30'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.6
+    value: '0.60'
   - errors: []
-    value: 0.55
+    value: '0.55'
   - errors: []
-    value: 0.25
+    value: '0.25'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
@@ -1182,41 +1182,41 @@ dependent_variables:
   - errors: []
     value: '-'
   - errors: []
-    value: 1.0
+    value: '1.00'
   - errors: []
-    value: 0.55
+    value: '0.55'
   - errors: []
-    value: 0.45
+    value: '0.45'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
     value: '-'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.65
+    value: '0.65'
   - errors: []
-    value: 0.65
+    value: '0.65'
   - errors: []
-    value: 0.65
+    value: '0.65'
   - errors: []
-    value: 0.55
+    value: '0.55'
   - errors: []
-    value: 0.3
+    value: '0.30'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.55
+    value: '0.55'
   - errors: []
-    value: 0.55
+    value: '0.55'
   - errors: []
-    value: 0.25
+    value: '0.25'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
     value: '-'
   - errors: []
@@ -1224,39 +1224,39 @@ dependent_variables:
   - errors: []
     value: '-'
   - errors: []
-    value: 1.0
+    value: '1.00'
   - errors: []
-    value: 0.45
+    value: '0.45'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
     value: '-'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.55
+    value: '0.55'
   - errors: []
-    value: 0.55
+    value: '0.55'
   - errors: []
-    value: 0.55
+    value: '0.55'
   - errors: []
-    value: 0.5
+    value: '0.50'
   - errors: []
-    value: 0.3
+    value: '0.30'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.5
+    value: '0.50'
   - errors: []
-    value: 0.45
+    value: '0.45'
   - errors: []
-    value: 0.25
+    value: '0.25'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
@@ -1264,37 +1264,37 @@ dependent_variables:
   - errors: []
     value: '-'
   - errors: []
-    value: 1.0
+    value: '1.00'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
     value: '-'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.45
+    value: '0.45'
   - errors: []
-    value: 0.5
+    value: '0.50'
   - errors: []
-    value: 0.5
+    value: '0.50'
   - errors: []
-    value: 0.45
+    value: '0.45'
   - errors: []
-    value: 0.25
+    value: '0.25'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.4
+    value: '0.40'
   - errors: []
-    value: 0.4
+    value: '0.40'
   - errors: []
-    value: 0.25
+    value: '0.25'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
@@ -1302,35 +1302,35 @@ dependent_variables:
   - errors: []
     value: '-'
   - errors: []
-    value: 1.0
+    value: '1.00'
   - errors: []
     value: '-'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
@@ -1404,29 +1404,29 @@ dependent_variables:
   - errors: []
     value: '-'
   - errors: []
-    value: 1.0
+    value: '1.00'
   - errors: []
-    value: 0.7
+    value: '0.70'
   - errors: []
-    value: 0.65
+    value: '0.65'
   - errors: []
-    value: 0.6
+    value: '0.60'
   - errors: []
-    value: 0.3
+    value: '0.30'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.6
+    value: '0.60'
   - errors: []
-    value: 0.55
+    value: '0.55'
   - errors: []
-    value: 0.25
+    value: '0.25'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
@@ -1434,27 +1434,27 @@ dependent_variables:
   - errors: []
     value: '-'
   - errors: []
-    value: 1.0
+    value: '1.00'
   - errors: []
-    value: 0.65
+    value: '0.65'
   - errors: []
-    value: 0.6
+    value: '0.60'
   - errors: []
-    value: 0.3
+    value: '0.30'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.6
+    value: '0.60'
   - errors: []
-    value: 0.55
+    value: '0.55'
   - errors: []
-    value: 0.25
+    value: '0.25'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
@@ -1462,25 +1462,25 @@ dependent_variables:
   - errors: []
     value: '-'
   - errors: []
-    value: 1.0
+    value: '1.00'
   - errors: []
-    value: 0.6
+    value: '0.60'
   - errors: []
-    value: 0.35
+    value: '0.35'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.55
+    value: '0.55'
   - errors: []
-    value: 0.55
+    value: '0.55'
   - errors: []
-    value: 0.25
+    value: '0.25'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
@@ -1488,23 +1488,23 @@ dependent_variables:
   - errors: []
     value: '-'
   - errors: []
-    value: 1.0
+    value: '1.00'
   - errors: []
-    value: 0.3
+    value: '0.30'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.5
+    value: '0.50'
   - errors: []
-    value: 0.5
+    value: '0.50'
   - errors: []
-    value: 0.25
+    value: '0.25'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
@@ -1512,21 +1512,21 @@ dependent_variables:
   - errors: []
     value: '-'
   - errors: []
-    value: 1.0
+    value: '1.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.3
+    value: '0.30'
   - errors: []
-    value: 0.3
+    value: '0.30'
   - errors: []
-    value: 0.15
+    value: '0.15'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
@@ -1534,19 +1534,19 @@ dependent_variables:
   - errors: []
     value: '-'
   - errors: []
-    value: 1.0
+    value: '1.00'
   - errors: []
     value: '-'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
@@ -1572,15 +1572,15 @@ dependent_variables:
   - errors: []
     value: '-'
   - errors: []
-    value: 1.0
+    value: '1.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
@@ -1588,13 +1588,13 @@ dependent_variables:
   - errors: []
     value: '-'
   - errors: []
-    value: 1.0
+    value: '1.00'
   - errors: []
-    value: 0.45
+    value: '0.45'
   - errors: []
-    value: 0.2
+    value: '0.20'
   - errors: []
-    value: 0.0
+    value: '0.00'
   - errors: []
     value: '-'
   - errors: []
@@ -1602,11 +1602,11 @@ dependent_variables:
   - errors: []
     value: '-'
   - errors: []
-    value: 1.0
+    value: '1.00'
   - errors: []
-    value: 0.25
+    value: '0.25'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
     value: '-'
   - errors: []
@@ -1614,9 +1614,9 @@ dependent_variables:
   - errors: []
     value: '-'
   - errors: []
-    value: 1.0
+    value: '1.00'
   - errors: []
-    value: 0.05
+    value: '0.05'
   - errors: []
     value: '-'
   - errors: []
@@ -1624,7 +1624,7 @@ dependent_variables:
   - errors: []
     value: '-'
   - errors: []
-    value: 1.0
+    value: '1.00'
   - errors: []
     value: '-'
   - errors: []
