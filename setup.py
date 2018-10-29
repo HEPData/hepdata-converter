@@ -31,7 +31,7 @@ setup(
     install_requires=[
         'pyyaml',
         'hepdata_validator',
-        'matplotlib'
+        'matplotlib<3.0.0'
     ],
     entry_points={
         'console_scripts': [
