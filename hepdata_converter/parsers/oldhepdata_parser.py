@@ -267,7 +267,7 @@ class OldHEPData(Parser):
 
                         r = re.search('^(?P<value>' + pmnum + ')$', single_element)
                         if r: # "value"
-                            single_element = {'value': float(r.group('value'))}
+                            single_element = {'value': r.group('value')}
                         else:
                             r = re.search('^(?P<value>' + pmnum + ')\s*\(\s*BIN\s*=\s*(?P<low>' + pmnum + \
                                           ')\s+TO\s+(?P<high>' + pmnum + ')\s*\)$', single_element)
@@ -302,17 +302,21 @@ class OldHEPData(Parser):
 
                         pmnum_pct = pmnum + '(\s*PCT)?' # errors can possibly be given as percentages
 
-                        r = re.search('^(?P<value>' + pmnum + ')\s+(?P<err_p>' + pmnum_pct + ')\s*,\s*(?P<err_m>' +
-                                      pmnum_pct + ')\s*(?P<err_sys>\(\s*DSYS=[^()]+\s*\))?$', single_element)
+                        r = re.search('^(?P<value>' + pmnum + ')\s+(?P<err_p>' + pmnum_pct + '|-)\s*,\s*(?P<err_m>' +
+                                      pmnum_pct + '|-)\s*(?P<err_sys>\(\s*DSYS=[^()]+\s*\))?$', single_element)
                         element = {'errors': []}
                         if r: # asymmetric first error
                             element['value'] = r.group('value').strip()
                             err_p = r.group('err_p').strip().lstrip('+')
+                            if err_p == '-': err_p = '' # represent missing error as '-' in oldhepdata format
                             err_p = err_p[:-3].strip() + '%' if err_p[-3:] == 'PCT' else err_p
                             err_m = r.group('err_m').strip().lstrip('+')
+                            if err_m == '-': err_m = '' # represent missing error as '-' in oldhepdata format
                             err_m = err_m[:-3].strip() + '%' if err_m[-3:] == 'PCT' else err_m
-                            if err_p[-1] != '%' and err_m[-1] == '%':
+                            if err_p and err_m and err_p[-1] != '%' and err_m[-1] == '%':
                                 err_p = err_p + '%'
+                            if not err_p and not err_m:
+                                raise ValueError("Both asymmetric errors cannot be '-': %s" % line)
                             if r.group('err_sys'):
                                 element['errors'] += [{'label': 'stat', 'asymerror': {'plus': err_p, 'minus': err_m}}]
                             else:
@@ -352,17 +356,21 @@ class OldHEPData(Parser):
                                 error = {'symerror': error}
 
                             else:
-                                r = re.search('^(?P<err_p>' + pmnum_pct + ')\s*,\s*(?P<err_m>' +
-                                              pmnum_pct + ')\s*(\:\s*(?P<label>.+))?$', err)
+                                r = re.search('^(?P<err_p>' + pmnum_pct + '|-)\s*,\s*(?P<err_m>' +
+                                              pmnum_pct + '|-)\s*(\:\s*(?P<label>.+))?$', err)
                                 if r: # asymmetric systematic error
                                     if r.group('label'):
                                         label += ',' + r.group('label')
                                     err_p = r.group('err_p').strip().lstrip('+')
+                                    if err_p == '-': err_p = '' # represent missing error as '-' in oldhepdata format
                                     err_p = err_p[:-3].strip() + '%' if err_p[-3:] == 'PCT' else err_p
                                     err_m = r.group('err_m').strip().lstrip('+')
+                                    if err_m == '-': err_m = '' # represent missing error as '-' in oldhepdata format
                                     err_m = err_m[:-3].strip() + '%' if err_m[-3:] == 'PCT' else err_m
-                                    if err_p[-1] != '%' and err_m[-1] == '%':
+                                    if err_p and err_m and err_p[-1] != '%' and err_m[-1] == '%':
                                         err_p = err_p + '%'
+                                    if not err_p and not err_m:
+                                        raise ValueError("Both asymmetric errors cannot be '-': %s" % line)
                                     error = {'asymerror': {'plus': err_p, 'minus': err_m}}
                             if not r:
                                 # error happened

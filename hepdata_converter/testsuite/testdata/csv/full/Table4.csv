@@ -8,8 +8,8 @@
 #: keyword cmenergies: 7000.0
 #: RE,,,P P --> Z0 < LEPTON+ LEPTON- > Z0 < NU NUBAR > X
 #: SQRT(S) [GEV],,,7000.0
-'Leading dilepton PT [GEV]','Leading dilepton PT [GEV] LOW','Leading dilepton PT [GEV] HIGH','10**6 * 1/SIG(fiducial) * D(SIG(fiducial))/DPT [GEV**-1]','stat +','stat -','sys,detector +','sys,detector -','sys,background +','sys,background -'
-70.0,50.0,90.0,'9930','3340.0','-3340.0','80.0','-80.0','740.0','-740.0'
-110.0,90.0,130.0,'8280','3210.0','-3210.0','200.0','-200.0','260.0','-260.0'
-165.0,130.0,200.0,'3900','1490.0','-1490.0','120.0','-120.0','390.0','-390.0'
+Leading dilepton PT [GEV],Leading dilepton PT [GEV] LOW,Leading dilepton PT [GEV] HIGH,10**6 * 1/SIG(fiducial) * D(SIG(fiducial))/DPT [GEV**-1],stat +,stat -,"sys,detector +","sys,detector -","sys,background +","sys,background -"
+70.0,50.0,90.0,9930,3340.0,-3340.0,80.0,-80.0,740.0,-740.0
+110.0,90.0,130.0,8280,3210.0,-3210.0,200.0,-200.0,260.0,-260.0
+165.0,130.0,200.0,3900,1490.0,-1490.0,120.0,-120.0,390.0,-390.0
 

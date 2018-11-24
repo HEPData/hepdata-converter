@@ -69,7 +69,7 @@ description: The measured fiducial cross sections.  The first systematic uncerta
 independent_variables:
 - header: {name: SQRT(S), units: GEV}
   values:
-  - {value: 7000.0}
+  - {value: '7000'}
 keywords:
 - name: reactions
   values: [P P --> Z0 Z0 X]
@@ -100,7 +100,7 @@ description: The measured total cross sections.  The first systematic uncertaint
 independent_variables:
 - header: {name: SQRT(S), units: GEV}
   values:
-  - {value: 7000.0}
+  - {value: '7000'}
 keywords:
 - name: reactions
   values: [P P --> Z0 Z0 X]

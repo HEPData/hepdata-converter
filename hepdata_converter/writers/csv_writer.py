@@ -54,7 +54,8 @@ class CSV(ArrayWriter):
             lineterminator = '\n'
             self._write_qualifiers(output, qualifiers, qualifiers_marks, self.separator, lineterminator)
 
-            csv_writer = csv.writer(output, delimiter=self.separator, lineterminator=lineterminator, quotechar="'", quoting=csv.QUOTE_NONNUMERIC)
+            # Use defaults of quotechar='"' and quoting=csv.QUOTE_MINIMAL instead of previous quotechar="'" and quoting=csv.QUOTE_NONNUMERIC.
+            csv_writer = csv.writer(output, delimiter=self.separator, lineterminator=lineterminator)
             csv_writer.writerow(headers)
 
             for i in xrange(len(data[0])):
