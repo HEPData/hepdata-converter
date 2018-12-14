@@ -371,7 +371,14 @@ class ArrayWriter(Writer):
 
                         if 'symerror' in error:
                             error_plus = error['symerror']
-                            error_minus = '-' + error_plus if isinstance(error_plus, (str, unicode)) else -error_plus
+                            if isinstance(error_plus, (str, unicode)):
+                                error_plus = error_plus.strip()
+                                if len(error_plus) > 1 and error_plus[0] == '-':
+                                    error_minus = error_plus[1:]
+                                else:
+                                    error_minus = '-' + error_plus
+                            else:  # error_plus is numeric
+                                error_minus = -error_plus
                         else:
                             error_plus = error['asymerror']['plus']
                             error_minus = error['asymerror']['minus']
