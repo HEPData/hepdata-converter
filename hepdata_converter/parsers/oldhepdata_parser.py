@@ -417,7 +417,10 @@ class OldHEPData(Parser):
             return False
 
         # add second independent variable with each value duplicated npts times
-        xheader = copy.deepcopy(self.current_table.data['independent_variables'][0]['header'])
+        if len(self.current_table.xheaders) == 2:
+            xheader = self.current_table.xheaders[1]
+        else:
+            xheader = copy.deepcopy(self.current_table.data['independent_variables'][0]['header'])
         self.current_table.data['independent_variables'].append({'header': xheader, 'values': []})
         for value in self.current_table.data['independent_variables'][0]['values']:
             self.current_table.data['independent_variables'][1]['values'].extend([copy.deepcopy(value) for npt in range(npts)])
