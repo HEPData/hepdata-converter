@@ -31,6 +31,14 @@ class ScatterYodaClass(ObjectWrapper):
         graph = self.get_scatter_cls()()
 
         for i in xrange(len(self.yval)):
+
+            # Check that number of y values does not exceed number of x values.
+            too_many_y_values = False
+            for dim_i in xrange(self.dim):
+                if i > len(self.xval[dim_i]) - 1:
+                    too_many_y_values = True
+            if too_many_y_values: break
+
             args = []
             for dim_i in xrange(self.dim):
                 args.append(self.xval[dim_i][i])
