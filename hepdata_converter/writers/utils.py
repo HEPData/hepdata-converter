@@ -8,7 +8,7 @@ def error_value_processor(value, error):
     :param error: e.g. 20.0%
     :return: the absolute error, e.g. 12 for the above case.
     """
-    if type(error) is str:
+    if isinstance(error, (str, unicode)):
         try:
             if "%" in error:
                 error_float = float(error.replace("%", ""))

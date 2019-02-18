@@ -59,7 +59,7 @@ class CSV(ArrayWriter):
             csv_writer.writerow(headers)
 
             for i in xrange(len(data[0])):
-                csv_writer.writerow([data[j][i] for j in xrange(len(data)) ])
+                csv_writer.writerow([unicode(data[j][i]).encode('utf8', 'replace') for j in xrange(len(data))])
 
             return csv_writer
 

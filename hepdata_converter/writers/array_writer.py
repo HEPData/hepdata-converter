@@ -184,7 +184,8 @@ class ArrayWriter(Writer):
                                 err_breakdown[i][label]['dn'] = err_minus # want to maintain directionality of errors
                             except TypeError:
                                 log.error('TypeError encountered when parsing {0} and {1}'.format(
-                                    error['asymerror']['minus'], error['asymerror']['plus']))
+                                    unicode(error['asymerror']['minus']).encode('utf8', 'replace'),
+                                    unicode(error['asymerror']['plus']).encode('utf8', 'replace')))
                         elif 'symerror' in error:
                             try:
                                 err = error_value_processor(entry['value'], error['symerror'])
@@ -193,7 +194,9 @@ class ArrayWriter(Writer):
                                 err_breakdown[i][label]['up'] = err
                                 err_breakdown[i][label]['dn'] = -err
                             except TypeError:
-                                log.error('TypeError encountered when parsing {0}'.format(error['symerror']))
+                                log.error('TypeError encountered when parsing {0}'.format(
+                                    unicode(error['symerror']).encode('utf8', 'replace'))
+                                )
 
                     min_errs.append(sqrt(errors_min))
                     max_errs.append(sqrt(errors_max))
