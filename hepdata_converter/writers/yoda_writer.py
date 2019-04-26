@@ -49,7 +49,7 @@ class ScatterYodaClass(ObjectWrapper):
             
             graph.addPoint(self.get_point_cls()(*args))
         error_breakdown = yaml.safe_dump(self.err_breakdown, default_flow_style=True, default_style='', width=1e6)
-        graph.setAnnotation("ErrorBreakdown", error_breakdown)
+        graph.setAnnotation("ErrorBreakdown", error_breakdown.rstrip('\n'))
         return graph
 
 
@@ -118,6 +118,7 @@ class YODA(ArrayWriter):
                          + 'd' + table_num.zfill(2) + '-x01-y' + str(idep + 1).zfill(2)
             graph.setAnnotation('IsRef', '1')
             yoda.core.writeYODA(graph, data_out)
+            data_out.write('\n\n')
 
     def write(self, data_in, data_out, *args, **kwargs):
         """

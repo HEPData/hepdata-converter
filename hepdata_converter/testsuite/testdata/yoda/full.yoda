@@ -1,7 +1,6 @@
 BEGIN YODA_SCATTER2D_V2 /REF/RIVET_ANALYSIS_NAME/d01-x01-y01
 Variations: [""]
 ErrorBreakdown: {0: {stat: {dn: -3.0, up: 3.3}, sys: {dn: -1.2, up: 1}, 'sys,lumi': {dn: -1, up: 1}}, 1: {stat: {dn: -3.5, up: 3.8}, sys: {dn: -1.5, up: 1.7}, 'sys,lumi': {dn: -1.2, up: 1.2}}, 2: {stat: {dn: -2.9, up: 3.1}, sys: {dn: -1.7, up: 1.7}, 'sys,lumi': {dn: -0.5, up: 0.5}}}
-
 IsRef: 1
 Path: /REF/RIVET_ANALYSIS_NAME/d01-x01-y01
 Title: Table 1
@@ -12,10 +11,11 @@ Type: Scatter2D
 8.000000e+03	0.000000e+00	0.000000e+00	2.980000e+01	3.992493e+00	4.332436e+00
 9.000000e+03	0.000000e+00	0.000000e+00	1.270000e+01	3.398529e+00	3.570714e+00
 END YODA_SCATTER2D_V2
+
+
 BEGIN YODA_SCATTER3D_V2 /REF/RIVET_ANALYSIS_NAME/d02-x01-y01
 Variations: [""]
 ErrorBreakdown: {}
-
 IsRef: 1
 Path: /REF/RIVET_ANALYSIS_NAME/d02-x01-y01
 Title: Table 2
@@ -53,10 +53,11 @@ Type: Scatter3D
 7.000000e+02	0.000000e+00	0.000000e+00	8.000000e+02	0.000000e+00	0.000000e+00	3.465000e-02	0.000000e+00	0.000000e+00
 7.900000e+02	0.000000e+00	0.000000e+00	8.000000e+02	0.000000e+00	0.000000e+00	2.502000e-04	0.000000e+00	0.000000e+00
 END YODA_SCATTER3D_V2
+
+
 BEGIN YODA_SCATTER2D_V2 /REF/RIVET_ANALYSIS_NAME/d03-x01-y01
 Variations: [""]
 ErrorBreakdown: {0: {stat: {dn: -1100, up: 1100}, 'sys,background': {dn: -15, up: 15}, 'sys,detector': {dn: -79, up: 79}}, 1: {stat: {dn: -1600, up: 1600}, 'sys,background': {dn: -15, up: 15}, 'sys,detector': {dn: -75, up: 75}}, 2: {stat: {dn: -490, up: 490}, 'sys,background': {dn: -2, up: 2}, 'sys,detector': {dn: -41, up: 41}}, 3: {stat: {dn: -60, up: 60}, 'sys,background': {dn: 0, up: 0}, 'sys,detector': {dn: -2, up: 2}}}
-
 IsRef: 1
 Path: /REF/RIVET_ANALYSIS_NAME/d03-x01-y01
 Title: Table 3
@@ -68,10 +69,11 @@ Type: Scatter2D
 1.500000e+02	5.000000e+01	5.000000e+01	1.600000e+03	4.917164e+02	4.917164e+02
 4.000000e+02	2.000000e+02	2.000000e+02	8.000000e+01	6.003332e+01	6.003332e+01
 END YODA_SCATTER2D_V2
+
+
 BEGIN YODA_SCATTER2D_V2 /REF/RIVET_ANALYSIS_NAME/d04-x01-y01
 Variations: [""]
 ErrorBreakdown: {0: {stat: {dn: -3340, up: 3340}, 'sys,background': {dn: -740, up: 740}, 'sys,detector': {dn: -80, up: 80}}, 1: {stat: {dn: -3210, up: 3210}, 'sys,background': {dn: -260, up: 260}, 'sys,detector': {dn: -200, up: 200}}, 2: {stat: {dn: -1490, up: 1490}, 'sys,background': {dn: -390, up: 390}, 'sys,detector': {dn: -120, up: 120}}}
-
 IsRef: 1
 Path: /REF/RIVET_ANALYSIS_NAME/d04-x01-y01
 Title: Table 4
@@ -82,10 +84,11 @@ Type: Scatter2D
 1.100000e+02	2.000000e+01	2.000000e+01	8.280000e+03	3.226717e+03	3.226717e+03
 1.650000e+02	3.500000e+01	3.500000e+01	3.900000e+03	1.544862e+03	1.544862e+03
 END YODA_SCATTER2D_V2
+
+
 BEGIN YODA_SCATTER2D_V2 /REF/RIVET_ANALYSIS_NAME/d05-x01-y01
 Variations: [""]
 ErrorBreakdown: {0: {stat: {dn: -69000, up: 69000}, 'sys,background': {dn: -10, up: 10}, 'sys,detector': {dn: -6600, up: 6600}}, 1: {stat: {dn: -100000, up: 100000}, 'sys,background': {dn: -400, up: 400}, 'sys,detector': {dn: -9000, up: 9000}}, 2: {stat: {dn: -80000, up: 80000}, 'sys,background': {dn: -300, up: 300}, 'sys,detector': {dn: -10000, up: 10000}}, 3: {stat: {dn: -50000, up: 50000}, 'sys,background': {dn: -300, up: 300}, 'sys,detector': {dn: -2000, up: 2000}}}
-
 IsRef: 1
 Path: /REF/RIVET_ANALYSIS_NAME/d05-x01-y01
 Title: Table 5
@@ -97,10 +100,11 @@ Type: Scatter2D
 1.350000e+00	3.500000e-01	3.500000e-01	2.600000e+05	8.062314e+04	8.062314e+04
 2.420795e+00	7.207950e-01	7.207950e-01	4.200000e+05	5.004088e+04	5.004088e+04
 END YODA_SCATTER2D_V2
+
+
 BEGIN YODA_SCATTER2D_V2 /REF/RIVET_ANALYSIS_NAME/d06-x01-y01
 Variations: [""]
 ErrorBreakdown: {0: {stat: {dn: -4400, up: 4400}, 'sys,background': {dn: -1900, up: 1900}, 'sys,detector': {dn: -300, up: 300}}, 1: {stat: {dn: -2630, up: 2630}, 'sys,background': {dn: -280, up: 280}, 'sys,detector': {dn: -230, up: 230}}, 2: {stat: {dn: -1210, up: 1210}, 'sys,background': {dn: -480, up: 480}, 'sys,detector': {dn: -60, up: 60}}}
-
 IsRef: 1
 Path: /REF/RIVET_ANALYSIS_NAME/d06-x01-y01
 Title: Table 8
@@ -111,10 +115,11 @@ Type: Scatter2D
 2.750000e+02	2.500000e+01	2.500000e+01	6.320000e+03	2.654845e+03	2.654845e+03
 3.500000e+02	5.000000e+01	5.000000e+01	3.680000e+03	1.303112e+03	1.303112e+03
 END YODA_SCATTER2D_V2
+
+
 BEGIN YODA_SCATTER2D_V2 /REF/RIVET_ANALYSIS_NAME/d07-x01-y01
 Variations: [""]
 ErrorBreakdown: {}
-
 IsRef: 1
 Path: /REF/RIVET_ANALYSIS_NAME/d07-x01-y01
 Title: Table 9
@@ -134,10 +139,11 @@ Type: Scatter2D
 4.625000e+02	1.250000e+01	1.250000e+01	0.000000e+00	0.000000e+00	0.000000e+00
 4.875000e+02	1.250000e+01	1.250000e+01	2.000000e+00	0.000000e+00	0.000000e+00
 END YODA_SCATTER2D_V2
+
+
 BEGIN YODA_SCATTER2D_V2 /REF/RIVET_ANALYSIS_NAME/d07-x01-y02
 Variations: [""]
 ErrorBreakdown: {0: {error: {dn: -0.0, up: 0.0}}, 1: {error: {dn: -0.51, up: 0.41}}, 2: {error: {dn: -0.26, up: 0.41}}, 3: {error: {dn: -0.19, up: 0.12}}, 4: {error: {dn: -0.15, up: 0.16}}, 5: {error: {dn: -0.16, up: 0.19}}, 6: {error: {dn: -0.55, up: 0.56}}, 7: {error: {dn: -0.15, up: 0.1}}, 8: {error: {dn: -0.1, up: 0.11}}, 9: {error: {dn: -0.08, up: 0.08}}, 10: {error: {dn: -0.33, up: 0.33}}, 11: {error: {dn: -0.14, up: 0.17}}}
-
 IsRef: 1
 Path: /REF/RIVET_ANALYSIS_NAME/d07-x01-y02
 Title: Table 9
@@ -157,10 +163,11 @@ Type: Scatter2D
 4.625000e+02	1.250000e+01	1.250000e+01	3.000000e-01	3.300000e-01	3.300000e-01
 4.875000e+02	1.250000e+01	1.250000e+01	1.600000e-01	1.400000e-01	1.700000e-01
 END YODA_SCATTER2D_V2
+
+
 BEGIN YODA_SCATTER2D_V2 /REF/RIVET_ANALYSIS_NAME/d07-x01-y03
 Variations: [""]
 ErrorBreakdown: {}
-
 IsRef: 1
 Path: /REF/RIVET_ANALYSIS_NAME/d07-x01-y03
 Title: Table 9
@@ -180,10 +187,11 @@ Type: Scatter2D
 4.625000e+02	1.250000e+01	1.250000e+01	0.000000e+00	0.000000e+00	0.000000e+00
 4.875000e+02	1.250000e+01	1.250000e+01	9.300000e-01	0.000000e+00	0.000000e+00
 END YODA_SCATTER2D_V2
+
+
 BEGIN YODA_SCATTER2D_V2 /REF/RIVET_ANALYSIS_NAME/d07-x01-y04
 Variations: [""]
 ErrorBreakdown: {}
-
 IsRef: 1
 Path: /REF/RIVET_ANALYSIS_NAME/d07-x01-y04
 Title: Table 9
@@ -203,3 +211,5 @@ Type: Scatter2D
 4.625000e+02	1.250000e+01	1.250000e+01	8.800000e-01	0.000000e+00	0.000000e+00
 4.875000e+02	1.250000e+01	1.250000e+01	4.590000e+00	0.000000e+00	0.000000e+00
 END YODA_SCATTER2D_V2
+
+
