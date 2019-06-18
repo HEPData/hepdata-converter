@@ -12,7 +12,7 @@ services:
 install:
   - sudo pip install --upgrade pip
   - sudo pip install coverage
-  - sudo pip install coveralls
+  - sudo pip install --ignore-installed coveralls
 
 script:
   - export CURRENT_PATH=`pwd`
