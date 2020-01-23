@@ -1,4 +1,3 @@
-from string import lower
 from hepdata_converter.common import OptionInitMixin, Option
 from hepdata_converter.parsers import Parser, ParsedData, BadFormat, Table
 import copy
@@ -290,7 +289,7 @@ class OldHEPData(Parser):
 
                         # extract energy if SQRT(S) is one of the 'x' variables
                         xheader = self.current_table.data['independent_variables'][xy_mapping[i]]['header']
-                        if xheader['name'].startswith('SQRT(S)') and lower(xheader['units']) in ('gev'):
+                        if xheader['name'].startswith('SQRT(S)') and xheader['units'].lower() in ('gev'):
                             for energy in single_element.values():
                                 try:
                                     energy = float(energy)
@@ -538,7 +537,7 @@ class OldHEPData(Parser):
             list.append(xheader)
 
             # extract energy if SQRT(S) is one of the qualifiers
-            if name.startswith('SQRT(S)') and lower(units) in ('gev'):
+            if name.startswith('SQRT(S)') and units.lower() in ('gev'):
                 energies = re.split(' TO ', xheader['value'], flags=re.I)
                 for energy in energies:
                     try:
