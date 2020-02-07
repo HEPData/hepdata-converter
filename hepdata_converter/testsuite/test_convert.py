@@ -5,6 +5,11 @@ import hepdata_converter
 from hepdata_converter.testsuite import insert_path
 from hepdata_converter.testsuite.test_writer import WriterTestSuite
 
+# We try to load using the CSafeLoader for speed improvements.
+try:
+    from yaml import CSafeLoader as Loader
+except ImportError: #pragma: no cover
+    from yaml import SafeLoader as Loader #pragma: no cover
 
 class ConvertTestSuite(WriterTestSuite):
     """Test suite for Parser factory class
@@ -98,7 +103,7 @@ class ConvertTestSuite(WriterTestSuite):
         hepdata_converter.convert(StringIO.StringIO(self.simple_submission), self.current_tmp, options={'input_format': 'oldhepdata'})
 
         with open(os.path.join(self.current_tmp, 'submission.yaml')) as submission_file:
-            self.assertEqual(list(yaml.load_all(submission_file)), list(yaml.load_all(self.correct_submit_output)))
+            self.assertEqual(list(yaml.load_all(submission_file, Loader=Loader)), list(yaml.load_all(self.correct_submit_output, Loader=Loader)))
 
     def test_not_implemented_writer(self):
         """This feature is not implemented yet, but to get test coverage it is tested,

@@ -54,14 +54,14 @@ class YAML(Writer):
         if not self.single_file:
             self.create_dir(data_out)
             with open(os.path.join(data_out, 'submission.yaml'), 'w') as submission_file:
-                yaml.dump_all([data] + [table.metadata for table in tables], submission_file, Dumper=Dumper)
+                yaml.dump_all([data] + [table.metadata for table in tables], submission_file, Dumper=Dumper, default_flow_style=None)
 
                 for table in tables:
                     with open(os.path.join(data_out, table.data_file), 'w') as table_file:
-                        yaml.dump(table.data, table_file, Dumper=Dumper)
+                        yaml.dump(table.data, table_file, Dumper=Dumper, default_flow_style=None)
         else:
             if isinstance(data_out, (str, unicode)):
                 with open(data_out, 'w') as submission_file:
-                    yaml.dump_all([data] + [table.all_data for table in tables], submission_file, Dumper=Dumper)
+                    yaml.dump_all([data] + [table.all_data for table in tables], submission_file, Dumper=Dumper, default_flow_style=None)
             else: # expect filelike object
-                yaml.dump_all([data] + [table.all_data for table in tables], data_out, Dumper=Dumper)
+                yaml.dump_all([data] + [table.all_data for table in tables], data_out, Dumper=Dumper, default_flow_style=None)
