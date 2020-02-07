@@ -1,6 +1,7 @@
 import abc
 import unittest
 from hepdata_converter.common import GetConcreteSubclassMixin
+from future.utils import with_metaclass
 
 
 class ParserTestSuite(unittest.TestCase):
@@ -17,9 +18,7 @@ class ParserTestSuite(unittest.TestCase):
         class AC(A):
             pass
 
-        class AAB(AB):
-            __metaclass__ = abc.ABCMeta
-
+        class AAB(with_metaclass(abc.ABCMeta, AB)):
             @abc.abstractmethod
             def abstract(self):
                 pass

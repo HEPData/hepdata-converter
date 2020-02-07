@@ -1,3 +1,6 @@
+from builtins import str
+from builtins import range
+from builtins import object
 import logging
 from math import sqrt
 import os
@@ -5,12 +8,12 @@ from hepdata_converter.common import Option
 from hepdata_converter.writers import Writer
 import abc
 from hepdata_converter.writers.utils import error_value_processor
+from future.utils import with_metaclass
 
 logging.basicConfig()
 log = logging.getLogger(__name__)
 
-class ObjectWrapper(object):
-    __metaclass__ = abc.ABCMeta
+class ObjectWrapper(with_metaclass(abc.ABCMeta, object)):
     accept_alphanumeric = True
     # :core_object: bool if set to false object of this class will be created as an *extra* additionally to the first
     # object of class with ```core_object``` set to True
@@ -21,7 +24,7 @@ class ObjectWrapper(object):
         is_number_list = []
         for variable in variables:
             for element in variable['values']:
-                if 'value' in element and isinstance(element['value'], (str, unicode)):
+                if 'value' in element and isinstance(element['value'], (str, str)):
                     try:
                         element['value'] = float(element['value'])
                         is_number_list.append(True)
@@ -110,11 +113,11 @@ class ObjectFactory(object):
         self.map = {}
         self.independent_variables = independent_variables
         self.dependent_variables = dependent_variables
-        for variable_index in xrange(len(dependent_variables)):
+        for variable_index in range(len(dependent_variables)):
             self.map[variable_index] = list(independent_variables)
 
     def get_next_object(self):
-        for dependent_variable_index in xrange(len(self.dependent_variables)):
+        for dependent_variable_index in range(len(self.dependent_variables)):
             auxiliary_object_created = False
             for class_wrapper in self.class_list:
                 # if auxiliary object was already created for this variable, don't create more
@@ -133,9 +136,7 @@ class ObjectFactory(object):
                     yield obj
 
 
-class ArrayWriter(Writer):
-    __metaclass__ = abc.ABCMeta
-
+class ArrayWriter(with_metaclass(abc.ABCMeta, Writer)):
     @staticmethod
     def process_error_labels(value):
         """ Process the error labels of a dependent variable 'value' to ensure uniqueness. """
@@ -184,8 +185,8 @@ class ArrayWriter(Writer):
                                 err_breakdown[i][label]['dn'] = err_minus # want to maintain directionality of errors
                             except TypeError:
                                 log.error('TypeError encountered when parsing {0} and {1}'.format(
-                                    unicode(error['asymerror']['minus']).encode('utf8', 'replace'),
-                                    unicode(error['asymerror']['plus']).encode('utf8', 'replace')))
+                                    str(error['asymerror']['minus']).encode('utf8', 'replace'),
+                                    str(error['asymerror']['plus']).encode('utf8', 'replace')))
                         elif 'symerror' in error:
                             try:
                                 err = error_value_processor(entry['value'], error['symerror'])
@@ -195,7 +196,7 @@ class ArrayWriter(Writer):
                                 err_breakdown[i][label]['dn'] = -err
                             except TypeError:
                                 log.error('TypeError encountered when parsing {0}'.format(
-                                    unicode(error['symerror']).encode('utf8', 'replace'))
+                                    str(error['symerror']).encode('utf8', 'replace'))
                                 )
 
                     min_errs.append(sqrt(errors_min))
@@ -248,7 +249,7 @@ class ArrayWriter(Writer):
             self.tables = data_in.tables
 
     def _prepare_outputs(self, data_out, outputs):
-        if isinstance(data_out, (str, unicode)):
+        if isinstance(data_out, (str, str)):
             self.file_emulation = True
             if self.table_id is not None:
                 f = open(data_out, 'w')
@@ -260,7 +261,7 @@ class ArrayWriter(Writer):
                 for table in self.tables:
                     outputs.append(open(os.path.join(data_out, table.name.replace(' ','').replace('/','-').replace('$','').replace('\\','') + '.' + self.extension), 'w'))
         # multiple tables - require directory
-        elif len(self.tables) > 1 and not isinstance(data_out, (str, unicode)):
+        elif len(self.tables) > 1 and not isinstance(data_out, (str, str)):
             raise ValueError("Multiple tables, output must be a directory")
         else:
             outputs.append(data_out)
@@ -282,7 +283,7 @@ class ArrayWriter(Writer):
 
         self._prepare_outputs(data_out, outputs)
 
-        for i in xrange(len(self.tables)):
+        for i in range(len(self.tables)):
             data_out = outputs[i]
             table = self.tables[i]
 
@@ -297,7 +298,7 @@ class ArrayWriter(Writer):
             name = independent_variable['header']['name']
             if 'units' in independent_variable['header']:
                 name += ' [%s]' % independent_variable['header']['units']
-            headers.append(unicode(name).encode('utf8', 'replace'))
+            headers.append(str(name).encode('utf8', 'replace'))
             x_data = []
             x_data_low = []
             x_data_high = []
@@ -330,7 +331,7 @@ class ArrayWriter(Writer):
         units = ''
         if 'units' in dependent_variable['header']:
             units = ' [%s]' % dependent_variable['header']['units']
-        headers.append(unicode(dependent_variable['header']['name'] + units).encode('utf8', 'replace'))
+        headers.append(str(dependent_variable['header']['name'] + units).encode('utf8', 'replace'))
 
         qualifiers_marks.append(True)
 
@@ -362,19 +363,19 @@ class ArrayWriter(Writer):
         for value in dependent_variable['values']:
             y_data['values'].append(value['value'])
             if 'errors' not in value:
-                for key, val in y_data.items():
+                for key, val in list(y_data.items()):
                     if key != 'values':
                         val.append(0)
             else:
-                for key, val in y_data.items():
+                for key, val in list(y_data.items()):
                     has_error = False
-                    for i in xrange(len(value.get('errors', []))):
+                    for i in range(len(value.get('errors', []))):
                         error = value['errors'][i]
                         label = error.get('label', 'error')
 
                         if 'symerror' in error:
                             error_plus = error['symerror']
-                            if isinstance(error_plus, (str, unicode)):
+                            if isinstance(error_plus, (str, str)):
                                 error_plus = error_plus.strip()
                                 if len(error_plus) > 1 and error_plus[0] == '-':
                                     error_minus = error_plus[1:]

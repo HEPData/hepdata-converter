@@ -1,3 +1,5 @@
+from builtins import str
+from builtins import range
 from hepdata_converter.common import Option
 from hepdata_converter.writers.array_writer import ArrayWriter, ObjectWrapper, ObjectFactory
 import yoda, yaml
@@ -30,20 +32,20 @@ class ScatterYodaClass(ObjectWrapper):
     def _create_scatter(self):
         graph = self.get_scatter_cls()()
 
-        for i in xrange(len(self.yval)):
+        for i in range(len(self.yval)):
 
             # Check that number of y values does not exceed number of x values.
             too_many_y_values = False
-            for dim_i in xrange(self.dim):
+            for dim_i in range(self.dim):
                 if i > len(self.xval[dim_i]) - 1:
                     too_many_y_values = True
             if too_many_y_values: break
 
             args = []
-            for dim_i in xrange(self.dim):
+            for dim_i in range(self.dim):
                 args.append(self.xval[dim_i][i])
             args.append(self.yval[i])
-            for dim_i in xrange(self.dim):
+            for dim_i in range(self.dim):
                 args.append([self.xerr_minus[dim_i][i], self.xerr_plus[dim_i][i]])
             args.append([self.yerr_minus[i], self.yerr_plus[i]])
             
@@ -92,7 +94,7 @@ class YODA(ArrayWriter):
         self.extension = 'yoda'
 
     def _prepare_outputs(self, data_out, outputs):
-        if isinstance(data_out, (str, unicode)):
+        if isinstance(data_out, (str, str)):
             self.file_emulation = True
             outputs.append(open(data_out, 'w'))
         # multiple tables - require directory
@@ -137,7 +139,7 @@ class YODA(ArrayWriter):
         self._prepare_outputs(data_out, outputs)
         output = outputs[0]
 
-        for i in xrange(len(self.tables)):
+        for i in range(len(self.tables)):
             table = self.tables[i]
 
             self._write_table(output, table)

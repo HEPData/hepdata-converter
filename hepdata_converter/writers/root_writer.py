@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+from builtins import zip
+from builtins import str
+from builtins import range
 import abc
 from hepdata_converter.writers.array_writer import ArrayWriter, ObjectWrapper, ObjectFactory
 import ROOT as ROOTModule
@@ -6,6 +9,7 @@ import array
 import tempfile
 import os
 from hepdata_converter.writers.utils import error_value_processor
+from future.utils import with_metaclass
 
 __author__ = 'Michał Szostak'
 
@@ -13,9 +17,7 @@ import logging
 logging.basicConfig()
 log = logging.getLogger(__name__)
 
-class THFRootClass(ObjectWrapper):
-    __metaclass__ = abc.ABCMeta
-
+class THFRootClass(with_metaclass(abc.ABCMeta, ObjectWrapper)):
     _hist_axes_names = ['x', 'y', 'z']
     _hist_axes_getters = ['GetXaxis', 'GetYaxis', 'GetZaxis']
     dim = 0
@@ -43,7 +45,7 @@ class THFRootClass(ObjectWrapper):
         is_number_list = self.is_number_var(self.dependent_variable)
 
         xval = []
-        for i in xrange(self.dim):
+        for i in range(self.dim):
             xval.append([])
             i_var = self.independent_variables[i]['values']
             for ix, x in enumerate(i_var):
@@ -58,7 +60,7 @@ class THFRootClass(ObjectWrapper):
 
         # order bin values of independent variables
         xval_ordered = []
-        for i in xrange(self.dim):
+        for i in range(self.dim):
             xval_ordered.append([])
             xval_ordered[i] = sorted(xval[i])
 
@@ -83,11 +85,11 @@ class THFRootClass(ObjectWrapper):
             binsz = array.array('d', xval_ordered[2])
             hist = self.get_hist_classes()[self.dim - 1](self.sanitize_name(name), '', nbinsx, binsx, nbinsy, binsy, nbinsz, binsz)
 
-        for i in xrange(self.dim):
+        for i in range(self.dim):
             name = self.independent_variables[i]['header']['name']
             if 'units' in self.independent_variables[i]['header']:
                 name += ' [%s]' % self.independent_variables[i]['header']['units']
-            name = unicode(name).encode('ascii', 'replace')
+            name = str(name).encode('ascii', 'replace')
             getattr(hist, self._hist_axes_getters[i])().SetTitle(name)
             if 'labels' in self.independent_variables[i]:
                 for ibin, label in enumerate(self.independent_variables[i]['labels']):
@@ -96,8 +98,8 @@ class THFRootClass(ObjectWrapper):
         if self.dim < len(self.get_hist_classes()):
             getattr(hist, self._hist_axes_getters[self.dim])().SetTitle(self.sanitize_name(dependent_var_title))
 
-        for i in xrange(len(yval)):
-            hist.Fill(*([self.xval[dim_i][i] for dim_i in xrange(self.dim)] + [yval[i]]))
+        for i in range(len(yval)):
+            hist.Fill(*([self.xval[dim_i][i] for dim_i in range(self.dim)] + [yval[i]]))
 
         return hist
 
@@ -108,7 +110,7 @@ class THFRootClass(ObjectWrapper):
 
         # order bin values of independent variables
         xval_ordered = []
-        for i in xrange(self.dim):
+        for i in range(self.dim):
             xval_ordered.append([])
             xval_ordered[i] = sorted(xval[i])
 
@@ -133,11 +135,11 @@ class THFRootClass(ObjectWrapper):
             binsz = array.array('d', xval_ordered[2])
             hist = self.get_hist_classes()[self.dim - 1](self.sanitize_name(name), '', nbinsx, binsx, nbinsy, binsy, nbinsz, binsz)
 
-        for i in xrange(self.dim):
+        for i in range(self.dim):
             name = self.independent_variables[i]['header']['name']
             if 'units' in self.independent_variables[i]['header']:
                 name += ' [%s]' % self.independent_variables[i]['header']['units']
-            name = unicode(name).encode('ascii', 'replace')
+            name = str(name).encode('ascii', 'replace')
             getattr(hist, self._hist_axes_getters[i])().SetTitle(name)
             if 'labels' in self.independent_variables[i]: # set alphanumeric bin labels
                 for ibin, label in enumerate(self.independent_variables[i]['labels']):
@@ -147,11 +149,11 @@ class THFRootClass(ObjectWrapper):
             name = self.dependent_variable['header']['name']
             if 'units' in self.dependent_variable['header']:
                 name += ' [%s]' % self.dependent_variable['header']['units']
-            name = unicode(name).encode('ascii', 'replace')
+            name = str(name).encode('ascii', 'replace')
             getattr(hist, self._hist_axes_getters[self.dim])().SetTitle(name)
 
-        for i in xrange(len(self.xval[0])):
-            hist.Fill(*([self.xval[dim_i][i] for dim_i in xrange(self.dim)] + [self.yval[i]]))
+        for i in range(len(self.xval[0])):
+            hist.Fill(*([self.xval[dim_i][i] for dim_i in range(self.dim)] + [self.yval[i]]))
         return hist
 
     def create_objects(self):
@@ -184,7 +186,7 @@ class THFRootClass(ObjectWrapper):
                     error_labels[label] = 'asymerror'
 
         yvals = []
-        for index in xrange(1, len(error_labels) + 1):
+        for index in range(1, len(error_labels) + 1):
             error_label = error_indices[index]
             if error_labels[error_label] == 'asymerror':
                 yval_plus_label = error_label + '_plus'
@@ -194,7 +196,7 @@ class THFRootClass(ObjectWrapper):
 
                 for i, value in enumerate(self.dependent_variable.get('values', [])):
                     if not is_number_list[i]: continue # skip non-numeric y values
-                    error = filter(lambda x: x.get('label') == error_label, value.get('errors', []))
+                    error = [x for x in value.get('errors', []) if x.get('label') == error_label]
                     if len(error) == 0:
                         yval_plus.append(0.0)
                         yval_minus.append(0.0)
@@ -218,7 +220,7 @@ class THFRootClass(ObjectWrapper):
 
                 for i, value in enumerate(self.dependent_variable.get('values', [])):
                     if not is_number_list[i]: continue # skip non-numeric y values
-                    error = filter(lambda x: x.get('label') == error_label, value.get('errors', []))
+                    error = [x for x in value.get('errors', []) if x.get('label') == error_label]
                     if len(error) == 0:
                         yval.append(0.0)
                     elif 'symerror' in error[0]:
@@ -236,7 +238,7 @@ class THFRootClass(ObjectWrapper):
                 log.error("Failed to create empty histogram")
 
         xval = []
-        for i in xrange(self.dim):
+        for i in range(self.dim):
             xval.append([])
             i_var = self.independent_variables[i]['values']
             for ix, x in enumerate(i_var):
@@ -306,15 +308,15 @@ class TGraph2DErrorsClass(ObjectWrapper):
         xname = self.independent_variables[0]['header']['name']
         if 'units' in self.independent_variables[0]['header']:
             xname += ' [%s]' % self.independent_variables[0]['header']['units']
-        xname = unicode(xname).encode('ascii', 'replace')
+        xname = str(xname).encode('ascii', 'replace')
         yname = self.independent_variables[1]['header']['name']
         if 'units' in self.independent_variables[1]['header']:
             yname += ' [%s]' % self.independent_variables[1]['header']['units']
-        yname = unicode(yname).encode('ascii', 'replace')
+        yname = str(yname).encode('ascii', 'replace')
         zname = self.dependent_variable['header']['name']
         if 'units' in self.dependent_variable['header']:
             zname += ' [%s]' % self.dependent_variable['header']['units']
-        zname = unicode(zname).encode('ascii', 'replace')
+        zname = str(zname).encode('ascii', 'replace')
 
         graph.GetXaxis().SetTitle(xname)
         graph.GetYaxis().SetTitle(yname)
@@ -354,11 +356,11 @@ class TGraphAsymmErrorsRootClass(ObjectWrapper):
         xname = self.independent_variables[0]['header']['name']
         if 'units' in self.independent_variables[0]['header']:
             xname += ' [%s]' % self.independent_variables[0]['header']['units']
-        xname = unicode(xname).encode('ascii', 'replace')
+        xname = str(xname).encode('ascii', 'replace')
         yname = self.dependent_variable['header']['name']
         if 'units' in self.dependent_variable['header']:
             yname += ' [%s]' % self.dependent_variable['header']['units']
-        yname = unicode(yname).encode('ascii', 'replace')
+        yname = str(yname).encode('ascii', 'replace')
         graph.GetXaxis().SetTitle(xname)
         graph.GetYaxis().SetTitle(yname)
 
@@ -419,7 +421,7 @@ class ROOT(ArrayWriter):
         :return:
         """
         compress = ROOTModule.ROOT.CompressionSettings(ROOTModule.ROOT.kZLIB, 1)
-        if isinstance(data_out, (str, unicode)):
+        if isinstance(data_out, (str, str)):
             self.file_emulation = True
             outputs.append(ROOTModule.TFile.Open(data_out, 'RECREATE', '', compress))
         # multiple tables - require directory
@@ -445,7 +447,7 @@ class ROOT(ArrayWriter):
         outputs = []
         self._prepare_outputs(data_out, outputs)
         output = outputs[0]
-        for i in xrange(len(self.tables)):
+        for i in range(len(self.tables)):
             table = self.tables[i]
 
             self._write_table(output, table)

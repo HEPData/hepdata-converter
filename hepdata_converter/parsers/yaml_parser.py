@@ -1,3 +1,4 @@
+from builtins import range
 import yaml
 # We try to load using the CSafeLoader for speed improvements.
 try:
@@ -41,7 +42,7 @@ class YAML(Parser):
     def _pretty_print_errors(self, message_dict):
         return ' '.join(
                 ['%s: %s' % (key, ' | '.join([e.message for e in val])) for
-                 key, val in message_dict.items()])
+                 key, val in list(message_dict.items())])
 
     def parse(self, data_in, *args, **kwargs):
         """

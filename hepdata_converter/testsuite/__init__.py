@@ -1,3 +1,6 @@
+from builtins import str
+from builtins import range
+from builtins import object
 import os
 from random import randint
 import tempfile
@@ -98,16 +101,16 @@ class ExtendedTestCase(unittest.TestCase):
     def assertMultiLineAlmostEqual(self, first, second, msg=None):
         if hasattr(first, 'readlines'):
             lines = first.readlines()
-        elif isinstance(first, (str, unicode)):
+        elif isinstance(first, (str, str)):
             lines = first.split('\n')
 
         if hasattr(second, 'readlines'):
             orig_lines = second.readlines()
-        elif isinstance(second, (str, unicode)):
+        elif isinstance(second, (str, str)):
             orig_lines = second.split('\n')
 
         self.assertEqual(len(lines), len(orig_lines))
-        for i in xrange(len(lines)):
+        for i in range(len(lines)):
             self.assertEqual(lines[i].strip(), orig_lines[i].strip())
 
     def assertDirsEqual(self, first_dir, second_dir, file_content_parser=lambda x: list(yaml.load_all(x, Loader=Loader)), exclude=[], msg=None):

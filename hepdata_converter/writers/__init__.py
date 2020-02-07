@@ -2,15 +2,14 @@ import inspect
 import os
 import pkgutil
 from hepdata_converter.common import GetConcreteSubclassMixin, OptionInitMixin
+from future.utils import with_metaclass
 
 __all__ = []
 
 import abc
 
 
-class Writer(GetConcreteSubclassMixin, OptionInitMixin):
-    __metaclass__  = abc.ABCMeta
-
+class Writer(with_metaclass(abc.ABCMeta, type('NewBase', (GetConcreteSubclassMixin, OptionInitMixin), {}))):
     def __init__(self, single_file_output, *args, **kwargs):
         OptionInitMixin.__init__(self, options=kwargs)
         self.single_file_output = single_file_output

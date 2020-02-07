@@ -1,4 +1,5 @@
 # -*- encoding: utf-8 -*-
+from builtins import range
 import os
 import hepdata_converter
 from hepdata_converter.testsuite import insert_path, insert_paths
@@ -71,7 +72,7 @@ class ROOTWriterTestSuite(WriterTestSuite):
                 self.assertEqual(o.__class__, o_orig.__class__)
                 if o.__class__.__name__.startswith('TGraph'):
                     self.assertEqual(o.GetN(), o_orig.GetN())
-                    for i in xrange(o.GetN()):
+                    for i in range(o.GetN()):
                         self.assertEqual(o.GetX()[i],o_orig.GetX()[i])
                         self.assertEqual(o.GetY()[i],o_orig.GetY()[i])
         f.Close()
