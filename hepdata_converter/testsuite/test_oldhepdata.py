@@ -1,3 +1,4 @@
+from __future__ import print_function
 import hepdata_converter
 from hepdata_converter.parsers import yaml_parser
 from hepdata_converter.parsers.oldhepdata_parser import OldHEPData
