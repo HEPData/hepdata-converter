@@ -1,3 +1,7 @@
+from __future__ import print_function
+from future import standard_library
+standard_library.install_aliases()
+from builtins import str
 from io import StringIO
 import argparse
 import sys
@@ -109,5 +113,5 @@ def main(arguments=sys.argv):
     if r == 0:
         print(message)
     else:
-        print(message, sys.stderr)
+        print((message, sys.stderr))
     sys.exit(r)
