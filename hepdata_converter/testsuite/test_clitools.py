@@ -12,8 +12,11 @@ class CLIToolsTestSuite(WriterTestSuite):
     @insert_data_as_str('csv/table_1.csv')
     def test_convert_yaml2csv(self, submission_file, table_csv):
         output_path = os.path.join(self.current_tmp, 'output.csv')
-        code, message = hepdata_converter._main(['--input-format', 'yaml', '--output-format', 'csv',
-                                                 '--table', 'Table 1', '--pack', submission_file, output_path])
+        code, message = hepdata_converter._main(['--input-format', 'yaml',
+                                                 '--output-format', 'csv',
+                                                 '--table', 'Table 1',
+                                                 '--validator-schema-version', '0.1.0',
+                                                 '--pack', submission_file, output_path])
 
         self.assertEqual(code, 0, message)
         self.assertTrue(os.path.exists(output_path))

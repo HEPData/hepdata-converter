@@ -13,7 +13,8 @@ class YODAWriterTestSuite(WriterTestSuite):
     def test_simple_parse(self, yaml_simple_path, yoda_template):
         output_file_path = os.path.join(self.current_tmp, 'datafile.yoda')
         hepdata_converter.convert(yaml_simple_path, output_file_path,
-                                  options={'output_format': 'yoda'})
+                                  options={'output_format': 'yoda',
+                                           'validator_schema_version': '0.1.0'})
 
         self.assertNotEqual(os.stat(output_file_path).st_size, 0, 'output yoda file is empty')
         with open(output_file_path, 'r') as f:

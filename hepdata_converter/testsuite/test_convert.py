@@ -108,6 +108,8 @@ class ConvertTestSuite(WriterTestSuite):
 
     @insert_path('yaml_full')
     def test_same_type_conversion(self, yaml_path):
-        hepdata_converter.convert(yaml_path, self.current_tmp, options={'input_format': 'yaml', 'output_format': 'yaml'})
+        hepdata_converter.convert(yaml_path, self.current_tmp, options={'input_format': 'yaml',
+                                                                        'output_format': 'yaml',
+                                                                        'validator_schema_version': '0.1.0'})
         # exclude data6.yaml and data7.yaml because they are not listed in submission.yaml
         self.assertDirsEqual(yaml_path, self.current_tmp, exclude=['data6.yaml', 'data7.yaml'])

@@ -43,7 +43,8 @@ class ROOTWriterTestSuite(WriterTestSuite):
     def test_simple_parse(self, yaml_full_path, full_root_path):
         output_file_path = os.path.join(self.current_tmp, 'datafile.root')
         hepdata_converter.convert(yaml_full_path, output_file_path,
-                                  options={'output_format': 'root'})
+                                  options={'output_format': 'root',
+                                           'validator_schema_version': '0.1.0'})
 
         self.assertNotEqual(os.stat(output_file_path).st_size, 0, 'output root file is empty')
 
@@ -55,7 +56,8 @@ class ROOTWriterTestSuite(WriterTestSuite):
 
         with open(output_file_path, 'w') as output:
             hepdata_converter.convert(yaml_full_path, output,
-                                      options={'output_format': 'root'})
+                                      options={'output_format': 'root',
+                                               'validator_schema_version': '0.1.0'})
 
         self.assertNotEqual(os.stat(output_file_path).st_size, 0, 'output root file is empty')
 
@@ -80,7 +82,9 @@ class ROOTWriterTestSuite(WriterTestSuite):
     def test_th1_parse(self, yaml_full_path, full_root_path):
         output_file_path = os.path.join(self.current_tmp, 'datafile.root')
         hepdata_converter.convert(yaml_full_path, output_file_path,
-                                  options={'output_format': 'root', 'table': 'data2.yaml'})
+                                  options={'output_format': 'root',
+                                           'table': 'data2.yaml',
+                                           'validator_schema_version': '0.1.0'})
         pass
 
     @insert_paths('yaml/ins1283183', 'yaml/ins1397637', 'yaml/ins699647', 'yaml/ins1413748')
