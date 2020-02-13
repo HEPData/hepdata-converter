@@ -39,7 +39,7 @@ def convert(input, output=None, options={}):
     # if no output was specified create proxy output to which writer can insert data
     _output = output
     if not _output:
-        _output = StringIO.StringIO()
+        _output = StringIO()
 
     writer.write(parser.parse(input), _output)
 
