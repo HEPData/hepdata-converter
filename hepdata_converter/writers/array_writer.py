@@ -331,7 +331,7 @@ class ArrayWriter(with_metaclass(abc.ABCMeta, Writer)):
         units = ''
         if 'units' in dependent_variable['header']:
             units = ' [%s]' % dependent_variable['header']['units']
-        headers.append(str(dependent_variable['header']['name'] + units).encode('utf8', 'replace'))
+        headers.append(str(dependent_variable['header']['name'] + units))
 
         qualifiers_marks.append(True)
 
