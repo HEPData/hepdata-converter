@@ -2,8 +2,8 @@
 #: description: The observed and expected EmissT distribution in the dielectron SR-Z. The negigible estimated contribution from Z+jets is omitted in these distributions. The last bin contains the overflow.
 #: data_file: data9.yaml
 #: keyword cmenergies: 8000
-#: EVENTS [GEV],,,25
 #: SQRT(S) [GeV],,,8000.0
+#: EVENTS [GEV],,,25
 ETMISS [GEV],ETMISS [GEV] LOW,ETMISS [GEV] HIGH,Data
 212.5,200.0,225.0,0.0
 237.5,225.0,250.0,6.0
@@ -18,8 +18,8 @@ ETMISS [GEV],ETMISS [GEV] LOW,ETMISS [GEV] HIGH,Data
 462.5,450.0,475.0,0.0
 487.5,475.0,500.0,2.0
 
-#: EVENTS [GEV],,,25
 #: SQRT(S) [GeV],,,8000.0
+#: EVENTS [GEV],,,25
 ETMISS [GEV],ETMISS [GEV] LOW,ETMISS [GEV] HIGH,Expected Background,error +,error -
 212.5,200.0,225.0,0.0,0.0,-0.0
 237.5,225.0,250.0,0.95,0.41,-0.51
@@ -34,8 +34,8 @@ ETMISS [GEV],ETMISS [GEV] LOW,ETMISS [GEV] HIGH,Expected Background,error +,erro
 462.5,450.0,475.0,0.3,0.33,-0.33
 487.5,475.0,500.0,0.16,0.17,-0.14
 
-#: EVENTS [GEV],,,25
 #: SQRT(S) [GeV],,,8000.0
+#: EVENTS [GEV],,,25
 ETMISS [GEV],ETMISS [GEV] LOW,ETMISS [GEV] HIGH,GGM 700 200 1.5
 212.5,200.0,225.0,0.0
 237.5,225.0,250.0,6.46
@@ -50,8 +50,8 @@ ETMISS [GEV],ETMISS [GEV] LOW,ETMISS [GEV] HIGH,GGM 700 200 1.5
 462.5,450.0,475.0,0.0
 487.5,475.0,500.0,0.93
 
-#: EVENTS [GEV],,,25
 #: SQRT(S) [GeV],,,8000.0
+#: EVENTS [GEV],,,25
 ETMISS [GEV],ETMISS [GEV] LOW,ETMISS [GEV] HIGH,GGM 900 600 1.5
 212.5,200.0,225.0,0.0
 237.5,225.0,250.0,0.97
