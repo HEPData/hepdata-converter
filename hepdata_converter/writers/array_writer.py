@@ -295,10 +295,10 @@ class ArrayWriter(with_metaclass(abc.ABCMeta, Writer)):
     @classmethod
     def _extract_independent_variables(cls, table, headers, data, qualifiers_marks):
         for independent_variable in table.independent_variables:
-            name = independent_variable['header']['name']
+            name = str(independent_variable['header']['name'])
             if 'units' in independent_variable['header']:
                 name += ' [%s]' % independent_variable['header']['units']
-            headers.append(str(name).encode('utf8', 'replace'))
+            headers.append(name)
             x_data = []
             x_data_low = []
             x_data_high = []
