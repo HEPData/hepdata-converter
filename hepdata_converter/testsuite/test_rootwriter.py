@@ -55,7 +55,7 @@ class ROOTWriterTestSuite(WriterTestSuite):
         f.Close()
         f_orig.Close()
 
-        with open(output_file_path, 'w') as output:
+        with open(output_file_path, 'wb') as output:
             hepdata_converter.convert(yaml_full_path, output,
                                       options={'output_format': 'root',
                                                'validator_schema_version': '0.1.0'})
