@@ -115,9 +115,9 @@ class YODA(ArrayWriter):
             table_doi = table.name
         f = ObjectFactory(self.class_list, table.independent_variables, table.dependent_variables)
         for idep, graph in enumerate(f.get_next_object()):
-            graph.title = table_doi
-            graph.path = '/REF/' + self.rivet_analysis_name + '/' \
-                         + 'd' + table_num.zfill(2) + '-x01-y' + str(idep + 1).zfill(2)
+            graph.setTitle(table_doi)
+            graph.setPath('/REF/' + self.rivet_analysis_name + '/' \
+                         + 'd' + table_num.zfill(2) + '-x01-y' + str(idep + 1).zfill(2))
             graph.setAnnotation('IsRef', '1')
             yoda.core.writeYODA(graph, data_out)
             data_out.write('\n')
