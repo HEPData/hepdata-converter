@@ -118,7 +118,7 @@ class YODA(ArrayWriter):
                          + 'd' + table_num.zfill(2) + '-x01-y' + str(idep + 1).zfill(2)
             graph.setAnnotation('IsRef', '1')
             yoda.core.writeYODA(graph, data_out)
-            data_out.write('\n\n')
+            data_out.write('\n')
 
     def write(self, data_in, data_out, *args, **kwargs):
         """
