@@ -2,9 +2,9 @@ import StringIO
 import argparse
 import sys
 import version
+from hepdata_validator import LATEST_SCHEMA_VERSION
 from parsers import Parser
 from writers import Writer
-
 
 def convert(input, output=None, options={}):
     """Converts a supported ``input_format`` (*oldhepdata*, *yaml*)
@@ -79,6 +79,7 @@ def _main(arguments=sys.argv):
     parser.add_argument("--output-format", '-o', action='store', default='yaml', help='format of the output file/s (default: yaml) [choose one option from Writers section below]')
     parser.add_argument("--version", '-v', action='store_const', const=True, default=False, help='Show hepdata-converter version')
     parser.add_argument("--hepdata-doi", '-d', action='store', default='', help='Pass HEPData DOI, e.g. "10.17182/hepdata.74247.v1"')
+    parser.add_argument("--validator-schema-version", '-s', action='store', default=LATEST_SCHEMA_VERSION, help='hepdata_validator schema version (default: %s)' % LATEST_SCHEMA_VERSION)
     parser.add_argument("input")
     parser.add_argument("output")
 

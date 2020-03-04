@@ -17,7 +17,8 @@ class CSVWriterTestCase(WriterTestSuite):
         csv_content = convert(self.submission_filepath, options={'input_format': 'yaml',
                                                                  'output_format': 'csv',
                                                                  'table': 'Table 1',
-                                                                 'pack': True})
+                                                                 'pack': True,
+                                                                 'validator_schema_version': '0.1.0'})
 
         self.assertMultiLineAlmostEqual(table_1_content, csv_content)
 
@@ -26,7 +27,8 @@ class CSVWriterTestCase(WriterTestSuite):
         csv_content = convert(self.submission_filepath, options={'input_format': 'yaml',
                                                                  'output_format': 'csv',
                                                                  'table': 'Table 9',
-                                                                 'pack': True})
+                                                                 'pack': True,
+                                                                 'validator_schema_version': '0.1.0'})
 
         self.assertMultiLineAlmostEqual(table_9_content, csv_content)
 
@@ -35,7 +37,8 @@ class CSVWriterTestCase(WriterTestSuite):
     def test_multiple_tables_pack(self, table_1_content, table_9_content):
         convert(self.submission_filepath, self.current_tmp, options={'input_format': 'yaml',
                                                                      'output_format': 'csv',
-                                                                     'pack': True})
+                                                                     'pack': True,
+                                                                     'validator_schema_version': '0.1.0'})
 
         with open(os.path.join(self.current_tmp, 'Table1.csv'), 'r') as f:
             self.assertMultiLineAlmostEqual(table_1_content, f.read())
@@ -48,6 +51,7 @@ class CSVWriterTestCase(WriterTestSuite):
         csv_content = convert(self.submission_filepath, options={'input_format': 'yaml',
                                                          'output_format': 'csv',
                                                          'table': 'Table 9',
+                                                         'validator_schema_version': '0.1.0',
                                                          'separator': ';',
                                                          'pack': False})
         self.assertMultiLineAlmostEqual(table_9_content, csv_content)
@@ -55,8 +59,11 @@ class CSVWriterTestCase(WriterTestSuite):
     @insert_data_as_str('csv/table_9_unpacked.csv')
     def test_cli(self, table_9_content):
         csv_filepath = os.path.join(self.current_tmp, 'tab.csv')
-        hepdata_converter._main(['--output-format', 'csv', '--table', 'Table 9', '--separator', ';', self.submission_filepath,
-                                 csv_filepath])
+        hepdata_converter._main(['--output-format', 'csv',
+                                 '--table', 'Table 9',
+                                 '--validator-schema-version', '0.1.0',
+                                 '--separator', ';',
+                                 self.submission_filepath, csv_filepath])
 
         with open(csv_filepath, 'r') as csv_file:
             self.assertEqual(table_9_content, csv_file.read())
@@ -65,7 +72,10 @@ class CSVWriterTestCase(WriterTestSuite):
     @insert_data_as_str('csv/table_9_unpacked_comma.csv')
     def test_no_dir_output(self, table_1_content, table_9_content):
         csv_filepath = os.path.join(self.current_tmp, 'csv_dir')
-        hepdata_converter._main(['--output-format', 'csv', '--separator', ',', self.submission_filepath,
+        hepdata_converter._main(['--output-format', 'csv',
+                                 '--validator-schema-version', '0.1.0',
+                                 '--separator', ',',
+                                 self.submission_filepath,
                                  csv_filepath])
 
         self.assertTrue(os.path.exists(csv_filepath))

@@ -15,7 +15,7 @@ class OldHEPDataTestSuite(WriterTestSuite):
     def test_parse_submission(self, oldhepdata_file, yaml_path):
         oldhepdata_p = OldHEPData()
         oldhepdata_parsed_data = oldhepdata_p.parse(oldhepdata_file)
-        yaml_p = yaml_parser.YAML()
+        yaml_p = yaml_parser.YAML(validator_schema_version='0.1.0')
         yaml_parsed_data = yaml_p.parse(yaml_path)
 
         self.assertEqual(yaml_parsed_data, oldhepdata_parsed_data)
@@ -36,7 +36,7 @@ class OldHEPDataTestSuite(WriterTestSuite):
         oldhepdata_p = OldHEPData()
         oldhepdata_parsed_data = oldhepdata_p.parse(oldhepdata_file)
 
-        yaml_p = yaml_parser.YAML()
+        yaml_p = yaml_parser.YAML(validator_schema_version='0.1.0')
         yaml_parsed_data = yaml_p.parse(yaml_path)
 
         assert(len(yaml_parsed_data.tables) is len(oldhepdata_parsed_data.tables))

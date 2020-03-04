@@ -4,6 +4,8 @@ try:
     from yaml import CSafeLoader as Loader
 except ImportError: #pragma: no cover
     from yaml import SafeLoader as Loader #pragma: no cover
+
+from hepdata_validator import LATEST_SCHEMA_VERSION
 from hepdata_validator.submission_file_validator import SubmissionFileValidator
 from hepdata_validator.data_file_validator import DataFileValidator
 from hepdata_converter.parsers import Parser, ParsedData, Table
@@ -33,6 +35,8 @@ class YAML(Parser):
 
     def __init__(self, *args, **kwargs):
         super(YAML, self).__init__(*args, **kwargs)
+        self.validator_schema_version = kwargs.get('validator_schema_version', LATEST_SCHEMA_VERSION)
+
 
     def _pretty_print_errors(self, message_dict):
         return ' '.join(
@@ -64,7 +68,7 @@ class YAML(Parser):
             if len(submission_data) == 0:
                 raise RuntimeError("Submission file (%s) is empty" % data_in)
 
-            submission_file_validator = SubmissionFileValidator()
+            submission_file_validator = SubmissionFileValidator(schema_version=self.validator_schema_version)
             if not submission_file_validator.validate(file_path=data_in,
                                                       data=submission_data):
                 raise RuntimeError(
@@ -76,7 +80,7 @@ class YAML(Parser):
         tables = []
 
         # validator for table data
-        data_file_validator = DataFileValidator()
+        data_file_validator = DataFileValidator(schema_version=self.validator_schema_version)
 
         index = 0
         for i in range(0, len(submission_data)):

@@ -6,6 +6,11 @@ import shutil
 import time
 import yaml
 
+# We try to load using the CSafeLoader for speed improvements.
+try:
+    from yaml import CSafeLoader as Loader
+except ImportError: #pragma: no cover
+    from yaml import SafeLoader as Loader #pragma: no cover
 
 def _parse_path_arguments(sample_file_name):
     _sample_file_name = list(sample_file_name)
@@ -105,7 +110,7 @@ class ExtendedTestCase(unittest.TestCase):
         for i in xrange(len(lines)):
             self.assertEqual(lines[i].strip(), orig_lines[i].strip())
 
-    def assertDirsEqual(self, first_dir, second_dir, file_content_parser=lambda x: list(yaml.load_all(x)), exclude=[], msg=None):
+    def assertDirsEqual(self, first_dir, second_dir, file_content_parser=lambda x: list(yaml.load_all(x, Loader=Loader)), exclude=[], msg=None):
         self.assertEqual(list(os.walk(first_dir))[1:], list(os.walk(second_dir))[1:], msg)
         dirs = list(os.walk(first_dir))
         for file in dirs[0][2]:

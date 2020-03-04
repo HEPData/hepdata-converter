@@ -12,6 +12,7 @@ class YAMLWriterTestSuite(WriterTestSuite):
     def test_no_qal_parse(self, yaml_path, table_5_noqual):
         data = hepdata_converter.convert(yaml_path, options={'input_format': 'yaml',
                                                              'output_format': 'csv',
-                                                             'single_file': True})
+                                                             'single_file': True,
+                                                             'validator_schema_version': '0.1.0'})
 
         self.assertEqual(data, table_5_noqual)
