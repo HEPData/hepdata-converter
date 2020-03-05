@@ -17,12 +17,11 @@ install:
 script:
   - export CURRENT_PATH=`pwd`
   - docker run -v $CURRENT_PATH:$CURRENT_PATH hepdata/hepdata-converter:0.1.35 /bin/bash -c "cd  $CURRENT_PATH && coverage run -m unittest discover hepdata_converter/testsuite 'test_*'"
-  - docker run -v $CURRENT_PATH:$CURRENT_PATH hepdata/hepdata-converter:0.1.35 /bin/bash -c "cd  $CURRENT_PATH && python setup.py install sdist bdist_wheel && hepdata-converter -v"
+  - docker run -v $CURRENT_PATH:$CURRENT_PATH hepdata/hepdata-converter:0.1.35 /bin/bash -c "cd  $CURRENT_PATH && python setup.py install && hepdata-converter -v"
 after_success:
   - coveralls
 
 deploy:
-  skip_cleanup: true
   provider: pypi
   user: "__token__"
   password:
