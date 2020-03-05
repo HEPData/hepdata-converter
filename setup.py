@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+
+"Library providing means of conversion between oldhepdata format to new one, and new one to csv / yoda / root etc."
+
 import os
 from setuptools import setup
 import re
@@ -42,11 +45,10 @@ setup(
     packages=['hepdata_converter', 'hepdata_converter.parsers', 'hepdata_converter.writers', 'hepdata_converter.testsuite'],
     package_data={'hepdata_converter': get_all_datafiles(package='hepdata_converter/testsuite', path='testdata')},
     include_package_data=True,
-
-    url='https://github.com/HEPData/hepdata-converter/',
+    url='https://github.com/HEPData/hepdata-converter',
     license='GPL',
     author='HEPData Team',
     author_email='info@hepdata.net',
-    description='Library providing means of conversion between oldhepdata format to new one, and new one to csv / yoda / root etc.',
-    download_url='https://github.com/HEPData/hepdata-converter/tarball/%s' % get_version(),
+    description=__doc__,
+    download_url='https://github.com/HEPData/hepdata-converter/tarball/%s' % get_version()
 )
