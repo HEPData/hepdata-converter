@@ -32,8 +32,8 @@ setup(
     name='hepdata-converter',
     version=get_version(),
     install_requires=[
-        'pyyaml',
-        'hepdata_validator',
+        'pyyaml>=5.3',
+        'hepdata_validator>=0.2.1',
         'matplotlib<3.0.0'
     ],
     entry_points={
