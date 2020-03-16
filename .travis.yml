@@ -2,12 +2,18 @@ language: python
 
 python:
   - '2.7'
+
 sudo: required
 
 cache:
   - docker
+
 services:
   - docker
+
+env:
+  global:
+    - DOCKER_IMAGE=hepdata/hepdata-converter:0.1.35
 
 install:
   - sudo pip install --upgrade pip
@@ -16,10 +22,15 @@ install:
 
 script:
   - export CURRENT_PATH=`pwd`
-  - docker run -v $CURRENT_PATH:$CURRENT_PATH hepdata/hepdata-converter:0.1.35 /bin/bash -c "cd  $CURRENT_PATH && coverage run -m unittest discover hepdata_converter/testsuite 'test_*'"
-  - docker run -v $CURRENT_PATH:$CURRENT_PATH hepdata/hepdata-converter:0.1.35 /bin/bash -c "cd  $CURRENT_PATH && python setup.py install && hepdata-converter -v"
+  - docker run -v $CURRENT_PATH:$CURRENT_PATH $DOCKER_IMAGE /bin/bash -c "cd $CURRENT_PATH && coverage run -m unittest discover hepdata_converter/testsuite 'test_*'"
+  - docker run -v $CURRENT_PATH:$CURRENT_PATH $DOCKER_IMAGE /bin/bash -c "cd $CURRENT_PATH && python setup.py install && hepdata-converter -v"
+
 after_success:
   - coveralls
+
+before_deploy:
+  - export CURRENT_PATH=`pwd`
+  - docker run -v $CURRENT_PATH:$CURRENT_PATH $DOCKER_IMAGE /bin/bash -c "cd $CURRENT_PATH && rm -rf build hepdata_converter.egg-info"
 
 deploy:
   provider: pypi
