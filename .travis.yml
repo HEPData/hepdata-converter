@@ -2,12 +2,18 @@ language: python
 
 python:
   - '2.7'
+
 sudo: required
 
 cache:
   - docker
+
 services:
   - docker
+
+env:
+  global:
+    - DOCKER_IMAGE=hepdata/hepdata-converter:0.1.35
 
 install:
   - sudo pip install --upgrade pip
@@ -16,17 +22,22 @@ install:
 
 script:
   - export CURRENT_PATH=`pwd`
-  - docker run -v $CURRENT_PATH:$CURRENT_PATH hepdata/hepdata-converter:0.1.35 /bin/bash -c "cd  $CURRENT_PATH && coverage run -m unittest discover hepdata_converter/testsuite 'test_*'"
-  - docker run -v $CURRENT_PATH:$CURRENT_PATH hepdata/hepdata-converter:0.1.35 /bin/bash -c "cd  $CURRENT_PATH && python setup.py install sdist && hepdata-converter -v"
+  - docker run -v $CURRENT_PATH:$CURRENT_PATH $DOCKER_IMAGE /bin/bash -c "cd $CURRENT_PATH && coverage run -m unittest discover hepdata_converter/testsuite 'test_*'"
+  - docker run -v $CURRENT_PATH:$CURRENT_PATH $DOCKER_IMAGE /bin/bash -c "cd $CURRENT_PATH && python setup.py install && hepdata-converter -v"
+
 after_success:
   - coveralls
 
+before_deploy:
+  - export CURRENT_PATH=`pwd`
+  - docker run -v $CURRENT_PATH:$CURRENT_PATH $DOCKER_IMAGE /bin/bash -c "cd $CURRENT_PATH && rm -rf build hepdata_converter.egg-info"
+
 deploy:
-  skip_cleanup: true
   provider: pypi
-  user: hepdata
+  user: "__token__"
   password:
-    secure: aB/CZsmjyCpuxF/+1l73pDjxGFHvH1Ndg/Qf4UtSWuez32UB4hVqQpqiiUlDQOuJtBcW67+3rJeNDc9eJo78rMpqT7ojKirTuGXdz9+kINFqTRtqHU3gR15xea6CBZSj5FLBE6+mh+fSAinojil9hg2WSAaqDrJp11VIFEfil4FAv5MwNIo8xP6i98Pdt9lAXBsWIt+lYDo+w8ZPBw0mP7DAEagx2O2get2NFJrdWHb8jPiDG4ON0r0JN70cugXvqdGg3//R6p8An8xGqxdVtmqwUf5W8SHiOaCxGIkh3yzkSQL+GOWNbA+H+xiIqy3CY4bXJOAW/LM2x6TV1NhE+X/6YwBZYprouDjW+TJoVLqq1wFZ/wql8PFH5YgPakwm13KVqmkrhPXY9Ky3r0hhNgkNzVjvgMewXZmrYOhKVjK6wnmvc3KNtfW7eb+PbINAahNvzcrqHGzyR4L8kvmQgAFk5EeSQxI3f5Z8oZf9EirDarfWHKLL3RVq0HqkKPvMOYqbfUkCTbBWqGyOFKFhYZT9YkzpIXQlnqioLsgxBSR5wdpDNOhQslh9zxc/s+rT3bCRSrI/MeZHOIMYc/SFnDlKjIRkNiQ9VufP8zHjHE1lHuTilHUJYMY8ifh1L6LR+269DmuYTDG7u0XWlxFO+3JNYzj9qbDvumKRubhEny4=
+    secure: "2DNDcwBJ922YpI280IYtJkP/otar8ELI/djnzvHAHErm4t5+xEAIiPHO6xl1V5d9D0HaMEfnRqBkgVzhuFoHmP1SjqzYczrOUkL7XN1iCFdUNf/j5T07XLKsW4DSJwi+yaIvbgi6uN6oyWY0/5Rennb0s3ZeG+DCaIgJTTQAbojZbHLwDd0wjvc5oh7TWbdIy8qNukqLOxXU7b43WOJ8evwhMWINy9Ot7libn9jZmlCALqSm+uBXkh8IdnpoofwUYRZMSNJFWzQqCN1MWA4KoG2iwuH7xCSB66M8W7gMfjRpVjCDAhcV2+dFLBNsDbUY1zkceumarbWrBlWx8sDiYPR/fTSkwfABxZ65/MCUYVjVTHkgU4Ll7Ot9v9ijiP7vJAbS6SsrdH8JtPeWhYwiccC6syHTdk+MC5u9EDwh0Uc6lv41sK2SeF0ZWdYedgs76TLC22guz7D1opa0lBO8QzjzGgn7IIwAFsFFpKAbjK6k0hWptpaN60tLdBTtb+cX8CIADQT5iackuASDMLiqJ3+4K5WmGYUV17RBCN1h2kgxX8FxEj0rN2Oh8uLkO2dNG5pRCeH4r/2FiCtlQGhL83MjWzuqP4OyMeDfyY4zMDTWHuctbQ/khRyUD1rhcrCnpkGjyaTYQ9sk4Nt9jFk+zrpZ+JdOyZy/cKjrVSJ+qms="
+  distributions: "sdist bdist_wheel"
   on:
     tags: true
     repo: HEPData/hepdata-converter

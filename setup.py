@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+
+"Library providing means of conversion between oldhepdata format to new one, and new one to csv / yoda / root etc."
+
 import os
 from setuptools import setup
 import re
@@ -22,6 +25,11 @@ def get_version():
     return r.group('version')
 
 
+# Get the long description from the README file
+with open('README.rst', 'rt') as fp:
+    long_description = fp.read()
+
+
 extras_require = {'docs': ['Sphinx>=1.4.2', 'mock'],
                   'all': []}
 
@@ -29,9 +37,11 @@ setup(
     name='hepdata-converter',
     version=get_version(),
     install_requires=[
-        'pyyaml',
-        'hepdata_validator',
-        'matplotlib<3.0.0'
+        'pyyaml>=5.3',
+        'hepdata-validator>=0.2.1',
+        'matplotlib<3.0.0',  # can remove for Python 3
+        'numpy<1.17',  # can remove for Python 3
+        'zipp<2'  # can remove for Python 3
     ],
     entry_points={
         'console_scripts': [
@@ -42,11 +52,13 @@ setup(
     packages=['hepdata_converter', 'hepdata_converter.parsers', 'hepdata_converter.writers', 'hepdata_converter.testsuite'],
     package_data={'hepdata_converter': get_all_datafiles(package='hepdata_converter/testsuite', path='testdata')},
     include_package_data=True,
-
-    url='https://github.com/HEPData/hepdata-converter/',
+    url='https://github.com/HEPData/hepdata-converter',
     license='GPL',
     author='HEPData Team',
     author_email='info@hepdata.net',
-    description='Library providing means of conversion between oldhepdata format to new one, and new one to csv / yoda / root etc.',
+    description=__doc__,
     download_url='https://github.com/HEPData/hepdata-converter/tarball/%s' % get_version(),
+    long_description=long_description,
+    long_description_content_type='text/x-rst',
+    python_requires='<3'
 )

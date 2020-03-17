@@ -19,6 +19,10 @@ HEPData Converter
    :target: https://github.com/HEPData/hepdata-converter/releases
    :alt: GitHub Releases
 
+.. image:: https://img.shields.io/pypi/v/hepdata-converter
+   :target: https://pypi.org/project/hepdata-converter/
+   :alt: PyPI Version
+
 .. image:: https://img.shields.io/github/issues/hepdata/hepdata-converter.svg?maxAge=2592000
    :target: https://github.com/HEPData/hepdata-converter/issues
    :alt: GitHub Issues
@@ -28,13 +32,13 @@ HEPData Converter
    :alt: Documentation Status
 
 
-This Python library provides support for converting:
+This Python 2 (not yet Python 3) library provides support for converting:
 
 * Old HepData input format (`sample <https://github.com/HEPData/hepdata-submission/blob/master/examples/oldhepdata/sample.oldhepdata>`_) to `YAML <https://github.com/HEPData/hepdata-submission>`_
 * `YAML <https://github.com/HEPData/hepdata-submission>`_ to:
 
-  * `ROOT <https://root.cern.ch>`_
-  * `YODA <https://yoda.hepforge.org>`_
+  * `ROOT <https://root.cern.ch>`_ (tested with v6.20.00)
+  * `YODA <https://yoda.hepforge.org>`_ (tested with v1.7.7)
   * `CSV <https://en.wikipedia.org/wiki/Comma-separated_values>`_
 
 Documentation: http://hepdata-converter.readthedocs.io

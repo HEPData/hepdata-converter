@@ -115,9 +115,15 @@ class YODA(ArrayWriter):
             table_doi = table.name
         f = ObjectFactory(self.class_list, table.independent_variables, table.dependent_variables)
         for idep, graph in enumerate(f.get_next_object()):
-            graph.setTitle(table_doi)
-            graph.setPath('/REF/' + self.rivet_analysis_name + '/' \
-                         + 'd' + table_num.zfill(2) + '-x01-y' + str(idep + 1).zfill(2))
+            rivet_identifier = 'd' + table_num.zfill(2) + '-x01-y' + str(idep + 1).zfill(2)
+            # Allow the standard Rivet identifier to be overridden by a custom value specified in the qualifiers.
+            if 'qualifiers' in table.dependent_variables[idep]:
+                for qualifier in table.dependent_variables[idep]['qualifiers']:
+                    if qualifier['name'] == 'Custom Rivet identifier':
+                        rivet_identifier = qualifier['value']
+            rivet_path = '/REF/' + self.rivet_analysis_name + '/' + rivet_identifier
+            graph.setTitle(table_doi)  # use for YODA 1.8.1
+            graph.setPath(rivet_path)  # use for YODA 1.8.1
             graph.setAnnotation('IsRef', '1')
             yoda.core.writeYODA(graph, data_out)
             data_out.write('\n')

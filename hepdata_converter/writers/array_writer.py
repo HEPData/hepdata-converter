@@ -74,8 +74,8 @@ class ObjectWrapper(with_metaclass(abc.ABCMeta, object)):
     def match(cls, independent_variables_map, dependent_variable):
         if not cls.accept_alphanumeric:
             # don't match if any independent or dependent variable values are non-numeric
-            for var in independent_variables_map:
-                if False in cls.is_number_var(dependent_variable):
+            for independent_variable in independent_variables_map:
+                if False in cls.is_number_var(independent_variable):
                     return False
             if False in cls.is_number_var(dependent_variable):
                 return False
@@ -122,13 +122,14 @@ class ObjectFactory(object):
             for class_wrapper in self.class_list:
                 # if auxiliary object was already created for this variable, don't create more
                 # (eg. after creating TH3 (which does not consume variables) don't create TH2 & TH1,
-                # but go for best fit of "core" objects eg. TGraph
+                # but go for best fit of "core" objects eg. TGraph)
 
                 if not class_wrapper.core_object and auxiliary_object_created:
                     continue
 
                 objects = class_wrapper.match_and_create(self.map[dependent_variable_index],
-                                                         self.dependent_variables[dependent_variable_index], dependent_variable_index)
+                                                         self.dependent_variables[dependent_variable_index],
+                                                         dependent_variable_index)
                 if objects and not class_wrapper.core_object:
                     auxiliary_object_created = True
 
@@ -162,27 +163,31 @@ class ArrayWriter(with_metaclass(abc.ABCMeta, Writer)):
 
     @staticmethod
     def calculate_total_errors(variable, is_number_list, min_errs, max_errs, values, err_breakdown={}):
+        i_numeric = -1  # bin number excluding non-numeric y values
         for i, entry in enumerate(variable['values']):
-            if not is_number_list[i]: continue # skip non-numeric y values
+            if not is_number_list[i]:
+                continue  # skip non-numeric y values
+            else:
+                i_numeric += 1
             if 'value' in entry:
                 values.append(entry['value'])
                 if 'errors' in entry:
                     errors_min = 0.0
                     errors_max = 0.0
-                    err_breakdown[i] = {}
+                    err_breakdown[i_numeric] = {}
                     # process the error labels to ensure uniqueness
                     ArrayWriter.process_error_labels(entry)
                     for error in entry['errors']:
                         label = error.get('label', 'error')
-                        err_breakdown[i][label] = {}
+                        err_breakdown[i_numeric][label] = {}
                         if 'asymerror' in error:
                             try:
                                 err_minus = error_value_processor(entry['value'], error['asymerror']['minus'])
                                 err_plus = error_value_processor(entry['value'], error['asymerror']['plus'])
                                 errors_min += pow(min(err_plus, err_minus, 0.0), 2)
                                 errors_max += pow(max(err_plus, err_minus, 0.0), 2)
-                                err_breakdown[i][label]['up'] = err_plus # want to maintain directionality of errors
-                                err_breakdown[i][label]['dn'] = err_minus # want to maintain directionality of errors
+                                err_breakdown[i_numeric][label]['up'] = err_plus # want to maintain directionality of errors
+                                err_breakdown[i_numeric][label]['dn'] = err_minus # want to maintain directionality of errors
                             except TypeError:
                                 log.error('TypeError encountered when parsing {0} and {1}'.format(
                                     str(error['asymerror']['minus']).encode('utf8', 'replace'),
@@ -192,8 +197,8 @@ class ArrayWriter(with_metaclass(abc.ABCMeta, Writer)):
                                 err = error_value_processor(entry['value'], error['symerror'])
                                 errors_min += pow(err, 2)
                                 errors_max += pow(err, 2)
-                                err_breakdown[i][label]['up'] = err
-                                err_breakdown[i][label]['dn'] = -err
+                                err_breakdown[i_numeric][label]['up'] = err
+                                err_breakdown[i_numeric][label]['dn'] = -err
                             except TypeError:
                                 log.error('TypeError encountered when parsing {0}'.format(
                                     str(error['symerror']).encode('utf8', 'replace'))
