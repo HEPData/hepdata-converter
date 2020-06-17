@@ -38,10 +38,7 @@ setup(
     version=get_version(),
     install_requires=[
         'pyyaml>=5.3',
-        'hepdata-validator>=0.2.1',
-        'matplotlib<3.0.0',  # can remove for Python 3
-        'numpy<1.17',  # can remove for Python 3
-        'zipp<2'  # can remove for Python 3
+        'hepdata-validator>=0.2.2'
     ],
     entry_points={
         'console_scripts': [
@@ -60,5 +57,5 @@ setup(
     download_url='https://github.com/HEPData/hepdata-converter/tarball/%s' % get_version(),
     long_description=long_description,
     long_description_content_type='text/x-rst',
-    python_requires='<3'
+    python_requires='>=3.6'
 )
