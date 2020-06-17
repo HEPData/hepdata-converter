@@ -1,7 +1,4 @@
 # -*- coding: utf-8 -*-
-from builtins import zip
-from builtins import str
-from builtins import range
 import abc
 from hepdata_converter.writers.array_writer import ArrayWriter, ObjectWrapper, ObjectFactory
 import ROOT as ROOTModule
@@ -9,7 +6,6 @@ import array
 import tempfile
 import os
 from hepdata_converter.writers.utils import error_value_processor
-from future.utils import with_metaclass
 
 __author__ = 'Michał Szostak'
 
@@ -17,7 +13,7 @@ import logging
 logging.basicConfig()
 log = logging.getLogger(__name__)
 
-class THFRootClass(with_metaclass(abc.ABCMeta, ObjectWrapper)):
+class THFRootClass(ObjectWrapper, metaclass=abc.ABCMeta):
     _hist_axes_names = ['x', 'y', 'z']
     _hist_axes_getters = ['GetXaxis', 'GetYaxis', 'GetZaxis']
     dim = 0
@@ -421,7 +417,7 @@ class ROOT(ArrayWriter):
         :return:
         """
         compress = ROOTModule.ROOT.CompressionSettings(ROOTModule.ROOT.kZLIB, 1)
-        if isinstance(data_out, (str, str)):
+        if isinstance(data_out, str):
             self.file_emulation = True
             outputs.append(ROOTModule.TFile.Open(data_out, 'RECREATE', '', compress))
         # multiple tables - require directory

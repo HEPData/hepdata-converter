@@ -1,4 +1,3 @@
-from builtins import range
 import yaml
 # We try to load using the CSafeLoader for speed improvements.
 try:

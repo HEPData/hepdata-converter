@@ -1,5 +1,3 @@
-from builtins import str
-from builtins import range
 from hepdata_converter.common import Option
 from hepdata_converter.writers.array_writer import ArrayWriter, ObjectWrapper, ObjectFactory
 import yoda, yaml
@@ -48,7 +46,7 @@ class ScatterYodaClass(ObjectWrapper):
             for dim_i in range(self.dim):
                 args.append([self.xerr_minus[dim_i][i], self.xerr_plus[dim_i][i]])
             args.append([self.yerr_minus[i], self.yerr_plus[i]])
-            
+
             graph.addPoint(self.get_point_cls()(*args))
         error_breakdown = yaml.safe_dump(self.err_breakdown, default_flow_style=True, default_style='', width=1e6)
         graph.setAnnotation("ErrorBreakdown", error_breakdown.rstrip('\n'))
@@ -94,7 +92,7 @@ class YODA(ArrayWriter):
         self.extension = 'yoda'
 
     def _prepare_outputs(self, data_out, outputs):
-        if isinstance(data_out, (str, str)):
+        if isinstance(data_out, str):
             self.file_emulation = True
             outputs.append(open(data_out, 'w'))
         # multiple tables - require directory

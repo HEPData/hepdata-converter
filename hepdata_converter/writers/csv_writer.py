@@ -1,5 +1,3 @@
-from builtins import str
-from builtins import range
 import copy
 import csv
 from hepdata_converter.common import Option

@@ -1,6 +1,3 @@
-from builtins import str
-from builtins import range
-from builtins import object
 import logging
 from math import sqrt
 import os
@@ -8,12 +5,11 @@ from hepdata_converter.common import Option
 from hepdata_converter.writers import Writer
 import abc
 from hepdata_converter.writers.utils import error_value_processor
-from future.utils import with_metaclass
 
 logging.basicConfig()
 log = logging.getLogger(__name__)
 
-class ObjectWrapper(with_metaclass(abc.ABCMeta, object)):
+class ObjectWrapper(object, metaclass=abc.ABCMeta):
     accept_alphanumeric = True
     # :core_object: bool if set to false object of this class will be created as an *extra* additionally to the first
     # object of class with ```core_object``` set to True
@@ -24,7 +20,7 @@ class ObjectWrapper(with_metaclass(abc.ABCMeta, object)):
         is_number_list = []
         for variable in variables:
             for element in variable['values']:
-                if 'value' in element and isinstance(element['value'], (str, str)):
+                if 'value' in element and isinstance(element['value'], str):
                     try:
                         element['value'] = float(element['value'])
                         is_number_list.append(True)
@@ -137,7 +133,7 @@ class ObjectFactory(object):
                     yield obj
 
 
-class ArrayWriter(with_metaclass(abc.ABCMeta, Writer)):
+class ArrayWriter(Writer, metaclass=abc.ABCMeta):
     @staticmethod
     def process_error_labels(value):
         """ Process the error labels of a dependent variable 'value' to ensure uniqueness. """
@@ -254,7 +250,7 @@ class ArrayWriter(with_metaclass(abc.ABCMeta, Writer)):
             self.tables = data_in.tables
 
     def _prepare_outputs(self, data_out, outputs):
-        if isinstance(data_out, (str, str)):
+        if isinstance(data_out, str):
             self.file_emulation = True
             if self.table_id is not None:
                 f = open(data_out, 'w')
@@ -266,7 +262,7 @@ class ArrayWriter(with_metaclass(abc.ABCMeta, Writer)):
                 for table in self.tables:
                     outputs.append(open(os.path.join(data_out, table.name.replace(' ','').replace('/','-').replace('$','').replace('\\','') + '.' + self.extension), 'w'))
         # multiple tables - require directory
-        elif len(self.tables) > 1 and not isinstance(data_out, (str, str)):
+        elif len(self.tables) > 1 and not isinstance(data_out, str):
             raise ValueError("Multiple tables, output must be a directory")
         else:
             outputs.append(data_out)
@@ -380,7 +376,7 @@ class ArrayWriter(with_metaclass(abc.ABCMeta, Writer)):
 
                         if 'symerror' in error:
                             error_plus = error['symerror']
-                            if isinstance(error_plus, (str, str)):
+                            if isinstance(error_plus, str):
                                 error_plus = error_plus.strip()
                                 if len(error_plus) > 1 and error_plus[0] == '-':
                                     error_minus = error_plus[1:]

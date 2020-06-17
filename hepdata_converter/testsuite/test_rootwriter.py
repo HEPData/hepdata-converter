@@ -1,5 +1,4 @@
 # -*- encoding: utf-8 -*-
-from builtins import range
 import os
 import hepdata_converter
 from hepdata_converter.testsuite import insert_path, insert_paths

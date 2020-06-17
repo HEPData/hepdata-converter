@@ -1,9 +1,7 @@
-from builtins import object
 import abc
 import copy
 import os
 from hepdata_converter.common import GetConcreteSubclassMixin, OptionInitMixin
-from future.utils import with_metaclass
 
 __all__ = []
 
@@ -167,7 +165,7 @@ class ParsedData(object):
             raise IndexError("No table with name = %s" % search_val)
 
 
-class Parser(with_metaclass(abc.ABCMeta, type('NewBase', (GetConcreteSubclassMixin, OptionInitMixin), {}))):
+class Parser(GetConcreteSubclassMixin, OptionInitMixin, metaclass=abc.ABCMeta):
     def __init__(self, *args, **kwargs):
         OptionInitMixin.__init__(self, options=kwargs)
 

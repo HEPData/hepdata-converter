@@ -1,6 +1,3 @@
-from __future__ import division
-
-from past.utils import old_div
 def error_value_processor(value, error):
     """
     If an error is a percentage, we convert to a float, then
@@ -10,11 +7,11 @@ def error_value_processor(value, error):
     :param error: e.g. 20.0%
     :return: the absolute error, e.g. 12 for the above case.
     """
-    if isinstance(error, (str, str)):
+    if isinstance(error, str):
         try:
             if "%" in error:
                 error_float = float(error.replace("%", ""))
-                error_abs = (old_div(value,100)) * error_float
+                error_abs = value / 100 * error_float
                 return error_abs
             elif error == "":
                 error = 0.0

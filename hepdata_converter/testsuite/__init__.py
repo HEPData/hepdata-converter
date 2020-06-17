@@ -1,6 +1,3 @@
-from builtins import str
-from builtins import range
-from builtins import object
 import os
 from random import randint
 import tempfile
@@ -101,12 +98,12 @@ class ExtendedTestCase(unittest.TestCase):
     def assertMultiLineAlmostEqual(self, first, second, msg=None):
         if hasattr(first, 'readlines'):
             lines = first.readlines()
-        elif isinstance(first, (str, str)):
+        elif isinstance(first, str):
             lines = first.split('\n')
 
         if hasattr(second, 'readlines'):
             orig_lines = second.readlines()
-        elif isinstance(second, (str, str)):
+        elif isinstance(second, str):
             orig_lines = second.split('\n')
 
         self.assertEqual(len(lines), len(orig_lines))

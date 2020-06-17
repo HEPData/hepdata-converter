@@ -1,5 +1,3 @@
-from builtins import str
-from builtins import range
 from hepdata_converter.common import OptionInitMixin, Option
 from hepdata_converter.parsers import Parser, ParsedData, BadFormat, Table
 import copy
@@ -127,7 +125,7 @@ class OldHEPData(Parser):
         # clean any possible data from previous parsing
         self.reset()
         # in case of strings we should treat them as filepaths
-        if isinstance(data_in, (str, str)):
+        if isinstance(data_in, str):
             with open(data_in, 'r') as self.current_file:
                 return self._parse()
         else:

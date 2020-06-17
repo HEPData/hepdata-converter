@@ -1,5 +1,4 @@
 # -*- encoding: utf-8 -*-
-from __future__ import print_function
 import os
 import hepdata_converter
 from hepdata_converter.testsuite import insert_data_as_file, insert_data_as_str, insert_path
