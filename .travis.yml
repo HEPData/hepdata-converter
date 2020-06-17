@@ -13,7 +13,7 @@ services:
 
 env:
   global:
-    - DOCKER_IMAGE=hepdata/hepdata-converter:0.1.35
+    - DOCKER_IMAGE=hepdata/hepdata-converter:0.2.0
 
 install:
   - sudo pip install --upgrade pip
