@@ -120,8 +120,8 @@ class YODA(ArrayWriter):
                     if qualifier['name'] == 'Custom Rivet identifier':
                         rivet_identifier = qualifier['value']
             rivet_path = '/REF/' + self.rivet_analysis_name + '/' + rivet_identifier
-            graph.setTitle(table_doi)  # use for YODA 1.8.1
-            graph.setPath(rivet_path)  # use for YODA 1.8.1
+            graph.setTitle(table_doi)
+            graph.setPath(rivet_path)
             graph.setAnnotation('IsRef', '1')
             yoda.core.writeYODA(graph, data_out)
             data_out.write('\n')
