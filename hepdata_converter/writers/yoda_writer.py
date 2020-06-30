@@ -30,23 +30,23 @@ class ScatterYodaClass(ObjectWrapper):
     def _create_scatter(self):
         graph = self.get_scatter_cls()()
 
-        for i in xrange(len(self.yval)):
+        for i in range(len(self.yval)):
 
             # Check that number of y values does not exceed number of x values.
             too_many_y_values = False
-            for dim_i in xrange(self.dim):
+            for dim_i in range(self.dim):
                 if i > len(self.xval[dim_i]) - 1:
                     too_many_y_values = True
             if too_many_y_values: break
 
             args = []
-            for dim_i in xrange(self.dim):
+            for dim_i in range(self.dim):
                 args.append(self.xval[dim_i][i])
             args.append(self.yval[i])
-            for dim_i in xrange(self.dim):
+            for dim_i in range(self.dim):
                 args.append([self.xerr_minus[dim_i][i], self.xerr_plus[dim_i][i]])
             args.append([self.yerr_minus[i], self.yerr_plus[i]])
-            
+
             graph.addPoint(self.get_point_cls()(*args))
         error_breakdown = yaml.safe_dump(self.err_breakdown, default_flow_style=True, default_style='', width=1e6)
         graph.setAnnotation("ErrorBreakdown", error_breakdown.rstrip('\n'))
@@ -92,7 +92,7 @@ class YODA(ArrayWriter):
         self.extension = 'yoda'
 
     def _prepare_outputs(self, data_out, outputs):
-        if isinstance(data_out, (str, unicode)):
+        if isinstance(data_out, str):
             self.file_emulation = True
             outputs.append(open(data_out, 'w'))
         # multiple tables - require directory
@@ -120,10 +120,8 @@ class YODA(ArrayWriter):
                     if qualifier['name'] == 'Custom Rivet identifier':
                         rivet_identifier = qualifier['value']
             rivet_path = '/REF/' + self.rivet_analysis_name + '/' + rivet_identifier
-            graph.title = table_doi  # use for YODA 1.7.7
-            graph.path = rivet_path  # use for YODA 1.7.7
-#            graph.setTitle(table_doi)  # use for YODA 1.8.1
-#            graph.setPath(rivet_path)  # use for YODA 1.8.1
+            graph.setTitle(table_doi)
+            graph.setPath(rivet_path)
             graph.setAnnotation('IsRef', '1')
             yoda.core.writeYODA(graph, data_out)
             data_out.write('\n')
@@ -145,7 +143,7 @@ class YODA(ArrayWriter):
         self._prepare_outputs(data_out, outputs)
         output = outputs[0]
 
-        for i in xrange(len(self.tables)):
+        for i in range(len(self.tables)):
             table = self.tables[i]
 
             self._write_table(output, table)

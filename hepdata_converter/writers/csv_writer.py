@@ -17,7 +17,7 @@ class CSV(ArrayWriter):
                                        'table per dependent variable in CSV file'))
         options['separator'] = Option('separator', type=str, default=',', required=False,
                                       help='Defines separator for CSV file, the default is comma: ","')
-        
+
         return options
 
     def __init__(self, *args, **kwargs):
@@ -27,10 +27,10 @@ class CSV(ArrayWriter):
     def _write_metadata(self, data_out, table):
         if self.hepdata_doi:
             table_doi = self.hepdata_doi + '/t' + str(table.index)
-            data_out.write(unicode("#: table_doi: %s\n" % table_doi).encode('utf8', 'replace'))
-        data_out.write(unicode("#: name: %s\n" % table.metadata['name']).encode('utf8', 'replace'))
-        data_out.write(unicode("#: description: %s\n" % table.metadata['description']).encode('utf8', 'replace'))
-        data_out.write(unicode("#: data_file: %s\n" % table.metadata['data_file']).encode('utf8', 'replace'))
+            data_out.write(f"#: table_doi: {table_doi}\n")
+        data_out.write(f"#: name: {table.metadata['name']}\n")
+        data_out.write(f"#: description: {table.metadata['description']}\n")
+        data_out.write(f"#: data_file: {table.metadata['data_file']}\n")
 
         #license:
         if 'data_license' in table.metadata and table.metadata['data_license']:
@@ -38,10 +38,10 @@ class CSV(ArrayWriter):
                            (table.metadata['data_license'].get('url') or '') + ' ' + \
                            (table.metadata['data_license'].get('description') or '')
 
-            data_out.write("#: data_license: %s\n" % license_text)
+            data_out.write(f"#: data_license: {license_text}\n")
 
         for keyword in table.metadata.get('keywords', []):
-            data_out.write("#: keyword %s: %s\n" % (keyword['name'], ' | '.join([str(val) for val in keyword.get('values', [])])))
+            data_out.write(f"#: keyword {keyword['name']}: {' | '.join([str(val) for val in keyword.get('values', [])])}\n")
 
     def _write_table(self, data_out, table):
         if self.pack:
@@ -58,8 +58,8 @@ class CSV(ArrayWriter):
             csv_writer = csv.writer(output, delimiter=self.separator, lineterminator=lineterminator)
             csv_writer.writerow(headers)
 
-            for i in xrange(len(data[0])):
-                csv_writer.writerow([unicode(data[j][i]).encode('utf8', 'replace') for j in xrange(len(data))])
+            for i in range(len(data[0])):
+                csv_writer.writerow([str(data[j][i]) for j in range(len(data))])
 
             return csv_writer
 
@@ -69,14 +69,14 @@ class CSV(ArrayWriter):
             row = []
             i = 0
             for qualifier in qualifiers[qualifier_key]:
-                for i in xrange(i, len(qualifiers_marks)):
+                for i in range(i, len(qualifiers_marks)):
                     if qualifiers_marks[i]:
                         row.append(qualifier)
                         i += 1
                         break
                     else:
                         row.append(None)
-            writer.write(unicode(field_separator.join([str(val) if val is not None else '' for val in
+            writer.write(str(field_separator.join([str(val) if val is not None else '' for val in
                                                        ['#: ' + qualifier_key] + row]) + newline).replace('utf8', 'replace'))
 
     def _write_packed_data(self, data_out, table):

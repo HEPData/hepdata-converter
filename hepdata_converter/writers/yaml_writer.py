@@ -48,7 +48,7 @@ class YAML(Writer):
             for table in tables:
                 table.metadata['table_doi'] = self.hepdata_doi + '/t' + str(table.index)
 
-        if not isinstance(data_out, (str, unicode)) and not self.single_file:
+        if not isinstance(data_out, str) and not self.single_file:
             raise ValueError("output is not string, and single_file flag is not specified")
 
         if not self.single_file:
@@ -60,7 +60,7 @@ class YAML(Writer):
                     with open(os.path.join(data_out, table.data_file), 'w') as table_file:
                         yaml.dump(table.data, table_file, Dumper=Dumper, default_flow_style=None)
         else:
-            if isinstance(data_out, (str, unicode)):
+            if isinstance(data_out, str):
                 with open(data_out, 'w') as submission_file:
                     yaml.dump_all([data] + [table.all_data for table in tables], submission_file, Dumper=Dumper, default_flow_style=None)
             else: # expect filelike object

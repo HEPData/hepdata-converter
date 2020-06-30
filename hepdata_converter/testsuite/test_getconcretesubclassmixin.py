@@ -17,9 +17,7 @@ class ParserTestSuite(unittest.TestCase):
         class AC(A):
             pass
 
-        class AAB(AB):
-            __metaclass__ = abc.ABCMeta
-
+        class AAB(AB, metaclass=abc.ABCMeta):
             @abc.abstractmethod
             def abstract(self):
                 pass

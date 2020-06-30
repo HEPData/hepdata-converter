@@ -8,9 +8,7 @@ __all__ = []
 import abc
 
 
-class Writer(GetConcreteSubclassMixin, OptionInitMixin):
-    __metaclass__  = abc.ABCMeta
-
+class Writer(GetConcreteSubclassMixin, OptionInitMixin, metaclass=abc.ABCMeta):
     def __init__(self, single_file_output, *args, **kwargs):
         OptionInitMixin.__init__(self, options=kwargs)
         self.single_file_output = single_file_output

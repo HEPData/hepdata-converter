@@ -1,9 +1,7 @@
 language: python
 
 python:
-  - '2.7'
-
-sudo: required
+  - '3.7'
 
 cache:
   - docker
@@ -13,12 +11,11 @@ services:
 
 env:
   global:
-    - DOCKER_IMAGE=hepdata/hepdata-converter:0.1.35
+    - DOCKER_IMAGE=hepdata/hepdata-converter:0.2.0
 
 install:
-  - sudo pip install --upgrade pip
-  - sudo pip install coverage
-  - sudo pip install --ignore-installed coveralls
+  - pip install --upgrade pip
+  - pip install --ignore-installed coveralls
 
 script:
   - export CURRENT_PATH=`pwd`

@@ -54,7 +54,7 @@ class ROOTWriterTestSuite(WriterTestSuite):
         f.Close()
         f_orig.Close()
 
-        with open(output_file_path, 'w') as output:
+        with open(output_file_path, 'wb') as output:
             hepdata_converter.convert(yaml_full_path, output,
                                       options={'output_format': 'root',
                                                'validator_schema_version': '0.1.0'})
@@ -71,7 +71,7 @@ class ROOTWriterTestSuite(WriterTestSuite):
                 self.assertEqual(o.__class__, o_orig.__class__)
                 if o.__class__.__name__.startswith('TGraph'):
                     self.assertEqual(o.GetN(), o_orig.GetN())
-                    for i in xrange(o.GetN()):
+                    for i in range(o.GetN()):
                         self.assertEqual(o.GetX()[i],o_orig.GetX()[i])
                         self.assertEqual(o.GetY()[i],o_orig.GetY()[i])
         f.Close()

@@ -1,5 +1,4 @@
 import inspect
-from string import lower
 import textwrap
 
 
@@ -100,7 +99,7 @@ class GetConcreteSubclassMixin(object):
         """
         def recurrent_class_lookup(cls):
             for cls in cls.__subclasses__():
-                if lower(cls.__name__) == lower(class_name):
+                if cls.__name__.lower() == class_name.lower():
                     return cls
                 elif len(cls.__subclasses__()) > 0:
                     r = recurrent_class_lookup(cls)

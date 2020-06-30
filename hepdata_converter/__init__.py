@@ -1,10 +1,11 @@
-import StringIO
+from io import StringIO
 import argparse
 import sys
-import version
+from . import version
 from hepdata_validator import LATEST_SCHEMA_VERSION
-from parsers import Parser
-from writers import Writer
+from .parsers import Parser
+from .writers import Writer
+
 
 def convert(input, output=None, options={}):
     """Converts a supported ``input_format`` (*oldhepdata*, *yaml*)
@@ -34,7 +35,7 @@ def convert(input, output=None, options={}):
     # if no output was specified create proxy output to which writer can insert data
     _output = output
     if not _output:
-        _output = StringIO.StringIO()
+        _output = StringIO()
 
     writer.write(parser.parse(input), _output)
 
@@ -106,7 +107,7 @@ def _main(arguments=sys.argv):
 def main(arguments=sys.argv):
     r, message = _main(arguments)
     if r == 0:
-        print message
+        print(message)
     else:
-        print >> sys.stderr, message
+        print((message, sys.stderr))
     sys.exit(r)
