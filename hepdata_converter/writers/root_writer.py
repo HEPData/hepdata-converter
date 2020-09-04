@@ -5,6 +5,7 @@ import ROOT as ROOTModule
 import array
 import tempfile
 import os
+from ctypes import c_char_p
 from hepdata_converter.writers.utils import error_value_processor
 
 __author__ = 'Michał Szostak'
@@ -452,8 +453,9 @@ class ROOT(ArrayWriter):
             output.Flush()
             output.ReOpen('read')
             file_size = output.GetSize()
-            buff = bytearray(file_size)
-            output.ReadBuffer(buff, file_size)
+            buff = bytes(file_size)
+            c_buff = c_char_p(buff)
+            output.ReadBuffer(c_buff, file_size)
             data_out.write(buff)
 
         if self.file_emulation:
