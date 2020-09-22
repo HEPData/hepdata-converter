@@ -9,7 +9,6 @@ from hepdata_validator import LATEST_SCHEMA_VERSION
 from hepdata_validator.submission_file_validator import SubmissionFileValidator
 from hepdata_validator.data_file_validator import DataFileValidator
 from hepdata_converter.parsers import Parser, ParsedData, Table
-from multiprocessing import Pool
 import os, re
 
 # Allow for a bug in PyYAML where numbers like 1e+04 are parsed as strings not as floats.
@@ -30,8 +29,6 @@ class YAML(Parser):
     help = 'Parses New HEPData YAML format. Input parameter should be path to ' \
            'the directory where submission.yaml file ' \
            'is present (or direct filepath to the submission.yaml file)'
-
-    pool = Pool()
 
     def __init__(self, *args, **kwargs):
         super(YAML, self).__init__(*args, **kwargs)
