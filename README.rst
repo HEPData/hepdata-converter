@@ -3,8 +3,8 @@ HEPData Converter
 =================
 
 
-.. image:: https://img.shields.io/travis/HEPData/hepdata-converter.svg
-   :target: https://travis-ci.org/HEPData/hepdata-converter
+.. image:: https://img.shields.io/travis/HEPData/hepdata-converter/master
+   :target: https://travis-ci.org/HEPData/hepdata-converter/branches
    :alt: Travis Status
 
 .. image:: https://coveralls.io/repos/github/HEPData/hepdata-converter/badge.svg?branch=master
@@ -37,8 +37,8 @@ This Python 3 library provides support for converting:
 * Old HepData input format (`sample <https://github.com/HEPData/hepdata-submission/blob/master/examples/oldhepdata/sample.oldhepdata>`_) to `YAML <https://github.com/HEPData/hepdata-submission>`_
 * `YAML <https://github.com/HEPData/hepdata-submission>`_ to:
 
-  * `ROOT <https://root.cern.ch>`_ (tested with v6.20.00)
-  * `YODA <https://yoda.hepforge.org>`_ (tested with v1.8.2)
+  * `ROOT <https://root.cern.ch>`_ (tested with v6.22/02)
+  * `YODA <https://yoda.hepforge.org>`_ (tested with v1.8.3)
   * `CSV <https://en.wikipedia.org/wiki/Comma-separated_values>`_
 
 Documentation: http://hepdata-converter.readthedocs.io

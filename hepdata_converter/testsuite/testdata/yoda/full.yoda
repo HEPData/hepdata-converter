@@ -5,7 +5,7 @@ Path: /REF/RIVET_ANALYSIS_NAME/d01-x01-y01
 Title: Table 1
 Type: Scatter2D
 ---
-# xval	 xerr-	 xerr+	 yval	 yerr-	 yerr+
+# xval	 xerr-	 xerr+	 yval	 yerr-	 yerr+	
 7.000000e+03	0.000000e+00	0.000000e+00	2.540000e+01	3.382307e+00	3.590265e+00
 8.000000e+03	0.000000e+00	0.000000e+00	2.980000e+01	3.992493e+00	4.332436e+00
 9.000000e+03	0.000000e+00	0.000000e+00	1.270000e+01	3.398529e+00	3.570714e+00
@@ -19,7 +19,7 @@ Path: /REF/RIVET_ANALYSIS_NAME/d02-x01-y01
 Title: Table 2
 Type: Scatter3D
 ---
-# xval	 xerr-	 xerr+	 yval	 yerr-	 yerr+	 zval	 zerr-	 zerr+
+# xval	 xerr-	 xerr+	 yval	 yerr-	 yerr+	 zval	 zerr-	 zerr+	
 1.200000e+02	0.000000e+00	0.000000e+00	4.000000e+02	0.000000e+00	0.000000e+00	2.229000e-03	0.000000e+00	0.000000e+00
 1.200000e+02	0.000000e+00	0.000000e+00	6.000000e+02	0.000000e+00	0.000000e+00	1.190000e-03	0.000000e+00	0.000000e+00
 1.200000e+02	0.000000e+00	0.000000e+00	7.000000e+02	0.000000e+00	0.000000e+00	5.152000e-04	0.000000e+00	0.000000e+00
@@ -60,7 +60,7 @@ Path: /REF/RIVET_ANALYSIS_NAME/d03-x01-y01
 Title: Table 3
 Type: Scatter2D
 ---
-# xval	 xerr-	 xerr+	 yval	 yerr-	 yerr+
+# xval	 xerr-	 xerr+	 yval	 yerr-	 yerr+	
 3.000000e+01	3.000000e+01	3.000000e+01	7.000000e+03	1.102935e+03	1.102935e+03
 8.000000e+01	2.000000e+01	2.000000e+01	9.800000e+03	1.601827e+03	1.601827e+03
 1.500000e+02	5.000000e+01	5.000000e+01	1.600000e+03	4.917164e+02	4.917164e+02
@@ -75,7 +75,7 @@ Path: /REF/RIVET_ANALYSIS_NAME/d04-x01-y01
 Title: Table 4
 Type: Scatter2D
 ---
-# xval	 xerr-	 xerr+	 yval	 yerr-	 yerr+
+# xval	 xerr-	 xerr+	 yval	 yerr-	 yerr+	
 7.000000e+01	2.000000e+01	2.000000e+01	9.930000e+03	3.421929e+03	3.421929e+03
 1.100000e+02	2.000000e+01	2.000000e+01	8.280000e+03	3.226717e+03	3.226717e+03
 1.650000e+02	3.500000e+01	3.500000e+01	3.900000e+03	1.544862e+03	1.544862e+03
@@ -89,7 +89,7 @@ Path: /REF/RIVET_ANALYSIS_NAME/d05-x01-y01
 Title: Table 5
 Type: Scatter2D
 ---
-# xval	 xerr-	 xerr+	 yval	 yerr-	 yerr+
+# xval	 xerr-	 xerr+	 yval	 yerr-	 yerr+	
 2.500000e-01	2.500000e-01	2.500000e-01	1.300000e+05	6.931493e+04	6.931493e+04
 7.500000e-01	2.500000e-01	2.500000e-01	2.800000e+05	1.004050e+05	1.004050e+05
 1.350000e+00	3.500000e-01	3.500000e-01	2.600000e+05	8.062314e+04	8.062314e+04
@@ -104,7 +104,7 @@ Path: /REF/RIVET_ANALYSIS_NAME/d06-x01-y01
 Title: Table 8
 Type: Scatter2D
 ---
-# xval	 xerr-	 xerr+	 yval	 yerr-	 yerr+
+# xval	 xerr-	 xerr+	 yval	 yerr-	 yerr+	
 2.350000e+02	1.500000e+01	1.500000e+01	1.050000e+04	4.802083e+03	4.802083e+03
 2.750000e+02	2.500000e+01	2.500000e+01	6.320000e+03	2.654845e+03	2.654845e+03
 3.500000e+02	5.000000e+01	5.000000e+01	3.680000e+03	1.303112e+03	1.303112e+03
@@ -118,7 +118,7 @@ Path: /REF/RIVET_ANALYSIS_NAME/d07-x01-y01
 Title: Table 9
 Type: Scatter2D
 ---
-# xval	 xerr-	 xerr+	 yval	 yerr-	 yerr+
+# xval	 xerr-	 xerr+	 yval	 yerr-	 yerr+	
 2.125000e+02	1.250000e+01	1.250000e+01	0.000000e+00	0.000000e+00	0.000000e+00
 2.375000e+02	1.250000e+01	1.250000e+01	6.000000e+00	0.000000e+00	0.000000e+00
 2.625000e+02	1.250000e+01	1.250000e+01	1.000000e+00	0.000000e+00	0.000000e+00
@@ -141,7 +141,7 @@ Path: /REF/RIVET_ANALYSIS_NAME/d07-x01-y02
 Title: Table 9
 Type: Scatter2D
 ---
-# xval	 xerr-	 xerr+	 yval	 yerr-	 yerr+
+# xval	 xerr-	 xerr+	 yval	 yerr-	 yerr+	
 2.125000e+02	1.250000e+01	1.250000e+01	0.000000e+00	0.000000e+00	0.000000e+00
 2.375000e+02	1.250000e+01	1.250000e+01	9.500000e-01	5.100000e-01	4.100000e-01
 2.625000e+02	1.250000e+01	1.250000e+01	9.000000e-01	2.600000e-01	4.100000e-01
@@ -164,7 +164,7 @@ Path: /REF/RIVET_ANALYSIS_NAME/d07-x01-y03
 Title: Table 9
 Type: Scatter2D
 ---
-# xval	 xerr-	 xerr+	 yval	 yerr-	 yerr+
+# xval	 xerr-	 xerr+	 yval	 yerr-	 yerr+	
 2.125000e+02	1.250000e+01	1.250000e+01	0.000000e+00	0.000000e+00	0.000000e+00
 2.375000e+02	1.250000e+01	1.250000e+01	6.460000e+00	0.000000e+00	0.000000e+00
 2.625000e+02	1.250000e+01	1.250000e+01	6.820000e+00	0.000000e+00	0.000000e+00
@@ -187,7 +187,7 @@ Path: /REF/RIVET_ANALYSIS_NAME/d07-x01-y04
 Title: Table 9
 Type: Scatter2D
 ---
-# xval	 xerr-	 xerr+	 yval	 yerr-	 yerr+
+# xval	 xerr-	 xerr+	 yval	 yerr-	 yerr+	
 2.125000e+02	1.250000e+01	1.250000e+01	0.000000e+00	0.000000e+00	0.000000e+00
 2.375000e+02	1.250000e+01	1.250000e+01	9.700000e-01	0.000000e+00	0.000000e+00
 2.625000e+02	1.250000e+01	1.250000e+01	1.070000e+00	0.000000e+00	0.000000e+00

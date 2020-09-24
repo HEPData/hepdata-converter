@@ -32,7 +32,7 @@ automatically invoked when uploading a single text file with extension ``.oldhep
 alternative output formats via the web interface.
 
 To install this package locally, you first need to install `YODA <https://yoda.hepforge.org>`_ and
-`ROOT <https://root.cern.ch>`_ (including `PyROOT <https://root.cern.ch/pyroot>`_).  Check that you can
+`ROOT <https://root.cern.ch>`_ (including `PyROOT <https://root.cern/manual/python/>`_).  Check that you can
 ``import yoda`` and ``import ROOT`` from Python.  You might want to install into a dedicated virtual
 environment:
 
@@ -80,9 +80,9 @@ The ``hepdata-converter`` package can be installed inside the Docker container:
 
 .. code-block:: console
 
-    root@617be04cbab5:/# pip install --ignore-installed hepdata-converter
+    root@617be04cbab5:/# pip3 install --ignore-installed hepdata-converter
     root@617be04cbab5:/# hepdata-converter -h
-    root@617be04cbab5:/# python -c 'import hepdata_converter'
+    root@617be04cbab5:/# python3 -c 'import hepdata_converter'
 
 Note that the Docker container will be automatically removed when it exits (if running with the ``--rm`` option).  The
 Python module or CLI can then be used as described in :doc:`Usage <usage>`.  Input and output files can be moved
@@ -96,3 +96,16 @@ between the local filesystem and the running Docker container using the ``docker
 
 where the prompt ``$`` indicates a terminal corresponding to the local filesystem and the prompt
 ``root@617be04cbab5:/#`` indicates another terminal corresponding to the running Docker container.
+
+Alternatively, developers can install from `GitHub <https://github.com/HEPData/hepdata-converter>`_ and
+mount the current directory of the local filesystem when running the Docker container:
+
+.. code-block:: console
+
+    $ git clone https://github.com/HEPData/hepdata-converter
+    $ cd hepdata-converter
+    $ docker run -v $PWD:$PWD -w $PWD --rm -it hepdata/hepdata-converter /bin/bash
+    root@2c22e88402d2:/hepdata-converter# python3 -m unittest discover hepdata_converter/testsuite 'test_*'
+    root@2c22e88402d2:/hepdata-converter# pip3 install -e .
+    root@2c22e88402d2:/hepdata-converter# hepdata-converter -h
+    root@2c22e88402d2:/hepdata-converter# python3 -c 'import hepdata_converter'
