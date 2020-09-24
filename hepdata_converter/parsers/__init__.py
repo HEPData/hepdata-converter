@@ -48,13 +48,6 @@ class Table(object):
                 {'name': 'cmenergies', 'values': []},
             ],
             'data_file': data_file or 'data%s.yaml' % index,
-            # it seems it's required
-            # TODO - is it really required? should sensible defaults be provided?
-            'data_license': {
-                'name': None,
-                'url': None,
-                'description': None # (optional)
-            },
             'additional_resources': [
                 # Below in the comments are listed allowed keys / values for additional_resources
                 #

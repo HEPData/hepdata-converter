@@ -2,7 +2,6 @@
 #: description: Normalized ZZ fiducial cross section (multiplied by 10^6 for readability) in bins of deltaPhi between the two leptons of the leading dileptons for the 4l channel.  The first systematic uncertainty is detector systematics, the second is background systematic uncertainties.
 UPDATE (30 APR 2014): extra significant digit added for first bin.
 #: data_file: data5.yaml
-#: data_license:   
 #: keyword reactions: P P --> Z0 Z0 X
 #: keyword observables: DSIG/DPHI
 #: keyword phrases: 

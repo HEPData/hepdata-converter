@@ -1,7 +1,6 @@
 #: name: Table 6
 #: description: Normalized ZZ fiducial cross section (multiplied by 10^6 for readability) in bins of deltaPhi between the two leptons for the 2l2nu channel.  The first systematic uncertainty is detector systematics, the second is background systematic uncertainties.
 #: data_file: data6.yaml
-#: data_license:   
 #: keyword reactions: P P --> Z0 Z0 X
 #: keyword observables: DSIG/DPHI
 #: keyword phrases: 

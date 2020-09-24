@@ -41,7 +41,6 @@ class ConvertTestSuite(WriterTestSuite):
             "---\n"
             "additional_resources: []\n"
             "data_file: data1.yaml\n"
-            "data_license: {description: null, name: null, url: null}\n"
             "description: 'The measured fiducial cross sections.  The first systematic uncertainty\n"
             "  is the combined systematic uncertainty excluding luminosity, the second is the luminosity.'\n"
             "keywords:\n"

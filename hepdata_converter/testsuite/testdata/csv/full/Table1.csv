@@ -1,7 +1,6 @@
 #: name: Table 1
 #: description: The measured fiducial cross sections.  The first systematic uncertainty is the combined systematic uncertainty excluding luminosity, the second is the luminosity.
 #: data_file: data1.yaml
-#: data_license:   
 #: keyword reactions: P P --> Z0 Z0 X
 #: keyword observables: SIG
 #: keyword phrases: 
