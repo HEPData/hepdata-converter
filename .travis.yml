@@ -38,4 +38,3 @@ deploy:
   on:
     tags: true
     repo: HEPData/hepdata-converter
-  skip_existing: true
