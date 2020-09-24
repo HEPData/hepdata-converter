@@ -27,7 +27,7 @@ after_success:
 
 before_deploy:
   - export CURRENT_PATH=`pwd`
-  - docker run -v $CURRENT_PATH:$CURRENT_PATH $DOCKER_IMAGE /bin/bash -c "cd $CURRENT_PATH && rm -rf build hepdata_converter.egg-info"
+  - docker run -v $CURRENT_PATH:$CURRENT_PATH $DOCKER_IMAGE /bin/bash -c "cd $CURRENT_PATH && rm -rf build dist hepdata_converter.egg-info hepdata_converter/__pycache__ hepdata_converter/*/__pycache__"
 
 deploy:
   provider: pypi
@@ -38,3 +38,4 @@ deploy:
   on:
     tags: true
     repo: HEPData/hepdata-converter
+  skip_existing: true
