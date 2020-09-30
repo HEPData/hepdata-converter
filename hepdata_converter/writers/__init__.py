@@ -12,7 +12,7 @@ class Writer(GetConcreteSubclassMixin, OptionInitMixin, metaclass=abc.ABCMeta):
     def __init__(self, single_file_output, *args, **kwargs):
         OptionInitMixin.__init__(self, options=kwargs)
         self.single_file_output = single_file_output
-        self.hepdata_doi = kwargs['hepdata_doi'].encode('utf8', 'replace') if 'hepdata_doi' in kwargs else ''
+        self.hepdata_doi = kwargs['hepdata_doi'] if 'hepdata_doi' in kwargs else ''
 
     @classmethod
     def create_dir(cls, path):

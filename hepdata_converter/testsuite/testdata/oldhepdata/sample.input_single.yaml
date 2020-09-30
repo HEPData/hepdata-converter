@@ -23,6 +23,7 @@ comment: |-
   - No events with a jet for which ptJet > 25 GeV and |etaJet| < 4.5
   - No events with a third lepton for which ptLepton > 10 GeV
   - min(DeltaR(l,l)) > 0.3.
+hepdata_doi: 10.17182/hepdata.62535.v1
 record_ids:
 - {id: 9863591, type: spires}
 - {id: 1203852, type: inspire}
@@ -80,6 +81,7 @@ keywords:
   values: [7000.0]
 location: Data from Page 17 of preprint
 name: Table 1
+table_doi: 10.17182/hepdata.62535.v1/t1
 ---
 additional_resources: []
 dependent_variables:
@@ -110,6 +112,7 @@ keywords:
   values: [7000.0]
 location: Data from Page 20 of preprint
 name: Table 2
+table_doi: 10.17182/hepdata.62535.v1/t2
 ---
 additional_resources: []
 dependent_variables:
@@ -160,6 +163,7 @@ keywords:
   values: [7000.0]
 location: Data from Figure 8A
 name: Table 3
+table_doi: 10.17182/hepdata.62535.v1/t3
 ---
 additional_resources: []
 dependent_variables:
@@ -203,6 +207,7 @@ keywords:
   values: [7000.0]
 location: Data from Figure 8B
 name: Table 4
+table_doi: 10.17182/hepdata.62535.v1/t4
 ---
 additional_resources: []
 dependent_variables:
@@ -252,6 +257,7 @@ keywords:
   values: [7000.0]
 location: Data from Figure 9A
 name: Table 5
+table_doi: 10.17182/hepdata.62535.v1/t5
 ---
 additional_resources: []
 dependent_variables:
@@ -295,6 +301,7 @@ keywords:
   values: [7000.0]
 location: Data from Figure 9B
 name: Table 6
+table_doi: 10.17182/hepdata.62535.v1/t6
 ---
 additional_resources: []
 dependent_variables:
@@ -344,6 +351,7 @@ keywords:
   values: [7000.0]
 location: Data from Figure 10A
 name: Table 7
+table_doi: 10.17182/hepdata.62535.v1/t7
 ---
 additional_resources: []
 dependent_variables:
@@ -388,3 +396,4 @@ keywords:
   values: [7000.0]
 location: Data from Figure 10B
 name: Table 8
+table_doi: 10.17182/hepdata.62535.v1/t8

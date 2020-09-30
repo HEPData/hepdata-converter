@@ -16,7 +16,9 @@ class YAMLWriterTestSuite(WriterTestSuite):
                                          options={
                                              'input_format': 'oldhepdata',
                                              'output_format': 'yaml',
-                                             'single_file': True})
+                                             'single_file': True,
+                                             'hepdata_doi': '10.17182/hepdata.62535.v1'}
+                                         )
 
         yaml_single_output_path = os.path.join(self.current_tmp, 'output.yaml')
 

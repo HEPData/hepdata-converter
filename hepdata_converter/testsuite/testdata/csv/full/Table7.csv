@@ -1,3 +1,4 @@
+#: table_doi: 10.17182/hepdata.62535.v1/t7
 #: name: Table 7
 #: description: Normalized ZZ fiducial cross section (multiplied by 10^6 for readability) in bins of the mass of the ZZ system for the 4l channel.  The first systematic uncertainty is detector systematics, the second is background systematic uncertainties.
 #: data_file: data7.yaml

@@ -94,6 +94,7 @@ class CSVWriterTestCase(WriterTestSuite):
     def test_diroutput(self, oldhepdata_path, csv_path):
         hepdata_converter._main(['-i', 'oldhepdata',
                                  '-o', 'csv',
+                                 '-d', '10.17182/hepdata.62535.v1',
                                  oldhepdata_path, self.current_tmp])
 
         self.assertDirsEqual(self.current_tmp, csv_path, file_content_parser=lambda x: x)

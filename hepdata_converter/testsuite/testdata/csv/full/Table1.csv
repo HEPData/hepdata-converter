@@ -1,3 +1,4 @@
+#: table_doi: 10.17182/hepdata.62535.v1/t1
 #: name: Table 1
 #: description: The measured fiducial cross sections.  The first systematic uncertainty is the combined systematic uncertainty excluding luminosity, the second is the luminosity.
 #: data_file: data1.yaml
