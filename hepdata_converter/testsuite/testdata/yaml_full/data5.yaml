@@ -1,6 +1,6 @@
 ---
 independent_variables:
-  - header: {name: 'Leading dilepton DELTA(PHI(LEPTON+, LEPTON\-))', units: GEV}
+  - header: {name: 'Leading dilepton DELTA(PHI(LEPTON+, LEPTON-))', units: GEV}
     values:
       - {low: 0.0, high: 0.5}
       - {low: 0.5, high: 1.0}

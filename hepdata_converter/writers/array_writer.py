@@ -186,8 +186,8 @@ class ArrayWriter(Writer, metaclass=abc.ABCMeta):
                                 err_breakdown[i_numeric][label]['dn'] = err_minus # want to maintain directionality of errors
                             except TypeError:
                                 log.error('TypeError encountered when parsing {0} and {1}'.format(
-                                    str(error['asymerror']['minus']).encode('utf8', 'replace'),
-                                    str(error['asymerror']['plus']).encode('utf8', 'replace')))
+                                    str(error['asymerror']['minus']).encode('utf8', 'replace').decode(),
+                                    str(error['asymerror']['plus']).encode('utf8', 'replace').decode()))
                         elif 'symerror' in error:
                             try:
                                 err = error_value_processor(entry['value'], error['symerror'])
@@ -197,7 +197,7 @@ class ArrayWriter(Writer, metaclass=abc.ABCMeta):
                                 err_breakdown[i_numeric][label]['dn'] = -err
                             except TypeError:
                                 log.error('TypeError encountered when parsing {0}'.format(
-                                    str(error['symerror']).encode('utf8', 'replace'))
+                                    str(error['symerror']).encode('utf8', 'replace').decode())
                                 )
 
                     min_errs.append(sqrt(errors_min))
