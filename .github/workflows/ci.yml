@@ -39,7 +39,7 @@ jobs:
         DOCKER_IMAGE: hepdata/hepdata-converter:0.2.0
       run: |
         export CURRENT_PATH=`pwd`
-        rm -rf build hepdata_converter.egg-info
+        docker run -v $CURRENT_PATH:$CURRENT_PATH $DOCKER_IMAGE /bin/bash -c "rm -rf build hepdata_converter.egg-info"
         docker run -v $CURRENT_PATH:$CURRENT_PATH $DOCKER_IMAGE /bin/bash -c "cd $CURRENT_PATH && pip3 install wheel"
         docker run -v $CURRENT_PATH:$CURRENT_PATH $DOCKER_IMAGE /bin/bash -c "cd $CURRENT_PATH && python3 setup.py sdist bdist_wheel"
     - name: Publish distribution to PyPI
