@@ -34,11 +34,11 @@ jobs:
       run: |
         coveralls
 
-deploy:
-  needs: test
-  # if: github.event_name == 'release'
-  runs-on: ubuntu-latest
-  steps:
+  deploy:
+    needs: test
+    # if: github.event_name == 'release'
+    runs-on: ubuntu-latest
+    steps:
     - uses: actions/checkout@v2
     - name: Build PyPI package
       env:
