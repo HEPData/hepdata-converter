@@ -3,9 +3,9 @@ HEPData Converter
 =================
 
 
-.. image:: https://img.shields.io/travis/HEPData/hepdata-converter/master
-   :target: https://travis-ci.org/HEPData/hepdata-converter/branches
-   :alt: Travis Status
+.. image:: https://github.com/HEPData/hepdata-converter/workflows/Continuous%20Integration/badge.svg?branch=master
+   :target: https://github.com/HEPData/hepdata-converter/actions?query=branch%3Amaster
+   :alt: GitHub Actions Build Status
 
 .. image:: https://coveralls.io/repos/github/HEPData/hepdata-converter/badge.svg?branch=master
    :target: https://coveralls.io/github/HEPData/hepdata-converter?branch=master
