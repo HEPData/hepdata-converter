@@ -3,13 +3,18 @@ from hepdata_converter.writers.array_writer import ArrayWriter, ObjectWrapper, O
 import yoda, yaml
 
 
-class EstimateYodaClass(ObjectWrapper):
+class ScatterYodaClass(ObjectWrapper):
     dim = -1
-    _estimate_classes = [yoda.core.Estimate, yoda.core.Estimate1D, yoda.core.Estimate2D, yoda.core.Estimate3D]
+    _scatter_classes = [yoda.core.Scatter1D, yoda.core.Scatter2D, yoda.core.Scatter3D]
+    _point_classes = [yoda.core.Point1D, yoda.core.Point2D, yoda.core.Point3D]
 
     @classmethod
-    def get_estimate_cls(cls):
-        return cls._estimate_classes[cls.dim]
+    def get_scatter_cls(cls):
+        return cls._scatter_classes[cls.dim]
+
+    @classmethod
+    def get_point_cls(cls):
+        return cls._point_classes[cls.dim]
 
     @classmethod
     def match(cls, independent_variables_map, dependent_variable):
@@ -22,31 +27,9 @@ class EstimateYodaClass(ObjectWrapper):
             return True
         return False
 
-    def _set_error_breakdown(self, idx, estimate):
-        if idx not in self.err_breakdown:
-            return
-        errs = self.err_breakdown[idx]
-        nSources = len(errs.keys())
-        for source in errs:
-            label =  source
-            if nSources == 1 and source == 'error':
-                label = '' # total uncertainty
-            errUp = errs[source]['up']
-            errDn = errs[source]['dn']
-            estimate.setErr([errDn, errUp], label)
+    def _create_scatter(self):
+        graph = self.get_scatter_cls()()
 
-    def _create_estimate(self):
-
-        if not self.dim:
-            # no binning, just the Estimate
-            rtn = yoda.core.Estimate()
-            rtn.setVal(self.yval[0])
-            self._set_error_breakdown(0, rtn)
-            return rtn
-
-        # 1D or higher: need to construct bin edges
-        estimates = [ ]
-        edges = [[] for _ in range(self.dim)]
         for i in range(len(self.yval)):
 
             # Check that number of y values does not exceed number of x values.
@@ -56,51 +39,44 @@ class EstimateYodaClass(ObjectWrapper):
                     too_many_y_values = True
             if too_many_y_values: break
 
+            vals = []; err_dn = []; err_up = []
             for dim_i in range(self.dim):
-                v = self.xval[dim_i][i]
-                m = self.xerr_minus[dim_i][i]
-                p = self.xerr_plus[dim_i][i]
-                if not len(edges[dim_i]):
-                    edges[dim_i].append(v - m)
-                edges[dim_i].append(v + p)
-            estimates.append(yoda.core.Estimate())
-            estimates[-1].setVal(self.yval[i])
-            self._set_error_breakdown(i, estimates[-1])
-        rtn = self.get_estimate_cls()(*edges)
-        for i, est in enumerate(estimates):
-            rtn.set(i+1, est) # i=0 is underflow
-        return rtn
+                vals.append(self.xval[dim_i][i])
+                err_dn.append(self.xerr_minus[dim_i][i])
+                err_up.append(self.xerr_plus[dim_i][i])
+            vals.append(self.yval[i])
+            err_dn.append(self.yerr_minus[i])
+            err_up.append(self.yerr_plus[i])
+            args = [ vals, err_dn, err_up ]
+            graph.addPoint(self.get_point_cls()(*args))
+        return graph
 
 
     def create_objects(self):
         self.calculate_total_errors()
 
-        estimate = self._create_estimate()
+        graph = self._create_scatter()
 
-        return [estimate]
+        return [graph]
 
 
-class Estimate1DYodaClass(EstimateYodaClass):
+class Scatter1DYodaClass(ScatterYodaClass):
     dim = 0
 
 
-class Estimate2DYodaClass(EstimateYodaClass):
+class Scatter2DYodaClass(ScatterYodaClass):
     dim = 1
 
 
-class Estimate3DYodaClass(EstimateYodaClass):
+class Scatter3DYodaClass(ScatterYodaClass):
     dim = 2
 
 
-class Estimate4DYodaClass(EstimateYodaClass):
-    dim = 3
-
-
-class YODA(ArrayWriter):
-    help = 'Writes YODA output for table specified by --table parameter, the output should be defined as ' \
+class YODA1(ArrayWriter):
+    help = 'Writes YODA1 output for table specified by --table parameter, the output should be defined as ' \
            'filepath to output yoda file'
 
-    class_list = [Estimate4DYodaClass, Estimate3DYodaClass, Estimate2DYodaClass, Estimate1DYodaClass]
+    class_list = [Scatter3DYodaClass, Scatter2DYodaClass, Scatter1DYodaClass]
 
     @classmethod
     def options(cls):
@@ -111,7 +87,7 @@ class YODA(ArrayWriter):
         return options
 
     def __init__(self, *args, **kwargs):
-        super(YODA, self).__init__(*args, **kwargs)
+        super(YODA1, self).__init__(*args, **kwargs)
         self.extension = 'yoda'
 
     def _prepare_outputs(self, data_out, outputs):
@@ -135,7 +111,7 @@ class YODA(ArrayWriter):
         else:
             table_doi = table.name
         f = ObjectFactory(self.class_list, table.independent_variables, table.dependent_variables)
-        for idep, estimate in enumerate(f.get_next_object()):
+        for idep, graph in enumerate(f.get_next_object()):
             rivet_identifier = 'd' + table_num.zfill(2) + '-x01-y' + str(idep + 1).zfill(2)
             # Allow the standard Rivet identifier to be overridden by a custom value specified in the qualifiers.
             if 'qualifiers' in table.dependent_variables[idep]:
@@ -143,10 +119,10 @@ class YODA(ArrayWriter):
                     if qualifier['name'] == 'Custom Rivet identifier':
                         rivet_identifier = qualifier['value']
             rivet_path = '/REF/' + self.rivet_analysis_name + '/' + rivet_identifier
-            estimate.setTitle(table_doi)
-            estimate.setPath(rivet_path)
-            estimate.setAnnotation('IsRef', '1')
-            yoda.core.writeYODA(estimate, data_out)
+            graph.setTitle(table_doi)
+            graph.setPath(rivet_path)
+            graph.setAnnotation('IsRef', '1')
+            yoda.core.writeYODA(graph, data_out)
             data_out.write('\n')
 
     def write(self, data_in, data_out, *args, **kwargs):
