@@ -37,6 +37,9 @@ class EstimateYodaClass(ObjectWrapper):
 
     def _create_estimate(self):
 
+        if not len(self.yval):
+            return None
+
         if not self.dim:
             # no binning, just the Estimate
             rtn = yoda.core.Estimate()
@@ -44,9 +47,25 @@ class EstimateYodaClass(ObjectWrapper):
             self._set_error_breakdown(0, rtn)
             return rtn
 
-        # 1D or higher: need to construct bin edges
+        # Check whether axis type is continuous (float)
+        # or discrete (int, string)
+        # (if in doubt, stick to string)
+        isCAxis   = [ ]
+        isIntAxis = [ ]
+        for dim_i in range(self.dim):
+            vals = self.independent_variable_map[dim_i]['values']
+            allUpper = all('high' in vals[i] and isinstance(vals[i]['high'], float) for i in range(len(vals)))
+            allLower = all('low'  in vals[i] and isinstance(vals[i]['low'],  float) for i in range(len(vals)))
+            isCAxis.append( allUpper and allLower )
+            allInt = all('value' in vals[i] and ( isinstance(vals[i]['value'], int) or \
+                        (isinstance(vals[i]['value'], float) and vals[i]['value'].is_integer())) for i in range(len(vals)))
+            isIntAxis.append( allInt )
+
+        # 1D or higher: need to construct binning from edges
+        # this excludes under/over/otherflows, so use local
+        # indices to pinpoint corresponding bin position
         estimates = [ ]
-        edges = [[] for _ in range(self.dim)]
+        edges = [[ ] for _ in range(self.dim)]
         for i in range(len(self.yval)):
 
             # Check that number of y values does not exceed number of x values.
@@ -56,19 +75,34 @@ class EstimateYodaClass(ObjectWrapper):
                     too_many_y_values = True
             if too_many_y_values: break
 
+            localIndices = [ ]
             for dim_i in range(self.dim):
                 v = self.xval[dim_i][i]
                 m = self.xerr_minus[dim_i][i]
                 p = self.xerr_plus[dim_i][i]
-                if not len(edges[dim_i]):
-                    edges[dim_i].append(v - m)
-                edges[dim_i].append(v + p)
-            estimates.append(yoda.core.Estimate())
-            estimates[-1].setVal(self.yval[i])
-            self._set_error_breakdown(i, estimates[-1])
+                if isCAxis[dim_i]:
+                    if not len(edges[dim_i]):
+                        edges[dim_i].append(v - m)
+                    if not (v+p) in edges[dim_i]:
+                        edges[dim_i].append(float(v+p))
+                    localIndices.append( edges[dim_i].index(float(v+p)) )
+                elif isIntAxis[dim_i]:
+                    if not len(edges[dim_i]) or v not in edges[dim_i]:
+                        edges[dim_i].append(int(v))
+                    localIndices.append( edges[dim_i].index(int(v)) )
+                else:
+                    v = '%i - %i' % (v-m, v+p) if m and p else str(v)
+                    if not len(edges[dim_i]) or v not in edges[dim_i]:
+                        edges[dim_i].append(v)
+                    localIndices.append( edges[dim_i].index(v) )
+            # make Estimate
+            estimates.append([ localIndices, yoda.core.Estimate() ])
+            estimates[-1][1].setVal(self.yval[i])
+            self._set_error_breakdown(i, estimates[-1][1])
+        # make BinnedEstimate and set bin contents
         rtn = self.get_estimate_cls()(*edges)
-        for i, est in enumerate(estimates):
-            rtn.set(i+1, est) # i=0 is underflow
+        for localIndices, est in estimates:
+            rtn.set(localIndices, est)
         return rtn
 
 
@@ -124,11 +158,6 @@ class YODA(ArrayWriter):
             outputs.append(data_out)
 
     def _write_table(self, data_out, table):
-        # if any non-numeric independent variables, use bins of unit width and centred on integers (1, 2, 3, etc.)
-        for ii, independent_variable in enumerate(table.independent_variables):
-            if False in ObjectWrapper.is_number_var(independent_variable):
-                for i, value in enumerate(independent_variable['values']):
-                    table.independent_variables[ii]['values'][i] = {'low': i + 0.5, 'high': i + 1.5}
         table_num = str(table.index)
         if self.hepdata_doi:
             table_doi = 'doi:' + self.hepdata_doi + '/t' + table_num
@@ -136,6 +165,8 @@ class YODA(ArrayWriter):
             table_doi = table.name
         f = ObjectFactory(self.class_list, table.independent_variables, table.dependent_variables)
         for idep, estimate in enumerate(f.get_next_object()):
+            if estimate is None:
+                continue
             rivet_identifier = 'd' + table_num.zfill(2) + '-x01-y' + str(idep + 1).zfill(2)
             # Allow the standard Rivet identifier to be overridden by a custom value specified in the qualifiers.
             if 'qualifiers' in table.dependent_variables[idep]:
