@@ -29,7 +29,8 @@ class EstimateYodaClass(ObjectWrapper):
         nSources = len(errs.keys())
         for source in errs:
             label =  source
-            if nSources == 1 and source == 'error':
+            if label.upper() == "TOTAL" or \
+                (nSources == 1 and source == 'error'):
                 label = '' # total uncertainty
             errUp = errs[source]['up']
             errDn = errs[source]['dn']
@@ -96,7 +97,7 @@ class EstimateYodaClass(ObjectWrapper):
                         edges[dim_i].append(v)
                     localIndices.append( edges[dim_i].index(v) )
             # make Estimate
-            estimates.append([ localIndices, yoda.core.Estimate() ])
+            estimates.append([ localIndices, yoda.core.PointEstimate() ])
             estimates[-1][1].setVal(self.yval[i])
             self._set_error_breakdown(i, estimates[-1][1])
         # make BinnedEstimate and set bin contents
