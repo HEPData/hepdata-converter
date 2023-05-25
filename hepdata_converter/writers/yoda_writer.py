@@ -90,7 +90,7 @@ class EstimateYodaClass(ObjectWrapper):
                         edges[dim_i].append(int(v))
                     localIndices.append( edges[dim_i].index(int(v)) )
                 else:
-                    v = '{0}-{1}'.format(v-m, v+p) if m and p else str(v)
+                    v = '{0} - {1}'.format(v-m, v+p) if m and p else str(v)
                     if not len(edges[dim_i]) or v not in edges[dim_i]:
                         edges[dim_i].append(v)
                     localIndices.append( edges[dim_i].index(v) )
@@ -98,6 +98,7 @@ class EstimateYodaClass(ObjectWrapper):
             estimates.append([ localIndices, yoda.core.Estimate() ])
             estimates[-1][1].setVal(self.yval[i])
             self._set_error_breakdown(i, estimates[-1][1])
+        # make BinnedEstimate and set bin contents
         rtn = self.get_estimate_cls()(*edges)
         for localIndices, est in estimates:
             rtn.set(localIndices, est)
