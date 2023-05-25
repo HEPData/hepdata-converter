@@ -5,7 +5,7 @@ import yoda, yaml
 
 class EstimateYodaClass(ObjectWrapper):
     dim = -1
-    _estimate_classes = [yoda.core.Estimate, yoda.core.Estimate1D, yoda.core.Estimate2D, yoda.core.Estimate3D]
+    _estimate_classes = [yoda.core.Estimate0D, yoda.core.Estimate1D, yoda.core.Estimate2D, yoda.core.Estimate3D]
 
     @classmethod
     def get_estimate_cls(cls):
@@ -42,21 +42,19 @@ class EstimateYodaClass(ObjectWrapper):
             return None
 
         if not self.dim:
-            # no binning, just the Estimate
-            rtn = yoda.core.Estimate()
+            # no binning, just the Estimate0D
+            rtn = yoda.core.Estimate0D()
             rtn.setVal(self.yval[0])
             self._set_error_breakdown(0, rtn)
             return rtn
 
-        # Check whether axis type is continuous (float)
-        # or discrete (int, string)
-        # (if in doubt, stick to string)
-        isCAxis   = [ ]
-        isIntAxis = [ ]
+        # Check whether axis type is continuous (float) or
+        # discrete (int, string). If in doubt, stick to string.
+        isCAxis = [ ]; isIntAxis = [ ]
         for dim_i in range(self.dim):
             vals = self.independent_variable_map[dim_i]['values']
-            allUpper = all('high' in vals[i] and isinstance(vals[i]['high'], float) for i in range(len(vals)))
-            allLower = all('low'  in vals[i] and isinstance(vals[i]['low'],  float) for i in range(len(vals)))
+            allUpper = all('high' in vals[i] and isinstance(vals[i]['high'], (int,float)) for i in range(len(vals)))
+            allLower = all('low'  in vals[i] and isinstance(vals[i]['low'],  (int,float)) for i in range(len(vals)))
             isCAxis.append( allUpper and allLower )
             allInt = all('value' in vals[i] and ( isinstance(vals[i]['value'], int) or \
                         (isinstance(vals[i]['value'], float) and vals[i]['value'].is_integer())) for i in range(len(vals)))
@@ -92,15 +90,14 @@ class EstimateYodaClass(ObjectWrapper):
                         edges[dim_i].append(int(v))
                     localIndices.append( edges[dim_i].index(int(v)) )
                 else:
-                    v = '%i - %i' % (v-m, v+p) if m and p else str(v)
+                    v = '{0}-{1}'.format(v-m, v+p) if m and p else str(v)
                     if not len(edges[dim_i]) or v not in edges[dim_i]:
                         edges[dim_i].append(v)
                     localIndices.append( edges[dim_i].index(v) )
             # make Estimate
-            estimates.append([ localIndices, yoda.core.PointEstimate() ])
+            estimates.append([ localIndices, yoda.core.Estimate() ])
             estimates[-1][1].setVal(self.yval[i])
             self._set_error_breakdown(i, estimates[-1][1])
-        # make BinnedEstimate and set bin contents
         rtn = self.get_estimate_cls()(*edges)
         for localIndices, est in estimates:
             rtn.set(localIndices, est)
@@ -115,19 +112,19 @@ class EstimateYodaClass(ObjectWrapper):
         return [estimate]
 
 
-class Estimate1DYodaClass(EstimateYodaClass):
+class Estimate0DYodaClass(EstimateYodaClass):
     dim = 0
 
 
-class Estimate2DYodaClass(EstimateYodaClass):
+class Estimate1DYodaClass(EstimateYodaClass):
     dim = 1
 
 
-class Estimate3DYodaClass(EstimateYodaClass):
+class Estimate2DYodaClass(EstimateYodaClass):
     dim = 2
 
 
-class Estimate4DYodaClass(EstimateYodaClass):
+class Estimate3DYodaClass(EstimateYodaClass):
     dim = 3
 
 
@@ -135,7 +132,7 @@ class YODA(ArrayWriter):
     help = 'Writes YODA output for table specified by --table parameter, the output should be defined as ' \
            'filepath to output yoda file'
 
-    class_list = [Estimate4DYodaClass, Estimate3DYodaClass, Estimate2DYodaClass, Estimate1DYodaClass]
+    class_list = [Estimate3DYodaClass, Estimate2DYodaClass, Estimate1DYodaClass, Estimate0DYodaClass]
 
     @classmethod
     def options(cls):
