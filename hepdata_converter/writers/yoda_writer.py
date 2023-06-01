@@ -84,16 +84,16 @@ class EstimateYodaClass(ObjectWrapper):
                         edges[dim_i].append(v - m)
                     if not (v+p) in edges[dim_i]:
                         edges[dim_i].append(float(v+p))
-                    localIndices.append( edges[dim_i].index(float(v+p)) )
+                    localIndices.append( edges[dim_i].index(float(v+p)) ) # 0 is underflow
                 elif isIntAxis[dim_i]:
                     if not len(edges[dim_i]) or v not in edges[dim_i]:
                         edges[dim_i].append(int(v))
-                    localIndices.append( edges[dim_i].index(int(v)) )
+                    localIndices.append( edges[dim_i].index(int(v))+1 ) # 0 is otherflow
                 else:
                     v = '{0} - {1}'.format(v-m, v+p) if m and p else str(v)
                     if not len(edges[dim_i]) or v not in edges[dim_i]:
                         edges[dim_i].append(v)
-                    localIndices.append( edges[dim_i].index(v) )
+                    localIndices.append( edges[dim_i].index(v)+1 ) # 0 is otherflow
             # make Estimate
             estimates.append([ localIndices, yoda.core.Estimate() ])
             estimates[-1][1].setVal(self.yval[i])
