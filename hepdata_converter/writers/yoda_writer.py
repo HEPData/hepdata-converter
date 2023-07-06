@@ -1,7 +1,22 @@
 from hepdata_converter.common import Option
 from hepdata_converter.writers.array_writer import ArrayWriter, ObjectWrapper, ObjectFactory
-import yoda, yaml
+import yoda, yaml, math, re
 
+def _pattern_check(name, patterns, unpatterns):
+    import re
+    if patterns:
+        if not isinstance(patterns, (list,tuple)):
+            patterns = [patterns]
+        ## Compile on the fly: works because compile(compiled_re) -> compiled_re
+        if not any(re.compile(patt).search(name) for patt in patterns):
+            return False
+    if unpatterns:
+        if not isinstance(unpatterns, (list,tuple)):
+            unpatterns = [unpatterns]
+        ## Compile on the fly: works because compile(compiled_re) -> compiled_re
+        if any(re.compile(patt).search(name) for patt in unpatterns):
+            return False
+    return True
 
 class EstimateYodaClass(ObjectWrapper):
     dim = -1
@@ -81,10 +96,12 @@ class EstimateYodaClass(ObjectWrapper):
                 p = self.xerr_plus[dim_i][i]
                 if isCAxis[dim_i]:
                     if not len(edges[dim_i]):
-                        edges[dim_i].append(v - m)
-                    if not (v+p) in edges[dim_i]:
-                        edges[dim_i].append(float(v+p))
-                    localIndices.append( edges[dim_i].index(float(v+p)) ) # 0 is underflow
+                        edges[dim_i].append(float(v-m))
+                    newedge = float(v+p)
+                    if not any([ math.isclose(newedge, e) for e in edges[dim_i] ]):
+                        edges[dim_i].append(newedge)
+                    localIndices.append( [ i for i, e in enumerate(edges[dim_i]) \
+                                         if math.isclose(e, newedge) ].pop()+1 ) # 0 is underflow
                 elif isIntAxis[dim_i]:
                     if not len(edges[dim_i]) or v not in edges[dim_i]:
                         edges[dim_i].append(int(v))
@@ -94,10 +111,12 @@ class EstimateYodaClass(ObjectWrapper):
                     if not len(edges[dim_i]) or v not in edges[dim_i]:
                         edges[dim_i].append(v)
                     localIndices.append( edges[dim_i].index(v)+1 ) # 0 is otherflow
-            # make Estimate
-            estimates.append([ localIndices, yoda.core.Estimate() ])
-            estimates[-1][1].setVal(self.yval[i])
-            self._set_error_breakdown(i, estimates[-1][1])
+            # prevent overwriting of previous estimates
+            if not any([ localIndices == idx for idx, est in estimates ]):
+                # make Estimate
+                estimates.append([ localIndices, yoda.core.Estimate() ])
+                estimates[-1][1].setVal(self.yval[i])
+                self._set_error_breakdown(i, estimates[-1][1])
         # make BinnedEstimate and set bin contents
         rtn = self.get_estimate_cls()(*edges)
         for localIndices, est in estimates:
@@ -141,6 +160,12 @@ class YODA(ArrayWriter):
         options['rivet_analysis_name'] = Option('rivet-analysis-name', 'r', type=str, default='RIVET_ANALYSIS_NAME',
                                                 required=False, variable_mapping='rivet_analysis_name',
                                                 help='Rivet analysis name, e.g. "ATLAS_2016_I1424838"')
+        options['rivet_ref_match'] = Option('rivet-ref-match', type=str, default=None,
+                                            required = False, variable_mapping='rivet_ref_match',
+                                            help='Regex to match/select HepData identifiers')
+        options['rivet_ref_unmatch'] = Option('rivet-ref-unmatch', type=str, default=None,
+                                              required = False, variable_mapping='rivet_ref_unmatch',
+                                              help='Regex to unmatch/deselect HepData identifiers')
         return options
 
     def __init__(self, *args, **kwargs):
@@ -158,6 +183,10 @@ class YODA(ArrayWriter):
 
     def _write_table(self, data_out, table):
         table_num = str(table.index)
+        table_ident = 'd' + table_num.zfill(2)
+        res = _pattern_check(table_ident, self.rivet_ref_match, self.rivet_ref_unmatch)
+        if not res:
+            return
         if self.hepdata_doi:
             table_doi = 'doi:' + self.hepdata_doi + '/t' + table_num
         else:
@@ -166,7 +195,7 @@ class YODA(ArrayWriter):
         for idep, estimate in enumerate(f.get_next_object()):
             if estimate is None:
                 continue
-            rivet_identifier = 'd' + table_num.zfill(2) + '-x01-y' + str(idep + 1).zfill(2)
+            rivet_identifier = table_ident + '-x01-y' + str(idep + 1).zfill(2)
             # Allow the standard Rivet identifier to be overridden by a custom value specified in the qualifiers.
             if 'qualifiers' in table.dependent_variables[idep]:
                 for qualifier in table.dependent_variables[idep]['qualifiers']:
