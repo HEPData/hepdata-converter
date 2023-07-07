@@ -190,7 +190,7 @@ class YODA(ArrayWriter):
         if self.hepdata_doi:
             table_doi = 'doi:' + self.hepdata_doi + '/t' + table_num
         else:
-            table_doi = '"'+table.name+'"'
+            table_doi = ('"'+table.name+'"').encode('unicode_escape')
         f = ObjectFactory(self.class_list, table.independent_variables, table.dependent_variables)
         for idep, estimate in enumerate(f.get_next_object()):
             if estimate is None:
