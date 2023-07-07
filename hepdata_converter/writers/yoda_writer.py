@@ -101,16 +101,17 @@ class EstimateYodaClass(ObjectWrapper):
                     if not any([ math.isclose(newedge, e) for e in edges[dim_i] ]):
                         edges[dim_i].append(newedge)
                     localIndices.append( [ i for i, e in enumerate(edges[dim_i]) \
-                                         if math.isclose(e, newedge) ].pop()+1 ) # 0 is underflow
+                                         if math.isclose(e, newedge) ].pop() ) # 0 is underflow
                 elif isIntAxis[dim_i]:
-                    if not len(edges[dim_i]) or v not in edges[dim_i]:
-                        edges[dim_i].append(int(v))
-                    localIndices.append( edges[dim_i].index(int(v))+1 ) # 0 is otherflow
+                    newedge = int(v)
+                    if newedge not in edges[dim_i]:
+                        edges[dim_i].append(newedge)
+                    localIndices.append( edges[dim_i].index(newedge)+1 ) # 0 is otherflow
                 else:
-                    v = '{0} - {1}'.format(v-m, v+p) if m and p else str(v)
-                    if not len(edges[dim_i]) or v not in edges[dim_i]:
-                        edges[dim_i].append(v)
-                    localIndices.append( edges[dim_i].index(v)+1 ) # 0 is otherflow
+                    newedge = '{0} - {1}'.format(v-m, v+p) if m and p else str(v)
+                    if newedge not in edges[dim_i]:
+                        edges[dim_i].append(newedge)
+                    localIndices.append( edges[dim_i].index(newedge)+1 ) # 0 is otherflow
             # prevent overwriting of previous estimates
             if not any([ localIndices == idx for idx, est in estimates ]):
                 # make Estimate
