@@ -43,7 +43,7 @@ class EstimateYodaClass(ObjectWrapper):
         errs = self.err_breakdown[idx]
         nSources = len(errs.keys())
         for source in errs:
-            label =  source
+            label = source
             if label.upper() == "TOTAL" or \
                 (nSources == 1 and source == 'error'):
                 label = '' # total uncertainty
@@ -190,7 +190,7 @@ class YODA(ArrayWriter):
         if self.hepdata_doi:
             table_doi = 'doi:' + self.hepdata_doi + '/t' + table_num
         else:
-            table_doi = table.name
+            table_doi = '"'+table.name+'"'
         f = ObjectFactory(self.class_list, table.independent_variables, table.dependent_variables)
         for idep, estimate in enumerate(f.get_next_object()):
             if estimate is None:
