@@ -63,9 +63,9 @@ class EstimateYodaClass(ObjectWrapper):
             self._set_error_breakdown(0, rtn)
             return rtn
 
-        # Check whether axis type is continuous (float) or
-        # discrete (int, string). If in doubt, stick to string.
-        isCAxis = [ ]; isIntAxis = [ ]
+        # Check whether axis type is continuous (float) or discrete (int, string).
+        # Keep track of bin edges and, for continuous axes, of visible bin range.
+        isCAxis = [ ]; isIntAxis = [ ]; edges = [ ]; visRange = { }
         for dim_i in range(self.dim):
             vals = self.independent_variable_map[dim_i]['values']
             allUpper = all('high' in vals[i] and isinstance(vals[i]['high'], (int,float)) for i in range(len(vals)))
@@ -74,12 +74,48 @@ class EstimateYodaClass(ObjectWrapper):
             allInt = all('value' in vals[i] and ( isinstance(vals[i]['value'], int) or \
                         (isinstance(vals[i]['value'], float) and vals[i]['value'].is_integer())) for i in range(len(vals)))
             isIntAxis.append( allInt )
+            thisaxis = [ ]
+            if isCAxis[-1]:
+                for i in range(len(vals)):
+                    if not vals[i]:  continue
+                    lo = float(vals[i]['low'])
+                    hi = float(vals[i]['high'])
+                    if dim_i in visRange:
+                        visRange[dim_i].append(0.5*(lo+hi))
+                    else:
+                        visRange[dim_i] = [ 0.5*(lo+hi) ]
+                    if not any([ math.isclose(lo, edge) for edge in thisaxis ]):
+                        thisaxis.append(lo)
+                    if not any([ math.isclose(hi, edge) for edge in thisaxis ]):
+                        thisaxis.append(hi)
+                thisaxis = sorted(thisaxis)
+            elif isIntAxis[-1]:
+                for i in range(len(self.yval)):
+                    edge = int(self.xval[dim_i][i])
+                    if edge not in thisaxis:
+                        thisaxis.append(edge)
+            else:
+                for i in range(len(self.yval)):
+                    v = self.xval[dim_i][i]
+                    m = self.xerr_minus[dim_i][i]
+                    p = self.xerr_plus[dim_i][i]
+                    edge = '{0} - {1}'.format(v-m, v+p) if m and p else str(v)
+                    if edge not in thisaxis:
+                        thisaxis.append(edge)
+            edges.append(thisaxis)
+        # make BinnedEstimate
+        rtn = self.get_estimate_cls()(*edges)
+        # mask potential gaps in binning
+        for dim, vals in visRange.items():
+            axis = yoda.Axis(edges[dim])
+            visibles = set([ axis.index(val) for val in vals ])
+            for idx in range(1, axis.numBins()+1):
+              if idx not in visibles:
+                  rtn.maskSlice(dim, idx)
 
-        # 1D or higher: need to construct binning from edges
-        # this excludes under/over/otherflows, so use local
-        # indices to pinpoint corresponding bin position
-        estimates = [ ]
-        edges = [[ ] for _ in range(self.dim)]
+        # Now construct bin content and set at the correct global index.
+        # Keep track of global indices to avoid overwriting estimates.
+        global_indices = [ ]
         for i in range(len(self.yval)):
 
             # Check that number of y values does not exceed number of x values.
@@ -87,41 +123,30 @@ class EstimateYodaClass(ObjectWrapper):
             for dim_i in range(self.dim):
                 if i > len(self.xval[dim_i]) - 1:
                     too_many_y_values = True
-            if too_many_y_values: break
+            if too_many_y_values:
+                break
 
-            localIndices = [ ]
+            edges = [ ]
             for dim_i in range(self.dim):
                 v = self.xval[dim_i][i]
                 m = self.xerr_minus[dim_i][i]
                 p = self.xerr_plus[dim_i][i]
                 if isCAxis[dim_i]:
-                    if not len(edges[dim_i]):
-                        edges[dim_i].append(float(v-m))
-                    newedge = float(v+p)
-                    if not any([ math.isclose(newedge, e) for e in edges[dim_i] ]):
-                        edges[dim_i].append(newedge)
-                    localIndices.append( [ i for i, e in enumerate(edges[dim_i]) \
-                                         if math.isclose(e, newedge) ].pop() ) # 0 is underflow
+                    edges.append(float(v))
                 elif isIntAxis[dim_i]:
-                    newedge = int(v)
-                    if newedge not in edges[dim_i]:
-                        edges[dim_i].append(newedge)
-                    localIndices.append( edges[dim_i].index(newedge)+1 ) # 0 is otherflow
+                    edges.append(int(v))
                 else:
                     newedge = '{0} - {1}'.format(v-m, v+p) if m and p else str(v)
-                    if newedge not in edges[dim_i]:
-                        edges[dim_i].append(newedge)
-                    localIndices.append( edges[dim_i].index(newedge)+1 ) # 0 is otherflow
-            # prevent overwriting of previous estimates
-            if not any([ localIndices == idx for idx, est in estimates ]):
-                # make Estimate
-                estimates.append([ localIndices, yoda.core.Estimate() ])
-                estimates[-1][1].setVal(self.yval[i])
-                self._set_error_breakdown(i, estimates[-1][1])
-        # make BinnedEstimate and set bin contents
-        rtn = self.get_estimate_cls()(*edges)
-        for localIndices, est in estimates:
-            rtn.set(localIndices, est)
+                    edges.append(newedge)
+            # calculate global index
+            idx = rtn.indexAt(*edges)
+            # prevent overwriting of previous Estimates
+            if idx not in global_indices:
+                global_indices.append(idx)
+                # construct Estimate
+                rtn.bin(idx).setVal(self.yval[i])
+                self._set_error_breakdown(i, rtn.bin(idx))
+        del global_indices
         return rtn
 
 
