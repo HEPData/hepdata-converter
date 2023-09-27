@@ -122,7 +122,7 @@ class YODA1(ArrayWriter):
             graph.setTitle(table_doi)
             graph.setPath(rivet_path)
             graph.setAnnotation('IsRef', '1')
-            yoda.core.writeYODA(graph, data_out)
+            yoda.core.writeYODA1(graph, data_out)
             data_out.write('\n')
 
     def write(self, data_in, data_out, *args, **kwargs):
