@@ -67,6 +67,7 @@ class EstimateYodaClass(ObjectWrapper):
         # Keep track of bin edges and, for continuous axes, of visible bin range.
         isCAxis = [ ]; isIntAxis = [ ]; edges = [ ]; visRange = { }
         for dim_i in range(self.dim):
+            # Check all independent values for given "d" irrespective of "y" in the identifier
             vals = self.independent_variable_map[dim_i]['values']
             allUpper = all('high' in vals[i] and isinstance(vals[i]['high'], (int,float)) for i in range(len(vals)))
             allLower = all('low'  in vals[i] and isinstance(vals[i]['low'],  (int,float)) for i in range(len(vals)))
@@ -74,35 +75,35 @@ class EstimateYodaClass(ObjectWrapper):
             allInt = all('value' in vals[i] and ( isinstance(vals[i]['value'], int) or \
                         (isinstance(vals[i]['value'], float) and vals[i]['value'].is_integer())) for i in range(len(vals)))
             isIntAxis.append( allInt )
+            # construct edges only from relevant subset for given "y"
             thisaxis = [ ]
-            if isCAxis[-1]:
-                for i in range(len(vals)):
-                    if not vals[i]:  continue
-                    lo = float(vals[i]['low'])
-                    hi = float(vals[i]['high'])
+            for i in range(len(self.yval)):
+                if isCAxis[-1]:
+                    v = float(self.xval[dim_i][i])
+                    m = float(self.xerr_minus[dim_i][i])
+                    p = float(self.xerr_plus[dim_i][i])
+                    lo = v - m
+                    hi = v + p
                     if dim_i in visRange:
-                        visRange[dim_i].append(0.5*(lo+hi))
+                        visRange[dim_i].append(v)
                     else:
-                        visRange[dim_i] = [ 0.5*(lo+hi) ]
+                        visRange[dim_i] = [ v ]
                     if not any([ math.isclose(lo, edge) for edge in thisaxis ]):
                         thisaxis.append(lo)
                     if not any([ math.isclose(hi, edge) for edge in thisaxis ]):
                         thisaxis.append(hi)
-                thisaxis = sorted(thisaxis)
-            elif isIntAxis[-1]:
-                for i in range(len(self.yval)):
+                elif isIntAxis[-1]:
                     edge = int(self.xval[dim_i][i])
                     if edge not in thisaxis:
                         thisaxis.append(edge)
-            else:
-                for i in range(len(self.yval)):
+                else:
                     v = self.xval[dim_i][i]
                     m = self.xerr_minus[dim_i][i]
                     p = self.xerr_plus[dim_i][i]
                     edge = '{0} - {1}'.format(v-m, v+p) if m and p else str(v)
                     if edge not in thisaxis:
                         thisaxis.append(edge)
-            edges.append(thisaxis)
+            edges.append(sorted(thisaxis) if isCAxis[-1] else thisaxis)
         # make BinnedEstimate
         rtn = self.get_estimate_cls()(*edges)
         # mask potential gaps in binning
