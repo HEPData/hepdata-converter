@@ -1,0 +1,211 @@
+comment: Measurement of inclusive production cross section of pairs of isolated prompt
+  photons with the ATLAS Detector at centre-of-mass energy 13 TeV.The transverse momentum
+  of the photons is required to be greater than 40(30) GeV for the (sub)leading photon.
+  The photons are required to be seperated by more than $\Delta R > 0.4$. The photons
+  are required to be isolated with $E_\mathrm{T}^\mathrm{iso}<0.09\cdot p_{\mathrm{T},\gamma}$.
+  The isolation energy $E_\mathrm{T}^\mathrm{iso}$ is defined as the scalar sum of
+  the transverse momenta of particles in a cone of $\Delta R < 0.2$ around the photon
+  and is corrected for the transverse momentum density of jets in the event.For each
+  differential cross section measurement 100 data bootstrap replicas are provided
+  in the resources which should be used to estimate the statistical uncertainty and
+  the correlations between different observables. For convenience the statitistical
+  uncertainties are also contained in the main tables.The systematic uncertainties
+  can be considered fully correlated and seperate up-and down-variations are provided.
+  Sometimes the up-and down-variations have the same sign. The uncertainties need
+  to be symmetrized before calculating chi2 values.
+data_license: {description: The content can be shared and adapted but you must             give
+    appropriate credit and cannot restrict access to others., name: cc-by-4.0, url: 'https://creativecommons.org/licenses/by/4.0/'}
+hepdata_doi: 10.17182/hepdata.104925.v1
+---
+additional_resources:
+- {description: Bootstrap replicas of the measured differential cross section values
+    as a function of ph1_pt which can be used to estimate the statistical uncertainties
+    and correlations between observable bins., location: ph1_pt_replicas.tar.gz}
+- {description: Image file, location: fig-results-ph1_pt.png}
+- {description: Thumbnail image file, location: thumb_fig-results-ph1_pt.png}
+data_file: ph1_pt.yaml
+description: Differential cross section as a function of $p_{T,\gamma_{1}}$. The table
+  contains the values measured in data and theory predictions from SHERPA, DIPHOX
+  and NNLOJET.
+keywords:
+- name: cmenergies
+  values: [13000.0]
+- name: phrases
+  values: [Proton-Proton Scattering, Diphoton, Differential Cross Section, Cross Section]
+- name: reactions
+  values: [P P --> GAMMA GAMMA X]
+location: Data from Figure 11 for $p_{T,\gamma_{1}}$. Theory predictions from Figure
+  11 and Figure 18
+name: ph1_pt
+table_doi: 10.17182/hepdata.104925.v1/t1
+---
+additional_resources:
+- {description: Bootstrap replicas of the measured differential cross section values
+    as a function of ph2_pt which can be used to estimate the statistical uncertainties
+    and correlations between observable bins., location: ph2_pt_replicas.tar.gz}
+- {description: Image file, location: fig-results-ph2_pt.png}
+- {description: Thumbnail image file, location: thumb_fig-results-ph2_pt.png}
+data_file: ph2_pt.yaml
+description: Differential cross section as a function of $p_{T,\gamma_{2}}$. The table
+  contains the values measured in data and theory predictions from SHERPA, DIPHOX
+  and NNLOJET.
+keywords:
+- name: cmenergies
+  values: [13000.0]
+- name: phrases
+  values: [Proton-Proton Scattering, Diphoton, Differential Cross Section, Cross Section]
+- name: reactions
+  values: [P P --> GAMMA GAMMA X]
+location: Data from Figure 11 for $p_{T,\gamma_{2}}$. Theory predictions from Figure
+  11 and Figure 18
+name: ph2_pt
+table_doi: 10.17182/hepdata.104925.v1/t2
+---
+additional_resources:
+- {description: Image file, location: fig-results-totalxs.png}
+- {description: Thumbnail image file, location: thumb_fig-results-totalxs.png}
+data_file: yy_xs.yaml
+description: Integrated fiducial cross section measured in data and from different
+  predictions.
+keywords:
+- name: cmenergies
+  values: [13000.0]
+- name: phrases
+  values: [Proton-Proton Scattering, Diphoton, Differential Cross Section, Cross Section]
+- name: reactions
+  values: [P P --> GAMMA GAMMA X]
+location: Data from Figure 5 and Table 5
+name: yy_xs
+table_doi: 10.17182/hepdata.104925.v1/t3
+---
+additional_resources:
+- {description: Bootstrap replicas of the measured differential cross section values
+    as a function of yy_m which can be used to estimate the statistical uncertainties
+    and correlations between observable bins., location: yy_m_replicas.tar.gz}
+- {description: Image file, location: fig-results-yy_m.png}
+- {description: Thumbnail image file, location: thumb_fig-results-yy_m.png}
+data_file: yy_m.yaml
+description: Differential cross section as a function of $m_{\gamma\gamma}$. The table
+  contains the values measured in data and theory predictions from SHERPA, DIPHOX
+  and NNLOJET.
+keywords:
+- name: cmenergies
+  values: [13000.0]
+- name: phrases
+  values: [Proton-Proton Scattering, Diphoton, Differential Cross Section, Cross Section]
+- name: reactions
+  values: [P P --> GAMMA GAMMA X]
+location: Data from Figure 11 for $m_{\gamma\gamma}$. Theory predictions from Figure
+  11 and Figure 18
+name: yy_m
+table_doi: 10.17182/hepdata.104925.v1/t4
+---
+additional_resources:
+- {description: Bootstrap replicas of the measured differential cross section values
+    as a function of yy_pT which can be used to estimate the statistical uncertainties
+    and correlations between observable bins., location: yy_pT_replicas.tar.gz}
+- {description: Image file, location: fig-results-yy_pT.png}
+- {description: Thumbnail image file, location: thumb_fig-results-yy_pT.png}
+data_file: yy_pt.yaml
+description: Differential cross section as a function of $p_{T,\gamma\gamma}$. The
+  table contains the values measured in data and theory predictions from SHERPA, DIPHOX
+  and NNLOJET.
+keywords:
+- name: cmenergies
+  values: [13000.0]
+- name: phrases
+  values: [Proton-Proton Scattering, Diphoton, Differential Cross Section, Cross Section]
+- name: reactions
+  values: [P P --> GAMMA GAMMA X]
+location: Data from Figure 12 for $p_{T,\gamma\gamma}$. Theory predictions from Figure
+  12 and Figure 19
+name: yy_pT
+table_doi: 10.17182/hepdata.104925.v1/t5
+---
+additional_resources:
+- {description: Bootstrap replicas of the measured differential cross section values
+    as a function of yy_pTt which can be used to estimate the statistical uncertainties
+    and correlations between observable bins., location: yy_pTt_replicas.tar.gz}
+- {description: Image file, location: fig-results-yy_pTt.png}
+- {description: Thumbnail image file, location: thumb_fig-results-yy_pTt.png}
+data_file: yy_ptt.yaml
+description: Differential cross section as a function of $a_{T,\gamma\gamma}$. The
+  table contains the values measured in data and theory predictions from SHERPA, DIPHOX
+  and NNLOJET.
+keywords:
+- name: cmenergies
+  values: [13000.0]
+- name: phrases
+  values: [Proton-Proton Scattering, Diphoton, Differential Cross Section, Cross Section]
+- name: reactions
+  values: [P P --> GAMMA GAMMA X]
+location: Data from Figure 12 for $a_{T,\gamma\gamma}$. Theory predictions from Figure
+  12 and Figure 19
+name: yy_pTt
+table_doi: 10.17182/hepdata.104925.v1/t6
+---
+additional_resources:
+- {description: Bootstrap replicas of the measured differential cross section values
+    as a function of yy_phiStar which can be used to estimate the statistical uncertainties
+    and correlations between observable bins., location: yy_phiStar_replicas.tar.gz}
+- {description: Image file, location: fig-results-yy_phiStar.png}
+- {description: Thumbnail image file, location: thumb_fig-results-yy_phiStar.png}
+data_file: yy_phistar.yaml
+description: Differential cross section as a function of $\phi_{\eta}*$. The table
+  contains the values measured in data and theory predictions from SHERPA, DIPHOX
+  and NNLOJET.
+keywords:
+- name: cmenergies
+  values: [13000.0]
+- name: phrases
+  values: [Proton-Proton Scattering, Diphoton, Differential Cross Section, Cross Section]
+- name: reactions
+  values: [P P --> GAMMA GAMMA X]
+location: Data from Figure 12 for $\phi_{\eta}*$. Theory predictions from Figure 12
+  and Figure 19
+name: yy_phiStar
+table_doi: 10.17182/hepdata.104925.v1/t7
+---
+additional_resources:
+- {description: Bootstrap replicas of the measured differential cross section values
+    as a function of yy_piMDphi which can be used to estimate the statistical uncertainties
+    and correlations between observable bins., location: yy_piMDphi_replicas.tar.gz}
+- {description: Image file, location: fig-results-yy_piMDphi.png}
+- {description: Thumbnail image file, location: thumb_fig-results-yy_piMDphi.png}
+data_file: yy_pimdphi.yaml
+description: Differential cross section as a function of $\pi-\Delta\phi_{\gamma\gamma}$.
+  The table contains the values measured in data and theory predictions from SHERPA,
+  DIPHOX and NNLOJET.
+keywords:
+- name: cmenergies
+  values: [13000.0]
+- name: phrases
+  values: [Proton-Proton Scattering, Diphoton, Differential Cross Section, Cross Section]
+- name: reactions
+  values: [P P --> GAMMA GAMMA X]
+location: Data from Figure 12 for $\pi-\Delta\phi_{\gamma\gamma}$. Theory predictions
+  from Figure 12 and Figure 19
+name: yy_piMDphi
+table_doi: 10.17182/hepdata.104925.v1/t8
+---
+additional_resources:
+- {description: Bootstrap replicas of the measured differential cross section values
+    as a function of yy_cosTS which can be used to estimate the statistical uncertainties
+    and correlations between observable bins., location: yy_cosTS_replicas.tar.gz}
+- {description: Image file, location: fig-results-yy_cosTS.png}
+- {description: Thumbnail image file, location: thumb_fig-results-yy_cosTS.png}
+data_file: yy_costs.yaml
+description: Differential cross section as a function of $|cos\theta*|^{(CS)}$. The
+  table contains the values measured in data and theory predictions from SHERPA, DIPHOX
+  and NNLOJET.
+keywords:
+- name: cmenergies
+  values: [13000.0]
+- name: phrases
+  values: [Proton-Proton Scattering, Diphoton, Differential Cross Section, Cross Section]
+- name: reactions
+  values: [P P --> GAMMA GAMMA X]
+location: Data from Figure 11 for $|cos\theta*|^{(CS)}$. Theory predictions from Figure
+  11 and Figure 18
+name: yy_cosTS
+table_doi: 10.17182/hepdata.104925.v1/t9

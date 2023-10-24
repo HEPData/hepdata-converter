@@ -32,3 +32,47 @@ class YODAWriterTestSuite(WriterTestSuite):
                                       options={'output_format': 'yoda'})
 
             self.assertNotEqual(os.stat(output_file_path).st_size, 0, 'output yoda file is empty')
+
+    @insert_path('yaml_full')
+    @insert_data_as_file('yoda/full_match.yoda')
+    def test_parse_pattern_match(self, yaml_simple_path, yoda_template):
+        output_file_path = os.path.join(self.current_tmp, 'datafile.yoda')
+        hepdata_converter.convert(yaml_simple_path, output_file_path,
+                                  options={'output_format': 'yoda',
+                                           'validator_schema_version': '0.1.0',
+                                           'hepdata_doi': '10.17182/hepdata.62535.v1',
+                                           'rivet_analysis_name': 'ATLAS_2012_I1203852',
+                                           'rivet_ref_match': 'd01'})
+
+        self.assertNotEqual(os.stat(output_file_path).st_size, 0, 'output yoda file is empty')
+        with open(output_file_path, 'r') as f:
+            self.assertMultiLineAlmostEqual(f, yoda_template)
+
+    @insert_path('yaml_full')
+    @insert_data_as_file('yoda/full_unmatch.yoda')
+    def test_parse_pattern_unmatch(self, yaml_simple_path, yoda_template):
+        output_file_path = os.path.join(self.current_tmp, 'datafile.yoda')
+        hepdata_converter.convert(yaml_simple_path, output_file_path,
+                                  options={'output_format': 'yoda',
+                                           'validator_schema_version': '0.1.0',
+                                           'hepdata_doi': '10.17182/hepdata.62535.v1',
+                                           'rivet_analysis_name': 'ATLAS_2012_I1203852',
+                                           'rivet_ref_unmatch': 'd07'})
+
+        self.assertNotEqual(os.stat(output_file_path).st_size, 0, 'output yoda file is empty')
+        with open(output_file_path, 'r') as f:
+            self.assertMultiLineAlmostEqual(f, yoda_template)
+
+    @insert_path('yaml_no_dependent')
+    @insert_data_as_file('yoda/no_dependent.yoda')
+    def test_parse_no_dependent(self, yaml_simple_path, yoda_template):
+        output_file_path = os.path.join(self.current_tmp, 'datafile.yoda')
+        hepdata_converter.convert(yaml_simple_path, output_file_path,
+                                  options={'output_format': 'yoda',
+                                           'validator_schema_version': '0.1.0',
+                                           'rivet_analysis_name': 'ATLAS_2021_I1887997'})
+
+        self.assertNotEqual(os.stat(output_file_path).st_size, 0, 'output yoda file is empty')
+        with open(output_file_path, 'r') as f:
+            self.assertMultiLineAlmostEqual(f, yoda_template)
+

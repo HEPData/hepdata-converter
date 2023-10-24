@@ -1,0 +1,176 @@
+BEGIN YODA_BINNEDESTIMATE<I>_V3 /REF/ATLAS_2012_I1203852/d01-x01-y01
+IsRef: 1
+Path: /REF/ATLAS_2012_I1203852/d01-x01-y01
+Title: doi:10.17182/hepdata.62535.v1/t1
+Type: BinnedEstimate<i>
+---
+Edges(A1): [7000, 8000, 9000]
+ErrorLabels: ["stat", "sys", "sys,lumi"]
+# value      	errDn(1)     	errUp(1)     	errDn(2)     	errUp(2)     	errDn(3)     	errUp(3)     	
+nan          	---          	---          	---          	---          	---          	---          	
+2.540000e+01 	-3.000000e+00	3.300000e+00 	-1.200000e+00	1.000000e+00 	-1.000000e+00	1.000000e+00 	
+2.980000e+01 	-3.500000e+00	3.800000e+00 	-1.500000e+00	1.700000e+00 	-1.200000e+00	1.200000e+00 	
+1.270000e+01 	-2.900000e+00	3.100000e+00 	-1.700000e+00	1.700000e+00 	-5.000000e-01	5.000000e-01 	
+END YODA_BINNEDESTIMATE<I>_V3
+
+
+BEGIN YODA_BINNEDESTIMATE<I,I>_V3 /REF/ATLAS_2012_I1203852/d02-x01-y01
+IsRef: 1
+Path: /REF/ATLAS_2012_I1203852/d02-x01-y01
+Title: doi:10.17182/hepdata.62535.v1/t2
+Type: BinnedEstimate<i,i>
+---
+Edges(A1): [120, 150, 300, 390, 200, 400, 490, 500, 590, 600, 700, 790]
+Edges(A2): [400, 500, 600, 700, 800]
+# value      	
+nan          	
+nan          	
+nan          	
+nan          	
+nan          	
+nan          	
+nan          	
+nan          	
+nan          	
+nan          	
+nan          	
+nan          	
+nan          	
+nan          	
+2.229000e-03 	
+4.794000e-03 	
+8.519000e-03 	
+5.903000e-03 	
+nan          	
+nan          	
+nan          	
+nan          	
+nan          	
+nan          	
+nan          	
+nan          	
+nan          	
+nan          	
+5.636000e-03 	
+1.587000e-02 	
+nan          	
+1.111000e-02 	
+1.666000e-02 	
+1.149000e-02 	
+nan          	
+nan          	
+nan          	
+nan          	
+nan          	
+nan          	
+1.190000e-03 	
+nan          	
+1.890000e-02 	
+nan          	
+8.730000e-03 	
+2.529000e-02 	
+nan          	
+2.368000e-02 	
+1.898000e-02 	
+nan          	
+nan          	
+nan          	
+nan          	
+5.152000e-04 	
+1.734000e-03 	
+1.520000e-02 	
+nan          	
+4.977000e-03 	
+2.617000e-02 	
+nan          	
+nan          	
+nan          	
+3.097000e-02 	
+2.361000e-02 	
+nan          	
+nan          	
+7.932000e-04 	
+2.115000e-03 	
+9.463000e-03 	
+nan          	
+nan          	
+2.163000e-02 	
+nan          	
+3.019000e-02 	
+nan          	
+3.584000e-02 	
+3.465000e-02 	
+2.502000e-04 	
+END YODA_BINNEDESTIMATE<I,I>_V3
+
+
+BEGIN YODA_ESTIMATE1D_V3 /REF/ATLAS_2012_I1203852/d03-x01-y01
+IsRef: 1
+Path: /REF/ATLAS_2012_I1203852/d03-x01-y01
+Title: doi:10.17182/hepdata.62535.v1/t3
+Type: Estimate1D
+---
+Edges(A1): [0.000000e+00, 6.000000e+01, 1.000000e+02, 2.000000e+02, 6.000000e+02]
+ErrorLabels: ["stat", "sys,background", "sys,detector"]
+# value      	errDn(1)     	errUp(1)     	errDn(2)     	errUp(2)     	errDn(3)     	errUp(3)     	
+nan          	---          	---          	---          	---          	---          	---          	
+7.000000e+03 	-1.100000e+03	1.100000e+03 	-1.500000e+01	1.500000e+01 	-7.900000e+01	7.900000e+01 	
+9.800000e+03 	-1.600000e+03	1.600000e+03 	-1.500000e+01	1.500000e+01 	-7.500000e+01	7.500000e+01 	
+1.600000e+03 	-4.900000e+02	4.900000e+02 	-2.000000e+00	2.000000e+00 	-4.100000e+01	4.100000e+01 	
+8.000000e+01 	-6.000000e+01	6.000000e+01 	0.000000e+00 	0.000000e+00 	-2.000000e+00	2.000000e+00 	
+nan          	---          	---          	---          	---          	---          	---          	
+END YODA_ESTIMATE1D_V3
+
+
+BEGIN YODA_ESTIMATE1D_V3 /REF/ATLAS_2012_I1203852/d04-x01-y01
+IsRef: 1
+Path: /REF/ATLAS_2012_I1203852/d04-x01-y01
+Title: doi:10.17182/hepdata.62535.v1/t4
+Type: Estimate1D
+---
+Edges(A1): [5.000000e+01, 9.000000e+01, 1.300000e+02, 2.000000e+02]
+ErrorLabels: ["stat", "sys,background", "sys,detector"]
+# value      	errDn(1)     	errUp(1)     	errDn(2)     	errUp(2)     	errDn(3)     	errUp(3)     	
+nan          	---          	---          	---          	---          	---          	---          	
+9.930000e+03 	-3.340000e+03	3.340000e+03 	-7.400000e+02	7.400000e+02 	-8.000000e+01	8.000000e+01 	
+8.280000e+03 	-3.210000e+03	3.210000e+03 	-2.600000e+02	2.600000e+02 	-2.000000e+02	2.000000e+02 	
+3.900000e+03 	-1.490000e+03	1.490000e+03 	-3.900000e+02	3.900000e+02 	-1.200000e+02	1.200000e+02 	
+nan          	---          	---          	---          	---          	---          	---          	
+END YODA_ESTIMATE1D_V3
+
+
+BEGIN YODA_ESTIMATE1D_V3 /REF/ATLAS_2012_I1203852/d05-x01-y01
+IsRef: 1
+Path: /REF/ATLAS_2012_I1203852/d05-x01-y01
+Title: doi:10.17182/hepdata.62535.v1/t5
+Type: Estimate1D
+---
+Edges(A1): [0.000000e+00, 5.000000e-01, 1.000000e+00, 1.700000e+00, 3.141590e+00]
+ErrorLabels: ["stat", "sys,background", "sys,detector"]
+# value      	errDn(1)     	errUp(1)     	errDn(2)     	errUp(2)     	errDn(3)     	errUp(3)     	
+nan          	---          	---          	---          	---          	---          	---          	
+1.300000e+05 	-6.900000e+04	6.900000e+04 	-1.000000e+01	1.000000e+01 	-6.600000e+03	6.600000e+03 	
+2.800000e+05 	-1.000000e+05	1.000000e+05 	-4.000000e+02	4.000000e+02 	-9.000000e+03	9.000000e+03 	
+2.600000e+05 	-8.000000e+04	8.000000e+04 	-3.000000e+02	3.000000e+02 	-1.000000e+04	1.000000e+04 	
+4.200000e+05 	-5.000000e+04	5.000000e+04 	-3.000000e+02	3.000000e+02 	-2.000000e+03	2.000000e+03 	
+nan          	---          	---          	---          	---          	---          	---          	
+END YODA_ESTIMATE1D_V3
+
+
+BEGIN YODA_ESTIMATE1D_V3 /REF/ATLAS_2012_I1203852/d06-x01-y01
+IsRef: 1
+Path: /REF/ATLAS_2012_I1203852/d06-x01-y01
+Title: doi:10.17182/hepdata.62535.v1/t6
+Type: Estimate1D
+---
+Edges(A1): [2.200000e+02, 2.500000e+02, 3.000000e+02, 4.000000e+02]
+ErrorLabels: ["stat", "sys,background", "sys,detector"]
+# value      	errDn(1)     	errUp(1)     	errDn(2)     	errUp(2)     	errDn(3)     	errUp(3)     	
+nan          	---          	---          	---          	---          	---          	---          	
+1.050000e+04 	-4.400000e+03	4.400000e+03 	-1.900000e+03	1.900000e+03 	-3.000000e+02	3.000000e+02 	
+6.320000e+03 	-2.630000e+03	2.630000e+03 	-2.800000e+02	2.800000e+02 	-2.300000e+02	2.300000e+02 	
+3.680000e+03 	-1.210000e+03	1.210000e+03 	-4.800000e+02	4.800000e+02 	-6.000000e+01	6.000000e+01 	
+nan          	---          	---          	---          	---          	---          	---          	
+END YODA_ESTIMATE1D_V3
+
+
