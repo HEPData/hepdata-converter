@@ -63,8 +63,8 @@ class YODAWriterTestSuite(WriterTestSuite):
         with open(output_file_path, 'r') as f:
             self.assertMultiLineAlmostEqual(f, yoda_template)
 
-    @insert_path('yaml_no_dependent')
-    @insert_data_as_file('yoda/no_dependent.yoda')
+    @insert_path('yaml_no_independent')
+    @insert_data_as_file('yoda/no_independent.yoda')
     def test_parse_no_dependent(self, yaml_simple_path, yoda_template):
         output_file_path = os.path.join(self.current_tmp, 'datafile.yoda')
         hepdata_converter.convert(yaml_simple_path, output_file_path,
