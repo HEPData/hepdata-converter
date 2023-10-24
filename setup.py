@@ -30,22 +30,19 @@ with open('README.rst', 'rt') as fp:
     long_description = fp.read()
 
 
-extras_require = {'docs': ['Sphinx>=1.4.2', 'mock'],
-                  'all': []}
-
 setup(
     name='hepdata-converter',
     version=get_version(),
-    install_requires=[
-        'pyyaml>=5.3',
-        'hepdata-validator>=0.2.2'
-    ],
+    install_requires=['hepdata-validator>=0.3.5'],
     entry_points={
         'console_scripts': [
             'hepdata-converter = hepdata_converter:main',
         ]
     },
-    extras_require=extras_require,
+    extras_require={
+        'docs': ['Sphinx>=1.4.2', 'mock'],
+        'tests': ['coverage>=5.1'],
+    },
     packages=['hepdata_converter', 'hepdata_converter.parsers', 'hepdata_converter.writers', 'hepdata_converter.testsuite'],
     package_data={'hepdata_converter': get_all_datafiles(package='hepdata_converter/testsuite', path='testdata')},
     include_package_data=True,

@@ -3,16 +3,16 @@ HEPData Converter
 =================
 
 
-.. image:: https://github.com/HEPData/hepdata-converter/workflows/Continuous%20Integration/badge.svg?branch=master
-   :target: https://github.com/HEPData/hepdata-converter/actions?query=branch%3Amaster
+.. image:: https://github.com/HEPData/hepdata-converter/actions/workflows/ci.yml/badge.svg?branch=main
+   :target: https://github.com/HEPData/hepdata-converter/actions?query=branch%3Amain
    :alt: GitHub Actions Build Status
 
-.. image:: https://coveralls.io/repos/github/HEPData/hepdata-converter/badge.svg?branch=master
-   :target: https://coveralls.io/github/HEPData/hepdata-converter?branch=master
+.. image:: https://coveralls.io/repos/github/HEPData/hepdata-converter/badge.svg?branch=main
+   :target: https://coveralls.io/github/HEPData/hepdata-converter?branch=main
    :alt: Coveralls Status
 
 .. image:: https://img.shields.io/github/license/HEPData/hepdata-converter.svg
-   :target: https://github.com/HEPData/hepdata-converter/blob/master/LICENSE.txt
+   :target: https://github.com/HEPData/hepdata-converter/blob/main/LICENSE.txt
    :alt: License
 
 .. image:: https://img.shields.io/github/release/hepdata/hepdata-converter.svg?maxAge=2592000
@@ -34,11 +34,11 @@ HEPData Converter
 
 This Python 3 library provides support for converting:
 
-* Old HepData input format (`sample <https://github.com/HEPData/hepdata-submission/blob/master/examples/oldhepdata/sample.oldhepdata>`_) to `YAML <https://github.com/HEPData/hepdata-submission>`_
+* Old HepData input format (`sample <https://github.com/HEPData/hepdata-submission/blob/main/examples/oldhepdata/sample.oldhepdata>`_) to `YAML <https://github.com/HEPData/hepdata-submission>`_
 * `YAML <https://github.com/HEPData/hepdata-submission>`_ to:
 
-  * `ROOT <https://root.cern.ch>`_ (tested with v6.22/02)
-  * `YODA <https://yoda.hepforge.org>`_ (tested with v1.8.3)
+  * `ROOT <https://root.cern.ch>`_ (tested with v6.28/04)
+  * `YODA <https://yoda.hepforge.org>`_ (tested with v2.0.0alpha)
   * `CSV <https://en.wikipedia.org/wiki/Comma-separated_values>`_
 
-Documentation: http://hepdata-converter.readthedocs.io
+Documentation: https://hepdata-converter.readthedocs.io
