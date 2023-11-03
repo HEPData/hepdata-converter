@@ -1,0 +1,72 @@
+dependent_variables:
+- header: {name: Data integrated fiducial cross section, units: pb}
+  qualifiers:
+  - {name: Custom Rivet identifier, value: yy_xs}
+  values:
+  - errors:
+    - asymerror: {minus: -0.075319, plus: 0.075319}
+      label: stat
+    - asymerror: {minus: -2.3541, plus: 2.3541}
+      label: syst
+    value: 31.438
+- header: {name: SHERPA integrated fiducial cross section, units: pb}
+  qualifiers:
+  - {name: Custom Rivet identifier, value: yy_xs_SHERPA}
+  values:
+  - errors:
+    - asymerror: {minus: -0.0081812, plus: 0.0081812}
+      label: stat_unc
+    - asymerror: {minus: -0.76599, plus: 0.53357}
+      label: alpha_s_unc
+    - asymerror: {minus: -5.5759, plus: 7.7079}
+      label: scale_unc
+    - asymerror: {minus: -0.56921, plus: 0.56921}
+      label: pdf_unc
+    value: 33.16
+- header: {name: LO integrated fiducial cross section, units: pb}
+  qualifiers:
+  - {name: Custom Rivet identifier, value: yy_xs_LO}
+  values:
+  - errors:
+    - asymerror: {minus: -6.8379e-05, plus: 6.8379e-05}
+      label: stat_unc
+    - asymerror: {minus: -0.027632, plus: 0.021912}
+      label: alpha_s_unc
+    - asymerror: {minus: -0.53316, plus: 0.48074}
+      label: scale_unc
+    value: 5.3336
+- header: {name: NLO integrated fiducial cross section, units: pb}
+  qualifiers:
+  - {name: Custom Rivet identifier, value: yy_xs_NLO}
+  values:
+  - errors:
+    - asymerror: {minus: -0.00054182, plus: 0.00054182}
+      label: stat_unc
+    - asymerror: {minus: -0.15104, plus: 0.093522}
+      label: alpha_s_unc
+    - asymerror: {minus: -1.3167, plus: 1.6208}
+      label: scale_unc
+    value: 19.614
+- header: {name: NNLO integrated fiducial cross section, units: pb}
+  qualifiers:
+  - {name: Custom Rivet identifier, value: yy_xs_NNLO}
+  values:
+  - errors:
+    - asymerror: {minus: -0.013628, plus: 0.013628}
+      label: stat_unc
+    - asymerror: {minus: -0.3322, plus: 0.22118}
+      label: alpha_s_unc
+    - asymerror: {minus: -1.9823, plus: 2.4009}
+      label: scale_unc
+    value: 29.705
+- header: {name: DIPHOX integrated fiducial cross section, units: pb}
+  qualifiers:
+  - {name: Custom Rivet identifier, value: yy_xs_DIPHOX}
+  values:
+  - errors:
+    - asymerror: {minus: -2.9195, plus: 3.2397}
+      label: scale_unc
+    - asymerror: {minus: -0.14617, plus: 0.16505}
+      label: mu_frag_unc
+    value: 20.838
+independent_variables: []

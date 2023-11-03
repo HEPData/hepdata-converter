@@ -33,12 +33,13 @@ alternative output formats via the web interface.
 
 To install this package locally, you first need to install `YODA <https://yoda.hepforge.org>`_ and
 `ROOT <https://root.cern.ch>`_ (including `PyROOT <https://root.cern/manual/python/>`_).  Check that you can
-``import yoda`` and ``import ROOT`` from Python.  You might want to install into a dedicated virtual
-environment:
+``import yoda`` and ``import ROOT`` from Python.  You might want to install into a dedicated `virtual environment
+<https://docs.python.org/3/tutorial/venv.html>`_:
 
 .. code-block:: console
 
-    $ mkvirtualenv hepdata-converter
+    $ python3 -m venv hepdata-converter
+    $ source hepdata-converter/bin/activate
     (hepdata-converter)$ pip install hepdata-converter
 
 This will install the latest released version from `PyPI <https://pypi.python.org/pypi/hepdata-converter>`_.
@@ -52,16 +53,29 @@ Developers might want to instead install the project directly from
 
 .. code-block:: console
 
-    $ workon hepdata-converter
-    (hepdata-converter)$ git clone https://github.com/HEPData/hepdata-converter
-    (hepdata-converter)$ cd hepdata-converter
-    (hepdata-converter)$ pip install -e .
+    $ git clone https://github.com/HEPData/hepdata-converter
+    $ cd hepdata-converter
+    $ python3 -m venv venv
+    $ source venv/bin/activate
+    (venv)$ pip install -e '.[tests]'
 
 Developers can then run the tests with the following command:
 
 .. code:: bash
 
     python -m unittest discover hepdata_converter/testsuite 'test_*'
+
+The documentation can be built locally in the virtual environment using Sphinx:
+
+.. code:: console
+
+    (venv)$ pip install -e '.[docs]'
+    (venv)$ cd docs
+    (venv)$ make html
+
+Then view the output by opening a web browser at ``_build/html/index.html``.
+Developers should also check that they can successfully build other formats using ``make latexpdf`` and ``make epub``.
+All three formats will be built by *Read the Docs* for the ``main`` branch on GitHub.
 
 
 Docker
@@ -80,9 +94,9 @@ The ``hepdata-converter`` package can be installed inside the Docker container:
 
 .. code-block:: console
 
-    root@617be04cbab5:/# pip3 install --ignore-installed hepdata-converter
+    root@617be04cbab5:/# pip install hepdata-converter
     root@617be04cbab5:/# hepdata-converter -h
-    root@617be04cbab5:/# python3 -c 'import hepdata_converter'
+    root@617be04cbab5:/# python -c 'import hepdata_converter'
 
 Note that the Docker container will be automatically removed when it exits (if running with the ``--rm`` option).  The
 Python module or CLI can then be used as described in :doc:`Usage <usage>`.  Input and output files can be moved
@@ -105,7 +119,7 @@ mount the current directory of the local filesystem when running the Docker cont
     $ git clone https://github.com/HEPData/hepdata-converter
     $ cd hepdata-converter
     $ docker run -v $PWD:$PWD -w $PWD --rm -it hepdata/hepdata-converter /bin/bash
-    root@2c22e88402d2:/hepdata-converter# python3 -m unittest discover hepdata_converter/testsuite 'test_*'
-    root@2c22e88402d2:/hepdata-converter# pip3 install -e .
+    root@2c22e88402d2:/hepdata-converter# pip install -e '.[tests]'
     root@2c22e88402d2:/hepdata-converter# hepdata-converter -h
-    root@2c22e88402d2:/hepdata-converter# python3 -c 'import hepdata_converter'
+    root@2c22e88402d2:/hepdata-converter# python -c 'import hepdata_converter'
+    root@2c22e88402d2:/hepdata-converter# python -m unittest discover hepdata_converter/testsuite 'test_*'

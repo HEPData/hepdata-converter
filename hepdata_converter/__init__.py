@@ -9,7 +9,7 @@ from .writers import Writer
 
 def convert(input, output=None, options={}):
     """Converts a supported ``input_format`` (*oldhepdata*, *yaml*)
-    to a supported ``output_format`` (*csv*, *root*, *yaml*, *yoda*).
+    to a supported ``output_format`` (*csv*, *root*, *yaml*, *yoda*, *yoda1*).
 
     :param input: location of input file for *oldhepdata* format or input directory for *yaml* format
     :param output: location of output directory to which converted files will be written

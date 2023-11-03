@@ -26,7 +26,7 @@ Usage
 =====
 
 The library exposes a single function ``convert`` which enables conversion from different input formats
-(``oldhepdata``, ``yaml``) to different output formats (``csv``, ``root``, ``yaml``, ``yoda``), by using a simple in-memory
+(``oldhepdata``, ``yaml``) to different output formats (``csv``, ``root``, ``yaml``, ``yoda``, ``yoda1``), by using a simple in-memory
 intermediary format.
 
 
