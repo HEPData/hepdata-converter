@@ -65,6 +65,18 @@ Developers can then run the tests with the following command:
 
     python -m unittest discover hepdata_converter/testsuite 'test_*'
 
+The documentation can be built locally in the virtual environment using Sphinx:
+
+.. code:: console
+
+    (venv)$ pip install -e '.[docs]'
+    (venv)$ cd docs
+    (venv)$ make html
+
+Then view the output by opening a web browser at ``_build/html/index.html``.
+Developers should also check that they can successfully build other formats using ``make latexpdf`` and ``make epub``.
+All three formats will be built by *Read the Docs* for the ``main`` branch on GitHub.
+
 
 Docker
 ------
