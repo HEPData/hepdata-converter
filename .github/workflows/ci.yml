@@ -52,7 +52,6 @@ jobs:
         DOCKER_IMAGE: hepdata/hepdata-converter:latest
       run: |
         export CURRENT_PATH=`pwd`
-        docker run -v $CURRENT_PATH:$CURRENT_PATH $DOCKER_IMAGE /bin/bash -c "cd $CURRENT_PATH && pip install wheel"
-        docker run -v $CURRENT_PATH:$CURRENT_PATH $DOCKER_IMAGE /bin/bash -c "cd $CURRENT_PATH && python setup.py sdist bdist_wheel"
+        docker run -v $CURRENT_PATH:$CURRENT_PATH $DOCKER_IMAGE /bin/bash -c "cd $CURRENT_PATH && pip install wheel && python setup.py sdist bdist_wheel"
     - name: Publish distribution to PyPI
       uses: pypa/gh-action-pypi-publish@release/v1
