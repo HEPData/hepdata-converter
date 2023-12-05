@@ -42,13 +42,14 @@ class EstimateYodaClass(ObjectWrapper):
             return
         errs = self.err_breakdown[idx]
         nSources = len(errs.keys())
-        for source in errs:
+        for source, vals in errs.items():
+            if not vals:  continue
             label = source
             if label.upper() == "TOTAL" or \
                 (nSources == 1 and source == 'error'):
                 label = '' # total uncertainty
-            errUp = errs[source]['up']
-            errDn = errs[source]['dn']
+            errUp = vals['up']
+            errDn = vals['dn']
             estimate.setErr([errDn, errUp], label)
 
     def _create_estimate(self):
