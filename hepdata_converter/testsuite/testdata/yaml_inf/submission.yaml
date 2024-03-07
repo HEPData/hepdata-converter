@@ -1,0 +1,52 @@
+---
+additional_resources:
+- description: Created with hepdata_lib 0.14.0
+  location: https://doi.org/10.5281/zenodo.1217998
+- description: Webpage with all figures and tables
+  location: https://cms-results.web.cern.ch/cms-results/public-results/publications/EXO-22-015/
+- description: Example Pythia8 card for signal model
+  location: cards.tar.gz
+comment: A search for emerging jets produced in proton-proton collisions at a center-of-mass
+  energy of $13\,\text{TeV}$ is performed using data collected by the CMS experiment,
+  corresponding to an integrated luminosity of $138\,\text{fb}^{-1}$. This search
+  examines a hypothetical dark QCD sector that couples to the standard model (SM)
+  through a scalar mediator. The scalar mediator decays into a standard model quark
+  and a dark sector quark. As the dark sector quark showers and hadronizes, it produces
+  long-lived dark mesons that subsequently decay into SM particles, resulting in a
+  jet with multiple displaced vertices, known as an emerging jet. This search looks
+  for pair production of the scalar mediators at the LHC, yielding events with two
+  SM jets and two emerging jets. The results are interpreted using two dark sector
+  models and exclude mediator masses up to $1800\,\text{GeV}$ for an unflavored dark
+  QCD model, and up to $1950\,\text{GeV}$ for a flavored-aligned dark QCD model.
+data_license:
+  description: The content can be shared and adapted but you must             give
+    appropriate credit and cannot restrict access to others.
+  name: cc-by-4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+related_to_hepdata_records: []
+---
+additional_resources:
+- description: Image file
+  location: Figure-aux_001.png
+- description: Thumbnail image file
+  location: thumb_Figure-aux_001.png
+data_file: figure-aux_001.yaml
+description: Distribution of event $H_\mathrm{T}$ of CMS data, SM multijet MC events,
+  and various signal samples. Events are required to pass the trigger requirements
+  and also have 4 jets with $p_\mathrm{T}>100$GeV. The distribution from various processes
+  have their total count normalized to 1.
+keywords:
+- name: reactions
+  values:
+  - P P --> XX --> Qd Qd q q
+- name: cmenergies
+  values:
+  - 13000.0
+- name: phrases
+  values:
+  - LLP
+  - Long-Lived
+  - Emerging Jets
+location: Example location
+name: Figure-aux_001
+related_to_table_dois: []
