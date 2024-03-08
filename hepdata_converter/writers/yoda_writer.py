@@ -153,7 +153,8 @@ class EstimateYodaClass(ObjectWrapper):
             if idx not in global_indices:
                 global_indices.append(idx)
                 # construct Estimate
-                rtn.bin(idx).setVal(self.yval[i])
+                y = abs(self.yval[i]) if math.isnan(self.yval[i]) else self.yval[i]
+                rtn.bin(idx).setVal(y)
                 self._set_error_breakdown(i, rtn.bin(idx))
         del global_indices
         return rtn
