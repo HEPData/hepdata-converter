@@ -49,7 +49,8 @@ class ScatterYodaClass(ObjectWrapper):
                 err_dn.append(self.xerr_minus[dim_i][i])
                 err_up.append(self.xerr_plus[dim_i][i])
             if skipPoint: continue
-            vals.append(self.yval[i])
+            y = abs(self.yval[i]) if math.isnan(self.yval[i]) else self.yval[i]
+            vals.append(y)
             err_dn.append(self.yerr_minus[i])
             err_up.append(self.yerr_plus[i])
             args = [ vals, err_dn, err_up ]
