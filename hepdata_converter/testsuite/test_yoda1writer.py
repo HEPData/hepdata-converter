@@ -36,7 +36,7 @@ class YODA1WriterTestSuite(WriterTestSuite):
 
     @insert_path('yaml_inf')
     @insert_data_as_file('yoda1/with_overflows.yoda')
-    def test_parse_no_dependent(self, yaml_simple_path, yoda_template):
+    def test_parse_with_overflows(self, yaml_simple_path, yoda_template):
         output_file_path = os.path.join(self.current_tmp, 'datafile.yoda')
         hepdata_converter.convert(yaml_simple_path, output_file_path,
                                   options={'output_format': 'yoda1',
