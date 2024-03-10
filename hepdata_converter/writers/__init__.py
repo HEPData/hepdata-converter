@@ -6,6 +6,7 @@ from hepdata_converter.common import GetConcreteSubclassMixin, OptionInitMixin
 __all__ = []
 
 import abc
+from importlib.util import module_from_spec
 
 
 class Writer(GetConcreteSubclassMixin, OptionInitMixin, metaclass=abc.ABCMeta):
@@ -36,7 +37,9 @@ class Writer(GetConcreteSubclassMixin, OptionInitMixin, metaclass=abc.ABCMeta):
 
 # import all packages in the parsers package, so that Writer.get_specific_writer will recognise them
 for loader, name, is_pkg in pkgutil.walk_packages(__path__):
-    module = loader.find_module(name).load_module(name)
+    spec = loader.find_spec(name)
+    module = module_from_spec(spec)
+    spec.loader.exec_module(module)
 
     for name, value in inspect.getmembers(module):
         if name.startswith('__'):
