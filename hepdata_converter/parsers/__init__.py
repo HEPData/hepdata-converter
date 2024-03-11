@@ -7,6 +7,7 @@ __all__ = []
 
 import pkgutil
 import inspect
+from importlib.util import module_from_spec
 
 
 class BadFormat(Exception):
@@ -175,7 +176,9 @@ class Parser(GetConcreteSubclassMixin, OptionInitMixin, metaclass=abc.ABCMeta):
 
 # import all packages in the parsers package, so that Parser.get_specific_parser will recognise them
 for loader, name, is_pkg in pkgutil.walk_packages(__path__):
-    module = loader.find_module(name).load_module(name)
+    spec = loader.find_spec(name)
+    module = module_from_spec(spec)
+    spec.loader.exec_module(module)
 
     for name, value in inspect.getmembers(module):
         if name.startswith('__'):
