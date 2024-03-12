@@ -83,6 +83,8 @@ class EstimateYodaClass(ObjectWrapper):
                     v = float(self.xval[dim_i][i])
                     m = float(self.xerr_minus[dim_i][i])
                     p = float(self.xerr_plus[dim_i][i])
+                    if not math.isfinite(v):
+                        continue
                     lo = v - m
                     hi = v + p
                     if dim_i in visRange:
@@ -134,7 +136,12 @@ class EstimateYodaClass(ObjectWrapper):
                 m = self.xerr_minus[dim_i][i]
                 p = self.xerr_plus[dim_i][i]
                 if isCAxis[dim_i]:
-                    edges.append(float(v))
+                    v = float(v)
+                    if not math.isfinite(v):
+                        lo = float(self.independent_variable_map[dim_i]['values'][i]['low'])
+                        hi = float(self.independent_variable_map[dim_i]['values'][i]['high'])
+                        v = hi - 0.5 if math.isinf(lo) else lo + 0.5
+                    edges.append(v)
                 elif isIntAxis[dim_i]:
                     edges.append(int(v))
                 else:
@@ -146,7 +153,8 @@ class EstimateYodaClass(ObjectWrapper):
             if idx not in global_indices:
                 global_indices.append(idx)
                 # construct Estimate
-                rtn.bin(idx).setVal(self.yval[i])
+                y = abs(self.yval[i]) if math.isnan(self.yval[i]) else self.yval[i]
+                rtn.bin(idx).setVal(y)
                 self._set_error_breakdown(i, rtn.bin(idx))
         del global_indices
         return rtn

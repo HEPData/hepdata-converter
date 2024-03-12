@@ -1,6 +1,6 @@
 from hepdata_converter.common import Option
 from hepdata_converter.writers.array_writer import ArrayWriter, ObjectWrapper, ObjectFactory
-import yoda, yaml
+import yoda, yaml, math
 
 
 class ScatterYodaClass(ObjectWrapper):
@@ -39,12 +39,18 @@ class ScatterYodaClass(ObjectWrapper):
                     too_many_y_values = True
             if too_many_y_values: break
 
+            skipPoint = False
             vals = []; err_dn = []; err_up = []
             for dim_i in range(self.dim):
+                if not math.isfinite(self.xval[dim_i][i]):
+                    skipPoint = True
+                    break
                 vals.append(self.xval[dim_i][i])
                 err_dn.append(self.xerr_minus[dim_i][i])
                 err_up.append(self.xerr_plus[dim_i][i])
-            vals.append(self.yval[i])
+            if skipPoint: continue
+            y = abs(self.yval[i]) if math.isnan(self.yval[i]) else self.yval[i]
+            vals.append(y)
             err_dn.append(self.yerr_minus[i])
             err_up.append(self.yerr_plus[i])
             args = [ vals, err_dn, err_up ]

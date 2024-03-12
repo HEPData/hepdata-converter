@@ -1,0 +1,121 @@
+dependent_variables:
+- header:
+    name: data
+  values:
+  - errors:
+    - asymerror:
+        minus: -0.00021168
+        plus: 0.00021174
+      label: statistical
+    value: 0.67909
+  - errors:
+    - asymerror:
+        minus: -6.4995e-05
+        plus: 6.5062e-05
+      label: statistical
+    value: 0.064024
+  - errors:
+    - asymerror:
+        minus: -6.4099e-05
+        plus: 6.4165e-05
+      label: statistical
+    value: 0.06227
+  - errors:
+    - asymerror:
+        minus: -6.2574e-05
+        plus: 6.264e-05
+      label: statistical
+    value: 0.059342
+  - errors:
+    - asymerror:
+        minus: -6.0748e-05
+        plus: 6.0814e-05
+      label: statistical
+    value: 0.055929
+  - errors:
+    - asymerror:
+        minus: -5.8675e-05
+        plus: 5.8741e-05
+      label: statistical
+    value: 0.052178
+  - errors:
+    - asymerror:
+        minus: -5.658e-05
+        plus: 5.6646e-05
+      label: statistical
+    value: 0.048517
+  - errors:
+    - asymerror:
+        minus: -5.4593e-05
+        plus: 5.4659e-05
+      label: statistical
+    value: 0.045169
+  - errors:
+    - asymerror:
+        minus: -5.2581e-05
+        plus: 5.2647e-05
+      label: statistical
+    value: 0.041901
+  - errors:
+    - asymerror:
+        minus: -5.0612e-05
+        plus: 5.0678e-05
+      label: statistical
+    value: 0.038823
+  - errors:
+    - asymerror:
+        minus: -4.8815e-05
+        plus: 4.8881e-05
+      label: statistical
+    value: 0.036114
+  - errors:
+    - asymerror:
+        minus: -4.7028e-05
+        plus: 4.7094e-05
+      label: statistical
+    value: 0.033519
+- header:
+    name: $m_{{X}_\mathrm{dark}}$ = 1600 GeV, $m_{{\pi}_\mathrm{dark}}$ = 20 GeV,
+      $\kappa$ = 0.4
+  values:
+  - value: .nan
+  - value: .nan
+  - value: .nan
+  - value: .nan
+  - value: .nan
+  - value: .nan
+  - value: .nan
+  - value: .nan
+  - value: .nan
+  - value: .nan
+  - value: .nan
+  - value: .nan
+independent_variables:
+- header:
+    name: Event $H_\mathrm{T}$
+    units: GeV
+  values:
+  - high: 1200.0
+    low: -.inf
+  - high: 1220.0
+    low: 1200.0
+  - high: 1240.0
+    low: 1220.0
+  - high: 1260.0
+    low: 1240.0
+  - high: 1280.0
+    low: 1260.0
+  - high: 1300.0
+    low: 1280.0
+  - high: 1320.0
+    low: 1300.0
+  - high: 1340.0
+    low: 1320.0
+  - high: 1360.0
+    low: 1340.0
+  - high: 1380.0
+    low: 1360.0
+  - high: 1400.0
+    low: 1380.0
+  - high: .inf
+    low: 1400.0

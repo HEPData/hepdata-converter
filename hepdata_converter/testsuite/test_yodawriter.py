@@ -65,12 +65,25 @@ class YODAWriterTestSuite(WriterTestSuite):
 
     @insert_path('yaml_no_independent')
     @insert_data_as_file('yoda/no_independent.yoda')
-    def test_parse_no_dependent(self, yaml_simple_path, yoda_template):
+    def test_parse_no_independent(self, yaml_simple_path, yoda_template):
         output_file_path = os.path.join(self.current_tmp, 'datafile.yoda')
         hepdata_converter.convert(yaml_simple_path, output_file_path,
                                   options={'output_format': 'yoda',
                                            'validator_schema_version': '0.1.0',
                                            'rivet_analysis_name': 'ATLAS_2021_I1887997'})
+
+        self.assertNotEqual(os.stat(output_file_path).st_size, 0, 'output yoda file is empty')
+        with open(output_file_path, 'r') as f:
+            self.assertMultiLineAlmostEqual(f, yoda_template)
+
+    @insert_path('yaml_inf')
+    @insert_data_as_file('yoda/with_overflows.yoda')
+    def test_parse_with_overflows(self, yaml_simple_path, yoda_template):
+        output_file_path = os.path.join(self.current_tmp, 'datafile.yoda')
+        hepdata_converter.convert(yaml_simple_path, output_file_path,
+                                  options={'output_format': 'yoda',
+                                           'validator_schema_version': '0.1.0',
+                                           'rivet_analysis_name': 'OVERFLOW_TEST'})
 
         self.assertNotEqual(os.stat(output_file_path).st_size, 0, 'output yoda file is empty')
         with open(output_file_path, 'r') as f:
