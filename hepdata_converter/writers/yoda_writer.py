@@ -103,7 +103,7 @@ class EstimateYodaClass(ObjectWrapper):
                     v = self.xval[dim_i][i]
                     m = self.xerr_minus[dim_i][i]
                     p = self.xerr_plus[dim_i][i]
-                    edge = '{0} - {1}'.format(v-m, v+p) if m and p else str(v)
+                    edge = '{0} - {1}'.format(v-m, v+p) if m and p else str(v).replace('\n', ' ')
                     if edge not in thisaxis:
                         thisaxis.append(edge)
             edges.append(sorted(thisaxis) if isCAxis[-1] else thisaxis)
@@ -145,7 +145,7 @@ class EstimateYodaClass(ObjectWrapper):
                 elif isIntAxis[dim_i]:
                     edges.append(int(v))
                 else:
-                    newedge = '{0} - {1}'.format(v-m, v+p) if m and p else str(v)
+                    newedge = '{0} - {1}'.format(v-m, v+p) if m and p else str(v).replace('\n', ' ')
                     edges.append(newedge)
             # calculate global index
             idx = rtn.indexAt(*edges)
