@@ -207,42 +207,34 @@ class YODA(ArrayWriter):
     def __init__(self, *args, **kwargs):
         super(YODA, self).__init__(*args, **kwargs)
         self.extension = 'yoda'
+        self.write_func = yoda.core.writeYODA
 
-    def _prepare_outputs(self, data_out, outputs):
-        if isinstance(data_out, str):
-            self.file_emulation = True
-            outputs.append(open(data_out, 'w'))
-        # multiple tables - require directory
-        else:  # assume it's a file like object
-            self.file_emulation = True
-            outputs.append(data_out)
-
-    def _write_table(self, data_out, table):
+    def _write_table(self, table):
         table_num = str(table.index)
         table_ident = 'd' + table_num.zfill(2)
         res = _pattern_check(table_ident, self.rivet_ref_match, self.rivet_ref_unmatch)
-        if not res:
-            return
-        if self.hepdata_doi:
-            table_doi = 'doi:' + self.hepdata_doi + '/t' + table_num
-        else:
-            table_doi = ('"'+table.name+'"').encode('unicode_escape')
-        f = ObjectFactory(self.class_list, table.independent_variables, table.dependent_variables)
-        for idep, estimate in enumerate(f.get_next_object()):
-            if estimate is None:
-                continue
-            rivet_identifier = table_ident + '-x01-y' + str(idep + 1).zfill(2)
-            # Allow the standard Rivet identifier to be overridden by a custom value specified in the qualifiers.
-            if 'qualifiers' in table.dependent_variables[idep]:
-                for qualifier in table.dependent_variables[idep]['qualifiers']:
-                    if qualifier['name'] == 'Custom Rivet identifier':
-                        rivet_identifier = qualifier['value']
-            rivet_path = '/REF/' + self.rivet_analysis_name + '/' + rivet_identifier
-            estimate.setTitle(table_doi)
-            estimate.setPath(rivet_path)
-            estimate.setAnnotation('IsRef', '1')
-            yoda.core.writeYODA(estimate, data_out)
-            data_out.write('\n')
+        estimates = []
+        if res:
+            if self.hepdata_doi:
+                table_doi = 'doi:' + self.hepdata_doi + '/t' + table_num
+            else:
+                table_doi = ('"'+table.name+'"').encode('unicode_escape')
+            f = ObjectFactory(self.class_list, table.independent_variables, table.dependent_variables)
+            for idep, estimate in enumerate(f.get_next_object()):
+                if estimate is None:
+                    continue
+                rivet_identifier = table_ident + '-x01-y' + str(idep + 1).zfill(2)
+                # Allow the standard Rivet identifier to be overridden by a custom value specified in the qualifiers.
+                if 'qualifiers' in table.dependent_variables[idep]:
+                    for qualifier in table.dependent_variables[idep]['qualifiers']:
+                        if qualifier['name'] == 'Custom Rivet identifier':
+                            rivet_identifier = qualifier['value']
+                rivet_path = '/REF/' + self.rivet_analysis_name + '/' + rivet_identifier
+                estimate.setTitle(table_doi)
+                estimate.setPath(rivet_path)
+                estimate.setAnnotation('IsRef', '1')
+                estimates.append(estimate)
+        return estimates
 
     def write(self, data_in, data_out, *args, **kwargs):
         """
@@ -256,15 +248,15 @@ class YODA(ArrayWriter):
         """
         self._get_tables(data_in)
 
-        self.file_emulation = False
-        outputs = []
-        self._prepare_outputs(data_out, outputs)
-        output = outputs[0]
-
+        estimates = []
         for i in range(len(self.tables)):
             table = self.tables[i]
 
-            self._write_table(output, table)
+            estimates += self._write_table(table)
+        self.write_func(estimates, data_out)
 
-        if self.file_emulation:
-            output.close()
+class YODAH5(YODA):
+    def __init__(self, *args, **kwargs):
+        super(YODAH5, self).__init__(*args, **kwargs)
+        self.extension = 'yoda.h5'
+        self.write_func = yoda.core.writeH5

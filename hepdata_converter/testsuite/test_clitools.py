@@ -25,9 +25,9 @@ class CLIToolsTestSuite(WriterTestSuite):
             self.assertMultiLineAlmostEqual(table_csv, f.read())
 
     def test_convert_yaml2yoda(self):
-        hepdata_converter._main(['--input-format', 'yaml', '--output-format', 'csv',
+        hepdata_converter._main(['--input-format', 'yaml', '--output-format', 'yoda',
                                 '--table', 'Table 1',
-                                self.current_tmp, os.path.join(self.current_tmp, 'output.csv')])
+                                self.current_tmp, os.path.join(self.current_tmp, 'output.yoda')])
 
     def test_help(self):
         self.assertRaises(SystemExit, hepdata_converter.main, ['--help'])

@@ -89,3 +89,15 @@ class YODAWriterTestSuite(WriterTestSuite):
         with open(output_file_path, 'r') as f:
             self.assertMultiLineAlmostEqual(f, yoda_template)
 
+    @insert_path('yaml_full')
+    @insert_path('yoda/full.yoda.h5')
+    def test_parse_h5(self, yaml_simple_path, yoda_template):
+        output_file_path = os.path.join(self.current_tmp, 'datafile.yoda.h5')
+        hepdata_converter.convert(yaml_simple_path, output_file_path,
+                                  options={'output_format': 'yoda.h5',
+                                           'validator_schema_version': '0.1.0',
+                                           'hepdata_doi': '10.17182/hepdata.62535.v1',
+                                           'rivet_analysis_name': 'ATLAS_2012_I1203852',
+                                           'rivet_ref_match': 'd01'})
+
+        self.assertEqual(os.stat(output_file_path).st_size, os.stat(yoda_template).st_size, 'output yoda.h5 file has wrong size')
