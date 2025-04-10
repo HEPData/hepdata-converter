@@ -78,8 +78,7 @@ class ROOTWriterTestSuite(WriterTestSuite):
         f_orig.Close()
 
     @insert_path('yaml_full')
-    @insert_path('root/full.root')
-    def test_th1_parse(self, yaml_full_path, full_root_path):
+    def test_th1_parse(self, yaml_full_path):
         output_file_path = os.path.join(self.current_tmp, 'datafile.root')
         hepdata_converter.convert(yaml_full_path, output_file_path,
                                   options={'output_format': 'root',
@@ -97,3 +96,10 @@ class ROOTWriterTestSuite(WriterTestSuite):
                                                'hepdata_doi': '10.17182/hepdata.12345.v1'})
 
             self.assertNotEqual(os.stat(output_file_path).st_size, 0, 'output root file is empty')
+
+    @insert_path('yaml_inf')
+    def test_parse_with_overflows(self, yaml_inf_path):
+        output_file_path = os.path.join(self.current_tmp, 'data-inf.root')
+        hepdata_converter.convert(yaml_inf_path, output_file_path,
+                                  options={'output_format': 'root'})
+        pass

@@ -5,6 +5,7 @@ import ROOT as ROOTModule
 import array
 import tempfile
 import os
+import math
 from ctypes import c_char_p
 from hepdata_converter.writers.utils import error_value_processor
 
@@ -55,31 +56,36 @@ class THFRootClass(ObjectWrapper, metaclass=abc.ABCMeta):
 
         name = "Hist%sD_y%s_e%s" % (self.dim, self.dependent_variable_index + 1, index)
 
-        # order bin values of independent variables
+        # order bin values of independent variables and check if underflow/overflow bins present
         xval_ordered = []
+        underflow = []
+        overflow = []
         for i in range(self.dim):
             xval_ordered.append([])
             xval_ordered[i] = sorted(xval[i])
+            nbinsi = len(xval_ordered[i]) - 1
+            underflow.append(1 if not math.isfinite(xval_ordered[i][0]) else 0)
+            overflow.append(1 if not math.isfinite(xval_ordered[i][nbinsi]) else 0)
 
         if 1 == self.dim:
-            nbinsx = len(xval_ordered[0]) - 1
-            binsx = array.array('d', xval_ordered[0])
+            nbinsx = len(xval_ordered[0]) - 1 - underflow[0] - overflow[0]
+            binsx = array.array('d', xval_ordered[0][underflow[0]:nbinsx+2])
             hist = self.get_hist_classes()[self.dim - 1](self.sanitize_name(name), '', nbinsx, binsx)
 
         if 2 == self.dim:
-            nbinsx = len(xval_ordered[0]) - 1
-            binsx = array.array('d', xval_ordered[0])
-            nbinsy = len(xval_ordered[1]) - 1
-            binsy = array.array('d', xval_ordered[1])
+            nbinsx = len(xval_ordered[0]) - 1 - underflow[0] - overflow[0]
+            binsx = array.array('d', xval_ordered[0][underflow[0]:nbinsx+2])
+            nbinsy = len(xval_ordered[1]) - 1 - underflow[1] - overflow[1]
+            binsy = array.array('d', xval_ordered[1][underflow[1]:nbinsy+2])
             hist = self.get_hist_classes()[self.dim - 1](self.sanitize_name(name), '', nbinsx, binsx, nbinsy, binsy)
 
         if 3 == self.dim:
-            nbinsx = len(xval_ordered[0]) - 1
-            binsx = array.array('d', xval_ordered[0])
-            nbinsy = len(xval_ordered[1]) - 1
-            binsy = array.array('d', xval_ordered[1])
-            nbinsz = len(xval_ordered[2]) - 1
-            binsz = array.array('d', xval_ordered[2])
+            nbinsx = len(xval_ordered[0]) - 1 - underflow[0] - overflow[0]
+            binsx = array.array('d', xval_ordered[0][underflow[0]:nbinsx+2])
+            nbinsy = len(xval_ordered[1]) - 1 - underflow[1] - overflow[1]
+            binsy = array.array('d', xval_ordered[1][underflow[1]:nbinsy+2])
+            nbinsz = len(xval_ordered[2]) - 1 - underflow[2] - overflow[2]
+            binsz = array.array('d', xval_ordered[2][underflow[2]:nbinsz+2])
             hist = self.get_hist_classes()[self.dim - 1](self.sanitize_name(name), '', nbinsx, binsx, nbinsy, binsy, nbinsz, binsz)
 
         for i in range(self.dim):
@@ -105,31 +111,36 @@ class THFRootClass(ObjectWrapper, metaclass=abc.ABCMeta):
         name = "Hist%sD_y%s" % (self.dim, self.dependent_variable_index + 1)
         args = []
 
-        # order bin values of independent variables
+        # order bin values of independent variables and check if underflow/overflow bins present
         xval_ordered = []
+        underflow = []
+        overflow = []
         for i in range(self.dim):
             xval_ordered.append([])
             xval_ordered[i] = sorted(xval[i])
+            nbinsi = len(xval_ordered[i]) - 1
+            underflow.append(1 if not math.isfinite(xval_ordered[i][0]) else 0)
+            overflow.append(1 if not math.isfinite(xval_ordered[i][nbinsi]) else 0)
 
         if 1 == self.dim:
-            nbinsx = len(xval_ordered[0]) - 1
-            binsx = array.array('d', xval_ordered[0])
+            nbinsx = len(xval_ordered[0]) - 1 - underflow[0] - overflow[0]
+            binsx = array.array('d', xval_ordered[0][underflow[0]:nbinsx+2])
             hist = self.get_hist_classes()[self.dim - 1](self.sanitize_name(name), '', nbinsx, binsx)
 
         if 2 == self.dim:
-            nbinsx = len(xval_ordered[0]) - 1
-            binsx = array.array('d', xval_ordered[0])
-            nbinsy = len(xval_ordered[1]) - 1
-            binsy = array.array('d', xval_ordered[1])
+            nbinsx = len(xval_ordered[0]) - 1 - underflow[0] - overflow[0]
+            binsx = array.array('d', xval_ordered[0][underflow[0]:nbinsx+2])
+            nbinsy = len(xval_ordered[1]) - 1 - underflow[1] - overflow[1]
+            binsy = array.array('d', xval_ordered[1][underflow[1]:nbinsy+2])
             hist = self.get_hist_classes()[self.dim - 1](self.sanitize_name(name), '', nbinsx, binsx, nbinsy, binsy)
 
         if 3 == self.dim:
-            nbinsx = len(xval_ordered[0]) - 1
-            binsx = array.array('d', xval_ordered[0])
-            nbinsy = len(xval_ordered[1]) - 1
-            binsy = array.array('d', xval_ordered[1])
-            nbinsz = len(xval_ordered[2]) - 1
-            binsz = array.array('d', xval_ordered[2])
+            nbinsx = len(xval_ordered[0]) - 1 - underflow[0] - overflow[0]
+            binsx = array.array('d', xval_ordered[0][underflow[0]:nbinsx+2])
+            nbinsy = len(xval_ordered[1]) - 1 - underflow[1] - overflow[1]
+            binsy = array.array('d', xval_ordered[1][underflow[1]:nbinsy+2])
+            nbinsz = len(xval_ordered[2]) - 1 - underflow[2] - overflow[2]
+            binsz = array.array('d', xval_ordered[2][underflow[2]:nbinsz+2])
             hist = self.get_hist_classes()[self.dim - 1](self.sanitize_name(name), '', nbinsx, binsx, nbinsy, binsy, nbinsz, binsz)
 
         for i in range(self.dim):
@@ -246,6 +257,9 @@ class THFRootClass(ObjectWrapper, metaclass=abc.ABCMeta):
                 if x['high'] not in xval[i]:
                     xval[i].append(x['high'])
 
+        if not any(xval):
+            return []
+
         try:
             hist = self._create_hist(xval)
         except:
@@ -280,7 +294,7 @@ class TGraph2DErrorsClass(ObjectWrapper):
         return False
 
     def create_objects(self):
-        self.calculate_total_errors()
+        self.calculate_total_errors(for_tgraph=True)
 
         # check that errors are symmetric (within a tolerance to allow for numerical rounding)
         tol = 1e-15
@@ -335,7 +349,7 @@ class TGraphAsymmErrorsRootClass(ObjectWrapper):
         return False
 
     def create_objects(self):
-        self.calculate_total_errors()
+        self.calculate_total_errors(for_tgraph=True)
 
         if len(self.xval[0]):
             graph = ROOTModule.TGraphAsymmErrors(len(self.xval[0]),
