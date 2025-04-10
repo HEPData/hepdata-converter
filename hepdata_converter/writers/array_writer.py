@@ -83,7 +83,7 @@ class ObjectWrapper(object, metaclass=abc.ABCMeta):
             return cls(independent_variables_map, dependent_variable, dependent_variable_index).create_objects()
         return []
 
-    def calculate_total_errors(self):
+    def calculate_total_errors(self, for_tgraph=False):
         is_number_list = self.is_number_var(self.dependent_variable)
         for independent_variable in self.independent_variable_map:
             xerr_minus = []
@@ -93,7 +93,7 @@ class ObjectWrapper(object, metaclass=abc.ABCMeta):
             xval = []
             self.xval.append(xval)
             ArrayWriter.calculate_total_errors(independent_variable, is_number_list,
-                                               xerr_minus, xerr_plus, xval)
+                                               xerr_minus, xerr_plus, xval, {}, for_tgraph)
         ArrayWriter.calculate_total_errors(self.dependent_variable, is_number_list,
                                            self.yerr_minus, self.yerr_plus, self.yval, self.err_breakdown)
 
@@ -158,7 +158,7 @@ class ArrayWriter(Writer, metaclass=abc.ABCMeta):
                         break
 
     @staticmethod
-    def calculate_total_errors(variable, is_number_list, min_errs, max_errs, values, err_breakdown={}):
+    def calculate_total_errors(variable, is_number_list, min_errs, max_errs, values, err_breakdown={}, for_tgraph=False):
         i_numeric = -1  # bin number excluding non-numeric y values
         for i, entry in enumerate(variable['values']):
             if not is_number_list[i]:
@@ -209,10 +209,29 @@ class ArrayWriter(Writer, metaclass=abc.ABCMeta):
                     min_errs.append(0.0)
                     max_errs.append(0.0)
             else:
-                middle_val = (entry['high'] - entry['low']) * 0.5 + entry['low']
-                values.append(middle_val)
-                min_errs.append(middle_val - entry['low'])
-                max_errs.append(entry['high'] - middle_val)
+                if entry['low'] == float('-inf'):  # underflow bin
+                    if for_tgraph:  # zero-width bin centred on upper limit
+                        values.append(entry['high'])
+                        min_errs.append(0.0)
+                        max_errs.append(0.0)
+                    else:  # infinite-width bin centred on -inf
+                        values.append(entry['low'])
+                        min_errs.append(float('inf'))
+                        max_errs.append(float('inf'))
+                elif entry['high'] == float('inf'):  # overflow bin
+                    if for_tgraph:  # zero-width bin centred on lower limit
+                        values.append(entry['low'])
+                        min_errs.append(0.0)
+                        max_errs.append(0.0)
+                    else:  # infinite-width bin centred on +inf
+                        values.append(entry['high'])
+                        min_errs.append(float('inf'))
+                        max_errs.append(float('inf'))
+                else:
+                    middle_val = (entry['high'] - entry['low']) * 0.5 + entry['low']
+                    values.append(middle_val)
+                    min_errs.append(middle_val - entry['low'])
+                    max_errs.append(entry['high'] - middle_val)
 
 
     @classmethod
