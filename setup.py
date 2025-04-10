@@ -33,7 +33,7 @@ with open('README.rst', 'rt') as fp:
 setup(
     name='hepdata-converter',
     version=get_version(),
-    install_requires=['hepdata-validator>=0.3.5'],
+    install_requires=['hepdata-validator>=0.3.6'],
     entry_points={
         'console_scripts': [
             'hepdata-converter = hepdata_converter:main',
