@@ -149,7 +149,7 @@ class OldHEPData(Parser):
             return True
 
         # retrieve keyword and its value
-        reg = re.search("^\*(?P<key>[^:#]*)(:\s*(?P<value>.*)\s*)?$", line)
+        reg = re.search(r"^\*(?P<key>[^:#]*)(:\s*(?P<value>.*)\s*)?$", line)
         if reg:
             key = reg.group('key').strip()
             value = reg.group('value')
@@ -255,9 +255,9 @@ class OldHEPData(Parser):
                     single_element = data_entry_elements[i].strip()
 
                     # number patterns copied from old subs.pl parsing script
-                    pmnum1 = '[-+]?[\d]+\.?[\d]*'
-                    pmnum2 = '[-+]?\.[\d]+'
-                    pmnum3 = '[-+]?[\d]+\.?[\d]*\s*[eE]+\s*[+-]?\s*[\d]+'
+                    pmnum1 = r'[-+]?[\d]+\.?[\d]*'
+                    pmnum2 = r'[-+]?\.[\d]+'
+                    pmnum3 = r'[-+]?[\d]+\.?[\d]*\s*[eE]+\s*[+-]?\s*[\d]+'
                     pmnum = '(' + pmnum1 + '|' + pmnum2 + '|' + pmnum3 + ')'
 
                     # implement same regular expression matching as in old subs.pl parsing script
@@ -268,13 +268,13 @@ class OldHEPData(Parser):
                         if r: # "value"
                             single_element = {'value': r.group('value')}
                         else:
-                            r = re.search('^(?P<value>' + pmnum + ')\s*\(\s*BIN\s*=\s*(?P<low>' + pmnum + \
-                                          ')\s+TO\s+(?P<high>' + pmnum + ')\s*\)$', single_element)
+                            r = re.search('^(?P<value>' + pmnum + r')\s*\(\s*BIN\s*=\s*(?P<low>' + pmnum + \
+                                          r')\s+TO\s+(?P<high>' + pmnum + r')\s*\)$', single_element)
                             if r: # "value (BIN=low TO high)"
                                 single_element = {'value': float(r.group('value')),
                                                   'low': float(r.group('low')), 'high': float(r.group('high'))}
                             else:
-                                r = re.search('^(?P<low>' + pmnum + ')\s+TO\s+(?P<high>' + pmnum + ')$',
+                                r = re.search('^(?P<low>' + pmnum + r')\s+TO\s+(?P<high>' + pmnum + ')$',
                                               single_element)
                                 if r: # "low TO high"
                                     single_element = {'low': float(r.group('low')), 'high': float(r.group('high'))}
@@ -299,10 +299,10 @@ class OldHEPData(Parser):
 
                     elif h == 'y': # dependent variable
 
-                        pmnum_pct = pmnum + '(\s*PCT)?' # errors can possibly be given as percentages
+                        pmnum_pct = pmnum + r'(\s*PCT)?' # errors can possibly be given as percentages
 
-                        r = re.search('^(?P<value>' + pmnum + ')\s+(?P<err_p>' + pmnum_pct + '|-)\s*,\s*(?P<err_m>' +
-                                      pmnum_pct + '|-)\s*(?P<err_sys>\(\s*DSYS=[^()]+\s*\))?$', single_element)
+                        r = re.search('^(?P<value>' + pmnum + r')\s+(?P<err_p>' + pmnum_pct + r'|-)\s*,\s*(?P<err_m>' +
+                                      pmnum_pct + r'|-)\s*(?P<err_sys>\(\s*DSYS=[^()]+\s*\))?$', single_element)
                         element = {'errors': []}
                         if r: # asymmetric first error
                             element['value'] = r.group('value').strip()
@@ -322,8 +322,8 @@ class OldHEPData(Parser):
                                 element['errors'] += [{'asymerror': {'plus': err_p, 'minus': err_m}}]
 
                         else:
-                            r = re.search('^(?P<value>' + pmnum + ')\s*(\+-\s*(?P<error>' +
-                                          pmnum_pct + '))?\s*(?P<err_sys>\(\s*DSYS=[^()]+\s*\))?$', single_element)
+                            r = re.search('^(?P<value>' + pmnum + r')\s*(\+-\s*(?P<error>' +
+                                          pmnum_pct + r'))?\s*(?P<err_sys>\(\s*DSYS=[^()]+\s*\))?$', single_element)
                             if r: # symmetric first error
                                 element['value'] = r.group('value').strip()
                                 if r.group('error'):
@@ -346,7 +346,7 @@ class OldHEPData(Parser):
                                 continue
                             error = {}
                             label = 'sys'
-                            r = re.search('^(\+-)?\s*(?P<error>' + pmnum_pct + ')\s*(\:\s*(?P<label>.+))?$', err)
+                            r = re.search(r'^(\+-)?\s*(?P<error>' + pmnum_pct + r')\s*(\:\s*(?P<label>.+))?$', err)
                             if r: # symmetric systematic error
                                 if r.group('label'):
                                     label += ',' + r.group('label')
@@ -355,8 +355,8 @@ class OldHEPData(Parser):
                                 error = {'symerror': error}
 
                             else:
-                                r = re.search('^(?P<err_p>' + pmnum_pct + '|-)\s*,\s*(?P<err_m>' +
-                                              pmnum_pct + '|-)\s*(\:\s*(?P<label>.+))?$', err)
+                                r = re.search('^(?P<err_p>' + pmnum_pct + r'|-)\s*,\s*(?P<err_m>' +
+                                              pmnum_pct + r'|-)\s*(\:\s*(?P<label>.+))?$', err)
                                 if r: # asymmetric systematic error
                                     if r.group('label'):
                                         label += ',' + r.group('label')

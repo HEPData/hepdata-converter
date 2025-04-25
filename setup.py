@@ -33,7 +33,7 @@ with open('README.rst', 'rt') as fp:
 setup(
     name='hepdata-converter',
     version=get_version(),
-    install_requires=['hepdata-validator>=0.3.5'],
+    install_requires=['hepdata-validator>=0.3.6'],
     entry_points={
         'console_scripts': [
             'hepdata-converter = hepdata_converter:main',
@@ -43,7 +43,7 @@ setup(
         'docs': ['Sphinx>=1.4.2', 'mock'],
         'tests': ['coverage>=5.1'],
     },
-    packages=['hepdata_converter', 'hepdata_converter.parsers', 'hepdata_converter.writers', 'hepdata_converter.testsuite'],
+    package_dir = {'': 'hepdata_converter'},
     package_data={'hepdata_converter': get_all_datafiles(package='hepdata_converter/testsuite', path='testdata')},
     include_package_data=True,
     url='https://github.com/HEPData/hepdata-converter',
