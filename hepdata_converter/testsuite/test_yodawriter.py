@@ -4,7 +4,7 @@ import hepdata_converter
 from hepdata_converter.testsuite import insert_data_as_file, insert_path, insert_paths
 from hepdata_converter.testsuite.test_writer import WriterTestSuite
 
-__author__ = 'Michał Szostak'
+__author__ = 'Michał Szostak, Martin Habedank'
 
 
 class YODAWriterTestSuite(WriterTestSuite):

@@ -38,7 +38,7 @@ This Python 3 library provides support for converting:
 * `YAML <https://github.com/HEPData/hepdata-submission>`_ to:
 
   * `ROOT <https://root.cern.ch>`_ (tested with v6.28/04)
-  * `YODA <https://yoda.hepforge.org>`_ (tested with v2.0.3)
+  * `YODA <https://yoda.hepforge.org>`_ (tested with v2.1.0)
   * `CSV <https://en.wikipedia.org/wiki/Comma-separated_values>`_
 
 Documentation: https://hepdata-converter.readthedocs.io
