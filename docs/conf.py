@@ -26,19 +26,13 @@ import os
 
 import sphinx.environment
 
-
-# http://docs.readthedocs.io/en/latest/faq.html#i-get-import-errors-on-libraries-that-depend-on-c-modules
+# https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html#ensuring-the-code-can-be-imported
 import sys
-from mock import Mock as MagicMock
+from pathlib import Path
+sys.path.insert(0, str(Path('..').resolve()))
 
-class Mock(MagicMock):
-    @classmethod
-    def __getattr__(cls, name):
-        return MagicMock()
-
-MOCK_MODULES = ['ROOT', 'yoda']
-sys.modules.update((mod_name, Mock()) for mod_name in MOCK_MODULES)
-
+# https://docs.readthedocs.com/platform/latest/faq.html#why-do-i-get-import-errors-from-libraries-depending-on-c-modules
+autodoc_mock_imports = ['ROOT', 'yoda']
 
 # -- General configuration ------------------------------------------------
 
