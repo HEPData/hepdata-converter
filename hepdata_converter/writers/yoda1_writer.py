@@ -124,6 +124,12 @@ class YODA1(ArrayWriter):
                 for qualifier in table.dependent_variables[idep]['qualifiers']:
                     if qualifier['name'] == 'Custom Rivet identifier':
                         rivet_identifier = qualifier['value']
+                    else:
+                        units = ''
+                        if 'units' in qualifier:
+                            units = ' [%s]' % qualifier['units']
+                        name = qualifier['name'] + units
+                        graph.setAnnotation(name, qualifier['value'])
             rivet_path = '/REF/' + self.rivet_analysis_name + '/' + rivet_identifier
             graph.setTitle(table_doi)
             graph.setPath(rivet_path)
