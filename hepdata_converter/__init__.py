@@ -26,11 +26,8 @@ def convert(input, output=None, options={}):
     input_format = options.get('input_format', 'yaml')
     output_format = options.get('output_format', 'yaml')
 
-    def sanitize_string(s):
-        return s.replace(".", "")
-
-    parser = Parser.get_concrete_class(sanitize_string(input_format))(**options)
-    writer = Writer.get_concrete_class(sanitize_string(output_format))(**options)
+    parser = Parser.get_concrete_class(input_format .replace(".", ""))(**options)
+    writer = Writer.get_concrete_class(output_format.replace(".", ""))(**options)
 
     if not output and not writer.single_file_output:
         raise ValueError("this output_format requires specifying 'output' argument")

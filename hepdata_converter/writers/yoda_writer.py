@@ -213,27 +213,30 @@ class YODA(ArrayWriter):
         table_num = str(table.index)
         table_ident = 'd' + table_num.zfill(2)
         res = _pattern_check(table_ident, self.rivet_ref_match, self.rivet_ref_unmatch)
+
+        if not res:
+            return []
+
         estimates = []
-        if res:
-            if self.hepdata_doi:
-                table_doi = 'doi:' + self.hepdata_doi + '/t' + table_num
-            else:
-                table_doi = ('"'+table.name+'"').encode('unicode_escape')
-            f = ObjectFactory(self.class_list, table.independent_variables, table.dependent_variables)
-            for idep, estimate in enumerate(f.get_next_object()):
-                if estimate is None:
-                    continue
-                rivet_identifier = table_ident + '-x01-y' + str(idep + 1).zfill(2)
-                # Allow the standard Rivet identifier to be overridden by a custom value specified in the qualifiers.
-                if 'qualifiers' in table.dependent_variables[idep]:
-                    for qualifier in table.dependent_variables[idep]['qualifiers']:
-                        if qualifier['name'] == 'Custom Rivet identifier':
-                            rivet_identifier = qualifier['value']
-                rivet_path = '/REF/' + self.rivet_analysis_name + '/' + rivet_identifier
-                estimate.setTitle(table_doi)
-                estimate.setPath(rivet_path)
-                estimate.setAnnotation('IsRef', '1')
-                estimates.append(estimate)
+        if self.hepdata_doi:
+            table_doi = 'doi:' + self.hepdata_doi + '/t' + table_num
+        else:
+            table_doi = ('"'+table.name+'"').encode('unicode_escape')
+        f = ObjectFactory(self.class_list, table.independent_variables, table.dependent_variables)
+        for idep, estimate in enumerate(f.get_next_object()):
+            if estimate is None:
+                continue
+            rivet_identifier = table_ident + '-x01-y' + str(idep + 1).zfill(2)
+            # Allow the standard Rivet identifier to be overridden by a custom value specified in the qualifiers.
+            if 'qualifiers' in table.dependent_variables[idep]:
+                for qualifier in table.dependent_variables[idep]['qualifiers']:
+                    if qualifier['name'] == 'Custom Rivet identifier':
+                        rivet_identifier = qualifier['value']
+            rivet_path = '/REF/' + self.rivet_analysis_name + '/' + rivet_identifier
+            estimate.setTitle(table_doi)
+            estimate.setPath(rivet_path)
+            estimate.setAnnotation('IsRef', '1')
+            estimates.append(estimate)
         return estimates
 
     def write(self, data_in, data_out, *args, **kwargs):
