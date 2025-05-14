@@ -9,7 +9,7 @@ from .writers import Writer
 
 def convert(input, output=None, options={}):
     """Converts a supported ``input_format`` (*oldhepdata*, *yaml*)
-    to a supported ``output_format`` (*csv*, *root*, *yaml*, *yoda*, *yoda1*).
+    to a supported ``output_format`` (*csv*, *root*, *yaml*, *yoda*, *yoda1*, *yoda.h5*).
 
     :param input: location of input file for *oldhepdata* format or input directory for *yaml* format
     :param output: location of output directory to which converted files will be written
@@ -26,8 +26,8 @@ def convert(input, output=None, options={}):
     input_format = options.get('input_format', 'yaml')
     output_format = options.get('output_format', 'yaml')
 
-    parser = Parser.get_concrete_class(input_format)(**options)
-    writer = Writer.get_concrete_class(output_format)(**options)
+    parser = Parser.get_concrete_class(input_format .replace(".", ""))(**options)
+    writer = Writer.get_concrete_class(output_format.replace(".", ""))(**options)
 
     if not output and not writer.single_file_output:
         raise ValueError("this output_format requires specifying 'output' argument")
