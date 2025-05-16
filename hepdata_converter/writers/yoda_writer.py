@@ -202,6 +202,9 @@ class YODA(ArrayWriter):
         options['rivet_ref_unmatch'] = Option('rivet-ref-unmatch', type=str, default=None,
                                               required = False, variable_mapping='rivet_ref_unmatch',
                                               help='Regex to unmatch/deselect HepData identifiers')
+        options['rivet_keep_qualifiers'] = Option('rivet-keep-qualifiers', type=bool, default=False,
+                                                  required = False, variable_mapping='rivet_keep_qualifiers',
+                                                  help='Toggle to keep metadata qualifiers as annotations')
         return options
 
     def __init__(self, *args, **kwargs):
@@ -237,7 +240,7 @@ class YODA(ArrayWriter):
                 for qualifier in table.dependent_variables[idep]['qualifiers']:
                     if qualifier['name'] == 'Custom Rivet identifier':
                         rivet_identifier = qualifier['value']
-                    else:
+                    elif self.rivet_keep_qualifiers:
                         units = ''
                         if 'units' in qualifier:
                             units = ' [%s]' % qualifier['units']
