@@ -16,7 +16,7 @@ class YODAWriterTestSuite(WriterTestSuite):
                                   options={'output_format': 'yoda',
                                            'validator_schema_version': '0.1.0',
                                            'hepdata_doi': '10.17182/hepdata.62535.v1',
-                                           'rivet_keep_qualifiers' : True,
+                                           'yoda_keep_qualifiers' : True,
                                            'rivet_analysis_name': 'ATLAS_2012_I1203852'})
 
         self.assertNotEqual(os.stat(output_file_path).st_size, 0, 'output yoda file is empty')
@@ -43,7 +43,7 @@ class YODAWriterTestSuite(WriterTestSuite):
                                            'validator_schema_version': '0.1.0',
                                            'hepdata_doi': '10.17182/hepdata.62535.v1',
                                            'rivet_analysis_name': 'ATLAS_2012_I1203852',
-                                           'rivet_keep_qualifiers' : True,
+                                           'yoda_keep_qualifiers' : True,
                                            'rivet_ref_match': 'd01'})
 
         self.assertNotEqual(os.stat(output_file_path).st_size, 0, 'output yoda file is empty')
@@ -59,7 +59,7 @@ class YODAWriterTestSuite(WriterTestSuite):
                                            'validator_schema_version': '0.1.0',
                                            'hepdata_doi': '10.17182/hepdata.62535.v1',
                                            'rivet_analysis_name': 'ATLAS_2012_I1203852',
-                                           'rivet_keep_qualifiers' : True,
+                                           'yoda_keep_qualifiers' : True,
                                            'rivet_ref_unmatch': 'd07'})
 
         self.assertNotEqual(os.stat(output_file_path).st_size, 0, 'output yoda file is empty')
