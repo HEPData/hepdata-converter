@@ -196,12 +196,15 @@ class YODA(ArrayWriter):
         options['rivet_analysis_name'] = Option('rivet-analysis-name', 'r', type=str, default='RIVET_ANALYSIS_NAME',
                                                 required=False, variable_mapping='rivet_analysis_name',
                                                 help='Rivet analysis name, e.g. "ATLAS_2016_I1424838"')
-        options['rivet_ref_match'] = Option('rivet-ref-match', type=str, default=None,
+        options['rivet_ref_match'] = Option('rivet-ref-match', 'm', type=str, default=None,
                                             required = False, variable_mapping='rivet_ref_match',
                                             help='Regex to match/select HepData identifiers')
-        options['rivet_ref_unmatch'] = Option('rivet-ref-unmatch', type=str, default=None,
+        options['rivet_ref_unmatch'] = Option('rivet-ref-unmatch', 'u', type=str, default=None,
                                               required = False, variable_mapping='rivet_ref_unmatch',
                                               help='Regex to unmatch/deselect HepData identifiers')
+        options['yoda_keep_qualifiers'] = Option('yoda-keep-qualifiers', 'q', type=bool, default=False,
+                                                  required = False, variable_mapping='yoda_keep_qualifiers',
+                                                  help='Toggle to keep metadata qualifiers as annotations')
         return options
 
     def __init__(self, *args, **kwargs):
@@ -232,6 +235,12 @@ class YODA(ArrayWriter):
                 for qualifier in table.dependent_variables[idep]['qualifiers']:
                     if qualifier['name'] == 'Custom Rivet identifier':
                         rivet_identifier = qualifier['value']
+                    elif self.yoda_keep_qualifiers:
+                        units = ''
+                        if 'units' in qualifier:
+                            units = ' [%s]' % qualifier['units']
+                        name = qualifier['name'] + units
+                        estimate.setAnnotation(name, qualifier['value'])
             rivet_path = '/REF/' + self.rivet_analysis_name + '/' + rivet_identifier
             estimate.setTitle(table_doi)
             estimate.setPath(rivet_path)

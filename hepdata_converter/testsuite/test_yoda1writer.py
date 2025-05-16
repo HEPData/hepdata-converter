@@ -16,6 +16,7 @@ class YODA1WriterTestSuite(WriterTestSuite):
                                   options={'output_format': 'yoda1',
                                            'validator_schema_version': '0.1.0',
                                            'hepdata_doi': '10.17182/hepdata.62535.v1',
+                                           'yoda_keep_qualifiers' : True,
                                            'rivet_analysis_name': 'ATLAS_2012_I1203852'})
 
         self.assertNotEqual(os.stat(output_file_path).st_size, 0, 'output yoda file is empty')
