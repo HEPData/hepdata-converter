@@ -196,10 +196,10 @@ class YODA(ArrayWriter):
         options['rivet_analysis_name'] = Option('rivet-analysis-name', 'r', type=str, default='RIVET_ANALYSIS_NAME',
                                                 required=False, variable_mapping='rivet_analysis_name',
                                                 help='Rivet analysis name, e.g. "ATLAS_2016_I1424838"')
-        options['rivet_ref_match'] = Option('rivet-ref-match', type=str, default=None,
+        options['rivet_ref_match'] = Option('rivet-ref-match', 'm', type=str, default=None,
                                             required = False, variable_mapping='rivet_ref_match',
                                             help='Regex to match/select HepData identifiers')
-        options['rivet_ref_unmatch'] = Option('rivet-ref-unmatch', type=str, default=None,
+        options['rivet_ref_unmatch'] = Option('rivet-ref-unmatch', 'u', type=str, default=None,
                                               required = False, variable_mapping='rivet_ref_unmatch',
                                               help='Regex to unmatch/deselect HepData identifiers')
         options['yoda_keep_qualifiers'] = Option('yoda-keep-qualifiers', 'q', type=bool, default=False,
