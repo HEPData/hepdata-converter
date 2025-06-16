@@ -43,7 +43,7 @@ setup(
         'docs': ['Sphinx>=1.4.2', 'mock'],
         'tests': ['coverage>=5.1'],
     },
-    package_dir = {'': 'hepdata_converter'},
+    package_dir = {'hepdata_converter': 'hepdata_converter'},
     package_data={'hepdata_converter': get_all_datafiles(package='hepdata_converter/testsuite', path='testdata')},
     include_package_data=True,
     url='https://github.com/HEPData/hepdata-converter',
