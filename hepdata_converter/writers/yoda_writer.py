@@ -268,6 +268,9 @@ class YODA(ArrayWriter):
         self.write_func(estimates, data_out)
 
 class YODAH5(YODA):
+    help = 'Writes YODA HDF5 output for table specified by --table parameter, the output should be defined as ' \
+           'filepath to output yoda file and must end in .h5'
+
     def __init__(self, *args, **kwargs):
         super(YODAH5, self).__init__(*args, **kwargs)
         self.extension = 'yoda.h5'

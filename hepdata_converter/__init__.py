@@ -10,6 +10,7 @@ from .writers import Writer
 def convert(input, output=None, options={}):
     """Converts a supported ``input_format`` (*oldhepdata*, *yaml*)
     to a supported ``output_format`` (*csv*, *root*, *yaml*, *yoda*, *yoda1*, *yoda.h5*).
+    The ``output`` must end in *.h5* if the ``output_format`` is *yoda.h5*.
 
     :param input: location of input file for *oldhepdata* format or input directory for *yaml* format
     :param output: location of output directory to which converted files will be written
