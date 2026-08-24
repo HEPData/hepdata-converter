@@ -203,8 +203,8 @@ class ArrayWriter(Writer, metaclass=abc.ABCMeta):
                     min_errs.append(sqrt(errors_min))
                     max_errs.append(sqrt(errors_max))
                 elif 'low' in entry and 'high' in entry:
-                    min_errs.append(entry['value'] - entry['low'])
-                    max_errs.append(entry['high'] - entry['value'])
+                    min_errs.append(float(entry['value']) - float(entry['low']))
+                    max_errs.append(float(entry['high']) - float(entry['value']))
                 else:
                     min_errs.append(0.0)
                     max_errs.append(0.0)
