@@ -80,8 +80,10 @@ class EstimateYodaClass(ObjectWrapper):
             thisaxis = [ ]
             for i in range(len(self.yval)):
                 if isCAxis[-1]:
-                    v = float(self.xval[dim_i][i]) if isinstance(self.xval[dim_i][i], (int,float)) else \
-                        0.5*(float(vals[i]['high']) + float(vals[i]['low']))
+                    try:
+                        v = float(self.xval[dim_i][i])
+                    except ValueError:
+                        v = 0.5*(float(vals[i]['high']) + float(vals[i]['low']))
                     m = float(self.xerr_minus[dim_i][i])
                     p = float(self.xerr_plus[dim_i][i])
                     if not math.isfinite(v):
