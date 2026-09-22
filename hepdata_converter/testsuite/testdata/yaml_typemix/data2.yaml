@@ -1,0 +1,14 @@
+---
+name: 'data2.yaml'
+independent_variables:
+ - header: {name: '$m_{T}$ [GeV]'}
+   values:
+   - {value: '80', low: 70, high: 90}
+dependent_variables:
+- header: {name: '$m(\tilde{q}, \tilde{\chi}^\pm_1, \tilde{\chi}^0_1)=(600,575,550)$ GeV', units: ''}
+  qualifiers:
+  - {name: SQRT(S), units: GEV, value: '13000.0'}
+  - {name: LUMINOSITY, units: 'fb$^{-1}$', value: '139'}
+  values:
+  - errors: []
+    value: '74.76'

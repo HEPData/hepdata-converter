@@ -137,9 +137,9 @@ class EstimateYodaClass(ObjectWrapper):
                 m = self.xerr_minus[dim_i][i]
                 p = self.xerr_plus[dim_i][i]
                 if isCAxis[dim_i]:
-                    if isinstance(v, (int,float)):
+                    try:
                         v = float(v)
-                    else:
+                    except ValueError:
                         lo = float(self.independent_variable_map[dim_i]['values'][i]['low'])
                         hi = float(self.independent_variable_map[dim_i]['values'][i]['high'])
                         v = 0.5*(hi + lo)
