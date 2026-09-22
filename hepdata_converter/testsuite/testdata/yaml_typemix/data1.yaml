@@ -1,0 +1,14 @@
+---
+name: 'data1.yaml'
+independent_variables:
+ - header: {name: '$m_{T}$ [GeV]'}
+   values:
+   - {value: 'Bin 1', low: 50, high: 70}
+dependent_variables:
+- header: {name: '$m(\tilde{g}, \tilde{\chi}^\pm_1, \tilde{\chi}^0_1)=(900,860,820)$ GeV', units: ''}
+  qualifiers:
+  - {name: SQRT(S), units: GEV, value: '13000.0'}
+  - {name: LUMINOSITY, units: 'fb$^{-1}$', value: '139'}
+  values:
+  - errors: []
+    value: '68.97'

@@ -80,7 +80,10 @@ class EstimateYodaClass(ObjectWrapper):
             thisaxis = [ ]
             for i in range(len(self.yval)):
                 if isCAxis[-1]:
-                    v = float(self.xval[dim_i][i])
+                    try:
+                        v = float(self.xval[dim_i][i])
+                    except ValueError:
+                        v = 0.5*(float(vals[i]['high']) + float(vals[i]['low']))
                     m = float(self.xerr_minus[dim_i][i])
                     p = float(self.xerr_plus[dim_i][i])
                     if not math.isfinite(v):
@@ -136,7 +139,12 @@ class EstimateYodaClass(ObjectWrapper):
                 m = self.xerr_minus[dim_i][i]
                 p = self.xerr_plus[dim_i][i]
                 if isCAxis[dim_i]:
-                    v = float(v)
+                    try:
+                        v = float(v)
+                    except ValueError:
+                        lo = float(self.independent_variable_map[dim_i]['values'][i]['low'])
+                        hi = float(self.independent_variable_map[dim_i]['values'][i]['high'])
+                        v = 0.5*(hi + lo)
                     if not math.isfinite(v):
                         lo = float(self.independent_variable_map[dim_i]['values'][i]['low'])
                         hi = float(self.independent_variable_map[dim_i]['values'][i]['high'])
