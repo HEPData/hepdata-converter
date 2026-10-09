@@ -27,8 +27,12 @@ def convert(input, output=None, options={}):
     input_format = options.get('input_format', 'yaml')
     output_format = options.get('output_format', 'yaml')
 
-    parser = Parser.get_concrete_class(input_format .replace(".", ""))(**options)
     writer = Writer.get_concrete_class(output_format.replace(".", ""))(**options)
+
+    # the parser only reads the requested table if the writer exports a single table, other writers need all tables
+    parser_options = {key: value for key, value in options.items()
+                      if key != 'table' or 'table' in writer.options()}
+    parser = Parser.get_concrete_class(input_format .replace(".", ""))(**parser_options)
 
     if not output and not writer.single_file_output:
         raise ValueError("this output_format requires specifying 'output' argument")

@@ -33,7 +33,26 @@ class YAML(Parser):
     def __init__(self, *args, **kwargs):
         super(YAML, self).__init__(*args, **kwargs)
         self.validator_schema_version = kwargs.get('validator_schema_version', LATEST_SCHEMA_VERSION)
+        # table to be exported, see the 'table' option of the writers, None means all tables
+        self.table_id = kwargs.get('table')
 
+    def _get_selected_table_position(self, table_docs):
+        """Position of the table that is requested with the 'table' option, selected in the same way as
+        :meth:`hepdata_converter.parsers.ParsedData.get_table` (index, data file or name).
+
+        :param table_docs: list of documents of submission.yaml with a ``data_file``
+        :return: position in the list of tables, None if all tables are requested, -1 if no table matches
+        """
+        if self.table_id is None:
+            return None
+        if isinstance(self.table_id, int):
+            position = self.table_id if self.table_id >= 0 else self.table_id + len(table_docs)
+            return position if 0 <= position < len(table_docs) else -1
+        for key, value in (('data_file', os.path.basename(self.table_id)), ('name', self.table_id)):
+            for position, doc in enumerate(table_docs):
+                if doc.get(key) == value:
+                    return position
+        return -1
 
     def _pretty_print_errors(self, message_dict):
         return ' '.join(
@@ -79,12 +98,21 @@ class YAML(Parser):
         # validator for table data
         data_file_validator = DataFileValidator(schema_version=self.validator_schema_version)
 
+        # if only one table is requested, the other data files are not read and validated
+        selected_position = self._get_selected_table_position(
+            [doc for doc in submission_data if doc and 'data_file' in doc])
+
         index = 0
         for i in range(0, len(submission_data)):
             if not submission_data[i]: # empty YAML document
                 continue
             if 'data_file' not in submission_data[i]:
                 metadata = submission_data[i] # information about whole submission
+                continue
+            if selected_position is not None and index != selected_position:
+                # keep the position of the tables, but without data
+                index = index + 1
+                tables.append(Table(index=index, metadata=submission_data[i]))
                 continue
             table_filepath = os.path.join(os.path.dirname(data_in),
                                           submission_data[i]['data_file'])
