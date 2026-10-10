@@ -1,8 +1,10 @@
 # -*- encoding: utf-8 -*-
 import os
 import shutil
+import unittest
 
 import hepdata_converter
+from hepdata_converter.parsers import Table
 from hepdata_converter.testsuite import insert_path, insert_data_as_str
 from hepdata_converter.testsuite.test_writer import WriterTestSuite
 
@@ -65,13 +67,19 @@ class YAMLParserSingleTableTestSuite(WriterTestSuite):
         self.assertEqual(['Table 1', 'Table 2', 'Table 3', 'Table 4', 'Table 5', 'Table 8', 'Table 9'],
                          [table.name for table in parsed.tables])
         self.assertEqual([1, 2, 3, 4, 5, 6, 7], [table.index for table in parsed.tables])
-        self.assertEqual(['data9.yaml'], [table.data_file for table in parsed.tables if table.data])
+        self.assertEqual(['data9.yaml'], [table.data_file for table in parsed.tables if table.independent_variables])
+        for table in parsed.tables[:-1]:
+            self.assertEqual({'independent_variables': [], 'dependent_variables': []}, table.data)
 
         # same tables as without the option
         all_tables = hepdata_converter.parsers.Parser.get_concrete_class('yaml')(validator_schema_version='0.1.0').parse(yaml_path)
         parsed = parser.parse(yaml_path)
         self.assertEqual(all_tables.tables[6], parsed.tables[6])
         self.assertEqual(all_tables.data, parsed.data)
+
+        # tables without data can be compared as well
+        self.assertEqual(parsed, parser.parse(yaml_path))
+        self.assertNotEqual(parsed, all_tables)
 
     @insert_path('yaml_full')
     def test_writer_without_table_option_gets_all_tables(self, yaml_path):
@@ -84,3 +92,21 @@ class YAMLParserSingleTableTestSuite(WriterTestSuite):
                          sorted(os.listdir(output)))
         for i in [1, 2, 3, 4, 5, 8, 9]:
             self.assertGreater(os.path.getsize(os.path.join(output, 'data%s.yaml' % i)), 100)
+
+
+class TableWithoutDataTestSuite(unittest.TestCase):
+    metadata = {'name': 'Table 1', 'data_file': 'data1.yaml', 'keywords': []}
+
+    def test_tables_without_data_can_be_compared(self):
+        table = Table(index=1, metadata=dict(self.metadata))
+        self.assertEqual(table, Table(index=1, metadata=dict(self.metadata)))
+        self.assertNotEqual(table, Table(index=2, metadata=dict(self.metadata)))
+        self.assertEqual([], table.independent_variables)
+        self.assertEqual([], table.dependent_variables)
+        self.assertEqual([], table.qualifiers)
+
+    def test_default_data_is_not_shared(self):
+        table, other = Table(index=1, metadata=dict(self.metadata)), Table(index=2, metadata=dict(self.metadata))
+        table.independent_variables.append({'header': {'name': 'x'}, 'values': []})
+        self.assertEqual([], other.independent_variables)
+        self.assertNotEqual(table, Table(index=1, metadata=dict(self.metadata)))
