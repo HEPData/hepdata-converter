@@ -33,7 +33,8 @@ class Table(object):
         return True
 
     def __init__(self, index=None, data_file=None, table_name=None, metadata=None, data=None):
-        self.data = data or []
+        # a table without data (e.g. one that was not read) has no variables, instead of a list that cannot be indexed
+        self.data = data or {'independent_variables': [], 'dependent_variables': []}
         self.index = index
         self.qualifiers = []
         self.dserrors = []
