@@ -1,5 +1,6 @@
 import copy
 import csv
+from itertools import zip_longest
 from hepdata_converter.common import Option
 from hepdata_converter.writers.array_writer import ArrayWriter
 
@@ -58,8 +59,8 @@ class CSV(ArrayWriter):
             csv_writer = csv.writer(output, delimiter=self.separator, lineterminator=lineterminator)
             csv_writer.writerow(headers)
 
-            for i in range(len(data[0])):
-                csv_writer.writerow([str(data[j][i]) for j in range(len(data))])
+            for row in zip_longest(*data, fillvalue=''):
+                csv_writer.writerow([str(value) for value in row])
 
             return csv_writer
 
