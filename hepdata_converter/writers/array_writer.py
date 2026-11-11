@@ -1,5 +1,5 @@
 import logging
-from math import sqrt
+from math import isfinite, sqrt
 import os
 from hepdata_converter.common import Option
 from hepdata_converter.writers import Writer
@@ -112,6 +112,26 @@ class ObjectFactory(object):
         for variable_index in range(len(dependent_variables)):
             self.map[variable_index] = list(independent_variables)
 
+    @staticmethod
+    def _is_flow_bin(value):
+        if 'value' in value:
+            return False
+        low = value.get('low')
+        high = value.get('high')
+        if not isinstance(low, (int, float)) or not isinstance(high, (int, float)):
+            return False
+        return ((low == float('-inf') and isfinite(high)) or
+                (isfinite(low) and high == float('inf')))
+
+    @classmethod
+    def _has_only_flow_bins(cls, independent_variables, dependent_variable):
+        numeric = ObjectWrapper.is_number_var(dependent_variable)
+        if not any(numeric):
+            return False
+        return any(all(cls._is_flow_bin(value)
+                       for value, keep in zip(variable['values'], numeric) if keep)
+                   for variable in independent_variables)
+
     def get_next_object(self):
         for dependent_variable_index in range(len(self.dependent_variables)):
             dependent_variable = self.dependent_variables[dependent_variable_index]
@@ -122,6 +142,12 @@ class ObjectFactory(object):
                 log.warning('Skipping dependent variable %s with empty or unequal-length columns',
                             dependent_variable_index + 1)
                 # Keep the column's slot so YODA identifiers and qualifiers do not shift.
+                yield None
+                continue
+
+            if self._has_only_flow_bins(self.map[dependent_variable_index], dependent_variable):
+                log.warning('Skipping dependent variable %s with only flow bins on an axis',
+                            dependent_variable_index + 1)
                 yield None
                 continue
 
