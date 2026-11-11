@@ -282,4 +282,9 @@ class YODAH5(YODA):
     def __init__(self, *args, **kwargs):
         super(YODAH5, self).__init__(*args, **kwargs)
         self.extension = 'yoda.h5'
-        self.write_func = yoda.core.writeH5
+        self.write_func = self._write_h5
+
+    def _write_h5(self, estimates, data_out):
+        if not estimates:
+            raise ValueError('No representable YODA objects to write to HDF5')
+        return yoda.core.writeH5(estimates, data_out)
