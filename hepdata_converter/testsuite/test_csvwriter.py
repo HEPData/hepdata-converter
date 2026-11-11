@@ -1,4 +1,8 @@
+import csv
 import os
+from pathlib import Path
+
+import yaml
 import hepdata_converter
 from hepdata_converter import convert
 from hepdata_converter.testsuite import insert_path, insert_data_as_str
@@ -11,6 +15,40 @@ class CSVWriterTestCase(WriterTestSuite):
     def setUp(self, submission_filepath):
         super(CSVWriterTestCase, self).setUp()
         self.submission_filepath = submission_filepath
+
+    def test_missing_dependent_values(self):
+        submission = Path(self.current_tmp)
+        (submission / 'submission.yaml').write_text(yaml.safe_dump({
+            'name': 'Table 1', 'description': 'Unequal column lengths',
+            'data_file': 'data.yaml', 'keywords': [],
+        }))
+        (submission / 'data.yaml').write_text(yaml.safe_dump({
+            'independent_variables': [
+                {'header': {'name': 'X'}, 'values': [{'value': i} for i in (1, 2, 3)]},
+            ],
+            'dependent_variables': [
+                {'header': {'name': 'Y1'}, 'values': [{'value': i} for i in (10, 20)]},
+                {'header': {'name': 'Y2'}, 'values': [{'value': 30}]},
+            ],
+        }))
+
+        cases = [
+            (True, [
+                ['X', 'Y1', 'Y2'], ['1', '10', '30'], ['2', '20', ''], ['3', '', ''],
+            ]),
+            (False, [
+                ['X', 'Y1'], ['1', '10'], ['2', '20'], ['3', ''],
+                ['X', 'Y2'], ['1', '30'], ['2', ''], ['3', ''],
+            ]),
+        ]
+        for packed, expected in cases:
+            with self.subTest(packed=packed):
+                result = convert(str(submission), options={
+                    'output_format': 'csv', 'table': 'Table 1', 'pack': packed,
+                    'validator_schema_version': '0.1.0',
+                })
+                records = [line for line in result.splitlines() if line and not line.startswith('#:')]
+                self.assertEqual(list(csv.reader(records)), expected)
 
     @insert_data_as_str('csv/table_1.csv')
     def test_csvwriter_options(self, table_1_content):
