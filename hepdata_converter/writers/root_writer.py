@@ -418,6 +418,8 @@ class ROOT(ArrayWriter):
             table_doi = table.name
         f = ObjectFactory(self.class_list, table.independent_variables, table.dependent_variables)
         for graph in f.get_next_object():
+            if graph is None:
+                continue
             graph.SetTitle(table_doi)
             graph.Write()
 

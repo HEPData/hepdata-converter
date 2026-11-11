@@ -114,6 +114,17 @@ class ObjectFactory(object):
 
     def get_next_object(self):
         for dependent_variable_index in range(len(self.dependent_variables)):
+            dependent_variable = self.dependent_variables[dependent_variable_index]
+            value_count = len(dependent_variable['values'])
+            if not value_count or any(
+                    len(variable['values']) != value_count
+                    for variable in self.map[dependent_variable_index]):
+                log.warning('Skipping dependent variable %s with empty or unequal-length columns',
+                            dependent_variable_index + 1)
+                # Keep the column's slot so YODA identifiers and qualifiers do not shift.
+                yield None
+                continue
+
             auxiliary_object_created = False
             for class_wrapper in self.class_list:
                 # if auxiliary object was already created for this variable, don't create more

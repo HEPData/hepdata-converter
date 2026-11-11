@@ -121,6 +121,8 @@ class YODA1(ArrayWriter):
             table_doi = table.name
         f = ObjectFactory(self.class_list, table.independent_variables, table.dependent_variables)
         for idep, graph in enumerate(f.get_next_object()):
+            if graph is None:
+                continue
             rivet_identifier = 'd' + table_num.zfill(2) + '-x01-y' + str(idep + 1).zfill(2)
             # Allow the standard Rivet identifier to be overridden by a custom value specified in the qualifiers.
             if 'qualifiers' in table.dependent_variables[idep]:
