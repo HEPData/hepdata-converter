@@ -40,7 +40,7 @@ class THFRootClass(ObjectWrapper, metaclass=abc.ABCMeta):
 
     def _create_empty_hist(self, dependent_var_title, index, yval):
 
-        is_number_list = self.is_number_var(self.dependent_variable)
+        is_number_list = self.is_number_dep_var(self.dependent_variable)
 
         xval = []
         for i in range(self.dim):
@@ -172,7 +172,7 @@ class THFRootClass(ObjectWrapper, metaclass=abc.ABCMeta):
         error_indices = {}
         index = 0
 
-        is_number_list = self.is_number_var(self.dependent_variable)
+        is_number_list = self.is_number_dep_var(self.dependent_variable)
 
         for i, value in enumerate(self.dependent_variable.get('values', [])):
 

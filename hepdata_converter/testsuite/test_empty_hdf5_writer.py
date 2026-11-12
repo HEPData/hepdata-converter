@@ -67,7 +67,7 @@ else:
         return test_ragged_array_writer.RaggedArrayWriterTestCase.read_yoda(self, str(output), 'yoda.h5')
 
     def test_omitted_record_does_not_create_destination(self):
-        folder = self.write_submission([self.table([2, 0, 4]), self.table([1])])
+        folder = self.write_submission([self.table([0]), self.table([0])])
         output = folder / 'absent.yoda.h5'
         self.assert_public_error(folder, output, self.options())
         self.assertFalse(output.exists())
@@ -80,13 +80,13 @@ else:
         original_objects = self.read_hdf5(output)
         self.assertEqual(original_objects['/REF/RIVET_ANALYSIS_NAME/d01-x01-y01']['values'], [0, 4, 8])
 
-        self.write_submission([self.table([2, 0, 4])])
+        self.write_submission([self.table([0])])
         self.assert_public_error(folder, output, self.options())
         self.assertEqual(output.read_bytes(), original_bytes)
         self.assertEqual(self.read_hdf5(output), original_objects)
 
     def test_native_writer_is_not_called_for_empty_collection(self):
-        folder = self.write_submission([self.table([2, 0, 4])])
+        folder = self.write_submission([self.table([0])])
         output = folder / 'absent.yoda.h5'
         with patch('yoda.core.writeH5') as native_writer:
             with self.assertRaisesRegex(ValueError, self.error_message):
@@ -103,7 +103,7 @@ else:
                 self.assertFalse(output.exists())
 
     def test_mixed_record_delegates_and_preserves_later_valid_objects(self):
-        folder = self.write_submission([self.table([2, 0, 4]), self.table([3])])
+        folder = self.write_submission([self.table([0]), self.table([3])])
         output = folder / 'mixed.yoda.h5'
         with patch('yoda.core.writeH5', wraps=yoda.core.writeH5) as native_writer:
             convert(str(folder), str(output), options=self.options())
@@ -115,7 +115,7 @@ else:
         self.assertEqual(objects['/REF/RIVET_ANALYSIS_NAME/d02-x01-y01']['errors'], [[-0.5, 0.75]] * 3)
 
     def test_cli_returns_controlled_error_without_native_write(self):
-        folder = self.write_submission([self.table([2, 0, 4])])
+        folder = self.write_submission([self.table([0])])
         output = folder / 'cli.yoda.h5'
         with patch('yoda.core.writeH5') as native_writer:
             code, message = _main([
@@ -126,3 +126,19 @@ else:
         self.assertEqual(code, 1)
         self.assertEqual(message, 'Options error: ' + self.error_message)
         self.assertFalse(output.exists())
+
+    def test_positive_length_all_missing_record_preserves_existing_hdf5(self):
+        folder = self.write_submission([self.table([3])])
+        output = folder / 'existing.yoda.h5'
+        convert(str(folder), str(output), options=self.options())
+        original = output.read_bytes()
+        missing = self.table([3])
+        for entry in missing['dependent_variables'][0]['values']:
+            entry['value'] = '-'
+        self.write_submission([missing])
+        self.assert_public_error(folder, output, self.options())
+        self.assertEqual(output.read_bytes(), original)
+        with patch('yoda.core.writeH5') as native_writer:
+            with self.assertRaisesRegex(ValueError, self.error_message):
+                convert(str(folder), str(output), options=self.options())
+            native_writer.assert_not_called()

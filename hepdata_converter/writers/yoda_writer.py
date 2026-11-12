@@ -64,6 +64,10 @@ class EstimateYodaClass(ObjectWrapper):
             self._set_error_breakdown(0, rtn)
             return rtn
 
+        # xval/yval omit masked dependent cells; fallbacks must use the same source rows.
+        source_indices = [index for index, keep in enumerate(
+            self.is_number_dep_var(self.dependent_variable)) if keep]
+
         # Check whether axis type is continuous (float) or discrete (int, string).
         # Keep track of bin edges and, for continuous axes, of visible bin range.
         isCAxis = [ ]; isIntAxis = [ ]; edges = [ ]; visRange = { }
@@ -83,7 +87,7 @@ class EstimateYodaClass(ObjectWrapper):
                     try:
                         v = float(self.xval[dim_i][i])
                     except ValueError:
-                        v = 0.5*(float(vals[i]['high']) + float(vals[i]['low']))
+                        v = 0.5*(float(vals[source_indices[i]]['high']) + float(vals[source_indices[i]]['low']))
                     m = float(self.xerr_minus[dim_i][i])
                     p = float(self.xerr_plus[dim_i][i])
                     if not math.isfinite(v):
@@ -142,12 +146,12 @@ class EstimateYodaClass(ObjectWrapper):
                     try:
                         v = float(v)
                     except ValueError:
-                        lo = float(self.independent_variable_map[dim_i]['values'][i]['low'])
-                        hi = float(self.independent_variable_map[dim_i]['values'][i]['high'])
+                        lo = float(self.independent_variable_map[dim_i]['values'][source_indices[i]]['low'])
+                        hi = float(self.independent_variable_map[dim_i]['values'][source_indices[i]]['high'])
                         v = 0.5*(hi + lo)
                     if not math.isfinite(v):
-                        lo = float(self.independent_variable_map[dim_i]['values'][i]['low'])
-                        hi = float(self.independent_variable_map[dim_i]['values'][i]['high'])
+                        lo = float(self.independent_variable_map[dim_i]['values'][source_indices[i]]['low'])
+                        hi = float(self.independent_variable_map[dim_i]['values'][source_indices[i]]['high'])
                         v = hi - 0.5 if math.isinf(lo) else lo + 0.5
                     edges.append(v)
                 elif isIntAxis[dim_i]:

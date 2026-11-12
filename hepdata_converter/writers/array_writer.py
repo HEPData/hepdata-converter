@@ -1,4 +1,5 @@
 import logging
+from copy import deepcopy
 from math import isfinite, sqrt
 import os
 from hepdata_converter.common import Option
@@ -29,6 +30,14 @@ class ObjectWrapper(object, metaclass=abc.ABCMeta):
                 else:
                     is_number_list.append(True)
         return is_number_list
+
+    @classmethod
+    def is_number_dep_var(cls, variable):
+        """Keep supplied values and complete intervals, masking missing dependent cells."""
+        numeric = cls.is_number_var(variable)
+        return [keep and (entry['value'] is not None if 'value' in entry else
+                          entry.get('low') is not None and entry.get('high') is not None)
+                for entry, keep in zip(variable['values'], numeric)]
 
     @classmethod
     def sanitize_name(cls, name):
@@ -73,7 +82,7 @@ class ObjectWrapper(object, metaclass=abc.ABCMeta):
             for independent_variable in independent_variables_map:
                 if False in cls.is_number_var(independent_variable):
                     return False
-            if False in cls.is_number_var(dependent_variable):
+            if False in cls.is_number_dep_var(dependent_variable):
                 return False
         return True
 
@@ -84,7 +93,7 @@ class ObjectWrapper(object, metaclass=abc.ABCMeta):
         return []
 
     def calculate_total_errors(self, for_tgraph=False):
-        is_number_list = self.is_number_var(self.dependent_variable)
+        is_number_list = self.is_number_dep_var(self.dependent_variable)
         for independent_variable in self.independent_variable_map:
             xerr_minus = []
             self.xerr_minus.append(xerr_minus)
@@ -125,7 +134,7 @@ class ObjectFactory(object):
 
     @classmethod
     def _has_only_flow_bins(cls, independent_variables, dependent_variable):
-        numeric = ObjectWrapper.is_number_var(dependent_variable)
+        numeric = ObjectWrapper.is_number_dep_var(dependent_variable)
         if not any(numeric):
             return False
         return any(all(cls._is_flow_bin(value)
@@ -135,17 +144,36 @@ class ObjectFactory(object):
     def get_next_object(self):
         for dependent_variable_index in range(len(self.dependent_variables)):
             dependent_variable = self.dependent_variables[dependent_variable_index]
-            value_count = len(dependent_variable['values'])
-            if not value_count or any(
-                    len(variable['values']) != value_count
-                    for variable in self.map[dependent_variable_index]):
-                log.warning('Skipping dependent variable %s with empty or unequal-length columns',
+            independent_variables = self.map[dependent_variable_index]
+            counts = [len(variable['values']) for variable in independent_variables]
+            counts.append(len(dependent_variable['values']))
+            value_count = min(counts)
+            if not value_count:
+                log.warning('Skipping dependent variable %s with no available bins',
                             dependent_variable_index + 1)
                 # Keep the column's slot so YODA identifiers and qualifiers do not shift.
                 yield None
                 continue
 
-            if self._has_only_flow_bins(self.map[dependent_variable_index], dependent_variable):
+            if any(count != value_count for count in counts):
+                log.warning('Skipping missing bins in dependent variable %s with unequal-length columns',
+                            dependent_variable_index + 1)
+            # Each column needs its own aligned view. Numeric conversion and error-label
+            # processing mutate entries, so do not share these with the table or other columns.
+            independent_variables = deepcopy(independent_variables)
+            dependent_variable = deepcopy(dependent_variable)
+            for variable in independent_variables + [dependent_variable]:
+                variable['values'] = variable['values'][:value_count]
+                if 'labels' in variable:
+                    variable['labels'] = variable['labels'][:value_count]
+
+            if not any(ObjectWrapper.is_number_dep_var(dependent_variable)):
+                log.warning('Skipping dependent variable %s with no numeric values',
+                            dependent_variable_index + 1)
+                yield None
+                continue
+
+            if self._has_only_flow_bins(independent_variables, dependent_variable):
                 log.warning('Skipping dependent variable %s with only flow bins on an axis',
                             dependent_variable_index + 1)
                 yield None
@@ -160,8 +188,8 @@ class ObjectFactory(object):
                 if not class_wrapper.core_object and auxiliary_object_created:
                     continue
 
-                objects = class_wrapper.match_and_create(self.map[dependent_variable_index],
-                                                         self.dependent_variables[dependent_variable_index],
+                objects = class_wrapper.match_and_create(independent_variables,
+                                                         dependent_variable,
                                                          dependent_variable_index)
                 if objects and not class_wrapper.core_object:
                     auxiliary_object_created = True
