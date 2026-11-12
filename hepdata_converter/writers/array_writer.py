@@ -1,5 +1,6 @@
 import logging
-from math import sqrt
+from copy import deepcopy
+from math import isfinite, sqrt
 import os
 from hepdata_converter.common import Option
 from hepdata_converter.writers import Writer
@@ -29,6 +30,14 @@ class ObjectWrapper(object, metaclass=abc.ABCMeta):
                 else:
                     is_number_list.append(True)
         return is_number_list
+
+    @classmethod
+    def is_number_dep_var(cls, variable):
+        """Keep supplied values and complete intervals, masking missing dependent cells."""
+        numeric = cls.is_number_var(variable)
+        return [keep and (entry['value'] is not None if 'value' in entry else
+                          entry.get('low') is not None and entry.get('high') is not None)
+                for entry, keep in zip(variable['values'], numeric)]
 
     @classmethod
     def sanitize_name(cls, name):
@@ -73,7 +82,7 @@ class ObjectWrapper(object, metaclass=abc.ABCMeta):
             for independent_variable in independent_variables_map:
                 if False in cls.is_number_var(independent_variable):
                     return False
-            if False in cls.is_number_var(dependent_variable):
+            if False in cls.is_number_dep_var(dependent_variable):
                 return False
         return True
 
@@ -84,7 +93,7 @@ class ObjectWrapper(object, metaclass=abc.ABCMeta):
         return []
 
     def calculate_total_errors(self, for_tgraph=False):
-        is_number_list = self.is_number_var(self.dependent_variable)
+        is_number_list = self.is_number_dep_var(self.dependent_variable)
         for independent_variable in self.independent_variable_map:
             xerr_minus = []
             self.xerr_minus.append(xerr_minus)
@@ -112,8 +121,55 @@ class ObjectFactory(object):
         for variable_index in range(len(dependent_variables)):
             self.map[variable_index] = list(independent_variables)
 
+    @staticmethod
+    def _is_continuous_bin(value):
+        return (isinstance(value.get('low'), (int, float)) and
+                isinstance(value.get('high'), (int, float)))
+
+    @classmethod
+    def _has_only_flow_bins(cls, independent_variables, dependent_variable):
+        # A finite empty bin still anchors an axis. An axis made entirely of
+        # unbounded intervals has no finite geometry, even for an empty column.
+        for variable in independent_variables:
+            values = variable['values']
+            if (all(cls._is_continuous_bin(value) for value in values) and
+                    not any(isfinite(value['low']) and isfinite(value['high'])
+                            for value in values)):
+                return True
+        return False
+
     def get_next_object(self):
         for dependent_variable_index in range(len(self.dependent_variables)):
+            dependent_variable = self.dependent_variables[dependent_variable_index]
+            independent_variables = self.map[dependent_variable_index]
+            counts = [len(variable['values']) for variable in independent_variables]
+            coordinate_count = min(counts) if counts else len(dependent_variable['values'])
+            if not coordinate_count:
+                log.warning('Skipping dependent variable %s with no available bins',
+                            dependent_variable_index + 1)
+                # Keep the column's slot so YODA identifiers and qualifiers do not shift.
+                yield None
+                continue
+
+            if len(dependent_variable['values']) > coordinate_count:
+                log.warning('Skipping values without coordinates in dependent variable %s',
+                            dependent_variable_index + 1)
+            # Keep every supplied axis cell. Only rows with coordinates on every
+            # axis may carry measurements; pad missing private cells, never values.
+            # Numeric conversion and error-label processing can mutate entries.
+            independent_variables = deepcopy(independent_variables)
+            dependent_variable = deepcopy(dependent_variable)
+            dependent_variable['values'] = dependent_variable['values'][:coordinate_count]
+            mask_count = max(counts) if counts else coordinate_count
+            dependent_variable['values'].extend(
+                {} for _ in range(mask_count - len(dependent_variable['values'])))
+
+            if self._has_only_flow_bins(independent_variables, dependent_variable):
+                log.warning('Skipping dependent variable %s with no finite bins on an axis',
+                            dependent_variable_index + 1)
+                yield None
+                continue
+
             auxiliary_object_created = False
             for class_wrapper in self.class_list:
                 # if auxiliary object was already created for this variable, don't create more
@@ -123,8 +179,8 @@ class ObjectFactory(object):
                 if not class_wrapper.core_object and auxiliary_object_created:
                     continue
 
-                objects = class_wrapper.match_and_create(self.map[dependent_variable_index],
-                                                         self.dependent_variables[dependent_variable_index],
+                objects = class_wrapper.match_and_create(independent_variables,
+                                                         dependent_variable,
                                                          dependent_variable_index)
                 if objects and not class_wrapper.core_object:
                     auxiliary_object_created = True

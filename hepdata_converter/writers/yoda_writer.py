@@ -54,15 +54,18 @@ class EstimateYodaClass(ObjectWrapper):
 
     def _create_estimate(self):
 
-        if not len(self.yval):
-            return None
-
         if not self.dim:
+            if not self.yval:
+                return None
             # no binning, just the Estimate0D
             rtn = yoda.core.Estimate0D()
             rtn.setVal(self.yval[0])
             self._set_error_breakdown(0, rtn)
             return rtn
+
+        # xval/yval omit masked dependent cells; fallbacks must use the same source rows.
+        source_indices = [index for index, keep in enumerate(
+            self.is_number_dep_var(self.dependent_variable)) if keep]
 
         # Check whether axis type is continuous (float) or discrete (int, string).
         # Keep track of bin edges and, for continuous axes, of visible bin range.
@@ -76,20 +79,20 @@ class EstimateYodaClass(ObjectWrapper):
             allInt = all('value' in vals[i] and ( isinstance(vals[i]['value'], int) or \
                         (isinstance(vals[i]['value'], float) and vals[i]['value'].is_integer())) for i in range(len(vals)))
             isIntAxis.append( allInt )
-            # construct edges only from relevant subset for given "y"
+            # Geometry is independent of missing dependent cells. Keep all
+            # supplied bins, with sparse measurements set below.
+            axis_values = []; axis_minus = []; axis_plus = []
+            ArrayWriter.calculate_total_errors(
+                self.independent_variable_map[dim_i], [True] * len(vals),
+                axis_minus, axis_plus, axis_values, {})
             thisaxis = [ ]
-            for i in range(len(self.yval)):
+            for i in range(len(axis_values)):
                 if isCAxis[-1]:
-                    try:
-                        v = float(self.xval[dim_i][i])
-                    except ValueError:
-                        v = 0.5*(float(vals[i]['high']) + float(vals[i]['low']))
-                    m = float(self.xerr_minus[dim_i][i])
-                    p = float(self.xerr_plus[dim_i][i])
-                    if not math.isfinite(v):
+                    lo = float(vals[i]['low'])
+                    hi = float(vals[i]['high'])
+                    if not math.isfinite(lo) or not math.isfinite(hi):
                         continue
-                    lo = v - m
-                    hi = v + p
+                    v = 0.5*lo + 0.5*hi
                     if dim_i in visRange:
                         visRange[dim_i].append(v)
                     else:
@@ -99,20 +102,20 @@ class EstimateYodaClass(ObjectWrapper):
                     if not any([ math.isclose(hi, edge) for edge in thisaxis ]):
                         thisaxis.append(hi)
                 elif isIntAxis[-1]:
-                    edge = int(self.xval[dim_i][i])
+                    edge = int(axis_values[i])
                     if edge not in thisaxis:
                         thisaxis.append(edge)
                 else:
-                    v = self.xval[dim_i][i]
-                    m = self.xerr_minus[dim_i][i]
-                    p = self.xerr_plus[dim_i][i]
+                    v = axis_values[i]
+                    m = axis_minus[i]
+                    p = axis_plus[i]
                     edge = '{0} - {1}'.format(v-m, v+p) if m and p else str(v).replace('\n', ' ')
                     if edge not in thisaxis:
                         thisaxis.append(edge)
             edges.append(sorted(thisaxis) if isCAxis[-1] else thisaxis)
         # make BinnedEstimate
         rtn = self.get_estimate_cls()(*edges)
-        # mask potential gaps in binning
+        # Mask only gaps in the supplied geometry, not supplied empty bins.
         for dim, vals in visRange.items():
             axis = yoda.Axis(edges[dim])
             visibles = set([ axis.index(val) for val in vals ])
@@ -133,7 +136,7 @@ class EstimateYodaClass(ObjectWrapper):
             if too_many_y_values:
                 break
 
-            edges = [ ]
+            coordinates = [ ]
             for dim_i in range(self.dim):
                 v = self.xval[dim_i][i]
                 m = self.xerr_minus[dim_i][i]
@@ -142,21 +145,28 @@ class EstimateYodaClass(ObjectWrapper):
                     try:
                         v = float(v)
                     except ValueError:
-                        lo = float(self.independent_variable_map[dim_i]['values'][i]['low'])
-                        hi = float(self.independent_variable_map[dim_i]['values'][i]['high'])
+                        lo = float(self.independent_variable_map[dim_i]['values'][source_indices[i]]['low'])
+                        hi = float(self.independent_variable_map[dim_i]['values'][source_indices[i]]['high'])
                         v = 0.5*(hi + lo)
                     if not math.isfinite(v):
-                        lo = float(self.independent_variable_map[dim_i]['values'][i]['low'])
-                        hi = float(self.independent_variable_map[dim_i]['values'][i]['high'])
-                        v = hi - 0.5 if math.isinf(lo) else lo + 0.5
-                    edges.append(v)
+                        lo = float(self.independent_variable_map[dim_i]['values'][source_indices[i]]['low'])
+                        hi = float(self.independent_variable_map[dim_i]['values'][source_indices[i]]['high'])
+                        # Genuine flows stay outside the complete geometry.
+                        # Preserve the finite-bounds fallback for other non-finite values.
+                        if lo == float('-inf'):
+                            v = float('-inf')
+                        elif hi == float('inf'):
+                            v = float('inf')
+                        else:
+                            v = lo + 0.5
+                    coordinates.append(v)
                 elif isIntAxis[dim_i]:
-                    edges.append(int(v))
+                    coordinates.append(int(v))
                 else:
                     newedge = '{0} - {1}'.format(v-m, v+p) if m and p else str(v).replace('\n', ' ')
-                    edges.append(newedge)
+                    coordinates.append(newedge)
             # calculate global index
-            idx = rtn.indexAt(*edges)
+            idx = rtn.indexAt(*coordinates)
             # prevent overwriting of previous Estimates
             if idx not in global_indices:
                 global_indices.append(idx)
@@ -282,4 +292,9 @@ class YODAH5(YODA):
     def __init__(self, *args, **kwargs):
         super(YODAH5, self).__init__(*args, **kwargs)
         self.extension = 'yoda.h5'
-        self.write_func = yoda.core.writeH5
+        self.write_func = self._write_h5
+
+    def _write_h5(self, estimates, data_out):
+        if not estimates:
+            raise ValueError('No representable YODA objects to write to HDF5')
+        return yoda.core.writeH5(estimates, data_out)
