@@ -1,4 +1,5 @@
 import json
+import math
 from pathlib import Path
 import subprocess
 import sys
@@ -28,6 +29,11 @@ class EmptyHDF5WriterTestCase(WriterTestSuite):
                 ]} for length in lengths
             ],
         }
+
+    def no_geometry_table(self):
+        table = self.table([0])
+        table['independent_variables'][0]['values'] = []
+        return table
 
     def write_submission(self, tables):
         folder = Path(self.current_tmp)
@@ -67,7 +73,7 @@ else:
         return test_ragged_array_writer.RaggedArrayWriterTestCase.read_yoda(self, str(output), 'yoda.h5')
 
     def test_omitted_record_does_not_create_destination(self):
-        folder = self.write_submission([self.table([0]), self.table([0])])
+        folder = self.write_submission([self.no_geometry_table(), self.no_geometry_table()])
         output = folder / 'absent.yoda.h5'
         self.assert_public_error(folder, output, self.options())
         self.assertFalse(output.exists())
@@ -80,13 +86,13 @@ else:
         original_objects = self.read_hdf5(output)
         self.assertEqual(original_objects['/REF/RIVET_ANALYSIS_NAME/d01-x01-y01']['values'], [0, 4, 8])
 
-        self.write_submission([self.table([0])])
+        self.write_submission([self.no_geometry_table()])
         self.assert_public_error(folder, output, self.options())
         self.assertEqual(output.read_bytes(), original_bytes)
         self.assertEqual(self.read_hdf5(output), original_objects)
 
     def test_native_writer_is_not_called_for_empty_collection(self):
-        folder = self.write_submission([self.table([0])])
+        folder = self.write_submission([self.no_geometry_table()])
         output = folder / 'absent.yoda.h5'
         with patch('yoda.core.writeH5') as native_writer:
             with self.assertRaisesRegex(ValueError, self.error_message):
@@ -103,7 +109,7 @@ else:
                 self.assertFalse(output.exists())
 
     def test_mixed_record_delegates_and_preserves_later_valid_objects(self):
-        folder = self.write_submission([self.table([0]), self.table([3])])
+        folder = self.write_submission([self.no_geometry_table(), self.table([3])])
         output = folder / 'mixed.yoda.h5'
         with patch('yoda.core.writeH5', wraps=yoda.core.writeH5) as native_writer:
             convert(str(folder), str(output), options=self.options())
@@ -115,7 +121,7 @@ else:
         self.assertEqual(objects['/REF/RIVET_ANALYSIS_NAME/d02-x01-y01']['errors'], [[-0.5, 0.75]] * 3)
 
     def test_cli_returns_controlled_error_without_native_write(self):
-        folder = self.write_submission([self.table([0])])
+        folder = self.write_submission([self.no_geometry_table()])
         output = folder / 'cli.yoda.h5'
         with patch('yoda.core.writeH5') as native_writer:
             code, message = _main([
@@ -127,18 +133,18 @@ else:
         self.assertEqual(message, 'Options error: ' + self.error_message)
         self.assertFalse(output.exists())
 
-    def test_positive_length_all_missing_record_preserves_existing_hdf5(self):
+    def test_positive_length_all_missing_record_keeps_empty_geometry(self):
         folder = self.write_submission([self.table([3])])
         output = folder / 'existing.yoda.h5'
         convert(str(folder), str(output), options=self.options())
-        original = output.read_bytes()
         missing = self.table([3])
         for entry in missing['dependent_variables'][0]['values']:
             entry['value'] = '-'
         self.write_submission([missing])
-        self.assert_public_error(folder, output, self.options())
-        self.assertEqual(output.read_bytes(), original)
-        with patch('yoda.core.writeH5') as native_writer:
-            with self.assertRaisesRegex(ValueError, self.error_message):
-                convert(str(folder), str(output), options=self.options())
-            native_writer.assert_not_called()
+        with patch('yoda.core.writeH5', wraps=yoda.core.writeH5) as native_writer:
+            convert(str(folder), str(output), options=self.options())
+            native_writer.assert_called_once()
+        obj = self.read_hdf5(output)['/REF/RIVET_ANALYSIS_NAME/d01-x01-y01']
+        self.assertEqual(len(obj['values']), 3)
+        self.assertTrue(all(math.isnan(value) for value in obj['values']))
+        self.assertEqual(obj['masked'], [False] * 3)

@@ -122,59 +122,50 @@ class ObjectFactory(object):
             self.map[variable_index] = list(independent_variables)
 
     @staticmethod
-    def _is_flow_bin(value):
-        if 'value' in value:
-            return False
-        low = value.get('low')
-        high = value.get('high')
-        if not isinstance(low, (int, float)) or not isinstance(high, (int, float)):
-            return False
-        return ((low == float('-inf') and isfinite(high)) or
-                (isfinite(low) and high == float('inf')))
+    def _is_continuous_bin(value):
+        return (isinstance(value.get('low'), (int, float)) and
+                isinstance(value.get('high'), (int, float)))
 
     @classmethod
     def _has_only_flow_bins(cls, independent_variables, dependent_variable):
-        numeric = ObjectWrapper.is_number_dep_var(dependent_variable)
-        if not any(numeric):
-            return False
-        return any(all(cls._is_flow_bin(value)
-                       for value, keep in zip(variable['values'], numeric) if keep)
-                   for variable in independent_variables)
+        # A finite empty bin still anchors an axis. An axis made entirely of
+        # unbounded intervals has no finite geometry, even for an empty column.
+        for variable in independent_variables:
+            values = variable['values']
+            if (all(cls._is_continuous_bin(value) for value in values) and
+                    not any(isfinite(value['low']) and isfinite(value['high'])
+                            for value in values)):
+                return True
+        return False
 
     def get_next_object(self):
         for dependent_variable_index in range(len(self.dependent_variables)):
             dependent_variable = self.dependent_variables[dependent_variable_index]
             independent_variables = self.map[dependent_variable_index]
             counts = [len(variable['values']) for variable in independent_variables]
-            counts.append(len(dependent_variable['values']))
-            value_count = min(counts)
-            if not value_count:
+            coordinate_count = min(counts) if counts else len(dependent_variable['values'])
+            if not coordinate_count:
                 log.warning('Skipping dependent variable %s with no available bins',
                             dependent_variable_index + 1)
                 # Keep the column's slot so YODA identifiers and qualifiers do not shift.
                 yield None
                 continue
 
-            if any(count != value_count for count in counts):
-                log.warning('Skipping missing bins in dependent variable %s with unequal-length columns',
+            if len(dependent_variable['values']) > coordinate_count:
+                log.warning('Skipping values without coordinates in dependent variable %s',
                             dependent_variable_index + 1)
-            # Each column needs its own aligned view. Numeric conversion and error-label
-            # processing mutate entries, so do not share these with the table or other columns.
+            # Keep every supplied axis cell. Only rows with coordinates on every
+            # axis may carry measurements; pad missing private cells, never values.
+            # Numeric conversion and error-label processing can mutate entries.
             independent_variables = deepcopy(independent_variables)
             dependent_variable = deepcopy(dependent_variable)
-            for variable in independent_variables + [dependent_variable]:
-                variable['values'] = variable['values'][:value_count]
-                if 'labels' in variable:
-                    variable['labels'] = variable['labels'][:value_count]
-
-            if not any(ObjectWrapper.is_number_dep_var(dependent_variable)):
-                log.warning('Skipping dependent variable %s with no numeric values',
-                            dependent_variable_index + 1)
-                yield None
-                continue
+            dependent_variable['values'] = dependent_variable['values'][:coordinate_count]
+            mask_count = max(counts) if counts else coordinate_count
+            dependent_variable['values'].extend(
+                {} for _ in range(mask_count - len(dependent_variable['values'])))
 
             if self._has_only_flow_bins(independent_variables, dependent_variable):
-                log.warning('Skipping dependent variable %s with only flow bins on an axis',
+                log.warning('Skipping dependent variable %s with no finite bins on an axis',
                             dependent_variable_index + 1)
                 yield None
                 continue

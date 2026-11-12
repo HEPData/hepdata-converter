@@ -40,15 +40,11 @@ class THFRootClass(ObjectWrapper, metaclass=abc.ABCMeta):
 
     def _create_empty_hist(self, dependent_var_title, index, yval):
 
-        is_number_list = self.is_number_dep_var(self.dependent_variable)
-
         xval = []
         for i in range(self.dim):
             xval.append([])
             i_var = self.independent_variables[i]['values']
-            for ix, x in enumerate(i_var):
-                if not is_number_list[ix] and 'labels' not in self.independent_variables[i]:
-                    continue  # skip defining bins for non-numeric y values unless alphanumeric bin labels are present
+            for x in i_var:
                 if x['low'] not in xval[i]:
                     xval[i].append(x['low'])
                 if x['high'] not in xval[i]:
@@ -249,9 +245,7 @@ class THFRootClass(ObjectWrapper, metaclass=abc.ABCMeta):
         for i in range(self.dim):
             xval.append([])
             i_var = self.independent_variables[i]['values']
-            for ix, x in enumerate(i_var):
-                if not is_number_list[ix] and 'labels' not in self.independent_variables[i]:
-                    continue  # skip defining bins for non-numeric y values unless alphanumeric bin labels are present
+            for x in i_var:
                 if x['low'] not in xval[i]:
                     xval[i].append(x['low'])
                 if x['high'] not in xval[i]:

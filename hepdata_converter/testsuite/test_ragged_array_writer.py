@@ -1,4 +1,5 @@
 import json
+import math
 from pathlib import Path
 import subprocess
 import sys
@@ -58,6 +59,7 @@ class RaggedArrayWriterTestCase(WriterTestSuite):
         # Native yoda.read changes the effective locale. Keep it out of the test runner.
         script = '''
 import json
+import math
 import sys
 import yoda
 
@@ -71,7 +73,8 @@ for path, obj in yoda.read(sys.argv[1]).items():
     else:
         bins = obj.bins()
         result = {'values': [estimate.val() for estimate in bins],
-                  'errors': [list(estimate.err('shape')) for estimate in bins],
+                  'errors': [None if math.isnan(estimate.val()) else list(estimate.err('shape')) for estimate in bins],
+                  'masked': [estimate.isMasked() for estimate in bins],
                   'samples': [obj.bin(obj.indexAt(position)).val()
                               for position in json.loads(sys.argv[3])]}
     result['tag'] = obj.annotation('tag') if obj.hasAnnotation('tag') else None
@@ -84,11 +87,14 @@ print(json.dumps(entries))
         ))
 
     def assert_yoda_values(self, obj, values, format_):
-        self.assertEqual(len(obj['values']), len(values))
-        for actual, expected in zip(obj['values'], values):
+        # Binned YODA preserves empty cells as NaN; Scatter stores measured points only.
+        measured = [(value, error) for value, error in zip(obj['values'], obj['errors'])
+                    if format_ == 'yoda1' or not math.isnan(value)]
+        self.assertEqual(len(measured), len(values))
+        for (actual, _), expected in zip(measured, values):
             self.assertAlmostEqual(actual, expected)
         errors = [0.5, 0.75] if format_ == 'yoda1' else [-0.5, 0.75]
-        self.assertEqual(obj['errors'], [errors] * len(values))
+        self.assertEqual([error for _, error in measured], [errors] * len(values))
 
     def test_missing_suffixes_preserve_available_bins_and_column_identifiers(self):
         folder = self.write_submission([
@@ -113,7 +119,7 @@ print(json.dumps(entries))
                         table = root_file.Get('Table 1')
                         names = [key.GetName() for key in table.GetListOfKeys()]
                         self.assertTrue(names)
-                        self.assertTrue(all(any('_y%s' % column in name for column in (1, 2, 4, 5))
+                        self.assertTrue(all(any('_y%s' % column in name for column in (1, 2, 3, 4, 5))
                                             for name in names))
                         for column, expected in ((1, [91, 92]), (2, [0, 4, 8]),
                                                  (4, [93, 94, 95]), (5, [3, 0, 9])):
@@ -124,9 +130,12 @@ print(json.dumps(entries))
                                 self.assertEqual(graph.GetErrorYlow(index), 0.5)
                                 self.assertEqual(graph.GetErrorYhigh(index), 0.75)
                             histogram = table.Get('Hist1D_y%s' % column)
-                            self.assertEqual(histogram.GetNbinsX(), len(expected))
+                            self.assertEqual(histogram.GetNbinsX(), 3)
+                            self.assertEqual(histogram.GetEntries(), len(expected))
                             self.assertEqual([histogram.GetBinContent(i + 1)
                                               for i in range(len(expected))], expected)
+                        self.assertEqual(table.Get('Hist1D_y3').GetNbinsX(), 3)
+                        self.assertEqual(table.Get('Hist1D_y3').GetEntries(), 0)
                         self.assertEqual(root_file.Get('Table 2/Graph1D_y1').GetN(), 1)
                         self.assertEqual(root_file.Get('Table 2/Graph1D_y1').GetY()[0], 97)
                         self.assertEqual(root_file.Get('Table 3/Graph1D_y1').GetN(), 3)
@@ -137,7 +146,7 @@ print(json.dumps(entries))
                     prefix = '/REF/RIVET_ANALYSIS_NAME/'
                     self.assertEqual(set(entries), {
                         prefix + 'd01-x01-y01', prefix + 'd01-x01-y02', prefix + 'd01-x01-y04',
-                        prefix + 'kept-custom', prefix + 'd02-x01-y01', prefix + 'd03-x01-y01',
+                        prefix + 'd01-x01-y03', prefix + 'kept-custom', prefix + 'd02-x01-y01', prefix + 'd03-x01-y01',
                     })
                     second = entries[prefix + 'd01-x01-y02']
                     fifth = entries[prefix + 'kept-custom']
@@ -164,7 +173,7 @@ print(json.dumps(entries))
                     root_file = ROOT.TFile.Open(output)
                     try:
                         short = root_file.Get('Table 1/Hist1D_y1')
-                        self.assertEqual(short.GetNbinsX(), 1)
+                        self.assertEqual(short.GetNbinsX(), 3)
                         self.assertEqual(short.GetXaxis().GetBinLabel(1), 'forward')
                         self.assertEqual(short.GetBinContent(1), 91)
                         histogram = root_file.Get('Table 1/Hist1D_y2')
@@ -194,7 +203,7 @@ print(json.dumps(entries))
                     root_file = ROOT.TFile.Open(output)
                     try:
                         histogram = root_file.Get('Table 1/Hist2D_y1')
-                        self.assertEqual(histogram.GetNbinsX(), 2)
+                        self.assertEqual(histogram.GetNbinsX(), 3)
                         self.assertEqual(histogram.GetNbinsY(), 2)
                         self.assertEqual(histogram.GetBinContent(histogram.FindBin(0.5, 0.5)), 91)
                         self.assertEqual(histogram.GetBinContent(histogram.FindBin(1.5, 1.5)), 92)
@@ -239,6 +248,7 @@ print(json.dumps(entries))
     def read_multidimensional_yoda(self, output, format_):
         script = """
 import json
+import math
 import sys
 import yoda
 obj = yoda.read(sys.argv[1])['/REF/RIVET_ANALYSIS_NAME/d01-x01-y01']
@@ -248,7 +258,7 @@ if sys.argv[2] == 'yoda1':
     values = [point.z() for point in points]
     errors = [list(point.zErrs()) for point in points]
 else:
-    assert obj.xEdges() == [0.0, 1.0, 2.0]
+    assert obj.xEdges() == [0.0, 1.0, 2.0, 3.0]
     assert obj.yEdges() == [0.0, 1.0, 2.0]
     bins = [obj.bin(obj.indexAt(value, value)) for value in (0.5, 1.5)]
     values = [estimate.val() for estimate in bins]
@@ -275,7 +285,7 @@ print(json.dumps({'values': values, 'errors': errors}))
                         self.assertEqual([graph.GetY()[i] for i in range(3)], [3, 0, 9])
                         self.assertEqual([graph.GetErrorYlow(i) for i in range(3)], [0.5] * 3)
                         self.assertEqual([graph.GetErrorYhigh(i) for i in range(3)], [0.75] * 3)
-                        self.assertEqual(root_file.Get('Table 1/Hist1D_y1').GetXaxis().GetXmax(), 4)
+                        self.assertEqual(root_file.Get('Table 1/Hist1D_y1').GetXaxis().GetXmax(), 5)
                     finally:
                         root_file.Close()
                 else:
@@ -311,7 +321,7 @@ print(json.dumps({'values': values, 'errors': errors}))
         estimates = list(ObjectFactory(YODA.class_list, axes, [dependent]).get_next_object())
         self.assertEqual(len(estimates), 1)
         obj = estimates[0]
-        self.assertEqual(obj.xEdges(), [3.0, 4.0, 5.0, 6.0])
+        self.assertEqual(obj.xEdges(), list(range(9)))
         self.assertEqual([obj.bin(obj.indexAt(x)).val() for x in (3.5, 4.5, 5.5)], [0, 4, 7])
         self.assertEqual((axes, dependent), original)
 
@@ -328,9 +338,9 @@ print(json.dumps({'values': values, 'errors': errors}))
         original = deepcopy((axis, dependent))
         objects = list(ObjectFactory(RootWriter.class_list, [axis], [dependent]).get_next_object())
         histogram = next(obj for obj in objects if obj.GetName() == 'Hist1D_y1')
-        self.assertEqual(histogram.GetNbinsX(), 2)
-        self.assertEqual([histogram.GetXaxis().GetBinLabel(i) for i in (1, 2)],
-                         ['first', 'second'])
+        self.assertEqual(histogram.GetNbinsX(), 3)
+        self.assertEqual([histogram.GetXaxis().GetBinLabel(i) for i in (1, 2, 3)],
+                         ['first', 'second', 'third'])
         self.assertEqual((axis, dependent), original)
 
     def test_every_mapped_axis_limits_the_available_prefix(self):
@@ -351,18 +361,19 @@ print(json.dumps({'values': values, 'errors': errors}))
                 original = deepcopy((axes, columns))
                 objects = list(ObjectFactory([CaptureWrapper], axes, columns).get_next_object())
                 for index, obj in enumerate(objects):
-                    count = min((lengths + (len(columns[index]['values']),)))
+                    count = min(lengths) if lengths else len(columns[index]['values'])
                     if not count:
                         self.assertIsNone(obj)
                     else:
                         actual_axes, dependent, position = obj
                         self.assertEqual(position, index)
-                        self.assertEqual(len(dependent['values']), count)
-                        self.assertEqual([len(axis['values']) for axis in actual_axes],
-                                         [count] * len(lengths))
+                        self.assertEqual(len(dependent['values']), max(lengths) if lengths else count)
+                        self.assertEqual([len(axis['values']) for axis in actual_axes], list(lengths))
+                        for missing in dependent['values'][min(count, len(columns[index]['values'])):]:
+                            self.assertEqual(missing, {})
                 self.assertEqual((axes, columns), original)
 
-    def test_partial_prefix_still_omits_only_flow_measurements(self):
+    def test_finite_geometry_anchors_partial_flow_measurements(self):
         from copy import deepcopy
         from hepdata_converter.writers.array_writer import ObjectFactory
         from hepdata_converter.writers.root_writer import ROOT as RootWriter
@@ -372,13 +383,18 @@ print(json.dumps({'values': values, 'errors': errors}))
         axis['values'][0] = {'low': float('-inf'), 'high': 1}
         columns = [self.column([9]), self.column([2, 0, 99])]
         original = deepcopy((axis, columns))
-        for classes in (RootWriter.class_list, YODA.class_list):
-            objects = list(ObjectFactory(classes, [axis], columns).get_next_object())
-            self.assertIsNone(objects[0])
-            self.assertTrue(all(obj is not None for obj in objects[1:]))
+        objects = list(ObjectFactory(RootWriter.class_list, [axis], columns).get_next_object())
+        hist = next(obj for obj in objects if obj.GetName() == 'Hist1D_y1')
+        self.assertEqual(hist.GetNbinsX(), 1)
+        self.assertEqual(hist.GetEntries(), 1)
+        self.assertEqual(hist.GetBinContent(0), 9)
+        estimates = list(ObjectFactory(YODA.class_list, [axis], columns).get_next_object())
+        self.assertEqual(estimates[0].numBins(), 1)
+        self.assertEqual(estimates[0].bin(0).val(), 9)
+        self.assertTrue(math.isnan(estimates[0].bin(1).val()))
         self.assertEqual((axis, columns), original)
 
-    def test_all_missing_columns_preserve_later_identifiers_without_zero_histograms(self):
+    def test_all_missing_columns_keep_empty_geometry_and_later_identifiers(self):
         for categorical in (False, True):
             axis = self.axis()
             if categorical:
@@ -397,11 +413,12 @@ print(json.dumps({'values': values, 'errors': errors}))
                         root_file = ROOT.TFile.Open(output)
                         try:
                             names = [key.GetName() for key in root_file.Get('Table 1').GetListOfKeys()]
-                            self.assertFalse(any('_y1' in name for name in names))
+                            self.assertIn('Hist1D_y1', names)
+                            self.assertEqual(root_file.Get('Table 1/Hist1D_y1').GetEntries(), 0)
                             graph = root_file.Get('Table 1/Graph1D_y2')
                             self.assertEqual([graph.GetY()[i] for i in range(graph.GetN())], [0, 4, 8])
                             histogram = root_file.Get('Table 1/Hist1D_y3')
-                            self.assertEqual(histogram.GetNbinsX(), 1)
+                            self.assertEqual(histogram.GetNbinsX(), 3)
                             self.assertEqual(histogram.GetBinContent(1), 3)
                             if categorical:
                                 self.assertEqual(histogram.GetXaxis().GetBinLabel(1), 'first')
@@ -409,7 +426,8 @@ print(json.dumps({'values': values, 'errors': errors}))
                             root_file.Close()
                     else:
                         entries = self.read_yoda(output, format_)
-                        self.assertEqual(set(entries), {'/REF/RIVET_ANALYSIS_NAME/d01-x01-y02',
+                        self.assertEqual(set(entries), {'/REF/RIVET_ANALYSIS_NAME/d01-x01-y01',
+                                                       '/REF/RIVET_ANALYSIS_NAME/d01-x01-y02',
                                                        '/REF/RIVET_ANALYSIS_NAME/kept-custom'})
                         second = entries['/REF/RIVET_ANALYSIS_NAME/d01-x01-y02']
                         self.assertEqual(second['tag'], 'keep-second')
@@ -432,8 +450,9 @@ print(json.dumps({'values': values, 'errors': errors}))
                     root_file = ROOT.TFile.Open(output)
                     try:
                         histogram = root_file.Get('Table 1/Hist1D_y1')
-                        self.assertEqual(histogram.GetNbinsX(), 1)
-                        self.assertEqual([histogram.GetBinContent(i) for i in (1, 2)], [7, 9])
+                        self.assertEqual(histogram.GetNbinsX(), 4)
+                        self.assertEqual(histogram.GetBinContent(2), 7)
+                        self.assertEqual(histogram.GetBinContent(5), 9)
                     finally:
                         root_file.Close()
                 else:
@@ -443,15 +462,21 @@ print(json.dumps({'values': values, 'errors': errors}))
                     if format_ != 'yoda1':
                         script = """
 import json
+import math
 import sys
 import yoda
 obj = yoda.read(sys.argv[1])['/REF/RIVET_ANALYSIS_NAME/d01-x01-y01']
-overflow = obj.bin(obj.numBins() + 1)
-print(json.dumps({'value': overflow.val(), 'error': list(overflow.err('shape'))}))
+overflow = obj.bin(obj.indexAt(float('inf')))
+print(json.dumps({'value': overflow.val(), 'error': list(overflow.err('shape')),
+                  'gap_masked': obj.bin(obj.indexAt(2.5)).isMasked(),
+                  'empty_nan': math.isnan(obj.bin(obj.indexAt(3.5)).val()),
+                  'empty_masked': obj.bin(obj.indexAt(3.5)).isMasked()}))
 """
                         flow = json.loads(subprocess.check_output(
                             [sys.executable, '-c', script, output], universal_newlines=True))
-                        self.assertEqual(flow, {'value': 9, 'error': [-0.5, 0.75]})
+                        self.assertEqual(flow, {'value': 9, 'error': [-0.5, 0.75],
+                                                'gap_masked': True, 'empty_nan': True,
+                                                'empty_masked': False})
 
     def test_masked_source_rows_preserve_flow_coordinates_on_either_axis(self):
         from hepdata_converter.writers.array_writer import ObjectFactory
@@ -470,7 +495,7 @@ print(json.dumps({'value': overflow.val(), 'error': list(overflow.err('shape'))}
                         obj = list(ObjectFactory(YODA.class_list, axes, [dependent]).get_next_object())[0]
                         finite_coords = [1.5, 1.5]
                         flow_coords = [2.5, 2.5]
-                        flow_coords[flow_axis] = 0.5 if flow['low'] == float('-inf') else 2.5
+                        flow_coords[flow_axis] = float('-inf') if flow['low'] == float('-inf') else float('inf')
                         self.assertEqual(obj.bin(obj.indexAt(*finite_coords)).val(), 7)
                         self.assertEqual(obj.bin(obj.indexAt(*flow_coords)).val(), 9)
                         self.assertEqual(list(obj.bin(obj.indexAt(*flow_coords)).err('shape')), [-0.5, 0.75])

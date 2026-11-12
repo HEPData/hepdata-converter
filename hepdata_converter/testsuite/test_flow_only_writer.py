@@ -1,4 +1,5 @@
 import json
+import math
 from pathlib import Path
 import subprocess
 import sys
@@ -55,6 +56,7 @@ class FlowOnlyWriterTestCase(WriterTestSuite):
         # Keep native reader locale changes out of the test runner.
         script = '''
 import json
+import math
 import sys
 import yoda
 
@@ -67,7 +69,7 @@ for path, obj in yoda.read(sys.argv[1]).items():
     else:
         bins = [obj.bin(index + 1) for index in range(obj.numBins())] if hasattr(obj, 'numBins') else [obj]
         values = [estimate.val() for estimate in bins]
-        errors = [list(estimate.err('shape')) for estimate in bins]
+        errors = [None if math.isnan(estimate.val()) else list(estimate.err('shape')) for estimate in bins]
     entry = {'values': values, 'errors': errors,
              'tag': obj.annotation('tag') if obj.hasAnnotation('tag') else None}
     if sys.argv[3] == 'True' and sys.argv[2] != 'yoda1':
@@ -83,9 +85,11 @@ print(json.dumps(entries))
         ))
 
     def assert_values(self, entry, values, format_):
-        self.assertEqual(entry['values'], values)
+        measured = [(value, error) for value, error in zip(entry['values'], entry['errors'])
+                    if format_ == 'yoda1' or not math.isnan(value)]
+        self.assertEqual([value for value, _ in measured], values)
         errors = [0.5, 0.75] if format_ == 'yoda1' else [-0.5, 0.75]
-        self.assertEqual(entry['errors'], [errors] * len(values))
+        self.assertEqual([error for _, error in measured], [errors] * len(values))
 
     def flow_only_bounds(self):
         underflow = {'low': float('-inf'), 'high': 0}
@@ -98,6 +102,7 @@ print(json.dumps(entries))
         # A missing empty-output guard can terminate natively, so isolate conversion.
         script = '''
 import json
+import math
 import sys
 from hepdata_converter import convert
 
@@ -197,7 +202,13 @@ else:
                     try:
                         names = [key.GetName() for key in root_file.Get('Table 1').GetListOfKeys()]
                         self.assertTrue(names)
-                        self.assertTrue(all('_y2' in name or '_y4' in name for name in names))
+                        self.assertTrue(all(any('_y%s' % column in name for column in (1, 2, 3, 4))
+                                            for name in names))
+                        for column, values in ((1, [9, 0, 8]), (3, [0, 0, 0])):
+                            histogram = root_file.Get('Table 1/Hist1D_y%s' % column)
+                            self.assertEqual(histogram.GetNbinsX(), 1)
+                            self.assertEqual(histogram.GetEntries(), 2)
+                            self.assertEqual([histogram.GetBinContent(i) for i in (0, 1, 2)], values)
                         for column, values in ((2, [2, 0, 3]), (4, [4, 1, 5])):
                             histogram = root_file.Get('Table 1/Hist1D_y%s' % column)
                             self.assertEqual(histogram.GetNbinsX(), 1)
@@ -211,12 +222,15 @@ else:
                 else:
                     entries = self.read_yoda(output, format_, with_flows=True)
                     prefix = '/REF/RIVET_ANALYSIS_NAME/'
-                    self.assertEqual(set(entries), {prefix + 'd01-x01-y02', prefix + 'kept-custom'})
+                    self.assertEqual(set(entries), {prefix + 'd01-x01-y01', prefix + 'd01-x01-y02',
+                                                   prefix + 'd01-x01-y03', prefix + 'kept-custom'})
                     for name, value, flows, tag in (
+                            ('d01-x01-y01', None, [9, 8], 'omit-first'),
                             ('d01-x01-y02', 0, [2, 3], 'keep-second'),
+                            ('d01-x01-y03', None, [0, 0], 'omit-third'),
                             ('kept-custom', 1, [4, 5], 'keep-fourth')):
                         entry = entries[prefix + name]
-                        self.assert_values(entry, [value], format_)
+                        self.assert_values(entry, [] if value is None else [value], format_)
                         self.assertEqual(entry['tag'], tag)
                         if format_ != 'yoda1':
                             self.assertEqual(entry['flows'], flows)
